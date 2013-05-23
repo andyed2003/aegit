@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ac.soton.composition.core.composedMachineFile org.eventb.core.comment="" org.eventb.core.configuration="ac.soton.composition.core.cmp" version="7">
+<ac.soton.composition.core.refinesMachine ac.soton.composition.core.target="FanCtrlMachineGC2" name="internal_refines1"/>
+<ac.soton.composition.core.seesContext ac.soton.composition.core.target="FanCtrlContext" name="internal_sees1"/>
+<ac.soton.composition.core.seesContext ac.soton.composition.core.target="FanCtrlMachineGC_implicitContext" name="internal_sees2"/>
+<ac.soton.composition.core.includeMachine ac.soton.composition.core.includedInvariant="false" ac.soton.composition.core.project="FanCtrl" ac.soton.composition.core.target="ControllerNewImpl" name="internal_includes1"/>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events1" org.eventb.core.convergence="0" org.eventb.core.label="INITIALISATION">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[FanCtrl]ControllerNewImpl" name="internal_combines events1" org.eventb.core.target="INITIALISATION"/>
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[FanCtrl]EnvNewImpl" name="internal_combines events2" org.eventb.core.target="INITIALISATION"/>
+</ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events2" org.eventb.core.convergence="0" org.eventb.core.label="SENSE_TEMPERATURES">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[FanCtrl]ControllerNewImpl" name="internal_combines events1" org.eventb.core.target="SENSE_TEMPERATURES"/>
+<ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="SENSE_TEMPERATURES"/>
+</ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events3" org.eventb.core.convergence="0" org.eventb.core.label="DO_NOTHING">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[FanCtrl]ControllerNewImpl" name="internal_combines events1" org.eventb.core.target="DO_NOTHING"/>
+<ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="DO_NOTHING"/>
+</ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events4" org.eventb.core.convergence="0" org.eventb.core.label="SWITCH_ON">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[FanCtrl]ControllerNewImpl" name="internal_combines events1" org.eventb.core.target="SWITCH_ON"/>
+<ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="SWITCH_ON"/>
+</ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events5" org.eventb.core.convergence="0" org.eventb.core.label="SWITCH_OFF">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[FanCtrl]ControllerNewImpl" name="internal_combines events1" org.eventb.core.target="SWITCH_OFF"/>
+<ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="SWITCH_OFF"/>
+</ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events6" org.eventb.core.convergence="0" org.eventb.core.label="SENSE_SPEED">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[FanCtrl]ControllerNewImpl" name="internal_combines events1" org.eventb.core.target="SENSE_SPEED"/>
+<ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="SENSE_SPEED"/>
+</ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events7" org.eventb.core.convergence="0" org.eventb.core.label="SPEED_INVALID">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[FanCtrl]ControllerNewImpl" name="internal_combines events1" org.eventb.core.target="SPEED_INVALID"/>
+<ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="SPEED_INVALID"/>
+</ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events8" org.eventb.core.convergence="0" org.eventb.core.label="SPEED_VALID">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[FanCtrl]ControllerNewImpl" name="internal_combines events1" org.eventb.core.target="SPEED_VALID"/>
+<ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="SPEED_VALID"/>
+</ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events9" org.eventb.core.convergence="0" org.eventb.core.label="TOLERATE">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[FanCtrl]ControllerNewImpl" name="internal_combines events1" org.eventb.core.target="TOLERATE"/>
+<ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="TOLERATE"/>
+</ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events10" org.eventb.core.convergence="0" org.eventb.core.label="BREAK">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[FanCtrl]ControllerNewImpl" name="internal_combines events1" org.eventb.core.target="BREAK"/>
+<ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="BREAK"/>
+</ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events11" org.eventb.core.convergence="0" org.eventb.core.label="BROKEN_SENSE_SPEED">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[FanCtrl]ControllerNewImpl" name="internal_combines events1" org.eventb.core.target="BROKEN_SENSE_SPEED"/>
+<ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="BROKEN_SENSE_SPEED"/>
+</ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events12" org.eventb.core.convergence="0" org.eventb.core.label="STILL_BROKEN">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[FanCtrl]ControllerNewImpl" name="internal_combines events1" org.eventb.core.target="STILL_BROKEN"/>
+<ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="STILL_BROKEN"/>
+</ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events13" org.eventb.core.convergence="0" org.eventb.core.label="REPAIR">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[FanCtrl]ControllerNewImpl" name="internal_combines events1" org.eventb.core.target="REPAIR"/>
+<ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="REPAIR"/>
+</ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events14" org.eventb.core.convergence="0" org.eventb.core.label="read">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[FanCtrl]ControllerNewImpl" name="internal_combines events1" org.eventb.core.target="read"/>
+<ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="read"/>
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[FanCtrl]EnvNewImpl" name="internal_combines events2" org.eventb.core.target="read"/>
+</ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events15" org.eventb.core.convergence="0" org.eventb.core.label="write">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[FanCtrl]ControllerNewImpl" name="internal_combines events1" org.eventb.core.target="write"/>
+<ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="write"/>
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[FanCtrl]EnvNewImpl" name="internal_combines events2" org.eventb.core.target="write"/>
+</ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.includeMachine ac.soton.composition.core.includedInvariant="false" ac.soton.composition.core.project="FanCtrl" ac.soton.composition.core.target="EnvNewImpl" name="internal_includes2"/>
+</ac.soton.composition.core.composedMachineFile>
