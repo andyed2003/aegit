@@ -168,6 +168,7 @@
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="p3∈ℤ" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.event#_sArbQMOzEeKrdOk53hhEZu|org.eventb.core.guard#0"/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="p2∈ℤ" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.event#_sArbQMOzEeKrdOk53hhEZu|org.eventb.core.guard#1"/>
 <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="p1∈ℤ" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.event#_sArbQMOzEeKrdOk53hhEZu|org.eventb.core.guard#2"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="Controller≠Normal" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.event#_sArbQMOzEeKrdOk53hhEZu|org.eventb.core.guard#3"/>
 </org.eventb.core.poPredicateSet>
 <org.eventb.core.poPredicateSet name="EVTIDENTFanCtrlMachineGC_implicitContey9" org.eventb.core.parentSet="/FanCtrl/ControllerNewImpl.bpo|org.eventb.core.poFile#ControllerNewImpl|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="p1" org.eventb.core.type="BOOL"/>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <org.eventb.core.scMachineFile org.eventb.core.accurate="true" org.eventb.core.configuration="ch.ethz.eventb.decomposition.pogConfig">
-<org.eventb.core.scSeesContext name="'" org.eventb.core.scTarget="/FanCtrl/FanCtrlContext.bcc" org.eventb.core.source="/FanCtrl/EnvNew.bum|org.eventb.core.machineFile#EnvNew|org.eventb.core.seesContext#_QIUX0MO0EeKajPrTis1y_Q"/>
-<org.eventb.core.scSeesContext name="(" org.eventb.core.scTarget="/FanCtrl/FanCtrlMachineGC_implicitContext.bcc" org.eventb.core.source="/FanCtrl/EnvNew.bum|org.eventb.core.machineFile#EnvNew|org.eventb.core.seesContext#_QIUX0cO0EeKajPrTis1y_Q"/>
+<org.eventb.core.scSeesContext name="'" org.eventb.core.scTarget="/FanCtrl/FanCtrlContext.bcc" org.eventb.core.source="/FanCtrl/EnvNew.bum|org.eventb.core.machineFile#EnvNew|org.eventb.core.seesContext#_U-JHwMQ3EeKHt4yBjm5K9Q"/>
+<org.eventb.core.scSeesContext name="(" org.eventb.core.scTarget="/FanCtrl/FanCtrlMachineGC_implicitContext.bcc" org.eventb.core.source="/FanCtrl/EnvNew.bum|org.eventb.core.machineFile#EnvNew|org.eventb.core.seesContext#_U-Ju0MQ3EeKHt4yBjm5K9Q"/>
 <org.eventb.core.scInternalContext name="FanCtrlContext">
 <org.eventb.core.scAxiom name="'" org.eventb.core.label="typeof_HWM_PSU" org.eventb.core.predicate="HWM_PSU∈ℤ" org.eventb.core.source="/FanCtrl/FanCtrlContext.buc|org.eventb.core.contextFile#FanCtrlContext|org.eventb.core.axiom#+" org.eventb.core.theorem="false"/>
 <org.eventb.core.scAxiom name="(" org.eventb.core.label="typeof_LWM_PSU" org.eventb.core.predicate="LWM_PSU∈ℤ" org.eventb.core.source="/FanCtrl/FanCtrlContext.buc|org.eventb.core.contextFile#FanCtrlContext|org.eventb.core.axiom#," org.eventb.core.theorem="false"/>

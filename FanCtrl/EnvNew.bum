@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.machineFile ch.ethz.eventb.decomposition.decomposed="true" org.eventb.core.configuration="ch.ethz.eventb.decomposition.mchBase;org.eventb.codegen.ui.cgConfig" org.eventb.core.generated="true" version="5">
-<org.eventb.core.seesContext name="_QIUX0MO0EeKajPrTis1y_Q" org.eventb.core.target="FanCtrlContext"/>
-<org.eventb.core.seesContext name="_QIUX0cO0EeKajPrTis1y_Q" org.eventb.core.target="FanCtrlMachineGC_implicitContext"/>
+<org.eventb.core.machineFile ch.ethz.eventb.decomposition.decomposed="true" org.eventb.core.configuration="ch.ethz.eventb.decomposition.mchBase;org.eventb.codegen.ui.cgConfig" org.eventb.core.generated="false" version="5">
+<org.eventb.core.seesContext name="_U-JHwMQ3EeKHt4yBjm5K9Q" org.eventb.core.target="FanCtrlContext"/>
+<org.eventb.core.seesContext name="_U-Ju0MQ3EeKHt4yBjm5K9Q" org.eventb.core.target="FanCtrlMachineGC_implicitContext"/>
 <org.eventb.core.variable name="'" org.eventb.core.identifier="E_LM75_tempPSU"/>
 <org.eventb.core.variable name="(" org.eventb.core.identifier="E_LM75_tempAmbient"/>
 <org.eventb.core.variable name=")" org.eventb.core.identifier="E_MAX6650_fanSpeed"/>

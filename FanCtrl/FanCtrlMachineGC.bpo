@@ -59,6 +59,8 @@
 <org.eventb.core.poPredicate name="E_MAX6650_fanSpeeh" org.eventb.core.predicate="C_fanSpeed∈ℤ" org.eventb.core.source="/FanCtrl/FanCtrlMachine.bum|org.eventb.core.machineFile#FanCtrlMachine|org.eventb.core.invariant#_liXiAMCoEeK9NfIQJVUaBo"/>
 <org.eventb.core.poPredicate name="E_MAX6650_fanSpeei" org.eventb.core.predicate="C_fanOn∈BOOL" org.eventb.core.source="/FanCtrl/FanCtrlMachine.bum|org.eventb.core.machineFile#FanCtrlMachine|org.eventb.core.invariant#_liXiAMCoEeK9NfIQJVUaBp"/>
 <org.eventb.core.poPredicate name="E_MAX6650_fanSpeej" org.eventb.core.predicate="failureCount∈ℤ" org.eventb.core.source="/FanCtrl/FanCtrlMachine.bum|org.eventb.core.machineFile#FanCtrlMachine|org.eventb.core.invariant#_liXiAMCoEeK9NfIQJVUaBq"/>
+<org.eventb.core.poPredicate name="E_MAX6650_fanSpeek" org.eventb.core.predicate="Controller=Normal⇒(C_tempPSU≥HWM_PSU∨C_tempAmbient≥HWM_AMBIENT⇒C_fanOn=TRUE)" org.eventb.core.source="/FanCtrl/FanCtrlMachine.bum|org.eventb.core.machineFile#FanCtrlMachine|org.eventb.core.invariant#FanCtrlMachine_high_temp_inv"/>
+<org.eventb.core.poPredicate name="E_MAX6650_fanSpeel" org.eventb.core.predicate="Controller=Normal⇒(C_tempPSU≤LWM_PSU∧C_tempAmbient≤LWM_AMBIENT⇒C_fanOn=FALSE)" org.eventb.core.source="/FanCtrl/FanCtrlMachine.bum|org.eventb.core.machineFile#FanCtrlMachine|org.eventb.core.invariant#FanCtrlMachine_low_temp_inv"/>
 </org.eventb.core.poPredicateSet>
 <org.eventb.core.poSequent name="INITIALISATION/high_temp_inv/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC.bpo|org.eventb.core.poFile#FanCtrlMachineGC|org.eventb.core.poPredicateSet#EVTALLHYPFanCtrlMachineGC_implicitContey+"/>
@@ -671,7 +673,9 @@
 <org.eventb.core.poIdentifier name="C_tempPSU'" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poIdentifier name="C_tempAmbient'" org.eventb.core.type="ℤ"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPFanCtrlMachineGC_implicitContey8" org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC.bpo|org.eventb.core.poFile#FanCtrlMachineGC|org.eventb.core.poPredicateSet#EVTIDENTFanCtrlMachineGC_implicitContey8" org.eventb.core.poStamp="0"/>
+<org.eventb.core.poPredicateSet name="EVTALLHYPFanCtrlMachineGC_implicitContey8" org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC.bpo|org.eventb.core.poFile#FanCtrlMachineGC|org.eventb.core.poPredicateSet#EVTIDENTFanCtrlMachineGC_implicitContey8" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Controller≠Normal" org.eventb.core.source="/FanCtrl/FanCtrlMachineGC.bum|org.eventb.core.machineFile#FanCtrlMachineGC|org.eventb.core.event#FanCtrlMachine_FanCtrlMachine_FanCtrlMachine_typeof_Controlleu|org.eventb.core.guard#_A1b_AMQ1EeKOOoERpJ5Z1B"/>
+</org.eventb.core.poPredicateSet>
 <org.eventb.core.poPredicateSet name="EVTIDENTFanCtrlMachineGC_implicitContey9" org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC.bpo|org.eventb.core.poFile#FanCtrlMachineGC|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="E_MAX6650_fanOn'" org.eventb.core.type="BOOL"/>
 </org.eventb.core.poPredicateSet>

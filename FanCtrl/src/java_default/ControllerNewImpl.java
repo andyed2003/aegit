@@ -30,13 +30,16 @@ public class ControllerNewImpl implements Runnable
 			// Translated code
 			((ControllerNewImpl)MainEntry.getTask("ControllerNewImpl")).ControllerstateMachine();
 			((EnvNewImpl)MainEntry.getTask("EnvNewImpl")).write(C_fanOn);
-			Pointer<Integer> C_fanSpeedPointer = new Pointer<Integer>();
-			Pointer<Integer> C_tempAmbientPointer = new Pointer<Integer>();
-			Pointer<Integer> C_tempPSUPointer = new Pointer<Integer>();
-			((EnvNewImpl)MainEntry.getTask("EnvNewImpl")).read(C_fanSpeedPointer, C_tempAmbientPointer, C_tempPSUPointer);
-			C_fanSpeed = C_fanSpeedPointer.value;
-			C_tempAmbient = C_tempAmbientPointer.value;
-			C_tempPSU = C_tempPSUPointer.value;
+			if ((Controller != Normal))
+			{
+				Pointer<Integer> C_fanSpeedPointer = new Pointer<Integer>();
+				Pointer<Integer> C_tempAmbientPointer = new Pointer<Integer>();
+				Pointer<Integer> C_tempPSUPointer = new Pointer<Integer>();
+				((EnvNewImpl)MainEntry.getTask("EnvNewImpl")).read(C_fanSpeedPointer, C_tempAmbientPointer, C_tempPSUPointer);
+				C_fanSpeed = C_fanSpeedPointer.value;
+				C_tempAmbient = C_tempAmbientPointer.value;
+				C_tempPSU = C_tempPSUPointer.value;
+			}
 			System.out.println("C_fanSpeed: " + C_fanSpeed);
 			System.out.println("C_fanOn: " + C_fanOn);
 			
