@@ -48,8 +48,9 @@ public class CodeGenCommand extends AbstractHandler {
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		
 		
-		// run the codegen here		
+		
 		System.out.println(">>>>>>>>>>>>>>  DO CODE GENERATION HERE");
+		// Run Code Generator to create an FMU, then simulate with the generated code.
 		
 		IEditorPart diagramEditor = HandlerUtil.getActiveEditorChecked(event);
 		Shell shell = diagramEditor.getEditorSite().getShell();
