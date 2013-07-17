@@ -1,0 +1,5 @@
+#Mon Jun 03 18:21:28 CEST 2013
+93a0e918-4111-4c1a-b9e4-8c5ed4395e63={"time"\:"\#ClassicalB\:time","formula"\:["\#ClassicalB\:level","\#ClassicalB\:pump","\#ClassicalB\:level + 1000","\#ClassicalB\:{(TRUE,1000), (FALSE,1)}(pump)"]}
+9f1c6868-7529-42c2-bc81-34acd565fc10={"mode"\:1,"disabled"\:[],"expr"\:"","transformers"\:["{\\"predicate\\"\:\\"\#ClassicalB\:time \\\\u003e 100\\",\\"attrs\\"\:[],\\"styles\\"\:[{\\"name\\"\:\\"fill\\",\\"value\\"\:\\"red\\"}]}"]}
+d828fa6e-1280-4054-bc3e-fb081681fec9={"time"\:"\#ClassicalB\:time","mode"\:"over","formula"\:["\#ClassicalB\:level","\#ClassicalB\:pump"]}
+c6f471a4-c6cb-4c99-baf2-5c1aac2165f0={"time"\:"\#ClassicalB\:time","mode"\:"each","formula"\:["\#ClassicalB\:level","\#ClassicalB\:pump"]}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="LPC" org.eventb.core.type="ℙ(LPC)"/>
+<org.eventb.core.poIdentifier name="PC" org.eventb.core.type="ℙ(PC)"/>
+<org.eventb.core.poIdentifier name="ComputeDelay" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="High" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="Low" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="ReadDelay" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="WriteDelay" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="decide" org.eventb.core.type="PC"/>
+<org.eventb.core.poIdentifier name="ldecide" org.eventb.core.type="LPC"/>
+<org.eventb.core.poIdentifier name="lread" org.eventb.core.type="LPC"/>
+<org.eventb.core.poIdentifier name="lwrite" org.eventb.core.type="LPC"/>
+<org.eventb.core.poIdentifier name="read" org.eventb.core.type="PC"/>
+<org.eventb.core.poIdentifier name="write" org.eventb.core.type="PC"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/waterTank/ctx0.bpo|org.eventb.core.poFile#ctx0|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="partition(PC,{read},{decide},{write})" org.eventb.core.source="/waterTank/ctx0.buc|org.eventb.core.contextFile#ctx0|org.eventb.core.axiom#+"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="High=2000" org.eventb.core.source="/waterTank/ctx0.buc|org.eventb.core.contextFile#ctx0|org.eventb.core.axiom#-"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="Low=800" org.eventb.core.source="/waterTank/ctx0.buc|org.eventb.core.contextFile#ctx0|org.eventb.core.axiom#\/"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="ReadDelay=20" org.eventb.core.source="/waterTank/ctx0.buc|org.eventb.core.contextFile#ctx0|org.eventb.core.axiom#1"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="WriteDelay=20" org.eventb.core.source="/waterTank/ctx0.buc|org.eventb.core.contextFile#ctx0|org.eventb.core.axiom#3"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="ComputeDelay=100" org.eventb.core.source="/waterTank/ctx0.buc|org.eventb.core.contextFile#ctx0|org.eventb.core.axiom#5"/>
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="partition(LPC,{lread},{ldecide},{lwrite})" org.eventb.core.source="/waterTank/ctx0.buc|org.eventb.core.contextFile#ctx0|org.eventb.core.axiom#:"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

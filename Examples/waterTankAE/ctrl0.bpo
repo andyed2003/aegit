@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="LPC" org.eventb.core.type="ℙ(LPC)"/>
+<org.eventb.core.poIdentifier name="PC" org.eventb.core.type="ℙ(PC)"/>
+<org.eventb.core.poIdentifier name="ComputeDelay" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="High" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="Low" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="ReadDelay" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="WriteDelay" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="decide" org.eventb.core.type="PC"/>
+<org.eventb.core.poIdentifier name="ldecide" org.eventb.core.type="LPC"/>
+<org.eventb.core.poIdentifier name="lread" org.eventb.core.type="LPC"/>
+<org.eventb.core.poIdentifier name="lwrite" org.eventb.core.type="LPC"/>
+<org.eventb.core.poIdentifier name="read" org.eventb.core.type="PC"/>
+<org.eventb.core.poIdentifier name="write" org.eventb.core.type="PC"/>
+<org.eventb.core.poPredicate name="ComputeDelaz" org.eventb.core.predicate="partition(PC,{read},{decide},{write})" org.eventb.core.source="/waterTankAE/ctx0.buc|org.eventb.core.contextFile#ctx0|org.eventb.core.axiom#+"/>
+<org.eventb.core.poPredicate name="ComputeDela{" org.eventb.core.predicate="High=2000" org.eventb.core.source="/waterTankAE/ctx0.buc|org.eventb.core.contextFile#ctx0|org.eventb.core.axiom#-"/>
+<org.eventb.core.poPredicate name="ComputeDela|" org.eventb.core.predicate="Low=800" org.eventb.core.source="/waterTankAE/ctx0.buc|org.eventb.core.contextFile#ctx0|org.eventb.core.axiom#\/"/>
+<org.eventb.core.poPredicate name="ComputeDela}" org.eventb.core.predicate="ReadDelay=20" org.eventb.core.source="/waterTankAE/ctx0.buc|org.eventb.core.contextFile#ctx0|org.eventb.core.axiom#1"/>
+<org.eventb.core.poPredicate name="ComputeDela~" org.eventb.core.predicate="WriteDelay=20" org.eventb.core.source="/waterTankAE/ctx0.buc|org.eventb.core.contextFile#ctx0|org.eventb.core.axiom#3"/>
+<org.eventb.core.poPredicate name="ComputeDelb'" org.eventb.core.predicate="ComputeDelay=100" org.eventb.core.source="/waterTankAE/ctx0.buc|org.eventb.core.contextFile#ctx0|org.eventb.core.axiom#5"/>
+<org.eventb.core.poPredicate name="ComputeDelb(" org.eventb.core.predicate="partition(LPC,{lread},{ldecide},{lwrite})" org.eventb.core.source="/waterTankAE/ctx0.buc|org.eventb.core.contextFile#ctx0|org.eventb.core.axiom#:"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="fmiLevel" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="fmiPump" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="level" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="lpc" org.eventb.core.type="LPC"/>
+<org.eventb.core.poIdentifier name="pc" org.eventb.core.type="PC"/>
+<org.eventb.core.poIdentifier name="pump" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="time" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="INITIALISATION/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poPredicateSet#EVTALLHYPfmiLevem">
+<org.eventb.core.poPredicate name="'" org.eventb.core.predicate="fmiLevel'∈ℕ" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.event#'|org.eventb.core.action#'"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="fmiLevel'∈ℕ" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.invariant#)"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.invariant#)"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poSequent#INITIALISATION\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poPredicateSet#EVTALLHYPfmiLevem"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="0∈0 ‥ 20000" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.invariant#-"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.invariant#-"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poSequent#INITIALISATION\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poPredicateSet#EVTALLHYPfmiLevem"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="0∈0 ‥ 12000" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.invariant#\/"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.invariant#\/"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poSequent#INITIALISATION\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/act1/FIS" org.eventb.core.accurate="true" org.eventb.core.poDesc="Feasibility of action" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poPredicateSet#EVTALLHYPfmiLevem"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="ℕ≠(∅ ⦂ ℙ(ℤ))" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.event#'|org.eventb.core.action#'"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.event#'|org.eventb.core.action#'"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poPredicateSet#EVTALLHYPfmiLevem"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/act2/FIS" org.eventb.core.accurate="true" org.eventb.core.poDesc="Feasibility of action" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poPredicateSet#EVTALLHYPfmiLevem"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="BOOL≠(∅ ⦂ ℙ(BOOL))" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.event#'|org.eventb.core.action#("/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.event#'|org.eventb.core.action#("/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poPredicateSet#EVTALLHYPfmiLevem"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTfmiLevem" org.eventb.core.parentSet="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="lpc'" org.eventb.core.type="LPC"/>
+<org.eventb.core.poIdentifier name="pump'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="time'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="level'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="fmiPump'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="pc'" org.eventb.core.type="PC"/>
+<org.eventb.core.poIdentifier name="fmiLevel'" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPfmiLevem" org.eventb.core.parentSet="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poPredicateSet#EVTIDENTfmiLevem" org.eventb.core.poStamp="0"/>
+<org.eventb.core.poSequent name="fmiReadInputs/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poPredicateSet#EVTALLHYPfmiLeven"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="l∈ℕ" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.invariant#)"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.event#7"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.invariant#)"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poSequent#fmiReadInputs\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTfmiLeven" org.eventb.core.parentSet="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="l" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="pc'" org.eventb.core.type="PC"/>
+<org.eventb.core.poIdentifier name="fmiLevel'" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPfmiLeven" org.eventb.core.parentSet="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poPredicateSet#EVTIDENTfmiLeven" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="l∈0 ‥ 20000" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.event#7|org.eventb.core.guard#("/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="pc=read" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.event#7|org.eventb.core.guard#)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTfmiLeveo" org.eventb.core.parentSet="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="fmiPump'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="pc'" org.eventb.core.type="PC"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPfmiLeveo" org.eventb.core.parentSet="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poPredicateSet#EVTIDENTfmiLeveo" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="pc=write" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.event#8|org.eventb.core.guard#'"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="readLevel/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poPredicateSet#EVTALLHYPfmiLevep"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="fmiLevel∈0 ‥ 20000" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.invariant#-"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.event#9"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.invariant#-"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poSequent#readLevel\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="readLevel/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poPredicateSet#EVTALLHYPfmiLevep"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="time+ReadDelay∈0 ‥ 12000" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.invariant#\/"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.event#9"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.invariant#\/"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poSequent#readLevel\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTfmiLevep" org.eventb.core.parentSet="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="lpc'" org.eventb.core.type="LPC"/>
+<org.eventb.core.poIdentifier name="time'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="level'" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPfmiLevep" org.eventb.core.parentSet="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poPredicateSet#EVTIDENTfmiLevep" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="lpc=lread" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.event#9|org.eventb.core.guard#'"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="pc=decide" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.event#9|org.eventb.core.guard#("/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="writePump/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poPredicateSet#EVTALLHYPfmiLeveq"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="time+WriteDelay∈0 ‥ 12000" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.invariant#\/"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.event#:"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.invariant#\/"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poSequent#writePump\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTfmiLeveq" org.eventb.core.parentSet="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="lpc'" org.eventb.core.type="LPC"/>
+<org.eventb.core.poIdentifier name="time'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="fmiPump'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="pc'" org.eventb.core.type="PC"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPfmiLeveq" org.eventb.core.parentSet="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poPredicateSet#EVTIDENTfmiLeveq" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="pc=decide" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.event#:|org.eventb.core.guard#'"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="lpc=lwrite" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.event#:|org.eventb.core.guard#("/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="decideOff/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poPredicateSet#EVTALLHYPfmiLever"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="time+ComputeDelay∈0 ‥ 12000" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.invariant#\/"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.event#;"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.invariant#\/"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poSequent#decideOff\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTfmiLever" org.eventb.core.parentSet="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="lpc'" org.eventb.core.type="LPC"/>
+<org.eventb.core.poIdentifier name="pump'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="time'" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPfmiLever" org.eventb.core.parentSet="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poPredicateSet#EVTIDENTfmiLever" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="lpc=ldecide" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.event#;|org.eventb.core.guard#'"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="level&gt;High" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.event#;|org.eventb.core.guard#("/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="decideOn/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poPredicateSet#EVTALLHYPfmiLeves"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="time+ComputeDelay∈0 ‥ 12000" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.invariant#\/"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.event#="/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.invariant#\/"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poSequent#decideOn\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTfmiLeves" org.eventb.core.parentSet="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="lpc'" org.eventb.core.type="LPC"/>
+<org.eventb.core.poIdentifier name="pump'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="time'" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPfmiLeves" org.eventb.core.parentSet="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poPredicateSet#EVTIDENTfmiLeves" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="lpc=ldecide" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.event#=|org.eventb.core.guard#'"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="level&lt;Low" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.event#=|org.eventb.core.guard#("/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="decideKeep/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poPredicateSet#EVTALLHYPfmiLevet"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="time+ComputeDelay∈0 ‥ 12000" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.invariant#\/"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.event#&gt;"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.invariant#\/"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poSequent#decideKeep\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTfmiLevet" org.eventb.core.parentSet="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="lpc'" org.eventb.core.type="LPC"/>
+<org.eventb.core.poIdentifier name="time'" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPfmiLevet" org.eventb.core.parentSet="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poPredicateSet#EVTIDENTfmiLevet" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="lpc=ldecide" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.event#&gt;|org.eventb.core.guard#'"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="level≥Low" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.event#&gt;|org.eventb.core.guard#("/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="level≤High" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.event#&gt;|org.eventb.core.guard#)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/waterTankAE/ctrl0.bpo|org.eventb.core.poFile#ctrl0|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="fmiLevel∈ℕ" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.invariant#)"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="fmiPump∈BOOL" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.invariant#+"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="level∈0 ‥ 20000" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.invariant#-"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="time∈0 ‥ 12000" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.invariant#\/"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="pump∈BOOL" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.invariant#1"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="pc∈PC" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.invariant#3"/>
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="lpc∈LPC" org.eventb.core.source="/waterTankAE/ctrl0.bum|org.eventb.core.machineFile#ctrl0|org.eventb.core.invariant#6"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>
