@@ -586,24 +586,27 @@
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="writePump/inv4/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="">
-<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(PC,{read},{decide},{write}))" org.eventb.core.prHyps="">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(environSM_STATES,{stableSim}))" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p0" org.eventb.core.prInfHyps="p1,p2,p3,p4"/>
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p0" org.eventb.core.prInfHyps="p1"/>
 <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p0"/>
-<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p1,p2,p3,p4"/>
-<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(LPC,{lread},{ldecide},{lwrite}))" org.eventb.core.prHyps="">
+<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p1"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(controllerSM_STATES,{ready},{finished}))" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p5" org.eventb.core.prInfHyps="p6,p7,p8,p9"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p5"/>
-<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p6,p7,p8,p9"/>
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p2" org.eventb.core.prInfHyps="p3,p4"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p2"/>
+<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p3,p4"/>
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p10"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p11"/>
-<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p12"/>
-<org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p13"/>
-<org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p14"/>
-<org.eventb.core.prHypAction name="HIDE5" org.eventb.core.prHyps="p15"/>
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p5"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p6"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p7"/>
+<org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p8"/>
+<org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p9"/>
+<org.eventb.core.prHypAction name="HIDE5" org.eventb.core.prHyps="p10"/>
+<org.eventb.core.prHypAction name="HIDE6" org.eventb.core.prHyps="p11"/>
+<org.eventb.core.prHypAction name="HIDE7" org.eventb.core.prHyps="p12"/>
+<org.eventb.core.prHypAction name="HIDE8" org.eventb.core.prHyps="p13"/>
 </org.eventb.core.prAnte>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
@@ -612,96 +615,85 @@
 </org.eventb.core.prAnte>
 <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
 </org.eventb.core.prRule>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="partition(PC,{read},{decide},{write})">
-<org.eventb.core.prIdent name="PC" org.eventb.core.type="ℙ(PC)"/>
-<org.eventb.core.prIdent name="decide" org.eventb.core.type="PC"/>
-<org.eventb.core.prIdent name="read" org.eventb.core.type="PC"/>
-<org.eventb.core.prIdent name="write" org.eventb.core.type="PC"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="¬ready=finished">
+<org.eventb.core.prIdent name="finished" org.eventb.core.type="controllerSM_STATES"/>
+<org.eventb.core.prIdent name="ready" org.eventb.core.type="controllerSM_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="¬read=decide">
-<org.eventb.core.prIdent name="decide" org.eventb.core.type="PC"/>
-<org.eventb.core.prIdent name="read" org.eventb.core.type="PC"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="stableSim∈environSM_STATES">
+<org.eventb.core.prIdent name="environSM_STATES" org.eventb.core.type="ℙ(environSM_STATES)"/>
+<org.eventb.core.prIdent name="stableSim" org.eventb.core.type="environSM_STATES"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p10" org.eventb.core.predicate="c_Level∈ℤ">
 <org.eventb.core.prIdent name="c_Level" org.eventb.core.type="ℤ"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p15" org.eventb.core.predicate="fmi_Level∈ℤ">
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="ready∈controllerSM_STATES">
+<org.eventb.core.prIdent name="controllerSM_STATES" org.eventb.core.type="ℙ(controllerSM_STATES)"/>
+<org.eventb.core.prIdent name="ready" org.eventb.core.type="controllerSM_STATES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="fmi_Level∈ℤ">
 <org.eventb.core.prIdent name="fmi_Level" org.eventb.core.type="ℤ"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p14" org.eventb.core.predicate="lpc∈LPC">
-<org.eventb.core.prIdent name="LPC" org.eventb.core.type="ℙ(LPC)"/>
-<org.eventb.core.prIdent name="lpc" org.eventb.core.type="LPC"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="environSM_STATES={stableSim}">
+<org.eventb.core.prIdent name="environSM_STATES" org.eventb.core.type="ℙ(environSM_STATES)"/>
+<org.eventb.core.prIdent name="stableSim" org.eventb.core.type="environSM_STATES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="finished∈controllerSM_STATES">
+<org.eventb.core.prIdent name="controllerSM_STATES" org.eventb.core.type="ℙ(controllerSM_STATES)"/>
+<org.eventb.core.prIdent name="finished" org.eventb.core.type="controllerSM_STATES"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p12" org.eventb.core.predicate="c_pumpOn∈BOOL">
 <org.eventb.core.prIdent name="c_pumpOn" org.eventb.core.type="BOOL"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p13" org.eventb.core.predicate="pc∈PC">
-<org.eventb.core.prIdent name="PC" org.eventb.core.type="ℙ(PC)"/>
-<org.eventb.core.prIdent name="pc" org.eventb.core.type="PC"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="environSM∈environSM_STATES">
+<org.eventb.core.prIdent name="environSM" org.eventb.core.type="environSM_STATES"/>
+<org.eventb.core.prIdent name="environSM_STATES" org.eventb.core.type="ℙ(environSM_STATES)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="controllerSM∈controllerSM_STATES">
+<org.eventb.core.prIdent name="controllerSM" org.eventb.core.type="controllerSM_STATES"/>
+<org.eventb.core.prIdent name="controllerSM_STATES" org.eventb.core.type="ℙ(controllerSM_STATES)"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p11" org.eventb.core.predicate="fmi_PumpOn∈BOOL">
 <org.eventb.core.prIdent name="fmi_PumpOn" org.eventb.core.type="BOOL"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p9" org.eventb.core.predicate="¬ldecide=lwrite">
-<org.eventb.core.prIdent name="ldecide" org.eventb.core.type="LPC"/>
-<org.eventb.core.prIdent name="lwrite" org.eventb.core.type="LPC"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="partition(environSM_STATES,{stableSim})">
+<org.eventb.core.prIdent name="environSM_STATES" org.eventb.core.type="ℙ(environSM_STATES)"/>
+<org.eventb.core.prIdent name="stableSim" org.eventb.core.type="environSM_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p1" org.eventb.core.predicate="PC={read,decide,write}">
-<org.eventb.core.prIdent name="PC" org.eventb.core.type="ℙ(PC)"/>
-<org.eventb.core.prIdent name="decide" org.eventb.core.type="PC"/>
-<org.eventb.core.prIdent name="read" org.eventb.core.type="PC"/>
-<org.eventb.core.prIdent name="write" org.eventb.core.type="PC"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="controllerSM_STATES={ready,finished}">
+<org.eventb.core.prIdent name="controllerSM_STATES" org.eventb.core.type="ℙ(controllerSM_STATES)"/>
+<org.eventb.core.prIdent name="finished" org.eventb.core.type="controllerSM_STATES"/>
+<org.eventb.core.prIdent name="ready" org.eventb.core.type="controllerSM_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p8" org.eventb.core.predicate="¬lread=lwrite">
-<org.eventb.core.prIdent name="lread" org.eventb.core.type="LPC"/>
-<org.eventb.core.prIdent name="lwrite" org.eventb.core.type="LPC"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="partition(controllerSM_STATES,{ready},{finished})">
+<org.eventb.core.prIdent name="controllerSM_STATES" org.eventb.core.type="ℙ(controllerSM_STATES)"/>
+<org.eventb.core.prIdent name="finished" org.eventb.core.type="controllerSM_STATES"/>
+<org.eventb.core.prIdent name="ready" org.eventb.core.type="controllerSM_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p4" org.eventb.core.predicate="¬decide=write">
-<org.eventb.core.prIdent name="decide" org.eventb.core.type="PC"/>
-<org.eventb.core.prIdent name="write" org.eventb.core.type="PC"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p6" org.eventb.core.predicate="LPC={lread,ldecide,lwrite}">
-<org.eventb.core.prIdent name="LPC" org.eventb.core.type="ℙ(LPC)"/>
-<org.eventb.core.prIdent name="ldecide" org.eventb.core.type="LPC"/>
-<org.eventb.core.prIdent name="lread" org.eventb.core.type="LPC"/>
-<org.eventb.core.prIdent name="lwrite" org.eventb.core.type="LPC"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬read=write">
-<org.eventb.core.prIdent name="read" org.eventb.core.type="PC"/>
-<org.eventb.core.prIdent name="write" org.eventb.core.type="PC"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p5" org.eventb.core.predicate="partition(LPC,{lread},{ldecide},{lwrite})">
-<org.eventb.core.prIdent name="LPC" org.eventb.core.type="ℙ(LPC)"/>
-<org.eventb.core.prIdent name="ldecide" org.eventb.core.type="LPC"/>
-<org.eventb.core.prIdent name="lread" org.eventb.core.type="LPC"/>
-<org.eventb.core.prIdent name="lwrite" org.eventb.core.type="LPC"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p7" org.eventb.core.predicate="¬lread=ldecide">
-<org.eventb.core.prIdent name="ldecide" org.eventb.core.type="LPC"/>
-<org.eventb.core.prIdent name="lread" org.eventb.core.type="LPC"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="readLevel/inv4/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="">
-<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(PC,{read},{decide},{write}))" org.eventb.core.prHyps="">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(environSM_STATES,{stableSim}))" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p0" org.eventb.core.prInfHyps="p1,p2,p3,p4"/>
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p0" org.eventb.core.prInfHyps="p1"/>
 <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p0"/>
-<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p1,p2,p3,p4"/>
-<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(LPC,{lread},{ldecide},{lwrite}))" org.eventb.core.prHyps="">
+<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p1"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(controllerSM_STATES,{ready},{finished}))" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p5" org.eventb.core.prInfHyps="p6,p7,p8,p9"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p5"/>
-<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p6,p7,p8,p9"/>
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p2" org.eventb.core.prInfHyps="p3,p4"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p2"/>
+<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p3,p4"/>
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p10"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p11"/>
-<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p12"/>
-<org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p13"/>
-<org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p14"/>
-<org.eventb.core.prHypAction name="HIDE5" org.eventb.core.prHyps="p15"/>
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p5"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p6"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p7"/>
+<org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p8"/>
+<org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p9"/>
+<org.eventb.core.prHypAction name="HIDE5" org.eventb.core.prHyps="p10"/>
+<org.eventb.core.prHypAction name="HIDE6" org.eventb.core.prHyps="p11"/>
+<org.eventb.core.prHypAction name="HIDE7" org.eventb.core.prHyps="p12"/>
+<org.eventb.core.prHypAction name="HIDE8" org.eventb.core.prHyps="p13"/>
 </org.eventb.core.prAnte>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
@@ -710,96 +702,85 @@
 </org.eventb.core.prAnte>
 <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
 </org.eventb.core.prRule>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="partition(PC,{read},{decide},{write})">
-<org.eventb.core.prIdent name="PC" org.eventb.core.type="ℙ(PC)"/>
-<org.eventb.core.prIdent name="decide" org.eventb.core.type="PC"/>
-<org.eventb.core.prIdent name="read" org.eventb.core.type="PC"/>
-<org.eventb.core.prIdent name="write" org.eventb.core.type="PC"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="¬ready=finished">
+<org.eventb.core.prIdent name="finished" org.eventb.core.type="controllerSM_STATES"/>
+<org.eventb.core.prIdent name="ready" org.eventb.core.type="controllerSM_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="¬read=decide">
-<org.eventb.core.prIdent name="decide" org.eventb.core.type="PC"/>
-<org.eventb.core.prIdent name="read" org.eventb.core.type="PC"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="stableSim∈environSM_STATES">
+<org.eventb.core.prIdent name="environSM_STATES" org.eventb.core.type="ℙ(environSM_STATES)"/>
+<org.eventb.core.prIdent name="stableSim" org.eventb.core.type="environSM_STATES"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p10" org.eventb.core.predicate="c_Level∈ℤ">
 <org.eventb.core.prIdent name="c_Level" org.eventb.core.type="ℤ"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p15" org.eventb.core.predicate="fmi_Level∈ℤ">
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="ready∈controllerSM_STATES">
+<org.eventb.core.prIdent name="controllerSM_STATES" org.eventb.core.type="ℙ(controllerSM_STATES)"/>
+<org.eventb.core.prIdent name="ready" org.eventb.core.type="controllerSM_STATES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="fmi_Level∈ℤ">
 <org.eventb.core.prIdent name="fmi_Level" org.eventb.core.type="ℤ"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p14" org.eventb.core.predicate="lpc∈LPC">
-<org.eventb.core.prIdent name="LPC" org.eventb.core.type="ℙ(LPC)"/>
-<org.eventb.core.prIdent name="lpc" org.eventb.core.type="LPC"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="environSM_STATES={stableSim}">
+<org.eventb.core.prIdent name="environSM_STATES" org.eventb.core.type="ℙ(environSM_STATES)"/>
+<org.eventb.core.prIdent name="stableSim" org.eventb.core.type="environSM_STATES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="finished∈controllerSM_STATES">
+<org.eventb.core.prIdent name="controllerSM_STATES" org.eventb.core.type="ℙ(controllerSM_STATES)"/>
+<org.eventb.core.prIdent name="finished" org.eventb.core.type="controllerSM_STATES"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p12" org.eventb.core.predicate="c_pumpOn∈BOOL">
 <org.eventb.core.prIdent name="c_pumpOn" org.eventb.core.type="BOOL"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p13" org.eventb.core.predicate="pc∈PC">
-<org.eventb.core.prIdent name="PC" org.eventb.core.type="ℙ(PC)"/>
-<org.eventb.core.prIdent name="pc" org.eventb.core.type="PC"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="environSM∈environSM_STATES">
+<org.eventb.core.prIdent name="environSM" org.eventb.core.type="environSM_STATES"/>
+<org.eventb.core.prIdent name="environSM_STATES" org.eventb.core.type="ℙ(environSM_STATES)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="controllerSM∈controllerSM_STATES">
+<org.eventb.core.prIdent name="controllerSM" org.eventb.core.type="controllerSM_STATES"/>
+<org.eventb.core.prIdent name="controllerSM_STATES" org.eventb.core.type="ℙ(controllerSM_STATES)"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p11" org.eventb.core.predicate="fmi_PumpOn∈BOOL">
 <org.eventb.core.prIdent name="fmi_PumpOn" org.eventb.core.type="BOOL"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p9" org.eventb.core.predicate="¬ldecide=lwrite">
-<org.eventb.core.prIdent name="ldecide" org.eventb.core.type="LPC"/>
-<org.eventb.core.prIdent name="lwrite" org.eventb.core.type="LPC"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="partition(environSM_STATES,{stableSim})">
+<org.eventb.core.prIdent name="environSM_STATES" org.eventb.core.type="ℙ(environSM_STATES)"/>
+<org.eventb.core.prIdent name="stableSim" org.eventb.core.type="environSM_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p1" org.eventb.core.predicate="PC={read,decide,write}">
-<org.eventb.core.prIdent name="PC" org.eventb.core.type="ℙ(PC)"/>
-<org.eventb.core.prIdent name="decide" org.eventb.core.type="PC"/>
-<org.eventb.core.prIdent name="read" org.eventb.core.type="PC"/>
-<org.eventb.core.prIdent name="write" org.eventb.core.type="PC"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="controllerSM_STATES={ready,finished}">
+<org.eventb.core.prIdent name="controllerSM_STATES" org.eventb.core.type="ℙ(controllerSM_STATES)"/>
+<org.eventb.core.prIdent name="finished" org.eventb.core.type="controllerSM_STATES"/>
+<org.eventb.core.prIdent name="ready" org.eventb.core.type="controllerSM_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p8" org.eventb.core.predicate="¬lread=lwrite">
-<org.eventb.core.prIdent name="lread" org.eventb.core.type="LPC"/>
-<org.eventb.core.prIdent name="lwrite" org.eventb.core.type="LPC"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="partition(controllerSM_STATES,{ready},{finished})">
+<org.eventb.core.prIdent name="controllerSM_STATES" org.eventb.core.type="ℙ(controllerSM_STATES)"/>
+<org.eventb.core.prIdent name="finished" org.eventb.core.type="controllerSM_STATES"/>
+<org.eventb.core.prIdent name="ready" org.eventb.core.type="controllerSM_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p4" org.eventb.core.predicate="¬decide=write">
-<org.eventb.core.prIdent name="decide" org.eventb.core.type="PC"/>
-<org.eventb.core.prIdent name="write" org.eventb.core.type="PC"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p6" org.eventb.core.predicate="LPC={lread,ldecide,lwrite}">
-<org.eventb.core.prIdent name="LPC" org.eventb.core.type="ℙ(LPC)"/>
-<org.eventb.core.prIdent name="ldecide" org.eventb.core.type="LPC"/>
-<org.eventb.core.prIdent name="lread" org.eventb.core.type="LPC"/>
-<org.eventb.core.prIdent name="lwrite" org.eventb.core.type="LPC"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬read=write">
-<org.eventb.core.prIdent name="read" org.eventb.core.type="PC"/>
-<org.eventb.core.prIdent name="write" org.eventb.core.type="PC"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p5" org.eventb.core.predicate="partition(LPC,{lread},{ldecide},{lwrite})">
-<org.eventb.core.prIdent name="LPC" org.eventb.core.type="ℙ(LPC)"/>
-<org.eventb.core.prIdent name="ldecide" org.eventb.core.type="LPC"/>
-<org.eventb.core.prIdent name="lread" org.eventb.core.type="LPC"/>
-<org.eventb.core.prIdent name="lwrite" org.eventb.core.type="LPC"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p7" org.eventb.core.predicate="¬lread=ldecide">
-<org.eventb.core.prIdent name="ldecide" org.eventb.core.type="LPC"/>
-<org.eventb.core.prIdent name="lread" org.eventb.core.type="LPC"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="decideOff/inv4/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="">
-<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(PC,{read},{decide},{write}))" org.eventb.core.prHyps="">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(environSM_STATES,{stableSim}))" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p0" org.eventb.core.prInfHyps="p1,p2,p3,p4"/>
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p0" org.eventb.core.prInfHyps="p1"/>
 <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p0"/>
-<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p1,p2,p3,p4"/>
-<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(LPC,{lread},{ldecide},{lwrite}))" org.eventb.core.prHyps="">
+<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p1"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(controllerSM_STATES,{ready},{finished}))" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p5" org.eventb.core.prInfHyps="p6,p7,p8,p9"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p5"/>
-<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p6,p7,p8,p9"/>
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p2" org.eventb.core.prInfHyps="p3,p4"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p2"/>
+<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p3,p4"/>
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p10"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p11"/>
-<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p12"/>
-<org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p13"/>
-<org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p14"/>
-<org.eventb.core.prHypAction name="HIDE5" org.eventb.core.prHyps="p15"/>
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p5"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p6"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p7"/>
+<org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p8"/>
+<org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p9"/>
+<org.eventb.core.prHypAction name="HIDE5" org.eventb.core.prHyps="p10"/>
+<org.eventb.core.prHypAction name="HIDE6" org.eventb.core.prHyps="p11"/>
+<org.eventb.core.prHypAction name="HIDE7" org.eventb.core.prHyps="p12"/>
+<org.eventb.core.prHypAction name="HIDE8" org.eventb.core.prHyps="p13"/>
 </org.eventb.core.prAnte>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
@@ -808,96 +789,85 @@
 </org.eventb.core.prAnte>
 <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
 </org.eventb.core.prRule>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="partition(PC,{read},{decide},{write})">
-<org.eventb.core.prIdent name="PC" org.eventb.core.type="ℙ(PC)"/>
-<org.eventb.core.prIdent name="decide" org.eventb.core.type="PC"/>
-<org.eventb.core.prIdent name="read" org.eventb.core.type="PC"/>
-<org.eventb.core.prIdent name="write" org.eventb.core.type="PC"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="¬ready=finished">
+<org.eventb.core.prIdent name="finished" org.eventb.core.type="controllerSM_STATES"/>
+<org.eventb.core.prIdent name="ready" org.eventb.core.type="controllerSM_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="¬read=decide">
-<org.eventb.core.prIdent name="decide" org.eventb.core.type="PC"/>
-<org.eventb.core.prIdent name="read" org.eventb.core.type="PC"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="stableSim∈environSM_STATES">
+<org.eventb.core.prIdent name="environSM_STATES" org.eventb.core.type="ℙ(environSM_STATES)"/>
+<org.eventb.core.prIdent name="stableSim" org.eventb.core.type="environSM_STATES"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p10" org.eventb.core.predicate="c_Level∈ℤ">
 <org.eventb.core.prIdent name="c_Level" org.eventb.core.type="ℤ"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p15" org.eventb.core.predicate="fmi_Level∈ℤ">
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="ready∈controllerSM_STATES">
+<org.eventb.core.prIdent name="controllerSM_STATES" org.eventb.core.type="ℙ(controllerSM_STATES)"/>
+<org.eventb.core.prIdent name="ready" org.eventb.core.type="controllerSM_STATES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="fmi_Level∈ℤ">
 <org.eventb.core.prIdent name="fmi_Level" org.eventb.core.type="ℤ"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p14" org.eventb.core.predicate="lpc∈LPC">
-<org.eventb.core.prIdent name="LPC" org.eventb.core.type="ℙ(LPC)"/>
-<org.eventb.core.prIdent name="lpc" org.eventb.core.type="LPC"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="environSM_STATES={stableSim}">
+<org.eventb.core.prIdent name="environSM_STATES" org.eventb.core.type="ℙ(environSM_STATES)"/>
+<org.eventb.core.prIdent name="stableSim" org.eventb.core.type="environSM_STATES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="finished∈controllerSM_STATES">
+<org.eventb.core.prIdent name="controllerSM_STATES" org.eventb.core.type="ℙ(controllerSM_STATES)"/>
+<org.eventb.core.prIdent name="finished" org.eventb.core.type="controllerSM_STATES"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p12" org.eventb.core.predicate="c_pumpOn∈BOOL">
 <org.eventb.core.prIdent name="c_pumpOn" org.eventb.core.type="BOOL"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p13" org.eventb.core.predicate="pc∈PC">
-<org.eventb.core.prIdent name="PC" org.eventb.core.type="ℙ(PC)"/>
-<org.eventb.core.prIdent name="pc" org.eventb.core.type="PC"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="environSM∈environSM_STATES">
+<org.eventb.core.prIdent name="environSM" org.eventb.core.type="environSM_STATES"/>
+<org.eventb.core.prIdent name="environSM_STATES" org.eventb.core.type="ℙ(environSM_STATES)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="controllerSM∈controllerSM_STATES">
+<org.eventb.core.prIdent name="controllerSM" org.eventb.core.type="controllerSM_STATES"/>
+<org.eventb.core.prIdent name="controllerSM_STATES" org.eventb.core.type="ℙ(controllerSM_STATES)"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p11" org.eventb.core.predicate="fmi_PumpOn∈BOOL">
 <org.eventb.core.prIdent name="fmi_PumpOn" org.eventb.core.type="BOOL"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p9" org.eventb.core.predicate="¬ldecide=lwrite">
-<org.eventb.core.prIdent name="ldecide" org.eventb.core.type="LPC"/>
-<org.eventb.core.prIdent name="lwrite" org.eventb.core.type="LPC"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="partition(environSM_STATES,{stableSim})">
+<org.eventb.core.prIdent name="environSM_STATES" org.eventb.core.type="ℙ(environSM_STATES)"/>
+<org.eventb.core.prIdent name="stableSim" org.eventb.core.type="environSM_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p1" org.eventb.core.predicate="PC={read,decide,write}">
-<org.eventb.core.prIdent name="PC" org.eventb.core.type="ℙ(PC)"/>
-<org.eventb.core.prIdent name="decide" org.eventb.core.type="PC"/>
-<org.eventb.core.prIdent name="read" org.eventb.core.type="PC"/>
-<org.eventb.core.prIdent name="write" org.eventb.core.type="PC"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="controllerSM_STATES={ready,finished}">
+<org.eventb.core.prIdent name="controllerSM_STATES" org.eventb.core.type="ℙ(controllerSM_STATES)"/>
+<org.eventb.core.prIdent name="finished" org.eventb.core.type="controllerSM_STATES"/>
+<org.eventb.core.prIdent name="ready" org.eventb.core.type="controllerSM_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p8" org.eventb.core.predicate="¬lread=lwrite">
-<org.eventb.core.prIdent name="lread" org.eventb.core.type="LPC"/>
-<org.eventb.core.prIdent name="lwrite" org.eventb.core.type="LPC"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="partition(controllerSM_STATES,{ready},{finished})">
+<org.eventb.core.prIdent name="controllerSM_STATES" org.eventb.core.type="ℙ(controllerSM_STATES)"/>
+<org.eventb.core.prIdent name="finished" org.eventb.core.type="controllerSM_STATES"/>
+<org.eventb.core.prIdent name="ready" org.eventb.core.type="controllerSM_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p4" org.eventb.core.predicate="¬decide=write">
-<org.eventb.core.prIdent name="decide" org.eventb.core.type="PC"/>
-<org.eventb.core.prIdent name="write" org.eventb.core.type="PC"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p6" org.eventb.core.predicate="LPC={lread,ldecide,lwrite}">
-<org.eventb.core.prIdent name="LPC" org.eventb.core.type="ℙ(LPC)"/>
-<org.eventb.core.prIdent name="ldecide" org.eventb.core.type="LPC"/>
-<org.eventb.core.prIdent name="lread" org.eventb.core.type="LPC"/>
-<org.eventb.core.prIdent name="lwrite" org.eventb.core.type="LPC"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬read=write">
-<org.eventb.core.prIdent name="read" org.eventb.core.type="PC"/>
-<org.eventb.core.prIdent name="write" org.eventb.core.type="PC"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p5" org.eventb.core.predicate="partition(LPC,{lread},{ldecide},{lwrite})">
-<org.eventb.core.prIdent name="LPC" org.eventb.core.type="ℙ(LPC)"/>
-<org.eventb.core.prIdent name="ldecide" org.eventb.core.type="LPC"/>
-<org.eventb.core.prIdent name="lread" org.eventb.core.type="LPC"/>
-<org.eventb.core.prIdent name="lwrite" org.eventb.core.type="LPC"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p7" org.eventb.core.predicate="¬lread=ldecide">
-<org.eventb.core.prIdent name="ldecide" org.eventb.core.type="LPC"/>
-<org.eventb.core.prIdent name="lread" org.eventb.core.type="LPC"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="decideOn/inv4/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="">
-<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(PC,{read},{decide},{write}))" org.eventb.core.prHyps="">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(environSM_STATES,{stableSim}))" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p0" org.eventb.core.prInfHyps="p1,p2,p3,p4"/>
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p0" org.eventb.core.prInfHyps="p1"/>
 <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p0"/>
-<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p1,p2,p3,p4"/>
-<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(LPC,{lread},{ldecide},{lwrite}))" org.eventb.core.prHyps="">
+<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p1"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(controllerSM_STATES,{ready},{finished}))" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p5" org.eventb.core.prInfHyps="p6,p7,p8,p9"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p5"/>
-<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p6,p7,p8,p9"/>
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p2" org.eventb.core.prInfHyps="p3,p4"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p2"/>
+<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p3,p4"/>
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p10"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p11"/>
-<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p12"/>
-<org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p13"/>
-<org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p14"/>
-<org.eventb.core.prHypAction name="HIDE5" org.eventb.core.prHyps="p15"/>
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p5"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p6"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p7"/>
+<org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p8"/>
+<org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p9"/>
+<org.eventb.core.prHypAction name="HIDE5" org.eventb.core.prHyps="p10"/>
+<org.eventb.core.prHypAction name="HIDE6" org.eventb.core.prHyps="p11"/>
+<org.eventb.core.prHypAction name="HIDE7" org.eventb.core.prHyps="p12"/>
+<org.eventb.core.prHypAction name="HIDE8" org.eventb.core.prHyps="p13"/>
 </org.eventb.core.prAnte>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
@@ -906,96 +876,85 @@
 </org.eventb.core.prAnte>
 <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
 </org.eventb.core.prRule>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="partition(PC,{read},{decide},{write})">
-<org.eventb.core.prIdent name="PC" org.eventb.core.type="ℙ(PC)"/>
-<org.eventb.core.prIdent name="decide" org.eventb.core.type="PC"/>
-<org.eventb.core.prIdent name="read" org.eventb.core.type="PC"/>
-<org.eventb.core.prIdent name="write" org.eventb.core.type="PC"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="¬ready=finished">
+<org.eventb.core.prIdent name="finished" org.eventb.core.type="controllerSM_STATES"/>
+<org.eventb.core.prIdent name="ready" org.eventb.core.type="controllerSM_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="¬read=decide">
-<org.eventb.core.prIdent name="decide" org.eventb.core.type="PC"/>
-<org.eventb.core.prIdent name="read" org.eventb.core.type="PC"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="stableSim∈environSM_STATES">
+<org.eventb.core.prIdent name="environSM_STATES" org.eventb.core.type="ℙ(environSM_STATES)"/>
+<org.eventb.core.prIdent name="stableSim" org.eventb.core.type="environSM_STATES"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p10" org.eventb.core.predicate="c_Level∈ℤ">
 <org.eventb.core.prIdent name="c_Level" org.eventb.core.type="ℤ"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p15" org.eventb.core.predicate="fmi_Level∈ℤ">
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="ready∈controllerSM_STATES">
+<org.eventb.core.prIdent name="controllerSM_STATES" org.eventb.core.type="ℙ(controllerSM_STATES)"/>
+<org.eventb.core.prIdent name="ready" org.eventb.core.type="controllerSM_STATES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="fmi_Level∈ℤ">
 <org.eventb.core.prIdent name="fmi_Level" org.eventb.core.type="ℤ"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p14" org.eventb.core.predicate="lpc∈LPC">
-<org.eventb.core.prIdent name="LPC" org.eventb.core.type="ℙ(LPC)"/>
-<org.eventb.core.prIdent name="lpc" org.eventb.core.type="LPC"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="environSM_STATES={stableSim}">
+<org.eventb.core.prIdent name="environSM_STATES" org.eventb.core.type="ℙ(environSM_STATES)"/>
+<org.eventb.core.prIdent name="stableSim" org.eventb.core.type="environSM_STATES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="finished∈controllerSM_STATES">
+<org.eventb.core.prIdent name="controllerSM_STATES" org.eventb.core.type="ℙ(controllerSM_STATES)"/>
+<org.eventb.core.prIdent name="finished" org.eventb.core.type="controllerSM_STATES"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p12" org.eventb.core.predicate="c_pumpOn∈BOOL">
 <org.eventb.core.prIdent name="c_pumpOn" org.eventb.core.type="BOOL"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p13" org.eventb.core.predicate="pc∈PC">
-<org.eventb.core.prIdent name="PC" org.eventb.core.type="ℙ(PC)"/>
-<org.eventb.core.prIdent name="pc" org.eventb.core.type="PC"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="environSM∈environSM_STATES">
+<org.eventb.core.prIdent name="environSM" org.eventb.core.type="environSM_STATES"/>
+<org.eventb.core.prIdent name="environSM_STATES" org.eventb.core.type="ℙ(environSM_STATES)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="controllerSM∈controllerSM_STATES">
+<org.eventb.core.prIdent name="controllerSM" org.eventb.core.type="controllerSM_STATES"/>
+<org.eventb.core.prIdent name="controllerSM_STATES" org.eventb.core.type="ℙ(controllerSM_STATES)"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p11" org.eventb.core.predicate="fmi_PumpOn∈BOOL">
 <org.eventb.core.prIdent name="fmi_PumpOn" org.eventb.core.type="BOOL"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p9" org.eventb.core.predicate="¬ldecide=lwrite">
-<org.eventb.core.prIdent name="ldecide" org.eventb.core.type="LPC"/>
-<org.eventb.core.prIdent name="lwrite" org.eventb.core.type="LPC"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="partition(environSM_STATES,{stableSim})">
+<org.eventb.core.prIdent name="environSM_STATES" org.eventb.core.type="ℙ(environSM_STATES)"/>
+<org.eventb.core.prIdent name="stableSim" org.eventb.core.type="environSM_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p1" org.eventb.core.predicate="PC={read,decide,write}">
-<org.eventb.core.prIdent name="PC" org.eventb.core.type="ℙ(PC)"/>
-<org.eventb.core.prIdent name="decide" org.eventb.core.type="PC"/>
-<org.eventb.core.prIdent name="read" org.eventb.core.type="PC"/>
-<org.eventb.core.prIdent name="write" org.eventb.core.type="PC"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="controllerSM_STATES={ready,finished}">
+<org.eventb.core.prIdent name="controllerSM_STATES" org.eventb.core.type="ℙ(controllerSM_STATES)"/>
+<org.eventb.core.prIdent name="finished" org.eventb.core.type="controllerSM_STATES"/>
+<org.eventb.core.prIdent name="ready" org.eventb.core.type="controllerSM_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p8" org.eventb.core.predicate="¬lread=lwrite">
-<org.eventb.core.prIdent name="lread" org.eventb.core.type="LPC"/>
-<org.eventb.core.prIdent name="lwrite" org.eventb.core.type="LPC"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="partition(controllerSM_STATES,{ready},{finished})">
+<org.eventb.core.prIdent name="controllerSM_STATES" org.eventb.core.type="ℙ(controllerSM_STATES)"/>
+<org.eventb.core.prIdent name="finished" org.eventb.core.type="controllerSM_STATES"/>
+<org.eventb.core.prIdent name="ready" org.eventb.core.type="controllerSM_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p4" org.eventb.core.predicate="¬decide=write">
-<org.eventb.core.prIdent name="decide" org.eventb.core.type="PC"/>
-<org.eventb.core.prIdent name="write" org.eventb.core.type="PC"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p6" org.eventb.core.predicate="LPC={lread,ldecide,lwrite}">
-<org.eventb.core.prIdent name="LPC" org.eventb.core.type="ℙ(LPC)"/>
-<org.eventb.core.prIdent name="ldecide" org.eventb.core.type="LPC"/>
-<org.eventb.core.prIdent name="lread" org.eventb.core.type="LPC"/>
-<org.eventb.core.prIdent name="lwrite" org.eventb.core.type="LPC"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬read=write">
-<org.eventb.core.prIdent name="read" org.eventb.core.type="PC"/>
-<org.eventb.core.prIdent name="write" org.eventb.core.type="PC"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p5" org.eventb.core.predicate="partition(LPC,{lread},{ldecide},{lwrite})">
-<org.eventb.core.prIdent name="LPC" org.eventb.core.type="ℙ(LPC)"/>
-<org.eventb.core.prIdent name="ldecide" org.eventb.core.type="LPC"/>
-<org.eventb.core.prIdent name="lread" org.eventb.core.type="LPC"/>
-<org.eventb.core.prIdent name="lwrite" org.eventb.core.type="LPC"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p7" org.eventb.core.predicate="¬lread=ldecide">
-<org.eventb.core.prIdent name="ldecide" org.eventb.core.type="LPC"/>
-<org.eventb.core.prIdent name="lread" org.eventb.core.type="LPC"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="decideKeep/inv4/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="">
-<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(PC,{read},{decide},{write}))" org.eventb.core.prHyps="">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(environSM_STATES,{stableSim}))" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p0" org.eventb.core.prInfHyps="p1,p2,p3,p4"/>
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p0" org.eventb.core.prInfHyps="p1"/>
 <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p0"/>
-<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p1,p2,p3,p4"/>
-<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(LPC,{lread},{ldecide},{lwrite}))" org.eventb.core.prHyps="">
+<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p1"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(controllerSM_STATES,{ready},{finished}))" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p5" org.eventb.core.prInfHyps="p6,p7,p8,p9"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p5"/>
-<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p6,p7,p8,p9"/>
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p2" org.eventb.core.prInfHyps="p3,p4"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p2"/>
+<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p3,p4"/>
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p10"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p11"/>
-<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p12"/>
-<org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p13"/>
-<org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p14"/>
-<org.eventb.core.prHypAction name="HIDE5" org.eventb.core.prHyps="p15"/>
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p5"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p6"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p7"/>
+<org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p8"/>
+<org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p9"/>
+<org.eventb.core.prHypAction name="HIDE5" org.eventb.core.prHyps="p10"/>
+<org.eventb.core.prHypAction name="HIDE6" org.eventb.core.prHyps="p11"/>
+<org.eventb.core.prHypAction name="HIDE7" org.eventb.core.prHyps="p12"/>
+<org.eventb.core.prHypAction name="HIDE8" org.eventb.core.prHyps="p13"/>
 </org.eventb.core.prAnte>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
@@ -1004,76 +963,62 @@
 </org.eventb.core.prAnte>
 <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
 </org.eventb.core.prRule>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="partition(PC,{read},{decide},{write})">
-<org.eventb.core.prIdent name="PC" org.eventb.core.type="ℙ(PC)"/>
-<org.eventb.core.prIdent name="decide" org.eventb.core.type="PC"/>
-<org.eventb.core.prIdent name="read" org.eventb.core.type="PC"/>
-<org.eventb.core.prIdent name="write" org.eventb.core.type="PC"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="¬ready=finished">
+<org.eventb.core.prIdent name="finished" org.eventb.core.type="controllerSM_STATES"/>
+<org.eventb.core.prIdent name="ready" org.eventb.core.type="controllerSM_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="¬read=decide">
-<org.eventb.core.prIdent name="decide" org.eventb.core.type="PC"/>
-<org.eventb.core.prIdent name="read" org.eventb.core.type="PC"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="stableSim∈environSM_STATES">
+<org.eventb.core.prIdent name="environSM_STATES" org.eventb.core.type="ℙ(environSM_STATES)"/>
+<org.eventb.core.prIdent name="stableSim" org.eventb.core.type="environSM_STATES"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p10" org.eventb.core.predicate="c_Level∈ℤ">
 <org.eventb.core.prIdent name="c_Level" org.eventb.core.type="ℤ"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p15" org.eventb.core.predicate="fmi_Level∈ℤ">
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="ready∈controllerSM_STATES">
+<org.eventb.core.prIdent name="controllerSM_STATES" org.eventb.core.type="ℙ(controllerSM_STATES)"/>
+<org.eventb.core.prIdent name="ready" org.eventb.core.type="controllerSM_STATES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="fmi_Level∈ℤ">
 <org.eventb.core.prIdent name="fmi_Level" org.eventb.core.type="ℤ"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p14" org.eventb.core.predicate="lpc∈LPC">
-<org.eventb.core.prIdent name="LPC" org.eventb.core.type="ℙ(LPC)"/>
-<org.eventb.core.prIdent name="lpc" org.eventb.core.type="LPC"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="environSM_STATES={stableSim}">
+<org.eventb.core.prIdent name="environSM_STATES" org.eventb.core.type="ℙ(environSM_STATES)"/>
+<org.eventb.core.prIdent name="stableSim" org.eventb.core.type="environSM_STATES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="finished∈controllerSM_STATES">
+<org.eventb.core.prIdent name="controllerSM_STATES" org.eventb.core.type="ℙ(controllerSM_STATES)"/>
+<org.eventb.core.prIdent name="finished" org.eventb.core.type="controllerSM_STATES"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p12" org.eventb.core.predicate="c_pumpOn∈BOOL">
 <org.eventb.core.prIdent name="c_pumpOn" org.eventb.core.type="BOOL"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p13" org.eventb.core.predicate="pc∈PC">
-<org.eventb.core.prIdent name="PC" org.eventb.core.type="ℙ(PC)"/>
-<org.eventb.core.prIdent name="pc" org.eventb.core.type="PC"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="environSM∈environSM_STATES">
+<org.eventb.core.prIdent name="environSM" org.eventb.core.type="environSM_STATES"/>
+<org.eventb.core.prIdent name="environSM_STATES" org.eventb.core.type="ℙ(environSM_STATES)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="controllerSM∈controllerSM_STATES">
+<org.eventb.core.prIdent name="controllerSM" org.eventb.core.type="controllerSM_STATES"/>
+<org.eventb.core.prIdent name="controllerSM_STATES" org.eventb.core.type="ℙ(controllerSM_STATES)"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p11" org.eventb.core.predicate="fmi_PumpOn∈BOOL">
 <org.eventb.core.prIdent name="fmi_PumpOn" org.eventb.core.type="BOOL"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p9" org.eventb.core.predicate="¬ldecide=lwrite">
-<org.eventb.core.prIdent name="ldecide" org.eventb.core.type="LPC"/>
-<org.eventb.core.prIdent name="lwrite" org.eventb.core.type="LPC"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="partition(environSM_STATES,{stableSim})">
+<org.eventb.core.prIdent name="environSM_STATES" org.eventb.core.type="ℙ(environSM_STATES)"/>
+<org.eventb.core.prIdent name="stableSim" org.eventb.core.type="environSM_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p1" org.eventb.core.predicate="PC={read,decide,write}">
-<org.eventb.core.prIdent name="PC" org.eventb.core.type="ℙ(PC)"/>
-<org.eventb.core.prIdent name="decide" org.eventb.core.type="PC"/>
-<org.eventb.core.prIdent name="read" org.eventb.core.type="PC"/>
-<org.eventb.core.prIdent name="write" org.eventb.core.type="PC"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="controllerSM_STATES={ready,finished}">
+<org.eventb.core.prIdent name="controllerSM_STATES" org.eventb.core.type="ℙ(controllerSM_STATES)"/>
+<org.eventb.core.prIdent name="finished" org.eventb.core.type="controllerSM_STATES"/>
+<org.eventb.core.prIdent name="ready" org.eventb.core.type="controllerSM_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p8" org.eventb.core.predicate="¬lread=lwrite">
-<org.eventb.core.prIdent name="lread" org.eventb.core.type="LPC"/>
-<org.eventb.core.prIdent name="lwrite" org.eventb.core.type="LPC"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="partition(controllerSM_STATES,{ready},{finished})">
+<org.eventb.core.prIdent name="controllerSM_STATES" org.eventb.core.type="ℙ(controllerSM_STATES)"/>
+<org.eventb.core.prIdent name="finished" org.eventb.core.type="controllerSM_STATES"/>
+<org.eventb.core.prIdent name="ready" org.eventb.core.type="controllerSM_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p4" org.eventb.core.predicate="¬decide=write">
-<org.eventb.core.prIdent name="decide" org.eventb.core.type="PC"/>
-<org.eventb.core.prIdent name="write" org.eventb.core.type="PC"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p6" org.eventb.core.predicate="LPC={lread,ldecide,lwrite}">
-<org.eventb.core.prIdent name="LPC" org.eventb.core.type="ℙ(LPC)"/>
-<org.eventb.core.prIdent name="ldecide" org.eventb.core.type="LPC"/>
-<org.eventb.core.prIdent name="lread" org.eventb.core.type="LPC"/>
-<org.eventb.core.prIdent name="lwrite" org.eventb.core.type="LPC"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬read=write">
-<org.eventb.core.prIdent name="read" org.eventb.core.type="PC"/>
-<org.eventb.core.prIdent name="write" org.eventb.core.type="PC"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p5" org.eventb.core.predicate="partition(LPC,{lread},{ldecide},{lwrite})">
-<org.eventb.core.prIdent name="LPC" org.eventb.core.type="ℙ(LPC)"/>
-<org.eventb.core.prIdent name="ldecide" org.eventb.core.type="LPC"/>
-<org.eventb.core.prIdent name="lread" org.eventb.core.type="LPC"/>
-<org.eventb.core.prIdent name="lwrite" org.eventb.core.type="LPC"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p7" org.eventb.core.predicate="¬lread=ldecide">
-<org.eventb.core.prIdent name="ldecide" org.eventb.core.type="LPC"/>
-<org.eventb.core.prIdent name="lread" org.eventb.core.type="LPC"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="INITIALISATION/inv8/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p0">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p0"/>
