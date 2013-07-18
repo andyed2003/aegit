@@ -1,4 +1,4 @@
-package newProject;
+package simpleProject;
 // Protected: storeImpl
 
 public class storeImpl

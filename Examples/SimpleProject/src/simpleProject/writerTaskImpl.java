@@ -1,4 +1,4 @@
-package newProject;
+package simpleProject;
 // Task: writerTaskImpl
 
 public class writerTaskImpl implements Runnable

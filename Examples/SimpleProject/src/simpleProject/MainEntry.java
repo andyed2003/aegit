@@ -1,5 +1,5 @@
 // MainEntry: MainEntry
-package newProject;
+package simpleProject;
 import java.util.HashMap;
 public class MainEntry
 {
