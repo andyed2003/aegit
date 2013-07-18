@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd;org.eventb.codegen.ui.cgConfig" version="5">
+<org.eventb.core.refinesMachine name="'" org.eventb.core.target="ctrl0"/>
+<org.eventb.core.seesContext name="4" org.eventb.core.target="ctx0"/>
+<org.eventb.core.variable name="(" org.eventb.core.identifier="c_Level"/>
+<org.eventb.core.variable name="0" org.eventb.core.identifier="c_pumpOn"/>
+<org.eventb.core.event name="6" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="internal1" org.eventb.core.assignment="c_Level :∈ ℕ" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="fmi_PumpOn :∈ BOOL" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="time ≔ 0" org.eventb.core.label="act4"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="c_pumpOn ≔ FALSE" org.eventb.core.label="act5"/>
+<org.eventb.core.action name="," org.eventb.core.assignment="pc ≔ read" org.eventb.core.label="act6"/>
+<org.eventb.core.action name="-" org.eventb.core.assignment="lpc ≔ lread" org.eventb.core.label="act7"/>
+<org.eventb.core.action name="." org.eventb.core.assignment="fmi_Level :∈ ℤ" org.eventb.core.label="act8"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="7" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="fmiReadInputs">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="fmiReadInputs"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd2" org.eventb.core.predicate="pc = read"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="c_Level ≔ fmi_Level" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="pc ≔ decide" org.eventb.core.label="act2"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="8" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="fmiWriteOutputs">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="fmiWriteOutputs"/>
+<org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="pc = write"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="fmi_PumpOn ≔ c_pumpOn" org.eventb.core.label="act1"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="pc ≔ read" org.eventb.core.label="act2"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="9" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="readLevel">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="readLevel"/>
+</org.eventb.core.event>
+<org.eventb.core.event name=":" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="writePump">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="writePump"/>
+</org.eventb.core.event>
+<org.eventb.core.event name=";" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="decideOff">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="decideOff"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="=" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="decideOn">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="decideOn"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="&gt;" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="decideKeep">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="decideKeep"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="?" org.eventb.core.identifier="fmi_Level"/>
+<org.eventb.core.invariant name="@" org.eventb.codegen.ui.typingAttribute="--unset--" org.eventb.core.label="inv1" org.eventb.core.predicate="fmi_Level ∈ ℤ"/>
+<org.eventb.core.variable name="*" org.eventb.core.identifier="fmi_PumpOn"/>
+<org.eventb.core.variable name="." org.eventb.core.identifier="time"/>
+<org.eventb.core.variable name="2" org.eventb.core.identifier="pc"/>
+<org.eventb.core.variable name="5" org.eventb.core.identifier="lpc"/>
+</org.eventb.core.machineFile>
