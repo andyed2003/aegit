@@ -590,12 +590,12 @@
 <org.eventb.core.prAnte name="'">
 <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p0" org.eventb.core.prInfHyps="p1"/>
 <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p0"/>
-<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p1"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p1"/>
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(controllerSM_STATES,{ready},{finished}))" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
 <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p2" org.eventb.core.prInfHyps="p3,p4"/>
 <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p2"/>
-<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p3,p4"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p3,p4"/>
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
 <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p5"/>
@@ -615,7 +615,7 @@
 </org.eventb.core.prAnte>
 <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
 </org.eventb.core.prRule>
-<org.eventb.core.prPred name="p4" org.eventb.core.predicate="¬ready=finished">
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬ready=finished">
 <org.eventb.core.prIdent name="finished" org.eventb.core.type="controllerSM_STATES"/>
 <org.eventb.core.prIdent name="ready" org.eventb.core.type="controllerSM_STATES"/>
 </org.eventb.core.prPred>
@@ -659,7 +659,7 @@
 <org.eventb.core.prIdent name="environSM_STATES" org.eventb.core.type="ℙ(environSM_STATES)"/>
 <org.eventb.core.prIdent name="stableSim" org.eventb.core.type="environSM_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="controllerSM_STATES={ready,finished}">
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="controllerSM_STATES={ready,finished}">
 <org.eventb.core.prIdent name="controllerSM_STATES" org.eventb.core.type="ℙ(controllerSM_STATES)"/>
 <org.eventb.core.prIdent name="finished" org.eventb.core.type="controllerSM_STATES"/>
 <org.eventb.core.prIdent name="ready" org.eventb.core.type="controllerSM_STATES"/>
@@ -677,12 +677,12 @@
 <org.eventb.core.prAnte name="'">
 <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p0" org.eventb.core.prInfHyps="p1"/>
 <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p0"/>
-<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p1"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p1"/>
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(controllerSM_STATES,{ready},{finished}))" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
 <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p2" org.eventb.core.prInfHyps="p3,p4"/>
 <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p2"/>
-<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p3,p4"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p3,p4"/>
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
 <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p5"/>
@@ -702,7 +702,7 @@
 </org.eventb.core.prAnte>
 <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
 </org.eventb.core.prRule>
-<org.eventb.core.prPred name="p4" org.eventb.core.predicate="¬ready=finished">
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬ready=finished">
 <org.eventb.core.prIdent name="finished" org.eventb.core.type="controllerSM_STATES"/>
 <org.eventb.core.prIdent name="ready" org.eventb.core.type="controllerSM_STATES"/>
 </org.eventb.core.prPred>
@@ -746,7 +746,7 @@
 <org.eventb.core.prIdent name="environSM_STATES" org.eventb.core.type="ℙ(environSM_STATES)"/>
 <org.eventb.core.prIdent name="stableSim" org.eventb.core.type="environSM_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="controllerSM_STATES={ready,finished}">
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="controllerSM_STATES={ready,finished}">
 <org.eventb.core.prIdent name="controllerSM_STATES" org.eventb.core.type="ℙ(controllerSM_STATES)"/>
 <org.eventb.core.prIdent name="finished" org.eventb.core.type="controllerSM_STATES"/>
 <org.eventb.core.prIdent name="ready" org.eventb.core.type="controllerSM_STATES"/>
@@ -764,12 +764,12 @@
 <org.eventb.core.prAnte name="'">
 <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p0" org.eventb.core.prInfHyps="p1"/>
 <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p0"/>
-<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p1"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p1"/>
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(controllerSM_STATES,{ready},{finished}))" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
 <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p2" org.eventb.core.prInfHyps="p3,p4"/>
 <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p2"/>
-<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p3,p4"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p3,p4"/>
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
 <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p5"/>
@@ -789,7 +789,7 @@
 </org.eventb.core.prAnte>
 <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
 </org.eventb.core.prRule>
-<org.eventb.core.prPred name="p4" org.eventb.core.predicate="¬ready=finished">
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬ready=finished">
 <org.eventb.core.prIdent name="finished" org.eventb.core.type="controllerSM_STATES"/>
 <org.eventb.core.prIdent name="ready" org.eventb.core.type="controllerSM_STATES"/>
 </org.eventb.core.prPred>
@@ -833,7 +833,7 @@
 <org.eventb.core.prIdent name="environSM_STATES" org.eventb.core.type="ℙ(environSM_STATES)"/>
 <org.eventb.core.prIdent name="stableSim" org.eventb.core.type="environSM_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="controllerSM_STATES={ready,finished}">
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="controllerSM_STATES={ready,finished}">
 <org.eventb.core.prIdent name="controllerSM_STATES" org.eventb.core.type="ℙ(controllerSM_STATES)"/>
 <org.eventb.core.prIdent name="finished" org.eventb.core.type="controllerSM_STATES"/>
 <org.eventb.core.prIdent name="ready" org.eventb.core.type="controllerSM_STATES"/>
@@ -851,12 +851,12 @@
 <org.eventb.core.prAnte name="'">
 <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p0" org.eventb.core.prInfHyps="p1"/>
 <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p0"/>
-<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p1"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p1"/>
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(controllerSM_STATES,{ready},{finished}))" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
 <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p2" org.eventb.core.prInfHyps="p3,p4"/>
 <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p2"/>
-<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p3,p4"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p3,p4"/>
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
 <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p5"/>
@@ -876,7 +876,7 @@
 </org.eventb.core.prAnte>
 <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
 </org.eventb.core.prRule>
-<org.eventb.core.prPred name="p4" org.eventb.core.predicate="¬ready=finished">
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬ready=finished">
 <org.eventb.core.prIdent name="finished" org.eventb.core.type="controllerSM_STATES"/>
 <org.eventb.core.prIdent name="ready" org.eventb.core.type="controllerSM_STATES"/>
 </org.eventb.core.prPred>
@@ -920,7 +920,7 @@
 <org.eventb.core.prIdent name="environSM_STATES" org.eventb.core.type="ℙ(environSM_STATES)"/>
 <org.eventb.core.prIdent name="stableSim" org.eventb.core.type="environSM_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="controllerSM_STATES={ready,finished}">
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="controllerSM_STATES={ready,finished}">
 <org.eventb.core.prIdent name="controllerSM_STATES" org.eventb.core.type="ℙ(controllerSM_STATES)"/>
 <org.eventb.core.prIdent name="finished" org.eventb.core.type="controllerSM_STATES"/>
 <org.eventb.core.prIdent name="ready" org.eventb.core.type="controllerSM_STATES"/>
@@ -938,12 +938,12 @@
 <org.eventb.core.prAnte name="'">
 <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p0" org.eventb.core.prInfHyps="p1"/>
 <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p0"/>
-<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p1"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p1"/>
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(controllerSM_STATES,{ready},{finished}))" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
 <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p2" org.eventb.core.prInfHyps="p3,p4"/>
 <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p2"/>
-<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p3,p4"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p3,p4"/>
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
 <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p5"/>
@@ -963,7 +963,7 @@
 </org.eventb.core.prAnte>
 <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
 </org.eventb.core.prRule>
-<org.eventb.core.prPred name="p4" org.eventb.core.predicate="¬ready=finished">
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬ready=finished">
 <org.eventb.core.prIdent name="finished" org.eventb.core.type="controllerSM_STATES"/>
 <org.eventb.core.prIdent name="ready" org.eventb.core.type="controllerSM_STATES"/>
 </org.eventb.core.prPred>
@@ -1007,7 +1007,7 @@
 <org.eventb.core.prIdent name="environSM_STATES" org.eventb.core.type="ℙ(environSM_STATES)"/>
 <org.eventb.core.prIdent name="stableSim" org.eventb.core.type="environSM_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="controllerSM_STATES={ready,finished}">
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="controllerSM_STATES={ready,finished}">
 <org.eventb.core.prIdent name="controllerSM_STATES" org.eventb.core.type="ℙ(controllerSM_STATES)"/>
 <org.eventb.core.prIdent name="finished" org.eventb.core.type="controllerSM_STATES"/>
 <org.eventb.core.prIdent name="ready" org.eventb.core.type="controllerSM_STATES"/>
