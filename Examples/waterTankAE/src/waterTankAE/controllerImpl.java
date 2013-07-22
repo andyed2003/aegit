@@ -9,8 +9,8 @@ public class controllerImpl implements Runnable
 	private static final int High = 200;
 	private static final int ComputeDelay = 100;
 	// Instance variables and constants
-	protected  Integer c_Level = new Integer(0);
-	protected  Boolean c_pumpOn = new Boolean(false);
+	protected  Integer c_Level = Integer.valueOf(0);
+	protected  Boolean c_pumpOn = Boolean.valueOf(false);
 	protected  int c_time = 0;
 	protected controllerSM_STATES controllerSM = ready;
 	protected int priority = 5;
@@ -29,6 +29,7 @@ public class controllerImpl implements Runnable
 			// Translated code
 			((controllerImpl)MainEntry.getTask("controllerImpl")).controllerSMstateMachine();
 			Pointer<Boolean> c_PumpOnPointer = new Pointer<Boolean>();
+			c_PumpOnPointer.value = c_pumpOn;
 			((environmentImpl)MainEntry.getTask("environmentImpl")).writePump(c_PumpOnPointer);
 			Pointer<Integer> c_LevelPointer = new Pointer<Integer>();
 			((environmentImpl)MainEntry.getTask("environmentImpl")).readLevel(c_LevelPointer);
