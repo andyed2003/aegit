@@ -132,18 +132,8 @@
         </subroutine>
       </leftBranch>
       <rightBranch xsi:type="il1:Seq">
-        <leftBranch xsi:type="il1:If">
-          <body xsi:type="il1:Seq">
-            <leftBranch xsi:type="il1:Action" ParentEventName="fmiIncLevel" action="fmi_Level  &#x2254; fmi_Level + 1"/>
-          </body>
-          <condition>environSM = stableSim</condition>
-          <condition>fmi_PumpOn = TRUE</condition>
-          <else xsi:type="il1:Seq">
-            <leftBranch xsi:type="il1:Action" ParentEventName="fmiDecLevel" action="fmi_Level  &#x2254; fmi_Level &#x2212; 1"/>
-          </else>
-          <relatedEvent href="platform:/resource/waterTankAE/environmentImpl.bum#org.eventb.emf.core.machine.Event.fmiIncLevel"/>
-        </leftBranch>
-        <rightBranch xsi:type="il1:Output" text="fmiLevel: " element="fmi_Level"/>
+        <leftBranch xsi:type="il1:Output" text="fmiLevel: " element="fmi_Level"/>
+        <rightBranch xsi:type="il1:Output" text="fmi_PumpOn: " element="fmi_PumpOn"/>
       </rightBranch>
     </body>
     <taskType xsi:type="il1:PeriodicTaskType" period="100"/>
