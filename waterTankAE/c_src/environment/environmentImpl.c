@@ -1,5 +1,4 @@
 #include "Common.h"
-// EnvironTask: environmentImpl
 
 // Variables and constants
 environSM_STATES environSM_environmentImpl = stableSim;
@@ -22,7 +21,7 @@ void environmentImpl_environSMstateMachine() {
 	}
 }
 
-void environmentImpl_readLevel(*p) {
+void environmentImpl_getInteger(*p) {
 	// Translated code
 	fmi_time_environmentImpl = (fmi_time_environmentImpl + ReadDelay);
 	(*p) = fmi_Level_environmentImpl;
