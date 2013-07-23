@@ -21,19 +21,20 @@ void environmentImpl_environSMstateMachine() {
 	}
 }
 
-void environmentImpl_getInteger(*p) {
-	// Translated code
+// The master gets the level from the environment using this function
+void environmentImpl_fmiGetInteger(*p) {
 	fmi_time_environmentImpl = (fmi_time_environmentImpl + ReadDelay);
 	(*p) = fmi_Level_environmentImpl;
 }
 
-void environmentImpl_writePump( p) {
-	// Translated code
+// The master sets the pump on command from the controller using this
+void environmentImpl_fmiSetBoolean( p) {
 	fmi_PumpOn_environmentImpl = p;
 	fmi_time_environmentImpl = (fmi_time_environmentImpl + ReadDelay);
 
 }
 
+// The simulation step
 void environmentImpl_fmiDoStep() {
 	environmentImpl_environSMstateMachine();
 	printf("fmiLevel:  %i\n", fmi_Level_environmentImpl);

@@ -11,19 +11,13 @@ typedef int BOOL;
 #define ReadDelay 20
 #define WriteDelay 20
 
-typedef enum environSM_STATES
-{
+typedef enum environSM_STATES {
 	stableSim,
 } environSM_STATES;
 
-
-typedef enum controllerSM_STATES
-{
+typedef enum controllerSM_STATES {
 	ready,
 } controllerSM_STATES;
-
-
-
 
 #include "controllerImpl.h"
 #include "environmentImpl.h"
