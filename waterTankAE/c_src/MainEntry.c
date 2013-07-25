@@ -5,8 +5,8 @@ int main(int argc, char *argv[]) {
 	int *masterCopyOf_fmi_Level;
 	BOOL masterCopyOf_c_PumpOn;
 	// I am the master! Tell me about your variables 0-0`
-
-	for (int i = 0; i < 100; i = i + 1) {
+	int i = 0;
+	for (i = 0; i < 100; i = i + 1) {
 		controller_fmiDoStep();
 		environmentImpl_fmiDoStep();
 

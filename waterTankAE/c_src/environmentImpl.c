@@ -22,7 +22,7 @@ void environmentImpl_environSMstateMachine() {
 }
 
 // The master gets the level from the environment using this function
-void environmentImpl_fmiGetInteger(*p) {
+void environmentImpl_fmiGetInteger(int *p) {
 	fmi_time_environmentImpl = (fmi_time_environmentImpl + ReadDelay);
 	(*p) = fmi_Level_environmentImpl;
 }

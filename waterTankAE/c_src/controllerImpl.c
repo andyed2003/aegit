@@ -28,14 +28,14 @@ void controllerImpl_controllerSMstateMachine() {
 
 // The master uses this function to get the controller's decision
 // about the pump command.
-void controller_fmiGetBoolean(* b) {
-	&b = c_pumpOn_controllerImpl;
+void controller_fmiGetBoolean(BOOL* b) {
+	b = c_pumpOn_controllerImpl;
 }
 
 // The master communicates the integer value of the level,
 // to the controller, passed from the environment
-void controller_fmiSetInteger(* i) {
-	c_Level_controllerImpl = &i;
+void controller_fmiSetInteger(int* i) {
+	c_Level_controllerImpl = i;
 }
 
 // the simulation step.

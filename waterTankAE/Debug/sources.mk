@@ -13,7 +13,5 @@ LIBRARIES :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
-c_src/environment \
-c_src/controller \
 c_src \
 
