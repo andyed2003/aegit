@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ac.soton.composition.core.composedMachineFile org.eventb.core.comment="" org.eventb.core.configuration="ac.soton.composition.core.cmp" version="7">
+<ac.soton.composition.core.refinesMachine ac.soton.composition.core.target="simpleRefinement" name="internal_refines1"/>
+<ac.soton.composition.core.includeMachine ac.soton.composition.core.includedInvariant="false" ac.soton.composition.core.project="SimpleProject" ac.soton.composition.core.target="writerTaskImpl" name="internal_includes1"/>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events1" org.eventb.core.convergence="0" org.eventb.core.label="INITIALISATION">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[SimpleProject]writerTaskImpl" name="internal_combines events1" org.eventb.core.target="INITIALISATION"/>
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[SimpleProject]storeImpl" name="internal_combines events2" org.eventb.core.target="INITIALISATION"/>
+</ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events2" org.eventb.core.convergence="0" org.eventb.core.label="write">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[SimpleProject]writerTaskImpl" name="internal_combines events1" org.eventb.core.target="write"/>
+<ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="write"/>
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[SimpleProject]storeImpl" name="internal_combines events2" org.eventb.core.target="write"/>
+</ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events3" org.eventb.core.convergence="0" org.eventb.core.label="inc">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[SimpleProject]writerTaskImpl" name="internal_combines events1" org.eventb.core.target="inc"/>
+<ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="inc"/>
+</ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.includeMachine ac.soton.composition.core.includedInvariant="false" ac.soton.composition.core.project="SimpleProject" ac.soton.composition.core.target="storeImpl" name="internal_includes2"/>
+</ac.soton.composition.core.composedMachineFile>
