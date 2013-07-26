@@ -28,8 +28,8 @@ void environmentImpl_fmiGetInteger(int *p) {
 }
 
 // The master sets the pump on command from the controller using this
-void environmentImpl_fmiSetBoolean( p) {
-	fmi_PumpOn_environmentImpl = p;
+void environmentImpl_fmiSetBoolean(BOOL* p) {
+	fmi_PumpOn_environmentImpl = *p;
 	fmi_time_environmentImpl = (fmi_time_environmentImpl + ReadDelay);
 
 }

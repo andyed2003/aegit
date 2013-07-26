@@ -29,7 +29,7 @@ void controllerImpl_controllerSMstateMachine() {
 // The master uses this function to get the controller's decision
 // about the pump command.
 void controller_fmiGetBoolean(BOOL* b) {
-	b = c_pumpOn_controllerImpl;
+	*b = c_pumpOn_controllerImpl;
 }
 
 // The master communicates the integer value of the level,

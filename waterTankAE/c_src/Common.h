@@ -19,7 +19,6 @@ typedef enum controllerSM_STATES {
 	ready,
 } controllerSM_STATES;
 
-#include "controllerImpl.h"
-#include "environmentImpl.h"
+
 #endif
 
