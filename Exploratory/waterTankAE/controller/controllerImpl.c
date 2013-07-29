@@ -35,7 +35,7 @@ void controller_fmiGetBoolean(BOOL* b) {
 // The master communicates the integer value of the level,
 // to the controller, passed from the environment
 void controller_fmiSetInteger(int* i) {
-	c_Level_controllerImpl = i;
+	c_Level_controllerImpl = *i;
 }
 
 // the simulation step.
