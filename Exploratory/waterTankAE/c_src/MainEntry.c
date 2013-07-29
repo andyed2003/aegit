@@ -2,10 +2,22 @@
 #include "Common.h"
 #include "controllerImpl.h"
 #include "environmentImpl.h"
+#include "fakeFMIDecls.h"
 // Global defns
 int main(int argc, char *argv[]) {
 	int *masterCopyOf_fmi_Level;
 	BOOL *masterCopyOf_c_PumpOn;
+
+	fmiString name = "controllerImpl";
+	fmiString guid = "007";
+	fmiComponent *f = fmiInstantiateControllerImpl(name, guid);
+
+	if((int *)f == (fmiUndefinedFMIComponent)){
+		printf("Too many FMU's \n");
+		return -1;
+	}
+
+
 	// I am the master! Tell me about your variables 0-0`
 	int i = 0;
 	for (i = 0; i < 100; i = i + 1) {
