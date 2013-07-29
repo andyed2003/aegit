@@ -29,13 +29,13 @@ all: waterTankAE
 waterTankAE: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C Linker'
-	gcc -shared -o "waterTankAE" $(OBJS) $(USER_OBJS) $(LIBS)
+	gcc  -o "waterTankAE" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(OBJS)$(C_DEPS)$(LIBRARIES) waterTankAE
+	-$(RM) $(OBJS)$(C_DEPS)$(EXECUTABLES) waterTankAE
 	-@echo ' '
 
 .PHONY: all clean dependents
