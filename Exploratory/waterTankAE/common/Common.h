@@ -5,13 +5,17 @@
 typedef int BOOL;
 #define FALSE 0
 
-#define Low 800
+#define Low 1800
 #define High 2000
 #define ComputeDelay 200
 #define ReadDelay 20
 #define WriteDelay 20
+
+// simulation configuration variables
 #define MaxControllerModels 1
 #define MaxEnviromentModels 1
+#define MasterSteps 1000
+
 
 #define c_Level_controllerImpl_ 0		// int c_Level_controllerImpl = 0;
 #define c_time_controllerImpl_ 1		// int c_time_controllerImpl = 0;

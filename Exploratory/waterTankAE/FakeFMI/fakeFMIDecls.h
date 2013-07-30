@@ -8,6 +8,8 @@
 #ifndef FAKEFMIDECLS_H_
 #define FAKEFMIDECLS_H_
 
+#include "Common.h"
+
 typedef void*        fmiComponent;
 typedef unsigned int fmiValueReference;
 typedef double       fmiReal   ;
@@ -29,6 +31,7 @@ struct fmiComponent{
 	fmiString fmuGUID;
 	fmiValueReference i[10]; // my fake fmi: array of fmiValueReferences to integers
 	fmiValueReference b[10]; // my fake fmi: array of fmiValueReferences to booleans
+	int SM_ProgramCounter;
 } ;
 
 #endif /* FAKEFMIDECLS_H_ */
