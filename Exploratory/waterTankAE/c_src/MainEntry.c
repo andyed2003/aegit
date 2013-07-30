@@ -10,9 +10,9 @@ int main(int argc, char *argv[]) {
 
 	fmiString name = "controllerImpl";
 	fmiString guid = "007";
-	fmiComponent *f = fmiInstantiateControllerImpl(name, guid);
+	struct fmiComponent* f = fmiInstantiateControllerImpl(name, guid);
 
-	if((int *)f == (fmiUndefinedFMIComponent)){
+	if(f->fmuInstanceName == fmiFalse){
 		printf("Too many FMU's \n");
 		return -1;
 	}

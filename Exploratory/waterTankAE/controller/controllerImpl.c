@@ -11,7 +11,7 @@ int c_time_controllerImpl = 0;
 controllerSM_STATES controllerSM_controllerImpl = ready;
 
 
-fmiComponent *modelInstances[MaxModels];       // start of with an empty array of components
+struct fmiComponent *modelInstances[MaxControllerModels];       // start of with an empty array of components
 int instanceCount = 0;
 
 // Subroutines
@@ -35,19 +35,23 @@ void controllerImpl_controllerSMstateMachine() {
 }
 
 // a minimal constructor
-fmiComponent fmiInstantiateControllerImpl(fmiString instanceName, fmiString GUID) {
-	if(!(instanceCount <= (MaxModels - 1)) ){
-		return fmiUndefinedFMIComponent;
-	}
+struct fmiComponent* fmiInstantiateControllerImpl(fmiString instanceName, fmiString GUID) {
 	// create a fmiComponent and allocate storage space
 	struct fmiComponent *newFMIComponent = malloc(sizeof (*newFMIComponent));
-	// set the name etc
-	newFMIComponent->fmuInstanceName = instanceName;
-	newFMIComponent->fmuGUID = GUID;
-	//add instance to collection;
-	modelInstances[instanceCount] = newFMIComponent;
-	instanceCount = instanceCount + 1;
-	return newFMIComponent;
+		if(!(instanceCount <= (MaxControllerModels - 1)) ){
+			newFMIComponent->validInstance = fmiFalse;
+			return newFMIComponent;
+		}
+		else{
+			newFMIComponent->validInstance = fmiTrue;
+			// set the name etc
+			newFMIComponent->fmuInstanceName = instanceName;
+			newFMIComponent->fmuGUID = GUID;
+			//add instance to collection;
+			modelInstances[instanceCount] = newFMIComponent;
+			instanceCount = instanceCount + 1;
+			return newFMIComponent;
+		}
 }
 
 // The master uses this function to get the controller's decision

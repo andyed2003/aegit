@@ -10,7 +10,7 @@ typedef int BOOL;
 #define ComputeDelay 200
 #define ReadDelay 20
 #define WriteDelay 20
-#define MaxModels 0
+#define MaxControllerModels 1
 
 typedef enum environSM_STATES {
 	stableSim,

@@ -22,9 +22,9 @@ typedef const char*  fmiString ;
 /* Undefined value for fmiValueReference (largest unsigned int value) */
 #define fmiUndefinedValueReference (fmiValueReference)(-1)
 
-#define fmiUndefinedFMIComponent (fmiComponent) (-1)
 
 struct fmiComponent{
+	fmiBoolean validInstance;
 	fmiString fmuInstanceName;
 	fmiString fmuGUID;
 	fmiValueReference i[10]; // my fake fmi: array of fmiValueReferences to integers
