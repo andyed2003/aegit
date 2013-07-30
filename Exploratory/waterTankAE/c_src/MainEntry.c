@@ -47,11 +47,9 @@ int main(int argc, char *argv[]) {
 		controller_fmiDoStep(conComp);
 		environmentImpl_fmiDoStep(envComp);
 
-		printf("getting env int ref1: %i\n", envIntegerValuesToGet[0]);
-
 		// update master:
 		// get integer fmi_Level from environment
-		environmentImpl_fmiGetInteger(conComp, envIntegerValuesToGet, sizeof(envIntegerValuesToGet), envRecievedIntegerValues);
+		environmentImpl_fmiGetInteger(envComp, envIntegerValuesToGet, sizeof(envIntegerValuesToGet), envRecievedIntegerValues);
 
 		// The envRecievedIntegers have to have the time added. So we manually
 		// transfer data to conIntegersValuesToSet, adding the additional time vale that we require
