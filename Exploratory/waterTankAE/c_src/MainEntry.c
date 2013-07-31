@@ -26,15 +26,16 @@ int main(int argc, char *argv[]) {
 	}
 
 	// master getting/receiving values from the environment FMU
-	fmiValueReference envIntegerValuesToGet[env_integerArraySize] = {env_Level_environmentImpl_};
+	fmiValueReference envNamedIntegerValuesToGet[env_integerArraySize] = {env_Level_environmentImpl_};
 	fmiInteger envRecievedIntegerValues[env_integerArraySize];
 
 	// master getting/receiving from the controller FMU
-	fmiValueReference conBooleanValuesToGet[c_booleanArraySize] = {c_pumpOn_controllerImpl_};
+	fmiValueReference conNamedBooleanValuesToGet[c_booleanArraySize] = {c_pumpOn_controllerImpl_};
 	fmiBoolean conRecievedBooleanValues[c_booleanArraySize];
 
-	// master sending values to bot FMUs
-	fmiInteger conIntegerValuesToSet[c_integerArraySize] = {c_Level_controllerImpl_, c_time_controllerImpl_};
+	// master sending values to both FMUs
+	fmiInteger conNamedIntegerValuesToSet[c_integerArraySize] = {c_Level_controllerImpl_, c_time_controllerImpl_};
+	fmiInteger conIntegerValuesToSet[c_integerArraySize];
 	fmiBoolean envBooleanValuesToSet[env_booleanArraySize] = {env_pumpOn_environmentImpl_};
 
 	// I am the master! Tell me about your variables 0-0`
@@ -49,7 +50,7 @@ int main(int argc, char *argv[]) {
 
 		// update master:
 		// get integer fmi_Level from environment
-		environmentImpl_fmiGetInteger(envComp, envIntegerValuesToGet, sizeof(envIntegerValuesToGet), envRecievedIntegerValues);
+		environmentImpl_fmiGetInteger(envComp, envNamedIntegerValuesToGet, sizeof(envNamedIntegerValuesToGet), envRecievedIntegerValues);
 
 		// The envRecievedIntegers have to have the time added. So we manually
 		// transfer data to conIntegersValuesToSet, adding the additional time vale that we require
@@ -58,12 +59,12 @@ int main(int argc, char *argv[]) {
 
 		// update master:
 		// get Boolean c_PumpOn from controller
-		printf("getting bool ref: %i\n", conBooleanValuesToGet[0]);
-		controller_fmiGetBoolean(conComp, conBooleanValuesToGet, sizeof(conBooleanValuesToGet) ,conRecievedBooleanValues);
+		printf("getting bool ref: %i\n", conNamedBooleanValuesToGet[0]);
+		controller_fmiGetBoolean(conComp, conNamedBooleanValuesToGet, sizeof(conNamedBooleanValuesToGet) ,conRecievedBooleanValues);
 
 		// update controller:
 		// set c_Level to fmi_Level from environment, and time from master
-		controller_fmiSetInteger(conComp, conIntegerValuesToSet, sizeof(conIntegerValuesToSet), conIntegerValuesToSet );
+		controller_fmiSetInteger(conComp, conNamedIntegerValuesToSet, sizeof(conNamedIntegerValuesToSet), conIntegerValuesToSet );
 
 		// update environment:
 		// set fmi_PumpOn to c_PumpOn from controller

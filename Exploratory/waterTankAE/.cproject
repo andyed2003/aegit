@@ -53,13 +53,7 @@
 								<option defaultValue="true" id="gnu.cpp.link.so.debug.option.shared.488417081" name="Shared (-shared)" superClass="gnu.cpp.link.so.debug.option.shared" valueType="boolean"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.assembler.so.debug.1408293298" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.so.debug">
-								<option id="gnu.both.asm.option.include.paths.978064047" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="../waterTankAE/fmi_headers"/>
-									<listOptionValue builtIn="false" value="../waterTankAE/waterTankAE/common"/>
-									<listOptionValue builtIn="false" value="../waterTankAE/waterTankAE/environment"/>
-									<listOptionValue builtIn="false" value="../waterTankAE/waterTankAE/controller"/>
-									<listOptionValue builtIn="false" value="/home/andy/git/aegit/Exploratory/waterTankAE/waterTankAE/f_src"/>
-								</option>
+								<option id="gnu.both.asm.option.include.paths.978064047" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" valueType="includePath"/>
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.1411478566" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
 						</toolChain>
