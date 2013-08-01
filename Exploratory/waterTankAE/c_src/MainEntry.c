@@ -12,8 +12,8 @@ int main(int argc, char *argv[]) {
 
 	fmiInteger c_time = 0;
 
-	struct fmiComponent* conComp = fmiInstantiateControllerImpl(c_name, c_guid);
-	struct fmiComponent* envComp = fmiInstantiateEnvironmentImplImpl(env_name, env_guid);
+	fmiComponent *conComp = fmiInstantiateControllerImpl(c_name, c_guid);
+	fmiComponent *envComp = fmiInstantiateEnvironmentImplImpl(env_name, env_guid);
 
 	if(conComp->validInstance == fmiFalse){
 		printf("Too many FMU's: %s \n", conComp->fmuInstanceName);
