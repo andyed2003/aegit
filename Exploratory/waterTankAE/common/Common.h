@@ -5,8 +5,8 @@
 typedef int BOOL;
 #define FALSE 0
 
-#define Low 1550
-#define High 1600
+#define Low 1510
+#define High 1520
 #define ComputeDelay 200
 #define ReadDelay 20
 #define WriteDelay 20

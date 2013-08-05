@@ -4,11 +4,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct fmiComponent *modelInstances[MaxControllerModels]; // start of with an empty array of components
+fmiComponent *modelInstances[MaxControllerModels]; // start of with an empty array of components
 int conInstanceCount = 0;
 
 // Subroutines
-void controllerImpl_controllerSMstateMachine(struct fmiComponent* c) {
+void controllerImpl_controllerSMstateMachine(fmiComponent *c) {
 	// get the level
 	fmiInteger level = c->i[c_Level_controllerImpl_];
 
@@ -30,10 +30,10 @@ void controllerImpl_controllerSMstateMachine(struct fmiComponent* c) {
 }
 
 // a minimal constructor
-struct fmiComponent* fmiInstantiateControllerImpl(fmiString instanceName,
+fmiComponent *fmiInstantiateControllerImpl(fmiString instanceName,
 		fmiString GUID) {
 	// create a fmiComponent and allocate storage space
-	struct fmiComponent *newFMIComponent = malloc(sizeof(*newFMIComponent));
+	fmiComponent *newFMIComponent = malloc(sizeof(*newFMIComponent));
 	if (!(conInstanceCount <= (MaxControllerModels - 1))) {
 		newFMIComponent->validInstance = fmiFalse;
 		return newFMIComponent;
@@ -55,7 +55,7 @@ struct fmiComponent* fmiInstantiateControllerImpl(fmiString instanceName,
 
 // The master uses this function to get the controller's decision
 // about the pump command.
-void controller_fmiGetBoolean(struct fmiComponent *c,
+void controller_fmiGetBoolean(fmiComponent *c,
 		const fmiValueReference vr[c_booleanArraySize], size_t nvr,
 		fmiBoolean value[c_booleanArraySize]) {
 	value[c_pumpOn_controllerImpl_] = c->b[vr[c_pumpOn_controllerImpl_]];
@@ -66,7 +66,7 @@ void controller_fmiGetBoolean(struct fmiComponent *c,
 
 // The master communicates the integer value of the level,
 // to the controller, passed from the environment
-void controller_fmiSetInteger(struct fmiComponent *c,
+void controller_fmiSetInteger(fmiComponent *c,
 		const fmiValueReference vr[c_integerArraySize], size_t nvr,
 		fmiInteger value[c_integerArraySize]) {
 	c->i[vr[c_Level_controllerImpl_]] = value[c_Level_controllerImpl_];
@@ -80,7 +80,7 @@ void controller_fmiSetInteger(struct fmiComponent *c,
 }
 
 // the simulation step.
-void controller_fmiDoStep(struct fmiComponent* c) {
+void controller_fmiDoStep(fmiComponent *c) {
 
 	// Translated code
 	controllerImpl_controllerSMstateMachine(c);

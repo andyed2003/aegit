@@ -10,7 +10,6 @@
 
 #include "Common.h"
 
-typedef void*        fmiComponent;
 typedef unsigned int fmiValueReference;
 typedef double       fmiReal   ;
 typedef int          fmiInteger;
@@ -25,13 +24,13 @@ typedef const char*  fmiString ;
 #define fmiUndefinedValueReference (fmiValueReference)(-1)
 
 
-struct fmiComponent{
+typedef struct{
 	fmiBoolean validInstance;
 	fmiString fmuInstanceName;
 	fmiString fmuGUID;
 	fmiValueReference i[10]; // my fake fmi: array of fmiValueReferences to integers
 	fmiValueReference b[10]; // my fake fmi: array of fmiValueReferences to booleans
 	int SM_ProgramCounter;
-} ;
+} fmiComponent;
 
 #endif /* FAKEFMIDECLS_H_ */

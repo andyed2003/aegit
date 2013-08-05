@@ -1,12 +1,14 @@
-#include  <stdlib.h>
 #include "Common.h"
 #include "fakeFMIDecls.h"
 
+#include <stdio.h>
+#include <stdlib.h>
+
 int envInstanceCount = 0;
-struct fmiComponent *modelInstances[MaxEnviromentModels];
+fmiComponent *modelInstances[MaxEnviromentModels];
 
 // Subroutines
-void environmentImpl_environSMstateMachine(struct fmiComponent *c) {
+void environmentImpl_environSMstateMachine(fmiComponent *c) {
 	// Get the pumpOn value
 	fmiBoolean pumpOn = c->b[env_pumpOn_environmentImpl_];
 
@@ -22,10 +24,10 @@ void environmentImpl_environSMstateMachine(struct fmiComponent *c) {
 }
 
 // a minimal constructor
-struct fmiComponent* fmiInstantiateEnvironmentImplImpl(fmiString instanceName,
+fmiComponent *fmiInstantiateEnvironmentImplImpl(fmiString instanceName,
 		fmiString GUID) {
 	// create a fmiComponent and allocate storage space
-	struct fmiComponent *newFMIComponent = malloc(sizeof(*newFMIComponent));
+	fmiComponent *newFMIComponent = malloc(sizeof(*newFMIComponent));
 	if (!(envInstanceCount <= (MaxEnviromentModels - 1))) {
 		newFMIComponent->validInstance = fmiFalse;
 		return newFMIComponent;
@@ -46,7 +48,7 @@ struct fmiComponent* fmiInstantiateEnvironmentImplImpl(fmiString instanceName,
 }
 
 // The master gets the level from the environment using this function
-void environmentImpl_fmiGetInteger(struct fmiComponent *c,
+void environmentImpl_fmiGetInteger(fmiComponent *c,
 		const fmiValueReference vr[env_integerArraySize], size_t nvr,
 		fmiInteger value[env_integerArraySize]) {
 	value[env_Level_environmentImpl_] = c->i[env_Level_environmentImpl_];
@@ -56,7 +58,7 @@ void environmentImpl_fmiGetInteger(struct fmiComponent *c,
 }
 
 // The master sets the pump on command from the controller using this
-void environmentImpl_fmiSetBoolean(struct fmiComponent *c,
+void environmentImpl_fmiSetBoolean(fmiComponent *c,
 		const fmiValueReference vr[env_booleanArraySize], size_t nvr, fmiInteger value[env_booleanArraySize]) {
 	c->b[vr[env_pumpOn_environmentImpl_]] = value[env_pumpOn_environmentImpl_];
 
@@ -65,7 +67,7 @@ void environmentImpl_fmiSetBoolean(struct fmiComponent *c,
 }
 
 // The simulation step
-void environmentImpl_fmiDoStep(struct fmiComponent *c) {
+void environmentImpl_fmiDoStep(fmiComponent *c) {
 	environmentImpl_environSMstateMachine(c);
 	printf("%i \t: environmentImpl_fmiDoStep reports fmiLevel \n", c->i[env_Level_environmentImpl_]);
 	printf("%i \t: environmentImpl_fmiDoStep reports fmi_PumpOn \n", c->b[env_pumpOn_environmentImpl_]);
