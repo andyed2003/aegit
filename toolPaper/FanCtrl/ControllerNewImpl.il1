@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="ASCII"?>
+<il1:Program xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:il1="http://il1/1.0" projectName="FanCtrl">
+  <decls xsi:type="il1:ConstantDecl" identifier="FAILURES_TOLARABLE" type="&#x2124;" initialValue="4" ProjectName="FanCtrl" ComponentName="FanCtrlContext"/>
+  <decls xsi:type="il1:ConstantDecl" identifier="Step" type="Controller_STATES" ProjectName="FanCtrl" ComponentName="FanCtrlMachine_implicitContext"/>
+  <decls xsi:type="il1:ConstantDecl" identifier="FAN_SPEED_FAULT" type="&#x2124;" initialValue="1000" ProjectName="FanCtrl" ComponentName="FanCtrlContext"/>
+  <decls xsi:type="il1:ConstantDecl" identifier="HWM_AMBIENT" type="&#x2124;" initialValue="40000" ProjectName="FanCtrl" ComponentName="FanCtrlContext"/>
+  <decls xsi:type="il1:ConstantDecl" identifier="SpeedCheck" type="Controller_STATES" ProjectName="FanCtrl" ComponentName="FanCtrlMachine_implicitContext"/>
+  <decls xsi:type="il1:ConstantDecl" identifier="HWM_PSU" type="&#x2124;" initialValue="37000" ProjectName="FanCtrl" ComponentName="FanCtrlContext"/>
+  <decls xsi:type="il1:ConstantDecl" identifier="Control" type="Controller_STATES" ProjectName="FanCtrl" ComponentName="FanCtrlMachine_implicitContext"/>
+  <decls xsi:type="il1:ConstantDecl" identifier="BrokenSpeedCheck" type="Controller_STATES" ProjectName="FanCtrl" ComponentName="FanCtrlMachine_implicitContext"/>
+  <decls xsi:type="il1:ConstantDecl" identifier="FailureCount" type="Controller_STATES" ProjectName="FanCtrl" ComponentName="FanCtrlMachine_implicitContext"/>
+  <decls xsi:type="il1:ConstantDecl" identifier="LWM_AMBIENT" type="&#x2124;" initialValue="32000" ProjectName="FanCtrl" ComponentName="FanCtrlContext"/>
+  <decls xsi:type="il1:ConstantDecl" identifier="Normal" type="Controller_STATES" ProjectName="FanCtrl" ComponentName="FanCtrlMachine_implicitContext"/>
+  <decls xsi:type="il1:ConstantDecl" identifier="Broken" type="Controller_STATES" ProjectName="FanCtrl" ComponentName="FanCtrlMachine_implicitContext"/>
+  <decls xsi:type="il1:ConstantDecl" identifier="LWM_PSU" type="&#x2124;" initialValue="32000" ProjectName="FanCtrl" ComponentName="FanCtrlContext"/>
+  <decls xsi:type="il1:ConstantDecl" identifier="FAN_SPEED_OFF" type="&#x2124;" initialValue="0" ProjectName="FanCtrl" ComponentName="FanCtrlContext"/>
+  <decls xsi:type="il1:Enumeration" identifier="Controller_STATES" ProjectName="FanCtrl" ComponentName="FanCtrlMachine_implicitContext">
+    <literalValues>Step</literalValues>
+    <literalValues>Control</literalValues>
+    <literalValues>Normal</literalValues>
+    <literalValues>SpeedCheck</literalValues>
+    <literalValues>FailureCount</literalValues>
+    <literalValues>Broken</literalValues>
+    <literalValues>BrokenSpeedCheck</literalValues>
+  </decls>
+  <entryPoint>
+    <autoTasks name="ControllerNewImpl" projectName="FanCtrl" machineName="ControllerNewImpl">
+      <body xsi:type="il1:Seq">
+        <leftBranch xsi:type="il1:Call" machineName="ControllerNewImpl" projectName="FanCtrl">
+          <subroutine name="ControllerstateMachine" machineName="ControllerNewImpl" projectName="FanCtrl">
+            <body xsi:type="il1:Case" caseExpression="Controller">
+              <caseStatement caseValue="Step">
+                <command xsi:type="il1:Action" ParentEventName="SENSE_TEMPERATURES" action="Controller &#x2254; Control"/>
+              </caseStatement>
+              <caseStatement caseValue="Control">
+                <command xsi:type="il1:If">
+                  <body xsi:type="il1:Action" ParentEventName="DO_NOTHING" action="Controller &#x2254; Normal"/>
+                  <condition>&#xac;((C_tempPSU &#x2265; HWM_PSU) &#x2228; (C_tempAmbient &#x2265; HWM_AMBIENT))</condition>
+                  <condition>&#xac;((C_tempPSU &#x2264; LWM_PSU) &#x2227; (C_tempAmbient &#x2264; LWM_AMBIENT))</condition>
+                  <branch>
+                    <condition>(C_tempPSU &#x2265; HWM_PSU) &#x2228; (C_tempAmbient &#x2265; HWM_AMBIENT)</condition>
+                    <action xsi:type="il1:Seq">
+                      <leftBranch xsi:type="il1:Action" ParentEventName="SWITCH_ON" action="Controller  &#x2254; Normal"/>
+                      <rightBranch xsi:type="il1:Action" ParentEventName="SWITCH_ON" action="C_fanOn  &#x2254; TRUE"/>
+                    </action>
+                    <branch>
+                      <condition>(C_tempPSU &#x2264; LWM_PSU) &#x2227; (C_tempAmbient &#x2264; LWM_AMBIENT)</condition>
+                      <action xsi:type="il1:Seq">
+                        <leftBranch xsi:type="il1:Action" ParentEventName="SWITCH_OFF" action="Controller  &#x2254; Normal"/>
+                        <rightBranch xsi:type="il1:Action" ParentEventName="SWITCH_OFF" action="C_fanOn  &#x2254; FALSE"/>
+                      </action>
+                      <relatedEvent href="platform:/resource/FanCtrl/ControllerNewImpl.bum#org.eventb.emf.core.machine.Event.SWITCH_OFF"/>
+                    </branch>
+                    <relatedEvent href="platform:/resource/FanCtrl/ControllerNewImpl.bum#org.eventb.emf.core.machine.Event.SWITCH_ON"/>
+                  </branch>
+                  <relatedEvent href="platform:/resource/FanCtrl/ControllerNewImpl.bum#org.eventb.emf.core.machine.Event.DO_NOTHING"/>
+                </command>
+              </caseStatement>
+              <caseStatement caseValue="Normal">
+                <command xsi:type="il1:Action" ParentEventName="SENSE_SPEED" action="Controller &#x2254; SpeedCheck"/>
+              </caseStatement>
+              <caseStatement caseValue="SpeedCheck">
+                <command xsi:type="il1:If">
+                  <body xsi:type="il1:Action" ParentEventName="SPEED_INVALID" action="Controller &#x2254; FailureCount"/>
+                  <condition>C_fanOn = FALSE &#x2228; C_fanSpeed &lt; FAN_SPEED_FAULT</condition>
+                  <condition>C_fanOn = TRUE &#x2228; C_fanSpeed > FAN_SPEED_OFF</condition>
+                  <branch>
+                    <condition>C_fanOn = FALSE &#x2228; C_fanSpeed &#x2265; FAN_SPEED_FAULT</condition>
+                    <condition>C_fanOn = TRUE &#x2228; C_fanSpeed &#x2264; FAN_SPEED_OFF</condition>
+                    <action xsi:type="il1:Seq">
+                      <leftBranch xsi:type="il1:Action" ParentEventName="SPEED_VALID" action="Controller  &#x2254; Step"/>
+                      <rightBranch xsi:type="il1:Action" ParentEventName="SPEED_VALID" action="failureCount  &#x2254; 0"/>
+                    </action>
+                    <relatedEvent href="platform:/resource/FanCtrl/ControllerNewImpl.bum#org.eventb.emf.core.machine.Event.SPEED_VALID"/>
+                  </branch>
+                  <relatedEvent href="platform:/resource/FanCtrl/ControllerNewImpl.bum#org.eventb.emf.core.machine.Event.SPEED_INVALID"/>
+                </command>
+              </caseStatement>
+              <caseStatement caseValue="FailureCount">
+                <command xsi:type="il1:If">
+                  <body xsi:type="il1:Action" ParentEventName="TOLERATE" action="Controller &#x2254; Step"/>
+                  <condition>failureCount &#x2264; FAILURES_TOLARABLE</condition>
+                  <branch>
+                    <condition>failureCount > FAILURES_TOLARABLE</condition>
+                    <action xsi:type="il1:Action" ParentEventName="BREAK" action="Controller &#x2254; Broken"/>
+                    <relatedEvent href="platform:/resource/FanCtrl/ControllerNewImpl.bum#org.eventb.emf.core.machine.Event.BREAK"/>
+                  </branch>
+                  <relatedEvent href="platform:/resource/FanCtrl/ControllerNewImpl.bum#org.eventb.emf.core.machine.Event.TOLERATE"/>
+                </command>
+              </caseStatement>
+              <caseStatement caseValue="Broken">
+                <command xsi:type="il1:Action" ParentEventName="BROKEN_SENSE_SPEED" action="Controller &#x2254; BrokenSpeedCheck"/>
+              </caseStatement>
+              <caseStatement caseValue="BrokenSpeedCheck">
+                <command xsi:type="il1:If">
+                  <body xsi:type="il1:Action" ParentEventName="STILL_BROKEN" action="Controller &#x2254; Broken"/>
+                  <condition>C_fanOn = TRUE &#x2228; C_fanSpeed > FAN_SPEED_OFF</condition>
+                  <condition>C_fanOn = FALSE &#x2228; C_fanSpeed &lt; FAN_SPEED_FAULT</condition>
+                  <branch>
+                    <condition>C_fanOn = TRUE &#x2228; C_fanSpeed &#x2264; FAN_SPEED_OFF</condition>
+                    <condition>C_fanOn = FALSE &#x2228; C_fanSpeed &#x2265; FAN_SPEED_FAULT</condition>
+                    <action xsi:type="il1:Action" ParentEventName="REPAIR" action="Controller &#x2254; Step"/>
+                    <relatedEvent href="platform:/resource/FanCtrl/ControllerNewImpl.bum#org.eventb.emf.core.machine.Event.REPAIR"/>
+                  </branch>
+                  <relatedEvent href="platform:/resource/FanCtrl/ControllerNewImpl.bum#org.eventb.emf.core.machine.Event.STILL_BROKEN"/>
+                </command>
+              </caseStatement>
+            </body>
+          </subroutine>
+        </leftBranch>
+        <rightBranch xsi:type="il1:Seq">
+          <leftBranch xsi:type="il1:Seq">
+            <rightBranch xsi:type="il1:Call">
+              <subroutine name="write" machineName="EnvNewImpl" projectName="FanCtrl">
+                <body xsi:type="il1:Action" ParentEventName="write" action="E_MAX6650_fanOn &#x2254; p1"/>
+                <formalParameters xsi:type="il1:InParameter" identifier="p1" type=" BOOL" ProjectName="FanCtrl"/>
+              </subroutine>
+              <actualParameters xsi:type="il1:OutParameter" identifier="C_fanOn" type=" BOOL" ProjectName="FanCtrl" ComponentName="ControllerNewImpl"/>
+            </rightBranch>
+          </leftBranch>
+          <rightBranch xsi:type="il1:Seq">
+            <leftBranch xsi:type="il1:Seq">
+              <rightBranch xsi:type="il1:If">
+                <body xsi:type="il1:Call">
+                  <subroutine name="read" machineName="EnvNewImpl" projectName="FanCtrl">
+                    <body xsi:type="il1:Seq">
+                      <leftBranch xsi:type="il1:Action" action="p1 &#x2254; E_MAX6650_fanSpeed"/>
+                      <rightBranch xsi:type="il1:Seq">
+                        <leftBranch xsi:type="il1:Action" action="p2 &#x2254; E_LM75_tempAmbient"/>
+                        <rightBranch xsi:type="il1:Action" action="p3 &#x2254; E_LM75_tempPSU"/>
+                      </rightBranch>
+                    </body>
+                    <formalParameters xsi:type="il1:OutParameter" identifier="p1" type=" &#x2124;" ProjectName="FanCtrl"/>
+                    <formalParameters xsi:type="il1:OutParameter" identifier="p2" type=" &#x2124;" ProjectName="FanCtrl" orderNumber="1"/>
+                    <formalParameters xsi:type="il1:OutParameter" identifier="p3" type=" &#x2124;" ProjectName="FanCtrl" orderNumber="2"/>
+                  </subroutine>
+                  <actualParameters xsi:type="il1:InParameter" identifier="C_fanSpeed" type=" &#x2124;" ProjectName="FanCtrl" ComponentName="ControllerNewImpl"/>
+                  <actualParameters xsi:type="il1:InParameter" identifier="C_tempAmbient" type=" &#x2124;" ProjectName="FanCtrl" ComponentName="ControllerNewImpl" orderNumber="1"/>
+                  <actualParameters xsi:type="il1:InParameter" identifier="C_tempPSU" type=" &#x2124;" ProjectName="FanCtrl" ComponentName="ControllerNewImpl" orderNumber="2"/>
+                </body>
+                <condition>Controller &#x2260; Normal</condition>
+              </rightBranch>
+            </leftBranch>
+            <rightBranch xsi:type="il1:Seq">
+              <leftBranch xsi:type="il1:Output" text="C_fanSpeed: " element="C_fanSpeed"/>
+              <rightBranch xsi:type="il1:Output" text="C_fanOn: " element="C_fanOn"/>
+            </rightBranch>
+          </rightBranch>
+        </rightBranch>
+      </body>
+      <taskType xsi:type="il1:PeriodicTaskType" period="100"/>
+      <decls xsi:type="il1:VariableDecl" identifier="Controller" type="Controller_STATES" initialValue="Step" ProjectName="FanCtrl" ComponentName="ControllerNewImpl"/>
+      <decls xsi:type="il1:VariableDecl" identifier="C_tempPSU" type="&#x2124;" initialValue="0" ProjectName="FanCtrl" ComponentName="ControllerNewImpl"/>
+      <decls xsi:type="il1:VariableDecl" identifier="C_tempAmbient" type="&#x2124;" initialValue="0" ProjectName="FanCtrl" ComponentName="ControllerNewImpl"/>
+      <decls xsi:type="il1:VariableDecl" identifier="C_fanSpeed" type="&#x2124;" initialValue="3000" ProjectName="FanCtrl" ComponentName="ControllerNewImpl"/>
+      <decls xsi:type="il1:VariableDecl" identifier="C_fanOn" type="BOOL" initialValue="TRUE" ProjectName="FanCtrl" ComponentName="ControllerNewImpl"/>
+      <decls xsi:type="il1:VariableDecl" identifier="failureCount" type="&#x2124;" initialValue="0" ProjectName="FanCtrl" ComponentName="ControllerNewImpl"/>
+      <subroutines name="ControllerstateMachine" machineName="ControllerNewImpl" projectName="FanCtrl">
+        <body xsi:type="il1:Case" caseExpression="Controller">
+          <caseStatement caseValue="Step">
+            <command xsi:type="il1:Action" ParentEventName="SENSE_TEMPERATURES" action="Controller &#x2254; Control"/>
+          </caseStatement>
+          <caseStatement caseValue="Control">
+            <command xsi:type="il1:If">
+              <body xsi:type="il1:Action" ParentEventName="DO_NOTHING" action="Controller &#x2254; Normal"/>
+              <condition>&#xac;((C_tempPSU &#x2265; HWM_PSU) &#x2228; (C_tempAmbient &#x2265; HWM_AMBIENT))</condition>
+              <condition>&#xac;((C_tempPSU &#x2264; LWM_PSU) &#x2227; (C_tempAmbient &#x2264; LWM_AMBIENT))</condition>
+              <branch>
+                <condition>(C_tempPSU &#x2265; HWM_PSU) &#x2228; (C_tempAmbient &#x2265; HWM_AMBIENT)</condition>
+                <action xsi:type="il1:Seq">
+                  <leftBranch xsi:type="il1:Action" ParentEventName="SWITCH_ON" action="Controller  &#x2254; Normal"/>
+                  <rightBranch xsi:type="il1:Action" ParentEventName="SWITCH_ON" action="C_fanOn  &#x2254; TRUE"/>
+                </action>
+                <branch>
+                  <condition>(C_tempPSU &#x2264; LWM_PSU) &#x2227; (C_tempAmbient &#x2264; LWM_AMBIENT)</condition>
+                  <action xsi:type="il1:Seq">
+                    <leftBranch xsi:type="il1:Action" ParentEventName="SWITCH_OFF" action="Controller  &#x2254; Normal"/>
+                    <rightBranch xsi:type="il1:Action" ParentEventName="SWITCH_OFF" action="C_fanOn  &#x2254; FALSE"/>
+                  </action>
+                  <relatedEvent href="platform:/resource/FanCtrl/ControllerNewImpl.bum#org.eventb.emf.core.machine.Event.SWITCH_OFF"/>
+                </branch>
+                <relatedEvent href="platform:/resource/FanCtrl/ControllerNewImpl.bum#org.eventb.emf.core.machine.Event.SWITCH_ON"/>
+              </branch>
+              <relatedEvent href="platform:/resource/FanCtrl/ControllerNewImpl.bum#org.eventb.emf.core.machine.Event.DO_NOTHING"/>
+            </command>
+          </caseStatement>
+          <caseStatement caseValue="Normal">
+            <command xsi:type="il1:Action" ParentEventName="SENSE_SPEED" action="Controller &#x2254; SpeedCheck"/>
+          </caseStatement>
+          <caseStatement caseValue="SpeedCheck">
+            <command xsi:type="il1:If">
+              <body xsi:type="il1:Action" ParentEventName="SPEED_INVALID" action="Controller &#x2254; FailureCount"/>
+              <condition>C_fanOn = FALSE &#x2228; C_fanSpeed &lt; FAN_SPEED_FAULT</condition>
+              <condition>C_fanOn = TRUE &#x2228; C_fanSpeed > FAN_SPEED_OFF</condition>
+              <branch>
+                <condition>C_fanOn = FALSE &#x2228; C_fanSpeed &#x2265; FAN_SPEED_FAULT</condition>
+                <condition>C_fanOn = TRUE &#x2228; C_fanSpeed &#x2264; FAN_SPEED_OFF</condition>
+                <action xsi:type="il1:Seq">
+                  <leftBranch xsi:type="il1:Action" ParentEventName="SPEED_VALID" action="Controller  &#x2254; Step"/>
+                  <rightBranch xsi:type="il1:Action" ParentEventName="SPEED_VALID" action="failureCount  &#x2254; 0"/>
+                </action>
+                <relatedEvent href="platform:/resource/FanCtrl/ControllerNewImpl.bum#org.eventb.emf.core.machine.Event.SPEED_VALID"/>
+              </branch>
+              <relatedEvent href="platform:/resource/FanCtrl/ControllerNewImpl.bum#org.eventb.emf.core.machine.Event.SPEED_INVALID"/>
+            </command>
+          </caseStatement>
+          <caseStatement caseValue="FailureCount">
+            <command xsi:type="il1:If">
+              <body xsi:type="il1:Action" ParentEventName="TOLERATE" action="Controller &#x2254; Step"/>
+              <condition>failureCount &#x2264; FAILURES_TOLARABLE</condition>
+              <branch>
+                <condition>failureCount > FAILURES_TOLARABLE</condition>
+                <action xsi:type="il1:Action" ParentEventName="BREAK" action="Controller &#x2254; Broken"/>
+                <relatedEvent href="platform:/resource/FanCtrl/ControllerNewImpl.bum#org.eventb.emf.core.machine.Event.BREAK"/>
+              </branch>
+              <relatedEvent href="platform:/resource/FanCtrl/ControllerNewImpl.bum#org.eventb.emf.core.machine.Event.TOLERATE"/>
+            </command>
+          </caseStatement>
+          <caseStatement caseValue="Broken">
+            <command xsi:type="il1:Action" ParentEventName="BROKEN_SENSE_SPEED" action="Controller &#x2254; BrokenSpeedCheck"/>
+          </caseStatement>
+          <caseStatement caseValue="BrokenSpeedCheck">
+            <command xsi:type="il1:If">
+              <body xsi:type="il1:Action" ParentEventName="STILL_BROKEN" action="Controller &#x2254; Broken"/>
+              <condition>C_fanOn = TRUE &#x2228; C_fanSpeed > FAN_SPEED_OFF</condition>
+              <condition>C_fanOn = FALSE &#x2228; C_fanSpeed &lt; FAN_SPEED_FAULT</condition>
+              <branch>
+                <condition>C_fanOn = TRUE &#x2228; C_fanSpeed &#x2264; FAN_SPEED_OFF</condition>
+                <condition>C_fanOn = FALSE &#x2228; C_fanSpeed &#x2265; FAN_SPEED_FAULT</condition>
+                <action xsi:type="il1:Action" ParentEventName="REPAIR" action="Controller &#x2254; Step"/>
+                <relatedEvent href="platform:/resource/FanCtrl/ControllerNewImpl.bum#org.eventb.emf.core.machine.Event.REPAIR"/>
+              </branch>
+              <relatedEvent href="platform:/resource/FanCtrl/ControllerNewImpl.bum#org.eventb.emf.core.machine.Event.STILL_BROKEN"/>
+            </command>
+          </caseStatement>
+        </body>
+      </subroutines>
+    </autoTasks>
+  </entryPoint>
+  <environMachines name="EnvNewImpl" projectName="FanCtrl" machineName="EnvNewImpl">
+    <body xsi:type="il1:Seq">
+      <leftBranch xsi:type="il1:If">
+        <body xsi:type="il1:Seq">
+          <leftBranch xsi:type="il1:Action" ParentEventName="raiseT" action="E_LM75_tempAmbient  &#x2254; E_LM75_tempAmbient + 1000"/>
+          <rightBranch xsi:type="il1:Seq">
+            <leftBranch xsi:type="il1:Action" ParentEventName="raiseT" action="E_LM75_tempPSU  &#x2254; E_LM75_tempPSU + 1000"/>
+            <rightBranch xsi:type="il1:Action" ParentEventName="raiseT" action="E_MAX6650_fanSpeed  &#x2254; 0"/>
+          </rightBranch>
+        </body>
+        <condition>E_MAX6650_fanOn = FALSE</condition>
+        <else xsi:type="il1:Seq">
+          <leftBranch xsi:type="il1:Action" ParentEventName="lowerT" action="E_LM75_tempAmbient  &#x2254; E_LM75_tempAmbient &#x2212; 1000"/>
+          <rightBranch xsi:type="il1:Seq">
+            <leftBranch xsi:type="il1:Action" ParentEventName="lowerT" action="E_LM75_tempPSU  &#x2254; E_LM75_tempPSU &#x2212; 1000"/>
+            <rightBranch xsi:type="il1:Action" ParentEventName="lowerT" action="E_MAX6650_fanSpeed  &#x2254; 3000"/>
+          </rightBranch>
+        </else>
+        <relatedEvent href="platform:/resource/FanCtrl/EnvNewImpl.bum#org.eventb.emf.core.machine.Event.raiseT"/>
+      </leftBranch>
+      <rightBranch xsi:type="il1:Seq">
+        <leftBranch xsi:type="il1:Output" text="E_LM75_tempPSU: " element="E_LM75_tempPSU"/>
+        <rightBranch xsi:type="il1:Seq">
+          <leftBranch xsi:type="il1:Output" text="E_MAX6650_fanSpeed: " element="E_MAX6650_fanSpeed"/>
+          <rightBranch xsi:type="il1:Output" text="E_MAX6650_fanOn: " element="E_MAX6650_fanOn"/>
+        </rightBranch>
+      </rightBranch>
+    </body>
+    <taskType xsi:type="il1:PeriodicTaskType" period="100"/>
+    <decls xsi:type="il1:VariableDecl" identifier="E_LM75_tempPSU" type="&#x2124;" initialValue="0" ProjectName="FanCtrl" ComponentName="EnvNewImpl"/>
+    <decls xsi:type="il1:VariableDecl" identifier="E_LM75_tempAmbient" type="&#x2124;" initialValue="0" ProjectName="FanCtrl" ComponentName="EnvNewImpl"/>
+    <decls xsi:type="il1:VariableDecl" identifier="E_MAX6650_fanSpeed" type="&#x2124;" initialValue="3000" ProjectName="FanCtrl" ComponentName="EnvNewImpl"/>
+    <decls xsi:type="il1:VariableDecl" identifier="E_MAX6650_fanOn" type="BOOL" initialValue="TRUE" ProjectName="FanCtrl" ComponentName="EnvNewImpl"/>
+    <subroutines name="read" machineName="EnvNewImpl" projectName="FanCtrl">
+      <body xsi:type="il1:Seq">
+        <leftBranch xsi:type="il1:Action" action="p1 &#x2254; E_MAX6650_fanSpeed"/>
+        <rightBranch xsi:type="il1:Seq">
+          <leftBranch xsi:type="il1:Action" action="p2 &#x2254; E_LM75_tempAmbient"/>
+          <rightBranch xsi:type="il1:Action" action="p3 &#x2254; E_LM75_tempPSU"/>
+        </rightBranch>
+      </body>
+      <formalParameters xsi:type="il1:OutParameter" identifier="p1" type=" &#x2124;" ProjectName="FanCtrl"/>
+      <formalParameters xsi:type="il1:OutParameter" identifier="p2" type=" &#x2124;" ProjectName="FanCtrl" orderNumber="1"/>
+      <formalParameters xsi:type="il1:OutParameter" identifier="p3" type=" &#x2124;" ProjectName="FanCtrl" orderNumber="2"/>
+    </subroutines>
+    <subroutines name="write" machineName="EnvNewImpl" projectName="FanCtrl">
+      <body xsi:type="il1:Action" ParentEventName="write" action="E_MAX6650_fanOn &#x2254; p1"/>
+      <formalParameters xsi:type="il1:InParameter" identifier="p1" type=" BOOL" ProjectName="FanCtrl"/>
+    </subroutines>
+  </environMachines>
+</il1:Program>

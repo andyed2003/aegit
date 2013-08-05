@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.codegen.ui.taskingContextAttribute="Tasking" org.eventb.core.configuration="org.eventb.core.fwd;org.eventb.codegen.ui.cgConfig" version="3">
+<org.eventb.core.constant name="'" org.eventb.core.identifier="HWM_PSU"/>
+<org.eventb.core.constant name="(" org.eventb.core.identifier="LWM_PSU"/>
+<org.eventb.core.constant name=")" org.eventb.core.identifier="HWM_AMBIENT"/>
+<org.eventb.core.constant name="*" org.eventb.core.identifier="LWM_AMBIENT"/>
+<org.eventb.core.constant name="1" org.eventb.core.identifier="FAN_SPEED_FAULT"/>
+<org.eventb.core.constant name="2" org.eventb.core.identifier="FAN_SPEED_OFF"/>
+<org.eventb.core.constant name="6" org.eventb.core.identifier="FAILURES_TOLARABLE"/>
+<org.eventb.core.axiom name="+" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="typeof_HWM_PSU" org.eventb.core.predicate="HWM_PSU ∈ ℤ"/>
+<org.eventb.core.axiom name="," org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="typeof_LWM_PSU" org.eventb.core.predicate="LWM_PSU ∈ ℤ"/>
+<org.eventb.core.axiom name="/" org.eventb.codegen.ui.typingAttribute="NonTyping" org.eventb.core.label="low_high_PSU" org.eventb.core.predicate="LWM_PSU &lt; HWM_PSU"/>
+<org.eventb.core.axiom name="-" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="typeof_HWM_AMBIENT" org.eventb.core.predicate="HWM_AMBIENT ∈ ℤ"/>
+<org.eventb.core.axiom name="." org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="typeof_LWM_AMBIENT" org.eventb.core.predicate="LWM_AMBIENT ∈ ℤ"/>
+<org.eventb.core.axiom name="0" org.eventb.codegen.ui.typingAttribute="NonTyping" org.eventb.core.label="low_high_AMBIENT" org.eventb.core.predicate="LWM_AMBIENT &lt; HWM_AMBIENT"/>
+<org.eventb.core.axiom name="3" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="typeof_FAN_SPEED_FAULT" org.eventb.core.predicate="FAN_SPEED_FAULT ∈ ℤ"/>
+<org.eventb.core.axiom name="4" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="typeof_FAN_SPEED_OFF" org.eventb.core.predicate="FAN_SPEED_OFF ∈ ℤ"/>
+<org.eventb.core.axiom name="5" org.eventb.codegen.ui.typingAttribute="NonTyping" org.eventb.core.label="fault_off_speed" org.eventb.core.predicate="FAN_SPEED_OFF &lt; FAN_SPEED_FAULT"/>
+<org.eventb.core.axiom name="7" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="typeof_FAILURES_TOLARABLE" org.eventb.core.predicate="FAILURES_TOLARABLE ∈ ℤ"/>
+<org.eventb.core.axiom name="8" org.eventb.codegen.ui.typingAttribute="NonTyping" org.eventb.core.label="valueof_FAILURES_TOLARABLE" org.eventb.core.predicate="FAILURES_TOLARABLE = 4"/>
+<org.eventb.core.axiom name="?" org.eventb.codegen.ui.typingAttribute="NonTyping" org.eventb.core.comment="CG" org.eventb.core.label="valueof_HWM_PSU" org.eventb.core.predicate="HWM_PSU = 37000"/>
+<org.eventb.core.axiom name="&gt;" org.eventb.codegen.ui.typingAttribute="NonTyping" org.eventb.core.comment="CG" org.eventb.core.label="valueof_LWM_PSU" org.eventb.core.predicate="LWM_PSU = 32000"/>
+<org.eventb.core.axiom name="=" org.eventb.codegen.ui.typingAttribute="NonTyping" org.eventb.core.comment="CG" org.eventb.core.label="valueof_HWM_AMBIENT" org.eventb.core.predicate="HWM_AMBIENT = 40000"/>
+<org.eventb.core.axiom name=";" org.eventb.codegen.ui.typingAttribute="NonTyping" org.eventb.core.comment="CG" org.eventb.core.label="valueof_LWM_AMBIENT" org.eventb.core.predicate="LWM_AMBIENT = 32000"/>
+<org.eventb.core.axiom name=":" org.eventb.codegen.ui.typingAttribute="NonTyping" org.eventb.core.comment="CG" org.eventb.core.label="valueof_FAN_SPEED_FAULT" org.eventb.core.predicate="FAN_SPEED_FAULT = 1000"/>
+<org.eventb.core.axiom name="9" org.eventb.codegen.ui.typingAttribute="NonTyping" org.eventb.core.comment="CG" org.eventb.core.label="valueof_FAN_SPEED_OFF" org.eventb.core.predicate="FAN_SPEED_OFF = 0"/>
+</org.eventb.core.contextFile>
