@@ -5,7 +5,7 @@ public class storeImpl
 {
 	
 	// Instance variables and constants
-	protected static  b = 0;
+	protected static int b = 0;
 	private static Object lock = new Object();
 	
 	public storeImpl()
@@ -14,7 +14,7 @@ public class storeImpl
 	}
 	
 	// Subroutines
-	public void write(Pointer<> param)
+	public void write(int param)
 	{
 		// [Internal] This will block until the guard has been met
 		boolean completed = false; 	 // private to the thread by default
@@ -24,7 +24,7 @@ public class storeImpl
 			synchronized(lock)
 			{
 				// Translated code
-				param.value = b ;
+				b = param;
 				// [Internal] Set completed flag
 				completed = true;
 			}

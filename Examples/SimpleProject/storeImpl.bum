@@ -7,9 +7,9 @@
 </org.eventb.core.event>
 <org.eventb.core.event name=")" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="write">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="write"/>
-<org.eventb.core.parameter name="'" org.eventb.codegen.ui.parameterTypeAttribute="Out" org.eventb.core.identifier="param"/>
+<org.eventb.core.parameter name="'" org.eventb.codegen.ui.parameterTypeAttribute="In" org.eventb.core.identifier="param"/>
 <org.eventb.core.guard name="(" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="grd1" org.eventb.core.predicate="param ∈ ℤ"/>
-<org.eventb.core.guard name=")" org.eventb.codegen.ui.typingAttribute="NonTyping" org.eventb.core.label="grd2" org.eventb.core.predicate="param = b"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="b ≔ param" org.eventb.core.label="act1"/>
 </org.eventb.core.event>
 <org.eventb.tasking.persistence.MachineType name="*" org.eventb.tasking.persistence.machineTypeAttribute="Shared" org.eventb.tasking.persistence.priority="5"/>
 <org.eventb.core.invariant name="typing_b" org.eventb.codegen.tasking.flattened="true" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="typing_b" org.eventb.core.predicate="b ∈ ℤ" org.eventb.core.theorem="true"/>

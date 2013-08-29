@@ -2,8 +2,8 @@
 <il1:Program xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:il1="http://il1/1.0" projectName="SimpleProject">
   <protected name="storeImpl" projectName="SimpleProject" machineName="storeImpl">
     <subroutines name="write" machineName="storeImpl" projectName="SimpleProject">
-      <body xsi:type="il1:Action" action="param &#x2254; b"/>
-      <formalParameters xsi:type="il1:OutParameter" identifier="param" type=" &#x2124;" ProjectName="SimpleProject"/>
+      <body xsi:type="il1:Action" ParentEventName="write" action="b &#x2254; param"/>
+      <formalParameters xsi:type="il1:InParameter" identifier="param" type=" &#x2124;" ProjectName="SimpleProject"/>
     </subroutines>
     <decls xsi:type="il1:VariableDecl" identifier="b" type="&#x2124;" initialValue="0" ProjectName="SimpleProject" ComponentName="storeImpl"/>
   </protected>
@@ -17,10 +17,10 @@
           <leftBranch xsi:type="il1:Seq">
             <rightBranch xsi:type="il1:Call">
               <subroutine name="write" machineName="storeImpl" projectName="SimpleProject">
-                <body xsi:type="il1:Action" action="param &#x2254; b"/>
-                <formalParameters xsi:type="il1:OutParameter" identifier="param" type=" &#x2124;" ProjectName="SimpleProject"/>
+                <body xsi:type="il1:Action" ParentEventName="write" action="b &#x2254; param"/>
+                <formalParameters xsi:type="il1:InParameter" identifier="param" type=" &#x2124;" ProjectName="SimpleProject"/>
               </subroutine>
-              <actualParameters xsi:type="il1:InParameter" identifier="a" type=" &#x2124;" ProjectName="SimpleProject" ComponentName="writerTaskImpl"/>
+              <actualParameters xsi:type="il1:OutParameter" identifier="a" type=" &#x2124;" ProjectName="SimpleProject" ComponentName="writerTaskImpl"/>
             </rightBranch>
           </leftBranch>
           <rightBranch xsi:type="il1:Output" text="just written a: " element="a"/>
