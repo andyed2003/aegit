@@ -25,6 +25,7 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.handlers.HandlerUtil;
 
+import ac.soton.fmusim.codegen.translator.FMUTranslator;
 import ac.soton.fmusim.components.Component;
 import ac.soton.fmusim.components.ComponentDiagram;
 import ac.soton.fmusim.components.Connector;
@@ -51,6 +52,8 @@ public class CodeGenCommand extends AbstractHandler {
 		
 		System.out.println(">>>>>>>>>>>>>>  DO CODE GENERATION HERE");
 		// Run Code Generator to create an FMU, then simulate with the generated code.
+		FMUTranslator fmuTranslator = new FMUTranslator();
+		fmuTranslator.translate();
 		
 		IEditorPart diagramEditor = HandlerUtil.getActiveEditorChecked(event);
 		Shell shell = diagramEditor.getEditorSite().getShell();
