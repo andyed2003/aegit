@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd;org.eventb.codegen.ui.cgConfig" version="5">
+<org.eventb.core.refinesMachine name="'" org.eventb.core.target="m1"/>
+<org.eventb.core.variable name="(" org.eventb.core.identifier="a"/>
+<org.eventb.core.variable name="*" org.eventb.core.identifier="b"/>
+<org.eventb.core.event name="+" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="internal1" org.eventb.core.assignment="a :∈ ℤ" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="b :∈ ℤ" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="'" org.eventb.core.assignment="x :∈ ℤ" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="internal2" org.eventb.core.assignment="control ≔ 0" org.eventb.core.label="act4"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="-" org.eventb.core.identifier="x"/>
+<org.eventb.core.invariant name="." org.eventb.codegen.ui.typingAttribute="--unset--" org.eventb.core.label="inv1" org.eventb.core.predicate="x ∈ ℤ"/>
+<org.eventb.core.event name="/" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="evt1a">
+<org.eventb.core.action name="'" org.eventb.core.assignment="x ≔ b" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="(" org.eventb.codegen.ui.typingAttribute="NonTyping" org.eventb.core.label="grd1" org.eventb.core.predicate="control = 0"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="control ≔ 1" org.eventb.core.label="act2"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="0" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="evt1b">
+<org.eventb.core.action name="'" org.eventb.core.assignment="a ≔ x" org.eventb.core.label="act1"/>
+<org.eventb.core.refinesEvent name="(" org.eventb.core.target="evt1"/>
+<org.eventb.core.guard name=")" org.eventb.codegen.ui.typingAttribute="NonTyping" org.eventb.core.label="grd1" org.eventb.core.predicate="control = 1"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="control ≔ 2" org.eventb.core.label="act2"/>
+</org.eventb.core.event>
+<org.eventb.core.invariant name="3" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="inv2" org.eventb.core.predicate="control ∈ ℤ "/>
+<org.eventb.core.variable name="2" org.eventb.core.identifier="control"/>
+<org.eventb.core.invariant name="5" org.eventb.codegen.ui.typingAttribute="NonTyping" org.eventb.core.label="inv3" org.eventb.core.predicate="control = 1 ⇒ b = x"/>
+<org.eventb.core.invariant name="4" org.eventb.codegen.ui.typingAttribute="NonTyping" org.eventb.core.label="inv4" org.eventb.core.predicate="control = 2 ⇒ a = x"/>
+</org.eventb.core.machineFile>
