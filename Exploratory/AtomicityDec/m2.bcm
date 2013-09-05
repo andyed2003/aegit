@@ -14,7 +14,7 @@
 <org.eventb.core.scEvent name="controm" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION" org.eventb.core.source="/AtomicityDec/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#+">
 <org.eventb.core.scRefinesEvent name="'" org.eventb.core.scTarget="/AtomicityDec/m1.bcm|org.eventb.core.scMachineFile#m1|org.eventb.core.scEvent#c" org.eventb.core.source="/AtomicityDec/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#+"/>
 <org.eventb.core.scAction name="(" org.eventb.core.assignment="a :∈ ℤ" org.eventb.core.label="act1" org.eventb.core.source="/AtomicityDec/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#+|org.eventb.core.action#internal1"/>
-<org.eventb.core.scAction name=")" org.eventb.core.assignment="b :∈ ℤ" org.eventb.core.label="act2" org.eventb.core.source="/AtomicityDec/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#+|org.eventb.core.action#("/>
+<org.eventb.core.scAction name=")" org.eventb.core.assignment="b ≔ 99" org.eventb.core.label="act2" org.eventb.core.source="/AtomicityDec/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#+|org.eventb.core.action#("/>
 <org.eventb.core.scAction name="*" org.eventb.core.assignment="x :∈ ℤ" org.eventb.core.label="act3" org.eventb.core.source="/AtomicityDec/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#+|org.eventb.core.action#'"/>
 <org.eventb.core.scAction name="+" org.eventb.core.assignment="control ≔ 0" org.eventb.core.label="act4" org.eventb.core.source="/AtomicityDec/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#+|org.eventb.core.action#internal2"/>
 </org.eventb.core.scEvent>

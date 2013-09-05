@@ -5,7 +5,7 @@
 <org.eventb.core.variable name="*" org.eventb.core.identifier="b"/>
 <org.eventb.core.event name="+" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
 <org.eventb.core.action name="internal1" org.eventb.core.assignment="a :∈ ℤ" org.eventb.core.label="act1"/>
-<org.eventb.core.action name="(" org.eventb.core.assignment="b :∈ ℤ" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="b ≔ 99" org.eventb.core.label="act2"/>
 <org.eventb.core.action name="'" org.eventb.core.assignment="x :∈ ℤ" org.eventb.core.label="act3"/>
 <org.eventb.core.action name="internal2" org.eventb.core.assignment="control ≔ 0" org.eventb.core.label="act4"/>
 </org.eventb.core.event>
