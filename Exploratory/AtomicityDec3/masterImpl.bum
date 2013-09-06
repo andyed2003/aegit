@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="ch.ethz.eventb.decomposition.mchBase;org.eventb.codegen.ui.cgConfig" version="5">
+<org.eventb.core.refinesMachine name="'" org.eventb.core.target="master"/>
+<org.eventb.core.variable name="'" org.eventb.core.generated="true" org.eventb.core.identifier="x"/>
+<org.eventb.core.event name="(" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="true" org.eventb.core.label="INITIALISATION"/>
+<org.eventb.core.event name=")" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="true" org.eventb.core.label="fmiGetInteger">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="fmiGetInteger"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="*" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="true" org.eventb.core.label="fmiSetInteger">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="fmiSetInteger"/>
+</org.eventb.core.event>
+<org.eventb.tasking.persistence.MachineType name="+" org.eventb.tasking.persistence.machineTypeAttribute="AutoTask" org.eventb.tasking.persistence.priority="5">
+<org.eventb.tasking.persistence.TaskType name="'" org.eventb.tasking.persistence.periodicTaskTypeAttribute="100" org.eventb.tasking.persistence.simpleTaskTypeAttribute="NotRequired" org.eventb.tasking.persistence.taskTypeAttribute="Periodic"/>
+<org.eventb.tasking.persistence.TaskBody name="(" org.eventb.tasking.persistence.taskBodyAttribute="fmiGetInteger;&#10;fmiSetInteger"/>
+</org.eventb.tasking.persistence.MachineType>
+</org.eventb.core.machineFile>
