@@ -26,5 +26,5 @@
 <ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="fmiGetInteger"/>
 <ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[AtomicityDec3]masterImpl" name="internal_combines events2" org.eventb.core.target="fmiGetInteger"/>
 </ac.soton.composition.core.composesEvent>
-<ac.soton.composition.core.includeMachine ac.soton.composition.core.includedInvariant="false" ac.soton.composition.core.project="AtomicityDec3" ac.soton.composition.core.target="" name="internal_includes3"/>
+<ac.soton.composition.core.includeMachine ac.soton.composition.core.includedInvariant="false" ac.soton.composition.core.project="AtomicityDec3" ac.soton.composition.core.target="masterImpl" name="internal_includes3"/>
 </ac.soton.composition.core.composedMachineFile>
