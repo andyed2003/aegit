@@ -8,13 +8,13 @@
 <org.eventb.core.variable name="(" org.eventb.core.identifier="b"/>
 <org.eventb.core.invariant name=")" org.eventb.core.label="inv1" org.eventb.core.predicate="b ∈ ℤ "/>
 <org.eventb.core.event name="*" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="calc_b">
-<org.eventb.core.action name="'" org.eventb.core.assignment="b :∈ ℤ" org.eventb.core.label="act1"/>
 <org.eventb.core.guard name="(" org.eventb.codegen.ui.typingAttribute="NonTyping" org.eventb.core.label="grd1" org.eventb.core.predicate="control = 100"/>
+<org.eventb.core.action name="'" org.eventb.core.assignment="b :∈ ℤ" org.eventb.core.label="act1"/>
 <org.eventb.core.action name=")" org.eventb.core.assignment="control ≔ 200" org.eventb.core.label="act2"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="+" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="use_b">
-<org.eventb.core.action name="'" org.eventb.core.assignment="a ≔ b ÷ 2" org.eventb.core.label="act1"/>
 <org.eventb.core.guard name="(" org.eventb.codegen.ui.typingAttribute="NonTyping" org.eventb.core.label="grd1" org.eventb.core.predicate="control = 200"/>
+<org.eventb.core.action name="'" org.eventb.core.assignment="a ≔ b ÷ 2" org.eventb.core.label="act1"/>
 <org.eventb.core.action name=")" org.eventb.core.assignment="control ≔ 300" org.eventb.core.label="act2"/>
 </org.eventb.core.event>
 <org.eventb.core.variable name="," org.eventb.core.identifier="a"/>

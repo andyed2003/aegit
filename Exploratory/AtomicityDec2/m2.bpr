@@ -60,7 +60,7 @@
 <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="use_b_copy/act1/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prProof name="controller_fmiDoStep/act1/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="generalized MP" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
 <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p1,p2,p3" org.eventb.core.prInfHyps="p4"/>
@@ -107,7 +107,7 @@
 <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="use_b_copy/act1/SIM" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3">
+<org.eventb.core.prProof name="controller_fmiDoStep/act1/SIM" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="generalized MP" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
 <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p2,p3,p1" org.eventb.core.prInfHyps="p4"/>
@@ -253,7 +253,7 @@
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="calc_b/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prProof name="env_fmiDoStep/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p1" org.eventb.core.prHyps=""/>
@@ -266,7 +266,7 @@
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="read/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prProof name="masterRead/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p1" org.eventb.core.prHyps=""/>
@@ -280,7 +280,7 @@
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="write/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2">
+<org.eventb.core.prProof name="masterWrite/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="generalized MP" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
 <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prInfHyps="p3"/>
@@ -307,7 +307,7 @@
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
 <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.hyp"/>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="use_b_copy/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prProof name="controller_fmiDoStep/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="generalized MP" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
 <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p1,p2,p3" org.eventb.core.prInfHyps="p4"/>
@@ -362,7 +362,7 @@
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="calc_b/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prProof name="env_fmiDoStep/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p1" org.eventb.core.prHyps=""/>
@@ -375,7 +375,7 @@
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="read/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prProof name="masterRead/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p1" org.eventb.core.prHyps=""/>
@@ -388,7 +388,7 @@
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="write/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prProof name="masterWrite/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="generalized MP" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
 <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prInfHyps="p3"/>
@@ -416,7 +416,7 @@
 <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="use_b_copy/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prProof name="controller_fmiDoStep/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="generalized MP" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
 <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p1,p2,p3" org.eventb.core.prInfHyps="p4"/>

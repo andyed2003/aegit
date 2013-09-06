@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.poFile org.eventb.core.poStamp="0">
+<org.eventb.core.poFile org.eventb.core.poStamp="4">
 <org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="0"/>
 <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="a" org.eventb.core.type="ℤ"/>
@@ -63,7 +63,7 @@
 <org.eventb.core.poIdentifier name="control2'" org.eventb.core.type="ℤ"/>
 </org.eventb.core.poPredicateSet>
 <org.eventb.core.poPredicateSet name="EVTALLHYPcontrol3" org.eventb.core.parentSet="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poPredicateSet#EVTIDENTcontrol3" org.eventb.core.poStamp="0"/>
-<org.eventb.core.poSequent name="calc_b/inv5/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poSequent name="env_fmiDoStep/inv5/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="1">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poPredicateSet#EVTALLHYPcontrol4">
 <org.eventb.core.poPredicate name="'" org.eventb.core.predicate="b'∈ℤ" org.eventb.core.source="/AtomicityDec2/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#.|org.eventb.core.action#'"/>
 </org.eventb.core.poPredicateSet>
@@ -71,10 +71,10 @@
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/AtomicityDec2/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#*"/>
 <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/AtomicityDec2/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#."/>
 <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/AtomicityDec2/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.invariant#:"/>
-<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poSequent#calc_b\/inv5\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poSequent#env_fmiDoStep\/inv5\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD4"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="calc_b/inv6/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poSequent name="env_fmiDoStep/inv6/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="1">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poPredicateSet#EVTALLHYPcontrol4">
 <org.eventb.core.poPredicate name="'" org.eventb.core.predicate="b'∈ℤ" org.eventb.core.source="/AtomicityDec2/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#.|org.eventb.core.action#'"/>
 </org.eventb.core.poPredicateSet>
@@ -82,7 +82,7 @@
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/AtomicityDec2/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#*"/>
 <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/AtomicityDec2/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#."/>
 <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/AtomicityDec2/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.invariant#;"/>
-<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poSequent#calc_b\/inv6\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poSequent#env_fmiDoStep\/inv6\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD5"/>
 </org.eventb.core.poSequent>
 <org.eventb.core.poPredicateSet name="EVTIDENTcontrol4" org.eventb.core.parentSet="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
@@ -94,20 +94,20 @@
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="control=100" org.eventb.core.source="/AtomicityDec2/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#.|org.eventb.core.guard#("/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="control2=100" org.eventb.core.source="/AtomicityDec2/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#.|org.eventb.core.guard#*"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poSequent name="read/inv5/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poSequent name="masterRead/inv5/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="3">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poPredicateSet#EVTALLHYPcontrol5"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="control=200∧300=400⇒b_copy=b" org.eventb.core.source="/AtomicityDec2/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.invariant#:"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/AtomicityDec2/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#0"/>
 <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/AtomicityDec2/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.invariant#:"/>
-<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poSequent#read\/inv5\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poSequent#masterRead\/inv5\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD4"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="read/inv6/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poSequent name="masterRead/inv6/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="3">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poPredicateSet#EVTALLHYPcontrol5"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="control=200∧300=300⇒b=b" org.eventb.core.source="/AtomicityDec2/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.invariant#;"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/AtomicityDec2/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#0"/>
 <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/AtomicityDec2/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.invariant#;"/>
-<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poSequent#read\/inv6\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poSequent#masterRead\/inv6\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD5"/>
 </org.eventb.core.poSequent>
 <org.eventb.core.poPredicateSet name="EVTIDENTcontrol5" org.eventb.core.parentSet="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
@@ -117,20 +117,20 @@
 <org.eventb.core.poPredicateSet name="EVTALLHYPcontrol5" org.eventb.core.parentSet="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poPredicateSet#EVTIDENTcontrol5" org.eventb.core.poStamp="0">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="control2=200" org.eventb.core.source="/AtomicityDec2/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#0|org.eventb.core.guard#("/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poSequent name="write/inv5/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poSequent name="masterWrite/inv5/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="4">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poPredicateSet#EVTALLHYPcontrol6"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="control=200∧400=400⇒x=b" org.eventb.core.source="/AtomicityDec2/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.invariant#:"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/AtomicityDec2/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#3"/>
 <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/AtomicityDec2/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.invariant#:"/>
-<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poSequent#write\/inv5\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poSequent#masterWrite\/inv5\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD4"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="write/inv6/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poSequent name="masterWrite/inv6/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="4">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poPredicateSet#EVTALLHYPcontrol6"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="control=200∧400=300⇒x=b" org.eventb.core.source="/AtomicityDec2/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.invariant#;"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/AtomicityDec2/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#3"/>
 <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/AtomicityDec2/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.invariant#;"/>
-<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poSequent#write\/inv6\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poSequent#masterWrite\/inv6\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD5"/>
 </org.eventb.core.poSequent>
 <org.eventb.core.poPredicateSet name="EVTIDENTcontrol6" org.eventb.core.parentSet="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
@@ -140,37 +140,37 @@
 <org.eventb.core.poPredicateSet name="EVTALLHYPcontrol6" org.eventb.core.parentSet="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poPredicateSet#EVTIDENTcontrol6" org.eventb.core.poStamp="0">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="control2=300" org.eventb.core.source="/AtomicityDec2/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#3|org.eventb.core.guard#("/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poSequent name="use_b_copy/inv5/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poSequent name="controller_fmiDoStep/inv5/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="2">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poPredicateSet#EVTALLHYPcontrol7"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="300=200∧500=400⇒b_copy=b" org.eventb.core.source="/AtomicityDec2/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.invariant#:"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/AtomicityDec2/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#+"/>
 <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/AtomicityDec2/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#\/"/>
 <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/AtomicityDec2/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.invariant#:"/>
-<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poSequent#use_b_copy\/inv5\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poSequent#controller_fmiDoStep\/inv5\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD4"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="use_b_copy/inv6/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poSequent name="controller_fmiDoStep/inv6/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="2">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poPredicateSet#EVTALLHYPcontrol7"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="300=200∧500=300⇒x=b" org.eventb.core.source="/AtomicityDec2/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.invariant#;"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/AtomicityDec2/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#+"/>
 <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/AtomicityDec2/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#\/"/>
 <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/AtomicityDec2/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.invariant#;"/>
-<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poSequent#use_b_copy\/inv6\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poSequent#controller_fmiDoStep\/inv6\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD5"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="use_b_copy/act1/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of action" org.eventb.core.poStamp="0">
+<org.eventb.core.poSequent name="controller_fmiDoStep/act1/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of action" org.eventb.core.poStamp="2">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poPredicateSet#EVTALLHYPcontrol7"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="2≠0" org.eventb.core.source="/AtomicityDec2/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#\/|org.eventb.core.action#'"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/AtomicityDec2/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#\/|org.eventb.core.action#'"/>
 <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poPredicateSet#EVTALLHYPcontrol7"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="use_b_copy/act1/SIM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="0">
+<org.eventb.core.poSequent name="controller_fmiDoStep/act1/SIM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="2">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poPredicateSet#EVTALLHYPcontrol7"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="b_copy ÷ 2=b ÷ 2" org.eventb.core.source="/AtomicityDec2/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#+|org.eventb.core.action#'"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/AtomicityDec2/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#+"/>
 <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/AtomicityDec2/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#+|org.eventb.core.action#'"/>
 <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/AtomicityDec2/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#\/"/>
-<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poSequent#use_b_copy\/act1\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poSequent#controller_fmiDoStep\/act1\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
 </org.eventb.core.poSequent>
 <org.eventb.core.poPredicateSet name="EVTIDENTcontrol7" org.eventb.core.parentSet="/AtomicityDec2/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="control'" org.eventb.core.type="ℤ"/>
