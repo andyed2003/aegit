@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="ch.ethz.eventb.decomposition.mchBase;org.eventb.codegen.ui.cgConfig" version="5">
+<org.eventb.core.refinesMachine name="'" org.eventb.core.target="controller"/>
+<org.eventb.core.variable name="'" org.eventb.core.generated="true" org.eventb.core.identifier="a"/>
+<org.eventb.core.variable name="(" org.eventb.core.generated="true" org.eventb.core.identifier="used_a"/>
+<org.eventb.core.event name=")" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="true" org.eventb.core.label="INITIALISATION"/>
+<org.eventb.core.event ch.ethz.eventb.decomposition.external="true" name="*" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="true" org.eventb.core.label="controller_fmiDoStep">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="controller_fmiDoStep"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="+" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="true" org.eventb.core.label="fmiSetInteger">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="fmiSetInteger"/>
+</org.eventb.core.event>
+</org.eventb.core.machineFile>
