@@ -23,6 +23,8 @@
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="p∈ℤ" org.eventb.core.source="/AtomicityDec3/masterImpl.bum|org.eventb.core.machineFile#masterImpl|org.eventb.core.event#*|org.eventb.core.guard#)"/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="p=x" org.eventb.core.source="/AtomicityDec3/masterImpl.bum|org.eventb.core.machineFile#masterImpl|org.eventb.core.event#*|org.eventb.core.guard#("/>
 </org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYP|" org.eventb.core.parentSet="/AtomicityDec3/masterImpl.bpo|org.eventb.core.poFile#masterImpl|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0"/>
+<org.eventb.core.poPredicateSet name="EVTALLHYP}" org.eventb.core.parentSet="/AtomicityDec3/masterImpl.bpo|org.eventb.core.poFile#masterImpl|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0"/>
 <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/AtomicityDec3/masterImpl.bpo|org.eventb.core.poFile#masterImpl|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="x∈ℤ" org.eventb.core.source="/AtomicityDec3/masterImpl.bum|org.eventb.core.machineFile#masterImpl|org.eventb.core.invariant#typing_x"/>
 </org.eventb.core.poPredicateSet>

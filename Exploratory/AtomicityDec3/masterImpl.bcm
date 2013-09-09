@@ -20,4 +20,6 @@
 <org.eventb.core.scGuard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="p=x" org.eventb.core.source="/AtomicityDec3/masterImpl.bum|org.eventb.core.machineFile#masterImpl|org.eventb.core.event#*|org.eventb.core.guard#(" org.eventb.core.theorem="false"/>
 <org.eventb.core.scParameter name="p" org.eventb.core.source="/AtomicityDec3/masterImpl.bum|org.eventb.core.machineFile#masterImpl|org.eventb.core.event#*|org.eventb.core.parameter#'" org.eventb.core.type="ℤ"/>
 </org.eventb.core.scEvent>
+<org.eventb.core.scEvent ch.ethz.eventb.decomposition.external="false" name="|" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="env_fmiDoStep" org.eventb.core.source="/AtomicityDec3/masterImpl.bum|org.eventb.core.machineFile#masterImpl|org.eventb.core.event#typing_y"/>
+<org.eventb.core.scEvent ch.ethz.eventb.decomposition.external="false" name="}" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="controller_fmiDoStep" org.eventb.core.source="/AtomicityDec3/masterImpl.bum|org.eventb.core.machineFile#masterImpl|org.eventb.core.event#typing_z"/>
 </org.eventb.core.scMachineFile>

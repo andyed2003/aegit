@@ -22,4 +22,6 @@
 <org.eventb.tasking.persistence.TaskBody name="(" org.eventb.tasking.persistence.taskBodyAttribute="env_fmiDoStep;&#10;controller_fmiDoStep;&#10;fmiGetInteger;&#10;fmiSetInteger"/>
 </org.eventb.tasking.persistence.MachineType>
 <org.eventb.core.invariant name="typing_x" org.eventb.codegen.tasking.flattened="true" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="typing_x" org.eventb.core.predicate="x ∈ ℤ" org.eventb.core.theorem="true"/>
+<org.eventb.core.event name="typing_y" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="env_fmiDoStep"/>
+<org.eventb.core.event name="typing_z" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="controller_fmiDoStep"/>
 </org.eventb.core.machineFile>
