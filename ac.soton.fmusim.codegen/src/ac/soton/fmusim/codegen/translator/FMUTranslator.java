@@ -34,9 +34,11 @@ public class FMUTranslator {
 		
 	}
 	
-	public static Program translateEventBToIL1(IStructuredSelection s) throws TaskingTranslationException, BackingStoreException, CoreException
+	// This method translates Event-B models into an IL1 program
+	public static Program translateEventBToIL1(IStructuredSelection s) throws TaskingTranslationException, BackingStoreException, CoreException, IOException, URISyntaxException
 	{
 		Object[] list = s.toArray();
+		// load all the machines into a pre-prepared structure.
 		RMLDataStruct relevantMachines = RelevantMachineLoader
 				.getAllRelevantMachines(list);
 
@@ -47,17 +49,18 @@ public class FMUTranslator {
 		Il1PackageImpl.init();
 		Il1Factory factory = Il1Factory.eINSTANCE;
 		
+		// use the previously developed tasking translation manager to manage the translation.
 		TaskingTranslationManager translationManager = new TaskingTranslationManager(
 				factory);
-
-		// System.out.println(list.length);
 
 		Program program = translationManager.translateToIL1Entry(list,
 				composedMachines, composedEvents, composedMachineNames,
 				relevantMachines);
+
+		// Now we have program we need to save it somewhere
 		
 		IFile target = null;
-		// Get target location
+		// Get target's location from the list which is derived from the structured selection.
 		for (Object obj : list) {
 			if (obj instanceof MachineRoot) {
 				target = ((MachineRoot) obj).getResource();
@@ -71,17 +74,12 @@ public class FMUTranslator {
 			}
 		}
 
+		// If the target is not null then save it, else throw exception.
 		if (target != null) {
-			try {
-				saveBaseProgram(program, targetFile(target));
-				storeProject(target.getProject(), translationManager);
-			} catch (IOException e) {
-				e.printStackTrace();
-			} catch (URISyntaxException e) {
-				e.printStackTrace();
-			}
+			saveBaseProgram(program, targetFile(target));
+			storeProject(target.getProject(), translationManager);
 		} else {
-			System.err.println("TranslateToIL1: Unknown target location");
+			throw new TaskingTranslationException("TranslateToIL1: Unknown target location");
 		}
 
 		return program;
