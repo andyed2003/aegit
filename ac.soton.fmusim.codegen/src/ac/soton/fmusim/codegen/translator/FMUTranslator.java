@@ -30,9 +30,25 @@ import ac.soton.compositionmodel.core.compositionmodel.ComposedMachine;
 
 @SuppressWarnings("restriction")
 public class FMUTranslator {
-	public void translate(){
+		
+	public static void translateToFMU(IStructuredSelection s) throws TaskingTranslationException, BackingStoreException, CoreException, IOException, URISyntaxException{
+		// Generate an IL1 program using existing stage 1 code generator.
+		Program program = translateEventBToIL1(s);
+		// we now have an IL1 program.
+		// We assume we have modelled the FMU's as shared machines. This 
+		// means that we can discard the master. The subroutines are then implemented
+		// as the FMI interface, fmiGetXXX and fmiDoStep etc.
+		
+		// Here's an idea. How about a translation from Event-B to an FMI Model.
+		// Synchronized getters between controller and environment will need to
+		// mapped through a master.
+		// Polling-controller/and corresponding environ "tasks" map to fmiGetXXX ; fmiSetXXX
+		// where both controller and environ are converted to shared machines and have a master task.
+
+		
 		
 	}
+	
 	
 	// This method translates Event-B models into an IL1 program
 	public static Program translateEventBToIL1(IStructuredSelection s) throws TaskingTranslationException, BackingStoreException, CoreException, IOException, URISyntaxException
@@ -57,7 +73,7 @@ public class FMUTranslator {
 				composedMachines, composedEvents, composedMachineNames,
 				relevantMachines);
 
-		// Now we have program we need to save it somewhere
+		// Now we have a program we need to save it somewhere
 		
 		IFile target = null;
 		// Get target's location from the list which is derived from the structured selection.

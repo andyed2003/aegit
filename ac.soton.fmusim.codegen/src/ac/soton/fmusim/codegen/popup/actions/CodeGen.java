@@ -48,7 +48,7 @@ public class CodeGen implements IObjectActionDelegate {
 	public void run(IAction action) {
 		try {
 			// This method invokes the translation from Event-B to the FMU
-			translateTaskingEventBToFMU(selection);
+			FMUTranslator.translateToFMU(selection);
 			// catch all the things that may go wrong
 		} catch (RodinDBException e) {
 			Status status = new Status(IStatus.ERROR, Activator.PLUGIN_ID,
@@ -91,14 +91,4 @@ public class CodeGen implements IObjectActionDelegate {
 		this.selection = (IStructuredSelection) selection;
 	}
 
-	// This method invokes the translator to IL1 and then from IL1 to code.
-	public static void translateTaskingEventBToFMU(IStructuredSelection s)
-			throws TaskingTranslationException, BackingStoreException,
-			CoreException, IOException, URISyntaxException {
-
-		Program program = FMUTranslator.translateEventBToIL1(s);
-		
-		
-		System.out.println();
-	}
 }
