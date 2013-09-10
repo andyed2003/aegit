@@ -15,6 +15,7 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.statushandlers.StatusManager;
 import org.eventb.codegen.il1.Program;
 import org.eventb.codegen.il1.impl.Il1PackageImpl;
+import org.eventb.codegen.il1.translator.IL1TranslationUnhandledTypeException;
 import org.eventb.codegen.tasking.RMLDataStruct;
 import org.eventb.codegen.tasking.RelevantMachineLoader;
 import org.eventb.codegen.tasking.TaskingTranslationException;
@@ -48,7 +49,8 @@ public class CodeGen implements IObjectActionDelegate {
 	public void run(IAction action) {
 		try {
 			// This method invokes the translation from Event-B to the FMU
-			FMUTranslator.translateToFMU(selection);
+			FMUTranslator fmuTranslator = new FMUTranslator();
+			fmuTranslator.translateToFMU(selection);
 			// catch all the things that may go wrong
 		} catch (RodinDBException e) {
 			Status status = new Status(IStatus.ERROR, Activator.PLUGIN_ID,
@@ -80,6 +82,10 @@ public class CodeGen implements IObjectActionDelegate {
 		} catch (URISyntaxException e) {
 			Status status = new Status(IStatus.ERROR, Activator.PLUGIN_ID,
 					"Failed Translation: URISyntaxException:" + e.getMessage(), e);
+			StatusManager.getManager().handle(status, StatusManager.SHOW);
+		} catch (IL1TranslationUnhandledTypeException e) {
+			Status status = new Status(IStatus.ERROR, Activator.PLUGIN_ID,
+					"Failed Translation: IL1TranslationUnhandledTypeException:" + e.getMessage(), e);
 			StatusManager.getManager().handle(status, StatusManager.SHOW);
 		}
 	}
