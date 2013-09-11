@@ -11,12 +11,14 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.xmi.impl.XMLResourceFactoryImpl;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eventb.codegen.il1.Il1Factory;
 import org.eventb.codegen.il1.Program;
+import org.eventb.codegen.il1.Protected;
 import org.eventb.codegen.il1.impl.Il1PackageImpl;
 import org.eventb.codegen.il1.translator.AbstractTranslateEventBToTarget;
 import org.eventb.codegen.il1.translator.ClassHeaderInformation;
@@ -83,9 +85,16 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 					Map<IProject, List<ITranslationRule>> translationTypeRules = loadTranslatorTypeRules();
 					il1TranslationManager.setTranslatorTypeRules(translationTypeRules);
 
-					code = il1TranslationManager.translateIL1ElementToCode(program,
+					
+					// for each protected object
+					
+					EList<Protected> protectedList = program.getProtected();
+					
+					for(Protected p: protectedList){
+					code = il1TranslationManager.translateIL1ElementToCode(p,
 							getTargetLanguage());
-		
+					}
+					System.out.println();
 	}
 
 	// This method translates Event-B models into an IL1 program
