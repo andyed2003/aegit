@@ -4,7 +4,7 @@
 <org.eventb.core.variable name="'" org.eventb.codegen.tasking.flattened="true" org.eventb.core.identifier="a"/>
 <org.eventb.core.variable name="(" org.eventb.codegen.tasking.flattened="true" org.eventb.core.identifier="used_a"/>
 <org.eventb.core.event name=")" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
-<org.eventb.core.action name="'" org.eventb.core.assignment="a :∈ ℤ" org.eventb.core.label="act6"/>
+<org.eventb.core.action name="'" org.eventb.core.assignment="a ≔ 0" org.eventb.core.label="act6"/>
 <org.eventb.core.action name="(" org.eventb.core.assignment="used_a ≔ 0" org.eventb.core.label="act8"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="*" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="controller_fmiDoStep">

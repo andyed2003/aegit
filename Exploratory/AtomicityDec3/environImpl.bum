@@ -3,7 +3,7 @@
 <org.eventb.core.refinesMachine name="'" org.eventb.core.target="environ"/>
 <org.eventb.core.variable name="'" org.eventb.codegen.tasking.flattened="true" org.eventb.core.identifier="b"/>
 <org.eventb.core.event name="(" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
-<org.eventb.core.action name="'" org.eventb.core.assignment="b :∈ ℤ" org.eventb.core.label="act4"/>
+<org.eventb.core.action name="'" org.eventb.core.assignment="b ≔ 99" org.eventb.core.label="act4"/>
 </org.eventb.core.event>
 <org.eventb.core.event name=")" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="env_fmiDoStep">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="env_fmiDoStep"/>
