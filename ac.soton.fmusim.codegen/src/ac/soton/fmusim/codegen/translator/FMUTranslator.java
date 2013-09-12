@@ -1,5 +1,6 @@
 package ac.soton.fmusim.codegen.translator;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
@@ -25,6 +26,7 @@ import org.eventb.codegen.il1.translator.ClassHeaderInformation;
 import org.eventb.codegen.il1.translator.IL1TranslationManager;
 import org.eventb.codegen.il1.translator.IL1TranslationUnhandledTypeException;
 import org.eventb.codegen.il1.translator.TargetLanguage;
+import org.eventb.codegen.il1.translator.core.AbstractProgramIL1Translator;
 import org.eventb.codegen.il1.translator.provider.ITranslationRule;
 import org.eventb.codegen.tasking.RMLDataStruct;
 import org.eventb.codegen.tasking.RelevantMachineLoader;
@@ -43,14 +45,16 @@ import ac.soton.compositionmodel.core.compositionmodel.ComposedMachine;
 public class FMUTranslator extends AbstractTranslateEventBToTarget {
 
 	public static String COMMON_HEADER_PARTIAL = "Common";
-	public static String COMMON_HEADER_FULL = COMMON_HEADER_PARTIAL + ".h"; 
+	public static String COMMON_HEADER_FULL = COMMON_HEADER_PARTIAL + ".h";
 	private static TaskingTranslationManager taskingTranslationManager = null;
 	private static TargetLanguage targetLanguage = new TargetLanguage("C",
 			"OpenMP");
+	private Protected currentProtected;
 
 	public void translateToFMU(IStructuredSelection s)
 			throws TaskingTranslationException, BackingStoreException,
-			CoreException, IOException, URISyntaxException, IL1TranslationUnhandledTypeException {
+			CoreException, IOException, URISyntaxException,
+			IL1TranslationUnhandledTypeException {
 		this.setSelection(s);
 		// Generate an IL1 program using existing stage 1 code generator.
 		Program program = translateEventBToIL1(s);
@@ -71,30 +75,53 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		translateIL1ToFMU(program);
 	}
 
-	private void translateIL1ToFMU(Program program) throws IL1TranslationUnhandledTypeException, RodinDBException, TaskingTranslationUnhandledTypeException {
+	private void translateIL1ToFMU(Program program)
+			throws IL1TranslationUnhandledTypeException, RodinDBException,
+			TaskingTranslationUnhandledTypeException {
 		// Now to the code generation
-					IL1TranslationManager il1TranslationManager = new IL1TranslationManager();
+		IL1TranslationManager il1TranslationManager = new IL1TranslationManager();
 
-					ArrayList<String> code = null;
+		ArrayList<String> code = null;
 
-					// Translation Rules
-					Map<IProject, List<ITranslationRule>> translationRules = loadTranslatorRules();
-					il1TranslationManager.setTranslatorRules(translationRules);
+		// Translation Rules
+		Map<IProject, List<ITranslationRule>> translationRules = loadTranslatorRules();
+		il1TranslationManager.setTranslatorRules(translationRules);
 
-					// Types Rules
-					Map<IProject, List<ITranslationRule>> translationTypeRules = loadTranslatorTypeRules();
-					il1TranslationManager.setTranslatorTypeRules(translationTypeRules);
+		// Types Rules
+		Map<IProject, List<ITranslationRule>> translationTypeRules = loadTranslatorTypeRules();
+		il1TranslationManager.setTranslatorTypeRules(translationTypeRules);
 
-					
-					// for each protected object
-					
-					EList<Protected> protectedList = program.getProtected();
-					
-					for(Protected p: protectedList){
-					code = il1TranslationManager.translateIL1ElementToCode(p,
-							getTargetLanguage());
-					}
-					System.out.println();
+		String directoryName = getFilePathFromSelected();
+		if (directoryName != null) {
+
+			// put each language and specialisation in a separate directory
+			String directoryNameA = directoryName + "src" + File.separatorChar;
+			String directoryNameB = directoryName + "src" + File.separatorChar
+					+ AbstractProgramIL1Translator.GENERATED_PACKAGE_NAME
+					// + "_" + getTargetLanguage().getCoreLanguage()
+					// + "_" + getTargetLanguage().getSpecificLanguage()
+					+ File.separatorChar;
+
+			// Add the directory information for code, does nothing if it
+			// already exists
+			File fa = new File(directoryNameA);
+			File fb = new File(directoryNameB);
+
+			fa.mkdir();
+			fb.mkdir();
+
+			EList<Protected> protectedList = program.getProtected();
+			// for each protected object
+			for (Protected p : protectedList) {
+				code = il1TranslationManager.translateIL1ElementToCode(p,
+						getTargetLanguage());
+				code.add("// EndProtected");
+				currentProtected = p;
+				saveToFile(code, null, program, directoryNameB,
+						il1TranslationManager);
+			}
+		}
+		System.out.println();
 	}
 
 	// This method translates Event-B models into an IL1 program
@@ -188,6 +215,14 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		return null;
 	}
 
+	// We override the saveToFile since we do not need to write tasks for FMU's
+	// only
+	// protected objects. We also want to save the 'protected object' code from
+	// shared machines
+	// since they map to the FMUs. We store the 'protected object' code in a
+	// field, temporarily,
+	// in TranslateIL1ToFMU, then call the saveToFile, and make use of it there
+	// rather than pass it as a parameter.
 	@Override
 	protected void saveToFile(ArrayList<String> codeToSave,
 			ArrayList<ClassHeaderInformation> headerInformation,
@@ -197,60 +232,12 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		ArrayList<String> globalDecls = new ArrayList<String>();
 
 		for (int lineNumber = 0; lineNumber < codeToSave.size(); lineNumber++) {
-			String line = codeToSave.get(lineNumber);
-
-			if (line.equals("// Protected")) {
-				// Extract the protected code
-				ArrayList<String> protectedCode = new ArrayList<String>();
-				lineNumber = getCodeBlock(codeToSave, lineNumber + 1,
-						"// EndProtected", protectedCode);
-
-				// Get the protected name
-				// Assumes first line is // Protected:
-				String name = getName(protectedCode, "// Protected:");
-
-				saveToFileHelper(protectedCode, name + ".c", directoryName);
-			} else if (line.equals("// Task")) {
-				// Extract the protected code
-				ArrayList<String> taskCode = new ArrayList<String>();
-				lineNumber = getCodeBlock(codeToSave, lineNumber + 1,
-						"// EndTask", taskCode);
-
-				// Get the protected name
-				// Assumes first line is // Task:
-				String name = getName(taskCode, "// Task:");
-
-				saveToFileHelper(taskCode, name + ".c", directoryName);
-			} else if (line.equals("// MainEntry")) {
-				// Extract the protected code
-				ArrayList<String> taskCode = new ArrayList<String>();
-				lineNumber = getCodeBlock(codeToSave, lineNumber + 1,
-						"// EndMainEntry", taskCode);
-
-				// Get the protected name
-				// Assumes first line is // Task:
-				String name = getName(taskCode, "// MainEntry:");
-
-				saveToFileHelper(taskCode, name + ".c", directoryName);
-			} else if (line.equals("// EnvironTask")) {
-				// Extract the protected code
-				ArrayList<String> taskCode = new ArrayList<String>();
-				lineNumber = getCodeBlock(codeToSave, lineNumber + 1,
-						"// EndEnvironTask", taskCode);
-
-				// Get the protected name
-				// Assumes first line is // Task:
-				String name = getName(taskCode, "// EnvironTask:");
-
-				saveToFileHelper(taskCode, name + ".c", directoryName);
-			} else if (line.equals("// GlobalDeclarations")) {
-				ArrayList<String> globalDeclCode = new ArrayList<String>();
-				lineNumber = getCodeBlock(codeToSave, lineNumber + 1,
-						"// EndGlobalDeclarations", globalDeclCode);
-				globalDecls.addAll(globalDeclCode);
-			} else {
-				// Do nothing with it
-			}
+			ArrayList<String> protectedCode = new ArrayList<String>();
+			lineNumber = getCodeBlock(codeToSave, lineNumber + 1,
+					"// EndProtected", protectedCode);
+			// Get the protected name
+			String name = currentProtected.getMachineName();
+			saveToFileHelper(protectedCode, name + ".c", directoryName);
 		}
 		// Now sort out header files
 		// For common header
@@ -303,33 +290,28 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			this.saveToFileHelper(headerCode, headerName + ".h", directoryName);
 		}
 	}
-	
-	protected int getCodeBlock(ArrayList<String> codeIn, int startIdx, String endStatement, ArrayList<String> codeOut)
-	{
+
+	protected int getCodeBlock(ArrayList<String> codeIn, int startIdx,
+			String endStatement, ArrayList<String> codeOut) {
 		int endIdx = startIdx;
-		for (int i = startIdx; i < codeIn.size() && !codeIn.get(i).equals(endStatement); i++, endIdx++)
-		{
+		for (int i = startIdx; i < codeIn.size()
+				&& !codeIn.get(i).equals(endStatement); i++, endIdx++) {
 			codeOut.add(codeIn.get(i));
 		}
-		
+
 		return endIdx;
 	}
-	
-	protected String getName(ArrayList<String> codeIn, String lhs)
-	{
-		//	Find first occurence of the lhs string
-		//	As the first lines may be include / import statements
-		for (String s : codeIn)
-		{
-			if (s.startsWith(lhs))
-			{
+
+	protected String getName(ArrayList<String> codeIn, String lhs) {
+		// Find first occurence of the lhs string
+		// As the first lines may be include / import statements
+		for (String s : codeIn) {
+			if (s.startsWith(lhs)) {
 				return s.split(lhs)[1].trim();
 			}
-		}		
-		
-		return "";	//	something went wrong	
+		}
+
+		return ""; // something went wrong
 	}
-
-
 
 }
