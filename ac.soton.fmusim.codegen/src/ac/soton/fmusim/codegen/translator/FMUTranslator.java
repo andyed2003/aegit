@@ -26,6 +26,7 @@ import org.eventb.codegen.il1.translator.ClassHeaderInformation;
 import org.eventb.codegen.il1.translator.IL1TranslationManager;
 import org.eventb.codegen.il1.translator.IL1TranslationUnhandledTypeException;
 import org.eventb.codegen.il1.translator.TargetLanguage;
+import org.eventb.codegen.il1.translator.c.CProgramTranslator;
 import org.eventb.codegen.il1.translator.core.AbstractProgramIL1Translator;
 import org.eventb.codegen.il1.translator.provider.ITranslationRule;
 import org.eventb.codegen.tasking.RMLDataStruct;
@@ -72,6 +73,9 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		// and have a master task.
 
 		translateIL1ToFMU(program);
+		
+		// reflect the changes in the model, back to the workspace.
+		updateResources();
 	}
 
 	private void translateIL1ToFMU(Program program)
@@ -92,13 +96,10 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 
 		String directoryName = getFilePathFromSelected();
 		if (directoryName != null) {
-
 			// put each language and specialisation in a separate directory
 			String directoryNameA = directoryName + "src" + File.separatorChar;
 			String directoryNameB = directoryName + "src" + File.separatorChar
-					+ AbstractProgramIL1Translator.GENERATED_PACKAGE_NAME
-					// + "_" + getTargetLanguage().getCoreLanguage()
-					// + "_" + getTargetLanguage().getSpecificLanguage()
+					
 					+ File.separatorChar;
 
 			// Add the directory information for code, does nothing if it
@@ -116,6 +117,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			for (Protected p : protectedList) {
 				code = il1TranslationManager.translateIL1ElementToCode(p,
 						getTargetLanguage());
+				code.add(0,"#include \"" + COMMON_HEADER_FULL + "\"");
 				code.add("// EndProtected");
 				currentProtected = p;
 				saveToFile(code, headerInfo, program, directoryNameB,
@@ -234,12 +236,25 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 
 		for (int lineNumber = 0; lineNumber < codeToSave.size(); lineNumber++) {
 			ArrayList<String> protectedCode = new ArrayList<String>();
-			lineNumber = getCodeBlock(codeToSave, lineNumber + 1,
+			//In the original code (the default C code) we used lineNumber + 1.
+			//For FMUs we use lineNumber, to pick up the 'include "common.h"' statement.
+			lineNumber = getCodeBlock(codeToSave, lineNumber,
 					"// EndProtected", protectedCode);
 			// Get the protected name
 			String name = currentProtected.getMachineName();
 			saveToFileHelper(protectedCode, name + ".c", directoryName);
 		}
+		
+		// Generate the header files. 
+		// Each protected file just includes "common.h" which includes the other files.
+		generateHeaders(headerInformation, directoryName, translationManager,
+				globalDecls);
+	}
+
+	private void generateHeaders(
+			ArrayList<ClassHeaderInformation> headerInformation,
+			String directoryName, IL1TranslationManager translationManager,
+			ArrayList<String> globalDecls) {
 		// Now sort out header files
 		// For common header
 		ClassHeaderInformation common = new ClassHeaderInformation();
@@ -286,9 +301,6 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 
 			for (String i : c.functionDeclarations) {
 				headerCode.add(i);
-				if (i.contains("Common.h")) {
-					System.out.println("Debug");
-				}
 			}
 
 			headerCode.add("#endif");
