@@ -47,8 +47,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 	public static String COMMON_HEADER_PARTIAL = "Common";
 	public static String COMMON_HEADER_FULL = COMMON_HEADER_PARTIAL + ".h";
 	private static TaskingTranslationManager taskingTranslationManager = null;
-	private static TargetLanguage targetLanguage = new TargetLanguage("C",
-			"OpenMP");
+	private static TargetLanguage targetLanguage = new TargetLanguage("C");
 	private Protected currentProtected;
 
 	public void translateToFMU(IStructuredSelection s)
