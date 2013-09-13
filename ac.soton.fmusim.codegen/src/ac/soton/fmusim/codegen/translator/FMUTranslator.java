@@ -110,6 +110,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			fa.mkdir();
 			fb.mkdir();
 
+			ArrayList<ClassHeaderInformation> headerInfo = il1TranslationManager.getClassHeaderInformation();
 			EList<Protected> protectedList = program.getProtected();
 			// for each protected object
 			for (Protected p : protectedList) {
@@ -117,7 +118,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 						getTargetLanguage());
 				code.add("// EndProtected");
 				currentProtected = p;
-				saveToFile(code, null, program, directoryNameB,
+				saveToFile(code, headerInfo, program, directoryNameB,
 						il1TranslationManager);
 			}
 		}
