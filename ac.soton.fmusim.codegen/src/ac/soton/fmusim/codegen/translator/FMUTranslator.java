@@ -109,7 +109,8 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			fa.mkdir();
 			fb.mkdir();
 
-			ArrayList<ClassHeaderInformation> headerInfo = il1TranslationManager.getClassHeaderInformation();
+			ArrayList<ClassHeaderInformation> headerInfo = il1TranslationManager
+					.getClassHeaderInformation();
 			EList<Protected> protectedList = program.getProtected();
 			// for each protected object
 			for (Protected p : protectedList) {
@@ -255,7 +256,10 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		// Add the header files to include in the initial data
 		for (ClassHeaderInformation c : headerInformation) {
 			String headerName = c.className + ".h";
-			common.functionDeclarations.add("#include \"" + headerName + "\"");
+			if (!headerName.equalsIgnoreCase("common.h")) {
+				common.functionDeclarations.add("#include \"" + headerName
+						+ "\"");
+			}
 		}
 
 		headerInformation.add(common);
@@ -282,6 +286,9 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 
 			for (String i : c.functionDeclarations) {
 				headerCode.add(i);
+				if (i.contains("Common.h")) {
+					System.out.println("Debug");
+				}
 			}
 
 			headerCode.add("#endif");
