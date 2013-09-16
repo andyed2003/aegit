@@ -99,7 +99,8 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			// put each language and specialisation in a separate directory
 			String directoryNameA = directoryName + "src" + File.separatorChar;
 			String directoryNameB = directoryName + "src" + File.separatorChar
-					
+					+ program.getProjectName()
+					+ "_" + getTargetLanguage().getCoreLanguage() + "_FMI"
 					+ File.separatorChar;
 
 			// Add the directory information for code, does nothing if it
