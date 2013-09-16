@@ -16,7 +16,8 @@
       <body xsi:type="il1:Action" ParentEventName="env_fmiDoStep" action="b &#x2254; b + 1"/>
     </subroutines>
     <subroutines name="fmiGetInteger" machineName="environImpl" projectName="AtomicityDec3">
-      <formalParameters xsi:type="il1:OutParameter" identifier="b" type=" &#x2124;" ProjectName="AtomicityDec3"/>
+      <body xsi:type="il1:Action" action="p &#x2254; b"/>
+      <formalParameters xsi:type="il1:OutParameter" identifier="p" type=" &#x2124;" ProjectName="AtomicityDec3"/>
     </subroutines>
     <decls xsi:type="il1:VariableDecl" identifier="b" type="&#x2124;" initialValue="99" ProjectName="AtomicityDec3" ComponentName="environImpl"/>
   </protected>
@@ -39,7 +40,15 @@
             </rightBranch>
           </leftBranch>
           <rightBranch xsi:type="il1:Seq">
-            <leftBranch xsi:type="il1:Action" ParentEventName="fmiGetInteger" action="x &#x2254; p"/>
+            <leftBranch xsi:type="il1:Seq">
+              <rightBranch xsi:type="il1:Call">
+                <subroutine name="fmiGetInteger" machineName="environImpl" projectName="AtomicityDec3">
+                  <body xsi:type="il1:Action" action="p &#x2254; b"/>
+                  <formalParameters xsi:type="il1:OutParameter" identifier="p" type=" &#x2124;" ProjectName="AtomicityDec3"/>
+                </subroutine>
+                <actualParameters xsi:type="il1:InParameter" identifier="x" type=" &#x2124;" ProjectName="AtomicityDec3" ComponentName="masterImpl"/>
+              </rightBranch>
+            </leftBranch>
             <rightBranch xsi:type="il1:Seq">
               <rightBranch xsi:type="il1:Call">
                 <subroutine name="fmiSetInteger" machineName="controllerImpl" projectName="AtomicityDec3">
