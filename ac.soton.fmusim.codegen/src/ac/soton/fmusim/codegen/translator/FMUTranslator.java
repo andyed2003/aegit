@@ -26,8 +26,6 @@ import org.eventb.codegen.il1.translator.ClassHeaderInformation;
 import org.eventb.codegen.il1.translator.IL1TranslationManager;
 import org.eventb.codegen.il1.translator.IL1TranslationUnhandledTypeException;
 import org.eventb.codegen.il1.translator.TargetLanguage;
-import org.eventb.codegen.il1.translator.c.CProgramTranslator;
-import org.eventb.codegen.il1.translator.core.AbstractProgramIL1Translator;
 import org.eventb.codegen.il1.translator.provider.ITranslationRule;
 import org.eventb.codegen.tasking.RMLDataStruct;
 import org.eventb.codegen.tasking.RelevantMachineLoader;
@@ -48,7 +46,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 	public static String COMMON_HEADER_PARTIAL = "Common";
 	public static String COMMON_HEADER_FULL = COMMON_HEADER_PARTIAL + ".h";
 	private static TaskingTranslationManager taskingTranslationManager = null;
-	private static TargetLanguage targetLanguage = new TargetLanguage("C");
+	private static TargetLanguage targetLanguage = new TargetLanguage("FMI_C");
 	private Protected currentProtected;
 
 	public void translateToFMU(IStructuredSelection s)
@@ -100,7 +98,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			String directoryNameA = directoryName + "src" + File.separatorChar;
 			String directoryNameB = directoryName + "src" + File.separatorChar
 					+ program.getProjectName()
-					+ "_" + getTargetLanguage().getCoreLanguage() + "_FMI"
+					+ "_" + getTargetLanguage().getCoreLanguage()
 					+ File.separatorChar;
 
 			// Add the directory information for code, does nothing if it
