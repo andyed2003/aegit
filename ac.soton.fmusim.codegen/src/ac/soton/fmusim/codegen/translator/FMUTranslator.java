@@ -40,6 +40,13 @@ import org.rodinp.core.RodinDBException;
 import ac.soton.composition.core.basis.ComposedMachineRoot;
 import ac.soton.compositionmodel.core.compositionmodel.ComposedMachine;
 
+
+
+// This class is the entry point for the translation proper. 
+// UNLIKE the existing C code generator, it does not extend AbstractProgramIL1Translator.
+// It is not related to the extensibility mechanism implemented by Chris, i.e. does not
+// use an extension point. However, protected objects, and those nested within, do use it.
+
 @SuppressWarnings("restriction")
 public class FMUTranslator extends AbstractTranslateEventBToTarget {
 
@@ -76,6 +83,8 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		updateResources();
 	}
 
+	// This method is equivalent to CProgramIL1Translator, tailored for
+	// use with FMI translation.
 	private void translateIL1ToFMU(Program program)
 			throws IL1TranslationUnhandledTypeException, RodinDBException,
 			TaskingTranslationUnhandledTypeException {
