@@ -190,5 +190,18 @@
          </il1Translator>
       </emfPackage>
    </extension>
+   <extension
+         point="org.eventb.codegen.tasking.translator">
+      <emfPackage
+            TargetOutput="IL1"
+            name="TaskingPackage"
+            nsURISource="http://tasking.ecore">
+         <taskingTranslator
+               name="FMUMachine"
+               sourceClass="FMU_Machine"
+               taskingTranslatorClass="ac.soton.fmusim.codegen.AbstractTaskingTranslator:1">
+         </taskingTranslator>
+      </emfPackage>
+   </extension>
 
 </plugin>

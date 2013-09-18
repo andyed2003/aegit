@@ -13,7 +13,8 @@ Require-Bundle: org.eclipse.ui,
  org.eventb.codegen.IL1.core;bundle-version="0.0.3",
  org.eventb.codegen.IL1.translator;bundle-version="0.0.3",
  org.rodinp.core;bundle-version="1.6.1",
- org.eventb.codegen.tasking;bundle-version="0.0.3"
+ org.eventb.codegen.tasking;bundle-version="0.0.3",
+ org.eventb.taskingMetamodel;bundle-version="0.1.3"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Import-Package: ac.soton.composition.core.basis,
