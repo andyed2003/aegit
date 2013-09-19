@@ -83,58 +83,6 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		updateResources();
 	}
 
-	// This method is equivalent to CProgramIL1Translator, tailored for
-	// use with FMI translation.
-	private void translateIL1ToFMU(Program program)
-			throws IL1TranslationUnhandledTypeException, RodinDBException,
-			TaskingTranslationUnhandledTypeException {
-		// Now to the code generation
-		IL1TranslationManager il1TranslationManager = new IL1TranslationManager();
-
-		ArrayList<String> code = null;
-
-		// Translation Rules
-		Map<IProject, List<ITranslationRule>> translationRules = loadTranslatorRules();
-		il1TranslationManager.setTranslatorRules(translationRules);
-
-		// Types Rules
-		Map<IProject, List<ITranslationRule>> translationTypeRules = loadTranslatorTypeRules();
-		il1TranslationManager.setTranslatorTypeRules(translationTypeRules);
-
-		String directoryName = getFilePathFromSelected();
-		if (directoryName != null) {
-			// put each language and specialisation in a separate directory
-			String directoryNameA = directoryName + "src" + File.separatorChar;
-			String directoryNameB = directoryName + "src" + File.separatorChar
-					+ program.getProjectName()
-					+ "_" + getTargetLanguage().getCoreLanguage()
-					+ File.separatorChar;
-
-			// Add the directory information for code, does nothing if it
-			// already exists
-			File fa = new File(directoryNameA);
-			File fb = new File(directoryNameB);
-
-			fa.mkdir();
-			fb.mkdir();
-
-			ArrayList<ClassHeaderInformation> headerInfo = il1TranslationManager
-					.getClassHeaderInformation();
-			EList<Protected> protectedList = program.getProtected();
-			// for each protected object
-			for (Protected p : protectedList) {
-				code = il1TranslationManager.translateIL1ElementToCode(p,
-						getTargetLanguage());
-				code.add(0,"#include \"" + COMMON_HEADER_FULL + "\"");
-				code.add("// EndProtected");
-				currentProtected = p;
-				saveToFile(code, headerInfo, program, directoryNameB,
-						il1TranslationManager);
-			}
-		}
-		System.out.println();
-	}
-
 	// This method translates Event-B models into an IL1 program
 	private static Program translateEventBToIL1(IStructuredSelection s)
 			throws TaskingTranslationException, BackingStoreException,
@@ -187,6 +135,58 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		return program;
 	}
 
+	// This method is equivalent to CProgramIL1Translator, tailored for
+	// use with FMI translation.
+	private void translateIL1ToFMU(Program program)
+			throws IL1TranslationUnhandledTypeException, RodinDBException,
+			TaskingTranslationUnhandledTypeException {
+		// Now to the code generation
+		IL1TranslationManager il1TranslationManager = new IL1TranslationManager();
+
+		ArrayList<String> code = null;
+
+		// Translation Rules
+		Map<IProject, List<ITranslationRule>> translationRules = loadTranslatorRules();
+		il1TranslationManager.setTranslatorRules(translationRules);
+
+		// Types Rules
+		Map<IProject, List<ITranslationRule>> translationTypeRules = loadTranslatorTypeRules();
+		il1TranslationManager.setTranslatorTypeRules(translationTypeRules);
+
+		String directoryName = getFilePathFromSelected();
+		if (directoryName != null) {
+			// put each language and specialisation in a separate directory
+			String directoryNameA = directoryName + "src" + File.separatorChar;
+			String directoryNameB = directoryName + "src" + File.separatorChar
+					+ program.getProjectName()
+					+ "_" + getTargetLanguage().getCoreLanguage()
+					+ File.separatorChar;
+
+			// Add the directory information for code, does nothing if it
+			// already exists
+			File fa = new File(directoryNameA);
+			File fb = new File(directoryNameB);
+
+			fa.mkdir();
+			fb.mkdir();
+
+			ArrayList<ClassHeaderInformation> headerInfo = il1TranslationManager
+					.getClassHeaderInformation();
+			EList<Protected> protectedList = program.getProtected();
+			// for each protected object
+			for (Protected p : protectedList) {
+				code = il1TranslationManager.translateIL1ElementToCode(p,
+						getTargetLanguage());
+				code.add(0,"#include \"" + COMMON_HEADER_FULL + "\"");
+				code.add("// EndProtected");
+				currentProtected = p;
+				saveToFile(code, headerInfo, program, directoryNameB,
+						il1TranslationManager);
+			}
+		}
+		System.out.println();
+	}
+	
 	// Create the file associated with the output
 	// The sourceRes is the container of the MainClass
 	// element that we want to transform
