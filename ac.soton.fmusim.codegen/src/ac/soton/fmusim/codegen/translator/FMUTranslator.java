@@ -101,12 +101,6 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 
 		taskingTranslationManager = new TaskingTranslationManager(factory);
 
-		Program program = taskingTranslationManager.translateToIL1Entry(list,
-				composedMachines, composedEvents, composedMachineNames,
-				relevantMachines);
-
-		// Now we have a program we need to save it somewhere
-
 		IFile target = null;
 		// Get target's location from the list which is derived from the
 		// structured selection.
@@ -123,14 +117,13 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			}
 		}
 
-		// If the target is not null then save it, else throw exception.
-		if (target != null) {
-			saveBaseProgram(program, targetFile(target));
-			storeProject(target.getProject(), taskingTranslationManager);
-		} else {
-			throw new TaskingTranslationException(
-					"TranslateToIL1: Unknown target location");
-		}
+		storeProject(target.getProject(), taskingTranslationManager);
+
+		Program program = taskingTranslationManager.translateToIL1Entry(list,
+				composedMachines, composedEvents, composedMachineNames,
+				relevantMachines);
+
+		saveBaseProgram(program, targetFile(target));
 
 		return program;
 	}
