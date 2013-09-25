@@ -14,12 +14,14 @@ import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.xmi.impl.XMLResourceFactoryImpl;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eventb.codegen.il1.Il1Factory;
 import org.eventb.codegen.il1.Program;
 import org.eventb.codegen.il1.Protected;
+import org.eventb.codegen.il1.Subroutine;
 import org.eventb.codegen.il1.impl.Il1PackageImpl;
 import org.eventb.codegen.il1.translator.AbstractTranslateEventBToTarget;
 import org.eventb.codegen.il1.translator.ClassHeaderInformation;
@@ -63,6 +65,8 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		this.setSelection(s);
 		// Generate an IL1 program using existing stage 1 code generator.
 		Program program = translateEventBToIL1(s);
+		
+		
 		// we now have an IL1 program.
 		// We assume we have modelled the FMU's as shared machines. This
 		// means that we can discard the master. The subroutines are then
@@ -123,6 +127,22 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 				composedMachines, composedEvents, composedMachineNames,
 				relevantMachines);
 
+		// We delete the temporary subroutines
+		EList<Protected> protectedList = program.getProtected();
+		for(Protected prot: protectedList){
+			EList<Subroutine> subroutineList =prot.getSubroutines();
+			List<Subroutine> tmpSubroutine = new ArrayList<Subroutine>();
+			for(Subroutine subroutine: subroutineList){
+				if(!subroutine.isTemporary()){
+					tmpSubroutine.add(subroutine);
+				}
+			}
+			if(tmpSubroutine.size() != subroutineList.size()){
+				subroutineList.clear();
+				subroutineList.addAll(tmpSubroutine);
+			}
+		}
+		
 		saveBaseProgram(program, targetFile(target));
 
 		return program;
