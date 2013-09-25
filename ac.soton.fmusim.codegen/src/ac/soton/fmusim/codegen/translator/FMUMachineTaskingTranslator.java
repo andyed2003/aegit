@@ -115,8 +115,12 @@ public class FMUMachineTaskingTranslator extends AbstractTaskingTranslator {
 							StatusManager.SHOW);
 				}
 				Subroutine fmiDoStep = Il1Factory.eINSTANCE.createSubroutine();
+				// Add machine names etc......
 				fmiDoStep.setBody(b);
-				// Finish of adding machine name etc......
+				fmiDoStep.setName("fmiDoStep");
+				fmiDoStep.setMachineName(containingMachine.getName());
+				fmiDoStep.setProjectName(TaskingTranslationManager.getProject().getName());
+				fmiDoStep.setTemporary(false);
 
 				protectedObj.getSubroutines().add(fmiDoStep);
 			}
