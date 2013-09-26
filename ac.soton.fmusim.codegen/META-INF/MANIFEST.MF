@@ -20,5 +20,7 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Import-Package: ac.soton.composition.core.basis,
  ac.soton.compositionmodel.core.compositionmodel,
  de.prob.cosimulation,
+ org.eventb.core,
+ org.eventb.core.ast,
  org.eventb.core.basis,
  tasking
