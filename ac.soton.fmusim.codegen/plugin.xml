@@ -72,7 +72,7 @@
                targetLanguage="C">
          </il1Translator>
          <il1Translator
-               IL1TranslatorClass="org.eventb.codegen.il1.translator.c.CSubroutineTranslator_Default"
+               IL1TranslatorClass="ac.soton.fmusim.codegen.translator.FMU_C_SubroutineTranslator_Default"
                coreTargetLanguage="FMI_C"
                name="CSubroutineTranslator_Default"
                sourceClass="Subroutine"
