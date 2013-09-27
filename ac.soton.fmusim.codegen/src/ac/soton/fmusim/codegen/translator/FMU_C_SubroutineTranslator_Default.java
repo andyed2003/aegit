@@ -2,31 +2,19 @@ package ac.soton.fmusim.codegen.translator;
 
 import java.util.ArrayList;
 
-import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.ui.statushandlers.StatusManager;
+import org.eventb.codegen.il1.InParameter;
+import org.eventb.codegen.il1.OutParameter;
 import org.eventb.codegen.il1.Parameter;
 import org.eventb.codegen.il1.Subroutine;
-import org.eventb.codegen.il1.VariableDecl;
 import org.eventb.codegen.il1.translator.IL1TranslationManager;
 import org.eventb.codegen.il1.translator.c.CTranslatorUtils;
 import org.eventb.codegen.il1.translator.core.AbstractIL1TranslatorUtils;
 import org.eventb.codegen.il1.translator.core.AbstractSubroutineIL1Translator;
-import org.eventb.codegen.tasking.CodeGenTasking;
-import org.eventb.codegen.tasking.TaskingTranslationException;
-import org.eventb.codegen.tasking.TaskingTranslationManager;
 import org.eventb.codegen.tasking.utils.CodeGenTaskingUtils;
-import org.eventb.core.IEvent;
-import org.eventb.core.IEventBRoot;
-import org.eventb.core.IMachineRoot;
-import org.eventb.core.IParameter;
 import org.eventb.core.ast.ITypeEnvironment;
 import org.eventb.core.ast.Type;
-import org.rodinp.core.IAttributeType;
-import org.rodinp.core.IRodinElement;
-import org.rodinp.core.RodinCore;
-import org.rodinp.core.RodinDBException;
+import org.eventb.core.basis.MachineRoot;
 
 public class FMU_C_SubroutineTranslator_Default extends
 		AbstractSubroutineIL1Translator {
@@ -64,40 +52,18 @@ public class FMU_C_SubroutineTranslator_Default extends
 		String fmiTypeName = null;
 		String communicationDirection = null;
 
-		// if this has parameter(s) then it must be a getXXX or SetXXX for the master
+//>>>>> // if this has parameter(s) then it must be a getXXX or SetXXX for the master
 		if(formalParams.size()>0){
 			// Get any of the subroutine parameters, they should all be either incoming, or outgoing
 			Parameter subroutineParam = formalParams.get(0);
 			// we also need the original event parameter to see if it incoming or outgoing
-			IMachineRoot root = (IMachineRoot) translationManager.getSourceRoot(actualSource.getProjectName(), machineName);
-
-			// DOES NOT WORK !!!!
-			
-			IEvent event = root.getEvent(actualSource.getName());
-			IParameter eventParam = event.getParameter(subroutineParam.getIdentifier());
-			
-			boolean hasDirectionAttribute = false;
-			// check to see if it has a direction attribute
-
-			try {
-				hasDirectionAttribute = eventParam.hasAttribute(CodeGenTasking.PARAM_DIR_ATTRIBUTE);
-				if(!hasDirectionAttribute) throw new TaskingTranslationException("No direction attribute on event: " + event.getElementName());
-			} catch (RodinDBException e) {
-				Status status = new Status(IStatus.ERROR,
-						CodeGenTasking.PLUGIN_ID,
-						"Failed Translation: RodinDBException:"
-						+ e.getMessage(), e);
-					StatusManager.getManager().handle(status,
-						StatusManager.SHOW);
-			} catch (TaskingTranslationException e) {
-				Status status = new Status(IStatus.ERROR,
-						CodeGenTasking.PLUGIN_ID,
-						"Failed Translation: TaskingTranslationException:"
-						+ e.getMessage(), e);
-					StatusManager.getManager().handle(status,
-						StatusManager.SHOW);
+			if(subroutineParam instanceof OutParameter){
+				communicationDirection = "Set";
 			}
-
+			else if(subroutineParam instanceof InParameter){
+				communicationDirection = "Get";
+			}
+			MachineRoot root = (MachineRoot) translationManager.getSourceRoot(actualSource.getProjectName(), machineName);
 			String exampleParamName = subroutineParam.getIdentifier();
 			// get the FMI type from the type environment
 			ITypeEnvironment typeEnv = translationManager.getTypeEnvironment(root);
@@ -115,56 +81,98 @@ public class FMU_C_SubroutineTranslator_Default extends
 			else if(typeAsString.equalsIgnoreCase("Real")){
 				fmiTypeName = "Real";
 			}
+
+			// Format the parameters
+			String fmiAPIparameters = "fmiComponent c, const fmiValueReference vr[], "
+					+ "size_t nvr, fmiInteger value[]";
+
 			
-		}
-		// else it must be an fmiDOStep subroutine and will be marked as temporary, and removed
-		else{
-			
-		}
+			// Uniquely identify each event name using the machine name
+			outCode.add("fmiStatus " + machineName + "_" + communicationDirection + fmiTypeName + "(" + fmiAPIparameters + ")");
+			outCode.add("{"); // open function
 
-		
-		
-		
-		// Format the parameters
-		String fmiAPIparameters = "fmiComponent c, const fmiValueReference vr[], "
-				+ "size_t nvr, fmiInteger value[]";
-
-		
-		// Uniquely identify each event name using the machine name
-		outCode.add("fmiStatus " + machineName + "_" + communicationDirection + fmiTypeName + "(" + fmiAPIparameters + ")");
-		outCode.add("{"); // open function
-
-		if (isProtected || isEnviron) {
-			// Output OpenMP blocking
-			translationManager.addIncludeStatement("typedef int BOOL;");
-			translationManager.addIncludeStatement("#define TRUE 1");
-			translationManager.addIncludeStatement("#define FALSE 0");
-		}
-
-		// Guards
-		if (!guardList.equals("")) {
-			outCode.add("// Check to see if guard is met");
-			outCode.add("if (" + guardList + ")");
-			outCode.add("{"); // open guarded
-		}
-
-		// Local variables
-		for (ArrayList<String> lVars : localVariables) {
-			outCode.addAll(lVars);
-		}
-
-		// Body code
-		outCode.add("// Translated code");
-		outCode.addAll(body);
-
-		if (!guardList.equals("")) {
 			if (isProtected || isEnviron) {
-				outCode.add("");
+				// Output OpenMP blocking
+				translationManager.addIncludeStatement("typedef int BOOL;");
+				translationManager.addIncludeStatement("#define TRUE 1");
+				translationManager.addIncludeStatement("#define FALSE 0");
 			}
-			outCode.add("}"); // close guarded
-		} 
 
-		outCode.add("}"); // close function
+			// Guards
+			if (!guardList.equals("")) {
+				outCode.add("// Check to see if guard is met");
+				outCode.add("if (" + guardList + ")");
+				outCode.add("{"); // open guarded
+			}
+
+			// Local variables
+			for (ArrayList<String> lVars : localVariables) {
+				outCode.addAll(lVars);
+			}
+
+			// Body code
+			outCode.add("// Translated code");
+			outCode.addAll(body);
+
+			if (!guardList.equals("")) {
+				if (isProtected || isEnviron) {
+					outCode.add("");
+				}
+				outCode.add("}"); // close guarded
+			} 
+
+			outCode.add("}"); // close function
+
+		}
+//>>>>> // else it must be an fmiDOStep subroutine
+		else{
+			// Format the parameters
+			String fmiAPIparameters = "fmiComponent c, const fmiValueReference vr[], "
+					+ "size_t nvr, fmiInteger value[]";
+
+			
+			// Uniquely identify each event name using the machine name
+			outCode.add("fmiStatus " + machineName + "_" + "fmiDoStep(" + fmiAPIparameters + ")");
+			outCode.add("{"); // open function
+
+			if (isProtected || isEnviron) {
+				// Output OpenMP blocking
+				translationManager.addIncludeStatement("typedef int BOOL;");
+				translationManager.addIncludeStatement("#define TRUE 1");
+				translationManager.addIncludeStatement("#define FALSE 0");
+			}
+
+			// Guards
+			if (!guardList.equals("")) {
+				outCode.add("// Check to see if guard is met");
+				outCode.add("if (" + guardList + ")");
+				outCode.add("{"); // open guarded
+			}
+
+			// Local variables
+			for (ArrayList<String> lVars : localVariables) {
+				outCode.addAll(lVars);
+			}
+
+			// Body code
+			outCode.add("// Translated code");
+			outCode.addAll(body);
+
+			if (!guardList.equals("")) {
+				if (isProtected || isEnviron) {
+					outCode.add("");
+				}
+				outCode.add("}"); // close guarded
+			} 
+
+			outCode.add("}"); // close function
+
+		
+		}
+
+		
+		
+		
 
 		return outCode;
 
