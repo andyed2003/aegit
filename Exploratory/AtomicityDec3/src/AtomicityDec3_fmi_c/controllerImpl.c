@@ -7,13 +7,13 @@ int used_a_controllerImpl = 0;
 
 
 // Subroutines
-void controllerImpl_fmiSetInteger(int p)
+fmiStatus controllerImpl_GetInteger(fmiComponent c, const fmiValueReference vr[], size_t nvr, fmiInteger value[])
 {
 // Translated code
 a_controllerImpl = p;
 }
 
-void controllerImpl_fmiDoStep()
+fmiStatus controllerImpl_fmiDoStep(fmiComponent c, const fmiValueReference vr[], size_t nvr, fmiInteger value[])
 {
 // Translated code
 used_a_controllerImpl = ((a_controllerImpl) / 2);

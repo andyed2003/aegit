@@ -6,12 +6,12 @@ int b_environImpl = 99;
 
 
 // Subroutines
-void environImpl_fmiGetInteger(int *b)
+fmiStatus environImpl_SetInteger(fmiComponent c, const fmiValueReference vr[], size_t nvr, fmiInteger value[])
 {
 // Translated code
 }
 
-void environImpl_fmiDoStep()
+fmiStatus environImpl_fmiDoStep(fmiComponent c, const fmiValueReference vr[], size_t nvr, fmiInteger value[])
 {
 // Translated code
 b_environImpl = (b_environImpl + 1);

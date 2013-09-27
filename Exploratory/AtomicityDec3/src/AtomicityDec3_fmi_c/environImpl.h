@@ -1,6 +1,6 @@
 #ifndef ENVIRONIMPL_H
 #define ENVIRONIMPL_H
-void environImpl_fmiGetInteger(int *b);
-void environImpl_fmiDoStep();
+fmiStatus environImpl_SetInteger(fmiComponent c, const fmiValueReference vr[], size_t nvr, fmiInteger value[]);
+fmiStatus environImpl_fmiDoStep(fmiComponent c, const fmiValueReference vr[], size_t nvr, fmiInteger value[]);
 #endif
 
