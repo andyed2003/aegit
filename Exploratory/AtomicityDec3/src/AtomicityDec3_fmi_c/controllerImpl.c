@@ -7,7 +7,7 @@ int used_a_controllerImpl = 0;
 
 
 // Subroutines
-fmiStatus controllerImpl_GetInteger(fmiComponent c, const fmiValueReference vr[], size_t nvr, fmiInteger value[])
+fmiStatus controllerImpl_SetInteger(fmiComponent c, const fmiValueReference vr[], size_t nvr, fmiInteger value[])
 {
 // Translated code
 a_controllerImpl = p;

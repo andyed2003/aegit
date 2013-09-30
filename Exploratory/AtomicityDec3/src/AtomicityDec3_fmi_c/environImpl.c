@@ -7,7 +7,7 @@ BOOL tmp_environImpl = TRUE;
 
 
 // Subroutines
-fmiStatus environImpl_SetInteger(fmiComponent c, const fmiValueReference vr[], size_t nvr, fmiInteger value[])
+fmiStatus environImpl_GetInteger(fmiComponent c, const fmiValueReference vr[], size_t nvr, fmiInteger value[])
 {
 // Translated code
 }
