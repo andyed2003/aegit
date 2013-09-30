@@ -91,13 +91,6 @@ public class FMU_C_SubroutineTranslator_Default extends
 			outCode.add("fmiStatus " + machineName + "_" + communicationDirection + fmiTypeName + "(" + fmiAPIparameters + ")");
 			outCode.add("{"); // open function
 
-			if (isProtected || isEnviron) {
-				// Output OpenMP blocking
-				translationManager.addIncludeStatement("typedef int BOOL;");
-				translationManager.addIncludeStatement("#define TRUE 1");
-				translationManager.addIncludeStatement("#define FALSE 0");
-			}
-
 			// Guards
 			if (!guardList.equals("")) {
 				outCode.add("// Check to see if guard is met");
@@ -127,9 +120,8 @@ public class FMU_C_SubroutineTranslator_Default extends
 //>>>>> // else it must be an fmiDOStep subroutine
 		else{
 			// Format the parameters
-			String fmiAPIparameters = "fmiComponent c, const fmiValueReference vr[], "
-					+ "size_t nvr, fmiInteger value[]";
-
+			String fmiAPIparameters = "fmiComponent c, fmiReal currentCommunicationPoint,"
+					+" fmiReal communicationStepSize, fmiBoolean noSetFMUStatePriorToCurrentPoint";
 			
 			// Uniquely identify each event name using the machine name
 			outCode.add("fmiStatus " + machineName + "_" + "fmiDoStep(" + fmiAPIparameters + ")");
