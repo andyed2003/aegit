@@ -29,6 +29,7 @@
       </body>
     </subroutines>
     <decls xsi:type="il1:VariableDecl" identifier="b" type="&#x2124;" initialValue="99" ProjectName="AtomicityDec3" ComponentName="environImpl"/>
+    <decls xsi:type="il1:VariableDecl" identifier="tmp" type="BOOL" initialValue="TRUE" ProjectName="AtomicityDec3" ComponentName="environImpl"/>
   </protected>
   <entryPoint>
     <autoTasks name="masterImpl" projectName="AtomicityDec3" machineName="masterImpl">

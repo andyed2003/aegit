@@ -3,6 +3,7 @@
 
 // Variables and constants
 int b_environImpl = 99;
+BOOL tmp_environImpl = TRUE;
 
 
 // Subroutines
