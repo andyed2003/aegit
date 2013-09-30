@@ -42,6 +42,8 @@ import org.eventb.core.basis.MachineRoot;
 import org.osgi.service.prefs.BackingStoreException;
 import org.rodinp.core.RodinDBException;
 
+import FmiModel.DocumentRoot;
+import FmiModel.FmiModelFactory;
 import ac.soton.composition.core.basis.ComposedMachineRoot;
 import ac.soton.compositionmodel.core.compositionmodel.ComposedMachine;
 
@@ -67,6 +69,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		// Generate an IL1 program using existing stage 1 code generator.
 		Program program = translateEventBToIL1(s);
 
+		createModelDescription();
 		// we now have an IL1 program.
 		// We assume we have modelled the FMU's as shared machines. This
 		// means that we can discard the master. The subroutines are then
@@ -85,6 +88,11 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 
 		// reflect the changes in the model, back to the workspace.
 		updateResources();
+	}
+
+	private void createModelDescription() {
+		DocumentRoot rootDoc = FmiModelFactory.eINSTANCE.createDocumentRoot();
+		
 	}
 
 	// This method translates Event-B models into an IL1 program
