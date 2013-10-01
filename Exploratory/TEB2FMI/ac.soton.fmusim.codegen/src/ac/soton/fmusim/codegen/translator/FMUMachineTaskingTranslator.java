@@ -40,7 +40,6 @@ public class FMUMachineTaskingTranslator extends AbstractTaskingTranslator {
 		MachineImpl containingMachine = (MachineImpl) source.eContainer();
 		// This is where we create protected object from the FMU
 		Protected protectedObj = Il1Factory.eINSTANCE.createProtected();
-		;
 		// Translate the FMU as a shared machine
 		// Get the events
 		EList<Event> events = containingMachine.getEvents();

@@ -4,8 +4,14 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Map;
+
+import javax.xml.datatype.DatatypeConfigurationException;
+import javax.xml.datatype.DatatypeFactory;
+import javax.xml.datatype.XMLGregorianCalendar;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
@@ -37,13 +43,25 @@ import org.eventb.codegen.tasking.TaskingTranslationException;
 import org.eventb.codegen.tasking.TaskingTranslationManager;
 import org.eventb.codegen.tasking.TaskingTranslationUnhandledTypeException;
 import org.eventb.codegen.tasking.utils.CodeGenTaskingUtils;
+import org.eventb.core.ast.ITypeEnvironment;
+import org.eventb.core.ast.Type;
 import org.eventb.core.basis.ContextRoot;
 import org.eventb.core.basis.MachineRoot;
+import org.eventb.emf.core.machine.Machine;
+import org.eventb.emf.core.machine.Variable;
 import org.osgi.service.prefs.BackingStoreException;
+import org.rodinp.core.IRodinDB;
+import org.rodinp.core.IRodinFile;
+import org.rodinp.core.IRodinProject;
+import org.rodinp.core.RodinCore;
 import org.rodinp.core.RodinDBException;
 
+import FmiModel.CoSimulationType;
 import FmiModel.DocumentRoot;
+import FmiModel.FmiModelDescriptionType;
 import FmiModel.FmiModelFactory;
+import FmiModel.FmiScalarVariable;
+import FmiModel.ModelVariablesType;
 import ac.soton.composition.core.basis.ComposedMachineRoot;
 import ac.soton.compositionmodel.core.compositionmodel.ComposedMachine;
 
@@ -59,40 +77,107 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 	public static String COMMON_HEADER_FULL = COMMON_HEADER_PARTIAL + ".h";
 	private static TaskingTranslationManager taskingTranslationManager = null;
 	private static TargetLanguage targetLanguage = new TargetLanguage("FMI_C");
+	private static ArrayList<DocumentRoot> docRootList = new ArrayList<DocumentRoot>();
+
 	private Protected currentProtected;
 
+	// Stores the loaded fmuMachine translations - accessible by name
+
+	// Translate the selected Composed Machine/Event-B Machine to FMU(s)
 	public void translateToFMU(IStructuredSelection s)
 			throws TaskingTranslationException, BackingStoreException,
 			CoreException, IOException, URISyntaxException,
 			IL1TranslationUnhandledTypeException {
 		this.setSelection(s);
+		// Initialise the tasking translation manager
+		Il1PackageImpl.init();
+		Il1Factory factory = Il1Factory.eINSTANCE;
+		taskingTranslationManager = new TaskingTranslationManager(factory);
 		// Generate an IL1 program using existing stage 1 code generator.
 		Program program = translateEventBToIL1(s);
-
-		createModelDescription();
-		// we now have an IL1 program.
-		// We assume we have modelled the FMU's as shared machines. This
-		// means that we can discard the master. The subroutines are then
-		// implemented
-		// as the FMI interface, fmiGetXXX and fmiDoStep etc.
-
-		// Here's an idea. How about a translation from Event-B to an FMI Model.
-		// Synchronised getters between controller and environment will need to
-		// mapped through a master.
-		// Polling-controller/and corresponding environ "tasks" map to fmiGetXXX
-		// ; fmiSetXXX
-		// where both controller and environ are converted to shared machines
-		// and have a master task.
-
+		// From the program, we can create the modelDescription file
+		createModelDescriptionFile(taskingTranslationManager, program);
+		// we can generate the FMU from the IL1program.
 		translateIL1ToFMU(program);
 
 		// reflect the changes in the model, back to the workspace.
 		updateResources();
 	}
 
-	private void createModelDescription() {
-		DocumentRoot rootDoc = FmiModelFactory.eINSTANCE.createDocumentRoot();
-		
+	private void createModelDescriptionFile(
+			TaskingTranslationManager translationManager, Program program) {
+
+		ArrayList<Machine> fmuMachineList = translationManager
+				.getFMUMachineList();
+		for (Machine fmuMachine : fmuMachineList) {
+			// Each fmuMachine will have its own DocumentRoot
+			DocumentRoot docRoot = FmiModelFactory.eINSTANCE
+					.createDocumentRoot();
+			// add this machine documentroot to the list
+			docRootList.add(docRoot);
+			// set various values
+			FmiModelDescriptionType descriptionType = FmiModelFactory.eINSTANCE
+					.createFmiModelDescriptionType();
+			docRoot.setFmiModelDescription(descriptionType);
+			descriptionType.setFmiVersion("2.0");
+			descriptionType.setGenerationTool("EB2FMU");
+			descriptionType.setAuthor("University of Southampton");
+			XMLGregorianCalendar xmlGC = makeDate();
+			descriptionType.setGenerationDateAndTime(xmlGC);
+			descriptionType.setGuid("GUID_" + fmuMachine.getName() + "_"
+					+ xmlGC.toXMLFormat());
+			descriptionType.setModelName(fmuMachine.getName());
+
+			CoSimulationType coSimType = FmiModelFactory.eINSTANCE
+					.createCoSimulationType();
+			descriptionType.getCoSimulation().add(coSimType);
+
+			ModelVariablesType modelVarsType = FmiModelFactory.eINSTANCE
+					.createModelVariablesType();
+			descriptionType.setModelVariables(modelVarsType);
+			// set the types for integers
+
+			IRodinDB rodinDB = RodinCore.getRodinDB();
+			IRodinProject rodinProject = rodinDB.getRodinProject(program
+					.getProjectName());
+			IRodinFile mchFile = rodinProject.getRodinFile(fmuMachine.getName()
+					+ ".bum");
+
+			// Get the root so we can obtain the type environment
+			MachineRoot root = (MachineRoot) mchFile.getRoot();
+			EList<Variable> variableList = fmuMachine.getVariables();
+
+			// get the FMI type from the type environment
+			ITypeEnvironment typeEnv = translationManager
+					.getTypeEnvironment(root);
+			for (Variable var : variableList) {
+				Type type = typeEnv.getType(var.getName());
+				FmiScalarVariable scalar = FmiModelFactory.eINSTANCE.createFmiScalarVariable();
+				scalar.setName(var.getName());
+				String typeString = getFMITypeString(type);
+				// Create and set an fmiScalar value
+				
+				
+				
+				System.out.println();
+			}
+			System.out.println();
+		}
+	}
+
+	private XMLGregorianCalendar makeDate() {
+		DatatypeFactory df = null;
+		Date date = new Date();
+		try {
+			df = DatatypeFactory.newInstance();
+		} catch (DatatypeConfigurationException dce) {
+			throw new IllegalStateException(
+					"Exception while obtaining DatatypeFactory instance", dce);
+		}
+		GregorianCalendar gc = new GregorianCalendar();
+		gc.setTimeInMillis(date.getTime());
+		XMLGregorianCalendar xmlGC = df.newXMLGregorianCalendar(gc);
+		return xmlGC;
 	}
 
 	// This method translates Event-B models into an IL1 program
@@ -108,10 +193,6 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		ArrayList<ComposedMachine> composedMachines = relevantMachines.composedMachines;
 		Map<String, String> composedEvents = relevantMachines.composedEvents;
 		ArrayList<String> composedMachineNames = relevantMachines.composedMachineNames;
-		Il1PackageImpl.init();
-		Il1Factory factory = Il1Factory.eINSTANCE;
-
-		taskingTranslationManager = new TaskingTranslationManager(factory);
 
 		IFile target = null;
 		// Get target's location from the list which is derived from the
@@ -165,9 +246,8 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		IL1TranslationManager il1TranslationManager = new IL1TranslationManager();
 
 		boolean hasBool = false;
-		List<Declaration> decls = new ArrayList<Declaration>();
 		TreeIterator<EObject> programContentList = program.eAllContents();
-		while(programContentList.hasNext()) {
+		while (programContentList.hasNext()) {
 			EObject obj = programContentList.next();
 			if (obj instanceof Declaration) {
 				Declaration decl = (Declaration) obj;
@@ -296,7 +376,6 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			String name = currentProtected.getMachineName();
 			saveToFileHelper(protectedCode, name + ".c", directoryName);
 		}
-
 		// Generate the header files.
 		// Each protected file just includes "common.h" which includes the other
 		// files.
@@ -329,7 +408,6 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 						+ "\"");
 			}
 		}
-
 		headerInformation.add(common);
 
 		if (translationManager.getCompilerDependentExecutableCodeBlock().size() > 0) {
@@ -370,7 +448,6 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 				&& !codeIn.get(i).equals(endStatement); i++, endIdx++) {
 			codeOut.add(codeIn.get(i));
 		}
-
 		return endIdx;
 	}
 
@@ -382,8 +459,25 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 				return s.split(lhs)[1].trim();
 			}
 		}
-
 		return ""; // something went wrong
 	}
 
+	public static String getFMITypeString(Type type){
+		String fmiTypeName = null;
+		String typeAsString = type.toString();
+		if(typeAsString.equalsIgnoreCase(CodeGenTaskingUtils.INT_SYMBOL)){
+			fmiTypeName = "Integer";
+		}else if(typeAsString.equalsIgnoreCase(CodeGenTaskingUtils.BOOL_SYMBOL)){
+			fmiTypeName = "Boolean";
+		}
+		else if(typeAsString.equalsIgnoreCase("String")){
+			fmiTypeName = "String";
+		}
+		else if(typeAsString.equalsIgnoreCase("Real")){
+			fmiTypeName = "Real";
+		}
+		return fmiTypeName;
+	}
+	
+	
 }
