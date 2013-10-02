@@ -91,6 +91,12 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 	private static ArrayList<DocumentRoot> docRootList = new ArrayList<DocumentRoot>();
 
 	private Protected currentProtected;
+	// Keep a local count here value redferences of variable arrays.
+	// This is reset to zero for each machine.
+	private int realVariableCount = 0;
+	private int stringVariableCount = 0;
+	private int integerVariableCount = 0;
+	private int boolVariableCount = 0;
 
 	// Stores the loaded fmuMachine translations - accessible by name
 
@@ -122,13 +128,11 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		ArrayList<Machine> fmuMachineList = translationManager
 				.getFMUMachineList();
 		for (Machine fmuMachine : fmuMachineList) {
-
-			// Each machine has arrays with value references.
-			// Keep a local count here, which we use for each variable
-			int realVariableCount = 0;
-			int stringVariableCount = 0;
-			int integerVariableCount = 0;
-			int boolVariableCount = 0;
+			// Reset the value reference array indices for each machine.
+			realVariableCount = 0;
+			stringVariableCount = 0;
+			integerVariableCount = 0;
+			boolVariableCount = 0;
 			// Each fmuMachine will have its own DocumentRoot
 			DocumentRoot docRoot = FmiModelFactory.eINSTANCE
 					.createDocumentRoot();
@@ -165,49 +169,11 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			// get the FMI type from the type environment
 			ITypeEnvironment typeEnv = translationManager
 					.getTypeEnvironment(root);
-			// Iterate through the machine's variables
+			// Iterate through the machine's variables and generate FMIScalar values
 			for (Variable var : variableList) {
-				Type type = typeEnv.getType(var.getName());
-				// Create and set an fmiScalar value for each variable
-				FmiScalarVariable scalar = FmiModelFactory.eINSTANCE
-						.createFmiScalarVariable();
-				modelVarsType.getScalarVariable().add(scalar);
-				scalar.setName(var.getName());
-				String typeString = getFMITypeString(type);
-				// Add a type if it is an integer
-				if (typeString.equals(INTEGER)) {
-					scalar.setValueReference(integerVariableCount);
-					integerVariableCount++;
-					IntegerType integerType = FmiModelFactory.eINSTANCE
-							.createIntegerType();
-					scalar.setInteger(integerType);
-				}
-				// else if it is a real
-				else if (typeString.equals(REAL)) {
-					scalar.setValueReference(realVariableCount);
-					realVariableCount++;
-					RealType1 realType = FmiModelFactory.eINSTANCE
-							.createRealType1();
-					scalar.setReal(realType);
-				}
-				// elseif it is a string
-				else if (typeString.equals(STRING)) {
-					scalar.setValueReference(stringVariableCount);
-					stringVariableCount++;
-					StringType stringType = FmiModelFactory.eINSTANCE
-							.createStringType();
-					scalar.setString(stringType);
-				}
-				// elsif it is a boolean
-				else if (typeString.equals(BOOLEAN)) {
-					scalar.setValueReference(boolVariableCount);
-					boolVariableCount++;
-					BooleanType boolType = FmiModelFactory.eINSTANCE
-							.createBooleanType();
-					scalar.setBoolean(boolType);
-				}
-			}// end of foreach variable
-				// Save the file
+				variableToFMIScalar(modelVarsType, typeEnv, var);
+			}
+			// Save the file
 			String directoryName = getFilePathFromSelected();
 			if (directoryName != null) {
 				// put each language and specialisation in a separate directory
@@ -236,7 +202,53 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		}// end of foreach machine
 	}// end of createModelDescriptionFile(...);
 
-	public static String getFMIType(String fmiTypeName, Type type) {
+	// The method populates the ModelVariables segment with scalar
+	// variables, generated from the variable's type etc.
+	private void variableToFMIScalar(ModelVariablesType modelVarsType,
+			ITypeEnvironment typeEnv, Variable var) {
+		Type type = typeEnv.getType(var.getName());
+		// Create and set an fmiScalar value for each variable
+		FmiScalarVariable scalar = FmiModelFactory.eINSTANCE
+				.createFmiScalarVariable();
+		modelVarsType.getScalarVariable().add(scalar);
+		scalar.setName(var.getName());
+		String typeString = getFMITypeString(type);
+		// Add a type if it is an integer
+		if (typeString.equals(INTEGER)) {
+			scalar.setValueReference(integerVariableCount);
+			integerVariableCount++;
+			IntegerType integerType = FmiModelFactory.eINSTANCE
+					.createIntegerType();
+			scalar.setInteger(integerType);
+		}
+		// else if it is a real
+		else if (typeString.equals(REAL)) {
+			scalar.setValueReference(realVariableCount);
+			realVariableCount++;
+			RealType1 realType = FmiModelFactory.eINSTANCE
+					.createRealType1();
+			scalar.setReal(realType);
+		}
+		// elseif it is a string
+		else if (typeString.equals(STRING)) {
+			scalar.setValueReference(stringVariableCount);
+			stringVariableCount++;
+			StringType stringType = FmiModelFactory.eINSTANCE
+					.createStringType();
+			scalar.setString(stringType);
+		}
+		// elsif it is a boolean
+		else if (typeString.equals(BOOLEAN)) {
+			scalar.setValueReference(boolVariableCount);
+			boolVariableCount++;
+			BooleanType boolType = FmiModelFactory.eINSTANCE
+					.createBooleanType();
+			scalar.setBoolean(boolType);
+		}
+	}
+
+	public static String getFMIType(Type type) {
+		String fmiTypeName = null;
 		String typeAsString = type.toString();
 		if (typeAsString.equalsIgnoreCase(CodeGenTaskingUtils.INT_SYMBOL)) {
 			fmiTypeName = INTEGER;
@@ -295,7 +307,6 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 				break;
 			}
 		}
-
 		storeProject(target.getProject(), taskingTranslationManager);
 
 		Program program = taskingTranslationManager.translateToIL1Entry(list,
@@ -317,9 +328,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 				subroutineList.addAll(tmpSubroutine);
 			}
 		}
-
 		saveBaseProgram(program, targetFile(target));
-
 		return program;
 	}
 

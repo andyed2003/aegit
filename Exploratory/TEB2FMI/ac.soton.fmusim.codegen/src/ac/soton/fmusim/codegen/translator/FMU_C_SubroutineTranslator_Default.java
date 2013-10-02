@@ -71,8 +71,11 @@ public class FMU_C_SubroutineTranslator_Default extends
 			ITypeEnvironment typeEnv = translationManager.getTypeEnvironment(root);
 			Type type = typeEnv.getType(exampleParamName);
 			// We hard Code the translation of the Type String here
-			fmiTypeName = FMUTranslator.getFMIType(fmiTypeName, type);
-
+			fmiTypeName = FMUTranslator.getFMIType(type);
+			if(fmiTypeName == null){
+	//			throw new Exception();
+			}
+			
 			// Format the parameters
 			String fmiAPIparameters = "fmiComponent c, const fmiValueReference vr[], "
 					+ "size_t nvr, fmiInteger value[]";
