@@ -71,23 +71,11 @@ public class FMU_C_SubroutineTranslator_Default extends
 			ITypeEnvironment typeEnv = translationManager.getTypeEnvironment(root);
 			Type type = typeEnv.getType(exampleParamName);
 			// We hard Code the translation of the Type String here
-			String typeAsString = type.toString();
-			if(typeAsString.equalsIgnoreCase(CodeGenTaskingUtils.INT_SYMBOL)){
-				fmiTypeName = "Integer";
-			}else if(typeAsString.equalsIgnoreCase(CodeGenTaskingUtils.BOOL_SYMBOL)){
-				fmiTypeName = "Boolean";
-			}
-			else if(typeAsString.equalsIgnoreCase("String")){
-				fmiTypeName = "String";
-			}
-			else if(typeAsString.equalsIgnoreCase("Real")){
-				fmiTypeName = "Real";
-			}
+			fmiTypeName = FMUTranslator.getFMIType(fmiTypeName, type);
 
 			// Format the parameters
 			String fmiAPIparameters = "fmiComponent c, const fmiValueReference vr[], "
 					+ "size_t nvr, fmiInteger value[]";
-
 			
 			// Uniquely identify each event name using the machine name
 			outCode.add("fmiStatus " + machineName + "_" + communicationDirection + fmiTypeName + "(" + fmiAPIparameters + ")");
@@ -99,12 +87,10 @@ public class FMU_C_SubroutineTranslator_Default extends
 				outCode.add("if (" + guardList + ")");
 				outCode.add("{"); // open guarded
 			}
-
 			// Local variables
 			for (ArrayList<String> lVars : localVariables) {
 				outCode.addAll(lVars);
 			}
-
 			// Body code
 			outCode.add("// Translated code");
 			outCode.addAll(body);
@@ -115,9 +101,7 @@ public class FMU_C_SubroutineTranslator_Default extends
 				}
 				outCode.add("}"); // close guarded
 			} 
-
 			outCode.add("}"); // close function
-
 		}
 //>>>>> // else it must be an fmiDOStep subroutine
 		else{
@@ -151,18 +135,9 @@ public class FMU_C_SubroutineTranslator_Default extends
 				}
 				outCode.add("}"); // close guarded
 			} 
-
 			outCode.add("}"); // close function
-
-		
 		}
-
-		
-		
-		
-
 		return outCode;
-
 	}
 
 	@Override

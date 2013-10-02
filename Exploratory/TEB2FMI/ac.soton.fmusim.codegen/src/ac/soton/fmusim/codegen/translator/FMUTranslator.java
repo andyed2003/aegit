@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
@@ -23,6 +24,8 @@ import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMLResourceFactoryImpl;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eventb.codegen.il1.Declaration;
@@ -56,12 +59,16 @@ import org.rodinp.core.IRodinProject;
 import org.rodinp.core.RodinCore;
 import org.rodinp.core.RodinDBException;
 
+import FmiModel.BooleanType;
 import FmiModel.CoSimulationType;
 import FmiModel.DocumentRoot;
 import FmiModel.FmiModelDescriptionType;
 import FmiModel.FmiModelFactory;
 import FmiModel.FmiScalarVariable;
+import FmiModel.IntegerType;
 import FmiModel.ModelVariablesType;
+import FmiModel.RealType1;
+import FmiModel.StringType;
 import ac.soton.composition.core.basis.ComposedMachineRoot;
 import ac.soton.compositionmodel.core.compositionmodel.ComposedMachine;
 
@@ -73,6 +80,10 @@ import ac.soton.compositionmodel.core.compositionmodel.ComposedMachine;
 @SuppressWarnings("restriction")
 public class FMUTranslator extends AbstractTranslateEventBToTarget {
 
+	public static final String REAL = "Real";
+	public static final String STRING = "String";
+	public static final String BOOLEAN = "Boolean";
+	public static final String INTEGER = "Integer";
 	public static String COMMON_HEADER_PARTIAL = "Common";
 	public static String COMMON_HEADER_FULL = COMMON_HEADER_PARTIAL + ".h";
 	private static TaskingTranslationManager taskingTranslationManager = null;
@@ -105,11 +116,19 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 	}
 
 	private void createModelDescriptionFile(
-			TaskingTranslationManager translationManager, Program program) {
+			TaskingTranslationManager translationManager, Program program)
+			throws IOException {
 
 		ArrayList<Machine> fmuMachineList = translationManager
 				.getFMUMachineList();
 		for (Machine fmuMachine : fmuMachineList) {
+
+			// Each machine has arrays with value references.
+			// Keep a local count here, which we use for each variable
+			int realVariableCount = 0;
+			int stringVariableCount = 0;
+			int integerVariableCount = 0;
+			int boolVariableCount = 0;
 			// Each fmuMachine will have its own DocumentRoot
 			DocumentRoot docRoot = FmiModelFactory.eINSTANCE
 					.createDocumentRoot();
@@ -127,42 +146,109 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			descriptionType.setGuid("GUID_" + fmuMachine.getName() + "_"
 					+ xmlGC.toXMLFormat());
 			descriptionType.setModelName(fmuMachine.getName());
-
+			// This is a co-simulation
 			CoSimulationType coSimType = FmiModelFactory.eINSTANCE
 					.createCoSimulationType();
 			descriptionType.getCoSimulation().add(coSimType);
-
+			// This is where we store the FMI scalar variables
 			ModelVariablesType modelVarsType = FmiModelFactory.eINSTANCE
 					.createModelVariablesType();
 			descriptionType.setModelVariables(modelVarsType);
-			// set the types for integers
-
+			// Get the root so we can obtain the type environment
 			IRodinDB rodinDB = RodinCore.getRodinDB();
 			IRodinProject rodinProject = rodinDB.getRodinProject(program
 					.getProjectName());
 			IRodinFile mchFile = rodinProject.getRodinFile(fmuMachine.getName()
 					+ ".bum");
-
-			// Get the root so we can obtain the type environment
 			MachineRoot root = (MachineRoot) mchFile.getRoot();
 			EList<Variable> variableList = fmuMachine.getVariables();
-
 			// get the FMI type from the type environment
 			ITypeEnvironment typeEnv = translationManager
 					.getTypeEnvironment(root);
+			// Iterate through the machine's variables
 			for (Variable var : variableList) {
 				Type type = typeEnv.getType(var.getName());
-				FmiScalarVariable scalar = FmiModelFactory.eINSTANCE.createFmiScalarVariable();
+				// Create and set an fmiScalar value for each variable
+				FmiScalarVariable scalar = FmiModelFactory.eINSTANCE
+						.createFmiScalarVariable();
+				modelVarsType.getScalarVariable().add(scalar);
 				scalar.setName(var.getName());
 				String typeString = getFMITypeString(type);
-				// Create and set an fmiScalar value
-				
-				
-				
+				// Add a type if it is an integer
+				if (typeString.equals(INTEGER)) {
+					scalar.setValueReference(integerVariableCount);
+					integerVariableCount++;
+					IntegerType integerType = FmiModelFactory.eINSTANCE
+							.createIntegerType();
+					scalar.setInteger(integerType);
+				}
+				// else if it is a real
+				else if (typeString.equals(REAL)) {
+					scalar.setValueReference(realVariableCount);
+					realVariableCount++;
+					RealType1 realType = FmiModelFactory.eINSTANCE
+							.createRealType1();
+					scalar.setReal(realType);
+				}
+				// elseif it is a string
+				else if (typeString.equals(STRING)) {
+					scalar.setValueReference(stringVariableCount);
+					stringVariableCount++;
+					StringType stringType = FmiModelFactory.eINSTANCE
+							.createStringType();
+					scalar.setString(stringType);
+				}
+				// elsif it is a boolean
+				else if (typeString.equals(BOOLEAN)) {
+					scalar.setValueReference(boolVariableCount);
+					boolVariableCount++;
+					BooleanType boolType = FmiModelFactory.eINSTANCE
+							.createBooleanType();
+					scalar.setBoolean(boolType);
+				}
+			}// end of foreach variable
+				// Save the file
+			String directoryName = getFilePathFromSelected();
+			if (directoryName != null) {
+				// put each language and specialisation in a separate directory
+				String directoryNameB = directoryName + "src"
+						+ File.separatorChar + program.getProjectName() + "_"
+						+ getTargetLanguage().getCoreLanguage()
+						+ File.separatorChar;
+				String fName = directoryNameB + fmuMachine.getName() 
+						+ "." + FmiModelFactory.eINSTANCE.getEPackage().getName().toLowerCase();
+				// Add the directory information for code, does nothing if it
+				// already exists
+				File fb = new File(fName);
+				boolean success = fb.createNewFile();
+				if(!success){
+					fb.delete();
+					fb.createNewFile();
+				}
+				String netUri = fb.toURI().toString();
+				URI emfURI = URI.createURI(netUri);
+				ResourceSet resSet = new ResourceSetImpl();
+				Resource resource = resSet.createResource(emfURI);
+				resource.getContents().add(docRoot);
+				resource.save(Collections.EMPTY_MAP);
 				System.out.println();
 			}
-			System.out.println();
+		}// end of foreach machine
+	}// end of createModelDescriptionFile(...);
+
+	public static String getFMIType(String fmiTypeName, Type type) {
+		String typeAsString = type.toString();
+		if (typeAsString.equalsIgnoreCase(CodeGenTaskingUtils.INT_SYMBOL)) {
+			fmiTypeName = INTEGER;
+		} else if (typeAsString
+				.equalsIgnoreCase(CodeGenTaskingUtils.BOOL_SYMBOL)) {
+			fmiTypeName = BOOLEAN;
+		} else if (typeAsString.equalsIgnoreCase(STRING)) {
+			fmiTypeName = STRING;
+		} else if (typeAsString.equalsIgnoreCase(REAL)) {
+			fmiTypeName = REAL;
 		}
+		return fmiTypeName;
 	}
 
 	private XMLGregorianCalendar makeDate() {
@@ -462,22 +548,20 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		return ""; // something went wrong
 	}
 
-	public static String getFMITypeString(Type type){
+	public static String getFMITypeString(Type type) {
 		String fmiTypeName = null;
 		String typeAsString = type.toString();
-		if(typeAsString.equalsIgnoreCase(CodeGenTaskingUtils.INT_SYMBOL)){
-			fmiTypeName = "Integer";
-		}else if(typeAsString.equalsIgnoreCase(CodeGenTaskingUtils.BOOL_SYMBOL)){
-			fmiTypeName = "Boolean";
-		}
-		else if(typeAsString.equalsIgnoreCase("String")){
-			fmiTypeName = "String";
-		}
-		else if(typeAsString.equalsIgnoreCase("Real")){
-			fmiTypeName = "Real";
+		if (typeAsString.equalsIgnoreCase(CodeGenTaskingUtils.INT_SYMBOL)) {
+			fmiTypeName = INTEGER;
+		} else if (typeAsString
+				.equalsIgnoreCase(CodeGenTaskingUtils.BOOL_SYMBOL)) {
+			fmiTypeName = FMUTranslator.BOOLEAN;
+		} else if (typeAsString.equalsIgnoreCase(STRING)) {
+			fmiTypeName = STRING;
+		} else if (typeAsString.equalsIgnoreCase(REAL)) {
+			fmiTypeName = REAL;
 		}
 		return fmiTypeName;
 	}
-	
-	
+
 }

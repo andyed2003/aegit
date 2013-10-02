@@ -4,6 +4,7 @@
   <ModelVariables>
     <ScalarVariable>
       <Real/>
+      <String declaredType="" start=""/>
     </ScalarVariable>
     <ScalarVariable>
       <Integer declaredType=""/>
