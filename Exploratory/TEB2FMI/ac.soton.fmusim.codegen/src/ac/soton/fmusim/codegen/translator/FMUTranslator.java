@@ -174,24 +174,29 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 				variableToFMIScalar(modelVarsType, typeEnv, var);
 			}
 			// Save the file
-			String directoryName = getFilePathFromSelected();
-			if (directoryName != null) {
+			String rootDirectory = getFilePathFromSelected();
+			if (rootDirectory != null) {
 				// put each language and specialisation in a separate directory
-				String directoryNameB = directoryName + "src"
+				String basicDirectoryPath = rootDirectory + "src"
 						+ File.separatorChar + program.getProjectName() + "_"
 						+ getTargetLanguage().getCoreLanguage()
 						+ File.separatorChar;
-				String fName = directoryNameB + fmuMachine.getName() 
+				
+				String fName = basicDirectoryPath + fmuMachine.getName() 
 						+ "." + FmiModelFactory.eINSTANCE.getEPackage().getName().toLowerCase();
 				// Add the directory information for code, does nothing if it
 				// already exists
-				File fb = new File(fName);
-				boolean success = fb.createNewFile();
-				if(!success){
-					fb.delete();
-					fb.createNewFile();
+				File newDirectory = new File(basicDirectoryPath);
+				if(!newDirectory.exists()){
+					newDirectory.mkdir();
 				}
-				String netUri = fb.toURI().toString();
+				File newFile = new File(fName);
+				boolean success = newFile.createNewFile();
+				if(!success){
+					newFile.delete();
+					newFile.createNewFile();
+				}
+				String netUri = newFile.toURI().toString();
 				URI emfURI = URI.createURI(netUri);
 				ResourceSet resSet = new ResourceSetImpl();
 				Resource resource = resSet.createResource(emfURI);
