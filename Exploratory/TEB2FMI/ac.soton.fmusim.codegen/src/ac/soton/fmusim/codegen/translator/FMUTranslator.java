@@ -247,7 +247,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		}
 	}
 
-	public static String getFMIType(Type type) {
+	public static String getFMIType(Type type) throws TaskingTranslationException {
 		String fmiTypeName = null;
 		String typeAsString = type.toString();
 		if (typeAsString.equalsIgnoreCase(CodeGenTaskingUtils.INT_SYMBOL)) {
@@ -260,7 +260,11 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		} else if (typeAsString.equalsIgnoreCase(REAL)) {
 			fmiTypeName = REAL;
 		}
-		return fmiTypeName;
+		if(fmiTypeName == null){
+			throw new TaskingTranslationException("FMI Type not found for: "+ type.toString());
+		} else{
+			return fmiTypeName;
+		}
 	}
 
 	private XMLGregorianCalendar makeDate() {

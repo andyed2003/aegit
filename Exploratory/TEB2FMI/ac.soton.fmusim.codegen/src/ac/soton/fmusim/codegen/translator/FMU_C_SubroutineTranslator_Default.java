@@ -11,6 +11,7 @@ import org.eventb.codegen.il1.translator.IL1TranslationManager;
 import org.eventb.codegen.il1.translator.c.CTranslatorUtils;
 import org.eventb.codegen.il1.translator.core.AbstractIL1TranslatorUtils;
 import org.eventb.codegen.il1.translator.core.AbstractSubroutineIL1Translator;
+import org.eventb.codegen.tasking.TaskingTranslationException;
 import org.eventb.codegen.tasking.utils.CodeGenTaskingUtils;
 import org.eventb.core.ast.ITypeEnvironment;
 import org.eventb.core.ast.Type;
@@ -25,7 +26,7 @@ public class FMU_C_SubroutineTranslator_Default extends
 			ArrayList<ArrayList<String>> localVariables, String guardList,
 			ArrayList<String> body, boolean isProtected, boolean isEnviron,
 			String machineName, Subroutine actualSource,
-			IL1TranslationManager translationManager) {
+			IL1TranslationManager translationManager) throws TaskingTranslationException {
 
 		ArrayList<String> outCode = new ArrayList<String>();
 
@@ -72,9 +73,6 @@ public class FMU_C_SubroutineTranslator_Default extends
 			Type type = typeEnv.getType(exampleParamName);
 			// We hard Code the translation of the Type String here
 			fmiTypeName = FMUTranslator.getFMIType(type);
-			if(fmiTypeName == null){
-	//			throw new Exception();
-			}
 			
 			// Format the parameters
 			String fmiAPIparameters = "fmiComponent c, const fmiValueReference vr[], "
