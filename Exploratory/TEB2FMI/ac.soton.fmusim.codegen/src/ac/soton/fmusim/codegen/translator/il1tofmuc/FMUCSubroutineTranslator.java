@@ -1,4 +1,4 @@
-package ac.soton.fmusim.codegen.translator;
+package ac.soton.fmusim.codegen.translator.il1tofmuc;
 
 import java.util.ArrayList;
 
@@ -17,7 +17,9 @@ import org.eventb.core.ast.ITypeEnvironment;
 import org.eventb.core.ast.Type;
 import org.eventb.core.basis.MachineRoot;
 
-public class FMU_C_SubroutineTranslator_Default extends
+import ac.soton.fmusim.codegen.FMUTranslator;
+
+public class FMUCSubroutineTranslator extends
 		AbstractSubroutineIL1Translator {
 
 	@Override

@@ -1,4 +1,4 @@
-package ac.soton.fmusim.codegen.translator;
+package ac.soton.fmusim.codegen;
 
 import java.io.File;
 import java.io.IOException;

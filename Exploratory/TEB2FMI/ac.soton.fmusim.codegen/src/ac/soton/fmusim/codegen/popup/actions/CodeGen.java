@@ -20,7 +20,7 @@ import org.osgi.service.prefs.BackingStoreException;
 import org.rodinp.core.RodinDBException;
 
 import ac.soton.fmusim.codegen.Activator;
-import ac.soton.fmusim.codegen.translator.FMUTranslator;
+import ac.soton.fmusim.codegen.FMUTranslator;
 
 public class CodeGen implements IObjectActionDelegate {
 
