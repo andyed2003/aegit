@@ -380,22 +380,10 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		Map<IProject, List<ITranslationRule>> translationTypeRules = loadTranslatorTypeRules();
 		il1TranslationManager.setTranslatorTypeRules(translationTypeRules);
 
-		String directoryName = getFilePathFromSelected();
-		if (directoryName != null) {
-			// put each language and specialisation in a separate directory
-			String directoryNameA = directoryName + "src" + File.separatorChar;
-			String directoryNameB = directoryName + "src" + File.separatorChar
-					+ program.getProjectName() + "_"
-					+ getTargetLanguage().getCoreLanguage()
-					+ File.separatorChar;
-
-			// Add the directory information for code, does nothing if it
-			// already exists
-			File fa = new File(directoryNameA);
-			File fb = new File(directoryNameB);
-
-			fa.mkdir();
-			fb.mkdir();
+		String parentDirectoryPath = getFilePathFromSelected();
+		if (parentDirectoryPath != null) {
+			// make the file system ready.
+			String newDirectoryPath = setupFileSystem(program, parentDirectoryPath);
 
 			ArrayList<ClassHeaderInformation> headerInfo = il1TranslationManager
 					.getClassHeaderInformation();
@@ -407,11 +395,29 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 				code.add(0, "#include \"" + COMMON_HEADER_FULL + "\"");
 				code.add("// EndProtected");
 				currentProtected = p;
-				saveToFile(code, headerInfo, program, directoryNameB,
+				saveToFile(code, headerInfo, program, newDirectoryPath,
 						il1TranslationManager);
 			}
 		}
 		System.out.println();
+	}
+
+	private String setupFileSystem(Program program, String directoryName) {
+		// put each language and specialisation in a separate directory
+		String directoryNameA = directoryName + "src" + File.separatorChar;
+		String directoryNameB = directoryName + "src" + File.separatorChar
+				+ program.getProjectName() + "_"
+				+ getTargetLanguage().getCoreLanguage()
+				+ File.separatorChar;
+
+		// Add the directory information for code, does nothing if it
+		// already exists
+		File fa = new File(directoryNameA);
+		File fb = new File(directoryNameB);
+
+		fa.mkdir();
+		fb.mkdir();
+		return directoryNameB;
 	}
 
 	// Create the file associated with the output
