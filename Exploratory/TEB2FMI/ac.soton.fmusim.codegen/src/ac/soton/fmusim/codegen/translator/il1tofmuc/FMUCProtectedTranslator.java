@@ -21,9 +21,10 @@ public class FMUCProtectedTranslator extends AbstractProtectedIL1Translator {
 		headerInfo.className = actualSource.getName();
 
 		ArrayList<String> outCode = new ArrayList<String>();
-		outCode.add("// Protected: " + name);
+		outCode.add("// FMU: " + name);
 		outCode.add("");
-			
+		outCode.add("fmiComponent *modelInstances[MaxControllerModels]; // initialise an empty array of components");
+		outCode.add("int conInstanceCount = 0;");
 		//	Add the instance variables
 		outCode.add("// Variables and constants");
 		for (ArrayList<String> decl : declList)
