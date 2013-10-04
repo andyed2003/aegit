@@ -14,8 +14,18 @@ import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
 
+import org.eclipse.cdt.core.model.CoreModel;
+import org.eclipse.cdt.core.model.ICContainer;
+import org.eclipse.cdt.core.model.ICModel;
+import org.eclipse.cdt.core.model.ICProject;
+import org.eclipse.core.internal.resources.Project;
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IProjectDescription;
+import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.IWorkspaceRoot;
+import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
@@ -97,6 +107,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 	private int stringVariableCount = 0;
 	private int integerVariableCount = 0;
 	private int boolVariableCount = 0;
+	private String rootDirectory = null;
 
 	// Stores the loaded fmuMachine translations - accessible by name
 
@@ -112,8 +123,10 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		taskingTranslationManager = new TaskingTranslationManager(factory);
 		// Generate an IL1 program using existing stage 1 code generator.
 		Program program = translateEventBToIL1(s);
+		// Create a target Directory
+		createTargetProject();
 		// From the program, we can create the modelDescription file
-		createModelDescriptionFile(taskingTranslationManager, program);
+		createModelDescriptionFile(program);
 		// we can generate the FMU from the IL1program.
 		translateIL1ToFMU(program);
 
@@ -121,11 +134,42 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		updateResources();
 	}
 
-	private void createModelDescriptionFile(
-			TaskingTranslationManager translationManager, Program program)
-			throws IOException {
+	private void createTargetProject() throws CoreException, TaskingTranslationException {
+		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
+		IProject project = root.getProject(TaskingTranslationManager.getProject().getName()+"Targetx");
+		if(!project.exists()){
+			project.create(null);
+			project.open(null);
+			if(!project.hasNature("org.eclipse.cdt.core.cnature")){
+				IProjectDescription description = project.getDescription();
+			      String[] natures = description.getNatureIds();
+			      String[] newNatures = new String[natures.length + 3];
+			      System.arraycopy(natures, 0, newNatures, 0, natures.length);
+			      newNatures[natures.length] = "org.eclipse.cdt.core.cnature";
+			      newNatures[natures.length + 1] = "org.eclipse.cdt.managedbuilder.core.managedBuildNature";
+			      newNatures[natures.length + 2] = "org.eclipse.cdt.managedbuilder.core.ScannerConfigNature";
+			      description.setNatureIds(newNatures);
+			      project.setDescription(description, null);
+			}
+		}
+		CoreModel cModel = CoreModel.getDefault();
+		ICProject cProject = cModel.create(project);
+		IFolder folder = project.getFolder("src");
+		if(!folder.exists()){
+			folder.create(true, true, null);
+		}
+		boolean fe = folder.exists();
+		project.refreshLocal(Project.DEPTH_INFINITE, null);
+		ICContainer cFolder = cModel.create(folder);
+System.out.println();
+		
+	}
 
-		ArrayList<Machine> fmuMachineList = translationManager
+	private void createModelDescriptionFile(
+			Program program)
+			throws IOException, TaskingTranslationException {
+
+		ArrayList<Machine> fmuMachineList = taskingTranslationManager
 				.getFMUMachineList();
 		for (Machine fmuMachine : fmuMachineList) {
 			// Reset the value reference array indices for each machine.
@@ -167,14 +211,13 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			MachineRoot root = (MachineRoot) mchFile.getRoot();
 			EList<Variable> variableList = fmuMachine.getVariables();
 			// get the FMI type from the type environment
-			ITypeEnvironment typeEnv = translationManager
+			ITypeEnvironment typeEnv = taskingTranslationManager
 					.getTypeEnvironment(root);
 			// Iterate through the machine's variables and generate FMIScalar values
 			for (Variable var : variableList) {
 				variableToFMIScalar(modelVarsType, typeEnv, var);
 			}
-			// Save the file
-			String rootDirectory = getFilePathFromSelected();
+			rootDirectory = getFilePathFromSelected();
 			if (rootDirectory != null) {
 				// put each language and specialisation in a separate directory
 				String basicDirectoryPath = rootDirectory + "src"
@@ -203,6 +246,9 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 				resource.getContents().add(docRoot);
 				resource.save(Collections.EMPTY_MAP);
 				System.out.println();
+			}
+			else{
+				throw new TaskingTranslationException("No root directory found.");
 			}
 		}// end of foreach machine
 	}// end of createModelDescriptionFile(...);
