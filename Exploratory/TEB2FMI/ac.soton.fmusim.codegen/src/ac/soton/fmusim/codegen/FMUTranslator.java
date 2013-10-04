@@ -14,16 +14,16 @@ import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
 
+import org.eclipse.cdt.core.CCorePlugin;
 import org.eclipse.cdt.core.model.CoreModel;
 import org.eclipse.cdt.core.model.ICContainer;
-import org.eclipse.cdt.core.model.ICModel;
 import org.eclipse.cdt.core.model.ICProject;
+import org.eclipse.cdt.internal.core.model.CModelManager;
 import org.eclipse.core.internal.resources.Project;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IProjectDescription;
-import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
@@ -134,39 +134,41 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		updateResources();
 	}
 
-	private void createTargetProject() throws CoreException, TaskingTranslationException {
+	private void createTargetProject() throws CoreException,
+			TaskingTranslationException {
 		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
-		IProject project = root.getProject(TaskingTranslationManager.getProject().getName()+"Targetx");
-		if(!project.exists()){
+		IProject project = root.getProject(TaskingTranslationManager
+				.getProject().getName() + "Targetx");
+
+		if (!project.exists()) {
 			project.create(null);
 			project.open(null);
-			if(!project.hasNature("org.eclipse.cdt.core.cnature")){
+			if (!project.hasNature("org.eclipse.cdt.core.cnature")) {
 				IProjectDescription description = project.getDescription();
-			      String[] natures = description.getNatureIds();
-			      String[] newNatures = new String[natures.length + 3];
-			      System.arraycopy(natures, 0, newNatures, 0, natures.length);
-			      newNatures[natures.length] = "org.eclipse.cdt.core.cnature";
-			      newNatures[natures.length + 1] = "org.eclipse.cdt.managedbuilder.core.managedBuildNature";
-			      newNatures[natures.length + 2] = "org.eclipse.cdt.managedbuilder.core.ScannerConfigNature";
-			      description.setNatureIds(newNatures);
-			      project.setDescription(description, null);
+				String[] natures = description.getNatureIds();
+				String[] newNatures = new String[natures.length + 3];
+				System.arraycopy(natures, 0, newNatures, 0, natures.length);
+				newNatures[natures.length] = "org.eclipse.cdt.core.cnature";
+				newNatures[natures.length + 1] = "org.eclipse.cdt.managedbuilder.core.managedBuildNature";
+				newNatures[natures.length + 2] = "org.eclipse.cdt.managedbuilder.core.ScannerConfigNature";
+				description.setNatureIds(newNatures);
+				project.setDescription(description, null);
 			}
 		}
 		CoreModel cModel = CoreModel.getDefault();
 		ICProject cProject = cModel.create(project);
 		IFolder folder = project.getFolder("src");
-		if(!folder.exists()){
+		if (!folder.exists()) {
 			folder.create(true, true, null);
 		}
-		boolean fe = folder.exists();
+
 		project.refreshLocal(Project.DEPTH_INFINITE, null);
+		ICContainer ff = CModelManager.getDefault().create(folder, cProject);
 		ICContainer cFolder = cModel.create(folder);
-System.out.println();
-		
+		System.out.println("");
 	}
 
-	private void createModelDescriptionFile(
-			Program program)
+	private void createModelDescriptionFile(Program program)
 			throws IOException, TaskingTranslationException {
 
 		ArrayList<Machine> fmuMachineList = taskingTranslationManager
@@ -213,7 +215,8 @@ System.out.println();
 			// get the FMI type from the type environment
 			ITypeEnvironment typeEnv = taskingTranslationManager
 					.getTypeEnvironment(root);
-			// Iterate through the machine's variables and generate FMIScalar values
+			// Iterate through the machine's variables and generate FMIScalar
+			// values
 			for (Variable var : variableList) {
 				variableToFMIScalar(modelVarsType, typeEnv, var);
 			}
@@ -224,18 +227,21 @@ System.out.println();
 						+ File.separatorChar + program.getProjectName() + "_"
 						+ getTargetLanguage().getCoreLanguage()
 						+ File.separatorChar;
-				
-				String fName = basicDirectoryPath + fmuMachine.getName() 
-						+ "." + FmiModelFactory.eINSTANCE.getEPackage().getName().toLowerCase();
+
+				String fName = basicDirectoryPath
+						+ fmuMachine.getName()
+						+ "."
+						+ FmiModelFactory.eINSTANCE.getEPackage().getName()
+								.toLowerCase();
 				// Add the directory information for code, does nothing if it
 				// already exists
 				File newDirectory = new File(basicDirectoryPath);
-				if(!newDirectory.exists()){
+				if (!newDirectory.exists()) {
 					newDirectory.mkdir();
 				}
 				File newFile = new File(fName);
 				boolean success = newFile.createNewFile();
-				if(!success){
+				if (!success) {
 					newFile.delete();
 					newFile.createNewFile();
 				}
@@ -246,9 +252,9 @@ System.out.println();
 				resource.getContents().add(docRoot);
 				resource.save(Collections.EMPTY_MAP);
 				System.out.println();
-			}
-			else{
-				throw new TaskingTranslationException("No root directory found.");
+			} else {
+				throw new TaskingTranslationException(
+						"No root directory found.");
 			}
 		}// end of foreach machine
 	}// end of createModelDescriptionFile(...);
@@ -276,8 +282,7 @@ System.out.println();
 		else if (typeString.equals(REAL)) {
 			scalar.setValueReference(realVariableCount);
 			realVariableCount++;
-			RealType1 realType = FmiModelFactory.eINSTANCE
-					.createRealType1();
+			RealType1 realType = FmiModelFactory.eINSTANCE.createRealType1();
 			scalar.setReal(realType);
 		}
 		// elseif it is a string
@@ -298,7 +303,8 @@ System.out.println();
 		}
 	}
 
-	public static String getFMIType(Type type) throws TaskingTranslationException {
+	public static String getFMIType(Type type)
+			throws TaskingTranslationException {
 		String fmiTypeName = null;
 		String typeAsString = type.toString();
 		if (typeAsString.equalsIgnoreCase(CodeGenTaskingUtils.INT_SYMBOL)) {
@@ -311,9 +317,10 @@ System.out.println();
 		} else if (typeAsString.equalsIgnoreCase(REAL)) {
 			fmiTypeName = REAL;
 		}
-		if(fmiTypeName == null){
-			throw new TaskingTranslationException("FMI Type not found for: "+ type.toString());
-		} else{
+		if (fmiTypeName == null) {
+			throw new TaskingTranslationException("FMI Type not found for: "
+					+ type.toString());
+		} else {
 			return fmiTypeName;
 		}
 	}
@@ -429,7 +436,8 @@ System.out.println();
 		String parentDirectoryPath = getFilePathFromSelected();
 		if (parentDirectoryPath != null) {
 			// make the file system ready.
-			String newDirectoryPath = setupFileSystem(program, parentDirectoryPath);
+			String newDirectoryPath = setupFileSystem(program,
+					parentDirectoryPath);
 
 			ArrayList<ClassHeaderInformation> headerInfo = il1TranslationManager
 					.getClassHeaderInformation();
@@ -453,8 +461,7 @@ System.out.println();
 		String directoryNameA = directoryName + "src" + File.separatorChar;
 		String directoryNameB = directoryName + "src" + File.separatorChar
 				+ program.getProjectName() + "_"
-				+ getTargetLanguage().getCoreLanguage()
-				+ File.separatorChar;
+				+ getTargetLanguage().getCoreLanguage() + File.separatorChar;
 
 		// Add the directory information for code, does nothing if it
 		// already exists
