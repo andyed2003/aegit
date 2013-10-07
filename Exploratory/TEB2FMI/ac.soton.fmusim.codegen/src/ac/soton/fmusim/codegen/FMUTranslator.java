@@ -446,9 +446,10 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		String parentDirectoryPath = getFilePathFromSelected();
 		if (parentDirectoryPath != null) {
 			// make the file system ready.
-			String newDirectoryPath = setupFileSystem(program,
-					parentDirectoryPath);
-
+			String newDirectoryPath = 
+					FMUTranslator.targetSourceFolder.getRawLocation().toString()
+					+ File.separatorChar;
+			
 			ArrayList<ClassHeaderInformation> headerInfo = il1TranslationManager
 					.getClassHeaderInformation();
 			EList<Protected> protectedList = program.getProtected();
@@ -464,23 +465,6 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			}
 		}
 		System.out.println();
-	}
-
-	private String setupFileSystem(Program program, String directoryName) {
-		// put each language and specialisation in a separate directory
-		String directoryNameA = directoryName + "src" + File.separatorChar;
-		String directoryNameB = directoryName + "src" + File.separatorChar
-				+ program.getProjectName() + "_"
-				+ getTargetLanguage().getCoreLanguage() + File.separatorChar;
-
-		// Add the directory information for code, does nothing if it
-		// already exists
-		File fa = new File(directoryNameA);
-		File fb = new File(directoryNameB);
-
-		fa.mkdir();
-		fb.mkdir();
-		return directoryNameB;
 	}
 
 	// Create the file associated with the output
@@ -523,13 +507,11 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 	}
 
 	// We override the saveToFile since we do not need to write tasks for FMU's
-	// only
-	// protected objects. We also want to save the 'protected object' code from
-	// shared machines
-	// since they map to the FMUs. We store the 'protected object' code in a
-	// field, temporarily,
-	// in TranslateIL1ToFMU, then call the saveToFile, and make use of it there
-	// rather than pass it as a parameter.
+	// only protected objects. We also want to save the 'protected object' 
+	// code from shared machines since they map to the FMUs. We store the
+	// 'protected object' code in a field, temporarily, in TranslateIL1ToFMU,
+	// then call the saveToFile, and make use of it there rather than pass it
+	// as a parameter.
 	@Override
 	protected void saveToFile(ArrayList<String> codeToSave,
 			ArrayList<ClassHeaderInformation> headerInformation,
