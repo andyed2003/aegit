@@ -111,7 +111,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 	private int integerVariableCount = 0;
 	private int boolVariableCount = 0;
 
-	private IProject project = null;
+	private IProject targetProject = null;
 
 
 	// Translate the selected Composed Machine/Event-B Machine to FMU(s)
@@ -140,34 +140,40 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			TaskingTranslationException {
 		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
 
-		project = root.getProject(TaskingTranslationManager.getProject()
+		targetProject = root.getProject(TaskingTranslationManager.getProject()
 				.getName() + "Targetx");
-		if (!project.exists()) {
-			project.create(null);
-			project.open(null);
-			if (!project.hasNature("org.eclipse.cdt.core.cnature")) {
-				IProjectDescription description = project.getDescription();
+		if (!targetProject.exists()) {
+			targetProject.create(null);
+			targetProject.open(null);
+			if (!targetProject.hasNature("org.eclipse.cdt.core.cnature")) {
+				IProjectDescription description = targetProject.getDescription();
 				String[] natures = description.getNatureIds();
-				String[] newNatures = new String[natures.length + 3];
+				String[] newNatures = new String[natures.length + 1];
 				System.arraycopy(natures, 0, newNatures, 0, natures.length);
 				newNatures[natures.length] = "org.eclipse.cdt.core.cnature";
-				newNatures[natures.length + 1] = "org.eclipse.cdt.managedbuilder.core.managedBuildNature";
-				newNatures[natures.length + 2] = "org.eclipse.cdt.managedbuilder.core.ScannerConfigNature";
+				// We can put these back in if we decide to do managed builds etc.
+//				newNatures[natures.length + 1] = "org.eclipse.cdt.managedbuilder.core.managedBuildNature";
+//				newNatures[natures.length + 2] = "org.eclipse.cdt.managedbuilder.core.ScannerConfigNature";
 				description.setNatureIds(newNatures);
-				project.setDescription(description, null);
+				targetProject.setDescription(description, null);
 			}
 		}
-		// create a C source folder in the project called "src"
-		createCSourceFolder(project, "src");
+		// create C source folder in the project called "src" for generated source
+		// and external for inherited code
+		createCSourceFolder(targetProject, "src");
+		createCSourceFolder(targetProject, "external");
+		
 	}
 
-	private void createCSourceFolder(IProject project, String path)
+
+
+	private void createCSourceFolder(IProject targetProject, String newDirectoryName)
 			throws CoreException, CModelException {
 		// obtain a model,project and folder
 		CoreModel cModel = CoreModel.getDefault();
-		ICProject cProject = cModel.create(project);
+		ICProject cProject = cModel.create(targetProject);
 		// This is where this 'important' target source directory is created!!!
-		targetSourceFolder  = project.getFolder(path);
+		targetSourceFolder  = targetProject.getFolder(newDirectoryName);
 		targetSourceFolder.create(true, true, null);
 		// create a new sourceEntry (i.e. identifies this folder as a C source folder)
 		ISourceEntry newSourceEntry = CoreModel
@@ -226,7 +232,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			IRodinDB rodinDB = RodinCore.getRodinDB();
 			IRodinProject rodinProject = rodinDB.getRodinProject(program
 					.getProjectName());
-			IRodinFile mchFile = rodinProject.getRodinFile(fmuMachine.getName()
+			IRodinFile mchFile = rodinProject.getRodinFile(fmuMachine
 					+ ".bum");
 			MachineRoot root = (MachineRoot) mchFile.getRoot();
 			EList<Variable> variableList = fmuMachine.getVariables();
@@ -238,28 +244,10 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			for (Variable var : variableList) {
 				variableToFMIScalar(modelVarsType, typeEnv, var);
 			}
-			// create a descriptions folder
-			IFolder folder = project.getFolder("descriptions");
-			if (!folder.exists()) {
-				folder.create(true, true, null);
-			}
-
-			// construct the new fileName for the model description
-			String basicDescriptionDirectoryPath = 
-					folder.getRawLocation().toString() + File.separatorChar;
-			// construct the new fileName path for the model description
-			String fName = basicDescriptionDirectoryPath
-					+ fmuMachine.getName()
-					+ "."
-					+ FmiModelFactory.eINSTANCE.getEPackage().getName()
-							.toLowerCase();
-			File newFile = new File(fName);
-			boolean success = newFile.createNewFile();
-			// force creation of a new file
-			if (!success) {
-				newFile.delete();
-				newFile.createNewFile();
-			}
+			// create a descriptions folder.
+			String fileName = fmuMachine.getName() + "."
+					+ FmiModelFactory.eINSTANCE.getEPackage().getName().toLowerCase();
+			File newFile = createNewFile(fileName, "descriptions");
 			String netUri = newFile.toURI().toString();
 			URI emfURI = URI.createURI(netUri);
 			ResourceSet resSet = new ResourceSetImpl();
@@ -268,6 +256,30 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			resource.save(Collections.EMPTY_MAP);
 		}// end of foreach machine
 	}// end of createModelDescriptionFile(...);
+
+	// create a new file, with fileName, in the named subFolder of 'the' targetProject.
+	private File createNewFile(String fileName, String subFolderName) throws CoreException,
+			IOException {
+		IFolder newFolder = targetProject.getFolder(subFolderName);
+		if (!newFolder.exists()) {
+			newFolder.create(true, true, null);
+		}
+
+		// construct the new fileName for the model description
+		String directoryPath = 
+				newFolder.getRawLocation().toString() + File.separatorChar;
+		// construct the new fileName path for the model description
+		String fPathName = directoryPath
+				+ fileName;
+		File newFile = new File(fPathName);
+		boolean success = newFile.createNewFile();
+		// force creation of a new file
+		if (!success) {
+			newFile.delete();
+			newFile.createNewFile();
+		}
+		return newFile;
+	}
 
 	// The method populates the ModelVariables segment with scalar
 	// variables, generated from the variable's type etc.
