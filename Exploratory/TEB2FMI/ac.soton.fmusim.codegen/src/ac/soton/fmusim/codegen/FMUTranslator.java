@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -18,6 +19,8 @@ import org.eclipse.cdt.core.CCorePlugin;
 import org.eclipse.cdt.core.model.CoreModel;
 import org.eclipse.cdt.core.model.ICContainer;
 import org.eclipse.cdt.core.model.ICProject;
+import org.eclipse.cdt.core.model.IPathEntry;
+import org.eclipse.cdt.core.model.ISourceEntry;
 import org.eclipse.cdt.internal.core.model.CModelManager;
 import org.eclipse.core.internal.resources.Project;
 import org.eclipse.core.resources.IFile;
@@ -155,17 +158,23 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 				project.setDescription(description, null);
 			}
 		}
+		// obtain a model,project and folder
 		CoreModel cModel = CoreModel.getDefault();
 		ICProject cProject = cModel.create(project);
 		IFolder folder = project.getFolder("src");
-		if (!folder.exists()) {
-			folder.create(true, true, null);
-		}
-
-		project.refreshLocal(Project.DEPTH_INFINITE, null);
-		ICContainer ff = CModelManager.getDefault().create(folder, cProject);
-		ICContainer cFolder = cModel.create(folder);
-		System.out.println("");
+		folder.create(true, true, null);
+		// create a new sourceEntry (i.e. a folder)
+		ISourceEntry newSourceEntry = CoreModel.newSourceEntry(folder.getFullPath());
+		// now add it to the cProject info, by creating a new list of entries.
+        IPathEntry[] existingPathEntries = cProject.getRawPathEntries();
+        List<IPathEntry> newEntries = new ArrayList<IPathEntry>(existingPathEntries.length);
+        // add existingPathEntries to newEntries
+        newEntries.addAll(Arrays.asList(existingPathEntries));
+        // add the new sourceEntry
+		newEntries.add(newSourceEntry);
+		// set the pathEntry values in the project
+		cProject.setRawPathEntries(newEntries.toArray(new IPathEntry[newEntries.size()]),
+                null);
 	}
 
 	private void createModelDescriptionFile(Program program)
