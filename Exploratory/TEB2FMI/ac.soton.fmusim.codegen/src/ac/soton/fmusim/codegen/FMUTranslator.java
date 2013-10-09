@@ -24,7 +24,6 @@ import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IProjectDescription;
-import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
@@ -99,7 +98,6 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 	public static String COMMON_HEADER_FULL = COMMON_HEADER_PARTIAL + ".h";
 	// The target source folder for the translation - static to enable the IL1
 	// C translator to reference it
-	public static IFolder targetSourceFolder = null;
 	private static TaskingTranslationManager taskingTranslationManager = null;
 	private static TargetLanguage targetLanguage = new TargetLanguage("FMI_C");
 	private static ArrayList<DocumentRoot> docRootList = new ArrayList<DocumentRoot>();
@@ -112,6 +110,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 	private int integerVariableCount = 0;
 	private int boolVariableCount = 0;
 	private IProject targetProject = null;
+	private IFolder generatedSourceFolder;
 	
 	
 
@@ -163,20 +162,20 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		resourceUpdateList.add(targetProject);
 		// create C source folder in the project called "src" for generated source
 		// and external for inherited code
-		createCSourceFolder(targetProject, "src");
+		generatedSourceFolder = createCSourceFolder(targetProject, "src");
 		createCSourceFolder(targetProject, "external");
 		
 	}
 
 
 
-	private void createCSourceFolder(IProject targetProject, String newDirectoryName)
+	private IFolder createCSourceFolder(IProject targetProject, String newDirectoryName)
 			throws CoreException, CModelException {
 		// obtain a model,project and folder
 		CoreModel cModel = CoreModel.getDefault();
 		ICProject cProject = cModel.create(targetProject);
 		// This is where this 'important' target source directory is created!!!
-		targetSourceFolder  = targetProject.getFolder(newDirectoryName);
+		IFolder targetSourceFolder = targetProject.getFolder(newDirectoryName);
 		targetSourceFolder.create(true, true, null);
 		// create a new sourceEntry (i.e. identifies this folder as a C source folder)
 		ISourceEntry newSourceEntry = CoreModel
@@ -192,6 +191,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		// set the pathEntry values in the project
 		cProject.setRawPathEntries(
 				newEntries.toArray(new IPathEntry[newEntries.size()]), null);
+		return targetSourceFolder;
 	}
 
 	private void createModelDescriptionFile(Program program)
@@ -462,7 +462,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		if (parentDirectoryPath != null) {
 			// make the file system ready.
 			String newDirectoryPath = 
-					FMUTranslator.targetSourceFolder.getRawLocation().toString()
+					generatedSourceFolder.getRawLocation().toString()
 					+ File.separatorChar;
 			
 			ArrayList<ClassHeaderInformation> headerInfo = il1TranslationManager
