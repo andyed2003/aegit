@@ -24,6 +24,7 @@ import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IProjectDescription;
+import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
@@ -110,9 +111,9 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 	private int stringVariableCount = 0;
 	private int integerVariableCount = 0;
 	private int boolVariableCount = 0;
-
 	private IProject targetProject = null;
-
+	
+	
 
 	// Translate the selected Composed Machine/Event-B Machine to FMU(s)
 	public void translateToFMU(IStructuredSelection s)
@@ -158,6 +159,8 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 				targetProject.setDescription(description, null);
 			}
 		}
+		// add the new project the list of things to be updated in the UI
+		resourceUpdateList.add(targetProject);
 		// create C source folder in the project called "src" for generated source
 		// and external for inherited code
 		createCSourceFolder(targetProject, "src");
