@@ -232,7 +232,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			IRodinDB rodinDB = RodinCore.getRodinDB();
 			IRodinProject rodinProject = rodinDB.getRodinProject(program
 					.getProjectName());
-			IRodinFile mchFile = rodinProject.getRodinFile(fmuMachine
+			IRodinFile mchFile = rodinProject.getRodinFile(fmuMachine.getName()
 					+ ".bum");
 			MachineRoot root = (MachineRoot) mchFile.getRoot();
 			EList<Variable> variableList = fmuMachine.getVariables();
