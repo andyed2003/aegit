@@ -90,17 +90,21 @@ import ac.soton.compositionmodel.core.compositionmodel.ComposedMachine;
 @SuppressWarnings("restriction")
 public class FMUTranslator extends AbstractTranslateEventBToTarget {
 
+	public static final String EXTERNAL_SOURCE_FOLDER = "external";
+	public static final String GENERATED_SRC_FOLDER = "src";
 	public static final String REAL = "Real";
 	public static final String STRING = "String";
 	public static final String BOOLEAN = "Boolean";
 	public static final String INTEGER = "Integer";
-	public static String COMMON_HEADER_PARTIAL = "Common";
-	public static String COMMON_HEADER_FULL = COMMON_HEADER_PARTIAL + ".h";
+	public static final String COMMON_HEADER_PARTIAL = "Common";
+	public static final String COMMON_HEADER_FULL = COMMON_HEADER_PARTIAL + ".h";
 	// The target source folder for the translation - static to enable the IL1
 	// C translator to reference it
 	private static TaskingTranslationManager taskingTranslationManager = null;
-	private static TargetLanguage targetLanguage = new TargetLanguage("FMI_C");
-	private static ArrayList<DocumentRoot> docRootList = new ArrayList<DocumentRoot>();
+	private final TargetLanguage targetLanguage = new TargetLanguage("FMI_C");
+	private final String CDT_CNATURE = "org.eclipse.cdt.core.cnature";
+	// The modelDescription file, as an emf model.
+	private ArrayList<DocumentRoot> docRootList = new ArrayList<DocumentRoot>();
 
 	private Protected currentProtected;
 	// Keep a local count here value references of variable arrays.
@@ -130,10 +134,20 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		createTargetProject(taskingTranslationManager);
 		// From the program, we can create the modelDescription file
 		createModelDescriptionFile(program);
+		// copy the external (pre-defined) files across
+		handleExternalFiles();
 		// we can generate the FMU from the IL1program.
 		translateIL1ToFMU(program);
 		// reflect the changes in the model, back to the workspace.
 		updateResources();
+	}
+
+	// This method should send the external files from a source location
+	// to their target folders. Any templates will be processed and sent to
+	// the "src" folder, and other (unchanged) files will be copied to "externals".
+	private void handleExternalFiles() {
+		
+		
 	}
 
 	private void createTargetProject(TaskingTranslationManager taskingTranslationManager) throws CoreException,
@@ -145,12 +159,12 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		if (!targetProject.exists()) {
 			targetProject.create(null);
 			targetProject.open(null);
-			if (!targetProject.hasNature("org.eclipse.cdt.core.cnature")) {
+			if (!targetProject.hasNature(CDT_CNATURE)) {
 				IProjectDescription description = targetProject.getDescription();
 				String[] natures = description.getNatureIds();
 				String[] newNatures = new String[natures.length + 1];
 				System.arraycopy(natures, 0, newNatures, 0, natures.length);
-				newNatures[natures.length] = "org.eclipse.cdt.core.cnature";
+				newNatures[natures.length] = CDT_CNATURE;
 				// We can put these back in if we decide to do managed builds etc.
 //				newNatures[natures.length + 1] = "org.eclipse.cdt.managedbuilder.core.managedBuildNature";
 //				newNatures[natures.length + 2] = "org.eclipse.cdt.managedbuilder.core.ScannerConfigNature";
@@ -162,9 +176,8 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		resourceUpdateList.add(targetProject);
 		// create C source folder in the project called "src" for generated source
 		// and external for inherited code
-		generatedSourceFolder = createCSourceFolder(targetProject, "src");
-		createCSourceFolder(targetProject, "external");
-		
+		generatedSourceFolder = createCSourceFolder(targetProject, GENERATED_SRC_FOLDER);
+		createCSourceFolder(targetProject, EXTERNAL_SOURCE_FOLDER);
 	}
 
 
