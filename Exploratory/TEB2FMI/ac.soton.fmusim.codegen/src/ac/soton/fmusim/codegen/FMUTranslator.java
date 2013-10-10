@@ -89,23 +89,30 @@ import ac.soton.compositionmodel.core.compositionmodel.ComposedMachine;
 
 @SuppressWarnings("restriction")
 public class FMUTranslator extends AbstractTranslateEventBToTarget {
-
+	// The target source folder for the translation - it is static 
+	// to enable the IL1 C translator to reference it.
 	public static final String EXTERNAL_SOURCE_FOLDER = "external";
 	public static final String GENERATED_SRC_FOLDER = "src";
+	// The name of the generated header file
+	public static final String COMMON_HEADER_PARTIAL = "Common";
+	public static final String COMMON_HEADER_FULL = COMMON_HEADER_PARTIAL + ".h";
+	// Declaration of Types handled by the translator.
 	public static final String REAL = "Real";
 	public static final String STRING = "String";
 	public static final String BOOLEAN = "Boolean";
 	public static final String INTEGER = "Integer";
-	public static final String COMMON_HEADER_PARTIAL = "Common";
-	public static final String COMMON_HEADER_FULL = COMMON_HEADER_PARTIAL + ".h";
-	// The target source folder for the translation - static to enable the IL1
-	// C translator to reference it
+	// The source rodin project.
+	public static IRodinProject sourceProject = null;
+	// The workhorse
 	private static TaskingTranslationManager taskingTranslationManager = null;
+	// The target project for the new C source code.
+	public static IProject targetProject = null;
+	// The target folder for generated source code.
+	private IFolder generatedSourceFolder = null;
 	private final TargetLanguage targetLanguage = new TargetLanguage("FMI_C");
 	private final String CDT_CNATURE = "org.eclipse.cdt.core.cnature";
 	// The modelDescription file, as an emf model.
 	private ArrayList<DocumentRoot> docRootList = new ArrayList<DocumentRoot>();
-
 	private Protected currentProtected;
 	// Keep a local count here value references of variable arrays.
 	// This is reset to zero for each machine.
@@ -113,10 +120,6 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 	private int stringVariableCount = 0;
 	private int integerVariableCount = 0;
 	private int boolVariableCount = 0;
-	private IProject targetProject = null;
-	private IFolder generatedSourceFolder;
-	
-	
 
 	// Translate the selected Composed Machine/Event-B Machine to FMU(s)
 	public void translateToFMU(IStructuredSelection s)
@@ -130,24 +133,21 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		taskingTranslationManager = new TaskingTranslationManager(factory);
 		// Generate an IL1 program using existing stage 1 code generator.
 		Program program = translateEventBToIL1(s);
+		// Get the rodin project and set the field
+		IRodinDB rodinDB = RodinCore.getRodinDB();
+		sourceProject = rodinDB.getRodinProject(program
+				.getProjectName());
 		// Create a target Directory
 		createTargetProject(taskingTranslationManager);
 		// From the program, we can create the modelDescription file
 		createModelDescriptionFile(program);
 		// copy the external (pre-defined) files across
-		handleExternalFiles();
+		ExternalFileHandler fHandler = new ExternalFileHandler();
+		fHandler.handleExternalFiles();
 		// we can generate the FMU from the IL1program.
 		translateIL1ToFMU(program);
 		// reflect the changes in the model, back to the workspace.
 		updateResources();
-	}
-
-	// This method should send the external files from a source location
-	// to their target folders. Any templates will be processed and sent to
-	// the "src" folder, and other (unchanged) files will be copied to "externals".
-	private void handleExternalFiles() {
-		
-		
 	}
 
 	private void createTargetProject(TaskingTranslationManager taskingTranslationManager) throws CoreException,
@@ -244,11 +244,8 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			ModelVariablesType modelVarsType = FmiModelFactory.eINSTANCE
 					.createModelVariablesType();
 			descriptionType.setModelVariables(modelVarsType);
-			// Get the root so we can obtain the type environment
-			IRodinDB rodinDB = RodinCore.getRodinDB();
-			IRodinProject rodinProject = rodinDB.getRodinProject(program
-					.getProjectName());
-			IRodinFile mchFile = rodinProject.getRodinFile(fmuMachine.getName()
+			// Get the info to obtain the type environment
+			IRodinFile mchFile = sourceProject.getRodinFile(fmuMachine.getName()
 					+ ".bum");
 			MachineRoot root = (MachineRoot) mchFile.getRoot();
 			EList<Variable> variableList = fmuMachine.getVariables();
@@ -386,12 +383,10 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		// load all the machines into a pre-prepared structure.
 		RMLDataStruct relevantMachines = RelevantMachineLoader
 				.getAllRelevantMachines(list);
-
 		list = relevantMachines.machines;
 		ArrayList<ComposedMachine> composedMachines = relevantMachines.composedMachines;
 		Map<String, String> composedEvents = relevantMachines.composedEvents;
 		ArrayList<String> composedMachineNames = relevantMachines.composedMachineNames;
-
 		IFile target = null;
 		// Get target's location from the list which is derived from the
 		// structured selection.
@@ -408,11 +403,9 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			}
 		}
 		storeProject(target.getProject(), taskingTranslationManager);
-
 		Program program = taskingTranslationManager.translateToIL1Entry(list,
 				composedMachines, composedEvents, composedMachineNames,
 				relevantMachines);
-
 		// We delete the temporary subroutines
 		EList<Protected> protectedList = program.getProtected();
 		for (Protected prot : protectedList) {
@@ -439,7 +432,6 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			TaskingTranslationUnhandledTypeException {
 		// Now to the code generation
 		IL1TranslationManager il1TranslationManager = new IL1TranslationManager();
-
 		boolean hasBool = false;
 		TreeIterator<EObject> programContentList = program.eAllContents();
 		while (programContentList.hasNext()) {
@@ -452,7 +444,6 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 				}
 			}
 		}
-
 		// If we have any boolean variable then add the BOOL definitions
 		if (hasBool) {
 			// Output OpenMP blocking
@@ -460,24 +451,19 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			il1TranslationManager.addIncludeStatement("#define TRUE 1");
 			il1TranslationManager.addIncludeStatement("#define FALSE 0");
 		}
-
 		ArrayList<String> code = null;
-
 		// Translation Rules
 		Map<IProject, List<ITranslationRule>> translationRules = loadTranslatorRules();
 		il1TranslationManager.setTranslatorRules(translationRules);
-
 		// Types Rules
 		Map<IProject, List<ITranslationRule>> translationTypeRules = loadTranslatorTypeRules();
 		il1TranslationManager.setTranslatorTypeRules(translationTypeRules);
-
 		String parentDirectoryPath = getFilePathFromSelected();
 		if (parentDirectoryPath != null) {
 			// make the file system ready.
 			String newDirectoryPath = 
 					generatedSourceFolder.getRawLocation().toString()
 					+ File.separatorChar;
-			
 			ArrayList<ClassHeaderInformation> headerInfo = il1TranslationManager
 					.getClassHeaderInformation();
 			EList<Protected> protectedList = program.getProtected();
@@ -499,13 +485,10 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 	// The sourceRes is the container of the MainClass
 	// element that we want to transform
 	protected static String targetFile(IFile source) throws URISyntaxException {
-
 		java.net.URI location = source.getLocationURI();
 		IPath p = new Path(location.getPath());
-
 		IPath newPath = p.removeFileExtension();
 		String path = newPath + ".il1";
-
 		return path;
 	}
 
@@ -660,5 +643,4 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		}
 		return fmiTypeName;
 	}
-
 }
