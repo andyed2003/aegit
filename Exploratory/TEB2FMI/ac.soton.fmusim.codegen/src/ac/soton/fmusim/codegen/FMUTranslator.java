@@ -113,7 +113,6 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 	// The target folder for generated source code.
 	private IFolder generatedSourceFolder = null;
 	private final TargetLanguage targetLanguage = new TargetLanguage("FMI_C");
-	private final String CDT_CNATURE = "org.eclipse.cdt.core.cnature";
 	// The modelDescription file, as an emf model.
 	private ArrayList<DocumentRoot> docRootList = new ArrayList<DocumentRoot>();
 	private Protected currentProtected;
@@ -167,8 +166,6 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		
 		targetProject = root.getProject(segments.get(segments.size()-1));
 		
-		System.out.println();
-		
 //		String sourceProjectName = sourceRodinProject.getElementName();
 //		targetProject = root.getProject(sourceProjectName + "Target");
 		
@@ -188,12 +185,14 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 //				targetProject.setDescription(description, null);
 //			}
 //		}
-//		// add the new project the list of things to be updated in the UI
-//		resourceUpdateList.add(targetProject);
-//		// create C source folder in the project called "src" for generated source
-//		// and external for inherited code
-//		generatedSourceFolder = createCSourceFolder(targetProject, GENERATED_SRC_FOLDER);
-//		createCSourceFolder(targetProject, EXTERNAL_SOURCE_FOLDER);
+
+		
+		// add the new project the list of things to be updated in the UI
+		resourceUpdateList.add(targetProject);
+		// create C source folder in the project called "src" for generated source
+		// and external for inherited code
+		generatedSourceFolder = createCSourceFolder(targetProject, GENERATED_SRC_FOLDER);
+		createCSourceFolder(targetProject, EXTERNAL_SOURCE_FOLDER);
 		
 		
 		
