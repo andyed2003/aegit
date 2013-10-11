@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: InterfaceGenerator
+Bundle-SymbolicName: org.eventb.codegen.interfaceGenerator
+Bundle-Version: 0.0.1.qualifier
+Bundle-Activator: org.eventb.codegen.interfacegenerator.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eventb.codegen.tasking;bundle-version="0.0.3",
+ org.eventb.codegen.IL1.core;bundle-version="0.0.3"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Export-Package: org.eventb.codegen.interfaceGenerator.impl,
+ org.eventb.codegen.interfacegenerator
