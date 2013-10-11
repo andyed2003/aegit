@@ -26,12 +26,12 @@ public class ExternalFileHandler {
 	public void handleExternalFiles() throws CoreException, IOException,
 			TaskingTranslationException {
 		// get the external files from the source project
-		if (FMUTranslator.sourceProject == null) {
+		if (FMUTranslator.sourceRodinProject == null) {
 			throw new TaskingTranslationException(
 					"sourceProject not found in ExternalFileHandler Class");
 		}
 		List<IResource> externalResources = Arrays
-				.asList(FMUTranslator.sourceProject.getNonRodinResources());
+				.asList(FMUTranslator.sourceRodinProject.getNonRodinResources());
 		for (IResource resource : externalResources) {
 			if (resource.getType() == IResource.FOLDER
 					&& resource.getName().equals(

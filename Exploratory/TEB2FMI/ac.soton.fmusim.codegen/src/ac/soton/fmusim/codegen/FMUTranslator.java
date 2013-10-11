@@ -23,7 +23,7 @@ import org.eclipse.cdt.core.model.ISourceEntry;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.IProjectDescription;
+import org.eclipse.core.resources.IWorkspace;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
@@ -38,6 +38,9 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMLResourceFactoryImpl;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.swt.widgets.DirectoryDialog;
+import org.eclipse.swt.widgets.FileDialog;
+import org.eclipse.ui.PlatformUI;
 import org.eventb.codegen.il1.Declaration;
 import org.eventb.codegen.il1.Il1Factory;
 import org.eventb.codegen.il1.Program;
@@ -102,7 +105,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 	public static final String BOOLEAN = "Boolean";
 	public static final String INTEGER = "Integer";
 	// The source rodin project.
-	public static IRodinProject sourceProject = null;
+	public static IRodinProject sourceRodinProject = null;
 	// The workhorse
 	private static TaskingTranslationManager taskingTranslationManager = null;
 	// The target project for the new C source code.
@@ -135,10 +138,10 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		Program program = translateEventBToIL1(s);
 		// Get the rodin project and set the field
 		IRodinDB rodinDB = RodinCore.getRodinDB();
-		sourceProject = rodinDB.getRodinProject(program
+		sourceRodinProject = rodinDB.getRodinProject(program
 				.getProjectName());
 		// Create a target Directory
-		createTargetProject(taskingTranslationManager);
+		getTargetProject(taskingTranslationManager);
 		// From the program, we can create the modelDescription file
 		createModelDescriptionFile(program);
 		// copy the external (pre-defined) files across
@@ -150,34 +153,51 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		updateResources();
 	}
 
-	private void createTargetProject(TaskingTranslationManager taskingTranslationManager) throws CoreException,
+	private void getTargetProject(TaskingTranslationManager taskingTranslationManager) throws CoreException,
 			TaskingTranslationException {
-		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
-
-		targetProject = root.getProject(TaskingTranslationManager.getProject()
-				.getName() + "Targetx");
-		if (!targetProject.exists()) {
-			targetProject.create(null);
-			targetProject.open(null);
-			if (!targetProject.hasNature(CDT_CNATURE)) {
-				IProjectDescription description = targetProject.getDescription();
-				String[] natures = description.getNatureIds();
-				String[] newNatures = new String[natures.length + 1];
-				System.arraycopy(natures, 0, newNatures, 0, natures.length);
-				newNatures[natures.length] = CDT_CNATURE;
-				// We can put these back in if we decide to do managed builds etc.
+		IWorkspace workspace = ResourcesPlugin.getWorkspace();
+		IWorkspaceRoot root = workspace.getRoot();
+		shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
+		
+		
+		DirectoryDialog dialog = new DirectoryDialog(shell);
+		String string = dialog.open();
+		IPath path = new Path(string);
+		List<String> segments = Arrays.asList(path.segments());
+		
+		targetProject = root.getProject(segments.get(segments.size()-1));
+		
+		System.out.println();
+		
+//		String sourceProjectName = sourceRodinProject.getElementName();
+//		targetProject = root.getProject(sourceProjectName + "Target");
+		
+//		if (!targetProject.exists()) {
+//			targetProject.create(null);
+//			targetProject.open(null);
+//			if (!targetProject.hasNature(CDT_CNATURE)) {
+//				IProjectDescription description = targetProject.getDescription();
+//				String[] natures = description.getNatureIds();
+//				String[] newNatures = new String[natures.length + 3];
+//				System.arraycopy(natures, 0, newNatures, 0, natures.length);
+//				newNatures[natures.length] = CDT_CNATURE;
+//				// We can put these back in if we decide to do managed builds etc.
 //				newNatures[natures.length + 1] = "org.eclipse.cdt.managedbuilder.core.managedBuildNature";
 //				newNatures[natures.length + 2] = "org.eclipse.cdt.managedbuilder.core.ScannerConfigNature";
-				description.setNatureIds(newNatures);
-				targetProject.setDescription(description, null);
-			}
-		}
-		// add the new project the list of things to be updated in the UI
-		resourceUpdateList.add(targetProject);
-		// create C source folder in the project called "src" for generated source
-		// and external for inherited code
-		generatedSourceFolder = createCSourceFolder(targetProject, GENERATED_SRC_FOLDER);
-		createCSourceFolder(targetProject, EXTERNAL_SOURCE_FOLDER);
+//				description.setNatureIds(newNatures);
+//				targetProject.setDescription(description, null);
+//			}
+//		}
+//		// add the new project the list of things to be updated in the UI
+//		resourceUpdateList.add(targetProject);
+//		// create C source folder in the project called "src" for generated source
+//		// and external for inherited code
+//		generatedSourceFolder = createCSourceFolder(targetProject, GENERATED_SRC_FOLDER);
+//		createCSourceFolder(targetProject, EXTERNAL_SOURCE_FOLDER);
+		
+		
+		
+		
 	}
 
 
@@ -245,7 +265,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 					.createModelVariablesType();
 			descriptionType.setModelVariables(modelVarsType);
 			// Get the info to obtain the type environment
-			IRodinFile mchFile = sourceProject.getRodinFile(fmuMachine.getName()
+			IRodinFile mchFile = sourceRodinProject.getRodinFile(fmuMachine.getName()
 					+ ".bum");
 			MachineRoot root = (MachineRoot) mchFile.getRoot();
 			EList<Variable> variableList = fmuMachine.getVariables();
