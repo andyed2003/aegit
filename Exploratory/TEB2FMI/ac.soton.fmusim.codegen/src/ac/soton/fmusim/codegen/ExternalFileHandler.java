@@ -45,12 +45,12 @@ public class ExternalFileHandler {
 						File iFile = new File(resourceFile.getRawLocationURI());
 						FileReader reader = new FileReader(iFile);
 						BufferedReader br = new BufferedReader(reader);
-						// write all lines to a temporary store fro processing
+						// write all lines to a temporary store for processing
 						List<String> outputArrayList = new ArrayList<String>();
-						// get a line and copy it unless it contains the 'begin
-						// markup tag' string
-						// If it does contain a tag then pass it on for special
-						// handling
+						// Get a line and copy it unless it contains the 'begin
+						// markup tag' string. If it does contain a tag then 
+						// mark it as a template and we will pass it on for special
+						// handling.
 						boolean finished = false;
 						boolean isTemplate = false;
 						while (!finished) {
@@ -78,7 +78,10 @@ public class ExternalFileHandler {
 							bw.close();
 						} else {
 							List<String> modifiedOutput = new ArrayList<String>();
-							// We shall modify the output depending on the markup
+							// We shall modify the output depending on the markup.
+							// TODO implement template handler (in its own
+							// class), and call the handler here.
+							// But for now we just copy and output the original lines.
 							for (String line : outputArrayList) {
 								modifiedOutput.add(line);
 							}
@@ -92,13 +95,6 @@ public class ExternalFileHandler {
 							}
 							bw.close();
 						}
-
-						// now we have an array of lines which we can process
-						// and output
-
-						for (String o : outputArrayList) {
-
-						}
 					}
 				}
 			}
@@ -106,7 +102,8 @@ public class ExternalFileHandler {
 	}
 
 	private BufferedWriter createBufferedWriter(IProject project,
-			String targetDirectoryName, String targetFileName) throws IOException {
+			String targetDirectoryName, String targetFileName)
+			throws IOException {
 		IProject targetProject = project;
 		IFolder resourceTargetFolder = targetProject
 				.getFolder(targetDirectoryName);
