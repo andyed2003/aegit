@@ -1,12 +1,12 @@
 /*
- * congig.h
+ * config.h
  *
  *  Created on: 3 Oct 2013
  *      Author: andy
  */
 
-#ifndef CONGIG_H_
-#define CONGIG_H_
+#ifndef CONFIG_H_
+#define CONFIG_H_
 
 #define MaxFMUInstances 1
 
@@ -16,4 +16,4 @@
 #define stringArraySize 3
 
 
-#endif /* CONGIG_H_ */
+#endif /* CONFIG_H_ */
