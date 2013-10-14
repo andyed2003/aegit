@@ -115,6 +115,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 	private final TargetLanguage targetLanguage = new TargetLanguage("FMI_C");
 	// The modelDescription file, as an emf model.
 	private ArrayList<DocumentRoot> docRootList = new ArrayList<DocumentRoot>();
+	private ModelDescriptionsManager modelDescriptionsManager = new ModelDescriptionsManager(docRootList);
 	private Protected currentProtected;
 	// Keep a local count here value references of variable arrays.
 	// This is reset to zero for each machine.
@@ -211,7 +212,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			DocumentRoot docRoot = FmiModelFactory.eINSTANCE
 					.createDocumentRoot();
 			// add this machine documentroot to the list
-			docRootList.add(docRoot);
+			modelDescriptionsManager.getDocRootList().add(docRoot);
 			// set various values
 			FmiModelDescriptionType descriptionType = FmiModelFactory.eINSTANCE
 					.createFmiModelDescriptionType();
@@ -414,7 +415,8 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 	}
 
 	// This method is equivalent to CProgramIL1Translator, tailored for
-	// use with FMI translation.
+	// use with FMI translation. 
+	// It translates protected objects (from FMU Machines) to FMU implementations.
 	private void translateIL1ToFMU(Program program)
 			throws IL1TranslationUnhandledTypeException, RodinDBException,
 			TaskingTranslationUnhandledTypeException {
