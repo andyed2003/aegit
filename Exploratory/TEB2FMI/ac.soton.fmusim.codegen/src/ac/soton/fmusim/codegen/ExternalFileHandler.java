@@ -77,7 +77,7 @@ public class ExternalFileHandler {
 							}
 							bw.close();
 						} else {
-							ArrayList<String> modifiedOutput = new ArrayList<String>();
+							List<String> modifiedOutput = new ArrayList<String>();
 							// We shall modify the output depending on the markup
 							for (String line : outputArrayList) {
 								modifiedOutput.add(line);

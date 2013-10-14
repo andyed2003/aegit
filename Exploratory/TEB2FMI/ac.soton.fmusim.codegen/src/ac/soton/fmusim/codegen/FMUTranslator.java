@@ -39,7 +39,6 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMLResourceFactoryImpl;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.widgets.DirectoryDialog;
-import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.ui.PlatformUI;
 import org.eventb.codegen.il1.Declaration;
 import org.eventb.codegen.il1.Il1Factory;
@@ -53,6 +52,7 @@ import org.eventb.codegen.il1.translator.IL1TranslationManager;
 import org.eventb.codegen.il1.translator.IL1TranslationUnhandledTypeException;
 import org.eventb.codegen.il1.translator.TargetLanguage;
 import org.eventb.codegen.il1.translator.provider.ITranslationRule;
+import org.eventb.codegen.il1.translator.utils.CodeFiler;
 import org.eventb.codegen.tasking.RMLDataStruct;
 import org.eventb.codegen.tasking.RelevantMachineLoader;
 import org.eventb.codegen.tasking.TaskingTranslationException;
@@ -559,7 +559,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 					"// EndProtected", protectedCode);
 			// Get the protected name
 			String name = currentProtected.getMachineName();
-			saveToFileHelper(protectedCode, name + ".c", directoryName);
+			CodeFiler.getDefault().save(protectedCode, directoryName, name + ".c");
 		}
 		// Generate the header files.
 		// Each protected file just includes "common.h" which includes the other
@@ -602,7 +602,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			commonCode.addAll(formatCode(translationManager
 					.getCompilerDependentExecutableCodeBlock(),
 					translationManager));
-			this.saveToFileHelper(commonCode, "Common.c", directoryName);
+			CodeFiler.getDefault().save(commonCode, directoryName, "Common.c");
 		}
 
 		// Save the header files
@@ -622,7 +622,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			headerCode.add("#endif");
 			headerCode.add(""); // blank line
 
-			this.saveToFileHelper(headerCode, headerName + ".h", directoryName);
+			CodeFiler.getDefault().save(headerCode, directoryName, headerName + ".h");
 		}
 	}
 
