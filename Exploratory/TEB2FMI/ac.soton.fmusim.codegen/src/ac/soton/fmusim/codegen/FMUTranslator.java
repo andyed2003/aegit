@@ -157,49 +157,18 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		IWorkspace workspace = ResourcesPlugin.getWorkspace();
 		IWorkspaceRoot root = workspace.getRoot();
 		shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
-		
-		
 		DirectoryDialog dialog = new DirectoryDialog(shell);
 		String string = dialog.open();
 		IPath path = new Path(string);
 		List<String> segments = Arrays.asList(path.segments());
-		
 		targetProject = root.getProject(segments.get(segments.size()-1));
-		
-//		String sourceProjectName = sourceRodinProject.getElementName();
-//		targetProject = root.getProject(sourceProjectName + "Target");
-		
-//		if (!targetProject.exists()) {
-//			targetProject.create(null);
-//			targetProject.open(null);
-//			if (!targetProject.hasNature(CDT_CNATURE)) {
-//				IProjectDescription description = targetProject.getDescription();
-//				String[] natures = description.getNatureIds();
-//				String[] newNatures = new String[natures.length + 3];
-//				System.arraycopy(natures, 0, newNatures, 0, natures.length);
-//				newNatures[natures.length] = CDT_CNATURE;
-//				// We can put these back in if we decide to do managed builds etc.
-//				newNatures[natures.length + 1] = "org.eclipse.cdt.managedbuilder.core.managedBuildNature";
-//				newNatures[natures.length + 2] = "org.eclipse.cdt.managedbuilder.core.ScannerConfigNature";
-//				description.setNatureIds(newNatures);
-//				targetProject.setDescription(description, null);
-//			}
-//		}
-
-		
 		// add the new project the list of things to be updated in the UI
 		resourceUpdateList.add(targetProject);
 		// create C source folder in the project called "src" for generated source
 		// and external for inherited code
 		generatedSourceFolder = createCSourceFolder(targetProject, GENERATED_SRC_FOLDER);
 		createCSourceFolder(targetProject, EXTERNAL_SOURCE_FOLDER);
-		
-		
-		
-		
 	}
-
-
 
 	private IFolder createCSourceFolder(IProject targetProject, String newDirectoryName)
 			throws CoreException, CModelException {
@@ -451,6 +420,11 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			TaskingTranslationUnhandledTypeException {
 		// Now to the code generation
 		IL1TranslationManager il1TranslationManager = new IL1TranslationManager();
+		// These are FMU specific headers. The first is for configuration
+		il1TranslationManager.addIncludeStatement("#include \"config.h\"");
+		// This is for the FakeFMIDecls and will be replaced by the correct
+		// FMI API at a later date.
+		il1TranslationManager.addIncludeStatement("#include \"fakeFMIDecls.h\"");
 		boolean hasBool = false;
 		TreeIterator<EObject> programContentList = program.eAllContents();
 		while (programContentList.hasNext()) {

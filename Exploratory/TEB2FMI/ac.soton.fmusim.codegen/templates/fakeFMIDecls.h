@@ -14,6 +14,9 @@ typedef double       fmiReal   ;
 typedef int          fmiInteger;
 typedef char         fmiBoolean;
 typedef const char*  fmiString ;
+typedef enum {
+	fmiOK, fmiWarning, fmiDiscard, fmiError, fmiFatal, fmiPending
+} fmiStatus;
 
 /* Values for fmiBoolean  */
 #define fmiTrue  1

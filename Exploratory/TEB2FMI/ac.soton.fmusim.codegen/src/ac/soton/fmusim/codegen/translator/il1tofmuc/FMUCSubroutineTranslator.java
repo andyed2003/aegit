@@ -95,6 +95,12 @@ public class FMUCSubroutineTranslator extends
 				outCode.addAll(lVars);
 			}
 			// Body code
+			
+			// Now, the body code needs to be converted to use the variable references.
+			// Question : where are the variable references defined?
+			
+			
+			
 			outCode.add("// Translated code");
 			outCode.addAll(body);
 
