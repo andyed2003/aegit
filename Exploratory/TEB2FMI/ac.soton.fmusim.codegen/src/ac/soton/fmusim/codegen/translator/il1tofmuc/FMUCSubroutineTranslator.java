@@ -1,8 +1,10 @@
 package ac.soton.fmusim.codegen.translator.il1tofmuc;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.eclipse.emf.common.util.EList;
+import org.eventb.codegen.il1.Declaration;
 import org.eventb.codegen.il1.InParameter;
 import org.eventb.codegen.il1.OutParameter;
 import org.eventb.codegen.il1.Parameter;
@@ -12,15 +14,15 @@ import org.eventb.codegen.il1.translator.c.CTranslatorUtils;
 import org.eventb.codegen.il1.translator.core.AbstractIL1TranslatorUtils;
 import org.eventb.codegen.il1.translator.core.AbstractSubroutineIL1Translator;
 import org.eventb.codegen.tasking.TaskingTranslationException;
-import org.eventb.codegen.tasking.utils.CodeGenTaskingUtils;
 import org.eventb.core.ast.ITypeEnvironment;
 import org.eventb.core.ast.Type;
 import org.eventb.core.basis.MachineRoot;
 
+import FmiModel.FmiScalarVariable;
 import ac.soton.fmusim.codegen.FMUTranslator;
+import ac.soton.fmusim.codegen.ModelDescriptionManager;
 
-public class FMUCSubroutineTranslator extends
-		AbstractSubroutineIL1Translator {
+public class FMUCSubroutineTranslator extends AbstractSubroutineIL1Translator {
 
 	@Override
 	protected ArrayList<String> generateFunction(String name,
@@ -28,60 +30,74 @@ public class FMUCSubroutineTranslator extends
 			ArrayList<ArrayList<String>> localVariables, String guardList,
 			ArrayList<String> body, boolean isProtected, boolean isEnviron,
 			String machineName, Subroutine actualSource,
-			IL1TranslationManager translationManager) throws TaskingTranslationException {
+			IL1TranslationManager translationManager)
+			throws TaskingTranslationException {
 
 		ArrayList<String> outCode = new ArrayList<String>();
 
 		// For an FMU we know that subroutines are either:
-		// 1 - communicating with the master - i.e. an fmiGetXXX, or fmiSetXXX; or
+		// 1 - communicating with the master - i.e. an fmiGetXXX, or fmiSetXXX;
+		// or
 		// 2 - the fmiDoStep subroutine.
-		// This should help us to determine the parameters that we need for the subroutine.
-		
+		// This should help us to determine the parameters that we need for the
+		// subroutine.
+
 		// Signature for Getters 1:
-		// fmiStatus fmiGetXXX(fmiComponent c, const fmiValueReference vr[], 
-		//		size_t nvr, fmiInteger value[]);
-		
+		// fmiStatus fmiGetXXX(fmiComponent c, const fmiValueReference vr[],
+		// size_t nvr, fmiInteger value[]);
+
 		// Signature for Setters 1:
-		// fmiStatus fmiSetXXX(fmiComponent c, const fmiValueReference vr[], 
-		//		size_t nvr,	const fmiInteger value[]);				
-		
+		// fmiStatus fmiSetXXX(fmiComponent c, const fmiValueReference vr[],
+		// size_t nvr, const fmiInteger value[]);
+
 		// Signature for 2:
-		// fmiStatus fmiDoStep(fmiComponent c, fmiReal currentCommunicationPoint,
-		//		fmiReal	communicationStepSize, fmiBoolean noSetFMUStatePriorToCurrentPoint)
-		
-		// So - what are we getting? Ints, reals, bools? Let's assume we can tell from the parameters,
-		// which are typed, and all the same type - because we enforce that restriction.
+		// fmiStatus fmiDoStep(fmiComponent c, fmiReal
+		// currentCommunicationPoint,
+		// fmiReal communicationStepSize, fmiBoolean
+		// noSetFMUStatePriorToCurrentPoint)
+
+		// So - what are we getting? Ints, reals, bools? Let's assume we can
+		// tell from the parameters,
+		// which are typed, and all the same type - because we enforce that
+		// restriction.
 		EList<Parameter> formalParams = actualSource.getFormalParameters();
 		String fmiTypeName = null;
 		String communicationDirection = null;
 
-//>>>>> // if this has parameter(s) then it must be a getXXX or SetXXX for the master
-		if(formalParams.size()>0){
-			// Get any of the subroutine parameters, they should all be either incoming, or outgoing
+		// >>>>> // if this has parameter(s) then it must be a getXXX or SetXXX
+		// for the master
+		if (formalParams.size() > 0) {
+			// Get any of the subroutine parameters, they should all be either
+			// incoming, or outgoing
 			Parameter subroutineParam = formalParams.get(0);
-			// we also need the original event parameter to see if it incoming or outgoing
+			// we also need the original event parameter to see if it incoming
+			// or outgoing
 			// FMU Out = master GET
-			if(subroutineParam instanceof OutParameter){
+			if (subroutineParam instanceof OutParameter) {
 				communicationDirection = "Get";
 			}
 			// FMU In = master Set
-			else if(subroutineParam instanceof InParameter){
+			else if (subroutineParam instanceof InParameter) {
 				communicationDirection = "Set";
 			}
-			MachineRoot root = (MachineRoot) translationManager.getSourceRoot(actualSource.getProjectName(), machineName);
+			MachineRoot root = (MachineRoot) translationManager.getSourceRoot(
+					actualSource.getProjectName(), machineName);
 			String exampleParamName = subroutineParam.getIdentifier();
 			// get the FMI type from the type environment
-			ITypeEnvironment typeEnv = translationManager.getTypeEnvironment(root);
+			ITypeEnvironment typeEnv = translationManager
+					.getTypeEnvironment(root);
 			Type type = typeEnv.getType(exampleParamName);
-			// We hard Code the translation of the Type String here
-			fmiTypeName = FMUTranslator.getFMIType(type);
-			
+			// We hard Code the translation of the parameter Type String here
+			fmiTypeName = FMUTranslator.getFMITypeString(type);
+
 			// Format the parameters
 			String fmiAPIparameters = "fmiComponent c, const fmiValueReference vr[], "
 					+ "size_t nvr, fmiInteger value[]";
-			
+
 			// Uniquely identify each event name using the machine name
-			outCode.add("fmiStatus " + machineName + "_" + communicationDirection + fmiTypeName + "(" + fmiAPIparameters + ")");
+			outCode.add("fmiStatus " + machineName + "_"
+					+ communicationDirection + fmiTypeName + "("
+					+ fmiAPIparameters + ")");
 			outCode.add("{"); // open function
 
 			// Guards
@@ -94,32 +110,28 @@ public class FMUCSubroutineTranslator extends
 			for (ArrayList<String> lVars : localVariables) {
 				outCode.addAll(lVars);
 			}
-			// Body code
-			
-			// Now, the body code needs to be converted to use the variable references.
-			// Question : where are the variable references defined?
-			
-			
-			
+			List<String> newBody = substituteVariableRefs(body, actualSource,
+					translationManager);
 			outCode.add("// Translated code");
-			outCode.addAll(body);
+			outCode.addAll(newBody);
 
 			if (!guardList.equals("")) {
 				if (isProtected || isEnviron) {
 					outCode.add("");
 				}
 				outCode.add("}"); // close guarded
-			} 
+			}
 			outCode.add("}"); // close function
 		}
-//>>>>> // else it must be an fmiDOStep subroutine
-		else{
+		// >>>>> // else it must be an fmiDOStep subroutine
+		else {
 			// Format the parameters
 			String fmiAPIparameters = "fmiComponent c, fmiReal currentCommunicationPoint,"
-					+" fmiReal communicationStepSize, fmiBoolean noSetFMUStatePriorToCurrentPoint";
-			
+					+ " fmiReal communicationStepSize, fmiBoolean noSetFMUStatePriorToCurrentPoint";
+
 			// Uniquely identify each event name using the machine name
-			outCode.add("fmiStatus " + machineName + "_" + "fmiDoStep(" + fmiAPIparameters + ")");
+			outCode.add("fmiStatus " + machineName + "_" + "fmiDoStep("
+					+ fmiAPIparameters + ")");
 			outCode.add("{"); // open function
 
 			// Guards
@@ -134,19 +146,72 @@ public class FMUCSubroutineTranslator extends
 				outCode.addAll(lVars);
 			}
 
+			List<String> newBody = substituteVariableRefs(body, actualSource,
+					translationManager);
 			// Body code
 			outCode.add("// Translated code");
-			outCode.addAll(body);
+			outCode.addAll(newBody);
 
 			if (!guardList.equals("")) {
 				if (isProtected || isEnviron) {
 					outCode.add("");
 				}
 				outCode.add("}"); // close guarded
-			} 
+			}
 			outCode.add("}"); // close function
 		}
 		return outCode;
+	}
+
+	private List<String> substituteVariableRefs(ArrayList<String> body,
+			Subroutine actualSource, IL1TranslationManager translationManager)
+			throws TaskingTranslationException {
+		// The body code needs to be converted to use the variable
+		// references.
+		// get the variable declarations
+		EList<Declaration> decls = translationManager.getParentProtected(
+				actualSource).getDecls();
+		// iterate through each line in the subroutine body
+		// to create a new body with substitutions if necessary
+		List<String> newBody = new ArrayList<String>();
+		for (String line : body) {
+			// copy the line to work on
+			String modifiedCode = line;
+			// for each declaration
+			for (Declaration d : decls) {
+				// modify the statement where we find the declared variable
+				modifiedCode = updateVariableName(modifiedCode, d, translationManager);
+			}
+			// if the line has been changed
+			if (!line.equals(modifiedCode)) {
+				newBody.add(modifiedCode);
+			}
+			// else add the original line
+			else {
+				newBody.add(line);
+			}
+		}
+		return newBody;
+	}
+
+	private String updateVariableName(String action, Declaration d, IL1TranslationManager translationManager)
+			throws TaskingTranslationException {
+		action = translationManager.tokenizeVariablesOperators(action);
+		String[] actions = action.split(" ");
+		String newAction = "";
+		String varName = d.getIdentifier() + "_" + d.getComponentName();
+
+		String varType = FMUTranslator.getVariableRefTypeEquivalent(d);
+
+		for (String a : actions) {
+			if (a.contains(varName)) {
+				String replacement = varType + "[" + varName + "_]";
+				newAction = newAction + replacement + " ";
+			} else {
+				newAction = newAction + a + " ";
+			}
+		}
+		return newAction;
 	}
 
 	@Override
