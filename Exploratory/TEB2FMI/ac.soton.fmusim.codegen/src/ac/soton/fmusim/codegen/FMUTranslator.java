@@ -45,6 +45,7 @@ import org.eventb.codegen.il1.Il1Factory;
 import org.eventb.codegen.il1.Program;
 import org.eventb.codegen.il1.Protected;
 import org.eventb.codegen.il1.Subroutine;
+import org.eventb.codegen.il1.TranslatedDecl;
 import org.eventb.codegen.il1.impl.Il1PackageImpl;
 import org.eventb.codegen.il1.translator.AbstractTranslateEventBToTarget;
 import org.eventb.codegen.il1.translator.ClassHeaderInformation;
@@ -84,6 +85,7 @@ import FmiModel.RealType1;
 import FmiModel.StringType;
 import ac.soton.composition.core.basis.ComposedMachineRoot;
 import ac.soton.compositionmodel.core.compositionmodel.ComposedMachine;
+import ac.soton.fmusim.codegen.popup.actions.CodeGen;
 
 // This class is the entry point for the translation proper. 
 // UNLIKE the existing C code generator, it does not extend AbstractProgramIL1Translator.
@@ -117,7 +119,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 	public static IProject targetProject = null;
 	// The target folder for generated source code.
 	private IFolder generatedSourceFolder = null;
-	private final TargetLanguage targetLanguage = new TargetLanguage("FMI_C");
+	private final static TargetLanguage targetLanguage = new TargetLanguage("FMI_C");
 	// The modelDescription file, as an emf model.
 	private ModelDescriptionManager modelDescriptionsManager = new ModelDescriptionManager();
 	private Protected currentProtected;
@@ -127,6 +129,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 	private int stringVariableCount = 0;
 	private int integerVariableCount = 0;
 	private int boolVariableCount = 0;
+	private static IL1TranslationManager il1TranslationManager;
 
 	// Translate the selected Composed Machine/Event-B Machine to FMU(s)
 	public void translateToFMU(IStructuredSelection s)
@@ -411,8 +414,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 	private void translateIL1ToFMU(Program program)
 			throws IL1TranslationUnhandledTypeException, RodinDBException,
 			TaskingTranslationUnhandledTypeException {
-		// Now to the code generation
-		IL1TranslationManager il1TranslationManager = new IL1TranslationManager();
+		il1TranslationManager = new IL1TranslationManager();
 		// These are FMU specific headers. The first is for configuration
 		il1TranslationManager.addIncludeStatement("#include \"config.h\"");
 		// This is for the FakeFMIDecls and will be replaced by the correct
@@ -616,6 +618,28 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		return ""; // something went wrong
 	}
 
+	
+	public static String updateVariableName(String action, Declaration d, IL1TranslationManager translationManager)
+			throws TaskingTranslationException {
+		action = translationManager.tokenizeVariablesOperators(action);
+		String[] actions = action.split(" ");
+		String newAction = "";
+		String varName = d.getIdentifier() + "_" + d.getComponentName();
+
+		String varType = FMUTranslator.getVariableRefArrayName(d);
+
+		for (String a : actions) {
+			if (a.contains(varName)) {
+				String replacement = varType + "[" + varName + "_]";
+				newAction = newAction + replacement + " ";
+			} else {
+				newAction = newAction + a + " ";
+			}
+		}
+		return newAction;
+	}
+
+
 	// Given an eventB type, return its FMI equivalent
 	public static String getFMITypeString(Type type) {
 		String fmiTypeName = null;
@@ -633,8 +657,8 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		return fmiTypeName;
 	}
 	
-	// Given an IL1 Type string, return its variable reference equivalent
-	public static String getVariableRefTypeEquivalent(Declaration d) throws TaskingTranslationException{
+	// Given an IL1 declaration, return its variable reference array name
+	public static String getVariableRefArrayName(Declaration d) throws TaskingTranslationException{
 		String declarationType = d.getType();
 		if(declarationType.equals(CodeGenTaskingUtils.INT_SYMBOL)){
 			return FMUTranslator.VARIABLE_REF_INTEGER;
@@ -646,6 +670,11 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			return FMUTranslator.VARIABLE_REF_REAL;
 		} 
 		else throw new TaskingTranslationException("Type not found: "+ declarationType);
-			
+	}
+
+	// Given an IL1 declaration, return its C Type name from the type environment
+	public static String getVariableCTypeName(Declaration d) throws TaskingTranslationException{
+		TranslatedDecl translatedDecl = il1TranslationManager.translateDeclaration(d, targetLanguage);
+		return translatedDecl.getType();
 	}
 }

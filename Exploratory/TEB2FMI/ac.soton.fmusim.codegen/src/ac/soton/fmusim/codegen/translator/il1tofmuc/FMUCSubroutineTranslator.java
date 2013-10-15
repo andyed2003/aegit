@@ -18,9 +18,7 @@ import org.eventb.core.ast.ITypeEnvironment;
 import org.eventb.core.ast.Type;
 import org.eventb.core.basis.MachineRoot;
 
-import FmiModel.FmiScalarVariable;
 import ac.soton.fmusim.codegen.FMUTranslator;
-import ac.soton.fmusim.codegen.ModelDescriptionManager;
 
 public class FMUCSubroutineTranslator extends AbstractSubroutineIL1Translator {
 
@@ -80,6 +78,7 @@ public class FMUCSubroutineTranslator extends AbstractSubroutineIL1Translator {
 			else if (subroutineParam instanceof InParameter) {
 				communicationDirection = "Set";
 			}
+			
 			MachineRoot root = (MachineRoot) translationManager.getSourceRoot(
 					actualSource.getProjectName(), machineName);
 			String exampleParamName = subroutineParam.getIdentifier();
@@ -88,6 +87,7 @@ public class FMUCSubroutineTranslator extends AbstractSubroutineIL1Translator {
 					.getTypeEnvironment(root);
 			Type type = typeEnv.getType(exampleParamName);
 			// We hard Code the translation of the parameter Type String here
+			
 			fmiTypeName = FMUTranslator.getFMITypeString(type);
 
 			// Format the parameters
@@ -180,7 +180,7 @@ public class FMUCSubroutineTranslator extends AbstractSubroutineIL1Translator {
 			// for each declaration
 			for (Declaration d : decls) {
 				// modify the statement where we find the declared variable
-				modifiedCode = updateVariableName(modifiedCode, d, translationManager);
+				modifiedCode = FMUTranslator.updateVariableName(modifiedCode, d, translationManager);
 			}
 			// if the line has been changed
 			if (!line.equals(modifiedCode)) {
@@ -194,25 +194,25 @@ public class FMUCSubroutineTranslator extends AbstractSubroutineIL1Translator {
 		return newBody;
 	}
 
-	private String updateVariableName(String action, Declaration d, IL1TranslationManager translationManager)
-			throws TaskingTranslationException {
-		action = translationManager.tokenizeVariablesOperators(action);
-		String[] actions = action.split(" ");
-		String newAction = "";
-		String varName = d.getIdentifier() + "_" + d.getComponentName();
-
-		String varType = FMUTranslator.getVariableRefTypeEquivalent(d);
-
-		for (String a : actions) {
-			if (a.contains(varName)) {
-				String replacement = varType + "[" + varName + "_]";
-				newAction = newAction + replacement + " ";
-			} else {
-				newAction = newAction + a + " ";
-			}
-		}
-		return newAction;
-	}
+//	private String updateVariableName(String action, Declaration d, IL1TranslationManager translationManager)
+//			throws TaskingTranslationException {
+//		action = translationManager.tokenizeVariablesOperators(action);
+//		String[] actions = action.split(" ");
+//		String newAction = "";
+//		String varName = d.getIdentifier() + "_" + d.getComponentName();
+//
+//		String varType = FMUTranslator.getVariableRefTypeEquivalent(d);
+//
+//		for (String a : actions) {
+//			if (a.contains(varName)) {
+//				String replacement = varType + "[" + varName + "_]";
+//				newAction = newAction + replacement + " ";
+//			} else {
+//				newAction = newAction + a + " ";
+//			}
+//		}
+//		return newAction;
+//	}
 
 	@Override
 	protected String generateParameterDefinition(String type,
