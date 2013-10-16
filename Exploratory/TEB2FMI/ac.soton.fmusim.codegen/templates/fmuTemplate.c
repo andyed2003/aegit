@@ -36,71 +36,80 @@ fmiComponent *fmiInstantiateControllerImpl(fmiString instanceName,
 }
 
 //## OptionalBlock(getBooleanList.size() > 0)
-void /*##<fmuMachineName>*/_fmiGetBoolean(fmiComponent *c,
+fmiStatus /*##<fmuMachineName>*/_fmiGetBoolean(fmiComponent *c,
 		const fmiValueReference vr[booleanArraySize], size_t nvr,
 		fmiBoolean value[booleanArraySize]) {
 		//##<getBooleanList>
+	return fmiOK;
 }
 //## EndOptional
 
 //## OptionalBlock(setBooleanList.size() > 0)
-void /*##<fmuMachineName>*/_fmiSetBoolean(fmiComponent *c,
+fmiStatus /*##<fmuMachineName>*/_fmiSetBoolean(fmiComponent *c,
 		const fmiValueReference vr[booleanArraySize], size_t nvr,
 		fmiBoolean value[booleanArraySize]) {
 		//##<setBooleanList>
+	return fmiOK;
 }
 //## EndOptional
 
 //## OptionalBlock(getIntegerList.size() > 0)
-void /*##<fmuMachineName>*/_fmiGetInteger(fmiComponent *c,
+fmiStatus /*##<fmuMachineName>*/_fmiGetInteger(fmiComponent *c,
 		const fmiValueReference vr[integerArraySize], size_t nvr,
 		fmiInteger value[integerArraySize]) {
 		//## <getIntegerList>
+	return fmiOK;
 }
 //## EndOptional
 
 //## OptionalBlock(setIntegerList.size() > 0)
-void /*##<fmuMachineName>*/_fmiSetInteger(fmiComponent *c,
+fmiStatus /*##<fmuMachineName>*/_fmiSetInteger(fmiComponent *c,
 		const fmiValueReference vr[integerArraySize], size_t nvr,
 		fmiInteger value[integerArraySize]) {
 		//## <setIntegerList>
+	return fmiOK;
 }
 //## EndOptional
 
 //## OptionalBlock(getRealList.size() > 0)
-void /*##<fmuMachineName>*/_fmiGetReal(fmiComponent *c,
+fmiStatus /*##<fmuMachineName>*/_fmiGetReal(fmiComponent *c,
 		const fmiValueReference vr[realArraySize], size_t nvr,
 		fmiReal value[realArraySize]) {
 		//##<getRealList>
+	return fmiOK;
 }
 //## EndOptional
 
 //## OptionalBlock(setRealList.size() > 0)
-void /*##<fmuMachineName>*/_fmiSetReal(fmiComponent *c,
+fmiStatus /*##<fmuMachineName>*/_fmiSetReal(fmiComponent *c,
 		const fmiValueReference vr[realArraySize], size_t nvr,
 		fmiReal value[realArraySize]) {
 		//##<setRealList>
+	return fmiOK;
 }
 //## EndOptional
 
 //## OptionalBlock(getStringList.size() > 0)
-void /*##<fmuMachineName>*/_fmiGetString(fmiComponent *c,
+fmiStatus /*##<fmuMachineName>*/_fmiGetString(fmiComponent *c,
 		const fmiValueReference vr[stringArraySize], size_t nvr,
 		fmiString value[stringArraySize]) {
 		//##<getStringList>
+	return fmiOK;
 }
 //## EndOptional
 
 //## OptionalBlock(setStringList.size() > 0)
-void /*##<fmuMachineName>*/_fmiSetString(fmiComponent *c,
+fmiStatus /*##<fmuMachineName>*/_fmiSetString(fmiComponent *c,
 		const fmiValueReference vr[stringArraySize], size_t nvr,
 		fmiString value[stringArraySize]) {
 		//##<setStringList>
+	return fmiOK;
 }
 //## EndOptional
 
 // the simulation step.
-void /*##<fmuMachineName>*/_fmiDoStep(fmiComponent *c) {
+fmiStatus /*##<fmuMachineName>*/_fmiDoStep(fmiComponent *c) {
 	// Translated code
 	//##<doStepList>
+	return fmiOK;
 }
