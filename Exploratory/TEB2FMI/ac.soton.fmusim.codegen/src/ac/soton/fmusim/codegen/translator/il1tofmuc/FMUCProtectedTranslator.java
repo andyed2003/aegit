@@ -38,11 +38,8 @@ public class FMUCProtectedTranslator extends AbstractProtectedIL1Translator {
 		outCode.add("");
 		outCode.add("fmiComponent *modelInstances[MaxFMUInstances]; // initialise an empty array of components");
 		outCode.add("int conInstanceCount = 0;");
-		// Add the instance variables
+		// Add the instance variable references
 		outCode.add("// Variables and constants");
-		EList<Declaration> dList = actualSource.getDecls();
-		String modifiedCode = "";
-		List<String> modifiedDecls = new ArrayList<String>();
 		// we need to add declarations, like "int i[integerArraySize];" for each fmi array type
 		String machineName = actualSource.getMachineName();
 		List<DocumentRoot> docs = ModelDescriptionManager.getDefault().getDocumentRoot();
@@ -61,6 +58,9 @@ public class FMUCProtectedTranslator extends AbstractProtectedIL1Translator {
 					if(i == null) i = scalar.getInteger();
 					if(b == null) b = scalar.getBoolean();
 					if(s == null) s = scalar.getString();
+					// get the variable name and value reference into a declaration.
+					outCode.add("fmiValueReference " + scalar.getName() + "_" + machineName
+							+ "_ = " + scalar.getValueReference() + ";");
 				}
 				// when we are done iterating through the scalars we can quit the search
 				break;

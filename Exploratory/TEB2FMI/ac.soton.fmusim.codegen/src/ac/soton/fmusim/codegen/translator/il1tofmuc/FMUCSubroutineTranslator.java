@@ -121,6 +121,7 @@ public class FMUCSubroutineTranslator extends AbstractSubroutineIL1Translator {
 				}
 				outCode.add("}"); // close guarded
 			}
+			outCode.add("return fmiOK;"); // return OK upon successful completion
 			outCode.add("}"); // close function
 		}
 		// >>>>> // else it must be an fmiDOStep subroutine
@@ -158,6 +159,7 @@ public class FMUCSubroutineTranslator extends AbstractSubroutineIL1Translator {
 				}
 				outCode.add("}"); // close guarded
 			}
+			outCode.add("return fmiOK;"); // return OK upon successful completion
 			outCode.add("}"); // close function
 		}
 		return outCode;
@@ -193,26 +195,6 @@ public class FMUCSubroutineTranslator extends AbstractSubroutineIL1Translator {
 		}
 		return newBody;
 	}
-
-//	private String updateVariableName(String action, Declaration d, IL1TranslationManager translationManager)
-//			throws TaskingTranslationException {
-//		action = translationManager.tokenizeVariablesOperators(action);
-//		String[] actions = action.split(" ");
-//		String newAction = "";
-//		String varName = d.getIdentifier() + "_" + d.getComponentName();
-//
-//		String varType = FMUTranslator.getVariableRefTypeEquivalent(d);
-//
-//		for (String a : actions) {
-//			if (a.contains(varName)) {
-//				String replacement = varType + "[" + varName + "_]";
-//				newAction = newAction + replacement + " ";
-//			} else {
-//				newAction = newAction + a + " ";
-//			}
-//		}
-//		return newAction;
-//	}
 
 	@Override
 	protected String generateParameterDefinition(String type,

@@ -629,7 +629,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		String varType = FMUTranslator.getVariableRefArrayName(d);
 
 		for (String a : actions) {
-			if (a.contains(varName)) {
+			if (a.equals(varName)) {
 				String replacement = varType + "[" + varName + "_]";
 				newAction = newAction + replacement + " ";
 			} else {
