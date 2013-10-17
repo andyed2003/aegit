@@ -13,7 +13,7 @@ import org.eventb.codegen.templates.TemplatesPlugin;
 public class TemplateReader{
 	private File template = null;
 	FileReader templateReader = null;
-	
+	public static final String TAG_BEGIN = "//##";
 	
 	public TemplateReader(File template_){
 		checkConstruction(template_);
@@ -45,7 +45,7 @@ public class TemplateReader{
 	}
 	
 	
-	public void instantiateTemplate(String fname) throws IOException, TemplateException{
+	public void instantiateTemplate() throws IOException, TemplateException{
 		// reset the file
 		if(!templateReader.ready()){throw new TemplateException();}
 		templateReader.reset();
