@@ -78,17 +78,10 @@ public class FMUCSubroutineTranslator extends AbstractSubroutineIL1Translator {
 			else if (subroutineParam instanceof InParameter) {
 				communicationDirection = "Set";
 			}
-			
-			MachineRoot root = (MachineRoot) translationManager.getSourceRoot(
-					actualSource.getProjectName(), machineName);
 			String exampleParamName = subroutineParam.getIdentifier();
-			// get the FMI type from the type environment
-			ITypeEnvironment typeEnv = translationManager
-					.getTypeEnvironment(root);
-			Type type = typeEnv.getType(exampleParamName);
-			// We hard Code the translation of the parameter Type String here
-			
-			fmiTypeName = FMUTranslator.getFMITypeString(type);
+			String projectName = actualSource.getProjectName();
+			fmiTypeName = getFMITypeName(projectName, machineName,
+					exampleParamName, translationManager);
 
 			// Format the parameters
 			String fmiAPIparameters = "fmiComponent c, const fmiValueReference vr[], "
@@ -110,8 +103,15 @@ public class FMUCSubroutineTranslator extends AbstractSubroutineIL1Translator {
 			for (ArrayList<String> lVars : localVariables) {
 				outCode.addAll(lVars);
 			}
-			List<String> newBody = substituteVariableRefs(body, actualSource,
-					translationManager);
+			List<String> newBody = new ArrayList<String>();
+			// if we have getXXX the create a getter
+			if (communicationDirection.equals("Get")) {
+				newBody = createXXXGetStatements(fmiTypeName, translationManager);
+			}
+			// else create a setter
+			else {
+				newBody = createXXXSetStatements(fmiTypeName, translationManager);
+			}
 			outCode.add("// Translated code");
 			outCode.addAll(newBody);
 
@@ -121,7 +121,8 @@ public class FMUCSubroutineTranslator extends AbstractSubroutineIL1Translator {
 				}
 				outCode.add("}"); // close guarded
 			}
-			outCode.add("return fmiOK;"); // return OK upon successful completion
+			outCode.add("return fmiOK;"); // return OK upon successful
+											// completion
 			outCode.add("}"); // close function
 		}
 		// >>>>> // else it must be an fmiDOStep subroutine
@@ -159,10 +160,49 @@ public class FMUCSubroutineTranslator extends AbstractSubroutineIL1Translator {
 				}
 				outCode.add("}"); // close guarded
 			}
-			outCode.add("return fmiOK;"); // return OK upon successful completion
+			outCode.add("return fmiOK;"); // return OK upon successful
+											// completion
 			outCode.add("}"); // close function
 		}
 		return outCode;
+	}
+
+	private String getFMITypeName(String projectName, String machineName,
+			String variableName, IL1TranslationManager translationManager) {
+		String fmiTypeName;
+		MachineRoot root = (MachineRoot) translationManager.getSourceRoot(
+				projectName, machineName);
+		// get the FMI type from the type environment
+		ITypeEnvironment typeEnv = translationManager
+				.getTypeEnvironment(root);
+		Type type = typeEnv.getType(variableName);
+		// We hard Code the translation of the parameter Type String here
+
+		fmiTypeName = FMUTranslator.getFMITypeString(type);
+		return fmiTypeName;
+	}
+
+	
+	private List<String> createXXXGetStatements(String fmiTypeName,
+			IL1TranslationManager translationManager) throws TaskingTranslationException {
+		String variableArrayRef = FMUTranslator.getVariableRefArrayName(fmiTypeName);
+		List<String> newCode = new ArrayList<String>();
+		newCode.add("// for our initial work we return all values in the array");
+		newCode.add("for(int idx = 0; idx < " + fmiTypeName.toLowerCase() + "ArraySize; idx = idx + 1){");
+		newCode.add("value[ idx ] = " + variableArrayRef + " [ idx ];");
+		newCode.add("}");
+		return newCode;
+	}
+
+	private List<String> createXXXSetStatements(String fmiTypeName,
+			IL1TranslationManager translationManager) throws TaskingTranslationException {
+		String variableArrayRef = FMUTranslator.getVariableRefArrayName(fmiTypeName);
+		List<String> newCode = new ArrayList<String>();
+		newCode.add("// for our initial work we set all values in the array");
+		newCode.add("for(int idx = 0; idx < " + fmiTypeName.toLowerCase() + "ArraySize; idx = idx + 1){");
+		newCode.add(variableArrayRef + " [ idx ] = " + "value[ idx ];" );
+		newCode.add("}");
+		return newCode;
 	}
 
 	private List<String> substituteVariableRefs(ArrayList<String> body,
@@ -182,7 +222,8 @@ public class FMUCSubroutineTranslator extends AbstractSubroutineIL1Translator {
 			// for each declaration
 			for (Declaration d : decls) {
 				// modify the statement where we find the declared variable
-				modifiedCode = FMUTranslator.updateVariableName(modifiedCode, d, translationManager);
+				modifiedCode = FMUTranslator.updateVariableName(modifiedCode,
+						d, translationManager);
 			}
 			// if the line has been changed
 			if (!line.equals(modifiedCode)) {

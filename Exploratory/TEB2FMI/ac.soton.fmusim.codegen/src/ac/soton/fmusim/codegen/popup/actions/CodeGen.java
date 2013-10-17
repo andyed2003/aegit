@@ -16,6 +16,7 @@ import org.eclipse.ui.statushandlers.StatusManager;
 import org.eventb.codegen.il1.translator.IL1TranslationUnhandledTypeException;
 import org.eventb.codegen.tasking.TaskingTranslationException;
 import org.eventb.codegen.tasking.TaskingTranslationUnhandledTypeException;
+import org.eventb.codegen.templates.util.TemplateException;
 import org.osgi.service.prefs.BackingStoreException;
 import org.rodinp.core.RodinDBException;
 
@@ -82,6 +83,10 @@ public class CodeGen implements IObjectActionDelegate {
 		} catch (IL1TranslationUnhandledTypeException e) {
 			Status status = new Status(IStatus.ERROR, Activator.PLUGIN_ID,
 					"Failed Translation: IL1TranslationUnhandledTypeException:" + e.getMessage(), e);
+			StatusManager.getManager().handle(status, StatusManager.SHOW);
+		} catch (TemplateException e) {
+			Status status = new Status(IStatus.ERROR, Activator.PLUGIN_ID,
+					"Failed Translation: TemplateException:" + e.getMessage(), e);
 			StatusManager.getManager().handle(status, StatusManager.SHOW);
 		}
 	}

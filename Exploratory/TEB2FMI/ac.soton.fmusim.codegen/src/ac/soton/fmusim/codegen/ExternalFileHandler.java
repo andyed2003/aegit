@@ -16,7 +16,10 @@ import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.jface.text.templates.persistence.TemplateReaderWriter;
 import org.eventb.codegen.tasking.TaskingTranslationException;
+import org.eventb.codegen.templates.util.TemplateException;
+import org.eventb.codegen.templates.util.TemplateReader;
 
 public class ExternalFileHandler {
 	// This method should send the external files from a source location
@@ -24,7 +27,7 @@ public class ExternalFileHandler {
 	// the "src" folder, and other (unchanged) files will be copied to
 	// "externals".
 	public void handleExternalFiles() throws CoreException, IOException,
-			TaskingTranslationException {
+			TaskingTranslationException, TemplateException {
 		// get the external files from the source project
 		if (FMUTranslator.sourceRodinProject == null) {
 			throw new TaskingTranslationException(
@@ -47,10 +50,9 @@ public class ExternalFileHandler {
 						BufferedReader br = new BufferedReader(reader);
 						// write all lines to a temporary store for processing
 						List<String> outputArrayList = new ArrayList<String>();
-						// Get a line and copy it unless it contains the 'begin
-						// markup tag' string. If it does contain a tag then 
-						// mark it as a template and we will pass it on for special
-						// handling.
+						// Get a line and copy it. If it has the 'begin
+						// markup' tag, then mark it as a template and we will
+						// pass it on for special handling.
 						boolean finished = false;
 						boolean isTemplate = false;
 						while (!finished) {
@@ -59,7 +61,7 @@ public class ExternalFileHandler {
 								finished = true;
 							} else {
 								outputArrayList.add(line);
-								if (!isTemplate && line.contains("//##")) {
+								if (!isTemplate && line.contains(TemplateReader.TAG_BEGIN)) {
 									isTemplate = true;
 								}
 							}
@@ -82,6 +84,9 @@ public class ExternalFileHandler {
 							// TODO implement template handler (in its own
 							// class), and call the handler here.
 							// But for now we just copy and output the original lines.
+							TemplateReader tReader = new TemplateReader(iFile);
+							tReader.instantiateTemplate();
+							
 							for (String line : outputArrayList) {
 								modifiedOutput.add(line);
 							}

@@ -60,6 +60,7 @@ import org.eventb.codegen.tasking.TaskingTranslationException;
 import org.eventb.codegen.tasking.TaskingTranslationManager;
 import org.eventb.codegen.tasking.TaskingTranslationUnhandledTypeException;
 import org.eventb.codegen.tasking.utils.CodeGenTaskingUtils;
+import org.eventb.codegen.templates.util.TemplateException;
 import org.eventb.core.ast.ITypeEnvironment;
 import org.eventb.core.ast.Type;
 import org.eventb.core.basis.ContextRoot;
@@ -85,7 +86,6 @@ import FmiModel.RealType1;
 import FmiModel.StringType;
 import ac.soton.composition.core.basis.ComposedMachineRoot;
 import ac.soton.compositionmodel.core.compositionmodel.ComposedMachine;
-import ac.soton.fmusim.codegen.popup.actions.CodeGen;
 
 // This class is the entry point for the translation proper. 
 // UNLIKE the existing C code generator, it does not extend AbstractProgramIL1Translator.
@@ -119,7 +119,8 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 	public static IProject targetProject = null;
 	// The target folder for generated source code.
 	private IFolder generatedSourceFolder = null;
-	private final static TargetLanguage targetLanguage = new TargetLanguage("FMI_C");
+	private final static TargetLanguage targetLanguage = new TargetLanguage(
+			"FMI_C");
 	// The modelDescription file, as an emf model.
 	private ModelDescriptionManager modelDescriptionsManager = new ModelDescriptionManager();
 	private Protected currentProtected;
@@ -135,7 +136,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 	public void translateToFMU(IStructuredSelection s)
 			throws TaskingTranslationException, BackingStoreException,
 			CoreException, IOException, URISyntaxException,
-			IL1TranslationUnhandledTypeException {
+			IL1TranslationUnhandledTypeException, TemplateException {
 		// Initialisations
 		this.setSelection(s);
 		modelDescriptionsManager = ModelDescriptionManager.getDefault();
@@ -618,8 +619,8 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		return ""; // something went wrong
 	}
 
-	
-	public static String updateVariableName(String action, Declaration d, IL1TranslationManager translationManager)
+	public static String updateVariableName(String action, Declaration d,
+			IL1TranslationManager translationManager)
 			throws TaskingTranslationException {
 		action = translationManager.tokenizeVariablesOperators(action);
 		String[] actions = action.split(" ");
@@ -639,42 +640,61 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		return newAction;
 	}
 
-
 	// Given an eventB type, return its FMI equivalent
-	public static String getFMITypeString(Type type) {
-		String fmiTypeName = null;
-		String typeAsString = type.toString();
-		if (typeAsString.equalsIgnoreCase(CodeGenTaskingUtils.INT_SYMBOL)) {
-			fmiTypeName = INTEGER;
-		} else if (typeAsString
-				.equalsIgnoreCase(CodeGenTaskingUtils.BOOL_SYMBOL)) {
-			fmiTypeName = FMUTranslator.BOOLEAN;
-		} else if (typeAsString.equalsIgnoreCase(STRING)) {
-			fmiTypeName = STRING;
-		} else if (typeAsString.equalsIgnoreCase(REAL)) {
-			fmiTypeName = REAL;
+	public static String getFMITypeString(Type eventBType) {
+		String fmiTypeString = null;
+		String eventBTypeString = eventBType.toString();
+		if (eventBTypeString.equals(CodeGenTaskingUtils.INT_SYMBOL)) {
+			fmiTypeString = INTEGER;
+		} else if (eventBTypeString.equals(CodeGenTaskingUtils.BOOL_SYMBOL)) {
+			fmiTypeString = BOOLEAN;
+		} else if (eventBTypeString.equals(STRING)) {
+			fmiTypeString = STRING;
+		} else if (eventBTypeString.equals(REAL)) {
+			fmiTypeString = REAL;
 		}
-		return fmiTypeName;
-	}
-	
-	// Given an IL1 declaration, return its variable reference array name
-	public static String getVariableRefArrayName(Declaration d) throws TaskingTranslationException{
-		String declarationType = d.getType();
-		if(declarationType.equals(CodeGenTaskingUtils.INT_SYMBOL)){
-			return FMUTranslator.VARIABLE_REF_INTEGER;
-		} else if(declarationType.equals(CodeGenTaskingUtils.BOOL_SYMBOL)){
-			return FMUTranslator.VARIABLE_REF_BOOLEAN;
-		} else if(declarationType.equals(FMUTranslator.STRING)){
-			return FMUTranslator.VARIABLE_REF_STRING;
-		} else if(declarationType.equals(FMUTranslator.REAL)){
-			return FMUTranslator.VARIABLE_REF_REAL;
-		} 
-		else throw new TaskingTranslationException("Type not found: "+ declarationType);
+		return fmiTypeString;
 	}
 
-	// Given an IL1 declaration, return its C Type name from the type environment
-	public static String getVariableCTypeName(Declaration d) throws TaskingTranslationException{
-		TranslatedDecl translatedDecl = il1TranslationManager.translateDeclaration(d, targetLanguage);
-		return translatedDecl.getType();
+	// Given an IL1 declaration, return its C Type name from the type
+		// environment
+		public static String getVariableCTypeName(Declaration d)
+				throws TaskingTranslationException {
+			TranslatedDecl translatedDecl = il1TranslationManager
+					.translateDeclaration(d, targetLanguage);
+			return translatedDecl.getType();
+		}
+
+	// Given an IL1 declaration, return its variable reference array name
+	public static String getVariableRefArrayName(Declaration d)
+			throws TaskingTranslationException {
+		String declarationType = d.getType();
+		if (declarationType.equals(CodeGenTaskingUtils.INT_SYMBOL)) {
+			return VARIABLE_REF_INTEGER;
+		} else if (declarationType.equals(CodeGenTaskingUtils.BOOL_SYMBOL)) {
+			return VARIABLE_REF_BOOLEAN;
+		} else if (declarationType.equals(STRING)) {
+			return VARIABLE_REF_STRING;
+		} else if (declarationType.equals(REAL)) {
+			return VARIABLE_REF_REAL;
+		} else
+			throw new TaskingTranslationException("Type not found: "
+					+ declarationType);
+	}
+
+	// given the fmiTypeString return the variableRefArrayName
+	public static String getVariableRefArrayName(String fmiTypeString)
+			throws TaskingTranslationException {
+		if (fmiTypeString.equals(INTEGER)) {
+			return VARIABLE_REF_INTEGER;
+		} else if (fmiTypeString.equals(BOOLEAN)) {
+			return VARIABLE_REF_BOOLEAN;
+		} else if (fmiTypeString.equals(STRING)) {
+			return VARIABLE_REF_STRING;
+		} else if (fmiTypeString.equals(REAL)) {
+			return VARIABLE_REF_REAL;
+		} else
+			throw new TaskingTranslationException("Type not found: "
+					+ fmiTypeString);
 	}
 }
