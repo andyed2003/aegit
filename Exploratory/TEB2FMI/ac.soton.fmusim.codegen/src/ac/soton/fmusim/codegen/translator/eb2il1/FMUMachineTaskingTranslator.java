@@ -9,13 +9,11 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.ui.statushandlers.StatusManager;
+import org.eventb.codegen.il1.Command;
 import org.eventb.codegen.il1.IL1Element;
 import org.eventb.codegen.il1.Il1Factory;
 import org.eventb.codegen.il1.Protected;
 import org.eventb.codegen.il1.Subroutine;
-import org.eventb.codegen.il1.Command;
-import org.eventb.codegen.il1.Task;
-import org.eventb.codegen.il1.translator.IL1TranslationManager;
 import org.eventb.codegen.tasking.AbstractTaskingTranslator;
 import org.eventb.codegen.tasking.CodeGenTasking;
 import org.eventb.codegen.tasking.TaskingTranslationException;
@@ -26,9 +24,9 @@ import org.eventb.emf.core.EventBElement;
 import org.eventb.emf.core.machine.Event;
 import org.eventb.emf.core.machine.impl.MachineImpl;
 
-import compositeControl.CompositeControl;
-
 import tasking.FMU_Machine;
+
+import compositeControl.CompositeControl;
 
 public class FMUMachineTaskingTranslator extends AbstractTaskingTranslator {
 

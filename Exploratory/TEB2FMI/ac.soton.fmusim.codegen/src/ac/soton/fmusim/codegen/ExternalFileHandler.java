@@ -4,20 +4,16 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.net.URI;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
-import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
-import org.eclipse.jface.text.templates.persistence.TemplateReaderWriter;
-import org.eventb.codegen.tasking.TaskingTranslationException;
+import org.eventb.codegen.il1.translator.IL1TranslationException;
 import org.eventb.codegen.templates.util.TemplateException;
 import org.eventb.codegen.templates.util.TemplateReader;
 
@@ -27,10 +23,10 @@ public class ExternalFileHandler {
 	// the "src" folder, and other (unchanged) files will be copied to
 	// "externals".
 	public void handleExternalFiles() throws CoreException, IOException,
-			TaskingTranslationException, TemplateException {
+			TemplateException, IL1TranslationException {
 		// get the external files from the source project
 		if (FMUTranslator.sourceRodinProject == null) {
-			throw new TaskingTranslationException(
+			throw new IL1TranslationException(
 					"sourceProject not found in ExternalFileHandler Class");
 		}
 		List<IResource> externalResources = Arrays
@@ -61,7 +57,8 @@ public class ExternalFileHandler {
 								finished = true;
 							} else {
 								outputArrayList.add(line);
-								if (!isTemplate && line.contains(TemplateReader.TAG_BEGIN)) {
+								if (!isTemplate
+										&& line.contains(TemplateReader.TAG_BEGIN)) {
 									isTemplate = true;
 								}
 							}
@@ -70,7 +67,8 @@ public class ExternalFileHandler {
 						// if we do not have a template we simply copy the file
 						// to the destination.
 						if (!isTemplate) {
-							BufferedWriter bw = createBufferedWriter(
+							FMUTranslatorHelper translatorHelper = FMUTranslatorHelper.getDefault();
+							BufferedWriter bw = translatorHelper.createBufferedWriter(
 									FMUTranslator.targetProject,
 									FMUTranslator.EXTERNAL_SOURCE_FOLDER,
 									resourceFileName);
@@ -78,45 +76,31 @@ public class ExternalFileHandler {
 								bw.write(line + "\n");
 							}
 							bw.close();
-						} else {
-							List<String> modifiedOutput = new ArrayList<String>();
-							// We shall modify the output depending on the markup.
-							// TODO implement template handler (in its own
-							// class), and call the handler here.
-							// But for now we just copy and output the original lines.
-							TemplateReader tReader = new TemplateReader(iFile);
-							tReader.instantiateTemplate();
-							
-							for (String line : outputArrayList) {
-								modifiedOutput.add(line);
-							}
-							BufferedWriter bw = createBufferedWriter(
-									FMUTranslator.targetProject,
-									FMUTranslator.GENERATED_SRC_FOLDER,
-									resourceFileName);
-							// then write the modified output
-							for (String line : modifiedOutput) {
-								bw.write(line + "\n");
-							}
-							bw.close();
-						}
+						} else
+							throw new IL1TranslationException(
+									"Template(s) found in 'external' "
+											+ "folder, but should be a folder named templates");
+
 					}
 				}
+				// we have found the externals folder, we can break out of the for loop
+				// since we are done processing it.
+				break;
 			}
 		}
 	}
 
-	private BufferedWriter createBufferedWriter(IProject project,
-			String targetDirectoryName, String targetFileName)
-			throws IOException {
-		IProject targetProject = project;
-		IFolder resourceTargetFolder = targetProject
-				.getFolder(targetDirectoryName);
-		IFile resourceTargetFile = resourceTargetFolder.getFile(targetFileName);
-		File targetFile = new File(resourceTargetFile.getRawLocationURI());
-		FileWriter fw = new FileWriter(targetFile);
-		BufferedWriter bw = new BufferedWriter(fw);
-		return bw;
-	}
+//	private BufferedWriter createBufferedWriter(IProject project,
+//			String targetDirectoryName, String targetFileName)
+//			throws IOException {
+//		IProject targetProject = project;
+//		IFolder resourceTargetFolder = targetProject
+//				.getFolder(targetDirectoryName);
+//		IFile resourceTargetFile = resourceTargetFolder.getFile(targetFileName);
+//		File targetFile = new File(resourceTargetFile.getRawLocationURI());
+//		FileWriter fw = new FileWriter(targetFile);
+//		BufferedWriter bw = new BufferedWriter(fw);
+//		return bw;
+//	}
 
 }

@@ -1,11 +1,14 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Templates
-Bundle-SymbolicName: org.eventb.codegen.templates
+Bundle-SymbolicName: org.eventb.codegen.templates;singleton:=true
 Bundle-Version: 0.0.1.qualifier
 Bundle-Activator: org.eventb.codegen.templates.TemplatesPlugin
 Require-Bundle: org.eclipse.ui,
- org.eclipse.core.runtime
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources;bundle-version="3.7.101",
+ org.rodinp.core;bundle-version="1.6.1",
+ org.eventb.codegen.IL1.translator;bundle-version="0.0.4"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: org.eventb.codegen.templates,

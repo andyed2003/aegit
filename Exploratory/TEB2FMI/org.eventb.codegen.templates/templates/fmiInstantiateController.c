@@ -1,4 +1,4 @@
-fmiComponent *fmiInstantiateControllerImpl(fmiString instanceName,
+fmiComponent *fmiInstantiate(fmiString instanceName,
 		fmiString GUID) {
 	// create a fmiComponent and allocate storage space
 	fmiComponent *newFMIComponent = malloc(sizeof(*newFMIComponent));

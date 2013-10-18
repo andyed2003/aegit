@@ -13,6 +13,7 @@ import org.eclipse.ui.IActionDelegate;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.statushandlers.StatusManager;
+import org.eventb.codegen.il1.translator.IL1TranslationException;
 import org.eventb.codegen.il1.translator.IL1TranslationUnhandledTypeException;
 import org.eventb.codegen.tasking.TaskingTranslationException;
 import org.eventb.codegen.tasking.TaskingTranslationUnhandledTypeException;
@@ -87,6 +88,10 @@ public class CodeGen implements IObjectActionDelegate {
 		} catch (TemplateException e) {
 			Status status = new Status(IStatus.ERROR, Activator.PLUGIN_ID,
 					"Failed Translation: TemplateException:" + e.getMessage(), e);
+			StatusManager.getManager().handle(status, StatusManager.SHOW);
+		} catch (IL1TranslationException e) {
+			Status status = new Status(IStatus.ERROR, Activator.PLUGIN_ID,
+					"Failed Translation: IL1TranslationException:" + e.getMessage(), e);
 			StatusManager.getManager().handle(status, StatusManager.SHOW);
 		}
 	}

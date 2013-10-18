@@ -9,11 +9,11 @@ import org.eventb.codegen.il1.InParameter;
 import org.eventb.codegen.il1.OutParameter;
 import org.eventb.codegen.il1.Parameter;
 import org.eventb.codegen.il1.Subroutine;
+import org.eventb.codegen.il1.translator.IL1TranslationException;
 import org.eventb.codegen.il1.translator.IL1TranslationManager;
 import org.eventb.codegen.il1.translator.c.CTranslatorUtils;
 import org.eventb.codegen.il1.translator.core.AbstractIL1TranslatorUtils;
 import org.eventb.codegen.il1.translator.core.AbstractSubroutineIL1Translator;
-import org.eventb.codegen.tasking.TaskingTranslationException;
 import org.eventb.core.ast.ITypeEnvironment;
 import org.eventb.core.ast.Type;
 import org.eventb.core.basis.MachineRoot;
@@ -29,7 +29,7 @@ public class FMUCSubroutineTranslator extends AbstractSubroutineIL1Translator {
 			ArrayList<String> body, boolean isProtected, boolean isEnviron,
 			String machineName, Subroutine actualSource,
 			IL1TranslationManager translationManager)
-			throws TaskingTranslationException {
+			throws IL1TranslationException {
 
 		ArrayList<String> outCode = new ArrayList<String>();
 
@@ -184,7 +184,7 @@ public class FMUCSubroutineTranslator extends AbstractSubroutineIL1Translator {
 
 	
 	private List<String> createXXXGetStatements(String fmiTypeName,
-			IL1TranslationManager translationManager) throws TaskingTranslationException {
+			IL1TranslationManager translationManager) throws IL1TranslationException {
 		String variableArrayRef = FMUTranslator.getVariableRefArrayName(fmiTypeName);
 		List<String> newCode = new ArrayList<String>();
 		newCode.add("// for our initial work we return all values in the array");
@@ -195,7 +195,7 @@ public class FMUCSubroutineTranslator extends AbstractSubroutineIL1Translator {
 	}
 
 	private List<String> createXXXSetStatements(String fmiTypeName,
-			IL1TranslationManager translationManager) throws TaskingTranslationException {
+			IL1TranslationManager translationManager) throws IL1TranslationException {
 		String variableArrayRef = FMUTranslator.getVariableRefArrayName(fmiTypeName);
 		List<String> newCode = new ArrayList<String>();
 		newCode.add("// for our initial work we set all values in the array");
@@ -207,7 +207,7 @@ public class FMUCSubroutineTranslator extends AbstractSubroutineIL1Translator {
 
 	private List<String> substituteVariableRefs(ArrayList<String> body,
 			Subroutine actualSource, IL1TranslationManager translationManager)
-			throws TaskingTranslationException {
+			throws IL1TranslationException {
 		// The body code needs to be converted to use the variable
 		// references.
 		// get the variable declarations
