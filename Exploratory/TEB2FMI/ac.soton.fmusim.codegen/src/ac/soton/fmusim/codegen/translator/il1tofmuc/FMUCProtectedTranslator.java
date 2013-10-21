@@ -7,7 +7,10 @@ import java.util.List;
 
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.ui.statushandlers.StatusManager;
 import org.eventb.codegen.il1.Protected;
 import org.eventb.codegen.il1.translator.ClassHeaderInformation;
 import org.eventb.codegen.il1.translator.IL1TranslationException;
@@ -25,6 +28,7 @@ import FmiModel.RealType1;
 import FmiModel.StringType;
 import ac.soton.fmusim.codegen.FMUTranslator;
 import ac.soton.fmusim.codegen.FMUTranslatorHelper;
+import ac.soton.fmusim.codegen.FMUTranslatorPlugin;
 import ac.soton.fmusim.codegen.ModelDescriptionManager;
 
 public class FMUCProtectedTranslator extends AbstractProtectedIL1Translator {
@@ -42,17 +46,32 @@ public class FMUCProtectedTranslator extends AbstractProtectedIL1Translator {
 		try {
 			tryTemplate(actualSource);
 		} catch (CoreException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			Status status = new Status(IStatus.ERROR,
+					FMUTranslatorPlugin.PLUGIN_ID,
+					"Failed Translation: CoreException :"
+					+ e.getMessage(), e);
+				StatusManager.getManager().handle(status,
+					StatusManager.SHOW);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			Status status = new Status(IStatus.ERROR,
+					FMUTranslatorPlugin.PLUGIN_ID,
+					"Failed Translation: IOException :"
+					+ e.getMessage(), e);
+				StatusManager.getManager().handle(status,
+					StatusManager.SHOW);
 		} catch (TemplateException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			Status status = new Status(IStatus.ERROR,
+					FMUTranslatorPlugin.PLUGIN_ID,
+					"Failed Translation: TemplateException :", e);
+				StatusManager.getManager().handle(status,
+					StatusManager.SHOW);
 		} catch (IL1TranslationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			Status status = new Status(IStatus.ERROR,
+					FMUTranslatorPlugin.PLUGIN_ID,
+					"Failed Translation: IL1TranslationException :"
+					+ e.getMessage(), e);
+				StatusManager.getManager().handle(status,
+					StatusManager.SHOW);
 		}
 
 		ArrayList<String> outCode = new ArrayList<String>();
@@ -146,6 +165,7 @@ public class FMUCProtectedTranslator extends AbstractProtectedIL1Translator {
 		String targetFileName = actualSource.getName() + "_instantiated.c";
 		BufferedWriter bufferedWriter = translatorHelper.createBufferedWriter(
 				targetFolder, targetFileName);
-		templateReader.instantiateTemplate(bufferedWriter);
+		templateReader.instantiateTemplate(bufferedWriter, "fmuTemplate.c");
+		bufferedWriter.close();
 	}
 }

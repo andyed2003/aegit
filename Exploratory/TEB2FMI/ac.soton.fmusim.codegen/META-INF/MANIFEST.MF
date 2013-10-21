@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Codegen
 Bundle-SymbolicName: ac.soton.fmusim.codegen; singleton:=true
 Bundle-Version: 0.0.1
-Bundle-Activator: ac.soton.fmusim.codegen.Activator
+Bundle-Activator: ac.soton.fmusim.codegen.FMUTranslatorPlugin
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.core.resources,

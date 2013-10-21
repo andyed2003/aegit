@@ -1,11 +1,67 @@
 package org.eventb.codegen.templates.util;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.eclipse.core.runtime.IConfigurationElement;
+import org.eclipse.core.runtime.IContributor;
+import org.eclipse.core.runtime.IExtension;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Platform;
+import org.eclipse.core.runtime.Status;
+import org.eclipse.ui.statushandlers.StatusManager;
+import org.eventb.codegen.templates.TemplatesPlugin;
+
 public class TemplateHelper {
 
-	Map<String, List<String>> keywordMap = new HashMap<String, List<String>>();
+	// The extension ID
+	private static final String TEMPLATE_GEN_ID = "org.eventb.codegen.templates.generator";
+	// The singleton of this Helper
+	private static TemplateHelper templateHelper;
+	// Map of keywords to classes
+	private Map<String, String> generatorTagMap = new HashMap<String, String>();
 
+	public static TemplateHelper getDefault() {
+		if (templateHelper == null) {
+			templateHelper = new TemplateHelper();
+			templateHelper.initialise();
+			return templateHelper;
+		} else
+			return templateHelper;
+	}
+
+	private void initialise() {
+		for (final IExtension extension : Platform.getExtensionRegistry()
+				.getExtensionPoint(TEMPLATE_GEN_ID).getExtensions()) {
+			List<IConfigurationElement> ceList = Arrays.asList(extension
+					.getConfigurationElements());
+			IConfigurationElement generatorInfo = null;
+			String[] attributeNames = null;
+			for (IConfigurationElement configurationElement : ceList) {
+				if (configurationElement.isValid()) {
+					generatorInfo = configurationElement;
+					attributeNames = configurationElement.getAttributeNames();
+					break;
+				} else
+					try {
+						throw new TemplateException("");
+					} catch (TemplateException e) {
+						Status status = new Status(IStatus.ERROR,
+								TemplatesPlugin.PLUGIN_ID,
+								"Failed Translation: TemplateException:", e);
+						StatusManager.getManager().handle(status,
+								StatusManager.SHOW);
+					}
+			}
+
+			for (int idx = 0; idx < attributeNames.length; idx = idx + 2) {
+				generatorTagMap.put(
+						generatorInfo.getAttribute(attributeNames[idx]),
+						generatorInfo.getAttribute(attributeNames[idx + 1]));
+				System.out.println("");
+			}
+		}
+	}
 }

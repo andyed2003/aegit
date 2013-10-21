@@ -21,8 +21,8 @@ import org.eventb.codegen.templates.util.TemplateException;
 import org.osgi.service.prefs.BackingStoreException;
 import org.rodinp.core.RodinDBException;
 
-import ac.soton.fmusim.codegen.Activator;
 import ac.soton.fmusim.codegen.FMUTranslator;
+import ac.soton.fmusim.codegen.FMUTranslatorPlugin;
 
 public class CodeGen implements IObjectActionDelegate {
 
@@ -51,46 +51,46 @@ public class CodeGen implements IObjectActionDelegate {
 			fmuTranslator.translateToFMU(selection);
 			// catch all the things that may go wrong
 		} catch (RodinDBException e) {
-			Status status = new Status(IStatus.ERROR, Activator.PLUGIN_ID,
+			Status status = new Status(IStatus.ERROR, FMUTranslatorPlugin.PLUGIN_ID,
 					"Failed Translation: RodinDBException:" + e.getMessage(), e);
 			StatusManager.getManager().handle(status, StatusManager.SHOW);
 		} catch (TaskingTranslationUnhandledTypeException e) {
-			Status status = new Status(IStatus.ERROR, Activator.PLUGIN_ID,
+			Status status = new Status(IStatus.ERROR, FMUTranslatorPlugin.PLUGIN_ID,
 					"Failed Translation: TaskingTranslationUnhandledTypeException:"
 							+ e.getMessage(), e);
 			StatusManager.getManager().handle(status, StatusManager.SHOW);
 		} catch (TaskingTranslationException e) {
-			Status status = new Status(IStatus.ERROR, Activator.PLUGIN_ID,
+			Status status = new Status(IStatus.ERROR, FMUTranslatorPlugin.PLUGIN_ID,
 					"Failed Translation: TaskingTranslationException:"
 							+ e.getMessage(), e);
 			StatusManager.getManager().handle(status, StatusManager.SHOW);
 		} catch (BackingStoreException e) {
-			Status status = new Status(IStatus.ERROR, Activator.PLUGIN_ID,
+			Status status = new Status(IStatus.ERROR, FMUTranslatorPlugin.PLUGIN_ID,
 					"Failed Translation: BackingStoreException:"
 							+ e.getMessage(), e);
 			StatusManager.getManager().handle(status, StatusManager.SHOW);
 		} catch (CoreException e) {
-			Status status = new Status(IStatus.ERROR, Activator.PLUGIN_ID,
+			Status status = new Status(IStatus.ERROR, FMUTranslatorPlugin.PLUGIN_ID,
 					"Failed Translation: CoreException:" + e.getMessage(), e);
 			StatusManager.getManager().handle(status, StatusManager.SHOW);
 		} catch (IOException e) {
-			Status status = new Status(IStatus.ERROR, Activator.PLUGIN_ID,
+			Status status = new Status(IStatus.ERROR, FMUTranslatorPlugin.PLUGIN_ID,
 					"Failed Translation: IOException:" + e.getMessage(), e);
 			StatusManager.getManager().handle(status, StatusManager.SHOW);
 		} catch (URISyntaxException e) {
-			Status status = new Status(IStatus.ERROR, Activator.PLUGIN_ID,
+			Status status = new Status(IStatus.ERROR, FMUTranslatorPlugin.PLUGIN_ID,
 					"Failed Translation: URISyntaxException:" + e.getMessage(), e);
 			StatusManager.getManager().handle(status, StatusManager.SHOW);
 		} catch (IL1TranslationUnhandledTypeException e) {
-			Status status = new Status(IStatus.ERROR, Activator.PLUGIN_ID,
+			Status status = new Status(IStatus.ERROR, FMUTranslatorPlugin.PLUGIN_ID,
 					"Failed Translation: IL1TranslationUnhandledTypeException:" + e.getMessage(), e);
 			StatusManager.getManager().handle(status, StatusManager.SHOW);
 		} catch (TemplateException e) {
-			Status status = new Status(IStatus.ERROR, Activator.PLUGIN_ID,
+			Status status = new Status(IStatus.ERROR, FMUTranslatorPlugin.PLUGIN_ID,
 					"Failed Translation: TemplateException:" + e.getMessage(), e);
 			StatusManager.getManager().handle(status, StatusManager.SHOW);
 		} catch (IL1TranslationException e) {
-			Status status = new Status(IStatus.ERROR, Activator.PLUGIN_ID,
+			Status status = new Status(IStatus.ERROR, FMUTranslatorPlugin.PLUGIN_ID,
 					"Failed Translation: IL1TranslationException:" + e.getMessage(), e);
 			StatusManager.getManager().handle(status, StatusManager.SHOW);
 		}

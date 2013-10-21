@@ -55,7 +55,7 @@ public class TemplateReader {
 				return;
 			}
 		}
-		// we got hete so we've been unable to initialise the reader
+		// we got here so we've been unable to initialise the reader
 		throw new IL1TranslationException(
 				"could not initialise Template Reader with: "
 						+ rodinProject.getElementName() + "/" + folderName);
@@ -63,7 +63,7 @@ public class TemplateReader {
 
 	// This is the method that should go through each line, and replace the
 	// tag with generated code. Then write the output to a file.
-	public void instantiateTemplate(BufferedWriter bufferedWriter)
+	public void instantiateTemplate(BufferedWriter bufferedWriter, String masterTemplateName)
 			throws IOException, TemplateException, IL1TranslationException,
 			CoreException {
 		List<IResource> folderMembers = Arrays.asList(templateSourceFolder
@@ -76,14 +76,18 @@ public class TemplateReader {
 				File iFile = new File(uri);
 				IPath path = new Path(uri.getPath());
 				String fileName = path.lastSegment();
-				if (fileName.equals("fmuTemplate.c")) {
+				if (fileName.equals(masterTemplateName)) {
+					// We've found the masterTemplate resource, 
+					// so log it, and exit the lookup.
 					masterTemplate = iFile;
 					break;
 				}
 			}
-
 		}
-
+		if(masterTemplate == null){
+			throw new TemplateException("Master template ("+ masterTemplateName +") not found in templates folder");
+		}
+		// Let's read the template.
 		FileReader reader = new FileReader(masterTemplate);
 		BufferedReader br = new BufferedReader(reader);
 		// write all lines to a temporary store for processing
@@ -92,27 +96,24 @@ public class TemplateReader {
 		// markup' tag, then mark it as a template and we will
 		// pass it on for special handling.
 		boolean finished = false;
-		boolean isTemplate = false;
 		while (!finished) {
 			String line = br.readLine();
 			if (line == null) {
 				finished = true;
 			} else {
 				tempArrayList.add(line);
-				if (!isTemplate && line.contains(TemplateReader.TAG_BEGIN)) {
+				if (line.contains(TemplateReader.TAG_BEGIN)) {
 					String keyword = getKeyword(line);
-
-					isTemplate = true;
+					TemplateHelper templateHelper = TemplateHelper.getDefault();
 				}
 			}
 		}
 		br.close();
 
-		// iterate through each line writing to output.
+		// POST Process: write the output.
 		for (String line : tempArrayList) {
 			bufferedWriter.write(line + "\n");
 		}
-		bufferedWriter.close();
 	}
 
 	private String getKeyword(String line) {
