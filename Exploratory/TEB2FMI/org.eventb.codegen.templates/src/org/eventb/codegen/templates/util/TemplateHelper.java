@@ -1,5 +1,6 @@
 package org.eventb.codegen.templates.util;
 
+import java.io.File;
 import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -25,6 +26,7 @@ public class TemplateHelper {
 	private static TemplateHelper templateHelper;
 	// Map of (keywords X generatorClasses)
 	private Map<String, IGenerator> generatorTagMap = null;
+	private HashMap<String, File> childTemplateMap = null;;
 
 	public static TemplateHelper getDefault() throws CoreException {
 		// if the singleton is not created..
@@ -80,11 +82,22 @@ public class TemplateHelper {
 	public List<String> generate(String keyword) throws CoreException,
 			MalformedURLException {
 		List<String> newLines = new ArrayList<String>();
+		if(childTemplateMap.get(keyword+".c") != null){
+			// TODO we have found a template, in a template.
+			// Process it.
+			System.out.println();
+		}
+		
 		IGenerator generator = generatorTagMap.get(keyword);
+		
 		if (generator != null) {
 			newLines = generator.generate();
 		}
 		return newLines;
+	}
+
+	public void setChildTemplateMap(HashMap<String, File> childTemplateMap_) {
+		childTemplateMap = childTemplateMap_;
 	}
 
 }

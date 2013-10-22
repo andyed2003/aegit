@@ -8,7 +8,9 @@ import java.io.IOException;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
@@ -69,6 +71,8 @@ public class TemplateReader {
 		List<IResource> folderMembers = Arrays.asList(templateSourceFolder
 				.members());
 		File masterTemplate = null;
+		HashMap<String, File> childTemplateMap = new HashMap<String, File>(); 
+		List<File> otherTemplates = new ArrayList<File>();
 		for (IResource member : folderMembers) {
 			if (member.getType() == IResource.FILE) {
 				IFile resourceFile = (IFile) member;
@@ -81,6 +85,10 @@ public class TemplateReader {
 					// so log it, and exit the lookup.
 					masterTemplate = iFile;
 					break;
+				}
+				else{
+					otherTemplates.add(iFile);
+					childTemplateMap.put(fileName, iFile);
 				}
 			}
 		}
@@ -105,6 +113,7 @@ public class TemplateReader {
 				if (line.contains(TemplateReader.TAG_BEGIN)) {
 					String keyword = getKeyword(line);
 					TemplateHelper templateHelper = TemplateHelper.getDefault();
+					templateHelper.setChildTemplateMap(childTemplateMap);
 					newLines = templateHelper.generate(keyword);
 				}
 				if(newLines == null){

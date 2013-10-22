@@ -9,12 +9,5 @@
             tag="initialisationsList">
       </templateGenerator>
    </extension>
-   <extension
-         point="org.eventb.codegen.templates.generator">
-      <templateGenerator
-            GeneratorClass="org.eventb.codegen.templates.impl.FmiInstantiateGenerator"
-            tag="fmiInstantiate">
-      </templateGenerator>
-   </extension>
 
 </plugin>
