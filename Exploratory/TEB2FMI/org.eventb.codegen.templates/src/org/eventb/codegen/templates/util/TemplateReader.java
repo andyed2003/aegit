@@ -101,11 +101,19 @@ public class TemplateReader {
 			if (line == null) {
 				finished = true;
 			} else {
-				tempArrayList.add(line);
+				List<String> newLines = null;
 				if (line.contains(TemplateReader.TAG_BEGIN)) {
 					String keyword = getKeyword(line);
 					TemplateHelper templateHelper = TemplateHelper.getDefault();
+					newLines = templateHelper.generate(keyword);
 				}
+				if(newLines == null){
+					tempArrayList.add(line);
+				}
+				else{
+					tempArrayList.addAll(newLines);
+				}
+
 			}
 		}
 		br.close();

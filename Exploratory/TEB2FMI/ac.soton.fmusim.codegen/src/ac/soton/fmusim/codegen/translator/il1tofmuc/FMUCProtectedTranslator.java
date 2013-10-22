@@ -49,14 +49,14 @@ public class FMUCProtectedTranslator extends AbstractProtectedIL1Translator {
 			Status status = new Status(IStatus.ERROR,
 					FMUTranslatorPlugin.PLUGIN_ID,
 					"Failed Translation: CoreException :"
-					+ e.getMessage(), e);
+					+ TemplateException.extractFullExceptionMessage(e), e);
 				StatusManager.getManager().handle(status,
 					StatusManager.SHOW);
 		} catch (IOException e) {
 			Status status = new Status(IStatus.ERROR,
 					FMUTranslatorPlugin.PLUGIN_ID,
 					"Failed Translation: IOException :"
-					+ e.getMessage(), e);
+					+ TemplateException.extractFullExceptionMessage(e), e);
 				StatusManager.getManager().handle(status,
 					StatusManager.SHOW);
 		} catch (TemplateException e) {
@@ -69,7 +69,7 @@ public class FMUCProtectedTranslator extends AbstractProtectedIL1Translator {
 			Status status = new Status(IStatus.ERROR,
 					FMUTranslatorPlugin.PLUGIN_ID,
 					"Failed Translation: IL1TranslationException :"
-					+ e.getMessage(), e);
+					+ TemplateException.extractFullExceptionMessage(e), e);
 				StatusManager.getManager().handle(status,
 					StatusManager.SHOW);
 		}

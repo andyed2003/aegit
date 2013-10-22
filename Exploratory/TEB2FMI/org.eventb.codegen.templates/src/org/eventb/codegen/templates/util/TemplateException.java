@@ -20,4 +20,13 @@ public class TemplateException extends Exception {
 		}
 		return initialMessage;
 	}
+	
+	public static String extractFullExceptionMessage(Exception e) {
+		String initialMessage = e.getMessage() + "\n";
+		StackTraceElement[] stackTraceArray = e.getStackTrace();
+		for (int idx = 0; idx < stackTraceArray.length; idx++) {
+			initialMessage = initialMessage + stackTraceArray[idx] + "\n";
+		}
+		return initialMessage;
+	}
 }
