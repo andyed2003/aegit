@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.eclipse.core.runtime.IConfigurationElement;
-import org.eclipse.core.runtime.IContributor;
 import org.eclipse.core.runtime.IExtension;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Platform;
@@ -20,11 +19,13 @@ public class TemplateHelper {
 	private static final String TEMPLATE_GEN_ID = "org.eventb.codegen.templates.generator";
 	// The singleton of this Helper
 	private static TemplateHelper templateHelper;
-	// Map of keywords to classes
-	private Map<String, String> generatorTagMap = new HashMap<String, String>();
+	// Map of (keywords X generator classes)
+	private Map<String, String> generatorTagMap = null;
 
 	public static TemplateHelper getDefault() {
+		// if the singleton is not created..
 		if (templateHelper == null) {
+			// then create and initialise it.
 			templateHelper = new TemplateHelper();
 			templateHelper.initialise();
 			return templateHelper;
@@ -33,6 +34,8 @@ public class TemplateHelper {
 	}
 
 	private void initialise() {
+		
+		generatorTagMap = new HashMap<String, String>();
 		for (final IExtension extension : Platform.getExtensionRegistry()
 				.getExtensionPoint(TEMPLATE_GEN_ID).getExtensions()) {
 			List<IConfigurationElement> ceList = Arrays.asList(extension
@@ -55,12 +58,11 @@ public class TemplateHelper {
 								StatusManager.SHOW);
 					}
 			}
-
+			
 			for (int idx = 0; idx < attributeNames.length; idx = idx + 2) {
 				generatorTagMap.put(
-						generatorInfo.getAttribute(attributeNames[idx]),
-						generatorInfo.getAttribute(attributeNames[idx + 1]));
-				System.out.println("");
+						generatorInfo.getAttribute(attributeNames[idx + 1]),
+						generatorInfo.getAttribute(attributeNames[idx]));
 			}
 		}
 	}
