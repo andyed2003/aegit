@@ -18,7 +18,7 @@ import org.eventb.codegen.il1.translator.IL1TranslationManager;
 import org.eventb.codegen.il1.translator.TargetLanguage;
 import org.eventb.codegen.il1.translator.core.AbstractProtectedIL1Translator;
 import org.eventb.codegen.templates.util.TemplateException;
-import org.eventb.codegen.templates.util.TemplateReader;
+import org.eventb.codegen.templates.util.TemplateProcessor;
 
 import FmiModel.BooleanType;
 import FmiModel.DocumentRoot;
@@ -153,19 +153,25 @@ public class FMUCProtectedTranslator extends AbstractProtectedIL1Translator {
 
 	private void tryTemplate(Protected actualSource) throws CoreException,
 			IOException, TemplateException, IL1TranslationException {
-
-		TemplateReader templateReader = TemplateReader.getDefault();
-		templateReader.initialise(FMUTranslator.sourceRodinProject,
-				FMUTranslator.TEMPLATES_SRC_FOLDER);
-		IFolder targetFolder = templateReader
+		// where do we want to write to?
+		String targetFileName = actualSource.getName() + "_instantiated.c";
+		FMUTranslatorHelper translatorHelper = FMUTranslatorHelper.getDefault();
+		// Create the Template Processor
+		TemplateProcessor templateProcessor = TemplateProcessor.getDefault();
+		// Get the target folder from this utility method
+		IFolder targetFolder = templateProcessor
 				.getTargetFolder(FMUTranslator.targetProject,
 						FMUTranslator.GENERATED_SRC_FOLDER);
-
-		FMUTranslatorHelper translatorHelper = FMUTranslatorHelper.getDefault();
-		String targetFileName = actualSource.getName() + "_instantiated.c";
+		// Create a buffered writer
 		BufferedWriter bufferedWriter = translatorHelper.createBufferedWriter(
 				targetFolder, targetFileName);
-		templateReader.instantiateTemplate(bufferedWriter, "fmuTemplate.c");
+		// Initialise the template processor with the TARGET INFORMATION
+		templateProcessor.initialise(FMUTranslator.sourceRodinProject,
+				FMUTranslator.TEMPLATES_SRC_FOLDER, bufferedWriter);
+		// Get the processor to instantiate the 'Top-Level' template.
+		// Templates contained within are handled by the processor
+		// and TemplateHelper.
+		templateProcessor.instantiateTemplate("fmuTemplate.c");
 		bufferedWriter.close();
 	}
 }

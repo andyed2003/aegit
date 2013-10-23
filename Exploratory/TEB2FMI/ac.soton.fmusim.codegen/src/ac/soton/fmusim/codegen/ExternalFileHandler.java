@@ -15,7 +15,7 @@ import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 import org.eventb.codegen.il1.translator.IL1TranslationException;
 import org.eventb.codegen.templates.util.TemplateException;
-import org.eventb.codegen.templates.util.TemplateReader;
+import org.eventb.codegen.templates.util.TemplateProcessor;
 
 public class ExternalFileHandler {
 	// This method should send the external files from a source location
@@ -58,7 +58,7 @@ public class ExternalFileHandler {
 							} else {
 								outputArrayList.add(line);
 								if (!isTemplate
-										&& line.contains(TemplateReader.TAG_BEGIN)) {
+										&& line.contains(TemplateProcessor.TAG_BEGIN)) {
 									isTemplate = true;
 								}
 							}

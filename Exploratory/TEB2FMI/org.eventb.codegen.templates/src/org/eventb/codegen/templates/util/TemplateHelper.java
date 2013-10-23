@@ -1,7 +1,9 @@
 package org.eventb.codegen.templates.util;
 
+import java.io.BufferedReader;
 import java.io.File;
-import java.net.MalformedURLException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -15,6 +17,7 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.ui.statushandlers.StatusManager;
+import org.eventb.codegen.il1.translator.IL1TranslationException;
 import org.eventb.codegen.templates.IGenerator;
 import org.eventb.codegen.templates.TemplatesPlugin;
 
@@ -22,21 +25,16 @@ public class TemplateHelper {
 
 	// The extension ID
 	private static final String TEMPLATE_GEN_ID = "org.eventb.codegen.templates.generator";
-	// The singleton of this Helper
-	private static TemplateHelper templateHelper;
 	// Map of (keywords X generatorClasses)
-	private Map<String, IGenerator> generatorTagMap = null;
+	private static Map<String, IGenerator> generatorTagMap = null;
 	private HashMap<String, File> childTemplateMap = null;;
 
-	public static TemplateHelper getDefault() throws CoreException {
-		// if the singleton is not created..
-		if (templateHelper == null) {
-			// then create and initialise it.
-			templateHelper = new TemplateHelper();
-			templateHelper.initialise();
-			return templateHelper;
-		} else
-			return templateHelper;
+	public TemplateHelper() throws CoreException {
+		// we only need to set up the generatorMap once, since we
+		// make it a class variable.
+		if (generatorTagMap == null) {
+			initialise();
+		}
 	}
 
 	private void initialise() throws CoreException {
@@ -80,19 +78,27 @@ public class TemplateHelper {
 	}
 
 	public List<String> generate(String keyword) throws CoreException,
-			MalformedURLException {
+			IOException, TemplateException, IL1TranslationException {
 		List<String> newLines = new ArrayList<String>();
-		if(childTemplateMap.get(keyword+".c") != null){
-			// TODO we have found a template, in a template.
-			// Process it.
-			System.out.println();
+		File childTemplateFile = childTemplateMap.get(keyword + ".c");
+		// if we have a child template then translate it.
+		if (childTemplateFile != null) {
+			// We have found a template, in a template. Process it.
+			// Create a bufferedReader, and use the default templateReader
+			// to instantiate it ....
+			FileReader reader = new FileReader(childTemplateFile);
+			BufferedReader bufferedReader = new BufferedReader(reader);
+			TemplateProcessor templateProcessor = TemplateProcessor.getDefault();
+			newLines = templateProcessor.internalInstantiateTemplate(bufferedReader, childTemplateMap);
+			
+		} else {
+			// else get the generator from the generator target map using the keyword
+			IGenerator generator = generatorTagMap.get(keyword);
+			if (generator != null) {
+				newLines = generator.generate();
+			}
 		}
-		
-		IGenerator generator = generatorTagMap.get(keyword);
-		
-		if (generator != null) {
-			newLines = generator.generate();
-		}
+		// return the new lines
 		return newLines;
 	}
 

@@ -3,6 +3,7 @@ package org.eventb.codegen.templates.util;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URI;
@@ -10,7 +11,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
@@ -23,17 +23,22 @@ import org.eventb.codegen.il1.translator.IL1TranslationException;
 import org.rodinp.core.IRodinProject;
 import org.rodinp.core.RodinDBException;
 
-public class TemplateReader {
-	private static TemplateReader templateReader = null;
+// The TemplateProcessor initialises is a singleton.
+// During processing there is only one target File.
+// The TemplateHelper class has instances containing
+// the (multiples of) source file information.
+public class TemplateProcessor {
+	private static TemplateProcessor templateProcessor = null;
 	public static final String TAG_BEGIN = "//##";
 	private IFolder templateSourceFolder = null;
 	private IFolder targetFolder = null;
+	private BufferedWriter bufferedWriter;
 
-	public static TemplateReader getDefault() {
-		if (templateReader == null) {
-			templateReader = new TemplateReader();
+	public static TemplateProcessor getDefault() {
+		if (templateProcessor == null) {
+			templateProcessor = new TemplateProcessor();
 		}
-		return templateReader;
+		return templateProcessor;
 	}
 
 	// Given a Project find the folder with that name.
@@ -45,8 +50,10 @@ public class TemplateReader {
 
 	// Given a Rodin Project find the (non-Rodin) folder with that name.
 	// We use it to find the templates source folder;
-	public void initialise(IRodinProject rodinProject, String folderName)
+	// Also store the bufferedWriter for later use.
+	public void initialise(IRodinProject rodinProject, String folderName, BufferedWriter bufferedWriter_)
 			throws RodinDBException, IL1TranslationException {
+		bufferedWriter = bufferedWriter_;
 		List<IResource> nonRodinResources = Arrays.asList(rodinProject
 				.getNonRodinResources());
 		for (IResource resource : nonRodinResources) {
@@ -65,14 +72,14 @@ public class TemplateReader {
 
 	// This is the method that should go through each line, and replace the
 	// tag with generated code. Then write the output to a file.
-	public void instantiateTemplate(BufferedWriter bufferedWriter, String masterTemplateName)
+	public void instantiateTemplate(String templateName)
 			throws IOException, TemplateException, IL1TranslationException,
 			CoreException {
 		List<IResource> folderMembers = Arrays.asList(templateSourceFolder
 				.members());
-		File masterTemplate = null;
+		File templateFile = null;
 		HashMap<String, File> childTemplateMap = new HashMap<String, File>(); 
-		List<File> otherTemplates = new ArrayList<File>();
+		List<File> referencedTemplates = new ArrayList<File>();
 		for (IResource member : folderMembers) {
 			if (member.getType() == IResource.FILE) {
 				IFile resourceFile = (IFile) member;
@@ -80,24 +87,39 @@ public class TemplateReader {
 				File iFile = new File(uri);
 				IPath path = new Path(uri.getPath());
 				String fileName = path.lastSegment();
-				if (fileName.equals(masterTemplateName)) {
-					// We've found the masterTemplate resource, 
+				if (fileName.equals(templateName)) {
+					// We've found the template resource, 
 					// so log it, and exit the lookup.
-					masterTemplate = iFile;
+					templateFile = iFile;
 					break;
 				}
 				else{
-					otherTemplates.add(iFile);
+					referencedTemplates.add(iFile);
 					childTemplateMap.put(fileName, iFile);
 				}
 			}
 		}
-		if(masterTemplate == null){
-			throw new TemplateException("Master template ("+ masterTemplateName +") not found in templates folder");
+		if(templateFile == null){
+			throw new TemplateException("Template ("+ templateName +") not found in templates folder");
 		}
-		// Let's read the template.
-		FileReader reader = new FileReader(masterTemplate);
-		BufferedReader br = new BufferedReader(reader);
+		// Let's enable reading of the template.
+		FileReader reader = new FileReader(templateFile);
+		BufferedReader bufferedReader = new BufferedReader(reader);
+
+		//Instantiate the template
+		List<String> tempArrayList = internalInstantiateTemplate(bufferedReader, childTemplateMap);
+		// POST Process: write the output.
+		for (String line : tempArrayList) {
+			bufferedWriter.write(line + "\n");
+		}
+	}
+
+	// This takes a buffered reader (pointing to a template), and list of child 
+	// templates. Returning a generated list of lines, for output.
+	public List<String> internalInstantiateTemplate(BufferedReader bufferedReader,
+			HashMap<String, File> childTemplateMap)
+			throws FileNotFoundException, IOException, CoreException,
+			TemplateException, IL1TranslationException {
 		// write all lines to a temporary store for processing
 		List<String> tempArrayList = new ArrayList<String>();
 		// Get a line and copy it. If it has the 'begin
@@ -105,14 +127,15 @@ public class TemplateReader {
 		// pass it on for special handling.
 		boolean finished = false;
 		while (!finished) {
-			String line = br.readLine();
+			String line = bufferedReader.readLine();
 			if (line == null) {
-				finished = true;
+				finished = true; // we are at the end of the file.
 			} else {
 				List<String> newLines = null;
-				if (line.contains(TemplateReader.TAG_BEGIN)) {
+				// if we have a keyword, pass it on the the TemplateHelper
+				if (line.contains(TemplateProcessor.TAG_BEGIN)) {
 					String keyword = getKeyword(line);
-					TemplateHelper templateHelper = TemplateHelper.getDefault();
+					TemplateHelper templateHelper = new TemplateHelper();
 					templateHelper.setChildTemplateMap(childTemplateMap);
 					newLines = templateHelper.generate(keyword);
 				}
@@ -122,15 +145,10 @@ public class TemplateReader {
 				else{
 					tempArrayList.addAll(newLines);
 				}
-
 			}
 		}
-		br.close();
-
-		// POST Process: write the output.
-		for (String line : tempArrayList) {
-			bufferedWriter.write(line + "\n");
-		}
+		bufferedReader.close();
+		return tempArrayList;
 	}
 
 	private String getKeyword(String line) {
@@ -140,9 +158,5 @@ public class TemplateReader {
 		return keyword;
 	}
 
-	// get the mapping from keys to values from a repository
-	private void getTemplateKeyMapping() {
-
-	}
 
 }
