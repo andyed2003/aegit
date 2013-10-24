@@ -27,7 +27,7 @@ public class TemplateHelper {
 	private static final String TEMPLATE_GEN_ID = "org.eventb.codegen.templates.generator";
 	// Map of (keywords X generatorClasses)
 	private static Map<String, IGenerator> generatorTagMap = null;
-	private HashMap<String, File> childTemplateMap = null;;
+	private HashMap<String, File> templateFolderContentMap = null;;
 
 	public TemplateHelper() throws CoreException {
 		// we only need to set up the generatorMap once, since we
@@ -80,7 +80,7 @@ public class TemplateHelper {
 	public List<String> generate(String keyword) throws CoreException,
 			IOException, TemplateException, IL1TranslationException {
 		List<String> newLines = new ArrayList<String>();
-		File childTemplateFile = childTemplateMap.get(keyword + ".c");
+		File childTemplateFile = templateFolderContentMap.get(keyword + ".c");
 		// if we have a child template then translate it.
 		if (childTemplateFile != null) {
 			// We have found a template, in a template. Process it.
@@ -89,7 +89,7 @@ public class TemplateHelper {
 			FileReader reader = new FileReader(childTemplateFile);
 			BufferedReader bufferedReader = new BufferedReader(reader);
 			TemplateProcessor templateProcessor = TemplateProcessor.getDefault();
-			newLines = templateProcessor.internalInstantiateTemplate(bufferedReader, childTemplateMap);
+			newLines = templateProcessor.internalInstantiateTemplate(bufferedReader, templateFolderContentMap);
 			
 		} else {
 			// else get the generator from the generator target map using the keyword
@@ -103,7 +103,7 @@ public class TemplateHelper {
 	}
 
 	public void setChildTemplateMap(HashMap<String, File> childTemplateMap_) {
-		childTemplateMap = childTemplateMap_;
+		templateFolderContentMap = childTemplateMap_;
 	}
 
 }

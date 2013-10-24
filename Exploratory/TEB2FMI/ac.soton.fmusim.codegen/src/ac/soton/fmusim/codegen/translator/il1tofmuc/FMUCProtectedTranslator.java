@@ -169,7 +169,7 @@ public class FMUCProtectedTranslator extends AbstractProtectedIL1Translator {
 		templateProcessor.initialise(FMUTranslator.sourceRodinProject,
 				FMUTranslator.TEMPLATES_SRC_FOLDER, bufferedWriter);
 		// Get the processor to instantiate the 'Top-Level' template.
-		// Templates contained within are handled by the processor
+		// Templates contained 'within' are handled by the processor
 		// and TemplateHelper.
 		templateProcessor.instantiateTemplate("fmuTemplate.c");
 		bufferedWriter.close();

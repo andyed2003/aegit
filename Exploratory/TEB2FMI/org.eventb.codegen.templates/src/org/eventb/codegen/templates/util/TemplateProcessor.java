@@ -78,8 +78,7 @@ public class TemplateProcessor {
 		List<IResource> folderMembers = Arrays.asList(templateSourceFolder
 				.members());
 		File templateFile = null;
-		HashMap<String, File> childTemplateMap = new HashMap<String, File>(); 
-		List<File> referencedTemplates = new ArrayList<File>();
+		HashMap<String, File> templateFolderContentMap = new HashMap<String, File>(); 
 		for (IResource member : folderMembers) {
 			if (member.getType() == IResource.FILE) {
 				IFile resourceFile = (IFile) member;
@@ -88,14 +87,12 @@ public class TemplateProcessor {
 				IPath path = new Path(uri.getPath());
 				String fileName = path.lastSegment();
 				if (fileName.equals(templateName)) {
-					// We've found the template resource, 
-					// so log it, and exit the lookup.
+					// We've found the template resource, so log it, 
+					// but continue looping to add remaining folder contents.
 					templateFile = iFile;
-					break;
 				}
 				else{
-					referencedTemplates.add(iFile);
-					childTemplateMap.put(fileName, iFile);
+					templateFolderContentMap.put(fileName, iFile);
 				}
 			}
 		}
@@ -107,7 +104,7 @@ public class TemplateProcessor {
 		BufferedReader bufferedReader = new BufferedReader(reader);
 
 		//Instantiate the template
-		List<String> tempArrayList = internalInstantiateTemplate(bufferedReader, childTemplateMap);
+		List<String> tempArrayList = internalInstantiateTemplate(bufferedReader, templateFolderContentMap);
 		// POST Process: write the output.
 		for (String line : tempArrayList) {
 			bufferedWriter.write(line + "\n");
@@ -117,7 +114,7 @@ public class TemplateProcessor {
 	// This takes a buffered reader (pointing to a template), and list of child 
 	// templates. Returning a generated list of lines, for output.
 	public List<String> internalInstantiateTemplate(BufferedReader bufferedReader,
-			HashMap<String, File> childTemplateMap)
+			HashMap<String, File> templateFolderContentMap)
 			throws FileNotFoundException, IOException, CoreException,
 			TemplateException, IL1TranslationException {
 		// write all lines to a temporary store for processing
@@ -136,7 +133,7 @@ public class TemplateProcessor {
 				if (line.contains(TemplateProcessor.TAG_BEGIN)) {
 					String keyword = getKeyword(line);
 					TemplateHelper templateHelper = new TemplateHelper();
-					templateHelper.setChildTemplateMap(childTemplateMap);
+					templateHelper.setChildTemplateMap(templateFolderContentMap);
 					newLines = templateHelper.generate(keyword);
 				}
 				if(newLines == null){
