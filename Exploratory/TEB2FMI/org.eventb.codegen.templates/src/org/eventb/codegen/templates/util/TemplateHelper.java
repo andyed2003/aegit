@@ -27,22 +27,33 @@ public class TemplateHelper {
 	private static final String TEMPLATE_GEN_ID = "org.eventb.codegen.templates.generator";
 	// Map of (keywords X generatorClasses)
 	private static Map<String, IGenerator> generatorTagMap = null;
-	private HashMap<String, File> templateFolderContentMap = null;;
+	private HashMap<String, File> templateFolderContentMap = null;
+	// a data object that can be used in the executable generator
+	private Object data = null;
 
-	public TemplateHelper() throws CoreException {
-		// we only need to set up the generatorMap once, since we
-		// make it a class variable.
-		if (generatorTagMap == null) {
+	// we only need to set up the generatorMap once, since we
+	// make it a class variables.
+	static{
+		try {
 			initialise();
+		} catch (CoreException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
+	
+	public TemplateHelper(Object data_) throws CoreException {
+		// set the data element
+		data = data_;
+	}
 
-	private void initialise() throws CoreException {
+	private static void initialise() throws CoreException {
 		// create a new store
 		generatorTagMap = new HashMap<String, IGenerator>();
 		// find the generator extension
-		for (final IExtension extension : Platform.getExtensionRegistry()
-				.getExtensionPoint(TEMPLATE_GEN_ID).getExtensions()) {
+		IExtension[] extensions = Platform.getExtensionRegistry()
+				.getExtensionPoint(TEMPLATE_GEN_ID).getExtensions();
+		for (final IExtension extension : extensions) {
 			List<IConfigurationElement> ceList = Arrays.asList(extension
 					.getConfigurationElements());
 			IConfigurationElement generatorInfo = null;
@@ -53,7 +64,6 @@ public class TemplateHelper {
 				if (configurationElement.isValid()) {
 					generatorInfo = configurationElement;
 					attributeNames = configurationElement.getAttributeNames();
-					break;
 				} else
 					try {
 						throw new TemplateException("");
@@ -73,6 +83,8 @@ public class TemplateHelper {
 				generatorTagMap.put(
 						generatorInfo.getAttribute(attributeNames[idx + 1]),
 						exeExt);
+				System.out.println("tag: " + generatorInfo.getAttribute(attributeNames[idx + 1]));
+				System.out.println("generator: " + exeExt);
 			}
 		}
 	}
@@ -80,7 +92,7 @@ public class TemplateHelper {
 	public List<String> generate(String keyword) throws CoreException,
 			IOException, TemplateException, IL1TranslationException {
 		List<String> newLines = new ArrayList<String>();
-		File childTemplateFile = templateFolderContentMap.get(keyword + ".c");
+		File childTemplateFile = templateFolderContentMap.get(keyword);
 		// if we have a child template then translate it.
 		if (childTemplateFile != null) {
 			// We have found a template, in a template. Process it.
@@ -95,7 +107,7 @@ public class TemplateHelper {
 			// else get the generator from the generator target map using the keyword
 			IGenerator generator = generatorTagMap.get(keyword);
 			if (generator != null) {
-				newLines = generator.generate();
+				newLines = generator.generate(data);
 			}
 		}
 		// return the new lines

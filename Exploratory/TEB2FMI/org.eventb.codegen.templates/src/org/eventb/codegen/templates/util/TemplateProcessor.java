@@ -33,6 +33,7 @@ public class TemplateProcessor {
 	private IFolder templateSourceFolder = null;
 	private IFolder targetFolder = null;
 	private BufferedWriter bufferedWriter;
+	private Object data = null;
 
 	public static TemplateProcessor getDefault() {
 		if (templateProcessor == null) {
@@ -72,9 +73,10 @@ public class TemplateProcessor {
 
 	// This is the method that should go through each line, and replace the
 	// tag with generated code. Then write the output to a file.
-	public void instantiateTemplate(String templateName)
+	public void instantiateTemplate(String templateName, Object data_)
 			throws IOException, TemplateException, IL1TranslationException,
 			CoreException {
+		data  = data_;
 		List<IResource> folderMembers = Arrays.asList(templateSourceFolder
 				.members());
 		File templateFile = null;
@@ -132,7 +134,7 @@ public class TemplateProcessor {
 				// if we have a keyword, pass it on the the TemplateHelper
 				if (line.contains(TemplateProcessor.TAG_BEGIN)) {
 					String keyword = getKeyword(line);
-					TemplateHelper templateHelper = new TemplateHelper();
+					TemplateHelper templateHelper = new TemplateHelper(data);
 					templateHelper.setChildTemplateMap(templateFolderContentMap);
 					newLines = templateHelper.generate(keyword);
 				}

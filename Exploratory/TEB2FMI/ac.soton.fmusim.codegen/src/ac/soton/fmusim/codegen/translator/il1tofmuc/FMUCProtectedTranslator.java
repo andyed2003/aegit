@@ -33,18 +33,23 @@ import ac.soton.fmusim.codegen.ModelDescriptionManager;
 
 public class FMUCProtectedTranslator extends AbstractProtectedIL1Translator {
 
+	private Protected actualSource = null;
+
 	@Override
 	public ArrayList<String> generateProtectedCode(
 			ArrayList<ArrayList<String>> declList,
 			ArrayList<ArrayList<String>> subList, String name,
-			Protected actualSource, IL1TranslationManager translationManager,
+			Protected actualSource_, IL1TranslationManager translationManager,
 			TargetLanguage targetLanguage) {
-
+		// Set a private static field to be used by the 'current' translation  
+		actualSource  = actualSource_;
 		ClassHeaderInformation headerInfo = new ClassHeaderInformation();
 		headerInfo.className = actualSource.getName();
 
+		// BEGIN
+		// Experimentation with Templates
 		try {
-			tryTemplate(actualSource);
+			tryTemplate();
 		} catch (CoreException e) {
 			Status status = new Status(IStatus.ERROR,
 					FMUTranslatorPlugin.PLUGIN_ID,
@@ -73,12 +78,37 @@ public class FMUCProtectedTranslator extends AbstractProtectedIL1Translator {
 				StatusManager.getManager().handle(status,
 					StatusManager.SHOW);
 		}
-
+		// END
+		// Experimentation with templates.
+		
 		ArrayList<String> outCode = new ArrayList<String>();
 		outCode.add("// FMU: " + name);
 		outCode.add("");
 		outCode.add("fmiComponent *modelInstances[MaxFMUInstances]; // initialise an empty array of components");
 		outCode.add("int conInstanceCount = 0;");
+
+		// Do the variable declarations here.
+		processVariableDecls(outCode);
+		
+		// Add the subroutines
+		outCode.add("");
+		outCode.add("// Subroutines");
+		for (ArrayList<String> sub : subList) {
+			// The first line will contain the information to be placed in the
+			// header file for this environ machine object
+			String firstLine = sub.get(0);
+			headerInfo.functionDeclarations.add(firstLine + ";");
+
+			outCode.addAll(sub);
+			outCode.add("");
+		}
+
+		translationManager.addClassHeaderInformation(headerInfo);
+
+		return outCode;
+	}
+
+	private void processVariableDecls(ArrayList<String> outCode) {
 		// Add the instance variable references
 		outCode.add("// Variables and constants");
 		// we need to add declarations, like "int i[integerArraySize];" for each
@@ -132,26 +162,9 @@ public class FMUCProtectedTranslator extends AbstractProtectedIL1Translator {
 			outCode.add("fmiString s[stringArraySize];");
 
 		outCode.add("");
-
-		// Add the subroutines
-		outCode.add("");
-		outCode.add("// Subroutines");
-		for (ArrayList<String> sub : subList) {
-			// The first line will contain the information to be placed in the
-			// header file for this environ machine object
-			String firstLine = sub.get(0);
-			headerInfo.functionDeclarations.add(firstLine + ";");
-
-			outCode.addAll(sub);
-			outCode.add("");
-		}
-
-		translationManager.addClassHeaderInformation(headerInfo);
-
-		return outCode;
 	}
 
-	private void tryTemplate(Protected actualSource) throws CoreException,
+	private void tryTemplate() throws CoreException,
 			IOException, TemplateException, IL1TranslationException {
 		// where do we want to write to?
 		String targetFileName = actualSource.getName() + "_instantiated.c";
@@ -165,13 +178,16 @@ public class FMUCProtectedTranslator extends AbstractProtectedIL1Translator {
 		// Create a buffered writer
 		BufferedWriter bufferedWriter = translatorHelper.createBufferedWriter(
 				targetFolder, targetFileName);
-		// Initialise the template processor with the TARGET INFORMATION
+		// Initialise the template processor with the source 
+		// directory, and TARGET information.
 		templateProcessor.initialise(FMUTranslator.sourceRodinProject,
 				FMUTranslator.TEMPLATES_SRC_FOLDER, bufferedWriter);
 		// Get the processor to instantiate the 'Top-Level' template.
 		// Templates contained 'within' are handled by the processor
-		// and TemplateHelper.
-		templateProcessor.instantiateTemplate("fmuTemplate.c");
+		// and TemplateHelper. We can pass a data object to assist with the
+		// translation, so we pass the actual source object, we could make this
+		// more complex if necessary (and add constraints)
+		templateProcessor.instantiateTemplate("fmuTemplate.c", actualSource);
 		bufferedWriter.close();
 	}
 }

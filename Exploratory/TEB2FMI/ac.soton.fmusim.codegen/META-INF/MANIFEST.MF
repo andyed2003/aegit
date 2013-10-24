@@ -28,3 +28,4 @@ Import-Package: ac.soton.composition.core.basis,
  org.eventb.core.ast,
  org.eventb.core.basis,
  tasking
+Export-Package: ac.soton.fmusim.codegen

@@ -2,16 +2,5 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension-point id="org.eventb.codegen.templates.generator" name="templateGenerator" schema="schema/org.eventb.codegen.templates.generator.exsd"/>
-   <extension
-         point="org.eventb.codegen.templates.generator">
-      <templateGenerator
-            GeneratorClass="org.eventb.codegen.templates.impl.InitialisationsListGenerator"
-            tag="initialisationsList">
-      </templateGenerator>
-      <templateGenerator
-            GeneratorClass="org.eventb.codegen.templates.SubroutineListGenerator"
-            tag="subroutineList">
-      </templateGenerator>
-   </extension>
 
 </plugin>
