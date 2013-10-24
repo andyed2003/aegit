@@ -17,7 +17,7 @@
          </appinfo>
       </annotation>
       <complexType>
-         <sequence>
+         <sequence minOccurs="1" maxOccurs="unbounded">
             <element ref="templateGenerator"/>
          </sequence>
          <attribute name="point" type="string" use="required">
@@ -62,7 +62,7 @@
                   
                </documentation>
                <appinfo>
-                  <meta.attribute kind="java" basedOn="org.eventb.codegen.templates.AbstractGenerator:" deprecated="true"/>
+                  <meta.attribute kind="java" basedOn=":org.eventb.codegen.templates.IGenerator"/>
                </appinfo>
             </annotation>
          </attribute>
