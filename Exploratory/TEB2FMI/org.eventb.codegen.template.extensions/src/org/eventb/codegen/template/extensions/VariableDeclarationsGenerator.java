@@ -6,6 +6,7 @@ import java.util.List;
 import org.eclipse.emf.common.util.EList;
 import org.eventb.codegen.il1.Protected;
 import org.eventb.codegen.templates.IGenerator;
+import org.eventb.codegen.templates.IGeneratorData;
 
 import ac.soton.fmusim.codegen.ModelDescriptionManager;
 
@@ -19,18 +20,23 @@ import FmiModel.StringType;
 public class VariableDeclarationsGenerator implements IGenerator {
 
 	private Protected actualSource = null;
-	
+
 	@Override
-	public List<String> generate(Object data) {
+	public List<String> generate(IGeneratorData data) {
 		List<String> outCode = new ArrayList<String>();
-		if(data instanceof Protected){
-			actualSource = (Protected) data;
-			processVariableDecls(outCode);
+		List<Object> dataList = data.getDataList();
+		for (Object obj : dataList) {
+			if (obj instanceof Protected) {
+				actualSource = (Protected) obj;
+				break;
+			}
 		}
+		processVariableDecls(outCode);
 		return outCode;
 	}
 
-
+	// This is the code from the existing code generator,
+	// transplanted into a method in this generator.
 	private void processVariableDecls(List<String> outCode) {
 		// Add the instance variable references
 		outCode.add("// Variables and constants");

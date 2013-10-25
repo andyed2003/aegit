@@ -419,6 +419,8 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			throws IL1TranslationUnhandledTypeException, RodinDBException,
 			TaskingTranslationUnhandledTypeException {
 		il1TranslationManager = new IL1TranslationManager();
+		
+		///////////////////////////////////il1TranslationManager.currentTargetLanguage = ;
 		// These are FMU specific headers. The first is for configuration
 		il1TranslationManager.addIncludeStatement("#include \"config.h\"");
 		// This is for the FakeFMIDecls and will be replaced by the correct

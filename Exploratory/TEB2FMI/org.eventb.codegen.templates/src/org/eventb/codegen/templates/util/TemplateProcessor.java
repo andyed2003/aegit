@@ -20,6 +20,7 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
 import org.eventb.codegen.il1.translator.IL1TranslationException;
+import org.eventb.codegen.templates.IGeneratorData;
 import org.rodinp.core.IRodinProject;
 import org.rodinp.core.RodinDBException;
 
@@ -33,7 +34,7 @@ public class TemplateProcessor {
 	private IFolder templateSourceFolder = null;
 	private IFolder targetFolder = null;
 	private BufferedWriter bufferedWriter;
-	private Object data = null;
+	private IGeneratorData data = null;
 
 	public static TemplateProcessor getDefault() {
 		if (templateProcessor == null) {
@@ -73,9 +74,8 @@ public class TemplateProcessor {
 
 	// This is the method that should go through each line, and replace the
 	// tag with generated code. Then write the output to a file.
-	public void instantiateTemplate(String templateName, Object data_)
-			throws IOException, TemplateException, IL1TranslationException,
-			CoreException {
+	public void instantiateTemplate(String templateName, IGeneratorData data_)
+			throws Exception {
 		data  = data_;
 		List<IResource> folderMembers = Arrays.asList(templateSourceFolder
 				.members());
@@ -117,8 +117,7 @@ public class TemplateProcessor {
 	// templates. Returning a generated list of lines, for output.
 	public List<String> internalInstantiateTemplate(BufferedReader bufferedReader,
 			HashMap<String, File> templateFolderContentMap)
-			throws FileNotFoundException, IOException, CoreException,
-			TemplateException, IL1TranslationException {
+			throws Exception {
 		// write all lines to a temporary store for processing
 		List<String> tempArrayList = new ArrayList<String>();
 		// Get a line and copy it. If it has the 'begin

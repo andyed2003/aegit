@@ -11,6 +11,10 @@
             GeneratorClass="org.eventb.codegen.template.extensions.InitialisationsListGenerator"
             tag="initialisationsList">
       </templateGenerator>
+      <templateGenerator
+            GeneratorClass="org.eventb.codegen.template.extensions.SubroutineListGenerator"
+            tag="subroutineList">
+      </templateGenerator>
    </extension>
 
 </plugin>

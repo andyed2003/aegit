@@ -17,6 +17,7 @@ import org.eventb.codegen.il1.translator.IL1TranslationException;
 import org.eventb.codegen.il1.translator.IL1TranslationManager;
 import org.eventb.codegen.il1.translator.TargetLanguage;
 import org.eventb.codegen.il1.translator.core.AbstractProtectedIL1Translator;
+import org.eventb.codegen.templates.IGeneratorData;
 import org.eventb.codegen.templates.util.TemplateException;
 import org.eventb.codegen.templates.util.TemplateProcessor;
 
@@ -34,15 +35,19 @@ import ac.soton.fmusim.codegen.ModelDescriptionManager;
 public class FMUCProtectedTranslator extends AbstractProtectedIL1Translator {
 
 	private Protected actualSource = null;
+	private ArrayList<ArrayList<String>> subList = null;
+	private IL1TranslationManager translationManager = null;
 
 	@Override
 	public ArrayList<String> generateProtectedCode(
 			ArrayList<ArrayList<String>> declList,
-			ArrayList<ArrayList<String>> subList, String name,
-			Protected actualSource_, IL1TranslationManager translationManager,
+			ArrayList<ArrayList<String>> subList_, String name,
+			Protected actualSource_, IL1TranslationManager translationManager_,
 			TargetLanguage targetLanguage) {
-		// Set a private static field to be used by the 'current' translation  
-		actualSource  = actualSource_;
+		// Set a private static field to be used by the 'current' translation
+		actualSource = actualSource_;
+		subList = subList_;
+		translationManager = translationManager_;
 		ClassHeaderInformation headerInfo = new ClassHeaderInformation();
 		headerInfo.className = actualSource.getName();
 
@@ -54,33 +59,41 @@ public class FMUCProtectedTranslator extends AbstractProtectedIL1Translator {
 			Status status = new Status(IStatus.ERROR,
 					FMUTranslatorPlugin.PLUGIN_ID,
 					"Failed Translation: CoreException :"
-					+ TemplateException.extractFullExceptionMessage(e), e);
-				StatusManager.getManager().handle(status,
-					StatusManager.SHOW);
+							+ TemplateException.extractFullExceptionMessage(e),
+					e);
+			StatusManager.getManager().handle(status, StatusManager.SHOW);
 		} catch (IOException e) {
 			Status status = new Status(IStatus.ERROR,
 					FMUTranslatorPlugin.PLUGIN_ID,
 					"Failed Translation: IOException :"
-					+ TemplateException.extractFullExceptionMessage(e), e);
-				StatusManager.getManager().handle(status,
-					StatusManager.SHOW);
+							+ TemplateException.extractFullExceptionMessage(e),
+					e);
+			StatusManager.getManager().handle(status, StatusManager.SHOW);
 		} catch (TemplateException e) {
 			Status status = new Status(IStatus.ERROR,
 					FMUTranslatorPlugin.PLUGIN_ID,
 					"Failed Translation: TemplateException :", e);
-				StatusManager.getManager().handle(status,
-					StatusManager.SHOW);
+			StatusManager.getManager().handle(status, StatusManager.SHOW);
 		} catch (IL1TranslationException e) {
 			Status status = new Status(IStatus.ERROR,
 					FMUTranslatorPlugin.PLUGIN_ID,
 					"Failed Translation: IL1TranslationException :"
-					+ TemplateException.extractFullExceptionMessage(e), e);
-				StatusManager.getManager().handle(status,
-					StatusManager.SHOW);
+							+ TemplateException.extractFullExceptionMessage(e),
+					e);
+			StatusManager.getManager().handle(status, StatusManager.SHOW);
 		}
+		catch (Exception e) {
+			Status status = new Status(IStatus.ERROR,
+					FMUTranslatorPlugin.PLUGIN_ID,
+					"Failed Translation: IL1TranslationException :"
+							+ TemplateException.extractFullExceptionMessage(e),
+					e);
+			StatusManager.getManager().handle(status, StatusManager.SHOW);
+		}
+
+
 		// END
 		// Experimentation with templates.
-		
 		ArrayList<String> outCode = new ArrayList<String>();
 		outCode.add("// FMU: " + name);
 		outCode.add("");
@@ -89,7 +102,7 @@ public class FMUCProtectedTranslator extends AbstractProtectedIL1Translator {
 
 		// Do the variable declarations here.
 		processVariableDecls(outCode);
-		
+
 		// Add the subroutines
 		outCode.add("");
 		outCode.add("// Subroutines");
@@ -164,8 +177,7 @@ public class FMUCProtectedTranslator extends AbstractProtectedIL1Translator {
 		outCode.add("");
 	}
 
-	private void tryTemplate() throws CoreException,
-			IOException, TemplateException, IL1TranslationException {
+	private void tryTemplate() throws Exception {
 		// where do we want to write to?
 		String targetFileName = actualSource.getName() + "_instantiated.c";
 		FMUTranslatorHelper translatorHelper = FMUTranslatorHelper.getDefault();
@@ -178,7 +190,7 @@ public class FMUCProtectedTranslator extends AbstractProtectedIL1Translator {
 		// Create a buffered writer
 		BufferedWriter bufferedWriter = translatorHelper.createBufferedWriter(
 				targetFolder, targetFileName);
-		// Initialise the template processor with the source 
+		// Initialise the template processor with the source
 		// directory, and TARGET information.
 		templateProcessor.initialise(FMUTranslator.sourceRodinProject,
 				FMUTranslator.TEMPLATES_SRC_FOLDER, bufferedWriter);
@@ -187,7 +199,12 @@ public class FMUCProtectedTranslator extends AbstractProtectedIL1Translator {
 		// and TemplateHelper. We can pass a data object to assist with the
 		// translation, so we pass the actual source object, we could make this
 		// more complex if necessary (and add constraints)
-		templateProcessor.instantiateTemplate("fmuTemplate.c", actualSource);
+
+		GeneratorData generatorData = new GeneratorData();
+		List<Object> generatorDataList = generatorData.getDataList();
+		generatorDataList.add(actualSource);
+		generatorDataList.add(translationManager);
+		templateProcessor.instantiateTemplate("fmuTemplate.c", generatorData);
 		bufferedWriter.close();
 	}
 }

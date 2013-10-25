@@ -19,6 +19,7 @@ import org.eclipse.core.runtime.Status;
 import org.eclipse.ui.statushandlers.StatusManager;
 import org.eventb.codegen.il1.translator.IL1TranslationException;
 import org.eventb.codegen.templates.IGenerator;
+import org.eventb.codegen.templates.IGeneratorData;
 import org.eventb.codegen.templates.TemplatesPlugin;
 
 public class TemplateHelper {
@@ -29,7 +30,7 @@ public class TemplateHelper {
 	private static Map<String, IGenerator> generatorTagMap = null;
 	private HashMap<String, File> templateFolderContentMap = null;
 	// a data object that can be used in the executable generator
-	private Object data = null;
+	private IGeneratorData data = null;
 
 	// we only need to set up the generatorMap once, since we
 	// make it a class variables.
@@ -42,7 +43,7 @@ public class TemplateHelper {
 		}
 	}
 
-	public TemplateHelper(Object data_) throws CoreException {
+	public TemplateHelper(IGeneratorData data_) throws CoreException {
 		// set the data element
 		data = data_;
 	}
@@ -91,8 +92,7 @@ public class TemplateHelper {
 		}
 	}
 
-	public List<String> generate(String keyword) throws CoreException,
-			IOException, TemplateException, IL1TranslationException {
+	public List<String> generate(String keyword) throws Exception {
 		List<String> newLines = new ArrayList<String>();
 		File childTemplateFile = templateFolderContentMap.get(keyword);
 		// if we have a child template then translate it.
