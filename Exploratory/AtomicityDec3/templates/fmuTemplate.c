@@ -9,8 +9,10 @@ int conInstanceCount = 0;
 
 // Subroutines
 
-//## <fmiInstantiate>
+//## <variableDeclarations>  -- generate variable declarations here
 
-//## <subroutineList>
+//## <fmiInstantiate.c>     -- expand template here
+
+//## <subroutineList>		-- generate subroutine implementations here
 
 
