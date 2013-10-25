@@ -636,7 +636,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 
 		for (String a : actions) {
 			if (a.equals(varName)) {
-				String replacement = varType + "[" + varName + "_]";
+				String replacement = "c -> " + varType + " [" + varName + "_]";
 				newAction = newAction + replacement + " ";
 			} else {
 				newAction = newAction + a + " ";

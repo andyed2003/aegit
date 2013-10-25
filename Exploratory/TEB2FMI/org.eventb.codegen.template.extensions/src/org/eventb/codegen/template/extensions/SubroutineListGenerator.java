@@ -33,7 +33,9 @@ public class SubroutineListGenerator extends AbstractSubroutineIL1Translator
 	private TargetLanguage targetLanguage = null;
 
 	@Override
-	public List<String> generate(IGeneratorData data) throws IL1TranslationUnhandledTypeException, IL1TranslationException {
+	public List<String> generate(IGeneratorData data)
+			throws IL1TranslationUnhandledTypeException,
+			IL1TranslationException {
 		List<String> outCode = new ArrayList<String>();
 		List<Object> dataList = data.getDataList();
 		for (Object obj : dataList) {
@@ -42,23 +44,25 @@ public class SubroutineListGenerator extends AbstractSubroutineIL1Translator
 			} else {
 				if (obj instanceof IL1TranslationManager) {
 					translationManager = (IL1TranslationManager) obj;
-					targetLanguage  = translationManager.getCurrentTranslationTarget();
+					targetLanguage = translationManager
+							.getCurrentTranslationTarget();
 				}
 			}
 		}
-		
-			outCode.addAll(processSubroutines(outCode));
-		 
+
+		processSubroutines(outCode);
+
 		return outCode;
 	}
 
-	private List<String> processSubroutines(List<String> outCode)
-			throws IL1TranslationException, IL1TranslationUnhandledTypeException {
+	private void processSubroutines(List<String> outCode)
+			throws IL1TranslationException,
+			IL1TranslationUnhandledTypeException {
 		EList<Subroutine> subroutines = actualSource.getSubroutines();
 		for (Subroutine subroutine : subroutines) {
-			outCode.addAll(translate(subroutine, translationManager, targetLanguage ));
+			outCode.addAll(translate(subroutine, translationManager,
+					targetLanguage));
 		}
-		return outCode;
 	}
 
 	private String getFMITypeName(String projectName, String machineName,
@@ -140,6 +144,7 @@ public class SubroutineListGenerator extends AbstractSubroutineIL1Translator
 					+ "size_t nvr, fmiInteger value[]";
 
 			// Uniquely identify each event name using the machine name
+			outCode.add("");
 			outCode.add("fmiStatus " + machineName + "_"
 					+ communicationDirection + fmiTypeName + "("
 					+ fmiAPIparameters + ")");
@@ -181,6 +186,7 @@ public class SubroutineListGenerator extends AbstractSubroutineIL1Translator
 		}
 		// >>>>> // else it must be an fmiDOStep subroutine
 		else {
+			outCode.add("");
 			// Format the parameters
 			String fmiAPIparameters = "fmiComponent c, fmiReal currentCommunicationPoint,"
 					+ " fmiReal communicationStepSize, fmiBoolean noSetFMUStatePriorToCurrentPoint";
@@ -245,25 +251,31 @@ public class SubroutineListGenerator extends AbstractSubroutineIL1Translator
 	protected AbstractIL1TranslatorUtils getTranslatorUtils() {
 		return new CTranslatorUtils();
 	}
-	
+
 	private List<String> createXXXGetStatements(String fmiTypeName,
-			IL1TranslationManager translationManager) throws IL1TranslationException {
-		String variableArrayRef = FMUTranslator.getVariableRefArrayName(fmiTypeName);
+			IL1TranslationManager translationManager)
+			throws IL1TranslationException {
+		String variableArrayRef = FMUTranslator
+				.getVariableRefArrayName(fmiTypeName);
 		List<String> newCode = new ArrayList<String>();
 		newCode.add("// for our initial work we return all values in the array");
-		newCode.add("for(int idx = 0; idx < " + fmiTypeName.toLowerCase() + "ArraySize; idx = idx + 1){");
-		newCode.add("value[ idx ] = " + variableArrayRef + " [ idx ];");
+		newCode.add("for(int idx = 0; idx < " + fmiTypeName.toLowerCase()
+				+ "ArraySize; idx = idx + 1){");
+		newCode.add("value[ idx ] = c -> " + variableArrayRef + " [ idx ];");
 		newCode.add("}");
 		return newCode;
 	}
 
 	private List<String> createXXXSetStatements(String fmiTypeName,
-			IL1TranslationManager translationManager) throws IL1TranslationException {
-		String variableArrayRef = FMUTranslator.getVariableRefArrayName(fmiTypeName);
+			IL1TranslationManager translationManager)
+			throws IL1TranslationException {
+		String variableArrayRef = FMUTranslator
+				.getVariableRefArrayName(fmiTypeName);
 		List<String> newCode = new ArrayList<String>();
 		newCode.add("// for our initial work we set all values in the array");
-		newCode.add("for(int idx = 0; idx < " + fmiTypeName.toLowerCase() + "ArraySize; idx = idx + 1){");
-		newCode.add(variableArrayRef + " [ idx ] = " + "value[ idx ];" );
+		newCode.add("for(int idx = 0; idx < " + fmiTypeName.toLowerCase()
+				+ "ArraySize; idx = idx + 1){");
+		newCode.add("c -> "+variableArrayRef + " [ idx ] = " + "value[ idx ];");
 		newCode.add("}");
 		return newCode;
 	}

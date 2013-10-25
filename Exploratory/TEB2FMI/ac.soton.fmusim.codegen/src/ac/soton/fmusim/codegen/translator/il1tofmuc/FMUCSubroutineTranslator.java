@@ -84,7 +84,7 @@ public class FMUCSubroutineTranslator extends AbstractSubroutineIL1Translator {
 					exampleParamName, translationManager);
 
 			// Format the parameters
-			String fmiAPIparameters = "fmiComponent c, const fmiValueReference vr[], "
+			String fmiAPIparameters = "fmiComponent *c, const fmiValueReference vr[], "
 					+ "size_t nvr, fmiInteger value[]";
 
 			// Uniquely identify each event name using the machine name
@@ -128,7 +128,7 @@ public class FMUCSubroutineTranslator extends AbstractSubroutineIL1Translator {
 		// >>>>> // else it must be an fmiDOStep subroutine
 		else {
 			// Format the parameters
-			String fmiAPIparameters = "fmiComponent c, fmiReal currentCommunicationPoint,"
+			String fmiAPIparameters = "fmiComponent *c, fmiReal currentCommunicationPoint,"
 					+ " fmiReal communicationStepSize, fmiBoolean noSetFMUStatePriorToCurrentPoint";
 
 			// Uniquely identify each event name using the machine name
@@ -189,7 +189,7 @@ public class FMUCSubroutineTranslator extends AbstractSubroutineIL1Translator {
 		List<String> newCode = new ArrayList<String>();
 		newCode.add("// for our initial work we return all values in the array");
 		newCode.add("for(int idx = 0; idx < " + fmiTypeName.toLowerCase() + "ArraySize; idx = idx + 1){");
-		newCode.add("value[ idx ] = " + variableArrayRef + " [ idx ];");
+		newCode.add("value[ idx ] = " + "c -> " + variableArrayRef + " [ idx ];");
 		newCode.add("}");
 		return newCode;
 	}
@@ -200,7 +200,7 @@ public class FMUCSubroutineTranslator extends AbstractSubroutineIL1Translator {
 		List<String> newCode = new ArrayList<String>();
 		newCode.add("// for our initial work we set all values in the array");
 		newCode.add("for(int idx = 0; idx < " + fmiTypeName.toLowerCase() + "ArraySize; idx = idx + 1){");
-		newCode.add(variableArrayRef + " [ idx ] = " + "value[ idx ];" );
+		newCode.add("c -> " + variableArrayRef + " [ idx ] = " + "value[ idx ];" );
 		newCode.add("}");
 		return newCode;
 	}

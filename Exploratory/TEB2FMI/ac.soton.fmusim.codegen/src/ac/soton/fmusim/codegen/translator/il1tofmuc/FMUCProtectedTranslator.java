@@ -17,7 +17,6 @@ import org.eventb.codegen.il1.translator.IL1TranslationException;
 import org.eventb.codegen.il1.translator.IL1TranslationManager;
 import org.eventb.codegen.il1.translator.TargetLanguage;
 import org.eventb.codegen.il1.translator.core.AbstractProtectedIL1Translator;
-import org.eventb.codegen.templates.IGeneratorData;
 import org.eventb.codegen.templates.util.TemplateException;
 import org.eventb.codegen.templates.util.TemplateProcessor;
 
@@ -90,29 +89,28 @@ public class FMUCProtectedTranslator extends AbstractProtectedIL1Translator {
 					e);
 			StatusManager.getManager().handle(status, StatusManager.SHOW);
 		}
-
-
 		// END
 		// Experimentation with templates.
+		
 		ArrayList<String> outCode = new ArrayList<String>();
-		outCode.add("// FMU: " + name);
-		outCode.add("");
-		outCode.add("fmiComponent *modelInstances[MaxFMUInstances]; // initialise an empty array of components");
-		outCode.add("int conInstanceCount = 0;");
+		
+//		outCode.add("// FMU: " + name);
+//		outCode.add("");
+//		outCode.add("fmiComponent *modelInstances[MaxFMUInstances]; // initialise an empty array of components");
+//		outCode.add("int conInstanceCount = 0;");
+//
+//		// Do the variable declarations here.
+//		processVariableDecls(outCode);
 
-		// Do the variable declarations here.
-		processVariableDecls(outCode);
-
-		// Add the subroutines
+		// Add the subroutine signatures to the header
 		outCode.add("");
-		outCode.add("// Subroutines");
+//		outCode.add("// Subroutines");
 		for (ArrayList<String> sub : subList) {
 			// The first line will contain the information to be placed in the
 			// header file for this environ machine object
 			String firstLine = sub.get(0);
 			headerInfo.functionDeclarations.add(firstLine + ";");
-
-			outCode.addAll(sub);
+//			outCode.addAll(sub);
 			outCode.add("");
 		}
 
@@ -142,7 +140,7 @@ public class FMUCProtectedTranslator extends AbstractProtectedIL1Translator {
 				EList<FmiScalarVariable> scalars = docRoot
 						.getFmiModelDescription().getModelVariables()
 						.getScalarVariable();
-				// for each of the scalars get set to a non-null value to output
+				// each of the scalars get set to a non-null value to output
 				// an an FMI array declaration;
 				for (FmiScalarVariable scalar : scalars) {
 					if (r == null)
