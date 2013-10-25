@@ -16,7 +16,7 @@ import FmiModel.IntegerType;
 import FmiModel.RealType1;
 import FmiModel.StringType;
 
-public class SubroutineListGenerator implements IGenerator {
+public class VariableDeclarationsGenerator implements IGenerator {
 
 	private Protected actualSource = null;
 	

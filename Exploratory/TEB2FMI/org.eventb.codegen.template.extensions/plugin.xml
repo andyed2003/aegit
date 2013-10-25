@@ -4,12 +4,12 @@
    <extension
          point="org.eventb.codegen.templates.generator">
       <templateGenerator
-            GeneratorClass="org.eventb.codegen.template.extensions.InitialisationsListGenerator"
-            tag="initialisationsList">
+            GeneratorClass="org.eventb.codegen.template.extensions.VariableDeclarationsGenerator"
+            tag="variableDeclarations">
       </templateGenerator>
       <templateGenerator
-            GeneratorClass="org.eventb.codegen.template.extensions.SubroutineListGenerator"
-            tag="subroutineList">
+            GeneratorClass="org.eventb.codegen.template.extensions.InitialisationsListGenerator"
+            tag="initialisationsList">
       </templateGenerator>
    </extension>
 

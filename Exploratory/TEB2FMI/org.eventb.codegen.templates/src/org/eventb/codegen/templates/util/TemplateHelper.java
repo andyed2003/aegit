@@ -33,7 +33,7 @@ public class TemplateHelper {
 
 	// we only need to set up the generatorMap once, since we
 	// make it a class variables.
-	static{
+	static {
 		try {
 			initialise();
 		} catch (CoreException e) {
@@ -41,7 +41,7 @@ public class TemplateHelper {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public TemplateHelper(Object data_) throws CoreException {
 		// set the data element
 		data = data_;
@@ -56,15 +56,27 @@ public class TemplateHelper {
 		for (final IExtension extension : extensions) {
 			List<IConfigurationElement> ceList = Arrays.asList(extension
 					.getConfigurationElements());
-			IConfigurationElement generatorInfo = null;
-			String[] attributeNames = null;
 			// look through the configuration elements - there will be exactly
-			// one valid configurator so we can break once we have found it.
+			// one valid configurator, for the template generator,
+			// so we break after processing it.
 			for (IConfigurationElement configurationElement : ceList) {
+				// Process the configurator if it is valid
 				if (configurationElement.isValid()) {
-					generatorInfo = configurationElement;
-					attributeNames = configurationElement.getAttributeNames();
-				} else
+					String[] attributeNames = configurationElement.getAttributeNames();
+					// We store (keyword X generatorClass) pairs.
+					for (int idx = 0; idx < attributeNames.length; idx = idx + 2) {
+						IGenerator exeExt = (IGenerator) configurationElement
+								.createExecutableExtension(attributeNames[idx]);
+						generatorTagMap.put(configurationElement
+								.getAttribute(attributeNames[idx + 1]), exeExt);
+						System.out.println("tag: "
+								+ configurationElement
+										.getAttribute(attributeNames[idx + 1]));
+						System.out.println("generator: " + exeExt);
+					}
+		
+				} else {
+					// else the configurator was not valid
 					try {
 						throw new TemplateException("");
 					} catch (TemplateException e) {
@@ -74,17 +86,7 @@ public class TemplateHelper {
 						StatusManager.getManager().handle(status,
 								StatusManager.SHOW);
 					}
-			}
-			// now we have the configurator we can store the
-			// (keyword X generatorClass) pair.
-			for (int idx = 0; idx < attributeNames.length; idx = idx + 2) {
-				IGenerator exeExt = (IGenerator) generatorInfo
-						.createExecutableExtension(attributeNames[idx]);
-				generatorTagMap.put(
-						generatorInfo.getAttribute(attributeNames[idx + 1]),
-						exeExt);
-				System.out.println("tag: " + generatorInfo.getAttribute(attributeNames[idx + 1]));
-				System.out.println("generator: " + exeExt);
+				}
 			}
 		}
 	}
@@ -100,11 +102,14 @@ public class TemplateHelper {
 			// to instantiate it ....
 			FileReader reader = new FileReader(childTemplateFile);
 			BufferedReader bufferedReader = new BufferedReader(reader);
-			TemplateProcessor templateProcessor = TemplateProcessor.getDefault();
-			newLines = templateProcessor.internalInstantiateTemplate(bufferedReader, templateFolderContentMap);
-			
+			TemplateProcessor templateProcessor = TemplateProcessor
+					.getDefault();
+			newLines = templateProcessor.internalInstantiateTemplate(
+					bufferedReader, templateFolderContentMap);
+
 		} else {
-			// else get the generator from the generator target map using the keyword
+			// else get the generator from the generator target map using the
+			// keyword
 			IGenerator generator = generatorTagMap.get(keyword);
 			if (generator != null) {
 				newLines = generator.generate(data);
