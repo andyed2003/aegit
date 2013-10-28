@@ -663,8 +663,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 
 	// Given an IL1 declaration, return its C Type name from the type
 	// environment
-	public static String getVariableCTypeName(Declaration d)
-			throws TaskingTranslationException {
+	public static String getVariableCTypeName(Declaration d) {
 		TranslatedDecl translatedDecl = il1TranslationManager
 				.translateDeclaration(d, targetLanguage);
 		return translatedDecl.getType();
