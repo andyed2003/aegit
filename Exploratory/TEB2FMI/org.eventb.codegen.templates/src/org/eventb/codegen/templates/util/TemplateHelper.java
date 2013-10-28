@@ -40,8 +40,12 @@ public class TemplateHelper {
 		try {
 			initialise();
 		} catch (CoreException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			Status status = new Status(IStatus.ERROR,
+					TemplatesPlugin.PLUGIN_ID,
+					"Failed Translation: CoreException:"
+					+ e.getMessage() +":\n"+ TemplateException.extractFullExceptionMessage(e) , e);
+				StatusManager.getManager().handle(status,
+					StatusManager.SHOW);
 		}
 	}
 

@@ -503,10 +503,11 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		return targetLanguage;
 	}
 
+	// formatCode is unused ???? But we have it because we do make use
+	// of other Abstract methods etc.
 	@Override
 	protected ArrayList<String> formatCode(ArrayList<String> code,
 			IL1TranslationManager translationManager) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
