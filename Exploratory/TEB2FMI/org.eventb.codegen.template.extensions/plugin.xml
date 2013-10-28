@@ -16,5 +16,11 @@
             tag="subroutineList">
       </templateGenerator>
    </extension>
+   <extension
+         point="org.eventb.codegen.templates.tag">
+      <beginCommentCharacters
+            beginCommentCharacters="//##">
+      </beginCommentCharacters>
+   </extension>
 
 </plugin>

@@ -472,7 +472,6 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 						il1TranslationManager);
 			}
 		}
-		System.out.println();
 	}
 
 	// Create the file associated with the output

@@ -26,8 +26,10 @@ public class TemplateHelper {
 
 	// The extension ID
 	private static final String TEMPLATE_GEN_ID = "org.eventb.codegen.templates.generator";
+	private static final String TEMPLATE_COMMENT_ID = "org.eventb.codegen.templates.tag";
 	// Map of (keywords X generatorClasses)
 	private static Map<String, IGenerator> generatorTagMap = null;
+	public static String BEGIN_COMMENT_CHARS = null;
 	private HashMap<String, File> templateFolderContentMap = null;
 	// a data object that can be used in the executable generator
 	private IGeneratorData data = null;
@@ -52,14 +54,13 @@ public class TemplateHelper {
 		// create a new store
 		generatorTagMap = new HashMap<String, IGenerator>();
 		// find the generator extension
-		IExtension[] extensions = Platform.getExtensionRegistry()
+		IExtension[] generatorExtension = Platform.getExtensionRegistry()
 				.getExtensionPoint(TEMPLATE_GEN_ID).getExtensions();
-		for (final IExtension extension : extensions) {
-			List<IConfigurationElement> ceList = Arrays.asList(extension
+		for (final IExtension gen_extn : generatorExtension) {
+			List<IConfigurationElement> ceList = Arrays.asList(gen_extn
 					.getConfigurationElements());
-			// look through the configuration elements - there will be exactly
-			// one valid configurator, for the template generator,
-			// so we break after processing it.
+			// look through the configuration elements for the template
+			// generator configurator.
 			for (IConfigurationElement configurationElement : ceList) {
 				// Process the configurator if it is valid
 				if (configurationElement.isValid()) {
@@ -70,10 +71,6 @@ public class TemplateHelper {
 								.createExecutableExtension(attributeNames[idx]);
 						generatorTagMap.put(configurationElement
 								.getAttribute(attributeNames[idx + 1]), exeExt);
-						System.out.println("tag: "
-								+ configurationElement
-										.getAttribute(attributeNames[idx + 1]));
-						System.out.println("generator: " + exeExt);
 					}
 		
 				} else {
@@ -90,6 +87,37 @@ public class TemplateHelper {
 				}
 			}
 		}
+		// get the begin-comment characters
+		IExtension[] commentExtension = Platform.getExtensionRegistry()
+				.getExtensionPoint(TEMPLATE_COMMENT_ID).getExtensions();
+		for (final IExtension comment_extn : commentExtension) {
+			List<IConfigurationElement> ceList = Arrays.asList(comment_extn
+					.getConfigurationElements());
+			// look through the configuration elements for the comment extension
+			for (IConfigurationElement configurationElement : ceList) {
+				// Process the comment configurator if it is valid
+				if (configurationElement.isValid()) {
+					String[] attributeNames = configurationElement.getAttributeNames();
+					// We store the comment.
+					for (int idx = 0; idx < attributeNames.length; idx = idx + 2) {
+						BEGIN_COMMENT_CHARS = configurationElement.getAttribute(attributeNames[idx]);
+					}
+		
+				} else {
+					// else the configurator was not valid
+					try {
+						throw new TemplateException("");
+					} catch (TemplateException e) {
+						Status status = new Status(IStatus.ERROR,
+								TemplatesPlugin.PLUGIN_ID,
+								"Failed Translation: TemplateException:", e);
+						StatusManager.getManager().handle(status,
+								StatusManager.SHOW);
+					}
+				}
+			}
+		}
+
 	}
 
 	public List<String> generate(String keyword) throws Exception {

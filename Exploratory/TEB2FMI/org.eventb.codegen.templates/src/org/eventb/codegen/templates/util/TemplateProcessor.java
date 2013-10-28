@@ -3,9 +3,7 @@ package org.eventb.codegen.templates.util;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.IOException;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -16,7 +14,6 @@ import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
-import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
 import org.eventb.codegen.il1.translator.IL1TranslationException;
@@ -30,7 +27,6 @@ import org.rodinp.core.RodinDBException;
 // the (multiples of) source file information.
 public class TemplateProcessor {
 	private static TemplateProcessor templateProcessor = null;
-	public static final String TAG_BEGIN = "//##";
 	private IFolder templateSourceFolder = null;
 	private IFolder targetFolder = null;
 	private BufferedWriter bufferedWriter;
@@ -131,7 +127,7 @@ public class TemplateProcessor {
 			} else {
 				List<String> newLines = null;
 				// if we have a keyword, pass it on the the TemplateHelper
-				if (line.contains(TemplateProcessor.TAG_BEGIN)) {
+				if (line.contains(TemplateHelper.BEGIN_COMMENT_CHARS)) {
 					String keyword = getKeyword(line);
 					TemplateHelper templateHelper = new TemplateHelper(data);
 					templateHelper.setChildTemplateMap(templateFolderContentMap);
