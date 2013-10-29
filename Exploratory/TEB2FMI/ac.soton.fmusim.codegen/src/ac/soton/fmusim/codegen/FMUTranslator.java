@@ -121,7 +121,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 	public static IProject targetProject = null;
 	// The target folder for generated source code.
 	private IFolder generatedSourceFolder = null;
-	private final static TargetLanguage targetLanguage = new TargetLanguage(
+	public final static TargetLanguage targetLanguage = new TargetLanguage(
 			"FMI_C");
 	// The modelDescription file, as an emf model.
 	private ModelDescriptionManager modelDescriptionsManager = new ModelDescriptionManager();
@@ -427,25 +427,25 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		// FMI API at a later date.
 		il1TranslationManager
 				.addIncludeStatement("#include \"fakeFMIDecls.h\"");
-		boolean hasBool = false;
-		TreeIterator<EObject> programContentList = program.eAllContents();
-		while (programContentList.hasNext()) {
-			EObject obj = programContentList.next();
-			if (obj instanceof Declaration) {
-				Declaration decl = (Declaration) obj;
-				if (decl.getType().equals(CodeGenTaskingUtils.BOOL_SYMBOL)) {
-					hasBool = true;
-					break;
-				}
-			}
-		}
-		// If we have any boolean variable then add the BOOL definitions
-		if (hasBool) {
-			// Output OpenMP blocking
-			il1TranslationManager.addIncludeStatement("typedef int BOOL;");
-			il1TranslationManager.addIncludeStatement("#define TRUE 1");
-			il1TranslationManager.addIncludeStatement("#define FALSE 0");
-		}
+//		boolean hasBool = false;
+//		TreeIterator<EObject> programContentList = program.eAllContents();
+//		while (programContentList.hasNext()) {
+//			EObject obj = programContentList.next();
+//			if (obj instanceof Declaration) {
+//				Declaration decl = (Declaration) obj;
+//				if (decl.getType().equals(CodeGenTaskingUtils.BOOL_SYMBOL)) {
+//					hasBool = true;
+//					break;
+//				}
+//			}
+//		}
+//		// If we have any boolean variable then add the BOOL definitions
+//		if (hasBool) {
+//			// Output OpenMP blocking
+//			il1TranslationManager.addIncludeStatement("typedef int BOOL;");
+//			il1TranslationManager.addIncludeStatement("#define TRUE 1");
+//			il1TranslationManager.addIncludeStatement("#define FALSE 0");
+//		}
 		ArrayList<String> code = null;
 		// Translation Rules
 		Map<IProject, List<ITranslationRule>> translationRules = loadTranslatorRules();

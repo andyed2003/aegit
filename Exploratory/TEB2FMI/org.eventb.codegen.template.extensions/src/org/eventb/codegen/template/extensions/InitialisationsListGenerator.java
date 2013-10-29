@@ -5,19 +5,21 @@ import java.util.List;
 
 import org.eclipse.emf.common.util.EList;
 import org.eventb.codegen.il1.Declaration;
+import org.eventb.codegen.il1.PartiallyTranslatedDecl;
 import org.eventb.codegen.il1.Protected;
+import org.eventb.codegen.il1.TranslatedDecl;
 import org.eventb.codegen.il1.translator.IL1TranslationException;
 import org.eventb.codegen.il1.translator.IL1TranslationManager;
+import org.eventb.codegen.il1.translator.IL1TranslationUnhandledTypeException;
 import org.eventb.codegen.templates.IGenerator;
 import org.eventb.codegen.templates.IGeneratorData;
-import org.eventb.internal.core.seqprover.eventbExtensions.mbGoal.Generator;
 
 import ac.soton.fmusim.codegen.FMUTranslator;
 
 public class InitialisationsListGenerator implements IGenerator {
 
 	public List<String> generate(IGeneratorData data)
-			throws IL1TranslationException {
+			throws IL1TranslationException, IL1TranslationUnhandledTypeException {
 		List<String> outCode = new ArrayList<String>();
 		Protected prot = null;
 		IL1TranslationManager translationManager = null;
@@ -42,8 +44,15 @@ public class InitialisationsListGenerator implements IGenerator {
 				String protectedName = prot.getName();
 				String varName = decl.getIdentifier();
 				String initialValue = decl.getInitialValue();
-				String tmpAction = varName+" = "+initialValue;
-				String initialisation = FMUTranslator.updateVariableName(tmpAction, decl,
+
+				PartiallyTranslatedDecl td = (PartiallyTranslatedDecl) translationManager.translateDeclaration(decl, FMUTranslator.targetLanguage);
+				String type = td.getType();
+				if(type.equals("BOOL")){
+					initialValue = td.getPartialInitialisationExpression();
+				}
+				
+				String tmpAction = varName + "_" + protectedName + " = " + initialValue + ";";
+				String initialisation = "\t\t" + FMUTranslator.updateVariableName(tmpAction, decl,
 						translationManager);
 				outCode.add(initialisation);
 			}
