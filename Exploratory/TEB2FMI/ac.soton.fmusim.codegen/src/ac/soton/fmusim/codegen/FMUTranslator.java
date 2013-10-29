@@ -466,8 +466,14 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 				code.add(0, "#include \"" + COMMON_HEADER_FULL + "\"");
 				code.add("// EndProtected");
 				currentProtected = p;
-				saveToFile(code, headerInfo, program, newDirectoryPath,
-						il1TranslationManager);
+
+				// Generate the header files.
+				// Each protected file just includes "common.h" which includes the other
+				// files.
+				ArrayList<String> globalDecls = new ArrayList<String>();
+
+				generateHeaders(headerInfo, newDirectoryPath, il1TranslationManager,
+						globalDecls);
 			}
 		}
 	}
@@ -532,8 +538,8 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 					"// EndProtected", protectedCode);
 			// Get the protected name
 			String name = currentProtected.getMachineName();
-			CodeFiler.getDefault().save(protectedCode, directoryName,
-					name + ".c");
+//			CodeFiler.getDefault().save(protectedCode, directoryName,
+//					name + ".c");
 		}
 		// Generate the header files.
 		// Each protected file just includes "common.h" which includes the other

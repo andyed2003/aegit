@@ -45,7 +45,7 @@ public class FMUCProtectedTranslator extends AbstractProtectedIL1Translator {
 		// BEGIN
 		// Experimentation with Templates
 		try {
-			tryTemplate();
+			useTemplates();
 		} catch (CoreException e) {
 			Status status = new Status(IStatus.ERROR,
 					FMUTranslatorPlugin.PLUGIN_ID,
@@ -167,9 +167,9 @@ public class FMUCProtectedTranslator extends AbstractProtectedIL1Translator {
 //		outCode.add("");
 //	}
 
-	private void tryTemplate() throws Exception {
+	private void useTemplates() throws Exception {
 		// where do we want to write to?
-		String targetFileName = actualSource.getName() + "_instantiated.c";
+		String targetFileName = actualSource.getName() + ".c";
 		FMUTranslatorHelper translatorHelper = FMUTranslatorHelper.getDefault();
 		// Create the Template Processor
 		TemplateProcessor templateProcessor = TemplateProcessor.getDefault();

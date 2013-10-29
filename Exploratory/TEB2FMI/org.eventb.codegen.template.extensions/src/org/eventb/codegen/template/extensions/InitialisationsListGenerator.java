@@ -22,6 +22,8 @@ public class InitialisationsListGenerator implements IGenerator {
 		List<String> outCode = new ArrayList<String>();
 		Protected prot = null;
 		IL1TranslationManager translationManager = null;
+		// Sort out the data that we are receiving from the caller.
+		// Get the protected object and the translation manager.
 		List<Object> dataList = data.getDataList();
 		for (Object obj : dataList) {
 			if (obj instanceof Protected) {
@@ -43,13 +45,14 @@ public class InitialisationsListGenerator implements IGenerator {
 				String protectedName = prot.getName();
 				String varName = decl.getIdentifier();
 				String initialValue = decl.getInitialValue();
-
+				// If we have a boolean declaration in the IL1 
+				// This is where we translate get the resulting translation (i.e. fmiTrue or fmiFalse)
 				PartiallyTranslatedDecl td = (PartiallyTranslatedDecl) translationManager.translateDeclaration(decl, FMUTranslator.targetLanguage);
 				String type = td.getType();
 				if(type.equals("BOOL")){
 					initialValue = td.getPartialInitialisationExpression();
 				}
-				
+				// update the variable names in the action to the arrayReference style.
 				String tmpAction = varName + "_" + protectedName + " = " + initialValue + ";";
 				String initialisation = "\t\t" + FMUTranslator.updateVariableName(tmpAction, decl,
 						translationManager);
