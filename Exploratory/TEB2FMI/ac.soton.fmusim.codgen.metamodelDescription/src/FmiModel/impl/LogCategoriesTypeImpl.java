@@ -2,24 +2,20 @@
  */
 package FmiModel.impl;
 
-import FmiModel.CategoryType;
-import FmiModel.FmiModelPackage;
-import FmiModel.LogCategoriesType;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.BasicFeatureMap;
 import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.util.InternalEList;
+
+import FmiModel.CategoryType;
+import FmiModel.FmiModelPackage;
+import FmiModel.LogCategoriesType;
 
 /**
  * <!-- begin-user-doc -->

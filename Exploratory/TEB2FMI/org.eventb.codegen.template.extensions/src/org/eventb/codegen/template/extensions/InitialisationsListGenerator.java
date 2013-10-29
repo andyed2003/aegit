@@ -7,7 +7,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eventb.codegen.il1.Declaration;
 import org.eventb.codegen.il1.PartiallyTranslatedDecl;
 import org.eventb.codegen.il1.Protected;
-import org.eventb.codegen.il1.TranslatedDecl;
 import org.eventb.codegen.il1.translator.IL1TranslationException;
 import org.eventb.codegen.il1.translator.IL1TranslationManager;
 import org.eventb.codegen.il1.translator.IL1TranslationUnhandledTypeException;

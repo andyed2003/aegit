@@ -2,12 +2,45 @@
  */
 package FmiModel.util;
 
-import FmiModel.*;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
+
+import FmiModel.BaseUnitType;
+import FmiModel.BooleanType;
+import FmiModel.CategoryType;
+import FmiModel.CoSimulationType;
+import FmiModel.DefaultExperimentType;
+import FmiModel.DerivativeType;
+import FmiModel.DerivativesType;
+import FmiModel.DisplayUnitType;
+import FmiModel.DocumentRoot;
+import FmiModel.EnumerationType;
+import FmiModel.EnumerationType1;
+import FmiModel.FmiAnnotation;
+import FmiModel.FmiModelDescriptionType;
+import FmiModel.FmiModelPackage;
+import FmiModel.FmiScalarVariable;
+import FmiModel.FmiSimpleType;
+import FmiModel.FmiUnit;
+import FmiModel.FmiVariableDependency;
+import FmiModel.InputType;
+import FmiModel.InputsType;
+import FmiModel.IntegerType;
+import FmiModel.IntegerType1;
+import FmiModel.ItemType;
+import FmiModel.LogCategoriesType;
+import FmiModel.ModelExchangeType;
+import FmiModel.ModelStructureType;
+import FmiModel.ModelVariablesType;
+import FmiModel.OutputType;
+import FmiModel.OutputsType;
+import FmiModel.RealType;
+import FmiModel.RealType1;
+import FmiModel.StringType;
+import FmiModel.ToolType;
+import FmiModel.TypeDefinitionsType;
+import FmiModel.UnitDefinitionsType;
 
 /**
  * <!-- begin-user-doc -->

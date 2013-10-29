@@ -8,14 +8,13 @@ import org.eventb.codegen.il1.Protected;
 import org.eventb.codegen.templates.IGenerator;
 import org.eventb.codegen.templates.IGeneratorData;
 
-import ac.soton.fmusim.codegen.ModelDescriptionManager;
-
 import FmiModel.BooleanType;
 import FmiModel.DocumentRoot;
 import FmiModel.FmiScalarVariable;
 import FmiModel.IntegerType;
 import FmiModel.RealType1;
 import FmiModel.StringType;
+import ac.soton.fmusim.codegen.ModelDescriptionManager;
 
 public class VariableDeclarationsGenerator implements IGenerator {
 

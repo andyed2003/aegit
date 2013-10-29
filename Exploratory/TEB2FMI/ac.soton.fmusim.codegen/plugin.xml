@@ -60,112 +60,98 @@
                coreTargetLanguage="FMI_C"
                name="CTaskTranslator"
                sourceClass="Task"
-               specificTargetLanguage="Default"
-               targetLanguage="C">
+               specificTargetLanguage="Default">
          </il1Translator>
          <il1Translator
                IL1TranslatorClass="org.eventb.codegen.il1.translator.c.CVariableTranslator"
                coreTargetLanguage="FMI_C"
                name="CVariableDeclTranslator"
                sourceClass="VariableDecl"
-               specificTargetLanguage="Default"
-               targetLanguage="C">
+               specificTargetLanguage="Default">
          </il1Translator>
          <il1Translator
                IL1TranslatorClass="ac.soton.fmusim.codegen.translator.il1tofmuc.FMUCSubroutineTranslator"
                coreTargetLanguage="FMI_C"
                name="CSubroutineTranslator_Default"
                sourceClass="Subroutine"
-               specificTargetLanguage="Default"
-               targetLanguage="C">
+               specificTargetLanguage="Default">
          </il1Translator>
          <il1Translator
                IL1TranslatorClass="org.eventb.codegen.il1.translator.c.CActionTranslator"
                coreTargetLanguage="FMI_C"
                name="CActionTranslator"
                sourceClass="Action"
-               specificTargetLanguage="Default"
-               targetLanguage="C">
+               specificTargetLanguage="Default">
          </il1Translator>
          <il1Translator
                IL1TranslatorClass="org.eventb.codegen.il1.translator.c.CSeqTranslator"
                coreTargetLanguage="FMI_C"
                name="CSeqTranslator"
                sourceClass="Seq"
-               specificTargetLanguage="Default"
-               targetLanguage="C">
+               specificTargetLanguage="Default">
          </il1Translator>
          <il1Translator
                IL1TranslatorClass="org.eventb.codegen.il1.translator.c.CPreconditionLoopTranslator"
                coreTargetLanguage="FMI_C"
                name="CPreconditionLoopTranslator"
                sourceClass="PreconditionLoop"
-               specificTargetLanguage="Default"
-               targetLanguage="C">
+               specificTargetLanguage="Default">
          </il1Translator>
          <il1Translator
                IL1TranslatorClass="org.eventb.codegen.il1.translator.c.COutputTranslator"
                coreTargetLanguage="FMI_C"
                name="COutputTranslator"
                sourceClass="Output"
-               specificTargetLanguage="Default"
-               targetLanguage="C">
+               specificTargetLanguage="Default">
          </il1Translator>
          <il1Translator
                IL1TranslatorClass="org.eventb.codegen.il1.translator.c.CIfTranslator"
                coreTargetLanguage="FMI_C"
                name="CIfTranslator"
                sourceClass="If"
-               specificTargetLanguage="Default"
-               targetLanguage="C">
+               specificTargetLanguage="Default">
          </il1Translator>
          <il1Translator
                IL1TranslatorClass="org.eventb.codegen.il1.translator.c.CElseIfTranslator"
                coreTargetLanguage="FMI_C"
                name="CElseIfTranslator"
                sourceClass="ElseIf"
-               specificTargetLanguage="Default"
-               targetLanguage="C">
+               specificTargetLanguage="Default">
          </il1Translator>
          <il1Translator
                IL1TranslatorClass="org.eventb.codegen.il1.translator.c.CEnvironTranslator"
                coreTargetLanguage="FMI_C"
                name="CEnvironTaskTranslator"
                sourceClass="EnvironTask"
-               specificTargetLanguage="Default"
-               targetLanguage="C">
+               specificTargetLanguage="Default">
          </il1Translator>
          <il1Translator
                IL1TranslatorClass="org.eventb.codegen.il1.translator.c.CCallTranslator"
                coreTargetLanguage="FMI_C"
                name="CCallTranslator"
                sourceClass="Call"
-               specificTargetLanguage="Default"
-               targetLanguage="C">
+               specificTargetLanguage="Default">
          </il1Translator>
          <il1Translator
                IL1TranslatorClass="ac.soton.fmusim.codegen.translator.il1tofmuc.FMUCProtectedTranslator"
                coreTargetLanguage="FMI_C"
                name="FMI_CProtectedTranslator"
                sourceClass="Protected"
-               specificTargetLanguage="Default"
-               targetLanguage="C">
+               specificTargetLanguage="Default">
          </il1Translator>
          <il1Translator
                IL1TranslatorClass="org.eventb.codegen.il1.translator.c.CConstantTranslator"
                coreTargetLanguage="FMI_C"
                name="CConstantDeclTranslator"
                sourceClass="ConstantDecl"
-               specificTargetLanguage="Default"
-               targetLanguage="C">
+               specificTargetLanguage="Default">
          </il1Translator>
          <il1Translator
                IL1TranslatorClass="org.eventb.codegen.il1.translator.c.CProgramTranslator"
                coreTargetLanguage="FMI_C"
                name="CProgramTranslator"
                sourceClass="Program"
-               specificTargetLanguage="OpenMP"
-               targetLanguage="C">
+               specificTargetLanguage="OpenMP">
          </il1Translator>
          <il1Translator
                IL1TranslatorClass="org.eventb.codegen.il1.translator.c.CEnumerationTranslator"

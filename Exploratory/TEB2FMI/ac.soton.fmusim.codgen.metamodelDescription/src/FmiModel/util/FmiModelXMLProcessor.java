@@ -2,17 +2,14 @@
  */
 package FmiModel.util;
 
-import FmiModel.FmiModelPackage;
-
 import java.util.Map;
 
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EPackageRegistryImpl;
-
 import org.eclipse.emf.ecore.resource.Resource;
-
 import org.eclipse.emf.ecore.xmi.util.XMLProcessor;
+
+import FmiModel.FmiModelPackage;
 
 /**
  * This class contains helper methods to serialize and deserialize XML documents

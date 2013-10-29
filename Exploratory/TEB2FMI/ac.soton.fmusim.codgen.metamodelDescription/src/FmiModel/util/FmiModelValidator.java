@@ -2,22 +2,57 @@
  */
 package FmiModel.util;
 
-import FmiModel.*;
-
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.EObjectValidator;
-
 import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
-
 import org.eclipse.emf.ecore.xml.type.util.XMLTypeValidator;
+
+import FmiModel.BaseUnitType;
+import FmiModel.BooleanType;
+import FmiModel.CategoryType;
+import FmiModel.CausalityType;
+import FmiModel.CoSimulationType;
+import FmiModel.DefaultExperimentType;
+import FmiModel.DerivativeType;
+import FmiModel.DerivativesType;
+import FmiModel.DisplayUnitType;
+import FmiModel.DocumentRoot;
+import FmiModel.EnumerationType;
+import FmiModel.EnumerationType1;
+import FmiModel.FmiAnnotation;
+import FmiModel.FmiDependencyFactorKind;
+import FmiModel.FmiModelDescriptionType;
+import FmiModel.FmiModelPackage;
+import FmiModel.FmiScalarVariable;
+import FmiModel.FmiSimpleType;
+import FmiModel.FmiUnit;
+import FmiModel.FmiVariableDependency;
+import FmiModel.InitialType;
+import FmiModel.InputType;
+import FmiModel.InputsType;
+import FmiModel.IntegerType;
+import FmiModel.IntegerType1;
+import FmiModel.ItemType;
+import FmiModel.LogCategoriesType;
+import FmiModel.ModelExchangeType;
+import FmiModel.ModelStructureType;
+import FmiModel.ModelVariablesType;
+import FmiModel.OutputType;
+import FmiModel.OutputsType;
+import FmiModel.RealType;
+import FmiModel.RealType1;
+import FmiModel.StringType;
+import FmiModel.ToolType;
+import FmiModel.TypeDefinitionsType;
+import FmiModel.UnitDefinitionsType;
+import FmiModel.VariabilityType;
+import FmiModel.VariableNamingConventionType;
 
 /**
  * <!-- begin-user-doc -->

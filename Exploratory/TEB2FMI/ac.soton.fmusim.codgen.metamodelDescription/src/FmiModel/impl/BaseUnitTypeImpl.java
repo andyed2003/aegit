@@ -2,15 +2,13 @@
  */
 package FmiModel.impl;
 
-import FmiModel.BaseUnitType;
-import FmiModel.FmiModelPackage;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+
+import FmiModel.BaseUnitType;
+import FmiModel.FmiModelPackage;
 
 /**
  * <!-- begin-user-doc -->

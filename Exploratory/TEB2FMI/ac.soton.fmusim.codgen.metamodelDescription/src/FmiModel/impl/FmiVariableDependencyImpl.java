@@ -2,18 +2,16 @@
  */
 package FmiModel.impl;
 
-import FmiModel.FmiDependencyFactorKind;
-import FmiModel.FmiModelPackage;
-import FmiModel.FmiVariableDependency;
-
 import java.util.List;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+
+import FmiModel.FmiDependencyFactorKind;
+import FmiModel.FmiModelPackage;
+import FmiModel.FmiVariableDependency;
 
 /**
  * <!-- begin-user-doc -->
