@@ -9,7 +9,9 @@ int conInstanceCount = 0;
 
 //## <variableDeclarations>  -- generate variable declarations here
 
-//## <fmiInstantiate.c>     -- expand template here
+//## <fmiInstantiate.c>     -- expand instantiation template here
+
+//## <fmiInitializeSlave.c>  -- expand initialisation template here
 
 // Subroutines Generated from Events
 

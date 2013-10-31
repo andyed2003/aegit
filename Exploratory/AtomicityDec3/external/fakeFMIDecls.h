@@ -14,6 +14,7 @@ typedef double       fmiReal   ;
 typedef int          fmiInteger;
 typedef char         fmiBoolean;
 typedef const char*  fmiString ;
+
 typedef enum {
 	fmiOK, fmiWarning, fmiDiscard, fmiError, fmiFatal, fmiPending
 } fmiStatus;
@@ -34,7 +35,11 @@ typedef struct{
 	fmiValueReference b[booleanArraySize]; // my fake fmi: array of fmiValueReferences to booleans
 	fmiValueReference r[realArraySize]; // my fake fmi: array of fmiValueReferences to real
 	fmiValueReference s[stringArraySize]; // my fake fmi: array of fmiValueReferences to strings
-	int SM_ProgramCounter;
 } fmiComponent;
+
+typedef struct{
+
+} fmiCallbackFunctions;
+
 
 #endif /* FAKEFMIDECLS_H_ */

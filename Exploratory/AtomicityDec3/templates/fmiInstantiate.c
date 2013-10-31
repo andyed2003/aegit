@@ -1,22 +1,19 @@
-fmiComponent *fmiInstantiateControllerImpl(fmiString instanceName,
-		fmiString GUID) {
+fmiComponent *fmiInstantiateSlave(fmiString instanceName, fmiString fmuGUID,
+		fmiString fmuResourceLocation, const fmiCallbackFunctions* functions,
+		fmiBoolean visible, fmiBoolean loggingOn) {
 	// create a fmiComponent and allocate storage space
-	fmiComponent *newFMIComponent = malloc(sizeof(*newFMIComponent));
+	fmiComponent *c = malloc(sizeof(*c));
 	if (!(conInstanceCount <= (MaxFMUInstances - 1))) {
-		newFMIComponent->validInstance = fmiFalse;
-		return newFMIComponent;
+		c->validInstance = fmiFalse;
+		return c;
 	} else {
-		newFMIComponent->validInstance = fmiTrue;
+		c->validInstance = fmiTrue;
 		// set the name etc
-		newFMIComponent->fmuInstanceName = instanceName;
-		newFMIComponent->fmuGUID = GUID;
-
-		//## <initialisationsList>
-
-		//## <stateMachineProgramCounterIni>
+		c->fmuInstanceName = instanceName;
+		c->fmuGUID = fmuGUID;
 		//add instance to collection;
-		modelInstances[conInstanceCount] = newFMIComponent;
+		modelInstances[conInstanceCount] = c;
 		conInstanceCount = conInstanceCount + 1;
-		return newFMIComponent;
+		return c;
 	}
 }
