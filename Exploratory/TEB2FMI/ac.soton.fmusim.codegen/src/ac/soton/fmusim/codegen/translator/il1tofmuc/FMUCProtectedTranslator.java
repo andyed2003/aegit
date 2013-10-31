@@ -39,11 +39,7 @@ public class FMUCProtectedTranslator extends AbstractProtectedIL1Translator {
 		actualSource = actualSource_;
 		subList = subList_;
 		translationManager = translationManager_;
-		ClassHeaderInformation headerInfo = new ClassHeaderInformation();
-		headerInfo.className = actualSource.getName();
 
-		// BEGIN
-		// Experimentation with Templates
 		try {
 			useTemplates();
 		} catch (CoreException e) {
@@ -72,8 +68,7 @@ public class FMUCProtectedTranslator extends AbstractProtectedIL1Translator {
 							+ TemplateException.extractFullExceptionMessage(e),
 					e);
 			StatusManager.getManager().handle(status, StatusManager.SHOW);
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			Status status = new Status(IStatus.ERROR,
 					FMUTranslatorPlugin.PLUGIN_ID,
 					"Failed Translation: IL1TranslationException :"
@@ -81,91 +76,25 @@ public class FMUCProtectedTranslator extends AbstractProtectedIL1Translator {
 					e);
 			StatusManager.getManager().handle(status, StatusManager.SHOW);
 		}
-		// END
-		// Experimentation with templates.
-		
 		ArrayList<String> outCode = new ArrayList<String>();
-		
-//		outCode.add("// FMU: " + name);
-//		outCode.add("");
-//		outCode.add("fmiComponent *modelInstances[MaxFMUInstances]; // initialise an empty array of components");
-//		outCode.add("int conInstanceCount = 0;");
-//
-//		// Do the variable declarations here.
-//		processVariableDecls(outCode);
-
-		// Add the subroutine signatures to the header
+		// If any subroutines have been generated during the template instantiation 
+		// we can add the subroutine signatures to the header here.
 		outCode.add("");
-//		outCode.add("// Subroutines");
-		for (ArrayList<String> sub : subList) {
-			// The first line will contain the information to be placed in the
-			// header file for this environ machine object
-			String firstLine = sub.get(0);
-			headerInfo.functionDeclarations.add(firstLine + ";");
-//			outCode.addAll(sub);
-			outCode.add("");
+		if (subList.size() > 0) {
+			ClassHeaderInformation headerInfo = new ClassHeaderInformation();
+			headerInfo.setClassName(actualSource.getName());
+			for (ArrayList<String> sub : subList) {
+				// The first line will contain the information to be placed in
+				// the header file for this environ machine object
+				for (String s : sub) {
+					headerInfo.getFunctionDeclarations().add(s + ";");
+					outCode.add("");
+				}
+			}
+			translationManager.addClassHeaderInformation(headerInfo);
 		}
-
-		translationManager.addClassHeaderInformation(headerInfo);
-
 		return outCode;
 	}
-
-//	private void processVariableDecls(ArrayList<String> outCode) {
-//		// Add the instance variable references
-//		outCode.add("// Variables and constants");
-//		// we need to add declarations, like "int i[integerArraySize];" for each
-//		// fmi array type
-//		String machineName = actualSource.getMachineName();
-//		List<DocumentRoot> docs = ModelDescriptionManager.getDefault()
-//				.getDocumentRoot();
-//		// find the document root for this IL1 protected
-//		RealType1 r = null;
-//		IntegerType i = null;
-//		BooleanType b = null;
-//		StringType s = null;
-//		for (DocumentRoot docRoot : docs) {
-//			if (docRoot.getFmiModelDescription().getModelName()
-//					.equals(machineName)) {
-//				// we have found the related modelDescription file, get the
-//				// scalars
-//				EList<FmiScalarVariable> scalars = docRoot
-//						.getFmiModelDescription().getModelVariables()
-//						.getScalarVariable();
-//				// each of the scalars get set to a non-null value to output
-//				// an an FMI array declaration;
-//				for (FmiScalarVariable scalar : scalars) {
-//					if (r == null)
-//						r = scalar.getReal();
-//					if (i == null)
-//						i = scalar.getInteger();
-//					if (b == null)
-//						b = scalar.getBoolean();
-//					if (s == null)
-//						s = scalar.getString();
-//					// get the variable name and value reference into a
-//					// declaration.
-//					outCode.add("fmiValueReference " + scalar.getName() + "_"
-//							+ machineName + "_ = " + scalar.getValueReference()
-//							+ ";");
-//				}
-//				// when we are done iterating through the scalars we can quit
-//				// the search
-//				break;
-//			}
-//		}
-//
-//		if (r != null)
-//			outCode.add("fmiReal i[realArraySize];");
-//		if (b != null)
-//			outCode.add("fmiBoolean b[booleanArraySize];");
-//		if (i != null)
-//			outCode.add("fmiInteger i[integerArraySize];");
-//		if (s != null)
-//			outCode.add("fmiString s[stringArraySize];");
-//
-//		outCode.add("");
-//	}
 
 	private void useTemplates() throws Exception {
 		// where do we want to write to?

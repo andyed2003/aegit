@@ -10,6 +10,7 @@ import org.eventb.codegen.il1.OutParameter;
 import org.eventb.codegen.il1.Parameter;
 import org.eventb.codegen.il1.Protected;
 import org.eventb.codegen.il1.Subroutine;
+import org.eventb.codegen.il1.translator.ClassHeaderInformation;
 import org.eventb.codegen.il1.translator.IL1TranslationException;
 import org.eventb.codegen.il1.translator.IL1TranslationManager;
 import org.eventb.codegen.il1.translator.IL1TranslationUnhandledTypeException;
@@ -28,9 +29,10 @@ import ac.soton.fmusim.codegen.FMUTranslator;
 public class SubroutineListGenerator extends AbstractSubroutineIL1Translator
 		implements IGenerator {
 
-	private Protected actualSource = null;
+	private Protected protectedSource = null;
 	private IL1TranslationManager translationManager = null;
 	private TargetLanguage targetLanguage = null;
+	private ClassHeaderInformation headerInfo = null;
 
 	@Override
 	public List<String> generate(IGeneratorData data)
@@ -40,7 +42,7 @@ public class SubroutineListGenerator extends AbstractSubroutineIL1Translator
 		List<Object> dataList = data.getDataList();
 		for (Object obj : dataList) {
 			if (obj instanceof Protected) {
-				actualSource = (Protected) obj;
+				protectedSource = (Protected) obj;
 			} else {
 				if (obj instanceof IL1TranslationManager) {
 					translationManager = (IL1TranslationManager) obj;
@@ -49,19 +51,42 @@ public class SubroutineListGenerator extends AbstractSubroutineIL1Translator
 				}
 			}
 		}
-
+		// These subroutines all belong to one shared machine/object, so they
+		// have a common c source file, and also header file. Lets get/create a header, and store
+		// the generated subroutines after processing.
+		ArrayList<ClassHeaderInformation> headerList = translationManager.getClassHeaderInformation();
+		// look for an existing header for the class
+		boolean found = false;
+		for(ClassHeaderInformation classHeader: headerList){
+			String className = classHeader.getClassName();
+			if(className.equals(protectedSource.getName())){
+				headerInfo = classHeader;
+				// save the headers, this will be used later on
+				found = true;
+				break;
+			}
+		}
+		
+		// if the header did not exist create a new one
+		if(!found){
+			headerInfo = new ClassHeaderInformation();
+			headerInfo.setClassName(protectedSource.getName());
+			translationManager.addClassHeaderInformation(headerInfo);
+		}
+		// now process the subroutines
 		processSubroutines(outCode);
-
+		
 		return outCode;
 	}
 
 	private void processSubroutines(List<String> outCode)
 			throws IL1TranslationException,
 			IL1TranslationUnhandledTypeException {
-		EList<Subroutine> subroutines = actualSource.getSubroutines();
+		EList<Subroutine> subroutines = protectedSource.getSubroutines();
 		for (Subroutine subroutine : subroutines) {
-			outCode.addAll(translate(subroutine, translationManager,
-					targetLanguage));
+			ArrayList<String> translate = translate(subroutine,
+					translationManager, targetLanguage);
+			outCode.addAll(translate);
 		}
 	}
 
@@ -145,10 +170,17 @@ public class SubroutineListGenerator extends AbstractSubroutineIL1Translator
 
 			// Uniquely identify each event name using the machine name
 			outCode.add("");
-			outCode.add("fmiStatus " + machineName + "_"
-					+ communicationDirection + fmiTypeName + "("
-					+ fmiAPIparameters + ")");
+			String inOutSignature = "fmiStatus "
+					+ communicationDirection.toLowerCase() + fmiTypeName + "("
+					+ fmiAPIparameters + ")";
+			outCode.add(inOutSignature);
 			outCode.add("{"); // open function
+
+			// This is where we store the function Declaration that goes into
+			// the
+			// header for the current C file.
+			headerInfo.getFunctionDeclarations().add(
+					inOutSignature + ";");
 
 			// Guards
 			if (!guardList.equals("")) {
@@ -192,8 +224,12 @@ public class SubroutineListGenerator extends AbstractSubroutineIL1Translator
 					+ " fmiReal communicationStepSize, fmiBoolean noSetFMUStatePriorToCurrentPoint";
 
 			// Uniquely identify each event name using the machine name
-			outCode.add("fmiStatus " + machineName + "_" + "fmiDoStep("
-					+ fmiAPIparameters + ")");
+			String doStepSignature = "fmiStatus fmiDoStep(" + fmiAPIparameters
+					+ ")";
+			// This is where we store the function Declaration that goes into
+			// the header for the current C file.
+			headerInfo.getFunctionDeclarations().add(doStepSignature + ";");
+			outCode.add(doStepSignature);
 			outCode.add("{"); // open function
 
 			// Guards
@@ -259,9 +295,9 @@ public class SubroutineListGenerator extends AbstractSubroutineIL1Translator
 				.getVariableRefArrayName(fmiTypeName);
 		List<String> newCode = new ArrayList<String>();
 		newCode.add("// for our initial work we return all values in the array");
-		newCode.add("for(int idx = 0; idx < " + fmiTypeName.toLowerCase()
-				+ "ArraySize; idx = idx + 1){");
-		newCode.add("value[ idx ] = c -> " + variableArrayRef + " [ idx ];");
+		newCode.add("for(int idx = 0; idx < nvr; idx = idx + 1){");
+		newCode.add("value[ vr[idx] ] = c -> " + variableArrayRef
+				+ " [ vr[idx] ];");
 		newCode.add("}");
 		return newCode;
 	}
@@ -273,9 +309,9 @@ public class SubroutineListGenerator extends AbstractSubroutineIL1Translator
 				.getVariableRefArrayName(fmiTypeName);
 		List<String> newCode = new ArrayList<String>();
 		newCode.add("// for our initial work we set all values in the array");
-		newCode.add("for(int idx = 0; idx < " + fmiTypeName.toLowerCase()
-				+ "ArraySize; idx = idx + 1){");
-		newCode.add("c -> "+variableArrayRef + " [ idx ] = " + "value[ idx ];");
+		newCode.add("for(int idx = 0; idx < nvr; idx = idx + 1){");
+		newCode.add("c -> " + variableArrayRef + " [ vr[idx] ] = "
+				+ "value[ vr[idx] ];");
 		newCode.add("}");
 		return newCode;
 	}

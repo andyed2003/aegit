@@ -123,7 +123,6 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			"FMI_C");
 	// The modelDescription file, as an emf model.
 	private ModelDescriptionManager modelDescriptionsManager = new ModelDescriptionManager();
-	private Protected currentProtected;
 	// Keep a local count here value references of variable arrays.
 	// This is reset to zero for each machine.
 	private int realVariableCount = 0;
@@ -425,25 +424,6 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		// FMI API at a later date.
 		il1TranslationManager
 				.addIncludeStatement("#include \"fakeFMIDecls.h\"");
-//		boolean hasBool = false;
-//		TreeIterator<EObject> programContentList = program.eAllContents();
-//		while (programContentList.hasNext()) {
-//			EObject obj = programContentList.next();
-//			if (obj instanceof Declaration) {
-//				Declaration decl = (Declaration) obj;
-//				if (decl.getType().equals(CodeGenTaskingUtils.BOOL_SYMBOL)) {
-//					hasBool = true;
-//					break;
-//				}
-//			}
-//		}
-//		// If we have any boolean variable then add the BOOL definitions
-//		if (hasBool) {
-//			// Output OpenMP blocking
-//			il1TranslationManager.addIncludeStatement("typedef int BOOL;");
-//			il1TranslationManager.addIncludeStatement("#define TRUE 1");
-//			il1TranslationManager.addIncludeStatement("#define FALSE 0");
-//		}
 		ArrayList<String> code = null;
 		// Translation Rules
 		Map<IProject, List<ITranslationRule>> translationRules = loadTranslatorRules();
@@ -456,8 +436,6 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			// make the file system ready.
 			String newDirectoryPath = generatedSourceFolder.getRawLocation()
 					.toString() + File.separatorChar;
-			ArrayList<ClassHeaderInformation> headerInfo = il1TranslationManager
-					.getClassHeaderInformation();
 			EList<Protected> protectedList = program.getProtected();
 			// TRANSLATE EACH protected object
 			for (Protected p : protectedList) {
@@ -465,13 +443,12 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 						getTargetLanguage());
 				code.add(0, "#include \"" + COMMON_HEADER_FULL + "\"");
 				code.add("// EndProtected");
-				currentProtected = p;
-
 				// Generate the header files.
 				// Each protected file just includes "common.h" which includes the other
 				// files.
 				ArrayList<String> globalDecls = new ArrayList<String>();
-
+				ArrayList<ClassHeaderInformation> headerInfo = il1TranslationManager
+						.getClassHeaderInformation();
 				generateHeaders(headerInfo, newDirectoryPath, il1TranslationManager,
 						globalDecls);
 			}
@@ -536,10 +513,6 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			// statement.
 			lineNumber = getCodeBlock(codeToSave, lineNumber,
 					"// EndProtected", protectedCode);
-			// Get the protected name
-			String name = currentProtected.getMachineName();
-//			CodeFiler.getDefault().save(protectedCode, directoryName,
-//					name + ".c");
 		}
 		// Generate the header files.
 		// Each protected file just includes "common.h" which includes the other
@@ -555,21 +528,21 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		// Now sort out header files
 		// For common header
 		ClassHeaderInformation common = new ClassHeaderInformation();
-		common.className = COMMON_HEADER_PARTIAL;
+		common.setClassName(COMMON_HEADER_PARTIAL);
 
-		// wont use initial now, will add headers manually, then add common
+		// Add headers manually, then add common
 		// class for compiler specific code
-		common.functionDeclarations.addAll(translationManager
+		common.getFunctionDeclarations().addAll(translationManager
 				.getIncludeStatements());
 
 		// Add any global declarations
-		common.functionDeclarations.addAll(globalDecls);
+		common.getFunctionDeclarations().addAll(globalDecls);
 
 		// Add the header files to include in the initial data
 		for (ClassHeaderInformation c : headerInformation) {
-			String headerName = c.className + ".h";
+			String headerName = c.getClassName() + ".h";
 			if (!headerName.equalsIgnoreCase("common.h")) {
-				common.functionDeclarations.add("#include \"" + headerName
+				common.getFunctionDeclarations().add("#include \"" + headerName
 						+ "\"");
 			}
 		}
@@ -587,15 +560,15 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 
 		// Save the header files
 		for (ClassHeaderInformation c : headerInformation) {
-			String headerName = c.className;
-			String headerPreBlock = c.className.toUpperCase() + "_H";
+			String headerName = c.getClassName();
+			String headerPreBlock = c.getClassName().toUpperCase() + "_H";
 
 			ArrayList<String> headerCode = new ArrayList<String>();
 			// headerCode.add(codeGenerateTimestamp);
 			headerCode.add("#ifndef " + headerPreBlock);
 			headerCode.add("#define " + headerPreBlock);
 
-			for (String i : c.functionDeclarations) {
+			for (String i : c.getFunctionDeclarations()) {
 				headerCode.add(i);
 			}
 

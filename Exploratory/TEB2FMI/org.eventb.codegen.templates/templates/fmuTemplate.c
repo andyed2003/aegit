@@ -7,10 +7,12 @@
 fmiComponent *modelInstances[MaxFMUInstances]; // start of with an empty array of components
 int conInstanceCount = 0;
 
-// Subroutines
+//## <variableDeclarations>  -- generate variable declarations here
 
-//## <fmiInstantiate>
+//## <fmiInstantiate.c>     -- expand template here
 
-//## <subroutineList>
+// Subroutines Generated from Events
+
+//## <subroutineList>		-- generate subroutine implementations here
 
 
