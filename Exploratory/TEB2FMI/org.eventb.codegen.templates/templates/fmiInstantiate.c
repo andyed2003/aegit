@@ -1,3 +1,4 @@
+//## <addToHeader>
 fmiComponent *fmiInstantiateSlave(fmiString instanceName, fmiString fmuGUID,
 		fmiString fmuResourceLocation, const fmiCallbackFunctions* functions,
 		fmiBoolean visible, fmiBoolean loggingOn) {

@@ -15,6 +15,10 @@
             GeneratorClass="org.eventb.codegen.template.extensions.SubroutineListGenerator"
             tag="subroutineList">
       </templateGenerator>
+      <templateGenerator
+            GeneratorClass="org.eventb.codegen.template.extensions.AddFunctionToHeaderUtil"
+            tag="addToHeader">
+      </templateGenerator>
    </extension>
    <extension
          point="org.eventb.codegen.templates.tag">

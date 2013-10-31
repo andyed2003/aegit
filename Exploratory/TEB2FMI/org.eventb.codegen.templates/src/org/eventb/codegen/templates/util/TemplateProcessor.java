@@ -128,10 +128,14 @@ public class TemplateProcessor {
 				List<String> newLines = null;
 				// if we have a keyword, pass it on the the TemplateHelper
 				if (line.contains(TemplateHelper.BEGIN_COMMENT_CHARS)) {
-					String keyword = getKeyword(line);
+					String tagword = getTagword(line);
 					TemplateHelper templateHelper = new TemplateHelper(data);
 					templateHelper.setChildTemplateMap(templateFolderContentMap);
-					newLines = templateHelper.generate(keyword);
+					// add the reader to the data - so it can be used down stream
+					data.getDataList().add(bufferedReader);
+					newLines = templateHelper.generate(tagword);
+					// remove when done
+					data.getDataList().remove(bufferedReader);
 				}
 				if(newLines == null){
 					tempArrayList.add(line);
@@ -145,7 +149,7 @@ public class TemplateProcessor {
 		return tempArrayList;
 	}
 
-	private String getKeyword(String line) {
+	private String getTagword(String line) {
 		int firstDelimiter = line.indexOf("<") + 1;
 		int lastDelimiter = line.indexOf(">");
 		String keyword = line.substring(firstDelimiter, lastDelimiter);

@@ -31,7 +31,9 @@ public class TemplateHelper {
 	private HashMap<String, File> templateFolderContentMap = null;
 	// a data object that can be used in the executable generator
 	private IGeneratorData data = null;
-
+	// keep track of current and previous templates
+	
+	private File templateFile = null;
 	// we only need to set up the generatorMap once, since we
 	// make it a class variables.
 	static {
@@ -122,15 +124,19 @@ public class TemplateHelper {
 
 	}
 
-	public List<String> generate(String keyword) throws Exception {
+	public List<String> generate(String tagword) throws Exception {
 		List<String> newLines = new ArrayList<String>();
-		File childTemplateFile = templateFolderContentMap.get(keyword);
-		// if we have a child template then translate it.
-		if (childTemplateFile != null) {
+		
+		// set previous from the last iteration
+		templateFile = templateFolderContentMap.get(tagword);
+		
+		
+		// if we have a template file then translate it.
+		if (templateFile != null) {
 			// We have found a template, in a template. Process it.
 			// Create a bufferedReader, and use the default templateReader
 			// to instantiate it ....
-			FileReader reader = new FileReader(childTemplateFile);
+			FileReader reader = new FileReader(templateFile);
 			BufferedReader bufferedReader = new BufferedReader(reader);
 			TemplateProcessor templateProcessor = TemplateProcessor
 					.getDefault();
@@ -138,10 +144,12 @@ public class TemplateHelper {
 					bufferedReader, templateFolderContentMap);
 
 		} else {
-			// else get the generator from the generator target map using the
-			// keyword
-			IGenerator generator = generatorTagMap.get(keyword);
+			// else we have a keyword in a template. Get the generator 
+			// from the generatorTargetMap using the keyword.
+			// Add this helper to the data
+			IGenerator generator = generatorTagMap.get(tagword);
 			if (generator != null) {
+				// add the helper, run the generator, then remove the helper.
 				newLines = generator.generate(data);
 			}
 		}
@@ -151,6 +159,10 @@ public class TemplateHelper {
 
 	public void setChildTemplateMap(HashMap<String, File> childTemplateMap_) {
 		templateFolderContentMap = childTemplateMap_;
+	}
+
+	public File getTemplateFile() {
+		return templateFile;
 	}
 
 }
