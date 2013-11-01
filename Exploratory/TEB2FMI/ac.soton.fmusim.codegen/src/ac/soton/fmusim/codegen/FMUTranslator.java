@@ -602,7 +602,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		return ""; // something went wrong
 	}
 
-	public static String updateVariableName(String action, Declaration d,
+	public static String updatePointerVariableName(String action, Declaration d,
 			IL1TranslationManager translationManager)
 			throws IL1TranslationException {
 		action = translationManager.tokenizeVariablesOperators(action);
@@ -623,6 +623,28 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		return newAction;
 	}
 
+	public static String updateFieldVariableName(String action, Declaration d,
+			IL1TranslationManager translationManager)
+			throws IL1TranslationException {
+		action = translationManager.tokenizeVariablesOperators(action);
+		String[] actions = action.split(" ");
+		String newAction = "";
+		String varName = d.getIdentifier() + "_" + d.getComponentName();
+
+		String varType = FMUTranslator.getVariableRefArrayName(d);
+
+		for (String a : actions) {
+			if (a.equals(varName)) {
+				String replacement = "c." + varType + " [" + varName + "_]";
+				newAction = newAction + replacement + " ";
+			} else {
+				newAction = newAction + a + " ";
+			}
+		}
+		return newAction;
+	}
+
+	
 	// Given an eventB type, return its FMI equivalent
 	public static String getFMITypeString(Type eventBType) {
 		String fmiTypeString = null;

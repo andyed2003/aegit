@@ -5,6 +5,8 @@ import java.util.List;
 
 import org.eclipse.emf.common.util.EList;
 import org.eventb.codegen.il1.Protected;
+import org.eventb.codegen.il1.translator.ClassHeaderInformation;
+import org.eventb.codegen.il1.translator.IL1TranslationManager;
 import org.eventb.codegen.templates.IGenerator;
 import org.eventb.codegen.templates.IGeneratorData;
 
@@ -14,81 +16,59 @@ import FmiModel.FmiScalarVariable;
 import FmiModel.IntegerType;
 import FmiModel.RealType1;
 import FmiModel.StringType;
+import ac.soton.fmusim.codegen.FMUTranslatorHelper;
 import ac.soton.fmusim.codegen.ModelDescriptionManager;
 
 public class VariableDeclarationsGenerator implements IGenerator {
 
-	private Protected actualSource = null;
+	private Protected protectedSource = null;
+	private ClassHeaderInformation headerInfo = null;
 
 	@Override
 	public List<String> generate(IGeneratorData data) {
+		IL1TranslationManager translationManager = null;
 		List<String> outCode = new ArrayList<String>();
 		List<Object> dataList = data.getDataList();
 		for (Object obj : dataList) {
 			if (obj instanceof Protected) {
-				actualSource = (Protected) obj;
-				break;
+				protectedSource = (Protected) obj;
+			} else if (obj instanceof IL1TranslationManager) {
+				translationManager = (IL1TranslationManager) obj;
 			}
 		}
+		headerInfo  = FMUTranslatorHelper.setupHeader(protectedSource, translationManager);
 		processVariableDecls(outCode);
 		return outCode;
 	}
 
-	// This is the code from the existing code generator,
-	// transplanted into a method in this generator.
+	// Add an FMI ValueReference declaration and initialisation
+	// for each variable in the C target FMU's header. 
 	private void processVariableDecls(List<String> outCode) {
-		// Add the instance variable references
-		outCode.add("// Variables and constants");
-		// we need to add declarations, like "int i[integerArraySize];" for each
-		// fmi array type
-		String machineName = actualSource.getMachineName();
+		String machineName = protectedSource.getMachineName();
 		List<DocumentRoot> docs = ModelDescriptionManager.getDefault()
 				.getDocumentRoot();
 		// find the document root for this IL1 protected
-		RealType1 r = null;
-		IntegerType i = null;
-		BooleanType b = null;
-		StringType s = null;
 		for (DocumentRoot docRoot : docs) {
 			if (docRoot.getFmiModelDescription().getModelName()
 					.equals(machineName)) {
-				// we have found the related modelDescription file, get the
-				// scalars
+				// we have found the related modelDescription file, 
+				// get the scalars.
 				EList<FmiScalarVariable> scalars = docRoot
 						.getFmiModelDescription().getModelVariables()
 						.getScalarVariable();
-				// for each of the scalars get set to a non-null value to output
-				// an an FMI array declaration;
+				// Each of the scalars give rise to an FMI ValueReference
 				for (FmiScalarVariable scalar : scalars) {
-					if (r == null)
-						r = scalar.getReal();
-					if (i == null)
-						i = scalar.getInteger();
-					if (b == null)
-						b = scalar.getBoolean();
-					if (s == null)
-						s = scalar.getString();
 					// get the variable name and value reference into a
-					// declaration.
-					outCode.add("fmiValueReference " + scalar.getName() + "_"
+					// declaration, and put it in the header.
+					String headerString = "fmiValueReference " + scalar.getName() + "_"
 							+ machineName + "_ = " + scalar.getValueReference()
-							+ ";");
+							+ ";";
+					headerInfo.getFunctionDeclarations().add(headerString);
 				}
 				// when we are done iterating through the scalars we can quit
 				// the search
 				break;
 			}
 		}
-
-		if (r != null)
-			outCode.add("fmiReal i[realArraySize];");
-		if (b != null)
-			outCode.add("fmiBoolean b[booleanArraySize];");
-		if (i != null)
-			outCode.add("fmiInteger i[integerArraySize];");
-		if (s != null)
-			outCode.add("fmiString s[stringArraySize];");
-
-		outCode.add("");
 	}
 }

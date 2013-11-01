@@ -54,7 +54,7 @@ public class InitialisationsListGenerator implements IGenerator {
 				}
 				// update the variable names in the action to the arrayReference style.
 				String tmpAction = varName + "_" + protectedName + " = " + initialValue + ";";
-				String initialisation = "\t\t" + FMUTranslator.updateVariableName(tmpAction, decl,
+				String initialisation = "\t\t" + FMUTranslator.updateFieldVariableName(tmpAction, decl,
 						translationManager);
 				outCode.add(initialisation);
 			}

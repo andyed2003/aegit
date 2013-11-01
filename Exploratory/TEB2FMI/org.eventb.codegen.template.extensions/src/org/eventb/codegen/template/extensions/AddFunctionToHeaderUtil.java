@@ -11,6 +11,8 @@ import org.eventb.codegen.il1.translator.IL1TranslationManager;
 import org.eventb.codegen.templates.IGenerator;
 import org.eventb.codegen.templates.IGeneratorData;
 
+import ac.soton.fmusim.codegen.FMUTranslatorHelper;
+
 public class AddFunctionToHeaderUtil implements IGenerator {
 
 	private ClassHeaderInformation headerInfo = null;
@@ -38,48 +40,26 @@ public class AddFunctionToHeaderUtil implements IGenerator {
 			}
 		}
 
-		
 		if (brList.size() == 0) {
 			throw new IL1TranslationException(
 					"No bufferedReader found in generator: " + this);
 
 		}
 		// We need to get the last reader that was added, readers may be nested.
-				bufferedReader = brList.get(brList.size()-1);
-				
-				
-		// These subroutines all belong to one shared machine/object, so they
-		// have a common c source file, and also header file. Lets get/create a
-		// header, and store
-		// the generated subroutines after processing.
-		ArrayList<ClassHeaderInformation> headerList = translationManager
-				.getClassHeaderInformation();
-		// look for an existing header for the class
-		boolean found = false;
-		for (ClassHeaderInformation classHeader : headerList) {
-			String className = classHeader.getClassName();
-			if (className.equals(protectedSource.getName())) {
-				headerInfo = classHeader;
-				// save the headers, this will be used later on
-				found = true;
-				break;
-			}
-		}
+		bufferedReader = brList.get(brList.size() - 1);
 
-		// if the header did not exist create a new one
-		if (!found) {
-			headerInfo = new ClassHeaderInformation();
-			headerInfo.setClassName(protectedSource.getName());
-			translationManager.addClassHeaderInformation(headerInfo);
-		}
+		// We will need to find or create a new header for this C target.
+		headerInfo = FMUTranslatorHelper.setupHeader(protectedSource, translationManager);
 
 		List<String> signature = new ArrayList<String>();
 		boolean markedSupported = bufferedReader.markSupported();
-		if(!markedSupported){
-			throw new IL1TranslationException("Mark not supported, cannot reset the" +
-					" BufferedReader. New implementation required in: " + this);
+		if (!markedSupported) {
+			throw new IL1TranslationException(
+					"Mark not supported, cannot reset the"
+							+ " BufferedReader. New implementation required in: "
+							+ this);
 		}
-		
+
 		bufferedReader.mark(1024);
 		String line = bufferedReader.readLine();
 		while (line != null) {
@@ -87,7 +67,7 @@ public class AddFunctionToHeaderUtil implements IGenerator {
 			if (line.contains(")")) {
 				// get the line up to the closing parenthesis
 				int end = line.indexOf(")");
-				String substr = line.substring(0, end+1);
+				String substr = line.substring(0, end + 1);
 				signature.add(substr);
 				break;
 			} else {
@@ -98,21 +78,51 @@ public class AddFunctionToHeaderUtil implements IGenerator {
 		bufferedReader.reset();
 
 		// add a semi-colon to the last segment
-		String last = signature.get(signature.size()-1);
-		signature.remove(signature.size()-1);
+		String last = signature.get(signature.size() - 1);
+		signature.remove(signature.size() - 1);
 		last = last + ";";
 		signature.add(last);
-		
-		//flatten to a single declaration.
+
+		// flatten to a single declaration.
 		String flattenedSignature = new String("");
-		for(String s: signature){
+		for (String s : signature) {
 			flattenedSignature = flattenedSignature + s.trim();
 		}
-		
+
 		headerInfo.getFunctionDeclarations().add(flattenedSignature);
 
 		List<String> outCode = new ArrayList<>();
 		return outCode;
 	}
 
+//	// A method to find or create a new header for this C target.
+//	private ClassHeaderInformation setupHeader(Protected protectedSource,
+//			IL1TranslationManager translationManager) {
+//		ClassHeaderInformation headerInfo_ = null;
+//		// These subroutines all belong to one shared machine/object, so they
+//		// have a common c source file, and also header file. Lets get/create a
+//		// header, and store
+//		// the generated subroutines after processing.
+//		ArrayList<ClassHeaderInformation> headerList = translationManager
+//				.getClassHeaderInformation();
+//		// look for an existing header for the class
+//		boolean found = false;
+//		for (ClassHeaderInformation classHeader : headerList) {
+//			String className = classHeader.getClassName();
+//			if (className.equals(protectedSource.getName())) {
+//				headerInfo_ = classHeader;
+//				// save the headers, this will be used later on
+//				found = true;
+//				break;
+//			}
+//		}
+//
+//		// if the header did not exist create a new one
+//		if (!found) {
+//			headerInfo_ = new ClassHeaderInformation();
+//			headerInfo_.setClassName(protectedSource.getName());
+//			translationManager.addClassHeaderInformation(headerInfo_);
+//		}
+//		return headerInfo_;
+//	}
 }

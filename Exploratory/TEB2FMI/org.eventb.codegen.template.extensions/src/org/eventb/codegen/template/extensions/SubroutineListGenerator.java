@@ -294,9 +294,8 @@ public class SubroutineListGenerator extends AbstractSubroutineIL1Translator
 		String variableArrayRef = FMUTranslator
 				.getVariableRefArrayName(fmiTypeName);
 		List<String> newCode = new ArrayList<String>();
-		newCode.add("// for our initial work we return all values in the array");
 		newCode.add("for(int idx = 0; idx < nvr; idx = idx + 1){");
-		newCode.add("value[ vr[idx] ] = c -> " + variableArrayRef
+		newCode.add("value[ vr[idx] ] = c." + variableArrayRef
 				+ " [ vr[idx] ];");
 		newCode.add("}");
 		return newCode;
@@ -308,9 +307,8 @@ public class SubroutineListGenerator extends AbstractSubroutineIL1Translator
 		String variableArrayRef = FMUTranslator
 				.getVariableRefArrayName(fmiTypeName);
 		List<String> newCode = new ArrayList<String>();
-		newCode.add("// for our initial work we set all values in the array");
 		newCode.add("for(int idx = 0; idx < nvr; idx = idx + 1){");
-		newCode.add("c -> " + variableArrayRef + " [ vr[idx] ] = "
+		newCode.add("c." + variableArrayRef + " [ vr[idx] ] = "
 				+ "value[ vr[idx] ];");
 		newCode.add("}");
 		return newCode;
@@ -333,7 +331,7 @@ public class SubroutineListGenerator extends AbstractSubroutineIL1Translator
 			// for each declaration
 			for (Declaration d : decls) {
 				// modify the statement where we find the declared variable
-				modifiedCode = FMUTranslator.updateVariableName(modifiedCode,
+				modifiedCode = FMUTranslator.updateFieldVariableName(modifiedCode,
 						d, translationManager);
 			}
 			// if the line has been changed
