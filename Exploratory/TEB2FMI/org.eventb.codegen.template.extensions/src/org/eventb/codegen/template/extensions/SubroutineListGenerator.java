@@ -179,7 +179,7 @@ public class SubroutineListGenerator extends AbstractSubroutineIL1Translator
 			// This is where we store the function Declaration that goes into
 			// the
 			// header for the current C file.
-			headerInfo.getFunctionDeclarations().add(
+			headerInfo.getHeaderEntries().add(
 					inOutSignature + ";");
 
 			// Guards
@@ -228,7 +228,7 @@ public class SubroutineListGenerator extends AbstractSubroutineIL1Translator
 					+ ")";
 			// This is where we store the function Declaration that goes into
 			// the header for the current C file.
-			headerInfo.getFunctionDeclarations().add(doStepSignature + ";");
+			headerInfo.getHeaderEntries().add(doStepSignature + ";");
 			outCode.add(doStepSignature);
 			outCode.add("{"); // open function
 
@@ -294,7 +294,8 @@ public class SubroutineListGenerator extends AbstractSubroutineIL1Translator
 		String variableArrayRef = FMUTranslator
 				.getVariableRefArrayName(fmiTypeName);
 		List<String> newCode = new ArrayList<String>();
-		newCode.add("for(int idx = 0; idx < nvr; idx = idx + 1){");
+		newCode.add("int idx = 0;");
+		newCode.add("for(; idx < nvr; idx = idx + 1){");
 		newCode.add("value[ vr[idx] ] = c." + variableArrayRef
 				+ " [ vr[idx] ];");
 		newCode.add("}");
@@ -307,7 +308,8 @@ public class SubroutineListGenerator extends AbstractSubroutineIL1Translator
 		String variableArrayRef = FMUTranslator
 				.getVariableRefArrayName(fmiTypeName);
 		List<String> newCode = new ArrayList<String>();
-		newCode.add("for(int idx = 0; idx < nvr; idx = idx + 1){");
+		newCode.add("int idx = 0;");
+		newCode.add("for(; idx < nvr; idx = idx + 1){");
 		newCode.add("c." + variableArrayRef + " [ vr[idx] ] = "
 				+ "value[ vr[idx] ];");
 		newCode.add("}");

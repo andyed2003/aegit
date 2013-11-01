@@ -63,7 +63,7 @@ public class VariableDeclarationsGenerator implements IGenerator {
 					String headerString = "fmiValueReference " + scalar.getName() + "_"
 							+ machineName + "_ = " + scalar.getValueReference()
 							+ ";";
-					headerInfo.getFunctionDeclarations().add(headerString);
+					headerInfo.getHeaderEntries().add(headerString);
 				}
 				// when we are done iterating through the scalars we can quit
 				// the search

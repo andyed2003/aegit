@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ASCII"?>
+<fmiModelDescription author="University of Southampton" fmiVersion="2.0" generationDateAndTime="2013-11-01T12:06:52.385Z" generationTool="EB2FMU" guid="GUID_controllerImpl_2013-11-01T12:06:52.385Z" modelName="controllerImpl">
+  <CoSimulation/>
+  <ModelVariables>
+    <ScalarVariable name="a" valueReference="0">
+      <Integer/>
+    </ScalarVariable>
+    <ScalarVariable name="used_a" valueReference="1">
+      <Integer/>
+    </ScalarVariable>
+  </ModelVariables>
+</fmiModelDescription>

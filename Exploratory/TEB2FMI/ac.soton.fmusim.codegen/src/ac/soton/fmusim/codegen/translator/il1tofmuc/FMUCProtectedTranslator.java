@@ -87,7 +87,7 @@ public class FMUCProtectedTranslator extends AbstractProtectedIL1Translator {
 				// The first line will contain the information to be placed in
 				// the header file for this environ machine object
 				for (String s : sub) {
-					headerInfo.getFunctionDeclarations().add(s + ";");
+					headerInfo.getHeaderEntries().add(s + ";");
 					outCode.add("");
 				}
 			}

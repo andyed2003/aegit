@@ -99,7 +99,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 	public static final String GENERATED_SRC_FOLDER = "src";
 	public static final String TEMPLATES_SRC_FOLDER = "templates";
 	// The name of the generated header file
-	public static final String COMMON_HEADER_PARTIAL = "Common";
+	public static final String COMMON_HEADER_PARTIAL = "common";
 	public static final String COMMON_HEADER_FULL = COMMON_HEADER_PARTIAL
 			+ ".h";
 	// Declaration of Types handled by the translator.
@@ -533,17 +533,21 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 
 		// Add headers manually, then add common
 		// class for compiler specific code
-		common.getFunctionDeclarations().addAll(translationManager
+		common.getHeaderEntries().addAll(translationManager
 				.getIncludeStatements());
 
 		// Add any global declarations
-		common.getFunctionDeclarations().addAll(globalDecls);
-
+		common.getHeaderEntries().addAll(globalDecls);
+		translationManager.addIncludeStatement("#include <stdlib.h>");
+		// If the C translator (legacy code) has inserted a stdio include
+		// then we will remove it from the common code
+		
+		
 		// Add the header files to include in the initial data
 		for (ClassHeaderInformation c : headerInformation) {
 			String headerName = c.getClassName() + ".h";
 			if (!headerName.equalsIgnoreCase("common.h")) {
-				common.getFunctionDeclarations().add("#include \"" + headerName
+				common.getHeaderEntries().add("#include \"" + headerName
 						+ "\"");
 			}
 		}
@@ -556,10 +560,10 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			commonCode.addAll(formatCode(translationManager
 					.getCompilerDependentExecutableCodeBlock(),
 					translationManager));
-			CodeFiler.getDefault().save(commonCode, directoryName, "Common.c");
+			CodeFiler.getDefault().save(commonCode, directoryName, "common.c");
 		}
 
-		// Save the header files
+		// Save the header files for this FMU
 		for (ClassHeaderInformation c : headerInformation) {
 			String headerName = c.getClassName();
 			String headerPreBlock = c.getClassName().toUpperCase() + "_H";
@@ -569,7 +573,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			headerCode.add("#ifndef " + headerPreBlock);
 			headerCode.add("#define " + headerPreBlock);
 
-			for (String i : c.getFunctionDeclarations()) {
+			for (String i : c.getHeaderEntries()) {
 				headerCode.add(i);
 			}
 

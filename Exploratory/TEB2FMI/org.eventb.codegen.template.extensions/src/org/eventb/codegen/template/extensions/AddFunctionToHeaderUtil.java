@@ -18,7 +18,8 @@ public class AddFunctionToHeaderUtil implements IGenerator {
 	private ClassHeaderInformation headerInfo = null;
 	private BufferedReader bufferedReader = null;
 
-	// This generator adds a header for the line of source code.
+	// This generator adds a header entry for the function in
+	// the next line of source code
 	@Override
 	public List<String> generate(IGeneratorData data) throws Exception {
 		Protected protectedSource = null;
@@ -89,40 +90,9 @@ public class AddFunctionToHeaderUtil implements IGenerator {
 			flattenedSignature = flattenedSignature + s.trim();
 		}
 
-		headerInfo.getFunctionDeclarations().add(flattenedSignature);
+		headerInfo.getHeaderEntries().add(flattenedSignature);
 
 		List<String> outCode = new ArrayList<>();
 		return outCode;
 	}
-
-//	// A method to find or create a new header for this C target.
-//	private ClassHeaderInformation setupHeader(Protected protectedSource,
-//			IL1TranslationManager translationManager) {
-//		ClassHeaderInformation headerInfo_ = null;
-//		// These subroutines all belong to one shared machine/object, so they
-//		// have a common c source file, and also header file. Lets get/create a
-//		// header, and store
-//		// the generated subroutines after processing.
-//		ArrayList<ClassHeaderInformation> headerList = translationManager
-//				.getClassHeaderInformation();
-//		// look for an existing header for the class
-//		boolean found = false;
-//		for (ClassHeaderInformation classHeader : headerList) {
-//			String className = classHeader.getClassName();
-//			if (className.equals(protectedSource.getName())) {
-//				headerInfo_ = classHeader;
-//				// save the headers, this will be used later on
-//				found = true;
-//				break;
-//			}
-//		}
-//
-//		// if the header did not exist create a new one
-//		if (!found) {
-//			headerInfo_ = new ClassHeaderInformation();
-//			headerInfo_.setClassName(protectedSource.getName());
-//			translationManager.addClassHeaderInformation(headerInfo_);
-//		}
-//		return headerInfo_;
-//	}
 }
