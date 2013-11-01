@@ -7,6 +7,8 @@ int conInstanceCount = 0;
 
 //## <fmiInstantiate.c>     -- expand template here
 
+//## <fmiInitializeSlave.c> -- expand template here
+
 // Subroutines Generated from Events
 
 //## <subroutineList>		-- generate subroutine implementations here
