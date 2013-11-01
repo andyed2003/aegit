@@ -521,6 +521,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 				globalDecls);
 	}
 
+	// Generate the headers for this FMU
 	private void generateHeaders(
 			ArrayList<ClassHeaderInformation> headerInformation,
 			String directoryName, IL1TranslationManager translationManager,

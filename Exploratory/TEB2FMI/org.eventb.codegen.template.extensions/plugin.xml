@@ -22,9 +22,9 @@
    </extension>
    <extension
          point="org.eventb.codegen.templates.tag">
-      <beginCommentCharacters
-            beginCommentCharacters="//##">
-      </beginCommentCharacters>
+      <tagCommentCharacters
+            tagCommentCharacters="//##">
+      </tagCommentCharacters>
    </extension>
 
 </plugin>

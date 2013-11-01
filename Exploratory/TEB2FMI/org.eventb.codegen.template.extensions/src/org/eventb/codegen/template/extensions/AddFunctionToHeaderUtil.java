@@ -74,8 +74,12 @@ public class AddFunctionToHeaderUtil implements IGenerator {
 		}
 
 		List<String> signature = new ArrayList<String>();
-		boolean isMarked = bufferedReader.markSupported();
-
+		boolean markedSupported = bufferedReader.markSupported();
+		if(!markedSupported){
+			throw new IL1TranslationException("Mark not supported, cannot reset the" +
+					" BufferedReader. New implementation required in: " + this);
+		}
+		
 		bufferedReader.mark(1024);
 		String line = bufferedReader.readLine();
 		while (line != null) {
@@ -107,7 +111,8 @@ public class AddFunctionToHeaderUtil implements IGenerator {
 		
 		headerInfo.getFunctionDeclarations().add(flattenedSignature);
 
-		return null;
+		List<String> outCode = new ArrayList<>();
+		return outCode;
 	}
 
 }

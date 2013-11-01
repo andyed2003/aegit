@@ -126,22 +126,24 @@ public class TemplateProcessor {
 				finished = true; // we are at the end of the file.
 			} else {
 				List<String> newLines = null;
+				
 				// if we have a keyword, pass it on the the TemplateHelper
-				if (line.contains(TemplateHelper.BEGIN_COMMENT_CHARS)) {
+				boolean foundComment = line.contains(TemplateHelper.TAG_COMMENT_CHARS);
+				if (foundComment) {
 					String tagword = getTagword(line);
 					TemplateHelper templateHelper = new TemplateHelper(data);
 					templateHelper.setChildTemplateMap(templateFolderContentMap);
 					// add the reader to the data - so it can be used down stream
 					data.getDataList().add(bufferedReader);
 					newLines = templateHelper.generate(tagword);
-					// remove when done
+					// remove the reader when done
 					data.getDataList().remove(bufferedReader);
 				}
-				if(newLines == null){
-					tempArrayList.add(line);
+				if(foundComment){
+					tempArrayList.addAll(newLines);
 				}
 				else{
-					tempArrayList.addAll(newLines);
+					tempArrayList.add(line);
 				}
 			}
 		}

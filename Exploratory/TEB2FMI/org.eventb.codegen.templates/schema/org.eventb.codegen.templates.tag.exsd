@@ -3,7 +3,7 @@
 <schema targetNamespace="org.eventb.codegen.templates" xmlns="http://www.w3.org/2001/XMLSchema">
 <annotation>
       <appinfo>
-         <meta.schema plugin="org.eventb.codegen.templates" id="org.eventb.codegen.templates.tag" name="beginCommentCharacterss"/>
+         <meta.schema plugin="org.eventb.codegen.templates" id="org.eventb.codegen.templates.tag" name="tagCommentCharacters"/>
       </appinfo>
       <documentation>
          [Enter description of this extension point.]
@@ -18,7 +18,7 @@
       </annotation>
       <complexType>
          <sequence>
-            <element ref="beginCommentCharacters"/>
+            <element ref="tagCommentCharacters"/>
          </sequence>
          <attribute name="point" type="string" use="required">
             <annotation>
@@ -47,9 +47,9 @@
       </complexType>
    </element>
 
-   <element name="beginCommentCharacters">
+   <element name="tagCommentCharacters">
       <complexType>
-         <attribute name="beginCommentCharacters" type="string">
+         <attribute name="tagCommentCharacters" type="string">
             <annotation>
                <documentation>
                   

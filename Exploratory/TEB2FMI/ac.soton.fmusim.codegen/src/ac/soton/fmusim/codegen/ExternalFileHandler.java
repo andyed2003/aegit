@@ -58,7 +58,7 @@ public class ExternalFileHandler {
 							} else {
 								outputArrayList.add(line);
 								if (!isTemplate
-										&& line.contains(TemplateHelper.BEGIN_COMMENT_CHARS)) {
+										&& line.contains(TemplateHelper.TAG_COMMENT_CHARS)) {
 									isTemplate = true;
 								}
 							}

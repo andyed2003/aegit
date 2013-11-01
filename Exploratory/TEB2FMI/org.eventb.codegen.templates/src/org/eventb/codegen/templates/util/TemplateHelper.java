@@ -27,7 +27,7 @@ public class TemplateHelper {
 	private static final String TEMPLATE_COMMENT_ID = "org.eventb.codegen.templates.tag";
 	// Map of (keywords X generatorClasses)
 	private static Map<String, IGenerator> generatorTagMap = null;
-	public static String BEGIN_COMMENT_CHARS = null;
+	public static String TAG_COMMENT_CHARS = null;
 	private HashMap<String, File> templateFolderContentMap = null;
 	// a data object that can be used in the executable generator
 	private IGeneratorData data = null;
@@ -104,7 +104,7 @@ public class TemplateHelper {
 					String[] attributeNames = configurationElement.getAttributeNames();
 					// We store the comment.
 					for (int idx = 0; idx < attributeNames.length; idx = idx + 2) {
-						BEGIN_COMMENT_CHARS = configurationElement.getAttribute(attributeNames[idx]);
+						TAG_COMMENT_CHARS = configurationElement.getAttribute(attributeNames[idx]);
 					}
 		
 				} else {
@@ -146,10 +146,9 @@ public class TemplateHelper {
 		} else {
 			// else we have a keyword in a template. Get the generator 
 			// from the generatorTargetMap using the keyword.
-			// Add this helper to the data
 			IGenerator generator = generatorTagMap.get(tagword);
 			if (generator != null) {
-				// add the helper, run the generator, then remove the helper.
+				// run the generator with the data.
 				newLines = generator.generate(data);
 			}
 		}
