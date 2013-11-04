@@ -9,21 +9,22 @@
 #ifndef FAKEFMIDECLS_H_
 #define FAKEFMIDECLS_H_
 
-typedef unsigned int fmiValueReference;
+//typedef unsigned int fmiValueReference;
 typedef double       fmiReal   ;
 typedef int          fmiInteger;
-typedef char         fmiBoolean;
+//typedef char         fmiBoolean;
 typedef const char*  fmiString ;
-typedef enum {
-	fmiOK, fmiWarning, fmiDiscard, fmiError, fmiFatal, fmiPending
-} fmiStatus;
+
+//typedef enum {
+//	fmiOK, fmiWarning, fmiDiscard, fmiError, fmiFatal, fmiPending
+//} fmiStatus;
 
 /* Values for fmiBoolean  */
 #define fmiTrue  1
 #define fmiFalse 0
 
 /* Undefined value for fmiValueReference (largest unsigned int value) */
-#define fmiUndefinedValueReference (fmiValueReference)(-1)
+//#define fmiUndefinedValueReference (fmiValueReference)(-1)
 
 // my fmiComponent
 typedef struct{
@@ -34,9 +35,12 @@ typedef struct{
 	fmiValueReference b[booleanArraySize]; // my fake fmi: array of fmiValueReferences to booleans
 	fmiValueReference r[realArraySize]; // my fake fmi: array of fmiValueReferences to real
 	fmiValueReference s[stringArraySize]; // my fake fmi: array of fmiValueReferences to strings
-} fmiComponent;
+} myfmiComponent;
 
-typedef struct{
 
-} fmiCallbackFunctions;
+//typedef struct{
+//
+//} fmiCallbackFunctions;
+
+
 #endif /* FAKEFMIDECLS_H_ */

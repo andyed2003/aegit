@@ -34,7 +34,7 @@
                      Hans Olsson (Dynasim).
 
 
-   Copyright © 2008-2012, MODELISAR consortium. All rights reserved.
+   Copyright ï¿½ 2008-2012, MODELISAR consortium. All rights reserved.
    This file is licensed by the copyright holders under the BSD License
    (http://www.opensource.org/licenses/bsd-license.html):
 

@@ -1,6 +1,6 @@
 #include "common.h"
 
-fmiComponent modelInstances[MaxFMUInstances]; // start of with an empty array of components
+myfmiComponent modelInstances[MaxFMUInstances]; // start of with an empty array of components
 int conInstanceCount = 0;
 
 //## <variableDeclarations>  -- generate variable declarations here

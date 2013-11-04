@@ -420,6 +420,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		///////////////////////////////////il1TranslationManager.currentTargetLanguage = ;
 		// These are FMU specific headers. The first is for configuration
 		il1TranslationManager.addIncludeStatement("#include \"config.h\"");
+		il1TranslationManager.addIncludeStatement("#include \"fmiFunctions.h\"");
 		// This is for the FakeFMIDecls and will be replaced by the correct
 		// FMI API at a later date.
 		il1TranslationManager
@@ -639,7 +640,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 
 		for (String a : actions) {
 			if (a.equals(varName)) {
-				String replacement = "c." + varType + " [" + varName + "_]";
+				String replacement = "mc->" + varType + " [" + varName + "_]";
 				newAction = newAction + replacement + " ";
 			} else {
 				newAction = newAction + a + " ";
