@@ -19,7 +19,7 @@ fmiComponent fmiInstantiateSlave(fmiString instanceName, fmiString fmuGUID,
 		//add instance to collection;
 		modelInstances[conInstanceCount] = *c;
 		conInstanceCount = conInstanceCount + 1;
-		return (void**) c;
+		return (fmiComponent) c;
 	}
 }
 
@@ -29,7 +29,7 @@ fmiStatus setInteger(fmiComponent c, const fmiValueReference vr[], size_t nvr,
 		fmiInteger value[]) {
 // Translated code
 	int idx = 0;
-	myfmiComponent *mc = (void *) c;
+	myfmiComponent *mc = c;
 	for (; idx < nvr; idx = idx + 1) {
 		mc->i[vr[idx]] = value[vr[idx]];
 	}
@@ -40,7 +40,7 @@ fmiStatus fmiDoStep(fmiComponent c, fmiReal currentCommunicationPoint,
 		fmiReal communicationStepSize,
 		fmiBoolean noSetFMUStatePriorToCurrentPoint) {
 // Translated code
-	myfmiComponent *mc = (void *) c;
+	myfmiComponent *mc = c;
 	mc->i[used_a_controllerImpl_] = ((mc->i[a_controllerImpl_]) / 2);
 	printf(" used_a : %i\n ", (int) mc->i[used_a_controllerImpl_]);
 	return fmiOK;
