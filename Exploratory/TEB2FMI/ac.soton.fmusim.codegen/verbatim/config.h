@@ -13,8 +13,6 @@
 #define realArraySize 3
 #define stringArraySize 3
 
-// This should be auto-generated in the future
-// Add one for each FMU generated
-#define MaxControllerModels 3
+#define MaxFMUInstances 3
 
 #endif /* CONFIG_H_ */

@@ -421,10 +421,10 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		// These are FMU specific headers. The first is for configuration
 		il1TranslationManager.addIncludeStatement("#include \"config.h\"");
 		il1TranslationManager.addIncludeStatement("#include \"fmiFunctions.h\"");
-		// This is for the FakeFMIDecls and will be replaced by the correct
-		// FMI API at a later date.
+		// This is for my FMI Declarations. It contains a 
+		// description of my FMI component, for instance.
 		il1TranslationManager
-				.addIncludeStatement("#include \"fakeFMIDecls.h\"");
+				.addIncludeStatement("#include \"myFMIDecls.h\"");
 		ArrayList<String> code = null;
 		// Translation Rules
 		Map<IProject, List<ITranslationRule>> translationRules = loadTranslatorRules();

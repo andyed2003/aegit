@@ -8,12 +8,11 @@
 #ifndef CONFIG_H_
 #define CONFIG_H_
 
-#define MaxFMUInstances 1
-
 #define integerArraySize 3
 #define booleanArraySize 3
 #define realArraySize 3
 #define stringArraySize 3
 
+#define MaxFMUInstances 3
 
 #endif /* CONFIG_H_ */
