@@ -1,30 +1,14 @@
 /*
- * fakeFMIDecls.h
+ * myFMIDecls.h
  *
  *  Created on: 29 Jul 2013
  *      Author: andy
  */
 #include "config.h"
 
-#ifndef FAKEFMIDECLS_H_
-#define FAKEFMIDECLS_H_
+#ifndef myFMIDECLS_H_
+#define myFMIDECLS_H_
 
-////typedef unsigned int fmiValueReference;
-//typedef double       fmiReal   ;
-//typedef int          fmiInteger;
-////typedef char         fmiBoolean;
-//typedef const char*  fmiString ;
-//
-////typedef enum {
-////	fmiOK, fmiWarning, fmiDiscard, fmiError, fmiFatal, fmiPending
-////} fmiStatus;
-//
-///* Values for fmiBoolean  */
-//#define fmiTrue  1
-//#define fmiFalse 0
-
-/* Undefined value for fmiValueReference (largest unsigned int value) */
-//#define fmiUndefinedValueReference (fmiValueReference)(-1)
 
 // my fmiComponent
 typedef struct{
@@ -38,9 +22,4 @@ typedef struct{
 } myfmiComponent;
 
 
-//typedef struct{
-//
-//} fmiCallbackFunctions;
-
-
-#endif /* FAKEFMIDECLS_H_ */
+#endif /* myFMIDECLS_H_ */
