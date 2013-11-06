@@ -9,7 +9,6 @@
 #ifndef myFMIDECLS_H_
 #define myFMIDECLS_H_
 
-
 // my fmiComponent
 typedef struct{
 	fmiBoolean validInstance;
