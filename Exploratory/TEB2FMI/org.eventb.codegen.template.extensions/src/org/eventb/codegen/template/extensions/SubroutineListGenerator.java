@@ -152,12 +152,15 @@ public class SubroutineListGenerator extends AbstractSubroutineIL1Translator
 			// we also need the original event parameter to see if it incoming
 			// or outgoing
 			// FMU Out = master GET
+			// ... the setter passes a const array.
+			String settersArrayModifier = "";
 			if (subroutineParam instanceof OutParameter) {
 				communicationDirection = "Get";
 			}
 			// FMU In = master Set
 			else if (subroutineParam instanceof InParameter) {
 				communicationDirection = "Set";
+				settersArrayModifier = "const ";
 			}
 			String exampleParamName = subroutineParam.getIdentifier();
 			String projectName = actualSource.getProjectName();
@@ -166,12 +169,14 @@ public class SubroutineListGenerator extends AbstractSubroutineIL1Translator
 
 			// Format the parameters
 			String fmiAPIparameters = "fmiComponent c, const fmiValueReference vr[], "
-					+ "size_t nvr, fmiInteger value[]";
+					+ "size_t nvr, "
+					+ settersArrayModifier // this has been set to 'const' for a setter 
+					+ "fmiInteger value[]";
 
 			// Uniquely identify each event name using the machine name
 			outCode.add("");
-			String inOutSignature = "fmiStatus "
-					+ communicationDirection.toLowerCase() + fmiTypeName + "("
+			String inOutSignature = "fmiStatus fmi"
+					+ communicationDirection + fmiTypeName + "("
 					+ fmiAPIparameters + ")";
 			outCode.add(inOutSignature);
 			outCode.add("{"); // open function

@@ -31,6 +31,10 @@ public class FMUCSubroutineTranslator extends AbstractSubroutineIL1Translator {
 			IL1TranslationManager translationManager)
 			throws IL1TranslationException {
 
+
+		
+		// DELETE THIS AFTER TESTING THAT IT NO LONGER HAS SIDE EFFECTS
+		
 		ArrayList<String> outCode = new ArrayList<String>();
 
 		EList<Parameter> formalParams = actualSource.getFormalParameters();
@@ -46,12 +50,15 @@ public class FMUCSubroutineTranslator extends AbstractSubroutineIL1Translator {
 			// we also need the original event parameter to see if it incoming
 			// or outgoing
 			// FMU Out = master GET
+			// ... the setter passes a const array.
+			String settersArrayModifier = "";
 			if (subroutineParam instanceof OutParameter) {
 				communicationDirection = "Get";
 			}
 			// FMU In = master Set
 			else if (subroutineParam instanceof InParameter) {
 				communicationDirection = "Set";
+				settersArrayModifier = "const ";
 			}
 			String exampleParamName = subroutineParam.getIdentifier();
 			String projectName = actualSource.getProjectName();
@@ -59,11 +66,13 @@ public class FMUCSubroutineTranslator extends AbstractSubroutineIL1Translator {
 					exampleParamName, translationManager);
 
 			// Format the parameters
-			String fmiAPIparameters = "fmiComponent *c, const fmiValueReference vr[], "
-					+ "size_t nvr, fmiInteger value[]";
+			String fmiAPIparameters = "fmiComponent c, const fmiValueReference vr[], "
+					+ "size_t nvr, "
+					+ settersArrayModifier // this has been set to 'const' for a setter 
+					+ "fmiInteger value[]";
 
-//			// Uniquely identify each event name using the machine name
-			outCode.add("fmiStatus " + communicationDirection.toLowerCase() + fmiTypeName + "("
+			// pass the code out
+			outCode.add("fmiStatus fmi" + communicationDirection + fmiTypeName + "("
 					+ fmiAPIparameters + ")");
 		}
 		// >>>>> // else it must be an fmiDOStep subroutine
@@ -71,9 +80,6 @@ public class FMUCSubroutineTranslator extends AbstractSubroutineIL1Translator {
 			// Format the parameters
 			String fmiAPIparameters = "fmiComponent *c, fmiReal currentCommunicationPoint,"
 					+ " fmiReal communicationStepSize, fmiBoolean noSetFMUStatePriorToCurrentPoint";
-
-//			// Uniquely identify each event name using the machine name
-//			outCode.add("fmiStatus fmiDoStep(" + fmiAPIparameters + ")");
 		}
 		return null;
 	}

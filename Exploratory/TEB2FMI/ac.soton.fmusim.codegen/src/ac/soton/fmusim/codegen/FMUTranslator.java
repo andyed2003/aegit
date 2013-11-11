@@ -34,6 +34,8 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.xmi.XMIResource;
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMLResourceFactoryImpl;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.widgets.DirectoryDialog;
@@ -83,6 +85,7 @@ import FmiModel.IntegerType;
 import FmiModel.ModelVariablesType;
 import FmiModel.RealType1;
 import FmiModel.StringType;
+import FmiModel.util.FmiModelResourceImpl;
 import ac.soton.composition.core.basis.ComposedMachineRoot;
 import ac.soton.compositionmodel.core.compositionmodel.ComposedMachine;
 
@@ -239,10 +242,12 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			descriptionType.setGuid("GUID_" + fmuMachine.getName() + "_"
 					+ xmlGC.toXMLFormat());
 			descriptionType.setModelName(fmuMachine.getName());
+			descriptionType.setNumberOfEventIndicators(0);
 			// This is a co-simulation
 			CoSimulationType coSimType = FmiModelFactory.eINSTANCE
 					.createCoSimulationType();
 			descriptionType.getCoSimulation().add(coSimType);
+			coSimType.setModelIdentifier(fmuMachine.getName());
 			// This is where we store the FMI scalar variables
 			ModelVariablesType modelVarsType = FmiModelFactory.eINSTANCE
 					.createModelVariablesType();
@@ -270,6 +275,10 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			URI emfURI = URI.createURI(netUri);
 			ResourceSet resSet = new ResourceSetImpl();
 			Resource resource = resSet.createResource(emfURI);
+			if(resource instanceof FmiModelResourceImpl){
+				FmiModelResourceImpl fmiModelRes = (FmiModelResourceImpl) resource;
+				fmiModelRes.setEncoding("UTF-8");
+			}
 			resource.getContents().add(docRoot);
 			resource.save(Collections.EMPTY_MAP);
 		}// end of foreach machine
