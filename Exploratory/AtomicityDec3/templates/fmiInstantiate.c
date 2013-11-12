@@ -3,14 +3,14 @@ fmiComponent fmiInstantiateSlave(fmiString instanceName, fmiString fmuGUID,
 		fmiString fmuResourceLocation, const fmiCallbackFunctions* functions,
 		fmiBoolean visible, fmiBoolean loggingOn) {
 	// create a fmiComponent and allocate storage space
-	myfmiComponent *c = malloc(sizeof(*c));
+	fmi_Component *c = malloc(sizeof(*c));
 	if (!(conInstanceCount <= (MaxFMUInstances - 1))) {
 		c->validInstance = fmiFalse;
 		return c;
 	} else {
 		c->validInstance = fmiTrue;
 		// set the name etc
-		c->fmuInstanceName = instanceName;
+		c->instanceName = instanceName;
 		c->fmuGUID = fmuGUID;
 		//add instance to collection;
 		modelInstances[conInstanceCount] = *c;
@@ -18,3 +18,5 @@ fmiComponent fmiInstantiateSlave(fmiString instanceName, fmiString fmuGUID,
 		return (fmiComponent) c;
 	}
 }
+
+

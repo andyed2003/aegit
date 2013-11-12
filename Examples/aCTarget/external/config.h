@@ -8,10 +8,10 @@
 #ifndef CONFIG_H_
 #define CONFIG_H_
 
-#define integerArraySize 3
-#define booleanArraySize 3
-#define realArraySize 3
-#define stringArraySize 3
+#define NUMBER_OF_INTEGERS 3
+#define NUMBER_OF_BOOLEANS 3
+#define NUMBER_OF_REALS 3
+#define NUMBER_OF_STRINGS 3
 
 #define MaxFMUInstances 3
 

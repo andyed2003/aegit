@@ -1,7 +1,9 @@
 #include "common.h"
 
-myfmiComponent modelInstances[MaxFMUInstances]; // start of with an empty array of components
+fmi_Component modelInstances[MaxFMUInstances]; // start of with an empty array of components
 int conInstanceCount = 0;
+
+//## <fmuOthers.c> 			-- expand the SDKs (remember it's FMU version 1) functions
 
 //## <variableDeclarations>  -- generate variable declarations here
 
@@ -12,5 +14,3 @@ int conInstanceCount = 0;
 // Subroutines Generated from Events
 
 //## <subroutineList>		-- generate subroutine implementations here
-
-

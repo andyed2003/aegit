@@ -1,46 +1,39 @@
 /*
- * fakeFMIDecls.h
+ * myFMIDecls.h
  *
  *  Created on: 29 Jul 2013
  *      Author: andy
  */
 #include "config.h"
 
-#ifndef FAKEFMIDECLS_H_
-#define FAKEFMIDECLS_H_
+#ifndef myFMIDECLS_H_
+#define myFMIDECLS_H_
 
-////typedef unsigned int fmiValueReference;
-//typedef double       fmiReal   ;
-//typedef int          fmiInteger;
-////typedef char         fmiBoolean;
-//typedef const char*  fmiString ;
-//
-////typedef enum {
-////	fmiOK, fmiWarning, fmiDiscard, fmiError, fmiFatal, fmiPending
-////} fmiStatus;
-//
-///* Values for fmiBoolean  */
-//#define fmiTrue  1
-//#define fmiFalse 0
+#define not_modelError (modelInstantiated|modelInitialized|modelTerminated)
 
-/* Undefined value for fmiValueReference (largest unsigned int value) */
-//#define fmiUndefinedValueReference (fmiValueReference)(-1)
+typedef enum {
+    modelInstantiated = 1<<0,
+    modelInitialized  = 1<<1,
+    modelTerminated   = 1<<2,
+    modelError        = 1<<3
+} ModelState;
 
-// my fmiComponent
+// fmiComponent
 typedef struct{
 	fmiBoolean validInstance;
-	fmiString fmuInstanceName;
+	fmiString instanceName;
 	fmiString fmuGUID;
-	fmiValueReference i[integerArraySize]; // my fake fmi: array of fmiValueReferences to integers
-	fmiValueReference b[booleanArraySize]; // my fake fmi: array of fmiValueReferences to booleans
-	fmiValueReference r[realArraySize]; // my fake fmi: array of fmiValueReferences to real
-	fmiValueReference s[stringArraySize]; // my fake fmi: array of fmiValueReferences to strings
-} myfmiComponent;
+    fmiCallbackFunctions functions;
+    ModelState state;
+    fmiBoolean loggingOn;
+	fmiValueReference i[NUMBER_OF_INTEGERS]; // my array of fmiValueReferences to integers
+	fmiValueReference b[NUMBER_OF_BOOLEANS]; // my array of fmiValueReferences to booleans
+	fmiValueReference r[NUMBER_OF_REALS]; // my array of fmiValueReferences to real
+	fmiValueReference s[NUMBER_OF_STRINGS]; // my array of fmiValueReferences to strings
+#ifdef FMI_COSIMULATION
+    fmiEventInfo eventInfo;
+#endif
+} fmi_Component;
 
 
-//typedef struct{
-//
-//} fmiCallbackFunctions;
-
-
-#endif /* FAKEFMIDECLS_H_ */
+#endif /* myFMIDECLS_H_ */
