@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fmiModelDescription author="University of Southampton" fmiVersion="2.0" generationDateAndTime="2013-11-13T08:25:54.018Z" generationTool="EB2FMU" guid="GUID_environImpl_2013-11-13T08:25:54.018Z" modelName="environImpl" numberOfEventIndicators="0">
+  <CoSimulation modelIdentifier="environImpl"/>
+  <ModelVariables>
+    <ScalarVariable name="b" valueReference="0">
+      <Integer/>
+    </ScalarVariable>
+    <ScalarVariable name="tmp" valueReference="0">
+      <Boolean/>
+    </ScalarVariable>
+  </ModelVariables>
+</fmiModelDescription>
