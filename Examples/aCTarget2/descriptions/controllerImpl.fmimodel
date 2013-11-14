@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<fmiModelDescription author="University of Southampton" fmiVersion="2.0" generationDateAndTime="2013-11-13T16:24:41.787Z" generationTool="EB2FMU" guid="GUID_controllerImpl_2013-11-13T16:24:41.787Z" modelName="controllerImpl" numberOfEventIndicators="0">
+<fmiModelDescription author="University of Southampton" fmiVersion="2.0" generationDateAndTime="2013-11-14T14:41:05.435Z" generationTool="EB2FMU" guid="GUID_controllerImpl_2013-11-14T14:41:05.435Z" modelName="controllerImpl" numberOfEventIndicators="0">
   <CoSimulation modelIdentifier="controllerImpl"/>
   <ModelVariables>
     <ScalarVariable name="a" valueReference="0">
