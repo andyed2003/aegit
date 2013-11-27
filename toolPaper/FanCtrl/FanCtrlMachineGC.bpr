@@ -53,10 +53,10 @@
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck})"/>
 <org.eventb.core.prPred name="p20" org.eventb.core.predicate="¬SpeedCheck=BrokenSpeedCheck"/>
 <org.eventb.core.prPred name="p12" org.eventb.core.predicate="¬Control=Broken"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="INITIALISATION/low_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="Controller_STATES">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -111,10 +111,10 @@
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="Step=Normal⇒(0≤LWM_PSU∧0≤LWM_AMBIENT⇒TRUE=FALSE)"/>
 <org.eventb.core.prPred name="p20" org.eventb.core.predicate="¬SpeedCheck=BrokenSpeedCheck"/>
 <org.eventb.core.prPred name="p12" org.eventb.core.predicate="¬Control=Broken"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="INITIALISATION/FanCtrlMachine_high_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="Controller_STATES">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -169,10 +169,10 @@
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck})"/>
 <org.eventb.core.prPred name="p20" org.eventb.core.predicate="¬SpeedCheck=BrokenSpeedCheck"/>
 <org.eventb.core.prPred name="p12" org.eventb.core.predicate="¬Control=Broken"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="INITIALISATION/FanCtrlMachine_low_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="Controller_STATES">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -227,10 +227,10 @@
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="Step=Normal⇒(0≤LWM_PSU∧0≤LWM_AMBIENT⇒TRUE=FALSE)"/>
 <org.eventb.core.prPred name="p20" org.eventb.core.predicate="¬SpeedCheck=BrokenSpeedCheck"/>
 <org.eventb.core.prPred name="p12" org.eventb.core.predicate="¬Control=Broken"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="SENSE_TEMPERATURES/high_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="Controller_STATES">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -288,10 +288,10 @@
 <org.eventb.core.prPred name="p24" org.eventb.core.predicate="⊥⇒(C_tempPSU≥HWM_PSU∨C_tempAmbient≥HWM_AMBIENT⇒C_fanOn=TRUE)"/>
 <org.eventb.core.prPred name="p20" org.eventb.core.predicate="¬SpeedCheck=BrokenSpeedCheck"/>
 <org.eventb.core.prPred name="p12" org.eventb.core.predicate="¬Control=Broken"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
-<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="SENSE_TEMPERATURES/low_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="Controller_STATES">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -349,10 +349,10 @@
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck})"/>
 <org.eventb.core.prPred name="p20" org.eventb.core.predicate="¬SpeedCheck=BrokenSpeedCheck"/>
 <org.eventb.core.prPred name="p12" org.eventb.core.predicate="¬Control=Broken"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
-<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="SENSE_TEMPERATURES/FanCtrlMachine_high_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="Controller_STATES">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -410,10 +410,10 @@
 <org.eventb.core.prPred name="p24" org.eventb.core.predicate="⊥⇒(C_tempPSU≥HWM_PSU∨C_tempAmbient≥HWM_AMBIENT⇒C_fanOn=TRUE)"/>
 <org.eventb.core.prPred name="p20" org.eventb.core.predicate="¬SpeedCheck=BrokenSpeedCheck"/>
 <org.eventb.core.prPred name="p12" org.eventb.core.predicate="¬Control=Broken"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
-<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="SENSE_TEMPERATURES/FanCtrlMachine_low_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="Controller_STATES">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -471,10 +471,10 @@
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck})"/>
 <org.eventb.core.prPred name="p20" org.eventb.core.predicate="¬SpeedCheck=BrokenSpeedCheck"/>
 <org.eventb.core.prPred name="p12" org.eventb.core.predicate="¬Control=Broken"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
-<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="DO_NOTHING/high_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -624,10 +624,10 @@
 <org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="DO_NOTHING/low_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -777,10 +777,10 @@
 <org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="DO_NOTHING/FanCtrlMachine_high_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -930,10 +930,10 @@
 <org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="DO_NOTHING/FanCtrlMachine_low_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -1083,10 +1083,10 @@
 <org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="SWITCH_ON/high_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -1227,10 +1227,10 @@
 <org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="SWITCH_ON/low_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15" org.eventb.core.prSets="Controller_STATES" org.eventb.core.psManual="true">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -1284,7 +1284,7 @@
 <org.eventb.core.prHypAction name="HIDE21" org.eventb.core.prHyps="p66"/>
 <org.eventb.core.prHypAction name="HIDE22" org.eventb.core.prHyps="p67"/>
 <org.eventb.core.prHypAction name="HIDE23" org.eventb.core.prHyps="p68"/>
-<org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with Controller=Control" org.eventb.core.prHyps="p4">
+<org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with Controller=Control" org.eventb.core.prHyps="p5">
 <org.eventb.core.prAnte name="'">
 <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p39" org.eventb.core.prInfHyps="p69"/>
 <org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p42" org.eventb.core.prInfHyps="p70"/>
@@ -1293,13 +1293,13 @@
 <org.eventb.core.prAnte name="'">
 <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p70,p30" org.eventb.core.prInfHyps="p71"/>
 <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p70"/>
-<org.eventb.core.prHypAction name="FORWARD_INF2" org.eventb.core.prHyps="p69,p30" org.eventb.core.prInfHyps="p72"/>
+<org.eventb.core.prHypAction name="FORWARD_INF2" org.eventb.core.prHyps="p30,p69" org.eventb.core.prInfHyps="p72"/>
 <org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p69"/>
 <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
 <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p71"/>
 <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p72"/>
-<org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="PP" org.eventb.core.prGoal="p44" org.eventb.core.prHyps="p12,p15,p7,p9,p5,p13,p11,p6,p1,p3,p14,p4,p16,p17,p18,p19,p20,p21,p22,p23,p24,p25,p26,p27,p28,p29,p30,p31,p32,p33,p34,p35,p36,p37,p39,p42">
+<org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="PP" org.eventb.core.prGoal="p44" org.eventb.core.prHyps="p17,p21,p39,p26,p27,p28,p42,p29,p30,p9,p32,p14,p34,p35,p36,p37,p16,p18,p1,p19,p20,p22,p23,p24,p25,p3,p5,p4,p6,p7,p31,p11,p12,p33,p13,p15">
 <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="30000"/>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
@@ -1349,7 +1349,7 @@
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="Normal=Normal⇒(C_tempPSU≤LWM_PSU∧C_tempAmbient≤LWM_AMBIENT⇒TRUE=FALSE)"/>
 <org.eventb.core.prPred name="p40" org.eventb.core.predicate="¬(C_tempPSU≤LWM_PSU∧C_tempAmbient≤LWM_AMBIENT)"/>
 <org.eventb.core.prPred name="p39" org.eventb.core.predicate="Controller=Normal⇒C_fanOn=TRUE"/>
-<org.eventb.core.prPred name="p25" org.eventb.core.predicate="¬Normal=FailureCount"/>
+<org.eventb.core.prPred name="p26" org.eventb.core.predicate="¬Normal=FailureCount"/>
 <org.eventb.core.prPred name="p59" org.eventb.core.predicate="Controller∈Controller_STATES"/>
 <org.eventb.core.prPred name="p55" org.eventb.core.predicate="SpeedCheck∈Controller_STATES"/>
 <org.eventb.core.prPred name="p8" org.eventb.core.predicate="Controller=Normal⇒(C_tempPSU≤LWM_PSU∧C_tempAmbient≤LWM_AMBIENT⇒C_fanOn=FALSE)"/>
@@ -1358,18 +1358,18 @@
 <org.eventb.core.prIdent name="E_LM75_tempAmbient" org.eventb.core.type="ℤ"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p57" org.eventb.core.predicate="Broken∈Controller_STATES"/>
-<org.eventb.core.prPred name="p31" org.eventb.core.predicate="¬Step=BrokenSpeedCheck"/>
+<org.eventb.core.prPred name="p29" org.eventb.core.predicate="¬Step=BrokenSpeedCheck"/>
 <org.eventb.core.prPred name="p70" org.eventb.core.predicate="Control=Normal⇒C_fanOn=FALSE"/>
 <org.eventb.core.prPred name="p14" org.eventb.core.predicate="C_tempPSU≥HWM_PSU∨C_tempAmbient≥HWM_AMBIENT"/>
 <org.eventb.core.prPred name="p34" org.eventb.core.predicate="¬FailureCount=Broken"/>
-<org.eventb.core.prPred name="p18" org.eventb.core.predicate="¬Step=Normal"/>
-<org.eventb.core.prPred name="p19" org.eventb.core.predicate="¬FailureCount=BrokenSpeedCheck"/>
+<org.eventb.core.prPred name="p16" org.eventb.core.predicate="¬Step=Normal"/>
+<org.eventb.core.prPred name="p20" org.eventb.core.predicate="¬FailureCount=BrokenSpeedCheck"/>
 <org.eventb.core.prPred name="p50" org.eventb.core.predicate="FAN_SPEED_OFF∈ℤ"/>
 <org.eventb.core.prPred name="p71" org.eventb.core.predicate="⊥⇒C_fanOn=FALSE"/>
 <org.eventb.core.prPred name="p23" org.eventb.core.predicate="¬SpeedCheck=Broken"/>
 <org.eventb.core.prPred name="p61" org.eventb.core.predicate="C_tempAmbient∈ℤ"/>
 <org.eventb.core.prPred name="p2" org.eventb.core.predicate="partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck})"/>
-<org.eventb.core.prPred name="p26" org.eventb.core.predicate="¬Step=FailureCount"/>
+<org.eventb.core.prPred name="p25" org.eventb.core.predicate="¬Step=FailureCount"/>
 <org.eventb.core.prPred name="p65" org.eventb.core.predicate="E_LM75_tempPSU∈ℤ">
 <org.eventb.core.prIdent name="E_LM75_tempPSU" org.eventb.core.type="ℤ"/>
 </org.eventb.core.prPred>
@@ -1403,23 +1403,23 @@
 <org.eventb.core.prPred name="p42" org.eventb.core.predicate="Controller=Normal⇒C_fanOn=FALSE"/>
 <org.eventb.core.prPred name="p32" org.eventb.core.predicate="¬Broken=BrokenSpeedCheck"/>
 <org.eventb.core.prPred name="p45" org.eventb.core.predicate="HWM_PSU∈ℤ"/>
-<org.eventb.core.prPred name="p35" org.eventb.core.predicate="¬Normal=SpeedCheck"/>
-<org.eventb.core.prPred name="p36" org.eventb.core.predicate="¬Step=SpeedCheck"/>
+<org.eventb.core.prPred name="p35" org.eventb.core.predicate="¬Step=SpeedCheck"/>
+<org.eventb.core.prPred name="p36" org.eventb.core.predicate="¬Normal=SpeedCheck"/>
 <org.eventb.core.prPred name="p37" org.eventb.core.predicate="Controller_STATES={Step,Control,Normal,SpeedCheck,FailureCount,Broken,BrokenSpeedCheck}"/>
 <org.eventb.core.prPred name="p54" org.eventb.core.predicate="Normal∈Controller_STATES"/>
-<org.eventb.core.prPred name="p16" org.eventb.core.predicate="¬Normal=Broken"/>
+<org.eventb.core.prPred name="p18" org.eventb.core.predicate="¬Normal=Broken"/>
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="FAN_SPEED_FAULT=1000"/>
-<org.eventb.core.prPred name="p20" org.eventb.core.predicate="¬Normal=BrokenSpeedCheck"/>
+<org.eventb.core.prPred name="p19" org.eventb.core.predicate="¬Normal=BrokenSpeedCheck"/>
 <org.eventb.core.prPred name="p48" org.eventb.core.predicate="LWM_AMBIENT∈ℤ"/>
 <org.eventb.core.prPred name="p22" org.eventb.core.predicate="¬Control=BrokenSpeedCheck"/>
 <org.eventb.core.prPred name="p24" org.eventb.core.predicate="¬Control=FailureCount"/>
 <org.eventb.core.prPred name="p3" org.eventb.core.predicate="FAN_SPEED_OFF=0"/>
-<org.eventb.core.prPred name="p4" org.eventb.core.predicate="Controller=Control"/>
-<org.eventb.core.prPred name="p5" org.eventb.core.predicate="HWM_PSU=37000"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="HWM_PSU=37000"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="Controller=Control"/>
 <org.eventb.core.prPred name="p6" org.eventb.core.predicate="LWM_AMBIENT=32000"/>
 <org.eventb.core.prPred name="p52" org.eventb.core.predicate="Step∈Controller_STATES"/>
 <org.eventb.core.prPred name="p41" org.eventb.core.predicate="Controller=Normal⇒(⊤⇒C_fanOn=FALSE)"/>
-<org.eventb.core.prPred name="p29" org.eventb.core.predicate="¬SpeedCheck=BrokenSpeedCheck"/>
+<org.eventb.core.prPred name="p31" org.eventb.core.predicate="¬SpeedCheck=BrokenSpeedCheck"/>
 <org.eventb.core.prPred name="p10" org.eventb.core.predicate="Controller=Normal⇒(C_tempPSU≥HWM_PSU∨C_tempAmbient≥HWM_AMBIENT⇒C_fanOn=TRUE)"/>
 <org.eventb.core.prPred name="p47" org.eventb.core.predicate="HWM_AMBIENT∈ℤ"/>
 <org.eventb.core.prPred name="p53" org.eventb.core.predicate="Control∈Controller_STATES"/>
@@ -1429,13 +1429,13 @@
 <org.eventb.core.prPred name="p46" org.eventb.core.predicate="LWM_PSU∈ℤ"/>
 <org.eventb.core.prPred name="p63" org.eventb.core.predicate="C_fanOn∈BOOL"/>
 <org.eventb.core.prPred name="p56" org.eventb.core.predicate="FailureCount∈Controller_STATES"/>
-<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.rn"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r6" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalPP:1"/>
-<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r6" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalPP:1"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.rn"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="SWITCH_ON/FanCtrlMachine_high_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -1576,10 +1576,10 @@
 <org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="SWITCH_ON/FanCtrlMachine_low_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15" org.eventb.core.prSets="Controller_STATES" org.eventb.core.psManual="true">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -1633,7 +1633,7 @@
 <org.eventb.core.prHypAction name="HIDE21" org.eventb.core.prHyps="p66"/>
 <org.eventb.core.prHypAction name="HIDE22" org.eventb.core.prHyps="p67"/>
 <org.eventb.core.prHypAction name="HIDE23" org.eventb.core.prHyps="p68"/>
-<org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with Controller=Control" org.eventb.core.prHyps="p4">
+<org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with Controller=Control" org.eventb.core.prHyps="p5">
 <org.eventb.core.prAnte name="'">
 <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p39" org.eventb.core.prInfHyps="p69"/>
 <org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p42" org.eventb.core.prInfHyps="p70"/>
@@ -1642,13 +1642,13 @@
 <org.eventb.core.prAnte name="'">
 <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p70,p30" org.eventb.core.prInfHyps="p71"/>
 <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p70"/>
-<org.eventb.core.prHypAction name="FORWARD_INF2" org.eventb.core.prHyps="p69,p30" org.eventb.core.prInfHyps="p72"/>
+<org.eventb.core.prHypAction name="FORWARD_INF2" org.eventb.core.prHyps="p30,p69" org.eventb.core.prInfHyps="p72"/>
 <org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p69"/>
 <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
 <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p71"/>
 <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p72"/>
-<org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="PP" org.eventb.core.prGoal="p44" org.eventb.core.prHyps="p12,p15,p7,p9,p5,p13,p11,p6,p1,p3,p14,p4,p16,p17,p18,p19,p20,p21,p22,p23,p24,p25,p26,p27,p28,p29,p30,p31,p32,p33,p34,p35,p36,p37,p39,p42">
+<org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="PP" org.eventb.core.prGoal="p44" org.eventb.core.prHyps="p17,p21,p39,p26,p27,p28,p42,p29,p30,p9,p32,p14,p34,p35,p36,p37,p16,p18,p1,p19,p20,p22,p23,p24,p25,p3,p5,p4,p6,p7,p31,p11,p12,p33,p13,p15">
 <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="30000"/>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
@@ -1698,7 +1698,7 @@
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="Normal=Normal⇒(C_tempPSU≤LWM_PSU∧C_tempAmbient≤LWM_AMBIENT⇒TRUE=FALSE)"/>
 <org.eventb.core.prPred name="p40" org.eventb.core.predicate="¬(C_tempPSU≤LWM_PSU∧C_tempAmbient≤LWM_AMBIENT)"/>
 <org.eventb.core.prPred name="p39" org.eventb.core.predicate="Controller=Normal⇒C_fanOn=TRUE"/>
-<org.eventb.core.prPred name="p25" org.eventb.core.predicate="¬Normal=FailureCount"/>
+<org.eventb.core.prPred name="p26" org.eventb.core.predicate="¬Normal=FailureCount"/>
 <org.eventb.core.prPred name="p59" org.eventb.core.predicate="Controller∈Controller_STATES"/>
 <org.eventb.core.prPred name="p55" org.eventb.core.predicate="SpeedCheck∈Controller_STATES"/>
 <org.eventb.core.prPred name="p8" org.eventb.core.predicate="Controller=Normal⇒(C_tempPSU≤LWM_PSU∧C_tempAmbient≤LWM_AMBIENT⇒C_fanOn=FALSE)"/>
@@ -1707,18 +1707,18 @@
 <org.eventb.core.prIdent name="E_LM75_tempAmbient" org.eventb.core.type="ℤ"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p57" org.eventb.core.predicate="Broken∈Controller_STATES"/>
-<org.eventb.core.prPred name="p31" org.eventb.core.predicate="¬Step=BrokenSpeedCheck"/>
+<org.eventb.core.prPred name="p29" org.eventb.core.predicate="¬Step=BrokenSpeedCheck"/>
 <org.eventb.core.prPred name="p70" org.eventb.core.predicate="Control=Normal⇒C_fanOn=FALSE"/>
 <org.eventb.core.prPred name="p14" org.eventb.core.predicate="C_tempPSU≥HWM_PSU∨C_tempAmbient≥HWM_AMBIENT"/>
 <org.eventb.core.prPred name="p34" org.eventb.core.predicate="¬FailureCount=Broken"/>
-<org.eventb.core.prPred name="p18" org.eventb.core.predicate="¬Step=Normal"/>
-<org.eventb.core.prPred name="p19" org.eventb.core.predicate="¬FailureCount=BrokenSpeedCheck"/>
+<org.eventb.core.prPred name="p16" org.eventb.core.predicate="¬Step=Normal"/>
+<org.eventb.core.prPred name="p20" org.eventb.core.predicate="¬FailureCount=BrokenSpeedCheck"/>
 <org.eventb.core.prPred name="p50" org.eventb.core.predicate="FAN_SPEED_OFF∈ℤ"/>
 <org.eventb.core.prPred name="p71" org.eventb.core.predicate="⊥⇒C_fanOn=FALSE"/>
 <org.eventb.core.prPred name="p23" org.eventb.core.predicate="¬SpeedCheck=Broken"/>
 <org.eventb.core.prPred name="p61" org.eventb.core.predicate="C_tempAmbient∈ℤ"/>
 <org.eventb.core.prPred name="p2" org.eventb.core.predicate="partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck})"/>
-<org.eventb.core.prPred name="p26" org.eventb.core.predicate="¬Step=FailureCount"/>
+<org.eventb.core.prPred name="p25" org.eventb.core.predicate="¬Step=FailureCount"/>
 <org.eventb.core.prPred name="p65" org.eventb.core.predicate="E_LM75_tempPSU∈ℤ">
 <org.eventb.core.prIdent name="E_LM75_tempPSU" org.eventb.core.type="ℤ"/>
 </org.eventb.core.prPred>
@@ -1752,23 +1752,23 @@
 <org.eventb.core.prPred name="p42" org.eventb.core.predicate="Controller=Normal⇒C_fanOn=FALSE"/>
 <org.eventb.core.prPred name="p32" org.eventb.core.predicate="¬Broken=BrokenSpeedCheck"/>
 <org.eventb.core.prPred name="p45" org.eventb.core.predicate="HWM_PSU∈ℤ"/>
-<org.eventb.core.prPred name="p35" org.eventb.core.predicate="¬Normal=SpeedCheck"/>
-<org.eventb.core.prPred name="p36" org.eventb.core.predicate="¬Step=SpeedCheck"/>
+<org.eventb.core.prPred name="p35" org.eventb.core.predicate="¬Step=SpeedCheck"/>
+<org.eventb.core.prPred name="p36" org.eventb.core.predicate="¬Normal=SpeedCheck"/>
 <org.eventb.core.prPred name="p37" org.eventb.core.predicate="Controller_STATES={Step,Control,Normal,SpeedCheck,FailureCount,Broken,BrokenSpeedCheck}"/>
 <org.eventb.core.prPred name="p54" org.eventb.core.predicate="Normal∈Controller_STATES"/>
-<org.eventb.core.prPred name="p16" org.eventb.core.predicate="¬Normal=Broken"/>
+<org.eventb.core.prPred name="p18" org.eventb.core.predicate="¬Normal=Broken"/>
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="FAN_SPEED_FAULT=1000"/>
-<org.eventb.core.prPred name="p20" org.eventb.core.predicate="¬Normal=BrokenSpeedCheck"/>
+<org.eventb.core.prPred name="p19" org.eventb.core.predicate="¬Normal=BrokenSpeedCheck"/>
 <org.eventb.core.prPred name="p48" org.eventb.core.predicate="LWM_AMBIENT∈ℤ"/>
 <org.eventb.core.prPred name="p22" org.eventb.core.predicate="¬Control=BrokenSpeedCheck"/>
 <org.eventb.core.prPred name="p24" org.eventb.core.predicate="¬Control=FailureCount"/>
 <org.eventb.core.prPred name="p3" org.eventb.core.predicate="FAN_SPEED_OFF=0"/>
-<org.eventb.core.prPred name="p4" org.eventb.core.predicate="Controller=Control"/>
-<org.eventb.core.prPred name="p5" org.eventb.core.predicate="HWM_PSU=37000"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="HWM_PSU=37000"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="Controller=Control"/>
 <org.eventb.core.prPred name="p6" org.eventb.core.predicate="LWM_AMBIENT=32000"/>
 <org.eventb.core.prPred name="p52" org.eventb.core.predicate="Step∈Controller_STATES"/>
 <org.eventb.core.prPred name="p41" org.eventb.core.predicate="Controller=Normal⇒(⊤⇒C_fanOn=FALSE)"/>
-<org.eventb.core.prPred name="p29" org.eventb.core.predicate="¬SpeedCheck=BrokenSpeedCheck"/>
+<org.eventb.core.prPred name="p31" org.eventb.core.predicate="¬SpeedCheck=BrokenSpeedCheck"/>
 <org.eventb.core.prPred name="p10" org.eventb.core.predicate="Controller=Normal⇒(C_tempPSU≥HWM_PSU∨C_tempAmbient≥HWM_AMBIENT⇒C_fanOn=TRUE)"/>
 <org.eventb.core.prPred name="p47" org.eventb.core.predicate="HWM_AMBIENT∈ℤ"/>
 <org.eventb.core.prPred name="p53" org.eventb.core.predicate="Control∈Controller_STATES"/>
@@ -1778,13 +1778,13 @@
 <org.eventb.core.prPred name="p46" org.eventb.core.predicate="LWM_PSU∈ℤ"/>
 <org.eventb.core.prPred name="p63" org.eventb.core.predicate="C_fanOn∈BOOL"/>
 <org.eventb.core.prPred name="p56" org.eventb.core.predicate="FailureCount∈Controller_STATES"/>
-<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.rn"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r6" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalPP:1"/>
-<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r6" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalPP:1"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.rn"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="SWITCH_OFF/high_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15" org.eventb.core.prSets="Controller_STATES">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -2048,12 +2048,12 @@
 <org.eventb.core.prPred name="p76" org.eventb.core.predicate="C_tempAmbient&lt;HWM_AMBIENT"/>
 <org.eventb.core.prPred name="p58" org.eventb.core.predicate="FailureCount∈Controller_STATES"/>
 <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.rn"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
-<org.eventb.core.prReas name="r6" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
 <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
+<org.eventb.core.prReas name="r6" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="SWITCH_OFF/low_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -2198,10 +2198,10 @@
 <org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="SWITCH_OFF/FanCtrlMachine_high_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15" org.eventb.core.prSets="Controller_STATES">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -2465,12 +2465,12 @@
 <org.eventb.core.prPred name="p76" org.eventb.core.predicate="C_tempAmbient&lt;HWM_AMBIENT"/>
 <org.eventb.core.prPred name="p58" org.eventb.core.predicate="FailureCount∈Controller_STATES"/>
 <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.rn"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
-<org.eventb.core.prReas name="r6" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
 <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
+<org.eventb.core.prReas name="r6" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="SWITCH_OFF/FanCtrlMachine_low_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -2615,10 +2615,10 @@
 <org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="SENSE_SPEED/high_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -2768,10 +2768,10 @@
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p31" org.eventb.core.predicate="SpeedCheck=Normal⇒⊤"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="SENSE_SPEED/low_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -2921,10 +2921,10 @@
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p31" org.eventb.core.predicate="SpeedCheck=Normal⇒⊤"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="SENSE_SPEED/FanCtrlMachine_high_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -3074,10 +3074,10 @@
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p31" org.eventb.core.predicate="SpeedCheck=Normal⇒⊤"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="SENSE_SPEED/FanCtrlMachine_low_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -3227,10 +3227,10 @@
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p31" org.eventb.core.predicate="SpeedCheck=Normal⇒⊤"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="SPEED_INVALID/high_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="Controller_STATES">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -3442,13 +3442,13 @@
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="Controller=SpeedCheck"/>
 <org.eventb.core.prPred name="p43" org.eventb.core.predicate="C_fanOn∈BOOL"/>
 <org.eventb.core.prPred name="p36" org.eventb.core.predicate="FailureCount∈Controller_STATES"/>
-<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
-<org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+<org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="SPEED_INVALID/low_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="Controller_STATES">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -3661,13 +3661,13 @@
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="Controller=SpeedCheck"/>
 <org.eventb.core.prPred name="p43" org.eventb.core.predicate="C_fanOn∈BOOL"/>
 <org.eventb.core.prPred name="p36" org.eventb.core.predicate="FailureCount∈Controller_STATES"/>
-<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
-<org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+<org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="SPEED_INVALID/FanCtrlMachine_high_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="Controller_STATES">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -3879,13 +3879,13 @@
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="Controller=SpeedCheck"/>
 <org.eventb.core.prPred name="p43" org.eventb.core.predicate="C_fanOn∈BOOL"/>
 <org.eventb.core.prPred name="p36" org.eventb.core.predicate="FailureCount∈Controller_STATES"/>
-<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
-<org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+<org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="SPEED_INVALID/FanCtrlMachine_low_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="Controller_STATES">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -4098,13 +4098,13 @@
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="Controller=SpeedCheck"/>
 <org.eventb.core.prPred name="p43" org.eventb.core.predicate="C_fanOn∈BOOL"/>
 <org.eventb.core.prPred name="p36" org.eventb.core.predicate="FailureCount∈Controller_STATES"/>
-<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
-<org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+<org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="SPEED_VALID/high_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="Controller_STATES">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -4162,10 +4162,10 @@
 <org.eventb.core.prPred name="p24" org.eventb.core.predicate="⊥⇒(C_tempPSU≥HWM_PSU∨C_tempAmbient≥HWM_AMBIENT⇒C_fanOn=TRUE)"/>
 <org.eventb.core.prPred name="p20" org.eventb.core.predicate="¬SpeedCheck=BrokenSpeedCheck"/>
 <org.eventb.core.prPred name="p12" org.eventb.core.predicate="¬Control=Broken"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="SPEED_VALID/low_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="Controller_STATES">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -4223,10 +4223,10 @@
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck})"/>
 <org.eventb.core.prPred name="p20" org.eventb.core.predicate="¬SpeedCheck=BrokenSpeedCheck"/>
 <org.eventb.core.prPred name="p12" org.eventb.core.predicate="¬Control=Broken"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="SPEED_VALID/FanCtrlMachine_high_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="Controller_STATES">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -4284,10 +4284,10 @@
 <org.eventb.core.prPred name="p24" org.eventb.core.predicate="⊥⇒(C_tempPSU≥HWM_PSU∨C_tempAmbient≥HWM_AMBIENT⇒C_fanOn=TRUE)"/>
 <org.eventb.core.prPred name="p20" org.eventb.core.predicate="¬SpeedCheck=BrokenSpeedCheck"/>
 <org.eventb.core.prPred name="p12" org.eventb.core.predicate="¬Control=Broken"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="SPEED_VALID/FanCtrlMachine_low_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="Controller_STATES">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -4345,10 +4345,10 @@
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck})"/>
 <org.eventb.core.prPred name="p20" org.eventb.core.predicate="¬SpeedCheck=BrokenSpeedCheck"/>
 <org.eventb.core.prPred name="p12" org.eventb.core.predicate="¬Control=Broken"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="TOLERATE/high_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="Controller_STATES">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -4406,10 +4406,10 @@
 <org.eventb.core.prPred name="p24" org.eventb.core.predicate="⊥⇒(C_tempPSU≥HWM_PSU∨C_tempAmbient≥HWM_AMBIENT⇒C_fanOn=TRUE)"/>
 <org.eventb.core.prPred name="p20" org.eventb.core.predicate="¬SpeedCheck=BrokenSpeedCheck"/>
 <org.eventb.core.prPred name="p12" org.eventb.core.predicate="¬Control=Broken"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="TOLERATE/low_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="Controller_STATES">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -4467,10 +4467,10 @@
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck})"/>
 <org.eventb.core.prPred name="p20" org.eventb.core.predicate="¬SpeedCheck=BrokenSpeedCheck"/>
 <org.eventb.core.prPred name="p12" org.eventb.core.predicate="¬Control=Broken"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="TOLERATE/FanCtrlMachine_high_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="Controller_STATES">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -4528,10 +4528,10 @@
 <org.eventb.core.prPred name="p24" org.eventb.core.predicate="⊥⇒(C_tempPSU≥HWM_PSU∨C_tempAmbient≥HWM_AMBIENT⇒C_fanOn=TRUE)"/>
 <org.eventb.core.prPred name="p20" org.eventb.core.predicate="¬SpeedCheck=BrokenSpeedCheck"/>
 <org.eventb.core.prPred name="p12" org.eventb.core.predicate="¬Control=Broken"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="TOLERATE/FanCtrlMachine_low_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="Controller_STATES">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -4589,10 +4589,10 @@
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck})"/>
 <org.eventb.core.prPred name="p20" org.eventb.core.predicate="¬SpeedCheck=BrokenSpeedCheck"/>
 <org.eventb.core.prPred name="p12" org.eventb.core.predicate="¬Control=Broken"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="BREAK/high_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="Controller_STATES">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -4790,13 +4790,13 @@
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p43" org.eventb.core.predicate="C_fanOn∈BOOL"/>
 <org.eventb.core.prPred name="p36" org.eventb.core.predicate="FailureCount∈Controller_STATES"/>
-<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
-<org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+<org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="BREAK/low_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="Controller_STATES">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -4995,13 +4995,13 @@
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p43" org.eventb.core.predicate="C_fanOn∈BOOL"/>
 <org.eventb.core.prPred name="p36" org.eventb.core.predicate="FailureCount∈Controller_STATES"/>
-<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
-<org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+<org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="BREAK/FanCtrlMachine_high_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="Controller_STATES">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -5199,13 +5199,13 @@
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p43" org.eventb.core.predicate="C_fanOn∈BOOL"/>
 <org.eventb.core.prPred name="p36" org.eventb.core.predicate="FailureCount∈Controller_STATES"/>
-<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
-<org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+<org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="BREAK/FanCtrlMachine_low_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="Controller_STATES">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -5404,13 +5404,13 @@
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p43" org.eventb.core.predicate="C_fanOn∈BOOL"/>
 <org.eventb.core.prPred name="p36" org.eventb.core.predicate="FailureCount∈Controller_STATES"/>
-<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
-<org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+<org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="BROKEN_SENSE_SPEED/high_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="Controller_STATES">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -5610,13 +5610,13 @@
 <org.eventb.core.prPred name="p58" org.eventb.core.predicate="¬Broken=Normal"/>
 <org.eventb.core.prPred name="p43" org.eventb.core.predicate="C_fanOn∈BOOL"/>
 <org.eventb.core.prPred name="p36" org.eventb.core.predicate="FailureCount∈Controller_STATES"/>
-<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
-<org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+<org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="BROKEN_SENSE_SPEED/low_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="Controller_STATES">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -5817,13 +5817,13 @@
 <org.eventb.core.prPred name="p59" org.eventb.core.predicate="¬Broken=Normal"/>
 <org.eventb.core.prPred name="p43" org.eventb.core.predicate="C_fanOn∈BOOL"/>
 <org.eventb.core.prPred name="p36" org.eventb.core.predicate="FailureCount∈Controller_STATES"/>
-<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
-<org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+<org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="BROKEN_SENSE_SPEED/FanCtrlMachine_high_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="Controller_STATES">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -6023,13 +6023,13 @@
 <org.eventb.core.prPred name="p58" org.eventb.core.predicate="¬Broken=Normal"/>
 <org.eventb.core.prPred name="p43" org.eventb.core.predicate="C_fanOn∈BOOL"/>
 <org.eventb.core.prPred name="p36" org.eventb.core.predicate="FailureCount∈Controller_STATES"/>
-<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
-<org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+<org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="BROKEN_SENSE_SPEED/FanCtrlMachine_low_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="Controller_STATES">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -6230,13 +6230,13 @@
 <org.eventb.core.prPred name="p59" org.eventb.core.predicate="¬Broken=Normal"/>
 <org.eventb.core.prPred name="p43" org.eventb.core.predicate="C_fanOn∈BOOL"/>
 <org.eventb.core.prPred name="p36" org.eventb.core.predicate="FailureCount∈Controller_STATES"/>
-<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
-<org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+<org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="STILL_BROKEN/high_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="Controller_STATES">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -6452,13 +6452,13 @@
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p43" org.eventb.core.predicate="C_fanOn∈BOOL"/>
 <org.eventb.core.prPred name="p36" org.eventb.core.predicate="FailureCount∈Controller_STATES"/>
-<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
-<org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+<org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="STILL_BROKEN/low_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="Controller_STATES">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -6675,13 +6675,13 @@
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p43" org.eventb.core.predicate="C_fanOn∈BOOL"/>
 <org.eventb.core.prPred name="p36" org.eventb.core.predicate="FailureCount∈Controller_STATES"/>
-<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
-<org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+<org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="STILL_BROKEN/FanCtrlMachine_high_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="Controller_STATES">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -6897,13 +6897,13 @@
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p43" org.eventb.core.predicate="C_fanOn∈BOOL"/>
 <org.eventb.core.prPred name="p36" org.eventb.core.predicate="FailureCount∈Controller_STATES"/>
-<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
-<org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+<org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="STILL_BROKEN/FanCtrlMachine_low_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="Controller_STATES">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -7120,13 +7120,13 @@
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p43" org.eventb.core.predicate="C_fanOn∈BOOL"/>
 <org.eventb.core.prPred name="p36" org.eventb.core.predicate="FailureCount∈Controller_STATES"/>
-<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
-<org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+<org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="REPAIR/high_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="Controller_STATES">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -7184,10 +7184,10 @@
 <org.eventb.core.prPred name="p24" org.eventb.core.predicate="⊥⇒(C_tempPSU≥HWM_PSU∨C_tempAmbient≥HWM_AMBIENT⇒C_fanOn=TRUE)"/>
 <org.eventb.core.prPred name="p20" org.eventb.core.predicate="¬SpeedCheck=BrokenSpeedCheck"/>
 <org.eventb.core.prPred name="p12" org.eventb.core.predicate="¬Control=Broken"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="REPAIR/low_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="Controller_STATES">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -7245,10 +7245,10 @@
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck})"/>
 <org.eventb.core.prPred name="p20" org.eventb.core.predicate="¬SpeedCheck=BrokenSpeedCheck"/>
 <org.eventb.core.prPred name="p12" org.eventb.core.predicate="¬Control=Broken"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="REPAIR/FanCtrlMachine_high_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="Controller_STATES">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -7306,10 +7306,10 @@
 <org.eventb.core.prPred name="p24" org.eventb.core.predicate="⊥⇒(C_tempPSU≥HWM_PSU∨C_tempAmbient≥HWM_AMBIENT⇒C_fanOn=TRUE)"/>
 <org.eventb.core.prPred name="p20" org.eventb.core.predicate="¬SpeedCheck=BrokenSpeedCheck"/>
 <org.eventb.core.prPred name="p12" org.eventb.core.predicate="¬Control=Broken"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="REPAIR/FanCtrlMachine_low_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="Controller_STATES">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -7367,10 +7367,10 @@
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck})"/>
 <org.eventb.core.prPred name="p20" org.eventb.core.predicate="¬SpeedCheck=BrokenSpeedCheck"/>
 <org.eventb.core.prPred name="p12" org.eventb.core.predicate="¬Control=Broken"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="read/high_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -7531,9 +7531,9 @@
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
 <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
-<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="read/low_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -7694,9 +7694,9 @@
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
 <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
-<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="read/FanCtrlMachine_high_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -7857,9 +7857,9 @@
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
 <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
-<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="read/FanCtrlMachine_low_temp_inv/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -8020,9 +8020,9 @@
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
 <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
-<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:0"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="read/C_fanSpeed/EQL" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
