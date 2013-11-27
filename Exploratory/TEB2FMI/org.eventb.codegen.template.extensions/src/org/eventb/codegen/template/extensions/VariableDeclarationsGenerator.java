@@ -60,7 +60,7 @@ public class VariableDeclarationsGenerator implements IGenerator {
 				for (FmiScalarVariable scalar : scalars) {
 					// get the variable name and value reference into a
 					// declaration, and put it in the header.
-					String headerString = "fmiValueReference " + scalar.getName() + "_"
+					String headerString = "static fmiValueReference " + scalar.getName() + "_"
 							+ machineName + "_ = " + scalar.getValueReference()
 							+ ";";
 					headerInfo.getHeaderEntries().add(headerString);

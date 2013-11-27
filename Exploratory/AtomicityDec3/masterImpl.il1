@@ -13,7 +13,7 @@
         <rightBranch xsi:type="il1:Output" text="used_a: " element="used_a"/>
       </body>
     </subroutines>
-    <decls xsi:type="il1:VariableDecl" identifier="a" type="&#x2124;" initialValue="0" ProjectName="AtomicityDec3" ComponentName="controllerImpl"/>
+    <decls xsi:type="il1:VariableDecl" identifier="a" type="&#x2124;" initialValue="4096" ProjectName="AtomicityDec3" ComponentName="controllerImpl"/>
     <decls xsi:type="il1:VariableDecl" identifier="used_a" type="&#x2124;" initialValue="0" ProjectName="AtomicityDec3" ComponentName="controllerImpl"/>
   </protected>
   <protected name="environImpl" projectName="AtomicityDec3" machineName="environImpl">

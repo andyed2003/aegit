@@ -33,7 +33,8 @@
 								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.exe.debug.option.optimization.level.1202588526" name="Optimization Level" superClass="gnu.c.compiler.exe.debug.option.optimization.level" valueType="enumerated"/>
 								<option id="gnu.c.compiler.exe.debug.option.debugging.level.2028371421" name="Debug Level" superClass="gnu.c.compiler.exe.debug.option.debugging.level" value="gnu.c.debugging.level.max" valueType="enumerated"/>
 								<option id="gnu.c.compiler.option.include.paths.493292790" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/external}&quot;"/>
+									<listOptionValue builtIn="false" value="/home/andy/git/aegit/Examples/aCTarget2/external"/>
+									<listOptionValue builtIn="false" value="/home/andy/git/aegit/Examples/aCTarget2/src"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1185058843" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
@@ -46,14 +47,15 @@
 							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug.9245615" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug"/>
 							<tool id="cdt.managedbuild.tool.gnu.assembler.exe.debug.1067637271" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.exe.debug">
 								<option id="gnu.both.asm.option.include.paths.828774023" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/external}&quot;"/>
+									<listOptionValue builtIn="false" value="/home/andy/git/aegit/Examples/aCTarget2/external"/>
+									<listOptionValue builtIn="false" value="/home/andy/git/aegit/Examples/aCTarget2/src"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.429359114" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="src" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="src|external" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="external"/>
 					</sourceEntries>
@@ -118,5 +120,7 @@
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileC"/>
 		</scannerConfigBuildInfo>
 	</storageModule>
-	<storageModule moduleId="refreshScope"/>
+	<storageModule moduleId="refreshScope" versionNumber="1">
+		<resource resourceType="PROJECT" workspacePath="/aCTarget2"/>
+	</storageModule>
 </cproject>
