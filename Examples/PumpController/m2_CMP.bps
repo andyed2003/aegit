@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.psFile>
+<org.eventb.core.psStatus name="INITIALISATION/act1/SIM" org.eventb.core.confidence="-99" org.eventb.core.poStamp="1" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/act2/SIM" org.eventb.core.confidence="-99" org.eventb.core.poStamp="1" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/act6/SIM" org.eventb.core.confidence="-99" org.eventb.core.poStamp="1" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/act5/SIM" org.eventb.core.confidence="-99" org.eventb.core.poStamp="1" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/act3/SIM" org.eventb.core.confidence="-99" org.eventb.core.poStamp="1" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/act4/SIM" org.eventb.core.confidence="-99" org.eventb.core.poStamp="1" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/act7/SIM" org.eventb.core.confidence="-99" org.eventb.core.poStamp="1" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/act8/SIM" org.eventb.core.confidence="-99" org.eventb.core.poStamp="1" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/act9/SIM" org.eventb.core.confidence="-99" org.eventb.core.poStamp="1" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/act10/SIM" org.eventb.core.confidence="-99" org.eventb.core.poStamp="1" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/act11/SIM" org.eventb.core.confidence="-99" org.eventb.core.poStamp="1" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/act12/SIM" org.eventb.core.confidence="-99" org.eventb.core.poStamp="1" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/act13/SIM" org.eventb.core.confidence="-99" org.eventb.core.poStamp="1" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/act14/SIM" org.eventb.core.confidence="-99" org.eventb.core.poStamp="1" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="fmiGetInteger_e/grd1/GRD" org.eventb.core.confidence="-99" org.eventb.core.poStamp="1" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="fmiGetInteger_e/act1/SIM" org.eventb.core.confidence="-99" org.eventb.core.poStamp="1" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="fmiGetBoolean_c/grd1/GRD" org.eventb.core.confidence="-99" org.eventb.core.poStamp="1" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="fmiGetBoolean_c/act1/SIM" org.eventb.core.confidence="-99" org.eventb.core.poStamp="1" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="fmiGetBoolean_e/grd1/GRD" org.eventb.core.confidence="-99" org.eventb.core.poStamp="1" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="fmiGetBoolean_e/act1/SIM" org.eventb.core.confidence="-99" org.eventb.core.poStamp="1" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="fmiSetInteger_c/grd1/GRD" org.eventb.core.confidence="-99" org.eventb.core.poStamp="1" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="fmiSetInteger_c/act1/SIM" org.eventb.core.confidence="-99" org.eventb.core.poStamp="1" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="fmiSetBoolean_c/grd1/GRD" org.eventb.core.confidence="-99" org.eventb.core.poStamp="1" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="fmiSetBoolean_c/act1/SIM" org.eventb.core.confidence="-99" org.eventb.core.poStamp="1" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="fmiSetBoolean_e/grd1/GRD" org.eventb.core.confidence="-99" org.eventb.core.poStamp="1" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="fmiSetBoolean_e/act1/SIM" org.eventb.core.confidence="-99" org.eventb.core.poStamp="1" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="filterOK/grd1/GRD" org.eventb.core.confidence="-99" org.eventb.core.poStamp="1" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="filterOK/grd2/GRD" org.eventb.core.confidence="-99" org.eventb.core.poStamp="1" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="filterOK/act1/SIM" org.eventb.core.confidence="-99" org.eventb.core.poStamp="1" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="filterOK/act2/SIM" org.eventb.core.confidence="-99" org.eventb.core.poStamp="1" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="filterWarn/grd1/GRD" org.eventb.core.confidence="-99" org.eventb.core.poStamp="1" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="filterWarn/grd2/GRD" org.eventb.core.confidence="-99" org.eventb.core.poStamp="1" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="filterWarn/act1/SIM" org.eventb.core.confidence="-99" org.eventb.core.poStamp="1" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="decide/grd1/GRD" org.eventb.core.confidence="-99" org.eventb.core.poStamp="1" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="decide/act1/SIM" org.eventb.core.confidence="-99" org.eventb.core.poStamp="1" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="e_requestPumpOn/act1/SIM" org.eventb.core.confidence="-99" org.eventb.core.poStamp="1" org.eventb.core.psManual="false"/>
+</org.eventb.core.psFile>

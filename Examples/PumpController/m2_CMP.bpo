@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="MIN" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poPredicate name="MIO" org.eventb.core.predicate="MIN∈ℤ" org.eventb.core.source="/PumpController/ctx.buc|org.eventb.core.contextFile#ctx|org.eventb.core.axiom#("/>
+<org.eventb.core.poPredicate name="MIP" org.eventb.core.predicate="MIN=10" org.eventb.core.source="/PumpController/ctx.buc|org.eventb.core.contextFile#ctx|org.eventb.core.axiom#)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="c_level" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="c_level_internal" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="c_pumpOnCmd" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="c_pumpOnReq" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="c_pumpOnReq_internal" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="c_warn" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="e_level" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="e_pumpOnCmd" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="e_pumpOnReq" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="e_warn" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="m_level" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="m_pumpOnCmd" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="m_pumpOnReq" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="m_warn" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poPredicate name="c_pumpOnReq_internam" org.eventb.core.predicate="m_level∈ℤ" org.eventb.core.source="/PumpController/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#+"/>
+<org.eventb.core.poPredicate name="c_pumpOnReq_internan" org.eventb.core.predicate="c_level∈ℤ" org.eventb.core.source="/PumpController/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#)"/>
+<org.eventb.core.poPredicate name="c_pumpOnReq_internao" org.eventb.core.predicate="e_level∈ℤ" org.eventb.core.source="/PumpController/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#3"/>
+<org.eventb.core.poPredicate name="c_pumpOnReq_internap" org.eventb.core.predicate="m_pumpOnReq∈BOOL" org.eventb.core.source="/PumpController/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#-"/>
+<org.eventb.core.poPredicate name="c_pumpOnReq_internaq" org.eventb.core.predicate="c_pumpOnReq∈BOOL" org.eventb.core.source="/PumpController/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#1"/>
+<org.eventb.core.poPredicate name="c_pumpOnReq_internar" org.eventb.core.predicate="e_pumpOnReq∈BOOL" org.eventb.core.source="/PumpController/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#\/"/>
+<org.eventb.core.poPredicate name="c_pumpOnReq_internas" org.eventb.core.predicate="m_pumpOnCmd∈BOOL" org.eventb.core.source="/PumpController/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#7"/>
+<org.eventb.core.poPredicate name="c_pumpOnReq_internat" org.eventb.core.predicate="c_pumpOnCmd∈BOOL" org.eventb.core.source="/PumpController/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#5"/>
+<org.eventb.core.poPredicate name="c_pumpOnReq_internau" org.eventb.core.predicate="e_pumpOnCmd∈BOOL" org.eventb.core.source="/PumpController/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#9"/>
+<org.eventb.core.poPredicate name="c_pumpOnReq_internav" org.eventb.core.predicate="m_warn∈BOOL" org.eventb.core.source="/PumpController/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#D"/>
+<org.eventb.core.poPredicate name="c_pumpOnReq_internaw" org.eventb.core.predicate="c_warn∈BOOL" org.eventb.core.source="/PumpController/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#F"/>
+<org.eventb.core.poPredicate name="c_pumpOnReq_internax" org.eventb.core.predicate="e_warn∈BOOL" org.eventb.core.source="/PumpController/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#H"/>
+<org.eventb.core.poPredicate name="c_pumpOnReq_internay" org.eventb.core.predicate="c_level_internal≤MIN∧c_pumpOnReq_internal=TRUE⇒c_warn=TRUE" org.eventb.core.source="/PumpController/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#V"/>
+<org.eventb.core.poPredicate name="c_pumpOnReq_internaz" org.eventb.core.predicate="c_level_internal∈ℤ" org.eventb.core.source="/PumpController/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#Z"/>
+<org.eventb.core.poPredicate name="c_pumpOnReq_interna{" org.eventb.core.predicate="c_pumpOnReq_internal∈BOOL" org.eventb.core.source="/PumpController/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#\\"/>
+<org.eventb.core.poPredicate name="c_pumpOnReq_interna|" org.eventb.core.predicate="e_pumpOnCmd∈BOOL" org.eventb.core.source="/PumpController/environment.bum|org.eventb.core.machineFile#environment|org.eventb.core.invariant#+"/>
+<org.eventb.core.poPredicate name="c_pumpOnReq_interna}" org.eventb.core.predicate="e_warn∈BOOL" org.eventb.core.source="/PumpController/environment.bum|org.eventb.core.machineFile#environment|org.eventb.core.invariant#,"/>
+<org.eventb.core.poPredicate name="c_pumpOnReq_interna~" org.eventb.core.predicate="e_level∈ℤ" org.eventb.core.source="/PumpController/environment.bum|org.eventb.core.machineFile#environment|org.eventb.core.invariant#-"/>
+<org.eventb.core.poPredicate name="c_pumpOnReq_internb'" org.eventb.core.predicate="e_pumpOnReq∈BOOL" org.eventb.core.source="/PumpController/environment.bum|org.eventb.core.machineFile#environment|org.eventb.core.invariant#."/>
+<org.eventb.core.poPredicate name="c_pumpOnReq_internb(" org.eventb.core.predicate="m_level∈ℤ" org.eventb.core.source="/PumpController/master.bum|org.eventb.core.machineFile#master|org.eventb.core.invariant#+"/>
+<org.eventb.core.poPredicate name="c_pumpOnReq_internb)" org.eventb.core.predicate="m_warn∈BOOL" org.eventb.core.source="/PumpController/master.bum|org.eventb.core.machineFile#master|org.eventb.core.invariant#,"/>
+<org.eventb.core.poPredicate name="c_pumpOnReq_internb*" org.eventb.core.predicate="m_pumpOnReq∈BOOL" org.eventb.core.source="/PumpController/master.bum|org.eventb.core.machineFile#master|org.eventb.core.invariant#-"/>
+<org.eventb.core.poPredicate name="c_pumpOnReq_internb+" org.eventb.core.predicate="m_pumpOnCmd∈BOOL" org.eventb.core.source="/PumpController/master.bum|org.eventb.core.machineFile#master|org.eventb.core.invariant#."/>
+<org.eventb.core.poPredicate name="c_pumpOnReq_internb," org.eventb.core.predicate="c_pumpOnReq_internal∈BOOL" org.eventb.core.source="/PumpController/controller.bum|org.eventb.core.machineFile#controller|org.eventb.core.invariant#-"/>
+<org.eventb.core.poPredicate name="c_pumpOnReq_internb-" org.eventb.core.predicate="c_level_internal∈ℤ" org.eventb.core.source="/PumpController/controller.bum|org.eventb.core.machineFile#controller|org.eventb.core.invariant#."/>
+<org.eventb.core.poPredicate name="c_pumpOnReq_internb." org.eventb.core.predicate="c_level∈ℤ" org.eventb.core.source="/PumpController/controller.bum|org.eventb.core.machineFile#controller|org.eventb.core.invariant#\/"/>
+<org.eventb.core.poPredicate name="c_pumpOnReq_internb/" org.eventb.core.predicate="c_pumpOnCmd∈BOOL" org.eventb.core.source="/PumpController/controller.bum|org.eventb.core.machineFile#controller|org.eventb.core.invariant#0"/>
+<org.eventb.core.poPredicate name="c_pumpOnReq_internb0" org.eventb.core.predicate="c_warn∈BOOL" org.eventb.core.source="/PumpController/controller.bum|org.eventb.core.machineFile#controller|org.eventb.core.invariant#1"/>
+<org.eventb.core.poPredicate name="c_pumpOnReq_internb1" org.eventb.core.predicate="c_pumpOnReq∈BOOL" org.eventb.core.source="/PumpController/controller.bum|org.eventb.core.machineFile#controller|org.eventb.core.invariant#2"/>
+<org.eventb.core.poPredicate name="c_pumpOnReq_internb2" org.eventb.core.predicate="c_level_internal≤MIN∧c_pumpOnReq_internal=TRUE⇒c_warn=TRUE" org.eventb.core.source="/PumpController/controller.bum|org.eventb.core.machineFile#controller|org.eventb.core.invariant#3"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="INITIALISATION/act1/SIM" org.eventb.core.accurate="false" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CMPEVTALLHYPenvironmentImpl_internal_includes3_ct}"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="c_level'=100" org.eventb.core.source="/PumpController/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#'|org.eventb.core.action#'"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#\\"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#'|org.eventb.core.action#'"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/PumpController/m2_CMP.bcp|ac.soton.composition.core.composedMachineFile#m2_CMP|ac.soton.composition.core.composesEvent#internal_composes events1"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poSequent#INITIALISATION\/act1\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/act2/SIM" org.eventb.core.accurate="false" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CMPEVTALLHYPenvironmentImpl_internal_includes3_ct}"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="m_level'=80" org.eventb.core.source="/PumpController/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#'|org.eventb.core.action#("/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#\\"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#'|org.eventb.core.action#("/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/PumpController/m2_CMP.bcp|ac.soton.composition.core.composedMachineFile#m2_CMP|ac.soton.composition.core.composesEvent#internal_composes events1"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poSequent#INITIALISATION\/act2\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/act6/SIM" org.eventb.core.accurate="false" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CMPEVTALLHYPenvironmentImpl_internal_includes3_ct}"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="e_level'=90" org.eventb.core.source="/PumpController/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#'|org.eventb.core.action#,"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#\\"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#'|org.eventb.core.action#,"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/PumpController/m2_CMP.bcp|ac.soton.composition.core.composedMachineFile#m2_CMP|ac.soton.composition.core.composesEvent#internal_composes events1"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poSequent#INITIALISATION\/act6\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/act5/SIM" org.eventb.core.accurate="false" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CMPEVTALLHYPenvironmentImpl_internal_includes3_ct}"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="c_pumpOnReq'=FALSE" org.eventb.core.source="/PumpController/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#'|org.eventb.core.action#+"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#\\"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#'|org.eventb.core.action#+"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/PumpController/m2_CMP.bcp|ac.soton.composition.core.composedMachineFile#m2_CMP|ac.soton.composition.core.composesEvent#internal_composes events1"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poSequent#INITIALISATION\/act5\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/act3/SIM" org.eventb.core.accurate="false" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CMPEVTALLHYPenvironmentImpl_internal_includes3_ct}"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="m_pumpOnReq'=FALSE" org.eventb.core.source="/PumpController/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#'|org.eventb.core.action#)"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#\\"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#'|org.eventb.core.action#)"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/PumpController/m2_CMP.bcp|ac.soton.composition.core.composedMachineFile#m2_CMP|ac.soton.composition.core.composesEvent#internal_composes events1"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poSequent#INITIALISATION\/act3\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/act4/SIM" org.eventb.core.accurate="false" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CMPEVTALLHYPenvironmentImpl_internal_includes3_ct}"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="e_pumpOnReq'=FALSE" org.eventb.core.source="/PumpController/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#'|org.eventb.core.action#*"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#\\"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#'|org.eventb.core.action#*"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/PumpController/m2_CMP.bcp|ac.soton.composition.core.composedMachineFile#m2_CMP|ac.soton.composition.core.composesEvent#internal_composes events1"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poSequent#INITIALISATION\/act4\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/act7/SIM" org.eventb.core.accurate="false" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CMPEVTALLHYPenvironmentImpl_internal_includes3_ct}"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="c_pumpOnCmd'=FALSE" org.eventb.core.source="/PumpController/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#'|org.eventb.core.action#-"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#\\"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#'|org.eventb.core.action#-"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/PumpController/m2_CMP.bcp|ac.soton.composition.core.composedMachineFile#m2_CMP|ac.soton.composition.core.composesEvent#internal_composes events1"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poSequent#INITIALISATION\/act7\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/act8/SIM" org.eventb.core.accurate="false" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CMPEVTALLHYPenvironmentImpl_internal_includes3_ct}"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="m_pumpOnCmd'=FALSE" org.eventb.core.source="/PumpController/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#'|org.eventb.core.action#."/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#\\"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#'|org.eventb.core.action#."/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/PumpController/m2_CMP.bcp|ac.soton.composition.core.composedMachineFile#m2_CMP|ac.soton.composition.core.composesEvent#internal_composes events1"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poSequent#INITIALISATION\/act8\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/act9/SIM" org.eventb.core.accurate="false" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CMPEVTALLHYPenvironmentImpl_internal_includes3_ct}"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="e_pumpOnCmd'=FALSE" org.eventb.core.source="/PumpController/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#'|org.eventb.core.action#\/"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#\\"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#'|org.eventb.core.action#\/"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/PumpController/m2_CMP.bcp|ac.soton.composition.core.composedMachineFile#m2_CMP|ac.soton.composition.core.composesEvent#internal_composes events1"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poSequent#INITIALISATION\/act9\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/act10/SIM" org.eventb.core.accurate="false" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CMPEVTALLHYPenvironmentImpl_internal_includes3_ct}"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="m_warn'=FALSE" org.eventb.core.source="/PumpController/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#'|org.eventb.core.action#0"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#\\"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#'|org.eventb.core.action#0"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/PumpController/m2_CMP.bcp|ac.soton.composition.core.composedMachineFile#m2_CMP|ac.soton.composition.core.composesEvent#internal_composes events1"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poSequent#INITIALISATION\/act10\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/act11/SIM" org.eventb.core.accurate="false" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CMPEVTALLHYPenvironmentImpl_internal_includes3_ct}"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="c_warn'=FALSE" org.eventb.core.source="/PumpController/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#'|org.eventb.core.action#1"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#\\"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#'|org.eventb.core.action#1"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/PumpController/m2_CMP.bcp|ac.soton.composition.core.composedMachineFile#m2_CMP|ac.soton.composition.core.composesEvent#internal_composes events1"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poSequent#INITIALISATION\/act11\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/act12/SIM" org.eventb.core.accurate="false" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CMPEVTALLHYPenvironmentImpl_internal_includes3_ct}"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="e_warn'=FALSE" org.eventb.core.source="/PumpController/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#'|org.eventb.core.action#2"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#\\"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#'|org.eventb.core.action#2"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/PumpController/m2_CMP.bcp|ac.soton.composition.core.composedMachineFile#m2_CMP|ac.soton.composition.core.composesEvent#internal_composes events1"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poSequent#INITIALISATION\/act12\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/act13/SIM" org.eventb.core.accurate="false" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CMPEVTALLHYPenvironmentImpl_internal_includes3_ct}"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="c_level_internal'=100" org.eventb.core.source="/PumpController/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#O|org.eventb.core.action#'"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#\\"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#O|org.eventb.core.action#'"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/PumpController/m2_CMP.bcp|ac.soton.composition.core.composedMachineFile#m2_CMP|ac.soton.composition.core.composesEvent#internal_composes events1"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poSequent#INITIALISATION\/act13\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/act14/SIM" org.eventb.core.accurate="false" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CMPEVTALLHYPenvironmentImpl_internal_includes3_ct}"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="c_pumpOnReq_internal'=FALSE" org.eventb.core.source="/PumpController/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#O|org.eventb.core.action#("/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#\\"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#O|org.eventb.core.action#("/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/PumpController/m2_CMP.bcp|ac.soton.composition.core.composedMachineFile#m2_CMP|ac.soton.composition.core.composesEvent#internal_composes events1"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poSequent#INITIALISATION\/act14\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="CMPEVTIDENTenvironmentImpl_internal_includes3_ct}" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="c_level_internal'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="e_pumpOnCmd'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="e_warn'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="m_level'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="e_level'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="m_pumpOnCmd'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="m_warn'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="e_pumpOnReq'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="c_pumpOnCmd'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="c_warn'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="m_pumpOnReq'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="c_pumpOnReq'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="c_level'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="c_pumpOnReq_internal'" org.eventb.core.type="BOOL"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="CMPEVTALLHYPenvironmentImpl_internal_includes3_ct}" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CMPEVTIDENTenvironmentImpl_internal_includes3_ct}" org.eventb.core.poStamp="0"/>
+<org.eventb.core.poSequent name="fmiGetInteger_e/grd1/GRD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Guard strengthening (split)" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CMPEVTALLHYPenvironmentImpl_internal_includes3_ct~"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="p=e_level" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#]|org.eventb.core.guard#)"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#]"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#]|org.eventb.core.guard#)"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/PumpController/m2_CMP.bcp|ac.soton.composition.core.composedMachineFile#m2_CMP|ac.soton.composition.core.composesEvent#internal_composes events2"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poSequent#fmiGetInteger_e\/grd1\/GRD|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="fmiGetInteger_e/act1/SIM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CMPEVTALLHYPenvironmentImpl_internal_includes3_ct~"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="m_level=p" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#]|org.eventb.core.action#'"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#]"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#]|org.eventb.core.action#'"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/PumpController/m2_CMP.bcp|ac.soton.composition.core.composedMachineFile#m2_CMP|ac.soton.composition.core.composesEvent#internal_composes events2"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poSequent#fmiGetInteger_e\/act1\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="CMPEVTIDENTenvironmentImpl_internal_includes3_ct~" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="p" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="m_level'" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="CMPEVTALLHYPenvironmentImpl_internal_includes3_ct~" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CMPEVTIDENTenvironmentImpl_internal_includes3_ct~" org.eventb.core.poStamp="0"/>
+<org.eventb.core.poSequent name="fmiGetBoolean_c/grd1/GRD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Guard strengthening (split)" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CMPEVTALLHYPenvironmentImpl_internal_includes3_cu'"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="p=c_pumpOnCmd" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#^|org.eventb.core.guard#)"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#^"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#^|org.eventb.core.guard#)"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/PumpController/m2_CMP.bcp|ac.soton.composition.core.composedMachineFile#m2_CMP|ac.soton.composition.core.composesEvent#internal_composes events3"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poSequent#fmiGetBoolean_c\/grd1\/GRD|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="fmiGetBoolean_c/act1/SIM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CMPEVTALLHYPenvironmentImpl_internal_includes3_cu'"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="m_pumpOnCmd=p" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#^|org.eventb.core.action#'"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#^"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#^|org.eventb.core.action#'"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/PumpController/m2_CMP.bcp|ac.soton.composition.core.composedMachineFile#m2_CMP|ac.soton.composition.core.composesEvent#internal_composes events3"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poSequent#fmiGetBoolean_c\/act1\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="CMPEVTIDENTenvironmentImpl_internal_includes3_cu'" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="p" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="m_pumpOnCmd'" org.eventb.core.type="BOOL"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="CMPEVTALLHYPenvironmentImpl_internal_includes3_cu'" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CMPEVTIDENTenvironmentImpl_internal_includes3_cu'" org.eventb.core.poStamp="0"/>
+<org.eventb.core.poSequent name="fmiGetBoolean_e/grd1/GRD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Guard strengthening (split)" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CMPEVTALLHYPenvironmentImpl_internal_includes3_cu("/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="p=e_pumpOnReq" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#_|org.eventb.core.guard#)"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#_"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#_|org.eventb.core.guard#)"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/PumpController/m2_CMP.bcp|ac.soton.composition.core.composedMachineFile#m2_CMP|ac.soton.composition.core.composesEvent#internal_composes events4"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poSequent#fmiGetBoolean_e\/grd1\/GRD|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="fmiGetBoolean_e/act1/SIM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CMPEVTALLHYPenvironmentImpl_internal_includes3_cu("/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="m_pumpOnReq=p" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#_|org.eventb.core.action#'"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#_"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#_|org.eventb.core.action#'"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/PumpController/m2_CMP.bcp|ac.soton.composition.core.composedMachineFile#m2_CMP|ac.soton.composition.core.composesEvent#internal_composes events4"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poSequent#fmiGetBoolean_e\/act1\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="CMPEVTIDENTenvironmentImpl_internal_includes3_cu(" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="p" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="m_pumpOnReq'" org.eventb.core.type="BOOL"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="CMPEVTALLHYPenvironmentImpl_internal_includes3_cu(" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CMPEVTIDENTenvironmentImpl_internal_includes3_cu(" org.eventb.core.poStamp="0"/>
+<org.eventb.core.poSequent name="fmiSetInteger_c/grd1/GRD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Guard strengthening (split)" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CMPEVTALLHYPenvironmentImpl_internal_includes3_cu)"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="p=m_level" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#`|org.eventb.core.guard#)"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#`"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#`|org.eventb.core.guard#)"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/PumpController/m2_CMP.bcp|ac.soton.composition.core.composedMachineFile#m2_CMP|ac.soton.composition.core.composesEvent#internal_composes events5"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poSequent#fmiSetInteger_c\/grd1\/GRD|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="fmiSetInteger_c/act1/SIM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CMPEVTALLHYPenvironmentImpl_internal_includes3_cu)"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="c_level=p" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#`|org.eventb.core.action#'"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#`"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#`|org.eventb.core.action#'"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/PumpController/m2_CMP.bcp|ac.soton.composition.core.composedMachineFile#m2_CMP|ac.soton.composition.core.composesEvent#internal_composes events5"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poSequent#fmiSetInteger_c\/act1\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="CMPEVTIDENTenvironmentImpl_internal_includes3_cu)" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="p" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="c_level'" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="CMPEVTALLHYPenvironmentImpl_internal_includes3_cu)" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CMPEVTIDENTenvironmentImpl_internal_includes3_cu)" org.eventb.core.poStamp="0"/>
+<org.eventb.core.poSequent name="fmiSetBoolean_c/grd1/GRD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Guard strengthening (split)" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CMPEVTALLHYPenvironmentImpl_internal_includes3_cu*"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="p=m_pumpOnReq" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#a|org.eventb.core.guard#)"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#a"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#a|org.eventb.core.guard#)"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/PumpController/m2_CMP.bcp|ac.soton.composition.core.composedMachineFile#m2_CMP|ac.soton.composition.core.composesEvent#internal_composes events6"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poSequent#fmiSetBoolean_c\/grd1\/GRD|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="fmiSetBoolean_c/act1/SIM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CMPEVTALLHYPenvironmentImpl_internal_includes3_cu*"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="c_pumpOnReq=p" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#a|org.eventb.core.action#'"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#a"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#a|org.eventb.core.action#'"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/PumpController/m2_CMP.bcp|ac.soton.composition.core.composedMachineFile#m2_CMP|ac.soton.composition.core.composesEvent#internal_composes events6"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poSequent#fmiSetBoolean_c\/act1\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="CMPEVTIDENTenvironmentImpl_internal_includes3_cu*" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="p" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="c_pumpOnReq'" org.eventb.core.type="BOOL"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="CMPEVTALLHYPenvironmentImpl_internal_includes3_cu*" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CMPEVTIDENTenvironmentImpl_internal_includes3_cu*" org.eventb.core.poStamp="0"/>
+<org.eventb.core.poSequent name="fmiSetBoolean_e/grd1/GRD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Guard strengthening (split)" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CMPEVTALLHYPenvironmentImpl_internal_includes3_cu+"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="p=m_pumpOnCmd" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#b|org.eventb.core.guard#)"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#b"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#b|org.eventb.core.guard#)"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/PumpController/m2_CMP.bcp|ac.soton.composition.core.composedMachineFile#m2_CMP|ac.soton.composition.core.composesEvent#internal_composes events7"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poSequent#fmiSetBoolean_e\/grd1\/GRD|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="fmiSetBoolean_e/act1/SIM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CMPEVTALLHYPenvironmentImpl_internal_includes3_cu+"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="e_pumpOnCmd=p" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#b|org.eventb.core.action#'"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#b"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#b|org.eventb.core.action#'"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/PumpController/m2_CMP.bcp|ac.soton.composition.core.composedMachineFile#m2_CMP|ac.soton.composition.core.composesEvent#internal_composes events7"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poSequent#fmiSetBoolean_e\/act1\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="CMPEVTIDENTenvironmentImpl_internal_includes3_cu+" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="p" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="e_pumpOnCmd'" org.eventb.core.type="BOOL"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="CMPEVTALLHYPenvironmentImpl_internal_includes3_cu+" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CMPEVTIDENTenvironmentImpl_internal_includes3_cu+" org.eventb.core.poStamp="0"/>
+<org.eventb.core.poSequent name="filterOK/grd1/GRD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Guard strengthening (split)" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CMPEVTALLHYPenvironmentImpl_internal_includes3_cu,"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="c_level&gt;MIN" org.eventb.core.source="/PumpController/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#W|org.eventb.core.guard#'"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#c"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#W|org.eventb.core.guard#'"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/PumpController/m2_CMP.bcp|ac.soton.composition.core.composedMachineFile#m2_CMP|ac.soton.composition.core.composesEvent#internal_composes events8"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poSequent#filterOK\/grd1\/GRD|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="filterOK/grd2/GRD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Guard strengthening (split)" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CMPEVTALLHYPenvironmentImpl_internal_includes3_cu,"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="c_pumpOnReq=TRUE" org.eventb.core.source="/PumpController/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#W|org.eventb.core.guard#)"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#c"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#W|org.eventb.core.guard#)"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/PumpController/m2_CMP.bcp|ac.soton.composition.core.composedMachineFile#m2_CMP|ac.soton.composition.core.composesEvent#internal_composes events8"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poSequent#filterOK\/grd2\/GRD|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="filterOK/act1/SIM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CMPEVTALLHYPenvironmentImpl_internal_includes3_cu,"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="c_level_internal=c_level" org.eventb.core.source="/PumpController/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#W|org.eventb.core.action#("/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#c"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#W|org.eventb.core.action#("/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/PumpController/m2_CMP.bcp|ac.soton.composition.core.composedMachineFile#m2_CMP|ac.soton.composition.core.composesEvent#internal_composes events8"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poSequent#filterOK\/act1\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="filterOK/act2/SIM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CMPEVTALLHYPenvironmentImpl_internal_includes3_cu,"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="c_pumpOnReq_internal=TRUE" org.eventb.core.source="/PumpController/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#W|org.eventb.core.action#*"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#c"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#W|org.eventb.core.action#*"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/PumpController/m2_CMP.bcp|ac.soton.composition.core.composedMachineFile#m2_CMP|ac.soton.composition.core.composesEvent#internal_composes events8"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poSequent#filterOK\/act2\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="CMPEVTIDENTenvironmentImpl_internal_includes3_cu," org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="c_level_internal'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="c_pumpOnReq_internal'" org.eventb.core.type="BOOL"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="CMPEVTALLHYPenvironmentImpl_internal_includes3_cu," org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CMPEVTIDENTenvironmentImpl_internal_includes3_cu," org.eventb.core.poStamp="0"/>
+<org.eventb.core.poSequent name="filterWarn/grd1/GRD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Guard strengthening (split)" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CMPEVTALLHYPenvironmentImpl_internal_includes3_cu-"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="c_level≤MIN" org.eventb.core.source="/PumpController/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#X|org.eventb.core.guard#'"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#d"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#X|org.eventb.core.guard#'"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/PumpController/m2_CMP.bcp|ac.soton.composition.core.composedMachineFile#m2_CMP|ac.soton.composition.core.composesEvent#internal_composes events9"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poSequent#filterWarn\/grd1\/GRD|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="filterWarn/grd2/GRD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Guard strengthening (split)" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CMPEVTALLHYPenvironmentImpl_internal_includes3_cu-"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="c_pumpOnReq=TRUE" org.eventb.core.source="/PumpController/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#X|org.eventb.core.guard#)"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#d"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#X|org.eventb.core.guard#)"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/PumpController/m2_CMP.bcp|ac.soton.composition.core.composedMachineFile#m2_CMP|ac.soton.composition.core.composesEvent#internal_composes events9"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poSequent#filterWarn\/grd2\/GRD|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="filterWarn/act1/SIM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CMPEVTALLHYPenvironmentImpl_internal_includes3_cu-"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="c_warn=TRUE" org.eventb.core.source="/PumpController/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#X|org.eventb.core.action#("/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#d"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#X|org.eventb.core.action#("/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/PumpController/m2_CMP.bcp|ac.soton.composition.core.composedMachineFile#m2_CMP|ac.soton.composition.core.composesEvent#internal_composes events9"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poSequent#filterWarn\/act1\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="CMPEVTIDENTenvironmentImpl_internal_includes3_cu-" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="c_warn'" org.eventb.core.type="BOOL"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="CMPEVTALLHYPenvironmentImpl_internal_includes3_cu-" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CMPEVTIDENTenvironmentImpl_internal_includes3_cu-" org.eventb.core.poStamp="0"/>
+<org.eventb.core.poSequent name="decide/grd1/GRD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Guard strengthening (split)" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CMPEVTALLHYPenvironmentImpl_internal_includes3_cu."/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="c_pumpOnReq_internal=TRUE" org.eventb.core.source="/PumpController/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#]|org.eventb.core.guard#("/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#e"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#]|org.eventb.core.guard#("/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/PumpController/m2_CMP.bcp|ac.soton.composition.core.composedMachineFile#m2_CMP|ac.soton.composition.core.composesEvent#internal_composes events10"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poSequent#decide\/grd1\/GRD|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="decide/act1/SIM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CMPEVTALLHYPenvironmentImpl_internal_includes3_cu."/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="c_pumpOnCmd=TRUE" org.eventb.core.source="/PumpController/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#]|org.eventb.core.action#'"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#e"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#]|org.eventb.core.action#'"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/PumpController/m2_CMP.bcp|ac.soton.composition.core.composedMachineFile#m2_CMP|ac.soton.composition.core.composesEvent#internal_composes events10"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poSequent#decide\/act1\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="CMPEVTIDENTenvironmentImpl_internal_includes3_cu." org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="c_pumpOnCmd'" org.eventb.core.type="BOOL"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="CMPEVTALLHYPenvironmentImpl_internal_includes3_cu." org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CMPEVTIDENTenvironmentImpl_internal_includes3_cu." org.eventb.core.poStamp="0"/>
+<org.eventb.core.poSequent name="e_requestPumpOn/act1/SIM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CMPEVTALLHYPenvironmentImpl_internal_includes3_cu\/"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="e_pumpOnReq=TRUE" org.eventb.core.source="/PumpController/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#R|org.eventb.core.action#'"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m2.bum|org.eventb.core.machineFile#m2|org.eventb.core.event#f"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PumpController/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#R|org.eventb.core.action#'"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/PumpController/m2_CMP.bcp|ac.soton.composition.core.composedMachineFile#m2_CMP|ac.soton.composition.core.composesEvent#internal_composes events11"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poSequent#e_requestPumpOn\/act1\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="CMPEVTIDENTenvironmentImpl_internal_includes3_cu/" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="e_pumpOnReq'" org.eventb.core.type="BOOL"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="CMPEVTALLHYPenvironmentImpl_internal_includes3_cu/" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CMPEVTIDENTenvironmentImpl_internal_includes3_cu\/" org.eventb.core.poStamp="0"/>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0"/>
+</org.eventb.core.poFile>
