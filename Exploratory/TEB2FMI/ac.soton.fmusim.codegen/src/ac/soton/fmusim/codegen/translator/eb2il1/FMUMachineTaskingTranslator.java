@@ -9,9 +9,11 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.ui.statushandlers.StatusManager;
+import org.eventb.codegen.il1.Call;
 import org.eventb.codegen.il1.Command;
 import org.eventb.codegen.il1.IL1Element;
 import org.eventb.codegen.il1.Il1Factory;
+import org.eventb.codegen.il1.LocalRemote;
 import org.eventb.codegen.il1.Protected;
 import org.eventb.codegen.il1.Subroutine;
 import org.eventb.codegen.tasking.AbstractTaskingTranslator;
@@ -102,7 +104,27 @@ public class FMUMachineTaskingTranslator extends AbstractTaskingTranslator {
 				CompositeControl taskBody = fmuMch.getTaskBody();
 				Command b = null;
 				try {
-					b = (Command) translationManager.translate(taskBody);
+					IL1Element translated = translationManager.translate(taskBody);
+					if(translated instanceof Command){
+						b = (Command) translated;
+					}
+					// if we have a subroutine in a local remote - we use this
+					else if(translated instanceof LocalRemote){
+						LocalRemote localRemote = (LocalRemote) translated;
+						if(localRemote.getRemoteSubroutine() != null){
+							// there should be no synchronizing in the FMU unless we 
+							// implement nested FMUs at a later date
+							throw new TaskingTranslationException("FMU found with illegal translation to remote call: " + protectedObj.getMachineName() );
+						}
+						else{
+							// we need to expand the subroutine body, in order to add the actions 
+							Subroutine localSubroutine = localRemote.getLocalSubroutine();
+							localSubroutine.setMachineName(protectedObj.getName());
+							localSubroutine.setProjectName(protectedObj.getProjectName());
+							b = localSubroutine.getBody();
+							
+						}
+					}
 				} catch (TaskingTranslationException e) {
 					Status status = new Status(IStatus.ERROR,
 							CodeGenTasking.PLUGIN_ID,
