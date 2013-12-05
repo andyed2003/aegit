@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ac.soton.composition.core.composedMachineFile org.eventb.core.comment="" org.eventb.core.configuration="ac.soton.composition.core.cmp" version="7">
+<ac.soton.composition.core.refinesMachine ac.soton.composition.core.target="m1" name="internal_refines1"/>
+<ac.soton.composition.core.seesContext ac.soton.composition.core.target="ctx" name="internal_sees1"/>
+<ac.soton.composition.core.includeMachine ac.soton.composition.core.includedInvariant="false" ac.soton.composition.core.project="PumpController" ac.soton.composition.core.target="controller" name="internal_includes1"/>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events1" org.eventb.core.convergence="0" org.eventb.core.label="INITIALISATION">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[PumpController]controller" name="internal_combines events1" org.eventb.core.target="INITIALISATION"/>
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[PumpController]environment" name="internal_combines events2" org.eventb.core.target="INITIALISATION"/>
+</ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events2" org.eventb.core.convergence="0" org.eventb.core.label="c_read">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[PumpController]controller" name="internal_combines events1" org.eventb.core.target="c_read"/>
+<ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="c_read"/>
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[PumpController]environment" name="internal_combines events2" org.eventb.core.target="c_read"/>
+</ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events3" org.eventb.core.convergence="0" org.eventb.core.label="c_filterInOK">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[PumpController]controller" name="internal_combines events1" org.eventb.core.target="c_filterInOK"/>
+<ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="c_filterInOK"/>
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[PumpController]environment" name="internal_combines events2" org.eventb.core.target="c_filterInOK"/>
+</ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events4" org.eventb.core.convergence="0" org.eventb.core.label="c_filterInWarn">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[PumpController]controller" name="internal_combines events1" org.eventb.core.target="c_filterInWarn"/>
+<ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="c_filterInWarn"/>
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[PumpController]environment" name="internal_combines events2" org.eventb.core.target="c_filterInWarn"/>
+</ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events5" org.eventb.core.convergence="0" org.eventb.core.label="c_pumpOn">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[PumpController]controller" name="internal_combines events1" org.eventb.core.target="c_pumpOn"/>
+<ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="c_pumpOn"/>
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[PumpController]environment" name="internal_combines events2" org.eventb.core.target="c_pumpOn"/>
+</ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.includeMachine ac.soton.composition.core.includedInvariant="false" ac.soton.composition.core.project="PumpController" ac.soton.composition.core.target="environment" name="internal_includes2"/>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events6" org.eventb.core.convergence="0" org.eventb.core.label="e_pumpOn">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[PumpController]environment" name="internal_combines events1" org.eventb.core.target="e_pumpOn"/>
+<ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="e_pumpOn"/>
+</ac.soton.composition.core.composesEvent>
+</ac.soton.composition.core.composedMachineFile>

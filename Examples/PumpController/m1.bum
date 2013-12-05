@@ -9,23 +9,41 @@
 <org.eventb.core.variable name="8" org.eventb.core.identifier="e_levelOut"/>
 <org.eventb.core.variable name=":" org.eventb.core.identifier="c_pumpOnReq"/>
 <org.eventb.core.variable name="=" org.eventb.core.identifier="c_levelCalc"/>
-<org.eventb.core.event name="&gt;" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION"/>
+<org.eventb.core.event name="&gt;" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="'" org.eventb.core.assignment="c_pumpOnCmd ≔ FALSE" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="c_levelIn ≔ 100" org.eventb.core.label="act2"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="c_issueWarning ≔ FALSE" org.eventb.core.label="act4"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="e_pumpOnReq ≔ FALSE" org.eventb.core.label="act5"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="e_levelOut ≔ 9" org.eventb.core.label="act6"/>
+<org.eventb.core.action name="," org.eventb.core.assignment="c_pumpOnReq ≔ FALSE" org.eventb.core.label="act7"/>
+<org.eventb.core.action name="-" org.eventb.core.assignment="c_levelCalc :∈ ℤ" org.eventb.core.label="act8"/>
+</org.eventb.core.event>
 <org.eventb.core.event name="?" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="c_read">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="c_read"/>
 <org.eventb.core.parameter name="(" org.eventb.codegen.ui.parameterTypeAttribute="--unset--" org.eventb.core.identifier="p"/>
 <org.eventb.core.action name=")" org.eventb.core.assignment="c_levelIn ≔ p" org.eventb.core.label="act2"/>
 <org.eventb.core.guard name="*" org.eventb.codegen.ui.typingAttribute="NonTyping" org.eventb.core.label="grd1" org.eventb.core.predicate="p = e_levelOut"/>
 </org.eventb.core.event>
-<org.eventb.core.event name="@" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="c_filterInOK">
+<org.eventb.core.event name="@" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="c_filterInOK">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="c_filterInOK"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="c_levelIn &gt; MIN"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd2" org.eventb.core.predicate="e_pumpOnReq = TRUE"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="c_levelCalc ≔ c_levelIn" org.eventb.core.label="act1"/>
 </org.eventb.core.event>
-<org.eventb.core.event name="A" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="c_filterInWarn">
+<org.eventb.core.event name="A" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="c_filterInWarn">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="c_filterInWarn"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd2" org.eventb.core.predicate="c_levelIn ≤ MIN"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd3" org.eventb.core.predicate="e_pumpOnReq = TRUE"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="c_issueWarning ≔ TRUE" org.eventb.core.label="act1"/>
 </org.eventb.core.event>
-<org.eventb.core.event name="B" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="c_pumpOn">
+<org.eventb.core.event name="B" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="c_pumpOn">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="c_pumpOn"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd2" org.eventb.core.predicate="c_levelCalc &gt; MIN"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="e_pumpOnReq = TRUE"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="c_pumpOnCmd ≔ TRUE" org.eventb.core.label="act1"/>
 </org.eventb.core.event>
-<org.eventb.core.event name="C" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="e_pumpOn">
+<org.eventb.core.event name="C" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="e_pumpOn">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="e_pumpOn"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="e_pumpOnReq ≔ TRUE" org.eventb.core.label="act1"/>
 </org.eventb.core.event>
 </org.eventb.core.machineFile>
