@@ -1,7 +1,2 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.psFile>
-<org.eventb.core.psStatus name="INITIALISATION/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="0" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="INITIALISATION/act8/FIS" org.eventb.core.confidence="1000" org.eventb.core.poStamp="0" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="c_filterInOK/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="0" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="c_filterInWarn/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="0" org.eventb.core.psManual="false"/>
-</org.eventb.core.psFile>
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eventb.core.psFile/>
