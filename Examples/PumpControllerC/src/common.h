@@ -5,5 +5,6 @@
 #include "myFMIDecls.h"
 #include <stdlib.h>
 #include "controllerImpl.h"
+#include "environmentImpl.h"
 #endif
 

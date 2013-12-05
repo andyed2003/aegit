@@ -56,4 +56,7 @@
 <ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[PumpController]environmentImpl" name="internal_combines events1" org.eventb.core.target="e_requestPumpOn"/>
 <ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="e_requestPumpOn"/>
 </ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.composesEvent name="internal_includes4" org.eventb.core.convergence="0" org.eventb.core.label="composes_evt1">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[PumpController]controllerImpl" name="'" org.eventb.core.target="donothing"/>
+</ac.soton.composition.core.composesEvent>
 </ac.soton.composition.core.composedMachineFile>

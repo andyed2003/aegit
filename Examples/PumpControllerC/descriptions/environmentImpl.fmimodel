@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fmiModelDescription author="University of Southampton" fmiVersion="2.0" generationDateAndTime="2013-12-05T15:29:34.260Z" generationTool="EB2FMU" guid="GUID_environmentImpl_2013-12-05T15:29:34.260Z" modelName="environmentImpl" numberOfEventIndicators="0">
+  <CoSimulation modelIdentifier="environmentImpl"/>
+  <ModelVariables>
+    <ScalarVariable name="e_level" valueReference="0">
+      <Integer/>
+    </ScalarVariable>
+    <ScalarVariable name="e_pumpOnReq" valueReference="0">
+      <Boolean/>
+    </ScalarVariable>
+    <ScalarVariable name="e_pumpOnCmd" valueReference="1">
+      <Boolean/>
+    </ScalarVariable>
+    <ScalarVariable name="e_warn" valueReference="2">
+      <Boolean/>
+    </ScalarVariable>
+  </ModelVariables>
+</fmiModelDescription>
