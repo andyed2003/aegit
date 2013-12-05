@@ -63,4 +63,5 @@
 <org.eventb.core.invariant name="typing_c_pumpOnReq" org.eventb.codegen.tasking.flattened="true" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="typing_c_pumpOnReq" org.eventb.core.predicate="c_pumpOnReq ∈ BOOL" org.eventb.core.theorem="true"/>
 <org.eventb.core.invariant name="m1_inv1" org.eventb.codegen.tasking.flattened="true" org.eventb.codegen.ui.typingAttribute="NonTyping" org.eventb.core.label="m1_inv1" org.eventb.core.predicate="c_level_internal ≤ MIN ∧ c_pumpOnReq_internal = TRUE ⇒ c_warn = TRUE"/>
 <org.eventb.core.event name="typing_c_pumpOnReq_internam" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="donothing"/>
+<org.eventb.core.invariant name="typing_c_pumpOnReq_internan" org.eventb.codegen.ui.typingAttribute="NonTyping" org.eventb.core.label="m1_inv2" org.eventb.core.predicate="c_level_internal &gt; MIN ∧ c_pumpOnReq_internal = TRUE ⇒ c_pumpOnCmd = TRUE"/>
 </org.eventb.core.machineFile>
