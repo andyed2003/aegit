@@ -14,29 +14,22 @@
       <formalParameters xsi:type="il1:OutParameter" identifier="c_pumpOnCmd" type=" BOOL" ProjectName="PumpController"/>
     </subroutines>
     <subroutines name="fmiDoStep" machineName="controllerImpl" projectName="PumpController">
-      <body xsi:type="il1:Seq">
-        <leftBranch xsi:type="il1:If">
-          <body xsi:type="il1:Seq">
-            <leftBranch xsi:type="il1:Seq">
-              <leftBranch xsi:type="il1:Action" ParentEventName="filterOK" action="c_level_internal  &#x2254; c_level"/>
-              <rightBranch xsi:type="il1:Action" ParentEventName="filterOK" action="c_pumpOnReq_internal  &#x2254; TRUE"/>
-            </leftBranch>
-          </body>
-          <condition>c_level > MIN</condition>
-          <condition>c_pumpOnReq = TRUE</condition>
-          <else xsi:type="il1:Seq">
-            <leftBranch xsi:type="il1:Action" ParentEventName="filterWarn" action="c_warn  &#x2254; TRUE"/>
-          </else>
-          <relatedEvent href="platform:/resource/PumpController/controllerImpl.bum#org.eventb.emf.core.machine.Event.filterOK"/>
-        </leftBranch>
-        <rightBranch xsi:type="il1:If">
-          <body xsi:type="il1:Seq">
-            <leftBranch xsi:type="il1:Action" ParentEventName="decide" action="c_pumpOnCmd  &#x2254; TRUE"/>
-          </body>
-          <condition>c_pumpOnReq_internal = TRUE</condition>
-          <else xsi:type="il1:Seq"/>
-          <relatedEvent href="platform:/resource/PumpController/controllerImpl.bum#org.eventb.emf.core.machine.Event.decide"/>
-        </rightBranch>
+      <body xsi:type="il1:If">
+        <body xsi:type="il1:Seq">
+          <leftBranch xsi:type="il1:Seq">
+            <leftBranch xsi:type="il1:Action" ParentEventName="filterOK" action="c_level_internal  &#x2254; c_level"/>
+            <rightBranch xsi:type="il1:Seq">
+              <leftBranch xsi:type="il1:Action" ParentEventName="filterOK" action="c_pumpOnReq_internal  &#x2254; TRUE"/>
+              <rightBranch xsi:type="il1:Action" ParentEventName="filterOK" action="c_pumpOnCmd  &#x2254; TRUE"/>
+            </rightBranch>
+          </leftBranch>
+        </body>
+        <condition>c_level > MIN</condition>
+        <condition>c_pumpOnReq = TRUE</condition>
+        <else xsi:type="il1:Seq">
+          <leftBranch xsi:type="il1:Action" ParentEventName="filterWarn" action="c_warn  &#x2254; TRUE"/>
+        </else>
+        <relatedEvent href="platform:/resource/PumpController/controllerImpl.bum#org.eventb.emf.core.machine.Event.filterOK"/>
       </body>
     </subroutines>
     <decls xsi:type="il1:VariableDecl" identifier="c_level" type="&#x2124;" initialValue="100" ProjectName="PumpController" ComponentName="controllerImpl"/>
