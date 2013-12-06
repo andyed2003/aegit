@@ -70,4 +70,5 @@
 <org.eventb.core.scGuard name=")" org.eventb.core.label="grd2" org.eventb.core.predicate="c_pumpOnReq=TRUE" org.eventb.core.source="/PumpController/controllerImpl.bum|org.eventb.core.machineFile#controllerImpl|org.eventb.core.event#B|org.eventb.core.guard#(" org.eventb.core.theorem="false"/>
 <org.eventb.core.scAction name="*" org.eventb.core.assignment="c_warn ≔ TRUE" org.eventb.core.label="act1" org.eventb.core.source="/PumpController/controllerImpl.bum|org.eventb.core.machineFile#controllerImpl|org.eventb.core.event#B|org.eventb.core.action#)"/>
 </org.eventb.core.scEvent>
+<org.eventb.core.scEvent ch.ethz.eventb.decomposition.external="false" name="c_pumpOnReq_internas" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="doNothing" org.eventb.core.source="/PumpController/controllerImpl.bum|org.eventb.core.machineFile#controllerImpl|org.eventb.core.event#typing_c_pumpOnReq_internao"/>
 </org.eventb.core.scMachineFile>

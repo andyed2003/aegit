@@ -155,4 +155,5 @@
 <ac.soton.composition.core.scRefinesEvent name="'" org.eventb.core.scTarget="/PumpController/m2.bcm|org.eventb.core.scMachineFile#m2|org.eventb.core.scEvent#c_pumpOnReq_internav" org.eventb.core.source="/PumpController/m2_CMP.bcp|ac.soton.composition.core.composedMachineFile#m2_CMP|ac.soton.composition.core.composesEvent#internal_composes events10|ac.soton.composition.core.refinesEvent#internal_refines1"/>
 <org.eventb.core.scAction name="(" org.eventb.core.assignment="e_pumpOnReq ≔ TRUE" org.eventb.core.label="PumpController|environmentImpl|e_requestPumpOn|act1" org.eventb.core.source="/PumpController/environmentImpl.bum|org.eventb.core.machineFile#environmentImpl|org.eventb.core.event#9|org.eventb.core.action#'"/>
 </ac.soton.composition.core.scComposesEvent>
+<ac.soton.composition.core.scComposesEvent name="environmentImpl_internal_includes3_cu3" org.eventb.core.accurate="true" org.eventb.core.label="doNothing" org.eventb.core.source="/PumpController/m2_CMP.bcp|ac.soton.composition.core.composedMachineFile#m2_CMP|ac.soton.composition.core.composesEvent#internal_includes4"/>
 </ac.soton.composition.core.scComposedMachineFile>

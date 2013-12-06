@@ -26,9 +26,15 @@
         </body>
         <condition>c_level > MIN</condition>
         <condition>c_pumpOnReq = TRUE</condition>
-        <else xsi:type="il1:Seq">
-          <leftBranch xsi:type="il1:Action" ParentEventName="filterWarn" action="c_warn  &#x2254; TRUE"/>
-        </else>
+        <branch>
+          <condition>c_level &#x2264; MIN</condition>
+          <condition>c_pumpOnReq = TRUE</condition>
+          <action xsi:type="il1:Seq">
+            <leftBranch xsi:type="il1:Action" ParentEventName="filterWarn" action="c_warn  &#x2254; TRUE"/>
+          </action>
+          <relatedEvent href="platform:/resource/PumpController/controllerImpl.bum#org.eventb.emf.core.machine.Event.filterWarn"/>
+        </branch>
+        <else xsi:type="il1:Seq"/>
         <relatedEvent href="platform:/resource/PumpController/controllerImpl.bum#org.eventb.emf.core.machine.Event.filterOK"/>
       </body>
     </subroutines>

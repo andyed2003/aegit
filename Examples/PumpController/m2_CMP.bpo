@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.poFile org.eventb.core.poStamp="1">
+<org.eventb.core.poFile org.eventb.core.poStamp="2">
 <org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="MIN" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poPredicate name="MIO" org.eventb.core.predicate="MIN∈ℤ" org.eventb.core.source="/PumpController/ctx.buc|org.eventb.core.contextFile#ctx|org.eventb.core.axiom#("/>
@@ -160,5 +160,6 @@
 <org.eventb.core.poIdentifier name="e_pumpOnReq'" org.eventb.core.type="BOOL"/>
 </org.eventb.core.poPredicateSet>
 <org.eventb.core.poPredicateSet name="CMPEVTALLHYPenvironmentImpl_internal_includes3_cu2" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#CMPEVTIDENTenvironmentImpl_internal_includes3_cu2" org.eventb.core.poStamp="0"/>
+<org.eventb.core.poPredicateSet name="CMPEVTALLHYPenvironmentImpl_internal_includes3_cu3" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0"/>
 <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/PumpController/m2_CMP.bpo|org.eventb.core.poFile#m2_CMP|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="1"/>
 </org.eventb.core.poFile>

@@ -903,9 +903,12 @@ fmi_Component* mc = c;
  mc->b [c_pumpOnReq_internal_controllerImpl_] = fmiTrue ; 
  mc -> b [ c_pumpOnCmd_controllerImpl_ ] = fmiTrue ; 
  } 
- else 
+ else if (( mc -> i [ c_level_controllerImpl_ ] <= MIN ) && ( mc -> b [ c_pumpOnReq_controllerImpl_ ] == fmiTrue )) 
  { 
  mc -> b [ c_warn_controllerImpl_ ] = fmiTrue ; 
+ } 
+ else 
+ { 
  } 
 return fmiOK;
 }
