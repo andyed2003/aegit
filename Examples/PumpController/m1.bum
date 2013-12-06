@@ -65,11 +65,6 @@
 </org.eventb.core.event>
 <org.eventb.core.variable name="Y" org.eventb.core.identifier="c_level_internal"/>
 <org.eventb.core.variable name="[" org.eventb.core.identifier="c_pumpOnReq_internal"/>
-<org.eventb.core.event name="]" org.eventb.core.comment="level &gt; MIN and pumpOnRequested" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="decide">
-<org.eventb.core.action name="'" org.eventb.core.assignment="c_pumpOnCmd ≔ TRUE" org.eventb.core.label="act1"/>
-<org.eventb.core.guard name="(" org.eventb.codegen.ui.typingAttribute="NonTyping" org.eventb.core.label="grd1" org.eventb.core.predicate="c_pumpOnReq_internal = TRUE"/>
-<org.eventb.core.refinesEvent name=")" org.eventb.core.target="decide"/>
-</org.eventb.core.event>
 <org.eventb.core.event name="^" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="e_requestPumpOn">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="e_requestPumpOn"/>
 <org.eventb.core.action name="(" org.eventb.core.assignment="e_pumpOnReq ≔ TRUE" org.eventb.core.label="act1"/>

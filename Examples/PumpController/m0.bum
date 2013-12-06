@@ -60,9 +60,6 @@
 <org.eventb.core.event name="P" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="filterWarn">
 <org.eventb.core.action name="'" org.eventb.core.assignment="c_warn :∈ BOOL" org.eventb.core.label="act1"/>
 </org.eventb.core.event>
-<org.eventb.core.event name="Q" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="decide">
-<org.eventb.core.action name="'" org.eventb.core.assignment="c_pumpOnCmd :∈ BOOL" org.eventb.core.label="act1"/>
-</org.eventb.core.event>
 <org.eventb.core.event name="R" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="e_requestPumpOn">
 <org.eventb.core.action name="'" org.eventb.core.assignment="e_pumpOnReq ≔ TRUE" org.eventb.core.label="act1"/>
 </org.eventb.core.event>

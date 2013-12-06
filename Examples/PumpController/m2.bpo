@@ -161,14 +161,8 @@
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="c_pumpOnReq=TRUE" org.eventb.core.source="/PumpController/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#X|org.eventb.core.guard#)"/>
 </org.eventb.core.poPredicateSet>
 <org.eventb.core.poPredicateSet name="EVTIDENTc_pumpOnReq_internav" org.eventb.core.parentSet="/PumpController/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
-<org.eventb.core.poIdentifier name="c_pumpOnCmd'" org.eventb.core.type="BOOL"/>
-</org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPc_pumpOnReq_internav" org.eventb.core.parentSet="/PumpController/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poPredicateSet#EVTIDENTc_pumpOnReq_internav" org.eventb.core.poStamp="0">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="c_pumpOnReq_internal=TRUE" org.eventb.core.source="/PumpController/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#]|org.eventb.core.guard#("/>
-</org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTIDENTc_pumpOnReq_internaw" org.eventb.core.parentSet="/PumpController/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="e_pumpOnReq'" org.eventb.core.type="BOOL"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPc_pumpOnReq_internaw" org.eventb.core.parentSet="/PumpController/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poPredicateSet#EVTIDENTc_pumpOnReq_internaw" org.eventb.core.poStamp="0"/>
+<org.eventb.core.poPredicateSet name="EVTALLHYPc_pumpOnReq_internav" org.eventb.core.parentSet="/PumpController/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poPredicateSet#EVTIDENTc_pumpOnReq_internav" org.eventb.core.poStamp="0"/>
 <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/PumpController/m2.bpo|org.eventb.core.poFile#m2|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0"/>
 </org.eventb.core.poFile>

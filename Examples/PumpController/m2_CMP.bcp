@@ -8,7 +8,7 @@
 <ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[PumpController]controllerImpl" name="internal_combines events2" org.eventb.core.target="INITIALISATION"/>
 <ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[PumpController]environmentImpl" name="internal_combines events3" org.eventb.core.target="INITIALISATION"/>
 </ac.soton.composition.core.composesEvent>
-<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="" org.eventb.core.convergence="0" org.eventb.core.label="fmiGetInteger_e">
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events2" org.eventb.core.convergence="0" org.eventb.core.label="fmiGetInteger_e">
 <ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[PumpController]masterImpl" name="internal_combines events1" org.eventb.core.target="fmiGetInteger_e"/>
 <ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="fmiGetInteger_e"/>
 <ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[PumpController]environmentImpl" name="internal_combines events2" org.eventb.core.target="fmiGetInteger_e"/>
@@ -18,7 +18,7 @@
 <ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="fmiGetBoolean_c"/>
 <ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[PumpController]controllerImpl" name="internal_combines events2" org.eventb.core.target="fmiGetBoolean_c"/>
 </ac.soton.composition.core.composesEvent>
-<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events4" org.eventb.core.convergence="0" org.eventb.core.label="fmiGetBoolean_e">
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="" org.eventb.core.convergence="0" org.eventb.core.label="fmiGetBoolean_e">
 <ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[PumpController]masterImpl" name="internal_combines events1" org.eventb.core.target="fmiGetBoolean_e"/>
 <ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="fmiGetBoolean_e"/>
 <ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[PumpController]environmentImpl" name="internal_combines events2" org.eventb.core.target="fmiGetBoolean_e"/>
@@ -47,12 +47,8 @@
 <ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[PumpController]controllerImpl" name="internal_combines events1" org.eventb.core.target="filterWarn"/>
 <ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="filterWarn"/>
 </ac.soton.composition.core.composesEvent>
-<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events10" org.eventb.core.convergence="0" org.eventb.core.label="decide">
-<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[PumpController]controllerImpl" name="internal_combines events1" org.eventb.core.target="decide"/>
-<ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="decide"/>
-</ac.soton.composition.core.composesEvent>
 <ac.soton.composition.core.includeMachine ac.soton.composition.core.includedInvariant="false" ac.soton.composition.core.project="PumpController" ac.soton.composition.core.target="environmentImpl" name="internal_includes3"/>
-<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events11" org.eventb.core.convergence="0" org.eventb.core.label="e_requestPumpOn">
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events10" org.eventb.core.convergence="0" org.eventb.core.label="e_requestPumpOn">
 <ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[PumpController]environmentImpl" name="internal_combines events1" org.eventb.core.target="e_requestPumpOn"/>
 <ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="e_requestPumpOn"/>
 </ac.soton.composition.core.composesEvent>

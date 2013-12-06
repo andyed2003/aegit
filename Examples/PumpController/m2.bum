@@ -59,9 +59,6 @@
 <org.eventb.core.event name="d" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="filterWarn">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="filterWarn"/>
 </org.eventb.core.event>
-<org.eventb.core.event name="e" org.eventb.core.comment="level &gt; MIN and pumpOnRequested" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="decide">
-<org.eventb.core.refinesEvent name="'" org.eventb.core.target="decide"/>
-</org.eventb.core.event>
 <org.eventb.core.event name="f" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="e_requestPumpOn">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="e_requestPumpOn"/>
 </org.eventb.core.event>

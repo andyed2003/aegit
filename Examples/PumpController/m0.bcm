@@ -65,13 +65,10 @@
 <org.eventb.core.scEvent name="m_pumpOnRey" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="filterWarn" org.eventb.core.source="/PumpController/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#P">
 <org.eventb.core.scAction name="'" org.eventb.core.assignment="c_warn :∈ BOOL" org.eventb.core.label="act1" org.eventb.core.source="/PumpController/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#P|org.eventb.core.action#'"/>
 </org.eventb.core.scEvent>
-<org.eventb.core.scEvent name="m_pumpOnRez" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="decide" org.eventb.core.source="/PumpController/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#Q">
-<org.eventb.core.scAction name="'" org.eventb.core.assignment="c_pumpOnCmd :∈ BOOL" org.eventb.core.label="act1" org.eventb.core.source="/PumpController/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#Q|org.eventb.core.action#'"/>
-</org.eventb.core.scEvent>
-<org.eventb.core.scEvent name="m_pumpOnRe{" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="e_requestPumpOn" org.eventb.core.source="/PumpController/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#R">
+<org.eventb.core.scEvent name="m_pumpOnRez" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="e_requestPumpOn" org.eventb.core.source="/PumpController/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#R">
 <org.eventb.core.scAction name="'" org.eventb.core.assignment="e_pumpOnReq ≔ TRUE" org.eventb.core.label="act1" org.eventb.core.source="/PumpController/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#R|org.eventb.core.action#'"/>
 </org.eventb.core.scEvent>
-<org.eventb.core.scEvent name="m_pumpOnRe|" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="filterOK" org.eventb.core.source="/PumpController/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#S">
+<org.eventb.core.scEvent name="m_pumpOnRe{" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="filterOK" org.eventb.core.source="/PumpController/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#S">
 <org.eventb.core.scAction name="'" org.eventb.core.assignment="c_pumpOnCmd ≔ TRUE" org.eventb.core.label="act1" org.eventb.core.source="/PumpController/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#S|org.eventb.core.action#'"/>
 </org.eventb.core.scEvent>
 </org.eventb.core.scMachineFile>

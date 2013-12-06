@@ -48,13 +48,8 @@
 <org.eventb.core.guard name="(" org.eventb.codegen.ui.typingAttribute="NonTyping" org.eventb.core.label="grd2" org.eventb.core.predicate="c_pumpOnReq = TRUE"/>
 <org.eventb.core.action name=")" org.eventb.core.assignment="c_warn ≔ TRUE" org.eventb.core.label="act1"/>
 </org.eventb.core.event>
-<org.eventb.core.event name="C" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="decide">
-<org.eventb.core.refinesEvent name="'" org.eventb.core.target="decide"/>
-<org.eventb.core.guard name="'" org.eventb.codegen.ui.typingAttribute="NonTyping" org.eventb.core.label="grd1" org.eventb.core.predicate="c_pumpOnReq_internal = TRUE"/>
-<org.eventb.core.action name="(" org.eventb.core.assignment="c_pumpOnCmd ≔ TRUE" org.eventb.core.label="act1"/>
-</org.eventb.core.event>
 <org.eventb.tasking.persistence.MachineType name="D" org.eventb.tasking.persistence.machineTypeAttribute="FMU" org.eventb.tasking.persistence.priority="5">
-<org.eventb.tasking.persistence.TaskBody name="'" org.eventb.tasking.persistence.taskBodyAttribute="if filterOK&#10;else filterWarn;&#10;if decide&#10;else donothing"/>
+<org.eventb.tasking.persistence.TaskBody name="'" org.eventb.tasking.persistence.taskBodyAttribute="if filterOK&#10;else filterWarn"/>
 </org.eventb.tasking.persistence.MachineType>
 <org.eventb.core.invariant name="typing_c_pumpOnReq_internal" org.eventb.codegen.tasking.flattened="true" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="typing_c_pumpOnReq_internal" org.eventb.core.predicate="c_pumpOnReq_internal ∈ BOOL" org.eventb.core.theorem="true"/>
 <org.eventb.core.invariant name="typing_c_level_internal" org.eventb.codegen.tasking.flattened="true" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="typing_c_level_internal" org.eventb.core.predicate="c_level_internal ∈ ℤ" org.eventb.core.theorem="true"/>
@@ -63,6 +58,5 @@
 <org.eventb.core.invariant name="typing_c_warn" org.eventb.codegen.tasking.flattened="true" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="typing_c_warn" org.eventb.core.predicate="c_warn ∈ BOOL" org.eventb.core.theorem="true"/>
 <org.eventb.core.invariant name="typing_c_pumpOnReq" org.eventb.codegen.tasking.flattened="true" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="typing_c_pumpOnReq" org.eventb.core.predicate="c_pumpOnReq ∈ BOOL" org.eventb.core.theorem="true"/>
 <org.eventb.core.invariant name="m1_inv1" org.eventb.codegen.tasking.flattened="true" org.eventb.codegen.ui.typingAttribute="NonTyping" org.eventb.core.label="m1_inv1" org.eventb.core.predicate="c_level_internal ≤ MIN ∧ c_pumpOnReq_internal = TRUE ⇒ c_warn = TRUE"/>
-<org.eventb.core.event name="typing_c_pumpOnReq_internam" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="donothing"/>
 <org.eventb.core.invariant name="typing_c_pumpOnReq_internan" org.eventb.codegen.ui.typingAttribute="NonTyping" org.eventb.core.label="m1_inv2" org.eventb.core.predicate="c_level_internal &gt; MIN ∧ c_pumpOnReq_internal = TRUE ⇒ c_pumpOnCmd = TRUE"/>
 </org.eventb.core.machineFile>
