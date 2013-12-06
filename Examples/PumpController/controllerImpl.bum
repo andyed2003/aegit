@@ -40,6 +40,7 @@
 <org.eventb.core.guard name="(" org.eventb.codegen.ui.typingAttribute="NonTyping" org.eventb.core.label="grd2" org.eventb.core.predicate="c_pumpOnReq = TRUE"/>
 <org.eventb.core.action name=")" org.eventb.core.assignment="c_level_internal ≔ c_level" org.eventb.core.label="act1"/>
 <org.eventb.core.action name="*" org.eventb.core.assignment="c_pumpOnReq_internal ≔ TRUE" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="c_pumpOnCmd ≔ TRUE" org.eventb.core.label="act3"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="B" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="filterWarn">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="filterWarn"/>
