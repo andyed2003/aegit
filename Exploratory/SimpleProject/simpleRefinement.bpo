@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="0"/>
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/SimpleProject/simpleRefinement.bpo|org.eventb.core.poFile#simpleRefinement|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="a" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="b" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poPredicate name="c" org.eventb.core.predicate="b∈ℤ" org.eventb.core.source="/SimpleProject/simpleMch.bum|org.eventb.core.machineFile#simpleMch|org.eventb.core.invariant#)"/>
+<org.eventb.core.poPredicate name="d" org.eventb.core.predicate="a∈ℤ" org.eventb.core.source="/SimpleProject/simpleMch.bum|org.eventb.core.machineFile#simpleMch|org.eventb.core.invariant#+"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTc" org.eventb.core.parentSet="/SimpleProject/simpleRefinement.bpo|org.eventb.core.poFile#simpleRefinement|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="b'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="a'" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPc" org.eventb.core.parentSet="/SimpleProject/simpleRefinement.bpo|org.eventb.core.poFile#simpleRefinement|org.eventb.core.poPredicateSet#EVTIDENTc" org.eventb.core.poStamp="0"/>
+<org.eventb.core.poSequent name="write/act1/SIM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SimpleProject/simpleRefinement.bpo|org.eventb.core.poFile#simpleRefinement|org.eventb.core.poPredicateSet#EVTALLHYPd"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="param=a" org.eventb.core.source="/SimpleProject/simpleMch.bum|org.eventb.core.machineFile#simpleMch|org.eventb.core.event#,|org.eventb.core.action#'"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/SimpleProject/simpleMch.bum|org.eventb.core.machineFile#simpleMch|org.eventb.core.event#,"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/SimpleProject/simpleMch.bum|org.eventb.core.machineFile#simpleMch|org.eventb.core.event#,|org.eventb.core.action#'"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/SimpleProject/simpleRefinement.bum|org.eventb.core.machineFile#simpleRefinement|org.eventb.core.event#,"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SimpleProject/simpleRefinement.bpo|org.eventb.core.poFile#simpleRefinement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SimpleProject/simpleRefinement.bpo|org.eventb.core.poFile#simpleRefinement|org.eventb.core.poSequent#write\/act1\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTd" org.eventb.core.parentSet="/SimpleProject/simpleRefinement.bpo|org.eventb.core.poFile#simpleRefinement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="b'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="param" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPd" org.eventb.core.parentSet="/SimpleProject/simpleRefinement.bpo|org.eventb.core.poFile#simpleRefinement|org.eventb.core.poPredicateSet#EVTIDENTd" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="param∈ℤ" org.eventb.core.source="/SimpleProject/simpleRefinement.bum|org.eventb.core.machineFile#simpleRefinement|org.eventb.core.event#,|org.eventb.core.guard#*"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="param=a" org.eventb.core.source="/SimpleProject/simpleRefinement.bum|org.eventb.core.machineFile#simpleRefinement|org.eventb.core.event#,|org.eventb.core.guard#+"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTe" org.eventb.core.parentSet="/SimpleProject/simpleRefinement.bpo|org.eventb.core.poFile#simpleRefinement|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="a'" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPe" org.eventb.core.parentSet="/SimpleProject/simpleRefinement.bpo|org.eventb.core.poFile#simpleRefinement|org.eventb.core.poPredicateSet#EVTIDENTe" org.eventb.core.poStamp="0"/>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/SimpleProject/simpleRefinement.bpo|org.eventb.core.poFile#simpleRefinement|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0"/>
+</org.eventb.core.poFile>

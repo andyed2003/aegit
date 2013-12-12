@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="0"/>
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/SimpleProject/simpleRefinement_CMP.bpo|org.eventb.core.poFile#simpleRefinement_CMP|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="a" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="b" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poPredicate name="c" org.eventb.core.predicate="b∈ℤ" org.eventb.core.source="/SimpleProject/simpleMch.bum|org.eventb.core.machineFile#simpleMch|org.eventb.core.invariant#)"/>
+<org.eventb.core.poPredicate name="d" org.eventb.core.predicate="a∈ℤ" org.eventb.core.source="/SimpleProject/simpleMch.bum|org.eventb.core.machineFile#simpleMch|org.eventb.core.invariant#+"/>
+<org.eventb.core.poPredicate name="e" org.eventb.core.predicate="b∈ℤ" org.eventb.core.source="/SimpleProject/store.bum|org.eventb.core.machineFile#store|org.eventb.core.invariant#("/>
+<org.eventb.core.poPredicate name="f" org.eventb.core.predicate="b∈ℤ" org.eventb.core.source="/SimpleProject/storeImpl.bum|org.eventb.core.machineFile#storeImpl|org.eventb.core.invariant#typing_b"/>
+<org.eventb.core.poPredicate name="g" org.eventb.core.predicate="a∈ℤ" org.eventb.core.source="/SimpleProject/writerTask.bum|org.eventb.core.machineFile#writerTask|org.eventb.core.invariant#("/>
+<org.eventb.core.poPredicate name="h" org.eventb.core.predicate="a∈ℤ" org.eventb.core.source="/SimpleProject/writerTaskImpl.bum|org.eventb.core.machineFile#writerTaskImpl|org.eventb.core.invariant#typing_a"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="CMPEVTIDENTwriterTaskImpl_internal_includes1_)" org.eventb.core.parentSet="/SimpleProject/simpleRefinement_CMP.bpo|org.eventb.core.poFile#simpleRefinement_CMP|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="b'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="a'" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="CMPEVTALLHYPwriterTaskImpl_internal_includes1_)" org.eventb.core.parentSet="/SimpleProject/simpleRefinement_CMP.bpo|org.eventb.core.poFile#simpleRefinement_CMP|org.eventb.core.poPredicateSet#CMPEVTIDENTwriterTaskImpl_internal_includes1_)" org.eventb.core.poStamp="0"/>
+<org.eventb.core.poPredicateSet name="CMPEVTIDENTwriterTaskImpl_internal_includes1_*" org.eventb.core.parentSet="/SimpleProject/simpleRefinement_CMP.bpo|org.eventb.core.poFile#simpleRefinement_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="b'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="param" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="CMPEVTALLHYPwriterTaskImpl_internal_includes1_*" org.eventb.core.parentSet="/SimpleProject/simpleRefinement_CMP.bpo|org.eventb.core.poFile#simpleRefinement_CMP|org.eventb.core.poPredicateSet#CMPEVTIDENTwriterTaskImpl_internal_includes1_*" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="param∈ℤ" org.eventb.core.source="/SimpleProject/writerTaskImpl.bum|org.eventb.core.machineFile#writerTaskImpl|org.eventb.core.event#)|org.eventb.core.guard#("/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="param=a" org.eventb.core.source="/SimpleProject/writerTaskImpl.bum|org.eventb.core.machineFile#writerTaskImpl|org.eventb.core.event#)|org.eventb.core.guard#)"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="param∈ℤ" org.eventb.core.source="/SimpleProject/storeImpl.bum|org.eventb.core.machineFile#storeImpl|org.eventb.core.event#)|org.eventb.core.guard#("/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="CMPEVTIDENTwriterTaskImpl_internal_includes1_+" org.eventb.core.parentSet="/SimpleProject/simpleRefinement_CMP.bpo|org.eventb.core.poFile#simpleRefinement_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="a'" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="CMPEVTALLHYPwriterTaskImpl_internal_includes1_+" org.eventb.core.parentSet="/SimpleProject/simpleRefinement_CMP.bpo|org.eventb.core.poFile#simpleRefinement_CMP|org.eventb.core.poPredicateSet#CMPEVTIDENTwriterTaskImpl_internal_includes1_+" org.eventb.core.poStamp="0"/>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/SimpleProject/simpleRefinement_CMP.bpo|org.eventb.core.poFile#simpleRefinement_CMP|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0"/>
+</org.eventb.core.poFile>
