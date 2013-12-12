@@ -1,5 +1,0 @@
-<%@ jet package="hello" class="TranslationDemoTemplate" skeleton="generator.skeleton"%>
-
- Hello, <%=argument%>!
- <% stringBuffer.append("Hello again!"); %>
- The current time is <%=new java.util.Date()%>.
