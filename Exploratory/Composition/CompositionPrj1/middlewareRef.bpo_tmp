@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="charRange" org.eventb.core.type="ℙ(ℤ)"/>
+<org.eventb.core.poPredicate name="charRangf" org.eventb.core.predicate="charRange=0 ‥ 255" org.eventb.core.source="/CompositionPrj1/ctx.buc|org.eventb.core.contextFile#ctx|org.eventb.core.axiom#)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/CompositionPrj1/middlewareRef.bpo|org.eventb.core.poFile#middlewareRef|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="1">
+<org.eventb.core.poIdentifier name="buffer" org.eventb.core.type="ℙ(ℤ)"/>
+<org.eventb.core.poIdentifier name="sent" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poPredicate name="buffes" org.eventb.core.predicate="buffer∈ℙ(ℤ)" org.eventb.core.source="/CompositionPrj1/middleware.bum|org.eventb.core.machineFile#middleware|org.eventb.core.invariant#("/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="INITIALISATION/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/CompositionPrj1/middlewareRef.bpo|org.eventb.core.poFile#middlewareRef|org.eventb.core.poPredicateSet#EVTALLHYPbuffes"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="0∈ℕ" org.eventb.core.source="/CompositionPrj1/middlewareRef.bum|org.eventb.core.machineFile#middlewareRef|org.eventb.core.invariant#1"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/CompositionPrj1/middleware.bum|org.eventb.core.machineFile#middleware|org.eventb.core.event#)"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/CompositionPrj1/middlewareRef.bum|org.eventb.core.machineFile#middlewareRef|org.eventb.core.event#-"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/CompositionPrj1/middlewareRef.bum|org.eventb.core.machineFile#middlewareRef|org.eventb.core.invariant#1"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/CompositionPrj1/middlewareRef.bpo|org.eventb.core.poFile#middlewareRef|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/CompositionPrj1/middlewareRef.bpo|org.eventb.core.poFile#middlewareRef|org.eventb.core.poSequent#INITIALISATION\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/CompositionPrj1/middlewareRef.bpo|org.eventb.core.poFile#middlewareRef|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTbuffes" org.eventb.core.parentSet="/CompositionPrj1/middlewareRef.bpo|org.eventb.core.poFile#middlewareRef|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="1">
+<org.eventb.core.poIdentifier name="sent'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="buffer'" org.eventb.core.type="ℙ(ℤ)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPbuffes" org.eventb.core.parentSet="/CompositionPrj1/middlewareRef.bpo|org.eventb.core.poFile#middlewareRef|org.eventb.core.poPredicateSet#EVTIDENTbuffes" org.eventb.core.poStamp="1"/>
+<org.eventb.core.poPredicateSet name="EVTIDENTbuffet" org.eventb.core.parentSet="/CompositionPrj1/middlewareRef.bpo|org.eventb.core.poFile#middlewareRef|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="1">
+<org.eventb.core.poIdentifier name="buffer'" org.eventb.core.type="ℙ(ℤ)"/>
+<org.eventb.core.poIdentifier name="out" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPbuffet" org.eventb.core.parentSet="/CompositionPrj1/middlewareRef.bpo|org.eventb.core.poFile#middlewareRef|org.eventb.core.poPredicateSet#EVTIDENTbuffet" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="out∈ℤ" org.eventb.core.source="/CompositionPrj1/middleware.bum|org.eventb.core.machineFile#middleware|org.eventb.core.event#*|org.eventb.core.guard#*"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="recv/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/CompositionPrj1/middlewareRef.bpo|org.eventb.core.poFile#middlewareRef|org.eventb.core.poPredicateSet#EVTALLHYPbuffeu"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="sent+1∈ℕ" org.eventb.core.source="/CompositionPrj1/middlewareRef.bum|org.eventb.core.machineFile#middlewareRef|org.eventb.core.invariant#1"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/CompositionPrj1/middleware.bum|org.eventb.core.machineFile#middleware|org.eventb.core.event#+"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/CompositionPrj1/middlewareRef.bum|org.eventb.core.machineFile#middlewareRef|org.eventb.core.event#\/"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/CompositionPrj1/middlewareRef.bum|org.eventb.core.machineFile#middlewareRef|org.eventb.core.invariant#1"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/CompositionPrj1/middlewareRef.bpo|org.eventb.core.poFile#middlewareRef|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/CompositionPrj1/middlewareRef.bpo|org.eventb.core.poFile#middlewareRef|org.eventb.core.poSequent#recv\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/CompositionPrj1/middlewareRef.bpo|org.eventb.core.poFile#middlewareRef|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTbuffeu" org.eventb.core.parentSet="/CompositionPrj1/middlewareRef.bpo|org.eventb.core.poFile#middlewareRef|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="1">
+<org.eventb.core.poIdentifier name="sent'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="buffer'" org.eventb.core.type="ℙ(ℤ)"/>
+<org.eventb.core.poIdentifier name="in" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPbuffeu" org.eventb.core.parentSet="/CompositionPrj1/middlewareRef.bpo|org.eventb.core.poFile#middlewareRef|org.eventb.core.poPredicateSet#EVTIDENTbuffeu" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="in∈ℤ" org.eventb.core.source="/CompositionPrj1/middleware.bum|org.eventb.core.machineFile#middleware|org.eventb.core.event#+|org.eventb.core.guard#*"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="in∈buffer" org.eventb.core.source="/CompositionPrj1/middleware.bum|org.eventb.core.machineFile#middleware|org.eventb.core.event#+|org.eventb.core.guard#("/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/CompositionPrj1/middlewareRef.bpo|org.eventb.core.poFile#middlewareRef|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="sent∈ℕ" org.eventb.core.source="/CompositionPrj1/middlewareRef.bum|org.eventb.core.machineFile#middlewareRef|org.eventb.core.invariant#1"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>
