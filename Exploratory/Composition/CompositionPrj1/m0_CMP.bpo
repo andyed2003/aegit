@@ -11,9 +11,10 @@
 <org.eventb.core.poPredicate name="buffes" org.eventb.core.predicate="src∈ℙ(charRange)" org.eventb.core.source="/CompositionPrj1/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#2"/>
 <org.eventb.core.poPredicate name="buffet" org.eventb.core.predicate="buffer∈ℙ(charRange)" org.eventb.core.source="/CompositionPrj1/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#3"/>
 <org.eventb.core.poPredicate name="buffeu" org.eventb.core.predicate="dest∈ℙ(charRange)" org.eventb.core.source="/CompositionPrj1/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#5"/>
-<org.eventb.core.poPredicate name="buffev" org.eventb.core.predicate="dest∈ℙ(ℤ)" org.eventb.core.source="/CompositionPrj1/receiver.bum|org.eventb.core.machineFile#receiver|org.eventb.core.invariant#("/>
-<org.eventb.core.poPredicate name="buffew" org.eventb.core.predicate="buffer∈ℙ(ℤ)" org.eventb.core.source="/CompositionPrj1/middleware.bum|org.eventb.core.machineFile#middleware|org.eventb.core.invariant#("/>
-<org.eventb.core.poPredicate name="buffex" org.eventb.core.predicate="src∈ℙ(ℤ)" org.eventb.core.source="/CompositionPrj1/sender.bum|org.eventb.core.machineFile#sender|org.eventb.core.invariant#("/>
+<org.eventb.core.poPredicate name="buffev" org.eventb.core.predicate="card(buffer)≤8" org.eventb.core.source="/CompositionPrj1/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#:"/>
+<org.eventb.core.poPredicate name="buffew" org.eventb.core.predicate="dest∈ℙ(ℤ)" org.eventb.core.source="/CompositionPrj1/receiver.bum|org.eventb.core.machineFile#receiver|org.eventb.core.invariant#("/>
+<org.eventb.core.poPredicate name="buffex" org.eventb.core.predicate="buffer∈ℙ(ℤ)" org.eventb.core.source="/CompositionPrj1/middleware.bum|org.eventb.core.machineFile#middleware|org.eventb.core.invariant#("/>
+<org.eventb.core.poPredicate name="buffey" org.eventb.core.predicate="src∈ℙ(ℤ)" org.eventb.core.source="/CompositionPrj1/sender.bum|org.eventb.core.machineFile#sender|org.eventb.core.invariant#("/>
 </org.eventb.core.poPredicateSet>
 <org.eventb.core.poPredicateSet name="CMPEVTIDENTmiddleware_internal_includes2_ctz" org.eventb.core.parentSet="/CompositionPrj1/m0_CMP.bpo|org.eventb.core.poFile#m0_CMP|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="src'" org.eventb.core.type="ℙ(ℤ)"/>
@@ -27,9 +28,10 @@
 <org.eventb.core.poIdentifier name="out" org.eventb.core.type="ℤ"/>
 </org.eventb.core.poPredicateSet>
 <org.eventb.core.poPredicateSet name="CMPEVTALLHYPmiddleware_internal_includes2_ct{" org.eventb.core.parentSet="/CompositionPrj1/m0_CMP.bpo|org.eventb.core.poFile#m0_CMP|org.eventb.core.poPredicateSet#CMPEVTIDENTmiddleware_internal_includes2_ct{" org.eventb.core.poStamp="0">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="out∈ℤ" org.eventb.core.source="/CompositionPrj1/sender.bum|org.eventb.core.machineFile#sender|org.eventb.core.event#*|org.eventb.core.guard#*"/>
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="out∈ℤ" org.eventb.core.source="/CompositionPrj1/sender.bum|org.eventb.core.machineFile#sender|org.eventb.core.event#*|org.eventb.core.guard#+"/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="out∈src" org.eventb.core.source="/CompositionPrj1/sender.bum|org.eventb.core.machineFile#sender|org.eventb.core.event#*|org.eventb.core.guard#("/>
-<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="out∈ℤ" org.eventb.core.source="/CompositionPrj1/middleware.bum|org.eventb.core.machineFile#middleware|org.eventb.core.event#*|org.eventb.core.guard#*"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="out∈ℤ" org.eventb.core.source="/CompositionPrj1/middleware.bum|org.eventb.core.machineFile#middleware|org.eventb.core.event#*|org.eventb.core.guard#+"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="card(buffer∪{out})≤8" org.eventb.core.source="/CompositionPrj1/middleware.bum|org.eventb.core.machineFile#middleware|org.eventb.core.event#*|org.eventb.core.guard#)"/>
 </org.eventb.core.poPredicateSet>
 <org.eventb.core.poPredicateSet name="CMPEVTIDENTmiddleware_internal_includes2_ct|" org.eventb.core.parentSet="/CompositionPrj1/m0_CMP.bpo|org.eventb.core.poFile#m0_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="buffer'" org.eventb.core.type="ℙ(ℤ)"/>
