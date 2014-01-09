@@ -7,6 +7,7 @@
 <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/CompositionPrj1/middlewareRef0.bpo|org.eventb.core.poFile#middlewareRef0|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="buffer" org.eventb.core.type="ℙ(ℤ)"/>
 <org.eventb.core.poPredicate name="buffes" org.eventb.core.predicate="buffer∈ℙ(ℤ)" org.eventb.core.source="/CompositionPrj1/middleware.bum|org.eventb.core.machineFile#middleware|org.eventb.core.invariant#("/>
+<org.eventb.core.poPredicate name="buffet" org.eventb.core.predicate="card(buffer)≤8" org.eventb.core.source="/CompositionPrj1/middleware.bum|org.eventb.core.machineFile#middleware|org.eventb.core.invariant#-"/>
 </org.eventb.core.poPredicateSet>
 <org.eventb.core.poPredicateSet name="EVTIDENTbuffes" org.eventb.core.parentSet="/CompositionPrj1/middlewareRef0.bpo|org.eventb.core.poFile#middlewareRef0|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="buffer'" org.eventb.core.type="ℙ(ℤ)"/>
@@ -17,18 +18,16 @@
 <org.eventb.core.poIdentifier name="out" org.eventb.core.type="ℤ"/>
 </org.eventb.core.poPredicateSet>
 <org.eventb.core.poPredicateSet name="EVTALLHYPbuffet" org.eventb.core.parentSet="/CompositionPrj1/middlewareRef0.bpo|org.eventb.core.poFile#middlewareRef0|org.eventb.core.poPredicateSet#EVTIDENTbuffet" org.eventb.core.poStamp="0">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="out∈ℤ" org.eventb.core.source="/CompositionPrj1/middlewareRef0.bum|org.eventb.core.machineFile#middlewareRef0|org.eventb.core.event#.|org.eventb.core.guard#+"/>
-<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="card(buffer∪{out})≤8" org.eventb.core.source="/CompositionPrj1/middlewareRef0.bum|org.eventb.core.machineFile#middlewareRef0|org.eventb.core.event#.|org.eventb.core.guard#)"/>
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="out∈ℤ" org.eventb.core.source="/CompositionPrj1/middleware.bum|org.eventb.core.machineFile#middleware|org.eventb.core.event#*|org.eventb.core.guard#+"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="card(buffer∪{out})≤8" org.eventb.core.source="/CompositionPrj1/middleware.bum|org.eventb.core.machineFile#middleware|org.eventb.core.event#*|org.eventb.core.guard#)"/>
 </org.eventb.core.poPredicateSet>
 <org.eventb.core.poPredicateSet name="EVTIDENTbuffeu" org.eventb.core.parentSet="/CompositionPrj1/middlewareRef0.bpo|org.eventb.core.poFile#middlewareRef0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="buffer'" org.eventb.core.type="ℙ(ℤ)"/>
 <org.eventb.core.poIdentifier name="in" org.eventb.core.type="ℤ"/>
 </org.eventb.core.poPredicateSet>
 <org.eventb.core.poPredicateSet name="EVTALLHYPbuffeu" org.eventb.core.parentSet="/CompositionPrj1/middlewareRef0.bpo|org.eventb.core.poFile#middlewareRef0|org.eventb.core.poPredicateSet#EVTIDENTbuffeu" org.eventb.core.poStamp="0">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="in∈ℤ" org.eventb.core.source="/CompositionPrj1/middlewareRef0.bum|org.eventb.core.machineFile#middlewareRef0|org.eventb.core.event#\/|org.eventb.core.guard#*"/>
-<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="in∈buffer" org.eventb.core.source="/CompositionPrj1/middlewareRef0.bum|org.eventb.core.machineFile#middlewareRef0|org.eventb.core.event#\/|org.eventb.core.guard#("/>
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="in∈ℤ" org.eventb.core.source="/CompositionPrj1/middleware.bum|org.eventb.core.machineFile#middleware|org.eventb.core.event#+|org.eventb.core.guard#*"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="in∈buffer" org.eventb.core.source="/CompositionPrj1/middleware.bum|org.eventb.core.machineFile#middleware|org.eventb.core.event#+|org.eventb.core.guard#("/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/CompositionPrj1/middlewareRef0.bpo|org.eventb.core.poFile#middlewareRef0|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="buffer∈ℙ(ℤ)" org.eventb.core.source="/CompositionPrj1/middlewareRef0.bum|org.eventb.core.machineFile#middlewareRef0|org.eventb.core.invariant#typing_buffer"/>
-</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/CompositionPrj1/middlewareRef0.bpo|org.eventb.core.poFile#middlewareRef0|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0"/>
 </org.eventb.core.poFile>

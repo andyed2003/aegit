@@ -17,10 +17,8 @@
 <org.eventb.core.poIdentifier name="out" org.eventb.core.type="ℤ"/>
 </org.eventb.core.poPredicateSet>
 <org.eventb.core.poPredicateSet name="EVTALLHYPsre" org.eventb.core.parentSet="/CompositionPrj1/senderRef0.bpo|org.eventb.core.poFile#senderRef0|org.eventb.core.poPredicateSet#EVTIDENTsre" org.eventb.core.poStamp="0">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="out∈ℤ" org.eventb.core.source="/CompositionPrj1/senderRef0.bum|org.eventb.core.machineFile#senderRef0|org.eventb.core.event#-|org.eventb.core.guard#*"/>
-<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="out∈src" org.eventb.core.source="/CompositionPrj1/senderRef0.bum|org.eventb.core.machineFile#senderRef0|org.eventb.core.event#-|org.eventb.core.guard#("/>
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="out∈ℤ" org.eventb.core.source="/CompositionPrj1/sender.bum|org.eventb.core.machineFile#sender|org.eventb.core.event#*|org.eventb.core.guard#+"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="out∈src" org.eventb.core.source="/CompositionPrj1/sender.bum|org.eventb.core.machineFile#sender|org.eventb.core.event#*|org.eventb.core.guard#("/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/CompositionPrj1/senderRef0.bpo|org.eventb.core.poFile#senderRef0|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="src∈ℙ(ℤ)" org.eventb.core.source="/CompositionPrj1/senderRef0.bum|org.eventb.core.machineFile#senderRef0|org.eventb.core.invariant#typing_src"/>
-</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/CompositionPrj1/senderRef0.bpo|org.eventb.core.poFile#senderRef0|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0"/>
 </org.eventb.core.poFile>
