@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.poFile org.eventb.core.poStamp="3">
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
 <org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="charRange" org.eventb.core.type="ℙ(ℤ)"/>
 <org.eventb.core.poPredicate name="charRangf" org.eventb.core.predicate="charRange=0 ‥ 255" org.eventb.core.source="/CompositionPrj1/ctx.buc|org.eventb.core.contextFile#ctx|org.eventb.core.axiom#)"/>
