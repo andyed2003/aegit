@@ -12,5 +12,4 @@
 <org.eventb.core.guard name="*" org.eventb.core.label="typing_in" org.eventb.core.predicate="in ∈ ℤ" org.eventb.core.theorem="true"/>
 <org.eventb.core.action name=")" org.eventb.core.assignment="dest ≔ dest ∪ {in}" org.eventb.core.label="act1"/>
 </org.eventb.core.event>
-<org.eventb.core.invariant ac.soton.composition.flattener.flattened="true" name="typing_dest" org.eventb.core.label="typing_dest" org.eventb.core.predicate="dest ∈ ℙ(ℤ)" org.eventb.core.theorem="true"/>
 </org.eventb.core.machineFile>

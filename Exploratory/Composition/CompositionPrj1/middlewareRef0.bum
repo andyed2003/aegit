@@ -20,6 +20,4 @@
 <org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="in ∈ buffer"/>
 <org.eventb.core.action name=")" org.eventb.core.assignment="buffer ≔ buffer ∖ {in}" org.eventb.core.label="act2"/>
 </org.eventb.core.event>
-<org.eventb.core.invariant ac.soton.composition.flattener.flattened="true" name="typng_buffer" org.eventb.core.label="typng_buffer" org.eventb.core.predicate="buffer ∈ ℙ(ℤ)" org.eventb.core.theorem="true"/>
-<org.eventb.core.invariant ac.soton.composition.flattener.flattened="true" name="inv1" org.eventb.core.label="inv1" org.eventb.core.predicate="card(buffer) ≤ 8"/>
 </org.eventb.core.machineFile>
