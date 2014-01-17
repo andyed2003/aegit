@@ -8,7 +8,8 @@
 <org.eventb.core.poIdentifier name="buffer" org.eventb.core.type="ℙ(ℤ)"/>
 <org.eventb.core.poIdentifier name="count" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poPredicate name="buffes" org.eventb.core.predicate="buffer∈ℙ(ℤ)" org.eventb.core.source="/CompositionPrj1/middleware.bum|org.eventb.core.machineFile#middleware|org.eventb.core.invariant#("/>
-<org.eventb.core.poPredicate name="buffet" org.eventb.core.predicate="card(buffer)≤8" org.eventb.core.source="/CompositionPrj1/middleware.bum|org.eventb.core.machineFile#middleware|org.eventb.core.invariant#-"/>
+<org.eventb.core.poPredicate name="buffet" org.eventb.core.predicate="finite(buffer)" org.eventb.core.source="/CompositionPrj1/middleware.bum|org.eventb.core.machineFile#middleware|org.eventb.core.invariant#."/>
+<org.eventb.core.poPredicate name="buffeu" org.eventb.core.predicate="card(buffer)≤8" org.eventb.core.source="/CompositionPrj1/middleware.bum|org.eventb.core.machineFile#middleware|org.eventb.core.invariant#-"/>
 </org.eventb.core.poPredicateSet>
 <org.eventb.core.poPredicateSet name="EVTIDENTbuffes" org.eventb.core.parentSet="/CompositionPrj1/middlewareRef.bpo|org.eventb.core.poFile#middlewareRef|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="count'" org.eventb.core.type="ℤ"/>
@@ -33,7 +34,6 @@
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="in∈buffer" org.eventb.core.source="/CompositionPrj1/middleware.bum|org.eventb.core.machineFile#middleware|org.eventb.core.event#+|org.eventb.core.guard#("/>
 </org.eventb.core.poPredicateSet>
 <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/CompositionPrj1/middlewareRef.bpo|org.eventb.core.poFile#middlewareRef|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="buffer∈ℙ(ℤ)" org.eventb.core.source="/CompositionPrj1/middlewareRef.bum|org.eventb.core.machineFile#middlewareRef|org.eventb.core.invariant#0"/>
-<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="count∈ℤ" org.eventb.core.source="/CompositionPrj1/middlewareRef.bum|org.eventb.core.machineFile#middlewareRef|org.eventb.core.invariant#2"/>
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="count∈ℤ" org.eventb.core.source="/CompositionPrj1/middlewareRef.bum|org.eventb.core.machineFile#middlewareRef|org.eventb.core.invariant#1"/>
 </org.eventb.core.poPredicateSet>
 </org.eventb.core.poFile>

@@ -1,2 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.poFile org.eventb.core.poStamp="0"/>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="charRange" org.eventb.core.type="ℙ(ℤ)"/>
+<org.eventb.core.poPredicate name="charRangf" org.eventb.core.predicate="charRange=0 ‥ 255" org.eventb.core.source="/CompositionPrj1/ctx.buc|org.eventb.core.contextFile#ctx|org.eventb.core.axiom#)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/CompositionPrj1/sender.bpo|org.eventb.core.poFile#sender|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="src" org.eventb.core.type="ℙ(ℤ)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="INITIALISATION/act2/FIS" org.eventb.core.accurate="true" org.eventb.core.poDesc="Feasibility of action" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/CompositionPrj1/sender.bpo|org.eventb.core.poFile#sender|org.eventb.core.poPredicateSet#EVTALLHYPsrd"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="ℙ1(charRange)≠(∅ ⦂ ℙ(ℙ(ℤ)))" org.eventb.core.source="/CompositionPrj1/sender.bum|org.eventb.core.machineFile#sender|org.eventb.core.event#)|org.eventb.core.action#'"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/CompositionPrj1/sender.bum|org.eventb.core.machineFile#sender|org.eventb.core.event#)|org.eventb.core.action#'"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/CompositionPrj1/sender.bpo|org.eventb.core.poFile#sender|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/CompositionPrj1/sender.bpo|org.eventb.core.poFile#sender|org.eventb.core.poPredicateSet#EVTALLHYPsrd"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTsrd" org.eventb.core.parentSet="/CompositionPrj1/sender.bpo|org.eventb.core.poFile#sender|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="src'" org.eventb.core.type="ℙ(ℤ)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPsrd" org.eventb.core.parentSet="/CompositionPrj1/sender.bpo|org.eventb.core.poFile#sender|org.eventb.core.poPredicateSet#EVTIDENTsrd" org.eventb.core.poStamp="0"/>
+<org.eventb.core.poPredicateSet name="EVTIDENTsre" org.eventb.core.parentSet="/CompositionPrj1/sender.bpo|org.eventb.core.poFile#sender|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="src'" org.eventb.core.type="ℙ(ℤ)"/>
+<org.eventb.core.poIdentifier name="out" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPsre" org.eventb.core.parentSet="/CompositionPrj1/sender.bpo|org.eventb.core.poFile#sender|org.eventb.core.poPredicateSet#EVTIDENTsre" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="out∈ℤ" org.eventb.core.source="/CompositionPrj1/sender.bum|org.eventb.core.machineFile#sender|org.eventb.core.event#*|org.eventb.core.guard#+"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="out∈src" org.eventb.core.source="/CompositionPrj1/sender.bum|org.eventb.core.machineFile#sender|org.eventb.core.event#*|org.eventb.core.guard#("/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/CompositionPrj1/sender.bpo|org.eventb.core.poFile#sender|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="src∈ℙ(ℤ)" org.eventb.core.source="/CompositionPrj1/sender.bum|org.eventb.core.machineFile#sender|org.eventb.core.invariant#("/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>
