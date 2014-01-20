@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.scMachineFile org.eventb.core.accurate="true" org.eventb.core.configuration="ch.ethz.eventb.decomposition.pogConfig">
+<org.eventb.core.scInvariant name="'" org.eventb.core.label="typing_temp" org.eventb.core.predicate="temp∈ℤ" org.eventb.core.source="/Composition/b.bum|org.eventb.core.machineFile#b|org.eventb.core.invariant#(" org.eventb.core.theorem="true"/>
+<org.eventb.core.scVariable ch.ethz.eventb.decomposition.nature="0" name="temp" org.eventb.core.abstract="false" org.eventb.core.concrete="true" org.eventb.core.source="/Composition/b.bum|org.eventb.core.machineFile#b|org.eventb.core.variable#'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.scEvent ch.ethz.eventb.decomposition.external="false" name="temq" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION" org.eventb.core.source="/Composition/b.bum|org.eventb.core.machineFile#b|org.eventb.core.event#)">
+<org.eventb.core.scAction name="'" org.eventb.core.assignment="temp ≔ 0" org.eventb.core.label="[Composition]Env\ini" org.eventb.core.source="/Composition/b.bum|org.eventb.core.machineFile#b|org.eventb.core.event#)|org.eventb.core.action#'"/>
+</org.eventb.core.scEvent>
+<org.eventb.core.scEvent ch.ethz.eventb.decomposition.external="false" name="temr" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="get_temp" org.eventb.core.source="/Composition/b.bum|org.eventb.core.machineFile#b|org.eventb.core.event#*">
+<org.eventb.core.scGuard name="'" org.eventb.core.label="typing_t" org.eventb.core.predicate="t∈ℤ" org.eventb.core.source="/Composition/b.bum|org.eventb.core.machineFile#b|org.eventb.core.event#*|org.eventb.core.guard#*" org.eventb.core.theorem="true"/>
+<org.eventb.core.scGuard name="(" org.eventb.core.label="[Composition]Ctl\g" org.eventb.core.predicate="t∈ℤ" org.eventb.core.source="/Composition/b.bum|org.eventb.core.machineFile#b|org.eventb.core.event#*|org.eventb.core.guard#(" org.eventb.core.theorem="false"/>
+<org.eventb.core.scGuard name=")" org.eventb.core.label="[Composition]Env\g" org.eventb.core.predicate="t=temp" org.eventb.core.source="/Composition/b.bum|org.eventb.core.machineFile#b|org.eventb.core.event#*|org.eventb.core.guard#)" org.eventb.core.theorem="false"/>
+<org.eventb.core.scParameter name="t" org.eventb.core.source="/Composition/b.bum|org.eventb.core.machineFile#b|org.eventb.core.event#*|org.eventb.core.parameter#'" org.eventb.core.type="ℤ"/>
+</org.eventb.core.scEvent>
+<org.eventb.core.scEvent ch.ethz.eventb.decomposition.external="false" name="tems" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="update" org.eventb.core.source="/Composition/b.bum|org.eventb.core.machineFile#b|org.eventb.core.event#+">
+<org.eventb.core.scGuard name="'" org.eventb.core.label="typing_t" org.eventb.core.predicate="t∈ℤ" org.eventb.core.source="/Composition/b.bum|org.eventb.core.machineFile#b|org.eventb.core.event#+|org.eventb.core.guard#." org.eventb.core.theorem="true"/>
+<org.eventb.core.scGuard name="(" org.eventb.core.label="typing_p" org.eventb.core.predicate="p∈BOOL" org.eventb.core.source="/Composition/b.bum|org.eventb.core.machineFile#b|org.eventb.core.event#+|org.eventb.core.guard#\/" org.eventb.core.theorem="true"/>
+<org.eventb.core.scGuard name=")" org.eventb.core.label="[Composition]Env\t" org.eventb.core.predicate="t∈ℤ" org.eventb.core.source="/Composition/b.bum|org.eventb.core.machineFile#b|org.eventb.core.event#+|org.eventb.core.guard#)" org.eventb.core.theorem="false"/>
+<org.eventb.core.scGuard name="*" org.eventb.core.label="[Composition]Env\ho1" org.eventb.core.predicate="p=TRUE⇒t≥temp" org.eventb.core.source="/Composition/b.bum|org.eventb.core.machineFile#b|org.eventb.core.event#+|org.eventb.core.guard#*" org.eventb.core.theorem="false"/>
+<org.eventb.core.scGuard name="+" org.eventb.core.label="[Composition]Env\ho2" org.eventb.core.predicate="p=FALSE⇒t≤temp" org.eventb.core.source="/Composition/b.bum|org.eventb.core.machineFile#b|org.eventb.core.event#+|org.eventb.core.guard#+" org.eventb.core.theorem="false"/>
+<org.eventb.core.scParameter name="p" org.eventb.core.source="/Composition/b.bum|org.eventb.core.machineFile#b|org.eventb.core.event#+|org.eventb.core.parameter#(" org.eventb.core.type="BOOL"/>
+<org.eventb.core.scParameter name="t" org.eventb.core.source="/Composition/b.bum|org.eventb.core.machineFile#b|org.eventb.core.event#+|org.eventb.core.parameter#'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.scAction name="u" org.eventb.core.assignment="temp ≔ t" org.eventb.core.label="[Composition]Env\updt" org.eventb.core.source="/Composition/b.bum|org.eventb.core.machineFile#b|org.eventb.core.event#+|org.eventb.core.action#-"/>
+</org.eventb.core.scEvent>
+</org.eventb.core.scMachineFile>

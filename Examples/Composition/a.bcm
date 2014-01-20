@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.scMachineFile org.eventb.core.accurate="true" org.eventb.core.configuration="ch.ethz.eventb.decomposition.pogConfig">
+<org.eventb.core.scInvariant name="'" org.eventb.core.label="typing_sensor_temp" org.eventb.core.predicate="sensor_temp∈ℤ" org.eventb.core.source="/Composition/a.bum|org.eventb.core.machineFile#a|org.eventb.core.invariant#(" org.eventb.core.theorem="true"/>
+<org.eventb.core.scVariable ch.ethz.eventb.decomposition.nature="0" name="sensor_temp" org.eventb.core.abstract="false" org.eventb.core.concrete="true" org.eventb.core.source="/Composition/a.bum|org.eventb.core.machineFile#a|org.eventb.core.variable#'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.scEvent ch.ethz.eventb.decomposition.external="false" name="sensor_temq" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION" org.eventb.core.source="/Composition/a.bum|org.eventb.core.machineFile#a|org.eventb.core.event#)">
+<org.eventb.core.scAction name="'" org.eventb.core.assignment="sensor_temp ≔ 0" org.eventb.core.label="[Composition]Ctl\ini" org.eventb.core.source="/Composition/a.bum|org.eventb.core.machineFile#a|org.eventb.core.event#)|org.eventb.core.action#'"/>
+</org.eventb.core.scEvent>
+<org.eventb.core.scEvent ch.ethz.eventb.decomposition.external="false" name="sensor_temr" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="start_heater" org.eventb.core.source="/Composition/a.bum|org.eventb.core.machineFile#a|org.eventb.core.event#*">
+<org.eventb.core.scGuard name="'" org.eventb.core.label="[Composition]Ctl\toocold" org.eventb.core.predicate="sensor_temp&lt;18" org.eventb.core.source="/Composition/a.bum|org.eventb.core.machineFile#a|org.eventb.core.event#*|org.eventb.core.guard#'" org.eventb.core.theorem="false"/>
+</org.eventb.core.scEvent>
+<org.eventb.core.scEvent ch.ethz.eventb.decomposition.external="false" name="sensor_tems" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="stop_heater" org.eventb.core.source="/Composition/a.bum|org.eventb.core.machineFile#a|org.eventb.core.event#+">
+<org.eventb.core.scGuard name="'" org.eventb.core.label="[Composition]Ctl\toohot" org.eventb.core.predicate="sensor_temp&gt;19" org.eventb.core.source="/Composition/a.bum|org.eventb.core.machineFile#a|org.eventb.core.event#+|org.eventb.core.guard#'" org.eventb.core.theorem="false"/>
+</org.eventb.core.scEvent>
+<org.eventb.core.scEvent ch.ethz.eventb.decomposition.external="false" name="sensor_temt" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="get_temp" org.eventb.core.source="/Composition/a.bum|org.eventb.core.machineFile#a|org.eventb.core.event#,">
+<org.eventb.core.scGuard name="'" org.eventb.core.label="typing_t" org.eventb.core.predicate="t∈ℤ" org.eventb.core.source="/Composition/a.bum|org.eventb.core.machineFile#a|org.eventb.core.event#,|org.eventb.core.guard#+" org.eventb.core.theorem="true"/>
+<org.eventb.core.scGuard name="(" org.eventb.core.label="[Composition]Ctl\g" org.eventb.core.predicate="t∈ℤ" org.eventb.core.source="/Composition/a.bum|org.eventb.core.machineFile#a|org.eventb.core.event#,|org.eventb.core.guard#(" org.eventb.core.theorem="false"/>
+<org.eventb.core.scParameter name="t" org.eventb.core.source="/Composition/a.bum|org.eventb.core.machineFile#a|org.eventb.core.event#,|org.eventb.core.parameter#'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.scAction name="u" org.eventb.core.assignment="sensor_temp ≔ t" org.eventb.core.label="[Composition]Ctl\a" org.eventb.core.source="/Composition/a.bum|org.eventb.core.machineFile#a|org.eventb.core.event#,|org.eventb.core.action#*"/>
+</org.eventb.core.scEvent>
+</org.eventb.core.scMachineFile>

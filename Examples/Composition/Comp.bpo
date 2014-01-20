@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="0"/>
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/Composition/Comp.bpo|org.eventb.core.poFile#Comp|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="heater_on" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="sensor_temp" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="temp" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTsensor_temq" org.eventb.core.parentSet="/Composition/Comp.bpo|org.eventb.core.poFile#Comp|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="temp'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="heater_on'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="sensor_temp'" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPsensor_temq" org.eventb.core.parentSet="/Composition/Comp.bpo|org.eventb.core.poFile#Comp|org.eventb.core.poPredicateSet#EVTIDENTsensor_temq" org.eventb.core.poStamp="0"/>
+<org.eventb.core.poPredicateSet name="EVTIDENTsensor_temr" org.eventb.core.parentSet="/Composition/Comp.bpo|org.eventb.core.poFile#Comp|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="heater_on'" org.eventb.core.type="BOOL"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPsensor_temr" org.eventb.core.parentSet="/Composition/Comp.bpo|org.eventb.core.poFile#Comp|org.eventb.core.poPredicateSet#EVTIDENTsensor_temr" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="sensor_temp&lt;18" org.eventb.core.source="/Composition/Comp.bum|org.eventb.core.machineFile#Comp|org.eventb.core.event#internal_element4|org.eventb.core.guard#internal_where1"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTsensor_tems" org.eventb.core.parentSet="/Composition/Comp.bpo|org.eventb.core.poFile#Comp|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="heater_on'" org.eventb.core.type="BOOL"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPsensor_tems" org.eventb.core.parentSet="/Composition/Comp.bpo|org.eventb.core.poFile#Comp|org.eventb.core.poPredicateSet#EVTIDENTsensor_tems" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="sensor_temp&gt;19" org.eventb.core.source="/Composition/Comp.bum|org.eventb.core.machineFile#Comp|org.eventb.core.event#internal_element5|org.eventb.core.guard#internal_where1"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTsensor_temt" org.eventb.core.parentSet="/Composition/Comp.bpo|org.eventb.core.poFile#Comp|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="t" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="sensor_temp'" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPsensor_temt" org.eventb.core.parentSet="/Composition/Comp.bpo|org.eventb.core.poFile#Comp|org.eventb.core.poPredicateSet#EVTIDENTsensor_temt" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="t∈ℤ" org.eventb.core.source="/Composition/Comp.bum|org.eventb.core.machineFile#Comp|org.eventb.core.event#internal_element6|org.eventb.core.guard#internal_where1"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="t=temp" org.eventb.core.source="/Composition/Comp.bum|org.eventb.core.machineFile#Comp|org.eventb.core.event#internal_element6|org.eventb.core.guard#internal_where2"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTsensor_temu" org.eventb.core.parentSet="/Composition/Comp.bpo|org.eventb.core.poFile#Comp|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="t" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="p" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="temp'" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPsensor_temu" org.eventb.core.parentSet="/Composition/Comp.bpo|org.eventb.core.poFile#Comp|org.eventb.core.poPredicateSet#EVTIDENTsensor_temu" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="t∈ℤ" org.eventb.core.source="/Composition/Comp.bum|org.eventb.core.machineFile#Comp|org.eventb.core.event#internal_element7|org.eventb.core.guard#internal_where1"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="p=TRUE⇒t≥temp" org.eventb.core.source="/Composition/Comp.bum|org.eventb.core.machineFile#Comp|org.eventb.core.event#internal_element7|org.eventb.core.guard#internal_where2"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="p=FALSE⇒t≤temp" org.eventb.core.source="/Composition/Comp.bum|org.eventb.core.machineFile#Comp|org.eventb.core.event#internal_element7|org.eventb.core.guard#internal_where3"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="p=heater_on" org.eventb.core.source="/Composition/Comp.bum|org.eventb.core.machineFile#Comp|org.eventb.core.event#internal_element7|org.eventb.core.guard#internal_where5"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Composition/Comp.bpo|org.eventb.core.poFile#Comp|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="heater_on∈BOOL" org.eventb.core.source="/Composition/Comp.bum|org.eventb.core.machineFile#Comp|org.eventb.core.invariant#internal_invariants1"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="temp∈ℤ" org.eventb.core.source="/Composition/Comp.bum|org.eventb.core.machineFile#Comp|org.eventb.core.invariant#internal_invariants2"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="sensor_temp∈ℤ" org.eventb.core.source="/Composition/Comp.bum|org.eventb.core.machineFile#Comp|org.eventb.core.invariant#internal_invariants3"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

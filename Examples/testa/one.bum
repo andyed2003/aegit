@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile ch.ethz.eventb.decomposition.decomposed="true" org.eventb.core.configuration="ch.ethz.eventb.decomposition.mchBase" org.eventb.core.generated="false" version="5">
+<org.eventb.core.variable name="'" org.eventb.core.identifier="a"/>
+<org.eventb.core.event name=")" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="'" org.eventb.core.assignment="a ≔ 0" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="*" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="copy">
+<org.eventb.core.refinesEvent name="+" org.eventb.core.target="copy"/>
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="p"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="a ≔ p" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="typing_p" org.eventb.core.predicate="p ∈ ℤ" org.eventb.core.theorem="true"/>
+</org.eventb.core.event>
+<org.eventb.core.refinesMachine name="+" org.eventb.core.target="one_"/>
+</org.eventb.core.machineFile>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.scMachineFile org.eventb.core.accurate="true" org.eventb.core.configuration="ch.ethz.eventb.decomposition.pogConfig">
+<org.eventb.core.scInvariant name="'" org.eventb.core.label="typing_heater_on" org.eventb.core.predicate="heater_on∈BOOL" org.eventb.core.source="/Composition/c.bum|org.eventb.core.machineFile#c|org.eventb.core.invariant#(" org.eventb.core.theorem="true"/>
+<org.eventb.core.scVariable ch.ethz.eventb.decomposition.nature="0" name="heater_on" org.eventb.core.abstract="false" org.eventb.core.concrete="true" org.eventb.core.source="/Composition/c.bum|org.eventb.core.machineFile#c|org.eventb.core.variable#'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.scEvent ch.ethz.eventb.decomposition.external="false" name="heater_oo" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION" org.eventb.core.source="/Composition/c.bum|org.eventb.core.machineFile#c|org.eventb.core.event#)">
+<org.eventb.core.scAction name="'" org.eventb.core.assignment="heater_on ≔ FALSE" org.eventb.core.label="[Composition]Env\inih" org.eventb.core.source="/Composition/c.bum|org.eventb.core.machineFile#c|org.eventb.core.event#)|org.eventb.core.action#'"/>
+</org.eventb.core.scEvent>
+<org.eventb.core.scEvent ch.ethz.eventb.decomposition.external="false" name="heater_op" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="start_heater" org.eventb.core.source="/Composition/c.bum|org.eventb.core.machineFile#c|org.eventb.core.event#*">
+<org.eventb.core.scAction name="'" org.eventb.core.assignment="heater_on ≔ TRUE" org.eventb.core.label="[Composition]Env\start" org.eventb.core.source="/Composition/c.bum|org.eventb.core.machineFile#c|org.eventb.core.event#*|org.eventb.core.action#("/>
+</org.eventb.core.scEvent>
+<org.eventb.core.scEvent ch.ethz.eventb.decomposition.external="false" name="heater_oq" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="stop_heater" org.eventb.core.source="/Composition/c.bum|org.eventb.core.machineFile#c|org.eventb.core.event#+">
+<org.eventb.core.scAction name="'" org.eventb.core.assignment="heater_on ≔ FALSE" org.eventb.core.label="[Composition]Env\start" org.eventb.core.source="/Composition/c.bum|org.eventb.core.machineFile#c|org.eventb.core.event#+|org.eventb.core.action#("/>
+</org.eventb.core.scEvent>
+<org.eventb.core.scEvent ch.ethz.eventb.decomposition.external="false" name="heater_or" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="update" org.eventb.core.source="/Composition/c.bum|org.eventb.core.machineFile#c|org.eventb.core.event#,">
+<org.eventb.core.scGuard name="'" org.eventb.core.label="typing_t" org.eventb.core.predicate="t∈ℤ" org.eventb.core.source="/Composition/c.bum|org.eventb.core.machineFile#c|org.eventb.core.event#,|org.eventb.core.guard#-" org.eventb.core.theorem="true"/>
+<org.eventb.core.scGuard name="(" org.eventb.core.label="typing_p" org.eventb.core.predicate="p∈BOOL" org.eventb.core.source="/Composition/c.bum|org.eventb.core.machineFile#c|org.eventb.core.event#,|org.eventb.core.guard#." org.eventb.core.theorem="true"/>
+<org.eventb.core.scGuard name=")" org.eventb.core.label="[Composition]Env\t" org.eventb.core.predicate="t∈ℤ" org.eventb.core.source="/Composition/c.bum|org.eventb.core.machineFile#c|org.eventb.core.event#,|org.eventb.core.guard#)" org.eventb.core.theorem="false"/>
+<org.eventb.core.scGuard name="*" org.eventb.core.label="grd1" org.eventb.core.predicate="p=heater_on" org.eventb.core.source="/Composition/c.bum|org.eventb.core.machineFile#c|org.eventb.core.event#,|org.eventb.core.guard#," org.eventb.core.theorem="false"/>
+<org.eventb.core.scParameter name="p" org.eventb.core.source="/Composition/c.bum|org.eventb.core.machineFile#c|org.eventb.core.event#,|org.eventb.core.parameter#(" org.eventb.core.type="BOOL"/>
+<org.eventb.core.scParameter name="t" org.eventb.core.source="/Composition/c.bum|org.eventb.core.machineFile#c|org.eventb.core.event#,|org.eventb.core.parameter#'" org.eventb.core.type="ℤ"/>
+</org.eventb.core.scEvent>
+</org.eventb.core.scMachineFile>

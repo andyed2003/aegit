@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile ch.ethz.eventb.decomposition.decomposed="true" org.eventb.core.configuration="ch.ethz.eventb.decomposition.mchBase;org.eventb.codegen.ui.cgConfig" org.eventb.core.generated="true" version="5">
+<org.eventb.core.variable name="'" org.eventb.core.identifier="sensor_temp"/>
+<org.eventb.core.invariant name="(" org.eventb.core.label="typing_sensor_temp" org.eventb.core.predicate="sensor_temp ∈ ℤ" org.eventb.core.theorem="true"/>
+<org.eventb.core.event name=")" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="'" org.eventb.core.assignment="sensor_temp ≔  0" org.eventb.core.label="[Composition]Ctl\ini"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="*" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="start_heater">
+<org.eventb.core.guard name="'" org.eventb.core.label="[Composition]Ctl\toocold" org.eventb.core.predicate="sensor_temp &lt; 18"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="+" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="stop_heater">
+<org.eventb.core.guard name="'" org.eventb.core.label="[Composition]Ctl\toohot" org.eventb.core.predicate="sensor_temp &gt;19"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="," org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="get_temp">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="t"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="typing_t" org.eventb.core.predicate="t ∈ ℤ" org.eventb.core.theorem="true"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="[Composition]Ctl\g" org.eventb.core.predicate="t∈ℤ"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="sensor_temp ≔ t" org.eventb.core.label="[Composition]Ctl\a"/>
+</org.eventb.core.event>
+</org.eventb.core.machineFile>
