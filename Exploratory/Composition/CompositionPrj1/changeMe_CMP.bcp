@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ac.soton.composition.core.composedMachineFile org.eventb.core.configuration="ac.soton.composition.core.cmp" version="7">
+<ac.soton.composition.core.composesEvent name="internal_element1" org.eventb.core.convergence="0" org.eventb.core.label="INITIALISATION"/>
+</ac.soton.composition.core.composedMachineFile>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ac.soton.composition.core.scComposedMachineFile org.eventb.core.accurate="true" org.eventb.core.configuration="ac.soton.composition.core.cmp">
+<ac.soton.composition.core.scComposesEvent name="'" org.eventb.core.accurate="true" org.eventb.core.label="INITIALISATION" org.eventb.core.source="/CompositionPrj1/changeMe_CMP.bcp|ac.soton.composition.core.composedMachineFile#changeMe_CMP|ac.soton.composition.core.composesEvent#internal_element1"/>
+</ac.soton.composition.core.scComposedMachineFile>
