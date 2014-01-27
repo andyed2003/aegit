@@ -93,6 +93,9 @@ public class FMUCSubroutineTranslator extends AbstractSubroutineIL1Translator {
 		ITypeEnvironment typeEnv = translationManager
 				.getTypeEnvironment(root);
 		Type type = typeEnv.getType(variableName);
+		// FIXIT BUG -- This returns the wrong type when you have two parameters 
+		// in different events with the same name
+		
 		// We hard Code the translation of the parameter Type String here
 		fmiTypeName = FMUTranslator.getFMITypeString(type);
 		return fmiTypeName;

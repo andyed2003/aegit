@@ -6,7 +6,8 @@
 <ac.soton.composition.core.scIncludeMachine name="INCL_2" org.eventb.core.scTarget="/PumpController/m2_CMP.bcp|ac.soton.composition.core.composedMachineFile#m2_CMP|ac.soton.composition.core.includeMachine#internal_includes3" org.eventb.core.source="/PumpController/m2_CMP.bcp|ac.soton.composition.core.composedMachineFile#m2_CMP|ac.soton.composition.core.includeMachine#internal_includes3"/>
 <org.eventb.core.scSeesContext name="INCL_3" org.eventb.core.scTarget="/PumpController/ctx.bcc" org.eventb.core.source="/PumpController/m2_CMP.bcp|ac.soton.composition.core.composedMachineFile#m2_CMP|ac.soton.composition.core.seesContext#internal_sees1"/>
 <org.eventb.core.scInternalContext name="ctx">
-<org.eventb.core.scAxiom name="'" org.eventb.core.label="axm2" org.eventb.core.predicate="MIN=10" org.eventb.core.source="/PumpController/ctx.buc|org.eventb.core.contextFile#ctx|org.eventb.core.axiom#)" org.eventb.core.theorem="false"/>
+<org.eventb.core.scAxiom name="'" org.eventb.core.label="axm3" org.eventb.core.predicate="MIN∈ℤ" org.eventb.core.source="/PumpController/ctx.buc|org.eventb.core.contextFile#ctx|org.eventb.core.axiom#*" org.eventb.core.theorem="false"/>
+<org.eventb.core.scAxiom name="(" org.eventb.core.label="axm2" org.eventb.core.predicate="MIN=10" org.eventb.core.source="/PumpController/ctx.buc|org.eventb.core.contextFile#ctx|org.eventb.core.axiom#)" org.eventb.core.theorem="false"/>
 <org.eventb.core.scConstant name="MIN" org.eventb.core.source="/PumpController/ctx.buc|org.eventb.core.contextFile#ctx|org.eventb.core.constant#'" org.eventb.core.type="ℤ"/>
 </org.eventb.core.scInternalContext>
 <org.eventb.core.scInvariant name="cty" org.eventb.core.label="inv2" org.eventb.core.predicate="m_level∈ℤ" org.eventb.core.source="/PumpController/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#+" org.eventb.core.theorem="false"/>
