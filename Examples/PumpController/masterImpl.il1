@@ -3,12 +3,12 @@
   <decls xsi:type="il1:ConstantDecl" identifier="MIN" type="&#x2124;" initialValue="10" ProjectName="PumpController" ComponentName="ctx"/>
   <protected name="controllerImpl" projectName="PumpController" machineName="controllerImpl">
     <subroutines name="fmiSetInteger_c" machineName="controllerImpl" projectName="PumpController">
-      <body xsi:type="il1:Action" ParentEventName="fmiSetInteger_c" action="c_level &#x2254; p"/>
-      <formalParameters xsi:type="il1:InParameter" identifier="p" type=" &#x2124;" ProjectName="PumpController"/>
+      <body xsi:type="il1:Action" ParentEventName="fmiSetInteger_c" action="c_level &#x2254; q"/>
+      <formalParameters xsi:type="il1:InParameter" identifier="q" type=" &#x2124;" ProjectName="PumpController"/>
     </subroutines>
     <subroutines name="fmiSetBoolean_c" machineName="controllerImpl" projectName="PumpController">
-      <body xsi:type="il1:Action" ParentEventName="fmiSetBoolean_c" action="c_pumpOnReq &#x2254; p"/>
-      <formalParameters xsi:type="il1:InParameter" identifier="p" type=" BOOL" ProjectName="PumpController"/>
+      <body xsi:type="il1:Action" ParentEventName="fmiSetBoolean_c" action="c_pumpOnReq &#x2254; r"/>
+      <formalParameters xsi:type="il1:InParameter" identifier="r" type=" BOOL" ProjectName="PumpController"/>
     </subroutines>
     <subroutines name="fmiGetBoolean_c" machineName="controllerImpl" projectName="PumpController">
       <formalParameters xsi:type="il1:OutParameter" identifier="c_pumpOnCmd" type=" BOOL" ProjectName="PumpController"/>
@@ -100,8 +100,8 @@
               <leftBranch xsi:type="il1:Seq">
                 <rightBranch xsi:type="il1:Call">
                   <subroutine name="fmiSetInteger_c" machineName="controllerImpl" projectName="PumpController">
-                    <body xsi:type="il1:Action" ParentEventName="fmiSetInteger_c" action="c_level &#x2254; p"/>
-                    <formalParameters xsi:type="il1:InParameter" identifier="p" type=" &#x2124;" ProjectName="PumpController"/>
+                    <body xsi:type="il1:Action" ParentEventName="fmiSetInteger_c" action="c_level &#x2254; q"/>
+                    <formalParameters xsi:type="il1:InParameter" identifier="q" type=" &#x2124;" ProjectName="PumpController"/>
                   </subroutine>
                   <actualParameters xsi:type="il1:OutParameter" identifier="m_level" type=" &#x2124;" ProjectName="PumpController" ComponentName="masterImpl"/>
                 </rightBranch>
@@ -110,8 +110,8 @@
                 <leftBranch xsi:type="il1:Seq">
                   <rightBranch xsi:type="il1:Call">
                     <subroutine name="fmiSetBoolean_c" machineName="controllerImpl" projectName="PumpController">
-                      <body xsi:type="il1:Action" ParentEventName="fmiSetBoolean_c" action="c_pumpOnReq &#x2254; p"/>
-                      <formalParameters xsi:type="il1:InParameter" identifier="p" type=" BOOL" ProjectName="PumpController"/>
+                      <body xsi:type="il1:Action" ParentEventName="fmiSetBoolean_c" action="c_pumpOnReq &#x2254; r"/>
+                      <formalParameters xsi:type="il1:InParameter" identifier="r" type=" BOOL" ProjectName="PumpController"/>
                     </subroutine>
                     <actualParameters xsi:type="il1:OutParameter" identifier="m_pumpOnReq" type=" BOOL" ProjectName="PumpController" ComponentName="masterImpl"/>
                   </rightBranch>

@@ -34,8 +34,6 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.xmi.XMIResource;
-import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMLResourceFactoryImpl;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.widgets.DirectoryDialog;
@@ -275,7 +273,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			URI emfURI = URI.createURI(netUri);
 			ResourceSet resSet = new ResourceSetImpl();
 			Resource resource = resSet.createResource(emfURI);
-			if(resource instanceof FmiModelResourceImpl){
+			if (resource instanceof FmiModelResourceImpl) {
 				FmiModelResourceImpl fmiModelRes = (FmiModelResourceImpl) resource;
 				fmiModelRes.setEncoding("UTF-8");
 			}
@@ -425,15 +423,16 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			throws IL1TranslationUnhandledTypeException, RodinDBException,
 			TaskingTranslationUnhandledTypeException {
 		il1TranslationManager = new IL1TranslationManager();
-		
-		///////////////////////////////////il1TranslationManager.currentTargetLanguage = ;
+
+		// /////////////////////////////////il1TranslationManager.currentTargetLanguage
+		// = ;
 		// These are FMU specific headers. The first is for configuration
 		il1TranslationManager.addIncludeStatement("#include \"config.h\"");
-		il1TranslationManager.addIncludeStatement("#include \"fmiFunctions.h\"");
-		// This is for my FMI Declarations. It contains a 
-		// description of my FMI component, for instance.
 		il1TranslationManager
-				.addIncludeStatement("#include \"myFMIDecls.h\"");
+				.addIncludeStatement("#include \"fmiFunctions.h\"");
+		// This is for my FMI Declarations. It contains a
+		// description of my FMI component, for instance.
+		il1TranslationManager.addIncludeStatement("#include \"myFMIDecls.h\"");
 		ArrayList<String> code = null;
 		// Translation Rules
 		Map<IProject, List<ITranslationRule>> translationRules = loadTranslatorRules();
@@ -443,6 +442,9 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		il1TranslationManager.setTranslatorTypeRules(translationTypeRules);
 		String parentDirectoryPath = getFilePathFromSelected();
 		if (parentDirectoryPath != null) {
+			ArrayList<ClassHeaderInformation> headerInfo = il1TranslationManager
+					.getClassHeaderInformation();
+			ArrayList<String> globalDecls = translatedGlobalDecls(program);
 			// make the file system ready.
 			String newDirectoryPath = generatedSourceFolder.getRawLocation()
 					.toString() + File.separatorChar;
@@ -454,19 +456,83 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 				code.add(0, "#include \"" + COMMON_HEADER_FULL + "\"");
 				code.add("// EndProtected");
 				// Generate the header files.
-				// Each protected file just includes "common.h" which includes the other
-				// files.
-				
-				ArrayList<String> globalDecls = translatedGlobalDecls(program);
-				
-				
-				
-				ArrayList<ClassHeaderInformation> headerInfo = il1TranslationManager
-						.getClassHeaderInformation();
-				generateHeaders(headerInfo, newDirectoryPath, il1TranslationManager,
-						globalDecls);
+				// Each protected file just includes "common.h" which includes
+				// the other
+				// files. Get the global decls to pass to the header.
+				generateFMUHeaders(headerInfo, newDirectoryPath,
+						il1TranslationManager, globalDecls);
+			}
+
+			generateGlobalHeader(headerInfo, newDirectoryPath,
+					il1TranslationManager, globalDecls);
+
+		}
+	}
+
+	// This code generates a common header
+	private void generateGlobalHeader(
+			ArrayList<ClassHeaderInformation> headerInformation,
+			String directoryName, IL1TranslationManager translationManager,
+			ArrayList<String> globalDecls) {
+		// Now sort out header files
+		// For common header
+		ClassHeaderInformation commonHeader = new ClassHeaderInformation();
+		commonHeader.setClassName(COMMON_HEADER_PARTIAL);
+
+		// Add headers manually, then add common
+		// class for compiler specific code
+		commonHeader.getHeaderEntries().addAll(
+				translationManager.getIncludeStatements());
+
+		translationManager.addIncludeStatement("#include <stdlib.h>");
+		// If the C translator (legacy code) has inserted a stdio include
+		// then we will remove it from the common code
+
+		// Add the header files to include in the initial data
+		for (ClassHeaderInformation c : headerInformation) {
+			String headerName = c.getClassName() + ".h";
+			if (!headerName.equalsIgnoreCase("common.h")) {
+				commonHeader.getHeaderEntries().add(
+						"#include \"" + headerName + "\"");
 			}
 		}
+		// Add any global declarations
+		commonHeader.getHeaderEntries().addAll(globalDecls);
+
+		headerInformation.add(commonHeader);
+
+		if (translationManager.getCompilerDependentExecutableCodeBlock().size() > 0) {
+			ArrayList<String> commonCode = new ArrayList<String>();
+			// commonCode.add(codeGenerateTimestamp);
+			commonCode.add("#include \"" + COMMON_HEADER_FULL + "\"");
+			commonCode.addAll(formatCode(translationManager
+					.getCompilerDependentExecutableCodeBlock(),
+					translationManager));
+			CodeFiler.getDefault().save(commonCode, directoryName, "common.c");
+		}
+
+		// Save the common header files for this FMU
+		for (ClassHeaderInformation c : headerInformation) {
+			String headerName = c.getClassName();
+			String headerPreBlock = c.getClassName().toUpperCase() + "_H";
+
+			ArrayList<String> headerCode = new ArrayList<String>();
+			// headerCode.add(codeGenerateTimestamp);
+			headerCode.add("#ifndef " + headerPreBlock);
+			headerCode.add("#define " + headerPreBlock);
+
+			for (String i : c.getHeaderEntries()) {
+				headerCode.add(i);
+			}
+
+			headerCode.add("#endif");
+			headerCode.add(""); // blank line
+
+			CodeFiler.getDefault().save(headerCode, directoryName,
+					headerName + ".h");
+		}
+
+		
 	}
 
 	// Create the file associated with the output
@@ -506,49 +572,28 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		return null;
 	}
 
-	// We override the saveToFile since we do not need to write tasks for FMU's
-	// only protected objects. We also want to save the 'protected object'
-	// code from shared machines since they map to the FMUs. We store the
-	// 'protected object' code in a field, temporarily, in TranslateIL1ToFMU,
-	// then call the saveToFile, and make use of it there rather than pass it
-	// as a parameter.
+	// We do not use this part of the interface.
 	@Override
 	protected void saveToFile(ArrayList<String> codeToSave,
 			ArrayList<ClassHeaderInformation> headerInformation,
 			Program program, String directoryName,
 			IL1TranslationManager translationManager) {
-
-
-		for (int lineNumber = 0; lineNumber < codeToSave.size(); lineNumber++) {
-			ArrayList<String> protectedCode = new ArrayList<String>();
-			// In the original code (the default C code) we used lineNumber + 1.
-			// For FMUs we use lineNumber, to pick up the 'include "common.h"'
-			// statement.
-			lineNumber = getCodeBlock(codeToSave, lineNumber,
-					"// EndProtected", protectedCode);
-		}
-
-		ArrayList<String> globalDecls = translatedGlobalDecls(program);
-		
-		// Generate the header files.
-		// Each protected file just includes "common.h" which includes the other
-		// files.
-		generateHeaders(headerInformation, directoryName, translationManager,
-				globalDecls);
+		// Intentionally blank
 	}
 
 	private ArrayList<String> translatedGlobalDecls(Program program) {
 		ArrayList<String> globalDecls = new ArrayList<String>();
 		// get and translate the global declarations
 		EList<Declaration> globalDeclList = program.getDecls();
-		for(Declaration decl: globalDeclList){
+		for (Declaration decl : globalDeclList) {
 			ArrayList<String> translatedDeclList = null;
 			try {
-				translatedDeclList = il1TranslationManager.translateIL1ElementToCode(decl, targetLanguage);
+				translatedDeclList = il1TranslationManager
+						.translateIL1ElementToCode(decl, targetLanguage);
 			} catch (IL1TranslationUnhandledTypeException e) {
 				e.printStackTrace();
 			}
-			if(translatedDeclList != null){
+			if (translatedDeclList != null) {
 				globalDecls.addAll(translatedDeclList);
 			}
 		}
@@ -556,38 +601,10 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 	}
 
 	// Generate the headers for this FMU
-	private void generateHeaders(
+	private void generateFMUHeaders(
 			ArrayList<ClassHeaderInformation> headerInformation,
 			String directoryName, IL1TranslationManager translationManager,
 			ArrayList<String> globalDecls) {
-		// Now sort out header files
-		// For common header
-		ClassHeaderInformation commonHeader = new ClassHeaderInformation();
-		commonHeader.setClassName(COMMON_HEADER_PARTIAL);
-
-		// Add headers manually, then add common
-		// class for compiler specific code
-		commonHeader.getHeaderEntries().addAll(translationManager
-				.getIncludeStatements());
-
-		// Add any global declarations
-		commonHeader.getHeaderEntries().addAll(globalDecls);
-		translationManager.addIncludeStatement("#include <stdlib.h>");
-		// If the C translator (legacy code) has inserted a stdio include
-		// then we will remove it from the common code
-		
-		
-		// Add the header files to include in the initial data
-		for (ClassHeaderInformation c : headerInformation) {
-			String headerName = c.getClassName() + ".h";
-			if (!headerName.equalsIgnoreCase("common.h")) {
-				commonHeader.getHeaderEntries().add("#include \"" + headerName
-						+ "\"");
-			}
-		}
-		
-		
-		headerInformation.add(commonHeader);
 
 		if (translationManager.getCompilerDependentExecutableCodeBlock().size() > 0) {
 			ArrayList<String> commonCode = new ArrayList<String>();
@@ -642,8 +659,8 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		return ""; // something went wrong
 	}
 
-	public static String updatePointerVariableName(String action, Declaration d,
-			IL1TranslationManager translationManager)
+	public static String updatePointerVariableName(String action,
+			Declaration d, IL1TranslationManager translationManager)
 			throws IL1TranslationException {
 		action = translationManager.tokenizeVariablesOperators(action);
 		String[] actions = action.split(" ");
@@ -684,7 +701,6 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		return newAction;
 	}
 
-	
 	// Given an eventB type, return its FMI equivalent
 	public static String getFMITypeString(Type eventBType) {
 		String fmiTypeString = null;
@@ -728,8 +744,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 
 	// given the fmiTypeString return the variableRefArrayName
 	public static String getVariableRefArrayName(String fmiTypeString)
-			throws IL1TranslationException
-			 {
+			throws IL1TranslationException {
 		if (fmiTypeString.equals(INTEGER)) {
 			return VARIABLE_REF_INTEGER;
 		} else if (fmiTypeString.equals(BOOLEAN)) {
