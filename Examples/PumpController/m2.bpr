@@ -24,15 +24,15 @@
 <org.eventb.core.prProof name="fmiSetInteger_c/act1/SIM" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p0">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p0"/>
 <org.eventb.core.prIdent name="m_level" org.eventb.core.type="ℤ"/>
-<org.eventb.core.prIdent name="p" org.eventb.core.type="ℤ"/>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="p=m_level"/>
+<org.eventb.core.prIdent name="q" org.eventb.core.type="ℤ"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="q=m_level"/>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.hyp"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="fmiSetBoolean_c/act1/SIM" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p0">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p0"/>
 <org.eventb.core.prIdent name="m_pumpOnReq" org.eventb.core.type="BOOL"/>
-<org.eventb.core.prIdent name="p" org.eventb.core.type="BOOL"/>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="p=m_pumpOnReq"/>
+<org.eventb.core.prIdent name="r" org.eventb.core.type="BOOL"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="r=m_pumpOnReq"/>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.hyp"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="fmiSetBoolean_e/act1/SIM" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p0">
