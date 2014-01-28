@@ -9,8 +9,11 @@ import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.ui.statushandlers.StatusManager;
+import org.eventb.codegen.il1.Parameter;
 import org.eventb.codegen.il1.Protected;
+import org.eventb.codegen.il1.Subroutine;
 import org.eventb.codegen.il1.translator.ClassHeaderInformation;
 import org.eventb.codegen.il1.translator.IL1TranslationException;
 import org.eventb.codegen.il1.translator.IL1TranslationManager;
@@ -40,7 +43,11 @@ public class FMUCProtectedTranslator extends AbstractProtectedIL1Translator {
 		subList = subList_;
 		translationManager = translationManager_;
 
+		
 		try {
+			// check that event parameters have unique names.
+			// Else it upsets their record in the type environment.
+			parameterCheck(actualSource);
 			useTemplates();
 		} catch (CoreException e) {
 			Status status = new Status(IStatus.ERROR,
@@ -94,6 +101,28 @@ public class FMUCProtectedTranslator extends AbstractProtectedIL1Translator {
 			translationManager.addClassHeaderInformation(headerInfo);
 		}
 		return outCode;
+	}
+
+	private void parameterCheck(Protected prot) throws Exception {
+		EList<Subroutine> subroutineList = prot.getSubroutines();
+		List<String> paramNameList = new ArrayList<String>(); 
+		List<String> paramNameRepeatList = new ArrayList<String>();
+		for(Subroutine subroutine: subroutineList){
+			EList<Parameter> paramList = subroutine.getFormalParameters();
+			
+			for(Parameter param: paramList){
+				if(!paramNameList.contains(param.getIdentifier())){
+					paramNameList.add(param.getIdentifier());
+				}
+				else{
+					paramNameRepeatList.add(param.getIdentifier());
+				}
+			}
+			if(paramNameRepeatList.size() > 0){
+				throw new Exception("\n The following duplicate parameter names should be unique "
+						+ paramNameRepeatList.toString()+"\n");
+			}
+		}
 	}
 
 	private void useTemplates() throws Exception {
