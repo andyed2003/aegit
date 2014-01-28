@@ -1,10 +1,8 @@
 package ac.soton.fmusim.codegen.translator.il1tofmuc;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import org.eclipse.emf.common.util.EList;
-import org.eventb.codegen.il1.Declaration;
 import org.eventb.codegen.il1.InParameter;
 import org.eventb.codegen.il1.OutParameter;
 import org.eventb.codegen.il1.Parameter;
