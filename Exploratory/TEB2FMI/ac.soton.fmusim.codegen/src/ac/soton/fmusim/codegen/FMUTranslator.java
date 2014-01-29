@@ -508,7 +508,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			commonCode.addAll(formatCode(translationManager
 					.getCompilerDependentExecutableCodeBlock(),
 					translationManager));
-			CodeFiler.getDefault().save(commonCode, directoryName, "common.c");
+			CodeFiler.getDefault().save(commonCode, directoryName, "common.c", il1TranslationManager);
 		}
 
 		// Save the common header files for this FMU
@@ -529,7 +529,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			headerCode.add(""); // blank line
 
 			CodeFiler.getDefault().save(headerCode, directoryName,
-					headerName + ".h");
+					headerName + ".h", il1TranslationManager);
 		}
 
 		
@@ -613,7 +613,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			commonCode.addAll(formatCode(translationManager
 					.getCompilerDependentExecutableCodeBlock(),
 					translationManager));
-			CodeFiler.getDefault().save(commonCode, directoryName, "common.c");
+			CodeFiler.getDefault().save(commonCode, directoryName, "common.c", il1TranslationManager);
 		}
 
 		// Save the header files for this FMU
@@ -634,7 +634,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			headerCode.add(""); // blank line
 
 			CodeFiler.getDefault().save(headerCode, directoryName,
-					headerName + ".h");
+					headerName + ".h", il1TranslationManager);
 		}
 	}
 
