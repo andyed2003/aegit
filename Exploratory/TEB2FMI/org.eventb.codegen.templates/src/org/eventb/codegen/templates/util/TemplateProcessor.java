@@ -1,7 +1,6 @@
 package org.eventb.codegen.templates.util;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.net.URI;
@@ -31,7 +30,6 @@ public class TemplateProcessor {
 	private static TemplateProcessor templateProcessor = null;
 	private IFolder templateSourceFolder = null;
 	private IFolder targetFolder = null;
-	private BufferedWriter bufferedWriter;
 	private IGeneratorData data = null;
 
 	public static TemplateProcessor getDefault() {
@@ -41,9 +39,8 @@ public class TemplateProcessor {
 		return templateProcessor;
 	}
 
-	// Given a Project find the folder with that name.
-	// We use it to find the templates folder;
-	public IFolder getTargetFolder(IProject project, String folderName) {
+	// Given a Project set the target folder with that name.
+	public IFolder initialiseTarget(IProject project, String folderName) {
 		targetFolder = project.getFolder(folderName);
 		return targetFolder;
 	}
@@ -51,9 +48,8 @@ public class TemplateProcessor {
 	// Given a Rodin Project find the (non-Rodin) folder with that name.
 	// We use it to find the templates source folder;
 	// Also store the bufferedWriter for later use.
-	public void initialise(IRodinProject rodinProject, String folderName, BufferedWriter bufferedWriter_)
+	public void initialiseSource(IRodinProject rodinProject, String folderName)
 			throws RodinDBException, IL1TranslationException {
-		bufferedWriter = bufferedWriter_;
 		List<IResource> nonRodinResources = Arrays.asList(rodinProject
 				.getNonRodinResources());
 		for (IResource resource : nonRodinResources) {
@@ -106,12 +102,7 @@ public class TemplateProcessor {
 		//Instantiate the template
 		List<String> tempArrayList = internalInstantiateTemplate(bufferedReader, templateFolderContentMap);
 
-		// POST Process: write the output.
-
-//		for (String line : tempArrayList) {
-//			bufferedWriter.write(line + "\n");
-//		}
-		
+		// Save the template: discover its name and the target folder
 		String targetName = "";
 		for(Object d: data.getDataList()){
 			if(d instanceof ProtectedImpl){
@@ -120,6 +111,7 @@ public class TemplateProcessor {
 			}
 		}
 		String targetFolderPath = targetFolder.getRawLocation().addTrailingSeparator().toString();
+		// call the code filer utility
 		CodeFiler.getDefault().save(tempArrayList, targetFolderPath, targetName+".c", "fmi_c");
 	}
 

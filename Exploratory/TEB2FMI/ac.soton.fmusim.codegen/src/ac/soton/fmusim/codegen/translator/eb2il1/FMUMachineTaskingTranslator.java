@@ -9,7 +9,6 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.ui.statushandlers.StatusManager;
-import org.eventb.codegen.il1.Call;
 import org.eventb.codegen.il1.Command;
 import org.eventb.codegen.il1.IL1Element;
 import org.eventb.codegen.il1.Il1Factory;

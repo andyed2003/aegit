@@ -1,11 +1,9 @@
 package ac.soton.fmusim.codegen.translator.il1tofmuc;
 
-import java.io.BufferedWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
@@ -23,7 +21,6 @@ import org.eventb.codegen.templates.util.TemplateException;
 import org.eventb.codegen.templates.util.TemplateProcessor;
 
 import ac.soton.fmusim.codegen.FMUTranslator;
-import ac.soton.fmusim.codegen.FMUTranslatorHelper;
 import ac.soton.fmusim.codegen.FMUTranslatorPlugin;
 
 public class FMUCProtectedTranslator extends AbstractProtectedIL1Translator {
@@ -43,7 +40,6 @@ public class FMUCProtectedTranslator extends AbstractProtectedIL1Translator {
 		subList = subList_;
 		translationManager = translationManager_;
 
-		
 		try {
 			// check that event parameters have unique names.
 			// Else it upsets their record in the type environment.
@@ -84,7 +80,8 @@ public class FMUCProtectedTranslator extends AbstractProtectedIL1Translator {
 			StatusManager.getManager().handle(status, StatusManager.SHOW);
 		}
 		ArrayList<String> outCode = new ArrayList<String>();
-		// If any subroutines have been generated during the template instantiation 
+		// If any subroutines have been generated during the template
+		// instantiation
 		// we can add the subroutine signatures to the header here.
 		outCode.add("");
 		if (subList.size() > 0) {
@@ -105,54 +102,43 @@ public class FMUCProtectedTranslator extends AbstractProtectedIL1Translator {
 
 	private void parameterCheck(Protected prot) throws Exception {
 		EList<Subroutine> subroutineList = prot.getSubroutines();
-		List<String> paramNameList = new ArrayList<String>(); 
+		List<String> paramNameList = new ArrayList<String>();
 		List<String> paramNameRepeatList = new ArrayList<String>();
-		for(Subroutine subroutine: subroutineList){
+		for (Subroutine subroutine : subroutineList) {
 			EList<Parameter> paramList = subroutine.getFormalParameters();
-			
-			for(Parameter param: paramList){
-				if(!paramNameList.contains(param.getIdentifier())){
+
+			for (Parameter param : paramList) {
+				if (!paramNameList.contains(param.getIdentifier())) {
 					paramNameList.add(param.getIdentifier());
-				}
-				else{
+				} else {
 					paramNameRepeatList.add(param.getIdentifier());
 				}
 			}
-			if(paramNameRepeatList.size() > 0){
-				throw new Exception("\n The following duplicate parameter names should be unique "
-						+ paramNameRepeatList.toString()+"\n");
+			if (paramNameRepeatList.size() > 0) {
+				throw new Exception(
+						"\n The following duplicate parameter names should be unique "
+								+ paramNameRepeatList.toString() + "\n");
 			}
 		}
 	}
 
 	private void useTemplates() throws Exception {
-		// where do we want to write to?
-		String targetFileName = actualSource.getName() + ".c";
-		FMUTranslatorHelper translatorHelper = FMUTranslatorHelper.getDefault();
 		// Create the Template Processor
 		TemplateProcessor templateProcessor = TemplateProcessor.getDefault();
-		// Get the target folder from this utility method
-		IFolder targetFolder = templateProcessor
-				.getTargetFolder(FMUTranslator.targetProject,
-						FMUTranslator.GENERATED_SRC_FOLDER);
-		// Create a buffered writer
-		BufferedWriter bufferedWriter = translatorHelper.createBufferedWriter(
-				targetFolder, targetFileName);
-		// Initialise the template processor with the source
-		// directory, and TARGET information.
-		templateProcessor.initialise(FMUTranslator.sourceRodinProject,
-				FMUTranslator.TEMPLATES_SRC_FOLDER, bufferedWriter);
+		// Initialise the template processor with the TARGET and SOURCE information.
+		templateProcessor.initialiseTarget(FMUTranslator.targetProject,
+				FMUTranslator.GENERATED_SRC_FOLDER);
+		templateProcessor.initialiseSource(FMUTranslator.sourceRodinProject,
+				FMUTranslator.TEMPLATES_SRC_FOLDER);
 		// Get the processor to instantiate the 'Top-Level' template.
 		// Templates contained 'within' are handled by the processor
 		// and TemplateHelper. We can pass a data object to assist with the
 		// translation, so we pass the actual source object, we could make this
 		// more complex if necessary (and add constraints)
-
 		GeneratorData generatorData = new GeneratorData();
 		List<Object> generatorDataList = generatorData.getDataList();
 		generatorDataList.add(actualSource);
 		generatorDataList.add(translationManager);
 		templateProcessor.instantiateTemplate("fmuTemplate.c", generatorData);
-		bufferedWriter.close();
 	}
 }
