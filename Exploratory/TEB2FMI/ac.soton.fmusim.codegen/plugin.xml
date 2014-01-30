@@ -140,9 +140,9 @@
                specificTargetLanguage="Default">
          </il1Translator>
          <il1Translator
-               IL1TranslatorClass="org.eventb.codegen.il1.translator.c.CConstantTranslator"
+               IL1TranslatorClass="ac.soton.fmusim.codegen.translator.il1tofmuc.FMUCConstantTranslator"
                coreTargetLanguage="FMI_C"
-               name="CConstantDeclTranslator"
+               name="FMUCConstantTranslator"
                sourceClass="ConstantDecl"
                specificTargetLanguage="Default">
          </il1Translator>
