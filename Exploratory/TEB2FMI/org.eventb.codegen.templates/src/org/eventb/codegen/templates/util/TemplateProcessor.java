@@ -16,7 +16,9 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
+import org.eventb.codegen.il1.impl.ProtectedImpl;
 import org.eventb.codegen.il1.translator.IL1TranslationException;
+import org.eventb.codegen.il1.translator.utils.CodeFiler;
 import org.eventb.codegen.templates.IGeneratorData;
 import org.rodinp.core.IRodinProject;
 import org.rodinp.core.RodinDBException;
@@ -103,10 +105,22 @@ public class TemplateProcessor {
 
 		//Instantiate the template
 		List<String> tempArrayList = internalInstantiateTemplate(bufferedReader, templateFolderContentMap);
+
 		// POST Process: write the output.
-		for (String line : tempArrayList) {
-			bufferedWriter.write(line + "\n");
+
+//		for (String line : tempArrayList) {
+//			bufferedWriter.write(line + "\n");
+//		}
+		
+		String targetName = "";
+		for(Object d: data.getDataList()){
+			if(d instanceof ProtectedImpl){
+				targetName = ((ProtectedImpl) d).getName();
+				break;
+			}
 		}
+		String targetFolderPath = targetFolder.getRawLocation().addTrailingSeparator().toString();
+		CodeFiler.getDefault().save(tempArrayList, targetFolderPath, targetName+".c", "fmi_c");
 	}
 
 	// This takes a buffered reader (pointing to a template), and list of child 
