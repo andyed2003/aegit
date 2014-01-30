@@ -10,7 +10,8 @@
 //#include "config.h"
 //#include "fmiFunctions.h"
 // How many integers to set here
-#define NUMBER_TO_SET 2
+#define INT_NUMBER_TO_SET 1
+#define BOOL_NUMBER_TO_SET 1
 
 int main(int argc, char **argv) {
 
@@ -26,16 +27,25 @@ int main(int argc, char **argv) {
 	// end slave initialisation
 
 	// set-up the master's initial values:
-	fmiValueReference vrs_toSet[NUMBER_TO_SET] = {c_level_controllerImpl_, c_pumpOnReq_controllerImpl_};
+	fmiValueReference int_vrs_toSet[INT_NUMBER_TO_SET] = {c_level_controllerImpl_};
 	// the values set using the value references
-	fmiInteger vals_toSet[NUMBER_TO_SET] = {99, fmiFalse};
+	fmiInteger int_vals_toSet[INT_NUMBER_TO_SET] = {0};
+	fmiValueReference bool_vrs_toSet[INT_NUMBER_TO_SET] = {c_pumpOnReq_controllerImpl_};
+	// the values set using the value references
+	fmiInteger bool_vals_toSet[BOOL_NUMBER_TO_SET] = {fmiTrue};
+
+	//set the initial values for the simulation
+	fmiSetInteger(comp, int_vrs_toSet, INT_NUMBER_TO_SET, int_vals_toSet );
+	fmiSetBoolean(comp, bool_vrs_toSet, BOOL_NUMBER_TO_SET, bool_vals_toSet );
+
+
 	// calculate some value from the environment - we use idx
-	int idx = 100;
+	int idx = 0;
 	// begin simulation phase
-	for(; idx < 1000; idx = idx + 100){
-		vals_toSet[0] = idx;
+	for(; idx < 100; idx = idx + 1){
+		int_vals_toSet[c_level_controllerImpl_] = idx;
 		// update the controller with some value "environment" idx
-		fmiSetInteger(comp, vrs_toSet, NUMBER_TO_SET, vals_toSet );
+		fmiSetInteger(comp, int_vrs_toSet, INT_NUMBER_TO_SET, int_vals_toSet );
 		// do the simulation step
 		fmiDoStep(comp,start,end,fmiTrue);
 		// we haven't define a get integer ... but it would follow here >>>
