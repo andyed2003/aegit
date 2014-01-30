@@ -16,8 +16,6 @@ import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
 import org.eventb.codegen.il1.impl.ProtectedImpl;
-import org.eventb.codegen.il1.translator.IL1TranslationException;
-import org.eventb.codegen.il1.translator.utils.CodeFiler;
 import org.eventb.codegen.templates.IGeneratorData;
 import org.rodinp.core.IRodinProject;
 import org.rodinp.core.RodinDBException;
@@ -49,7 +47,7 @@ public class TemplateProcessor {
 	// We use it to find the templates source folder;
 	// Also store the bufferedWriter for later use.
 	public void initialiseSource(IRodinProject rodinProject, String folderName)
-			throws RodinDBException, IL1TranslationException {
+			throws RodinDBException, TemplateException {
 		List<IResource> nonRodinResources = Arrays.asList(rodinProject
 				.getNonRodinResources());
 		for (IResource resource : nonRodinResources) {
@@ -61,7 +59,7 @@ public class TemplateProcessor {
 			}
 		}
 		// we got here so we've been unable to initialise the reader
-		throw new IL1TranslationException(
+		throw new TemplateException(
 				"could not initialise Template Reader with: "
 						+ rodinProject.getElementName() + "/" + folderName);
 	}

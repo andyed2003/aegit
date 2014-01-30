@@ -52,7 +52,7 @@ import org.eventb.codegen.il1.translator.IL1TranslationManager;
 import org.eventb.codegen.il1.translator.IL1TranslationUnhandledTypeException;
 import org.eventb.codegen.il1.translator.TargetLanguage;
 import org.eventb.codegen.il1.translator.provider.ITranslationRule;
-import org.eventb.codegen.il1.translator.utils.CodeFiler;
+import org.eventb.codegen.il1.translator.utils.IL1CodeFiler;
 import org.eventb.codegen.tasking.RMLDataStruct;
 import org.eventb.codegen.tasking.RelevantMachineLoader;
 import org.eventb.codegen.tasking.TaskingTranslationException;
@@ -508,7 +508,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			commonCode.addAll(formatCode(translationManager
 					.getCompilerDependentExecutableCodeBlock(),
 					translationManager));
-			CodeFiler.getDefault().save(commonCode, directoryName, "common.c", il1TranslationManager);
+			IL1CodeFiler.getDefault().save(commonCode, directoryName, "common.c", il1TranslationManager);
 		}
 
 		// Save the common header files for this FMU
@@ -528,7 +528,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			headerCode.add("#endif");
 			headerCode.add(""); // blank line
 
-			CodeFiler.getDefault().save(headerCode, directoryName,
+			IL1CodeFiler.getDefault().save(headerCode, directoryName,
 					headerName + ".h", il1TranslationManager);
 		}
 
@@ -613,7 +613,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			commonCode.addAll(formatCode(translationManager
 					.getCompilerDependentExecutableCodeBlock(),
 					translationManager));
-			CodeFiler.getDefault().save(commonCode, directoryName, "common.c", il1TranslationManager);
+			IL1CodeFiler.getDefault().save(commonCode, directoryName, "common.c", il1TranslationManager);
 		}
 
 		// Save the header files for this FMU
@@ -633,7 +633,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			headerCode.add("#endif");
 			headerCode.add(""); // blank line
 
-			CodeFiler.getDefault().save(headerCode, directoryName,
+			IL1CodeFiler.getDefault().save(headerCode, directoryName,
 					headerName + ".h", il1TranslationManager);
 		}
 	}
