@@ -32,28 +32,20 @@
 <org.eventb.core.scAction name="-" org.eventb.core.assignment="c_warn ≔ FALSE" org.eventb.core.label="act11" org.eventb.core.source="/PumpControllerJava/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#'|org.eventb.core.action#1"/>
 <org.eventb.core.scAction name="." org.eventb.core.assignment="e_warn ≔ FALSE" org.eventb.core.label="act12" org.eventb.core.source="/PumpControllerJava/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#'|org.eventb.core.action#2"/>
 </org.eventb.core.scEvent>
-<org.eventb.core.scEvent name="e_pumpOnRes" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="setPumpOnCmd_c" org.eventb.core.source="/PumpControllerJava/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#=">
-<org.eventb.core.scAction name="'" org.eventb.core.assignment="e_pumpOnCmd ≔ c_pumpOnCmd" org.eventb.core.label="act1" org.eventb.core.source="/PumpControllerJava/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#=|org.eventb.core.action#'"/>
+<org.eventb.core.scEvent name="e_pumpOnRes" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="getLevel_c" org.eventb.core.source="/PumpControllerJava/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#?">
+<org.eventb.core.scAction name="'" org.eventb.core.assignment="c_level ≔ e_level" org.eventb.core.label="act1" org.eventb.core.source="/PumpControllerJava/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#?|org.eventb.core.action#'"/>
 </org.eventb.core.scEvent>
 <org.eventb.core.scEvent name="e_pumpOnRet" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="getPumpOnReq_c" org.eventb.core.source="/PumpControllerJava/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#&gt;">
 <org.eventb.core.scAction name="'" org.eventb.core.assignment="c_pumpOnReq ≔ e_pumpOnReq" org.eventb.core.label="act1" org.eventb.core.source="/PumpControllerJava/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#&gt;|org.eventb.core.action#'"/>
 </org.eventb.core.scEvent>
-<org.eventb.core.scEvent name="e_pumpOnReu" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="getLevel_c" org.eventb.core.source="/PumpControllerJava/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#?">
-<org.eventb.core.scAction name="'" org.eventb.core.assignment="c_level ≔ e_level" org.eventb.core.label="act1" org.eventb.core.source="/PumpControllerJava/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#?|org.eventb.core.action#'"/>
+<org.eventb.core.scEvent name="e_pumpOnReu" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="output" org.eventb.core.source="/PumpControllerJava/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#T">
+<org.eventb.core.scAction name="'" org.eventb.core.assignment="c_warn :∈ BOOL" org.eventb.core.label="act1" org.eventb.core.source="/PumpControllerJava/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#T|org.eventb.core.action#'"/>
+<org.eventb.core.scAction name="(" org.eventb.core.assignment="c_pumpOnCmd :∈ BOOL" org.eventb.core.label="act2" org.eventb.core.source="/PumpControllerJava/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#T|org.eventb.core.action#("/>
 </org.eventb.core.scEvent>
-<org.eventb.core.scEvent name="e_pumpOnRev" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="incLevel_e" org.eventb.core.source="/PumpControllerJava/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#T">
-<org.eventb.core.scAction name="'" org.eventb.core.assignment="e_level ≔ e_level+1" org.eventb.core.label="act1" org.eventb.core.source="/PumpControllerJava/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#T|org.eventb.core.action#'"/>
+<org.eventb.core.scEvent name="e_pumpOnRev" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="setPumpOnCmd_c" org.eventb.core.source="/PumpControllerJava/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#=">
+<org.eventb.core.scAction name="'" org.eventb.core.assignment="e_pumpOnCmd ≔ c_pumpOnCmd" org.eventb.core.label="act1" org.eventb.core.source="/PumpControllerJava/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#=|org.eventb.core.action#'"/>
 </org.eventb.core.scEvent>
-<org.eventb.core.scEvent name="e_pumpOnRew" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="declevel" org.eventb.core.source="/PumpControllerJava/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#U">
-<org.eventb.core.scAction name="'" org.eventb.core.assignment="e_level ≔ e_level − 1" org.eventb.core.label="act1" org.eventb.core.source="/PumpControllerJava/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#U|org.eventb.core.action#'"/>
-</org.eventb.core.scEvent>
-<org.eventb.core.scEvent name="e_pumpOnRex" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="requestPumpOn_e" org.eventb.core.source="/PumpControllerJava/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#R">
-<org.eventb.core.scAction name="'" org.eventb.core.assignment="e_pumpOnReq ≔ TRUE" org.eventb.core.label="act1" org.eventb.core.source="/PumpControllerJava/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#R|org.eventb.core.action#'"/>
-</org.eventb.core.scEvent>
-<org.eventb.core.scEvent name="e_pumpOnRey" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="filterWarn" org.eventb.core.source="/PumpControllerJava/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#P">
-<org.eventb.core.scAction name="'" org.eventb.core.assignment="c_warn :∈ BOOL" org.eventb.core.label="act1" org.eventb.core.source="/PumpControllerJava/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#P|org.eventb.core.action#'"/>
-</org.eventb.core.scEvent>
-<org.eventb.core.scEvent name="e_pumpOnRez" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="filterOK" org.eventb.core.source="/PumpControllerJava/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#S">
-<org.eventb.core.scAction name="'" org.eventb.core.assignment="c_pumpOnCmd ≔ TRUE" org.eventb.core.label="act1" org.eventb.core.source="/PumpControllerJava/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#S|org.eventb.core.action#'"/>
+<org.eventb.core.scEvent name="e_pumpOnRew" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="setWarn_c" org.eventb.core.source="/PumpControllerJava/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#U">
+<org.eventb.core.scAction name="'" org.eventb.core.assignment="e_warn :∈ BOOL" org.eventb.core.label="act1" org.eventb.core.source="/PumpControllerJava/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#U|org.eventb.core.action#'"/>
 </org.eventb.core.scEvent>
 </org.eventb.core.scMachineFile>
