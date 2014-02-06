@@ -7,7 +7,15 @@
 <org.eventb.core.variable name="0" org.eventb.core.identifier="c_pumpOnReq"/>
 <org.eventb.core.variable name="." org.eventb.core.identifier="e_pumpOnReq"/>
 <org.eventb.core.variable name="4" org.eventb.core.identifier="c_pumpOnCmd"/>
-<org.eventb.core.event name="O" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.event name="O" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="," org.eventb.core.assignment="c_level ≔ 100" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="-" org.eventb.core.assignment="e_level ≔ 90" org.eventb.core.label="act6"/>
+<org.eventb.core.action name="." org.eventb.core.assignment="c_pumpOnReq ≔ FALSE" org.eventb.core.label="act5"/>
+<org.eventb.core.action name="/" org.eventb.core.assignment="e_pumpOnReq ≔ FALSE" org.eventb.core.label="act4"/>
+<org.eventb.core.action name="0" org.eventb.core.assignment="c_pumpOnCmd ≔ FALSE" org.eventb.core.label="act7"/>
+<org.eventb.core.action name="1" org.eventb.core.assignment="e_pumpOnCmd ≔ FALSE" org.eventb.core.label="act9"/>
+<org.eventb.core.action name="2" org.eventb.core.assignment="c_warn ≔ FALSE" org.eventb.core.label="act11"/>
+<org.eventb.core.action name="3" org.eventb.core.assignment="e_warn ≔ FALSE" org.eventb.core.label="act12"/>
 <org.eventb.core.action name="'" org.eventb.core.assignment="c_level_internal ≔ 100" org.eventb.core.label="act13"/>
 <org.eventb.core.action name="(" org.eventb.core.assignment="c_pumpOnReq_internal ≔ FALSE" org.eventb.core.label="act14"/>
 <org.eventb.core.action name=")" org.eventb.core.assignment="c_warn_internal ≔ FALSE" org.eventb.core.label="act15"/>
