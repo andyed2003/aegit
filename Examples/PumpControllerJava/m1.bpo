@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.poFile org.eventb.core.poStamp="4">
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
 <org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="MIN" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poPredicate name="MIO" org.eventb.core.predicate="MIN∈ℤ" org.eventb.core.source="/PumpControllerJava/ctx.buc|org.eventb.core.contextFile#ctx|org.eventb.core.axiom#*"/>
@@ -62,15 +62,15 @@
 <org.eventb.core.poIdentifier name="c_pumpOnReq_internal'" org.eventb.core.type="BOOL"/>
 </org.eventb.core.poPredicateSet>
 <org.eventb.core.poPredicateSet name="EVTALLHYPc_pumpOnReq_internam" org.eventb.core.parentSet="/PumpControllerJava/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTIDENTc_pumpOnReq_internam" org.eventb.core.poStamp="0"/>
-<org.eventb.core.poPredicateSet name="EVTIDENTc_pumpOnReq_internan" org.eventb.core.parentSet="/PumpControllerJava/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="4">
+<org.eventb.core.poPredicateSet name="EVTIDENTc_pumpOnReq_internan" org.eventb.core.parentSet="/PumpControllerJava/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="c_level'" org.eventb.core.type="ℤ"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPc_pumpOnReq_internan" org.eventb.core.parentSet="/PumpControllerJava/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTIDENTc_pumpOnReq_internan" org.eventb.core.poStamp="4"/>
-<org.eventb.core.poPredicateSet name="EVTIDENTc_pumpOnReq_internao" org.eventb.core.parentSet="/PumpControllerJava/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="4">
+<org.eventb.core.poPredicateSet name="EVTALLHYPc_pumpOnReq_internan" org.eventb.core.parentSet="/PumpControllerJava/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTIDENTc_pumpOnReq_internan" org.eventb.core.poStamp="0"/>
+<org.eventb.core.poPredicateSet name="EVTIDENTc_pumpOnReq_internao" org.eventb.core.parentSet="/PumpControllerJava/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="c_pumpOnReq'" org.eventb.core.type="BOOL"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPc_pumpOnReq_internao" org.eventb.core.parentSet="/PumpControllerJava/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTIDENTc_pumpOnReq_internao" org.eventb.core.poStamp="4"/>
-<org.eventb.core.poSequent name="internalCommsPre/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="4">
+<org.eventb.core.poPredicateSet name="EVTALLHYPc_pumpOnReq_internao" org.eventb.core.parentSet="/PumpControllerJava/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTIDENTc_pumpOnReq_internao" org.eventb.core.poStamp="0"/>
+<org.eventb.core.poSequent name="internalCommsPre/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PumpControllerJava/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTALLHYPc_pumpOnReq_internap"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="commit=TRUE∧c_level≤MIN∧c_pumpOnReq=TRUE⇒c_warn_internal=TRUE" org.eventb.core.source="/PumpControllerJava/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#X"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PumpControllerJava/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_"/>
@@ -78,7 +78,7 @@
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/PumpControllerJava/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PumpControllerJava/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poSequent#internalCommsPre\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PumpControllerJava/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="internalCommsPre/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="4">
+<org.eventb.core.poSequent name="internalCommsPre/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PumpControllerJava/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTALLHYPc_pumpOnReq_internap"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="commit=TRUE∧c_level&gt;MIN∧c_pumpOnReq=TRUE⇒c_pumpOnCmd_internal=TRUE" org.eventb.core.source="/PumpControllerJava/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#Y"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PumpControllerJava/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_"/>
@@ -86,14 +86,14 @@
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/PumpControllerJava/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PumpControllerJava/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poSequent#internalCommsPre\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PumpControllerJava/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poPredicateSet name="EVTIDENTc_pumpOnReq_internap" org.eventb.core.parentSet="/PumpControllerJava/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="4">
+<org.eventb.core.poPredicateSet name="EVTIDENTc_pumpOnReq_internap" org.eventb.core.parentSet="/PumpControllerJava/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="c_level_internal'" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poIdentifier name="c_pumpOnReq_internal'" org.eventb.core.type="BOOL"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPc_pumpOnReq_internap" org.eventb.core.parentSet="/PumpControllerJava/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTIDENTc_pumpOnReq_internap" org.eventb.core.poStamp="4">
+<org.eventb.core.poPredicateSet name="EVTALLHYPc_pumpOnReq_internap" org.eventb.core.parentSet="/PumpControllerJava/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTIDENTc_pumpOnReq_internap" org.eventb.core.poStamp="0">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="commit=FALSE" org.eventb.core.source="/PumpControllerJava/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_|org.eventb.core.guard#)"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poSequent name="filterWarn/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="4">
+<org.eventb.core.poSequent name="filterWarn/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PumpControllerJava/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTALLHYPc_pumpOnReq_internaq"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="TRUE=TRUE∧c_level_internal≤MIN∧c_pumpOnReq_internal=TRUE⇒TRUE=TRUE" org.eventb.core.source="/PumpControllerJava/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#X"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PumpControllerJava/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#V"/>
@@ -101,7 +101,7 @@
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/PumpControllerJava/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PumpControllerJava/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poSequent#filterWarn\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PumpControllerJava/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="filterWarn/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="4">
+<org.eventb.core.poSequent name="filterWarn/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PumpControllerJava/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTALLHYPc_pumpOnReq_internaq"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="TRUE=TRUE∧c_level_internal&gt;MIN∧c_pumpOnReq_internal=TRUE⇒c_pumpOnCmd_internal=TRUE" org.eventb.core.source="/PumpControllerJava/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#Y"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PumpControllerJava/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#V"/>
@@ -109,15 +109,15 @@
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/PumpControllerJava/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PumpControllerJava/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poSequent#filterWarn\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PumpControllerJava/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poPredicateSet name="EVTIDENTc_pumpOnReq_internaq" org.eventb.core.parentSet="/PumpControllerJava/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="4">
+<org.eventb.core.poPredicateSet name="EVTIDENTc_pumpOnReq_internaq" org.eventb.core.parentSet="/PumpControllerJava/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="c_warn_internal'" org.eventb.core.type="BOOL"/>
 <org.eventb.core.poIdentifier name="commit'" org.eventb.core.type="BOOL"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPc_pumpOnReq_internaq" org.eventb.core.parentSet="/PumpControllerJava/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTIDENTc_pumpOnReq_internaq" org.eventb.core.poStamp="4">
+<org.eventb.core.poPredicateSet name="EVTALLHYPc_pumpOnReq_internaq" org.eventb.core.parentSet="/PumpControllerJava/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTIDENTc_pumpOnReq_internaq" org.eventb.core.poStamp="0">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="c_level_internal≤MIN" org.eventb.core.source="/PumpControllerJava/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#V|org.eventb.core.guard#("/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="c_pumpOnReq_internal=TRUE" org.eventb.core.source="/PumpControllerJava/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#V|org.eventb.core.guard#)"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poSequent name="filterOK/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="4">
+<org.eventb.core.poSequent name="filterOK/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PumpControllerJava/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTALLHYPc_pumpOnReq_internar"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="TRUE=TRUE∧c_level_internal≤MIN∧c_pumpOnReq_internal=TRUE⇒c_warn_internal=TRUE" org.eventb.core.source="/PumpControllerJava/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#X"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PumpControllerJava/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#W"/>
@@ -125,7 +125,7 @@
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/PumpControllerJava/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PumpControllerJava/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poSequent#filterOK\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PumpControllerJava/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="filterOK/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="4">
+<org.eventb.core.poSequent name="filterOK/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PumpControllerJava/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTALLHYPc_pumpOnReq_internar"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="TRUE=TRUE∧c_level_internal&gt;MIN∧c_pumpOnReq_internal=TRUE⇒TRUE=TRUE" org.eventb.core.source="/PumpControllerJava/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#Y"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PumpControllerJava/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#W"/>
