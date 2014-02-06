@@ -27,14 +27,14 @@
 <org.eventb.core.event name="8" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="setPumpOnCmd_eAPI">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="setPumpOnCmd_eAPI"/>
 <org.eventb.core.parameter name="'" org.eventb.codegen.ui.parameterTypeAttribute="In" org.eventb.core.identifier="p3"/>
-<org.eventb.core.action name=")" org.eventb.core.assignment="e_pumpOnCmd ≔ p3" org.eventb.core.label="act1"/>
 <org.eventb.core.guard name="*" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="typing_p3" org.eventb.core.predicate="p3 ∈ BOOL" org.eventb.core.theorem="true"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="e_pumpOnCmd ≔ p3" org.eventb.core.label="act1"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="9" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="setWarn_eAPI">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="setWarn_eAPI"/>
 <org.eventb.core.parameter name="'" org.eventb.codegen.ui.parameterTypeAttribute="In" org.eventb.core.identifier="p4"/>
-<org.eventb.core.action name=")" org.eventb.core.assignment="e_warn ≔ p4" org.eventb.core.label="act1"/>
 <org.eventb.core.guard name="*" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="typing_p4" org.eventb.core.predicate="p4 ∈ BOOL" org.eventb.core.theorem="true"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="e_warn ≔ p4" org.eventb.core.label="act1"/>
 </org.eventb.core.event>
 <org.eventb.tasking.persistence.MachineType name=":" org.eventb.tasking.persistence.machineTypeAttribute="Environ" org.eventb.tasking.persistence.priority="5"/>
 <org.eventb.core.invariant name="typing_e_pumpOnCmd" org.eventb.codegen.tasking.flattened="true" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="typing_e_pumpOnCmd" org.eventb.core.predicate="e_pumpOnCmd ∈ BOOL" org.eventb.core.theorem="true"/>
