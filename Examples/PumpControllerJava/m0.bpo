@@ -34,28 +34,28 @@
 <org.eventb.core.poIdentifier name="c_pumpOnReq'" org.eventb.core.type="BOOL"/>
 </org.eventb.core.poPredicateSet>
 <org.eventb.core.poPredicateSet name="EVTALLHYPe_pumpOnRet" org.eventb.core.parentSet="/PumpControllerJava/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#EVTIDENTe_pumpOnRet" org.eventb.core.poStamp="0"/>
-<org.eventb.core.poSequent name="output/act1/FIS" org.eventb.core.accurate="true" org.eventb.core.poDesc="Feasibility of action" org.eventb.core.poStamp="1">
+<org.eventb.core.poSequent name="output/act1/FIS" org.eventb.core.accurate="true" org.eventb.core.poDesc="Feasibility of action" org.eventb.core.poStamp="0">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PumpControllerJava/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#EVTALLHYPe_pumpOnReu"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="BOOL≠(∅ ⦂ ℙ(BOOL))" org.eventb.core.source="/PumpControllerJava/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#T|org.eventb.core.action#'"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PumpControllerJava/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#T|org.eventb.core.action#'"/>
 <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/PumpControllerJava/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PumpControllerJava/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#EVTALLHYPe_pumpOnReu"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="output/act2/FIS" org.eventb.core.accurate="true" org.eventb.core.poDesc="Feasibility of action" org.eventb.core.poStamp="1">
+<org.eventb.core.poSequent name="output/act2/FIS" org.eventb.core.accurate="true" org.eventb.core.poDesc="Feasibility of action" org.eventb.core.poStamp="0">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PumpControllerJava/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#EVTALLHYPe_pumpOnReu"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="BOOL≠(∅ ⦂ ℙ(BOOL))" org.eventb.core.source="/PumpControllerJava/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#T|org.eventb.core.action#("/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PumpControllerJava/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#T|org.eventb.core.action#("/>
 <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/PumpControllerJava/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PumpControllerJava/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#EVTALLHYPe_pumpOnReu"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poPredicateSet name="EVTIDENTe_pumpOnReu" org.eventb.core.parentSet="/PumpControllerJava/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="EVTIDENTe_pumpOnReu" org.eventb.core.parentSet="/PumpControllerJava/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="c_pumpOnCmd'" org.eventb.core.type="BOOL"/>
 <org.eventb.core.poIdentifier name="c_warn'" org.eventb.core.type="BOOL"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPe_pumpOnReu" org.eventb.core.parentSet="/PumpControllerJava/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#EVTIDENTe_pumpOnReu" org.eventb.core.poStamp="1"/>
-<org.eventb.core.poPredicateSet name="EVTIDENTe_pumpOnRev" org.eventb.core.parentSet="/PumpControllerJava/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="EVTALLHYPe_pumpOnReu" org.eventb.core.parentSet="/PumpControllerJava/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#EVTIDENTe_pumpOnReu" org.eventb.core.poStamp="0"/>
+<org.eventb.core.poPredicateSet name="EVTIDENTe_pumpOnRev" org.eventb.core.parentSet="/PumpControllerJava/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="e_pumpOnCmd'" org.eventb.core.type="BOOL"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPe_pumpOnRev" org.eventb.core.parentSet="/PumpControllerJava/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#EVTIDENTe_pumpOnRev" org.eventb.core.poStamp="1"/>
-<org.eventb.core.poSequent name="setWarn_c/act1/FIS" org.eventb.core.accurate="true" org.eventb.core.poDesc="Feasibility of action" org.eventb.core.poStamp="2">
+<org.eventb.core.poPredicateSet name="EVTALLHYPe_pumpOnRev" org.eventb.core.parentSet="/PumpControllerJava/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#EVTIDENTe_pumpOnRev" org.eventb.core.poStamp="0"/>
+<org.eventb.core.poSequent name="setWarn_eAPI/act1/FIS" org.eventb.core.accurate="true" org.eventb.core.poDesc="Feasibility of action" org.eventb.core.poStamp="2">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PumpControllerJava/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#EVTALLHYPe_pumpOnRew"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="BOOL≠(∅ ⦂ ℙ(BOOL))" org.eventb.core.source="/PumpControllerJava/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#U|org.eventb.core.action#'"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PumpControllerJava/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#U|org.eventb.core.action#'"/>
