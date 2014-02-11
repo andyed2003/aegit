@@ -1,13 +1,13 @@
 package ac.soton.fmusim.fmu.popup.actions;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.net.URI;
-import java.util.zip.*;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipOutputStream;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
@@ -16,8 +16,6 @@ import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
-import org.eclipse.core.runtime.IPath;
-import org.eclipse.core.runtime.Path;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -49,52 +47,75 @@ public class PackageFMU implements IObjectActionDelegate {
 	 * @see IActionDelegate#run(IAction)
 	 */
 	public void run(IAction action) {
-		// Get the source project that has been selected for FMU Packaging
-		IProject sourceProject = (IProject) selection.getFirstElement();
-		// This is where the Debug Binary is
-		IFolder sourceBinariesFolder = sourceProject.getFolder("Debug");
-
-		// Construct the libraryName - this may need to change - for the FMU standard
-		String sourceBinaryFileName = "lib" + sourceProject.getName() + ".so";
-		// Get the binary.so
-		IFile binaryFile = sourceBinariesFolder.getFile(sourceBinaryFileName);
 		try {
-			IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
-			IProject targetProject = root.getProject(sourceProject.getName()
-					+ "FMU");
-			// create a new project
-			if (!targetProject.exists()) targetProject.create(null);
-			if (!targetProject.isOpen()) targetProject.open(null);
-			// this will be the new zip file
-			IFile ff = targetProject.getFile("abcd.zip");
-			// get a reader for the library .so
-			InputStream binaryStream = binaryFile.getContents();
-			InputStreamReader reader = new InputStreamReader(binaryStream);
-			String targetZipName = ff.getRawLocation().toString();
-			// get output streams to write to the zip
-			FileOutputStream fOut = new FileOutputStream(
-					targetZipName);
-			ZipOutputStream zipOut = new ZipOutputStream(fOut);
-
-			// create a zip entry
-			ZipEntry ze = new ZipEntry("zipOut");
-			zipOut.putNextEntry(ze);
-
-			// write the file to the zip entry
-			int value = reader.read();
-			while (value > 0) {
-				zipOut.write(value);
-				value = reader.read();
-			}
-			// close the writer and reader;
-			zipOut.close();
-			reader.close();
+			packageFMU();
 		} catch (CoreException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
+	}
+
+	private void packageFMU() throws CoreException, FileNotFoundException,
+			IOException {
+		// Get the source project that has been selected for FMU Packaging
+		IProject sourceProject = (IProject) selection.getFirstElement();
+		// This is where the Debug Binary is
+		IFolder sourceBinariesFolder = sourceProject.getFolder("Debug");
+		// Construct the libraryName - this may need to change - for the FMU
+		// standard
+		String sourceBinaryFileName = "lib" + sourceProject.getName() + ".so";
+		// Get the binary.so
+		IFile binaryFile = sourceBinariesFolder.getFile(sourceBinaryFileName);
+		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
+		IProject targetProject = root.getProject(sourceProject.getName()
+				+ "FMU");
+		// create a new project
+		if (!targetProject.exists())
+			targetProject.create(null);
+		if (!targetProject.isOpen())
+			targetProject.open(null);
+		// this will be the new zip file
+		IFile ff = targetProject.getFile("abcd.zip");
+		packageBinaryFile(sourceProject, sourceBinaryFileName, binaryFile, ff);
+		packageModelDescription(sourceProject);
+
+	}
+
+	private void packageModelDescription(IProject sourceProject) {
+		sourceProject.getFolder("descriptions");
+		//IResource r = new ResourceImpl();
+		
+	}
+
+	private void packageBinaryFile(IProject sourceProject,
+			String sourceBinaryFileName, IFile binaryFile, IFile ff)
+			throws CoreException, FileNotFoundException, IOException {
+		// get a reader for the library .so
+		InputStream binaryStream = binaryFile.getContents();
+		InputStreamReader binaryStreamReader = new InputStreamReader(
+				binaryStream);
+		String targetZipName = ff.getRawLocation().toString();
+		// get output streams to write to the zip
+		FileOutputStream fOut = new FileOutputStream(targetZipName);
+		ZipOutputStream zipOut = new ZipOutputStream(fOut);
+
+		// create a zip entry
+		ZipEntry ze = new ZipEntry("binaries" + File.separatorChar
+				+ sourceBinaryFileName);
+		zipOut.putNextEntry(ze);
+
+		// write the file to the zip entry
+		int value = binaryStreamReader.read();
+		while (value > 0) {
+			zipOut.write(value);
+			value = binaryStreamReader.read();
+		}
+
+		sourceProject.getFile("");
+		zipOut.close();
+		binaryStreamReader.close();
 	}
 
 	/**
