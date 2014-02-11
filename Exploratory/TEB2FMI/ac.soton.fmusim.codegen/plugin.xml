@@ -16,7 +16,7 @@
             </separator>
          </menu>
          <action
-               label="Generate FMU"
+               label="Generate FMU C Project"
                class="ac.soton.fmusim.codegen.popup.actions.CodeGen"
                menubarPath="ac.soton.fmusim.codegen.menu1/group1"
                enablesFor="1"
