@@ -119,10 +119,10 @@
 </org.eventb.core.event>
 <org.eventb.core.event name="FanCtrlMachine_FanCtrlMachine_FanCtrlMachine_typeof_Controlleu" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="read">
 <org.eventb.core.refinesEvent name="_A1b_AMQ1EeKOOoERpJ5Z1A" org.eventb.core.target="read"/>
+<org.eventb.core.guard name="_A1b_AMQ1EeKOOoERpJ5Z1B" org.eventb.codegen.ui.typingAttribute="NonTyping" org.eventb.core.label="grd1" org.eventb.core.predicate="Controller ≠ Normal"/>
 <org.eventb.core.action name="(" org.eventb.core.assignment="C_fanSpeed ≔ E_MAX6650_fanSpeed" org.eventb.core.label="act2"/>
 <org.eventb.core.action name=")" org.eventb.core.assignment="C_tempAmbient ≔ E_LM75_tempAmbient " org.eventb.core.label="act3"/>
 <org.eventb.core.action name="*" org.eventb.core.assignment="C_tempPSU ≔ E_LM75_tempPSU" org.eventb.core.label="act4"/>
-<org.eventb.core.guard name="_A1b_AMQ1EeKOOoERpJ5Z1B" org.eventb.codegen.ui.typingAttribute="NonTyping" org.eventb.core.label="grd1" org.eventb.core.predicate="Controller ≠ Normal"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="FanCtrlMachine_FanCtrlMachine_FanCtrlMachine_typeof_Controllev" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="write">
 <org.eventb.core.action name="'" org.eventb.core.assignment="E_MAX6650_fanOn ≔ C_fanOn" org.eventb.core.label="act1"/>

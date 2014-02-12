@@ -2,17 +2,20 @@
 <org.eventb.core.machineFile org.eventb.core.configuration="ch.ethz.eventb.decomposition.mchBase;org.eventb.codegen.ui.cgConfig" version="5">
 <org.eventb.core.refinesMachine name="'" org.eventb.core.target="Environment"/>
 <org.eventb.core.seesContext name="4" org.eventb.core.target="ctx"/>
-<org.eventb.tasking.persistence.MachineType name=":" org.eventb.tasking.persistence.machineTypeAttribute="Environ" org.eventb.tasking.persistence.priority="5"/>
+<org.eventb.tasking.persistence.MachineType name=":" org.eventb.tasking.persistence.machineTypeAttribute="Environ" org.eventb.tasking.persistence.priority="5">
+<org.eventb.tasking.persistence.TaskType name="'" org.eventb.tasking.persistence.periodicTaskTypeAttribute="0" org.eventb.tasking.persistence.simpleTaskTypeAttribute="NotRequired" org.eventb.tasking.persistence.taskTypeAttribute="Periodic"/>
+<org.eventb.tasking.persistence.TaskBody name="(" org.eventb.tasking.persistence.taskBodyAttribute="read_ePorts"/>
+</org.eventb.tasking.persistence.MachineType>
 <org.eventb.core.variable name="'" org.eventb.codegen.tasking.flattened="true" org.eventb.core.identifier="e_level"/>
 <org.eventb.core.variable name="(" org.eventb.codegen.tasking.flattened="true" org.eventb.core.identifier="e_pumpOnReq"/>
 <org.eventb.core.variable name=")" org.eventb.codegen.tasking.flattened="true" org.eventb.core.identifier="e_pumpOnCmd"/>
 <org.eventb.core.variable name="*" org.eventb.codegen.tasking.flattened="true" org.eventb.core.identifier="e_warn"/>
-<org.eventb.core.variable name="_Cl1ekI_pEeO90uPncl7G7A" org.eventb.core.generated="true" org.eventb.core.identifier="init"/>
+<org.eventb.core.variable name="_Cl1ekI_pEeO90uPncl7G7A" org.eventb.codegen.tasking.flattened="true" org.eventb.core.identifier="init"/>
 <org.eventb.core.invariant name="typing_e_pumpOnCmd" org.eventb.codegen.tasking.flattened="true" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="typing_e_pumpOnCmd" org.eventb.core.predicate="e_pumpOnCmd ∈ BOOL" org.eventb.core.theorem="true"/>
 <org.eventb.core.invariant name="typing_e_warn" org.eventb.codegen.tasking.flattened="true" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="typing_e_warn" org.eventb.core.predicate="e_warn ∈ BOOL" org.eventb.core.theorem="true"/>
 <org.eventb.core.invariant name="typing_e_level" org.eventb.codegen.tasking.flattened="true" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="typing_e_level" org.eventb.core.predicate="e_level ∈ ℤ" org.eventb.core.theorem="true"/>
 <org.eventb.core.invariant name="typing_e_pumpOnReq" org.eventb.codegen.tasking.flattened="true" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="typing_e_pumpOnReq" org.eventb.core.predicate="e_pumpOnReq ∈ BOOL" org.eventb.core.theorem="true"/>
-<org.eventb.core.invariant name="_Cl3TwI_pEeO90uPncl7G7A" org.eventb.core.generated="true" org.eventb.core.label="PCInvarinit" org.eventb.core.predicate="init ∈ BOOL"/>
+<org.eventb.core.invariant name="_Cl3TwI_pEeO90uPncl7G7A" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="PCInvarinit" org.eventb.core.predicate="init ∈ BOOL"/>
 <org.eventb.core.event name="5" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
 <org.eventb.core.action name="'" org.eventb.core.assignment="e_level ≔ 90" org.eventb.core.label="act6"/>
 <org.eventb.core.action name="(" org.eventb.core.assignment="e_pumpOnReq ≔ FALSE" org.eventb.core.label="act4"/>

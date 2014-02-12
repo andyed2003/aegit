@@ -1,16 +1,17 @@
 package pumpControllerJava_java;
 
-import pumpControllerJava_java.IEnvironmentImpl;
+import static pumpControllerJava_java.MainEntry.*;
 
 // EnvironTask: EnvironmentImpl
 
-public class EnvironmentImpl implements Runnable, IEnvironmentImpl {
+public class EnvironmentImpl implements Runnable {
 
 	// Instance variables and constants
 	protected int e_level = 90;
 	protected boolean e_pumpOnReq = false;
 	protected boolean e_pumpOnCmd = false;
 	protected boolean e_warn = false;
+	protected boolean init = true;
 	private static Object lock = new Object();
 
 	protected int priority = 5;
@@ -19,6 +20,21 @@ public class EnvironmentImpl implements Runnable, IEnvironmentImpl {
 	}
 
 	public void run() {
+		while (true) {
+			// [Internal] Timer information for repeating or periodic tasks
+			long THREAD_START_TIME = System.currentTimeMillis();
+			synchronized (lock) {
+				// Translated code
+			}
+			// [Internal] Code to monitor time between periodic tasks
+			long THREAD_END_TIME = System.currentTimeMillis();
+			long THREAD_TIME_TAKEN = THREAD_END_TIME - THREAD_START_TIME;
+			try {
+				Thread.sleep(Math.max(0 - THREAD_TIME_TAKEN, 0));
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 
 	// Subroutines

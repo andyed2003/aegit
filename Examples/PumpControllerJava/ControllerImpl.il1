@@ -93,10 +93,12 @@
     </autoTasks>
   </entryPoint>
   <environMachines name="EnvironmentImpl" projectName="PumpControllerJava" machineName="EnvironmentImpl">
+    <taskType xsi:type="il1:PeriodicTaskType"/>
     <decls xsi:type="il1:VariableDecl" identifier="e_level" type="&#x2124;" initialValue="90" ProjectName="PumpControllerJava" ComponentName="EnvironmentImpl"/>
     <decls xsi:type="il1:VariableDecl" identifier="e_pumpOnReq" type="BOOL" initialValue="FALSE" ProjectName="PumpControllerJava" ComponentName="EnvironmentImpl"/>
     <decls xsi:type="il1:VariableDecl" identifier="e_pumpOnCmd" type="BOOL" initialValue="FALSE" ProjectName="PumpControllerJava" ComponentName="EnvironmentImpl"/>
     <decls xsi:type="il1:VariableDecl" identifier="e_warn" type="BOOL" initialValue="FALSE" ProjectName="PumpControllerJava" ComponentName="EnvironmentImpl"/>
+    <decls xsi:type="il1:VariableDecl" identifier="init" type="BOOL" initialValue="TRUE" ProjectName="PumpControllerJava" ComponentName="EnvironmentImpl"/>
     <subroutines name="getLevel_eAPI" machineName="EnvironmentImpl" projectName="PumpControllerJava">
       <body xsi:type="il1:Action" action="p1 &#x2254; e_level"/>
       <formalParameters xsi:type="il1:OutParameter" identifier="p1" type=" &#x2124;" ProjectName="PumpControllerJava"/>

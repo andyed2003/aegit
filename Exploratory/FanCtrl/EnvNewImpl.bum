@@ -3,17 +3,17 @@
 <org.eventb.core.refinesMachine name="_QIQGYMO0EeKajPrTis1y_Q" org.eventb.core.target="EnvNew"/>
 <org.eventb.core.seesContext name="_QIQGYcO0EeKajPrTis1y_Q" org.eventb.core.target="FanCtrlContext"/>
 <org.eventb.core.seesContext name="_QIQtcMO0EeKajPrTis1y_Q" org.eventb.core.target="FanCtrlMachineGC_implicitContext"/>
-<org.eventb.core.variable name="'" org.eventb.core.generated="false" org.eventb.core.identifier="E_LM75_tempPSU"/>
-<org.eventb.core.variable name="(" org.eventb.core.generated="false" org.eventb.core.identifier="E_LM75_tempAmbient"/>
-<org.eventb.core.variable name=")" org.eventb.core.generated="false" org.eventb.core.identifier="E_MAX6650_fanSpeed"/>
-<org.eventb.core.variable name="*" org.eventb.core.generated="false" org.eventb.core.identifier="E_MAX6650_fanOn"/>
-<org.eventb.core.event name="4" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.variable name="'" org.eventb.codegen.tasking.flattened="true" org.eventb.core.identifier="E_LM75_tempPSU"/>
+<org.eventb.core.variable name="(" org.eventb.codegen.tasking.flattened="true" org.eventb.core.identifier="E_LM75_tempAmbient"/>
+<org.eventb.core.variable name=")" org.eventb.codegen.tasking.flattened="true" org.eventb.core.identifier="E_MAX6650_fanSpeed"/>
+<org.eventb.core.variable name="*" org.eventb.codegen.tasking.flattened="true" org.eventb.core.identifier="E_MAX6650_fanOn"/>
+<org.eventb.core.event name="4" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
 <org.eventb.core.action name="'" org.eventb.core.assignment="E_LM75_tempAmbient ≔ 0" org.eventb.core.label="init_LM75_tempAmbient"/>
 <org.eventb.core.action name="(" org.eventb.core.assignment="E_LM75_tempPSU ≔ 0" org.eventb.core.label="init_LM75_tempPSU"/>
 <org.eventb.core.action name=")" org.eventb.core.assignment="E_MAX6650_fanSpeed ≔ 3000" org.eventb.core.label="init_MAX6650_fanSpeed"/>
 <org.eventb.core.action name="*" org.eventb.core.assignment="E_MAX6650_fanOn ≔ TRUE" org.eventb.core.label="act1"/>
 </org.eventb.core.event>
-<org.eventb.core.event name="5" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="read">
+<org.eventb.core.event name="5" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="read">
 <org.eventb.core.refinesEvent name="_QIRUgMO0EeKajPrTis1y_Q" org.eventb.core.target="read"/>
 <org.eventb.core.parameter name="'" org.eventb.codegen.ui.parameterTypeAttribute="Out" org.eventb.core.identifier="p1"/>
 <org.eventb.core.parameter name="(" org.eventb.codegen.ui.parameterTypeAttribute="Out" org.eventb.core.identifier="p2"/>
@@ -25,15 +25,15 @@
 <org.eventb.core.guard name="+" org.eventb.codegen.ui.typingAttribute="NonTyping" org.eventb.core.label="grd2" org.eventb.core.predicate="p2 = E_LM75_tempAmbient"/>
 <org.eventb.core.guard name="," org.eventb.codegen.ui.typingAttribute="NonTyping" org.eventb.core.label="grd3" org.eventb.core.predicate="p3 = E_LM75_tempPSU"/>
 </org.eventb.core.event>
-<org.eventb.core.event name="6" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="write">
+<org.eventb.core.event name="6" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="write">
 <org.eventb.core.refinesEvent name="_QIRUgcO0EeKajPrTis1y_Q" org.eventb.core.target="write"/>
 <org.eventb.core.parameter name="'" org.eventb.codegen.ui.parameterTypeAttribute="In" org.eventb.core.identifier="p1"/>
 <org.eventb.core.guard name="*" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="typing_p1" org.eventb.core.predicate="p1 ∈ BOOL" org.eventb.core.theorem="true"/>
 <org.eventb.core.action name=")" org.eventb.core.assignment="E_MAX6650_fanOn ≔ p1" org.eventb.core.label="act1"/>
 </org.eventb.core.event>
 <org.eventb.tasking.persistence.MachineType name="_QIQtcMO0EeKajPrTis1y_R" org.eventb.tasking.persistence.machineTypeAttribute="Environ" org.eventb.tasking.persistence.priority="5">
-<org.eventb.tasking.persistence.TaskBody name="'" org.eventb.tasking.persistence.taskBodyAttribute="if raiseT&#10;else lowerT;&#10;output &quot;E_LM75_tempPSU: &quot; E_LM75_tempPSU;&#10;output &quot;E_MAX6650_fanSpeed: &quot; E_MAX6650_fanSpeed;&#10;output &quot;E_MAX6650_fanOn: &quot; E_MAX6650_fanOn"/>
 <org.eventb.tasking.persistence.TaskType name="(" org.eventb.tasking.persistence.periodicTaskTypeAttribute="100" org.eventb.tasking.persistence.simpleTaskTypeAttribute="NotRequired" org.eventb.tasking.persistence.taskTypeAttribute="Periodic"/>
+<org.eventb.tasking.persistence.TaskBody name="'" org.eventb.tasking.persistence.taskBodyAttribute=" if raiseT&#10; else lowerT ;&#10; output &quot;E_LM75_tempPSU: &quot; E_LM75_tempPSU ;&#10; output &quot;E_MAX6650_fanSpeed: &quot; E_MAX6650_fanSpeed ;&#10; output &quot;E_MAX6650_fanOn: &quot; E_MAX6650_fanOn"/>
 </org.eventb.tasking.persistence.MachineType>
 <org.eventb.core.invariant name="typing_E_LM75_tempPSU" org.eventb.codegen.tasking.flattened="true" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="typing_E_LM75_tempPSU" org.eventb.core.predicate="E_LM75_tempPSU ∈ ℤ" org.eventb.core.theorem="true"/>
 <org.eventb.core.invariant name="typing_E_MAX6650_fanOn" org.eventb.codegen.tasking.flattened="true" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="typing_E_MAX6650_fanOn" org.eventb.core.predicate="E_MAX6650_fanOn ∈ BOOL" org.eventb.core.theorem="true"/>

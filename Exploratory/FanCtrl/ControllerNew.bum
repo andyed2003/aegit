@@ -97,10 +97,10 @@
 <org.eventb.core.guard name="0" org.eventb.core.label="typing_p3" org.eventb.core.predicate="p3 ∈ ℤ" org.eventb.core.theorem="true"/>
 <org.eventb.core.guard name="1" org.eventb.core.label="typing_p2" org.eventb.core.predicate="p2 ∈ ℤ" org.eventb.core.theorem="true"/>
 <org.eventb.core.guard name="2" org.eventb.core.label="typing_p1" org.eventb.core.predicate="p1 ∈ ℤ" org.eventb.core.theorem="true"/>
+<org.eventb.core.guard name="3" org.eventb.codegen.ui.typingAttribute="NonTyping" org.eventb.core.label="grd1" org.eventb.core.predicate="Controller ≠ Normal"/>
 <org.eventb.core.action name="-" org.eventb.core.assignment="C_fanSpeed ≔ p1" org.eventb.core.label="act2"/>
 <org.eventb.core.action name="." org.eventb.core.assignment="C_tempAmbient ≔ p2 " org.eventb.core.label="act3"/>
 <org.eventb.core.action name="/" org.eventb.core.assignment="C_tempPSU ≔ p3" org.eventb.core.label="act4"/>
-<org.eventb.core.guard name="3" org.eventb.codegen.ui.typingAttribute="NonTyping" org.eventb.core.label="grd1" org.eventb.core.predicate="Controller ≠ Normal"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="D" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="write">
 <org.eventb.core.parameter name="'" org.eventb.core.identifier="p1"/>

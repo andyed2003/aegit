@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <org.eventb.core.machineFile ch.ethz.eventb.decomposition.decomposed="true" org.eventb.core.configuration="ch.ethz.eventb.decomposition.mchBase;org.eventb.codegen.ui.cgConfig" org.eventb.core.generated="true" version="5">
+<org.eventb.core.seesContext name="C" org.eventb.core.target="ctx"/>
 <org.eventb.core.variable name="'" org.eventb.core.identifier="c_level"/>
 <org.eventb.core.variable name="(" org.eventb.core.identifier="c_pumpOnReq"/>
 <org.eventb.core.variable name=")" org.eventb.core.identifier="c_pumpOnCmd"/>
@@ -31,13 +32,13 @@
 </org.eventb.core.event>
 <org.eventb.core.event name=":" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="getLevel_eAPI">
 <org.eventb.core.parameter name="'" org.eventb.core.identifier="p1"/>
-<org.eventb.core.action name=")" org.eventb.core.assignment="c_level ≔ p1" org.eventb.core.label="act1"/>
 <org.eventb.core.guard name="*" org.eventb.core.label="typing_p1" org.eventb.core.predicate="p1 ∈ ℤ" org.eventb.core.theorem="true"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="c_level ≔ p1" org.eventb.core.label="act1"/>
 </org.eventb.core.event>
 <org.eventb.core.event name=";" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="getPumpOnReq_eAPI">
 <org.eventb.core.parameter name="'" org.eventb.core.identifier="p2"/>
-<org.eventb.core.action name=")" org.eventb.core.assignment="c_pumpOnReq ≔ p2" org.eventb.core.label="act1"/>
 <org.eventb.core.guard name="*" org.eventb.core.label="typing_p2" org.eventb.core.predicate="p2 ∈ BOOL" org.eventb.core.theorem="true"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="c_pumpOnReq ≔ p2" org.eventb.core.label="act1"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="=" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="internalCommsPre">
 <org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="commit = FALSE"/>
@@ -70,5 +71,4 @@
 <org.eventb.core.guard name=")" org.eventb.core.label="typing_p4" org.eventb.core.predicate="p4 ∈ BOOL" org.eventb.core.theorem="true"/>
 <org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="p4 = c_warn"/>
 </org.eventb.core.event>
-<org.eventb.core.seesContext name="C" org.eventb.core.target="ctx"/>
 </org.eventb.core.machineFile>

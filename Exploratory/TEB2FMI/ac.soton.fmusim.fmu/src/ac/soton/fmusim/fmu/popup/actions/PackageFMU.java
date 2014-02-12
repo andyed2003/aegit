@@ -32,7 +32,7 @@ public class PackageFMU implements IObjectActionDelegate {
 
 	private Shell shell;
 	private IStructuredSelection selection;
-
+	private IFile binaryFile = null;
 	/**
 	 * Constructor for Action1.
 	 */
@@ -80,6 +80,7 @@ public class PackageFMU implements IObjectActionDelegate {
 		// This is where the Debug Binary is
 		IFolder debugBinariesFolder = sourceProject.getFolder("Debug");
 		IFolder releaseBinariesFolder = sourceProject.getFolder("Release");
+		
 		// Construct the libraryName - this may need to change - for the FMU
 		// standard
 		String sourceBinaryFileName = "lib" + sourceProject.getName() + ".so";
@@ -87,7 +88,17 @@ public class PackageFMU implements IObjectActionDelegate {
 		IFile debugBinaryFile = debugBinariesFolder.getFile(sourceBinaryFileName);
 		IFile releaseBinaryFile = releaseBinariesFolder.getFile(sourceBinaryFileName);
 		// if we have both release and binary files throw an exception
-		
+		if(debugBinaryFile == null && releaseBinaryFile == null){
+			throw new FileNotFoundException("cannot find 'debug' or 'release' library file");
+		}
+		else if(debugBinaryFile != null && releaseBinaryFile != null){
+			throw new IOException("cannot process both 'debug' and 'release' libraries \n + " +
+					"please delete one - TODO - fix this");
+		}
+		else if(debugBinaryFile != null){
+			binaryFile = debugBinaryFile;
+		}
+		else binaryFile = releaseBinaryFile;
 		
 		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
 		IProject targetProject = root.getProject(sourceProject.getName()
@@ -99,6 +110,7 @@ public class PackageFMU implements IObjectActionDelegate {
 			targetProject.open(null);
 		// this will be the new zip file
 		IFile ff = targetProject.getFile("abcd.zip");
+		
 		packageBinaryFile(sourceProject, sourceBinaryFileName, binaryFile, ff);
 		packageModelDescription(sourceProject);
 
