@@ -69,6 +69,11 @@
 <org.eventb.core.action name="'" org.eventb.core.assignment="e_warn ≔ c_warn" org.eventb.core.label="act1"/>
 <org.eventb.core.refinesEvent name="(" org.eventb.core.target="setWarn_eAPI"/>
 </org.eventb.core.event>
+<org.eventb.core.event name="h" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="write_ePorts">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="write_ePorts"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="e_level :∈ ℤ" org.eventb.core.label="act1"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="e_pumpOnReq :∈ BOOL" org.eventb.core.label="act2"/>
+</org.eventb.core.event>
 <org.eventb.core.variable name="`" org.eventb.core.identifier="c_pumpOnCmd_internal"/>
 <org.eventb.core.invariant name="a" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="inv5" org.eventb.core.predicate="c_pumpOnCmd_internal ∈ BOOL"/>
 <org.eventb.core.variable name="b" org.eventb.core.identifier="c_warn_internal"/>

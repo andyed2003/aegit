@@ -79,4 +79,9 @@
 <org.eventb.core.parameter name="(" org.eventb.codegen.ui.parameterTypeAttribute="--unset--" org.eventb.core.identifier="p4"/>
 <org.eventb.core.guard name=")" org.eventb.codegen.ui.typingAttribute="NonTyping" org.eventb.core.label="grd1" org.eventb.core.predicate="p4 = c_warn"/>
 </org.eventb.core.event>
+<org.eventb.core.event name="n" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="write_ePorts">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="write_ePorts"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="e_level :∈ ℤ" org.eventb.core.label="act1"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="e_pumpOnReq :∈ BOOL" org.eventb.core.label="act2"/>
+</org.eventb.core.event>
 </org.eventb.core.machineFile>

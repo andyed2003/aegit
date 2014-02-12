@@ -12,10 +12,11 @@ import java.util.zip.ZipOutputStream;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -23,6 +24,9 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IActionDelegate;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.statushandlers.StatusManager;
+
+import ac.soton.fmusim.fmu.FMUPackagerPlugin;
 
 public class PackageFMU implements IObjectActionDelegate {
 
@@ -50,8 +54,20 @@ public class PackageFMU implements IObjectActionDelegate {
 		try {
 			packageFMU();
 		} catch (CoreException e) {
+			Status status = new Status(IStatus.ERROR,
+					FMUPackagerPlugin.PLUGIN_ID,
+					"Packaging FMU Failed: CoreException:"
+					+ e.getMessage() +":\n", e);
+				StatusManager.getManager().handle(status,
+					StatusManager.SHOW);
 			e.printStackTrace();
 		} catch (IOException e) {
+			Status status = new Status(IStatus.ERROR,
+					FMUPackagerPlugin.PLUGIN_ID,
+					"Packaging FMU Failed: IOException:"
+					+ e.getMessage() +":\n", e);
+				StatusManager.getManager().handle(status,
+					StatusManager.SHOW);
 			e.printStackTrace();
 		}
 
@@ -62,12 +78,17 @@ public class PackageFMU implements IObjectActionDelegate {
 		// Get the source project that has been selected for FMU Packaging
 		IProject sourceProject = (IProject) selection.getFirstElement();
 		// This is where the Debug Binary is
-		IFolder sourceBinariesFolder = sourceProject.getFolder("Debug");
+		IFolder debugBinariesFolder = sourceProject.getFolder("Debug");
+		IFolder releaseBinariesFolder = sourceProject.getFolder("Release");
 		// Construct the libraryName - this may need to change - for the FMU
 		// standard
 		String sourceBinaryFileName = "lib" + sourceProject.getName() + ".so";
 		// Get the binary.so
-		IFile binaryFile = sourceBinariesFolder.getFile(sourceBinaryFileName);
+		IFile debugBinaryFile = debugBinariesFolder.getFile(sourceBinaryFileName);
+		IFile releaseBinaryFile = releaseBinariesFolder.getFile(sourceBinaryFileName);
+		// if we have both release and binary files throw an exception
+		
+		
 		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
 		IProject targetProject = root.getProject(sourceProject.getName()
 				+ "FMU");
@@ -84,15 +105,16 @@ public class PackageFMU implements IObjectActionDelegate {
 	}
 
 	private void packageModelDescription(IProject sourceProject) {
-		sourceProject.getFolder("descriptions");
+		IFolder descriptionsFolder = sourceProject.getFolder("descriptions");
 		//IResource r = new ResourceImpl();
-		
+		System.out.println();
 	}
 
 	private void packageBinaryFile(IProject sourceProject,
 			String sourceBinaryFileName, IFile binaryFile, IFile ff)
 			throws CoreException, FileNotFoundException, IOException {
 		// get a reader for the library .so
+		if(!binaryFile.isAccessible()) throw new FileNotFoundException("Cannot Find "+sourceBinaryFileName);
 		InputStream binaryStream = binaryFile.getContents();
 		InputStreamReader binaryStreamReader = new InputStreamReader(
 				binaryStream);

@@ -43,4 +43,8 @@
 <org.eventb.core.event name="U" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="setWarn_eAPI">
 <org.eventb.core.action name="'" org.eventb.core.assignment="e_warn :∈ BOOL" org.eventb.core.label="act1"/>
 </org.eventb.core.event>
+<org.eventb.core.event name="V" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="write_ePorts">
+<org.eventb.core.action name="'" org.eventb.core.assignment="e_level :∈ ℤ" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="e_pumpOnReq :∈ BOOL" org.eventb.core.label="act2"/>
+</org.eventb.core.event>
 </org.eventb.core.machineFile>
