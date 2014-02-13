@@ -31,11 +31,11 @@
 </org.eventb.core.prAnte>
 <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
 </org.eventb.core.prRule>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="¬Step=Broken">
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="¬Step=Broken">
 <org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Step" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p6" org.eventb.core.predicate="¬SpeedCheck=FailureCount">
+<org.eventb.core.prPred name="p17" org.eventb.core.predicate="¬SpeedCheck=FailureCount">
 <org.eventb.core.prIdent name="FailureCount" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="SpeedCheck" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
@@ -45,11 +45,11 @@
 <org.eventb.core.prPred name="p40" org.eventb.core.predicate="E_MAX6650_fanSpeed∈ℤ">
 <org.eventb.core.prIdent name="E_MAX6650_fanSpeed" org.eventb.core.type="ℤ"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p11" org.eventb.core.predicate="¬Normal=FailureCount">
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="¬Normal=FailureCount">
 <org.eventb.core.prIdent name="FailureCount" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Normal" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p12" org.eventb.core.predicate="¬Control=SpeedCheck">
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="¬Control=SpeedCheck">
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="SpeedCheck" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
@@ -61,7 +61,7 @@
 <org.eventb.core.prIdent name="Controller_STATES" org.eventb.core.type="ℙ(Controller_STATES)"/>
 <org.eventb.core.prIdent name="SpeedCheck" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p13" org.eventb.core.predicate="¬Step=Control">
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="¬Step=Control">
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Step" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
@@ -75,34 +75,34 @@
 <org.eventb.core.prPred name="p27" org.eventb.core.predicate="FAN_SPEED_FAULT∈ℤ">
 <org.eventb.core.prIdent name="FAN_SPEED_FAULT" org.eventb.core.type="ℤ"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p14" org.eventb.core.predicate="¬Step=BrokenSpeedCheck">
-<org.eventb.core.prIdent name="BrokenSpeedCheck" org.eventb.core.type="Controller_STATES"/>
-<org.eventb.core.prIdent name="Step" org.eventb.core.type="Controller_STATES"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p15" org.eventb.core.predicate="¬Control=Normal">
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="¬Control=Normal">
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Normal" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p17" org.eventb.core.predicate="¬Broken=BrokenSpeedCheck">
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="¬Step=BrokenSpeedCheck">
+<org.eventb.core.prIdent name="BrokenSpeedCheck" org.eventb.core.type="Controller_STATES"/>
+<org.eventb.core.prIdent name="Step" org.eventb.core.type="Controller_STATES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p22" org.eventb.core.predicate="¬Broken=BrokenSpeedCheck">
 <org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="BrokenSpeedCheck" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p23" org.eventb.core.predicate="HWM_PSU∈ℤ">
 <org.eventb.core.prIdent name="HWM_PSU" org.eventb.core.type="ℤ"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p19" org.eventb.core.predicate="¬FailureCount=Broken">
+<org.eventb.core.prPred name="p20" org.eventb.core.predicate="¬FailureCount=Broken">
 <org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="FailureCount" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p20" org.eventb.core.predicate="¬Step=SpeedCheck">
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="¬Step=SpeedCheck">
 <org.eventb.core.prIdent name="SpeedCheck" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Step" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p21" org.eventb.core.predicate="¬Normal=SpeedCheck">
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="¬Normal=SpeedCheck">
 <org.eventb.core.prIdent name="Normal" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="SpeedCheck" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p22" org.eventb.core.predicate="Controller_STATES={Step,Control,Normal,SpeedCheck,FailureCount,Broken,BrokenSpeedCheck}">
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="Controller_STATES={Step,Control,Normal,SpeedCheck,FailureCount,Broken,BrokenSpeedCheck}">
 <org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="BrokenSpeedCheck" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
@@ -116,21 +116,21 @@
 <org.eventb.core.prIdent name="Controller_STATES" org.eventb.core.type="ℙ(Controller_STATES)"/>
 <org.eventb.core.prIdent name="Normal" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬Normal=Broken">
-<org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
-<org.eventb.core.prIdent name="Normal" org.eventb.core.type="Controller_STATES"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p1" org.eventb.core.predicate="¬Step=Normal">
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬Step=Normal">
 <org.eventb.core.prIdent name="Normal" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Step" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p5" org.eventb.core.predicate="¬FailureCount=BrokenSpeedCheck">
-<org.eventb.core.prIdent name="BrokenSpeedCheck" org.eventb.core.type="Controller_STATES"/>
-<org.eventb.core.prIdent name="FailureCount" org.eventb.core.type="Controller_STATES"/>
+<org.eventb.core.prPred name="p15" org.eventb.core.predicate="¬Normal=Broken">
+<org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
+<org.eventb.core.prIdent name="Normal" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p4" org.eventb.core.predicate="¬Normal=BrokenSpeedCheck">
+<org.eventb.core.prPred name="p16" org.eventb.core.predicate="¬Normal=BrokenSpeedCheck">
 <org.eventb.core.prIdent name="BrokenSpeedCheck" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Normal" org.eventb.core.type="Controller_STATES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p21" org.eventb.core.predicate="¬FailureCount=BrokenSpeedCheck">
+<org.eventb.core.prIdent name="BrokenSpeedCheck" org.eventb.core.type="Controller_STATES"/>
+<org.eventb.core.prIdent name="FailureCount" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p28" org.eventb.core.predicate="FAN_SPEED_OFF∈ℤ">
 <org.eventb.core.prIdent name="FAN_SPEED_OFF" org.eventb.core.type="ℤ"/>
@@ -138,19 +138,19 @@
 <org.eventb.core.prPred name="p26" org.eventb.core.predicate="LWM_AMBIENT∈ℤ">
 <org.eventb.core.prIdent name="LWM_AMBIENT" org.eventb.core.type="ℤ"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p7" org.eventb.core.predicate="¬Control=BrokenSpeedCheck">
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="¬Control=BrokenSpeedCheck">
 <org.eventb.core.prIdent name="BrokenSpeedCheck" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p8" org.eventb.core.predicate="¬SpeedCheck=Broken">
+<org.eventb.core.prPred name="p18" org.eventb.core.predicate="¬SpeedCheck=Broken">
 <org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="SpeedCheck" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p9" org.eventb.core.predicate="¬Control=FailureCount">
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="¬Control=FailureCount">
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="FailureCount" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p10" org.eventb.core.predicate="¬Step=FailureCount">
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="¬Step=FailureCount">
 <org.eventb.core.prIdent name="FailureCount" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Step" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
@@ -171,7 +171,7 @@
 <org.eventb.core.prIdent name="Controller_STATES" org.eventb.core.type="ℙ(Controller_STATES)"/>
 <org.eventb.core.prIdent name="Step" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p16" org.eventb.core.predicate="¬SpeedCheck=BrokenSpeedCheck">
+<org.eventb.core.prPred name="p19" org.eventb.core.predicate="¬SpeedCheck=BrokenSpeedCheck">
 <org.eventb.core.prIdent name="BrokenSpeedCheck" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="SpeedCheck" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
@@ -188,7 +188,7 @@
 <org.eventb.core.prPred name="p24" org.eventb.core.predicate="LWM_PSU∈ℤ">
 <org.eventb.core.prIdent name="LWM_PSU" org.eventb.core.type="ℤ"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p18" org.eventb.core.predicate="¬Control=Broken">
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="¬Control=Broken">
 <org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
@@ -196,8 +196,8 @@
 <org.eventb.core.prIdent name="Controller_STATES" org.eventb.core.type="ℙ(Controller_STATES)"/>
 <org.eventb.core.prIdent name="FailureCount" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="raiseT/E_LM75_tempPSU/EQL" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -230,11 +230,11 @@
 </org.eventb.core.prAnte>
 <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
 </org.eventb.core.prRule>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="¬Step=Broken">
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="¬Step=Broken">
 <org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Step" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p6" org.eventb.core.predicate="¬SpeedCheck=FailureCount">
+<org.eventb.core.prPred name="p17" org.eventb.core.predicate="¬SpeedCheck=FailureCount">
 <org.eventb.core.prIdent name="FailureCount" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="SpeedCheck" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
@@ -244,11 +244,11 @@
 <org.eventb.core.prPred name="p40" org.eventb.core.predicate="E_MAX6650_fanSpeed∈ℤ">
 <org.eventb.core.prIdent name="E_MAX6650_fanSpeed" org.eventb.core.type="ℤ"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p11" org.eventb.core.predicate="¬Normal=FailureCount">
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="¬Normal=FailureCount">
 <org.eventb.core.prIdent name="FailureCount" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Normal" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p12" org.eventb.core.predicate="¬Control=SpeedCheck">
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="¬Control=SpeedCheck">
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="SpeedCheck" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
@@ -260,7 +260,7 @@
 <org.eventb.core.prIdent name="Controller_STATES" org.eventb.core.type="ℙ(Controller_STATES)"/>
 <org.eventb.core.prIdent name="SpeedCheck" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p13" org.eventb.core.predicate="¬Step=Control">
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="¬Step=Control">
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Step" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
@@ -274,34 +274,34 @@
 <org.eventb.core.prPred name="p27" org.eventb.core.predicate="FAN_SPEED_FAULT∈ℤ">
 <org.eventb.core.prIdent name="FAN_SPEED_FAULT" org.eventb.core.type="ℤ"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p14" org.eventb.core.predicate="¬Step=BrokenSpeedCheck">
-<org.eventb.core.prIdent name="BrokenSpeedCheck" org.eventb.core.type="Controller_STATES"/>
-<org.eventb.core.prIdent name="Step" org.eventb.core.type="Controller_STATES"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p15" org.eventb.core.predicate="¬Control=Normal">
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="¬Control=Normal">
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Normal" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p17" org.eventb.core.predicate="¬Broken=BrokenSpeedCheck">
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="¬Step=BrokenSpeedCheck">
+<org.eventb.core.prIdent name="BrokenSpeedCheck" org.eventb.core.type="Controller_STATES"/>
+<org.eventb.core.prIdent name="Step" org.eventb.core.type="Controller_STATES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p22" org.eventb.core.predicate="¬Broken=BrokenSpeedCheck">
 <org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="BrokenSpeedCheck" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p23" org.eventb.core.predicate="HWM_PSU∈ℤ">
 <org.eventb.core.prIdent name="HWM_PSU" org.eventb.core.type="ℤ"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p19" org.eventb.core.predicate="¬FailureCount=Broken">
+<org.eventb.core.prPred name="p20" org.eventb.core.predicate="¬FailureCount=Broken">
 <org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="FailureCount" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p20" org.eventb.core.predicate="¬Step=SpeedCheck">
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="¬Step=SpeedCheck">
 <org.eventb.core.prIdent name="SpeedCheck" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Step" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p21" org.eventb.core.predicate="¬Normal=SpeedCheck">
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="¬Normal=SpeedCheck">
 <org.eventb.core.prIdent name="Normal" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="SpeedCheck" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p22" org.eventb.core.predicate="Controller_STATES={Step,Control,Normal,SpeedCheck,FailureCount,Broken,BrokenSpeedCheck}">
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="Controller_STATES={Step,Control,Normal,SpeedCheck,FailureCount,Broken,BrokenSpeedCheck}">
 <org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="BrokenSpeedCheck" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
@@ -315,21 +315,21 @@
 <org.eventb.core.prIdent name="Controller_STATES" org.eventb.core.type="ℙ(Controller_STATES)"/>
 <org.eventb.core.prIdent name="Normal" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬Normal=Broken">
-<org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
-<org.eventb.core.prIdent name="Normal" org.eventb.core.type="Controller_STATES"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p1" org.eventb.core.predicate="¬Step=Normal">
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬Step=Normal">
 <org.eventb.core.prIdent name="Normal" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Step" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p5" org.eventb.core.predicate="¬FailureCount=BrokenSpeedCheck">
-<org.eventb.core.prIdent name="BrokenSpeedCheck" org.eventb.core.type="Controller_STATES"/>
-<org.eventb.core.prIdent name="FailureCount" org.eventb.core.type="Controller_STATES"/>
+<org.eventb.core.prPred name="p15" org.eventb.core.predicate="¬Normal=Broken">
+<org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
+<org.eventb.core.prIdent name="Normal" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p4" org.eventb.core.predicate="¬Normal=BrokenSpeedCheck">
+<org.eventb.core.prPred name="p16" org.eventb.core.predicate="¬Normal=BrokenSpeedCheck">
 <org.eventb.core.prIdent name="BrokenSpeedCheck" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Normal" org.eventb.core.type="Controller_STATES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p21" org.eventb.core.predicate="¬FailureCount=BrokenSpeedCheck">
+<org.eventb.core.prIdent name="BrokenSpeedCheck" org.eventb.core.type="Controller_STATES"/>
+<org.eventb.core.prIdent name="FailureCount" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p28" org.eventb.core.predicate="FAN_SPEED_OFF∈ℤ">
 <org.eventb.core.prIdent name="FAN_SPEED_OFF" org.eventb.core.type="ℤ"/>
@@ -337,19 +337,19 @@
 <org.eventb.core.prPred name="p26" org.eventb.core.predicate="LWM_AMBIENT∈ℤ">
 <org.eventb.core.prIdent name="LWM_AMBIENT" org.eventb.core.type="ℤ"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p7" org.eventb.core.predicate="¬Control=BrokenSpeedCheck">
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="¬Control=BrokenSpeedCheck">
 <org.eventb.core.prIdent name="BrokenSpeedCheck" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p8" org.eventb.core.predicate="¬SpeedCheck=Broken">
+<org.eventb.core.prPred name="p18" org.eventb.core.predicate="¬SpeedCheck=Broken">
 <org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="SpeedCheck" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p9" org.eventb.core.predicate="¬Control=FailureCount">
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="¬Control=FailureCount">
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="FailureCount" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p10" org.eventb.core.predicate="¬Step=FailureCount">
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="¬Step=FailureCount">
 <org.eventb.core.prIdent name="FailureCount" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Step" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
@@ -370,7 +370,7 @@
 <org.eventb.core.prIdent name="Controller_STATES" org.eventb.core.type="ℙ(Controller_STATES)"/>
 <org.eventb.core.prIdent name="Step" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p16" org.eventb.core.predicate="¬SpeedCheck=BrokenSpeedCheck">
+<org.eventb.core.prPred name="p19" org.eventb.core.predicate="¬SpeedCheck=BrokenSpeedCheck">
 <org.eventb.core.prIdent name="BrokenSpeedCheck" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="SpeedCheck" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
@@ -387,7 +387,7 @@
 <org.eventb.core.prPred name="p24" org.eventb.core.predicate="LWM_PSU∈ℤ">
 <org.eventb.core.prIdent name="LWM_PSU" org.eventb.core.type="ℤ"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p18" org.eventb.core.predicate="¬Control=Broken">
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="¬Control=Broken">
 <org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
@@ -395,8 +395,8 @@
 <org.eventb.core.prIdent name="Controller_STATES" org.eventb.core.type="ℙ(Controller_STATES)"/>
 <org.eventb.core.prIdent name="FailureCount" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="raiseT/E_MAX6650_fanSpeed/EQL" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -429,11 +429,11 @@
 </org.eventb.core.prAnte>
 <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
 </org.eventb.core.prRule>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="¬Step=Broken">
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="¬Step=Broken">
 <org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Step" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p6" org.eventb.core.predicate="¬SpeedCheck=FailureCount">
+<org.eventb.core.prPred name="p17" org.eventb.core.predicate="¬SpeedCheck=FailureCount">
 <org.eventb.core.prIdent name="FailureCount" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="SpeedCheck" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
@@ -443,11 +443,11 @@
 <org.eventb.core.prPred name="p40" org.eventb.core.predicate="E_MAX6650_fanSpeed∈ℤ">
 <org.eventb.core.prIdent name="E_MAX6650_fanSpeed" org.eventb.core.type="ℤ"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p11" org.eventb.core.predicate="¬Normal=FailureCount">
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="¬Normal=FailureCount">
 <org.eventb.core.prIdent name="FailureCount" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Normal" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p12" org.eventb.core.predicate="¬Control=SpeedCheck">
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="¬Control=SpeedCheck">
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="SpeedCheck" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
@@ -459,7 +459,7 @@
 <org.eventb.core.prIdent name="Controller_STATES" org.eventb.core.type="ℙ(Controller_STATES)"/>
 <org.eventb.core.prIdent name="SpeedCheck" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p13" org.eventb.core.predicate="¬Step=Control">
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="¬Step=Control">
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Step" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
@@ -473,34 +473,34 @@
 <org.eventb.core.prPred name="p27" org.eventb.core.predicate="FAN_SPEED_FAULT∈ℤ">
 <org.eventb.core.prIdent name="FAN_SPEED_FAULT" org.eventb.core.type="ℤ"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p14" org.eventb.core.predicate="¬Step=BrokenSpeedCheck">
-<org.eventb.core.prIdent name="BrokenSpeedCheck" org.eventb.core.type="Controller_STATES"/>
-<org.eventb.core.prIdent name="Step" org.eventb.core.type="Controller_STATES"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p15" org.eventb.core.predicate="¬Control=Normal">
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="¬Control=Normal">
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Normal" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p17" org.eventb.core.predicate="¬Broken=BrokenSpeedCheck">
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="¬Step=BrokenSpeedCheck">
+<org.eventb.core.prIdent name="BrokenSpeedCheck" org.eventb.core.type="Controller_STATES"/>
+<org.eventb.core.prIdent name="Step" org.eventb.core.type="Controller_STATES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p22" org.eventb.core.predicate="¬Broken=BrokenSpeedCheck">
 <org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="BrokenSpeedCheck" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p23" org.eventb.core.predicate="HWM_PSU∈ℤ">
 <org.eventb.core.prIdent name="HWM_PSU" org.eventb.core.type="ℤ"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p19" org.eventb.core.predicate="¬FailureCount=Broken">
+<org.eventb.core.prPred name="p20" org.eventb.core.predicate="¬FailureCount=Broken">
 <org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="FailureCount" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p20" org.eventb.core.predicate="¬Step=SpeedCheck">
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="¬Step=SpeedCheck">
 <org.eventb.core.prIdent name="SpeedCheck" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Step" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p21" org.eventb.core.predicate="¬Normal=SpeedCheck">
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="¬Normal=SpeedCheck">
 <org.eventb.core.prIdent name="Normal" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="SpeedCheck" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p22" org.eventb.core.predicate="Controller_STATES={Step,Control,Normal,SpeedCheck,FailureCount,Broken,BrokenSpeedCheck}">
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="Controller_STATES={Step,Control,Normal,SpeedCheck,FailureCount,Broken,BrokenSpeedCheck}">
 <org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="BrokenSpeedCheck" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
@@ -514,21 +514,21 @@
 <org.eventb.core.prIdent name="Controller_STATES" org.eventb.core.type="ℙ(Controller_STATES)"/>
 <org.eventb.core.prIdent name="Normal" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬Normal=Broken">
-<org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
-<org.eventb.core.prIdent name="Normal" org.eventb.core.type="Controller_STATES"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p1" org.eventb.core.predicate="¬Step=Normal">
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬Step=Normal">
 <org.eventb.core.prIdent name="Normal" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Step" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p5" org.eventb.core.predicate="¬FailureCount=BrokenSpeedCheck">
-<org.eventb.core.prIdent name="BrokenSpeedCheck" org.eventb.core.type="Controller_STATES"/>
-<org.eventb.core.prIdent name="FailureCount" org.eventb.core.type="Controller_STATES"/>
+<org.eventb.core.prPred name="p15" org.eventb.core.predicate="¬Normal=Broken">
+<org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
+<org.eventb.core.prIdent name="Normal" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p4" org.eventb.core.predicate="¬Normal=BrokenSpeedCheck">
+<org.eventb.core.prPred name="p16" org.eventb.core.predicate="¬Normal=BrokenSpeedCheck">
 <org.eventb.core.prIdent name="BrokenSpeedCheck" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Normal" org.eventb.core.type="Controller_STATES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p21" org.eventb.core.predicate="¬FailureCount=BrokenSpeedCheck">
+<org.eventb.core.prIdent name="BrokenSpeedCheck" org.eventb.core.type="Controller_STATES"/>
+<org.eventb.core.prIdent name="FailureCount" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p28" org.eventb.core.predicate="FAN_SPEED_OFF∈ℤ">
 <org.eventb.core.prIdent name="FAN_SPEED_OFF" org.eventb.core.type="ℤ"/>
@@ -536,19 +536,19 @@
 <org.eventb.core.prPred name="p26" org.eventb.core.predicate="LWM_AMBIENT∈ℤ">
 <org.eventb.core.prIdent name="LWM_AMBIENT" org.eventb.core.type="ℤ"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p7" org.eventb.core.predicate="¬Control=BrokenSpeedCheck">
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="¬Control=BrokenSpeedCheck">
 <org.eventb.core.prIdent name="BrokenSpeedCheck" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p8" org.eventb.core.predicate="¬SpeedCheck=Broken">
+<org.eventb.core.prPred name="p18" org.eventb.core.predicate="¬SpeedCheck=Broken">
 <org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="SpeedCheck" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p9" org.eventb.core.predicate="¬Control=FailureCount">
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="¬Control=FailureCount">
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="FailureCount" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p10" org.eventb.core.predicate="¬Step=FailureCount">
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="¬Step=FailureCount">
 <org.eventb.core.prIdent name="FailureCount" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Step" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
@@ -569,7 +569,7 @@
 <org.eventb.core.prIdent name="Controller_STATES" org.eventb.core.type="ℙ(Controller_STATES)"/>
 <org.eventb.core.prIdent name="Step" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p16" org.eventb.core.predicate="¬SpeedCheck=BrokenSpeedCheck">
+<org.eventb.core.prPred name="p19" org.eventb.core.predicate="¬SpeedCheck=BrokenSpeedCheck">
 <org.eventb.core.prIdent name="BrokenSpeedCheck" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="SpeedCheck" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
@@ -586,7 +586,7 @@
 <org.eventb.core.prPred name="p24" org.eventb.core.predicate="LWM_PSU∈ℤ">
 <org.eventb.core.prIdent name="LWM_PSU" org.eventb.core.type="ℤ"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p18" org.eventb.core.predicate="¬Control=Broken">
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="¬Control=Broken">
 <org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
@@ -594,8 +594,8 @@
 <org.eventb.core.prIdent name="Controller_STATES" org.eventb.core.type="ℙ(Controller_STATES)"/>
 <org.eventb.core.prIdent name="FailureCount" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="lowerT/E_LM75_tempAmbient/EQL" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -628,11 +628,11 @@
 </org.eventb.core.prAnte>
 <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
 </org.eventb.core.prRule>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="¬Step=Broken">
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="¬Step=Broken">
 <org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Step" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p6" org.eventb.core.predicate="¬SpeedCheck=FailureCount">
+<org.eventb.core.prPred name="p17" org.eventb.core.predicate="¬SpeedCheck=FailureCount">
 <org.eventb.core.prIdent name="FailureCount" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="SpeedCheck" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
@@ -642,11 +642,11 @@
 <org.eventb.core.prPred name="p40" org.eventb.core.predicate="E_MAX6650_fanSpeed∈ℤ">
 <org.eventb.core.prIdent name="E_MAX6650_fanSpeed" org.eventb.core.type="ℤ"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p11" org.eventb.core.predicate="¬Normal=FailureCount">
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="¬Normal=FailureCount">
 <org.eventb.core.prIdent name="FailureCount" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Normal" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p12" org.eventb.core.predicate="¬Control=SpeedCheck">
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="¬Control=SpeedCheck">
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="SpeedCheck" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
@@ -658,7 +658,7 @@
 <org.eventb.core.prIdent name="Controller_STATES" org.eventb.core.type="ℙ(Controller_STATES)"/>
 <org.eventb.core.prIdent name="SpeedCheck" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p13" org.eventb.core.predicate="¬Step=Control">
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="¬Step=Control">
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Step" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
@@ -672,34 +672,34 @@
 <org.eventb.core.prPred name="p27" org.eventb.core.predicate="FAN_SPEED_FAULT∈ℤ">
 <org.eventb.core.prIdent name="FAN_SPEED_FAULT" org.eventb.core.type="ℤ"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p14" org.eventb.core.predicate="¬Step=BrokenSpeedCheck">
-<org.eventb.core.prIdent name="BrokenSpeedCheck" org.eventb.core.type="Controller_STATES"/>
-<org.eventb.core.prIdent name="Step" org.eventb.core.type="Controller_STATES"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p15" org.eventb.core.predicate="¬Control=Normal">
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="¬Control=Normal">
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Normal" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p17" org.eventb.core.predicate="¬Broken=BrokenSpeedCheck">
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="¬Step=BrokenSpeedCheck">
+<org.eventb.core.prIdent name="BrokenSpeedCheck" org.eventb.core.type="Controller_STATES"/>
+<org.eventb.core.prIdent name="Step" org.eventb.core.type="Controller_STATES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p22" org.eventb.core.predicate="¬Broken=BrokenSpeedCheck">
 <org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="BrokenSpeedCheck" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p23" org.eventb.core.predicate="HWM_PSU∈ℤ">
 <org.eventb.core.prIdent name="HWM_PSU" org.eventb.core.type="ℤ"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p19" org.eventb.core.predicate="¬FailureCount=Broken">
+<org.eventb.core.prPred name="p20" org.eventb.core.predicate="¬FailureCount=Broken">
 <org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="FailureCount" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p20" org.eventb.core.predicate="¬Step=SpeedCheck">
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="¬Step=SpeedCheck">
 <org.eventb.core.prIdent name="SpeedCheck" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Step" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p21" org.eventb.core.predicate="¬Normal=SpeedCheck">
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="¬Normal=SpeedCheck">
 <org.eventb.core.prIdent name="Normal" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="SpeedCheck" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p22" org.eventb.core.predicate="Controller_STATES={Step,Control,Normal,SpeedCheck,FailureCount,Broken,BrokenSpeedCheck}">
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="Controller_STATES={Step,Control,Normal,SpeedCheck,FailureCount,Broken,BrokenSpeedCheck}">
 <org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="BrokenSpeedCheck" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
@@ -713,21 +713,21 @@
 <org.eventb.core.prIdent name="Controller_STATES" org.eventb.core.type="ℙ(Controller_STATES)"/>
 <org.eventb.core.prIdent name="Normal" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬Normal=Broken">
-<org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
-<org.eventb.core.prIdent name="Normal" org.eventb.core.type="Controller_STATES"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p1" org.eventb.core.predicate="¬Step=Normal">
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬Step=Normal">
 <org.eventb.core.prIdent name="Normal" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Step" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p5" org.eventb.core.predicate="¬FailureCount=BrokenSpeedCheck">
-<org.eventb.core.prIdent name="BrokenSpeedCheck" org.eventb.core.type="Controller_STATES"/>
-<org.eventb.core.prIdent name="FailureCount" org.eventb.core.type="Controller_STATES"/>
+<org.eventb.core.prPred name="p15" org.eventb.core.predicate="¬Normal=Broken">
+<org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
+<org.eventb.core.prIdent name="Normal" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p4" org.eventb.core.predicate="¬Normal=BrokenSpeedCheck">
+<org.eventb.core.prPred name="p16" org.eventb.core.predicate="¬Normal=BrokenSpeedCheck">
 <org.eventb.core.prIdent name="BrokenSpeedCheck" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Normal" org.eventb.core.type="Controller_STATES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p21" org.eventb.core.predicate="¬FailureCount=BrokenSpeedCheck">
+<org.eventb.core.prIdent name="BrokenSpeedCheck" org.eventb.core.type="Controller_STATES"/>
+<org.eventb.core.prIdent name="FailureCount" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p28" org.eventb.core.predicate="FAN_SPEED_OFF∈ℤ">
 <org.eventb.core.prIdent name="FAN_SPEED_OFF" org.eventb.core.type="ℤ"/>
@@ -735,19 +735,19 @@
 <org.eventb.core.prPred name="p26" org.eventb.core.predicate="LWM_AMBIENT∈ℤ">
 <org.eventb.core.prIdent name="LWM_AMBIENT" org.eventb.core.type="ℤ"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p7" org.eventb.core.predicate="¬Control=BrokenSpeedCheck">
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="¬Control=BrokenSpeedCheck">
 <org.eventb.core.prIdent name="BrokenSpeedCheck" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p8" org.eventb.core.predicate="¬SpeedCheck=Broken">
+<org.eventb.core.prPred name="p18" org.eventb.core.predicate="¬SpeedCheck=Broken">
 <org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="SpeedCheck" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p9" org.eventb.core.predicate="¬Control=FailureCount">
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="¬Control=FailureCount">
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="FailureCount" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p10" org.eventb.core.predicate="¬Step=FailureCount">
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="¬Step=FailureCount">
 <org.eventb.core.prIdent name="FailureCount" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Step" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
@@ -768,7 +768,7 @@
 <org.eventb.core.prIdent name="Controller_STATES" org.eventb.core.type="ℙ(Controller_STATES)"/>
 <org.eventb.core.prIdent name="Step" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p16" org.eventb.core.predicate="¬SpeedCheck=BrokenSpeedCheck">
+<org.eventb.core.prPred name="p19" org.eventb.core.predicate="¬SpeedCheck=BrokenSpeedCheck">
 <org.eventb.core.prIdent name="BrokenSpeedCheck" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="SpeedCheck" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
@@ -785,7 +785,7 @@
 <org.eventb.core.prPred name="p24" org.eventb.core.predicate="LWM_PSU∈ℤ">
 <org.eventb.core.prIdent name="LWM_PSU" org.eventb.core.type="ℤ"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p18" org.eventb.core.predicate="¬Control=Broken">
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="¬Control=Broken">
 <org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
@@ -793,8 +793,8 @@
 <org.eventb.core.prIdent name="Controller_STATES" org.eventb.core.type="ℙ(Controller_STATES)"/>
 <org.eventb.core.prIdent name="FailureCount" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="lowerT/E_LM75_tempPSU/EQL" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -827,11 +827,11 @@
 </org.eventb.core.prAnte>
 <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
 </org.eventb.core.prRule>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="¬Step=Broken">
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="¬Step=Broken">
 <org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Step" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p6" org.eventb.core.predicate="¬SpeedCheck=FailureCount">
+<org.eventb.core.prPred name="p17" org.eventb.core.predicate="¬SpeedCheck=FailureCount">
 <org.eventb.core.prIdent name="FailureCount" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="SpeedCheck" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
@@ -841,11 +841,11 @@
 <org.eventb.core.prPred name="p40" org.eventb.core.predicate="E_MAX6650_fanSpeed∈ℤ">
 <org.eventb.core.prIdent name="E_MAX6650_fanSpeed" org.eventb.core.type="ℤ"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p11" org.eventb.core.predicate="¬Normal=FailureCount">
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="¬Normal=FailureCount">
 <org.eventb.core.prIdent name="FailureCount" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Normal" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p12" org.eventb.core.predicate="¬Control=SpeedCheck">
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="¬Control=SpeedCheck">
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="SpeedCheck" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
@@ -857,7 +857,7 @@
 <org.eventb.core.prIdent name="Controller_STATES" org.eventb.core.type="ℙ(Controller_STATES)"/>
 <org.eventb.core.prIdent name="SpeedCheck" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p13" org.eventb.core.predicate="¬Step=Control">
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="¬Step=Control">
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Step" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
@@ -871,34 +871,34 @@
 <org.eventb.core.prPred name="p27" org.eventb.core.predicate="FAN_SPEED_FAULT∈ℤ">
 <org.eventb.core.prIdent name="FAN_SPEED_FAULT" org.eventb.core.type="ℤ"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p14" org.eventb.core.predicate="¬Step=BrokenSpeedCheck">
-<org.eventb.core.prIdent name="BrokenSpeedCheck" org.eventb.core.type="Controller_STATES"/>
-<org.eventb.core.prIdent name="Step" org.eventb.core.type="Controller_STATES"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p15" org.eventb.core.predicate="¬Control=Normal">
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="¬Control=Normal">
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Normal" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p17" org.eventb.core.predicate="¬Broken=BrokenSpeedCheck">
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="¬Step=BrokenSpeedCheck">
+<org.eventb.core.prIdent name="BrokenSpeedCheck" org.eventb.core.type="Controller_STATES"/>
+<org.eventb.core.prIdent name="Step" org.eventb.core.type="Controller_STATES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p22" org.eventb.core.predicate="¬Broken=BrokenSpeedCheck">
 <org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="BrokenSpeedCheck" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p23" org.eventb.core.predicate="HWM_PSU∈ℤ">
 <org.eventb.core.prIdent name="HWM_PSU" org.eventb.core.type="ℤ"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p19" org.eventb.core.predicate="¬FailureCount=Broken">
+<org.eventb.core.prPred name="p20" org.eventb.core.predicate="¬FailureCount=Broken">
 <org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="FailureCount" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p20" org.eventb.core.predicate="¬Step=SpeedCheck">
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="¬Step=SpeedCheck">
 <org.eventb.core.prIdent name="SpeedCheck" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Step" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p21" org.eventb.core.predicate="¬Normal=SpeedCheck">
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="¬Normal=SpeedCheck">
 <org.eventb.core.prIdent name="Normal" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="SpeedCheck" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p22" org.eventb.core.predicate="Controller_STATES={Step,Control,Normal,SpeedCheck,FailureCount,Broken,BrokenSpeedCheck}">
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="Controller_STATES={Step,Control,Normal,SpeedCheck,FailureCount,Broken,BrokenSpeedCheck}">
 <org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="BrokenSpeedCheck" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
@@ -912,21 +912,21 @@
 <org.eventb.core.prIdent name="Controller_STATES" org.eventb.core.type="ℙ(Controller_STATES)"/>
 <org.eventb.core.prIdent name="Normal" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬Normal=Broken">
-<org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
-<org.eventb.core.prIdent name="Normal" org.eventb.core.type="Controller_STATES"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p1" org.eventb.core.predicate="¬Step=Normal">
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬Step=Normal">
 <org.eventb.core.prIdent name="Normal" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Step" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p5" org.eventb.core.predicate="¬FailureCount=BrokenSpeedCheck">
-<org.eventb.core.prIdent name="BrokenSpeedCheck" org.eventb.core.type="Controller_STATES"/>
-<org.eventb.core.prIdent name="FailureCount" org.eventb.core.type="Controller_STATES"/>
+<org.eventb.core.prPred name="p15" org.eventb.core.predicate="¬Normal=Broken">
+<org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
+<org.eventb.core.prIdent name="Normal" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p4" org.eventb.core.predicate="¬Normal=BrokenSpeedCheck">
+<org.eventb.core.prPred name="p16" org.eventb.core.predicate="¬Normal=BrokenSpeedCheck">
 <org.eventb.core.prIdent name="BrokenSpeedCheck" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Normal" org.eventb.core.type="Controller_STATES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p21" org.eventb.core.predicate="¬FailureCount=BrokenSpeedCheck">
+<org.eventb.core.prIdent name="BrokenSpeedCheck" org.eventb.core.type="Controller_STATES"/>
+<org.eventb.core.prIdent name="FailureCount" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p28" org.eventb.core.predicate="FAN_SPEED_OFF∈ℤ">
 <org.eventb.core.prIdent name="FAN_SPEED_OFF" org.eventb.core.type="ℤ"/>
@@ -934,19 +934,19 @@
 <org.eventb.core.prPred name="p26" org.eventb.core.predicate="LWM_AMBIENT∈ℤ">
 <org.eventb.core.prIdent name="LWM_AMBIENT" org.eventb.core.type="ℤ"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p7" org.eventb.core.predicate="¬Control=BrokenSpeedCheck">
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="¬Control=BrokenSpeedCheck">
 <org.eventb.core.prIdent name="BrokenSpeedCheck" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p8" org.eventb.core.predicate="¬SpeedCheck=Broken">
+<org.eventb.core.prPred name="p18" org.eventb.core.predicate="¬SpeedCheck=Broken">
 <org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="SpeedCheck" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p9" org.eventb.core.predicate="¬Control=FailureCount">
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="¬Control=FailureCount">
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="FailureCount" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p10" org.eventb.core.predicate="¬Step=FailureCount">
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="¬Step=FailureCount">
 <org.eventb.core.prIdent name="FailureCount" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Step" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
@@ -967,7 +967,7 @@
 <org.eventb.core.prIdent name="Controller_STATES" org.eventb.core.type="ℙ(Controller_STATES)"/>
 <org.eventb.core.prIdent name="Step" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p16" org.eventb.core.predicate="¬SpeedCheck=BrokenSpeedCheck">
+<org.eventb.core.prPred name="p19" org.eventb.core.predicate="¬SpeedCheck=BrokenSpeedCheck">
 <org.eventb.core.prIdent name="BrokenSpeedCheck" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="SpeedCheck" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
@@ -984,7 +984,7 @@
 <org.eventb.core.prPred name="p24" org.eventb.core.predicate="LWM_PSU∈ℤ">
 <org.eventb.core.prIdent name="LWM_PSU" org.eventb.core.type="ℤ"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p18" org.eventb.core.predicate="¬Control=Broken">
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="¬Control=Broken">
 <org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
@@ -992,8 +992,8 @@
 <org.eventb.core.prIdent name="Controller_STATES" org.eventb.core.type="ℙ(Controller_STATES)"/>
 <org.eventb.core.prIdent name="FailureCount" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="lowerT/E_MAX6650_fanSpeed/EQL" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck}))" org.eventb.core.prHyps="">
@@ -1026,11 +1026,11 @@
 </org.eventb.core.prAnte>
 <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
 </org.eventb.core.prRule>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="¬Step=Broken">
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="¬Step=Broken">
 <org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Step" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p6" org.eventb.core.predicate="¬SpeedCheck=FailureCount">
+<org.eventb.core.prPred name="p17" org.eventb.core.predicate="¬SpeedCheck=FailureCount">
 <org.eventb.core.prIdent name="FailureCount" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="SpeedCheck" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
@@ -1040,11 +1040,11 @@
 <org.eventb.core.prPred name="p40" org.eventb.core.predicate="E_MAX6650_fanSpeed∈ℤ">
 <org.eventb.core.prIdent name="E_MAX6650_fanSpeed" org.eventb.core.type="ℤ"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p11" org.eventb.core.predicate="¬Normal=FailureCount">
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="¬Normal=FailureCount">
 <org.eventb.core.prIdent name="FailureCount" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Normal" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p12" org.eventb.core.predicate="¬Control=SpeedCheck">
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="¬Control=SpeedCheck">
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="SpeedCheck" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
@@ -1056,7 +1056,7 @@
 <org.eventb.core.prIdent name="Controller_STATES" org.eventb.core.type="ℙ(Controller_STATES)"/>
 <org.eventb.core.prIdent name="SpeedCheck" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p13" org.eventb.core.predicate="¬Step=Control">
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="¬Step=Control">
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Step" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
@@ -1070,34 +1070,34 @@
 <org.eventb.core.prPred name="p27" org.eventb.core.predicate="FAN_SPEED_FAULT∈ℤ">
 <org.eventb.core.prIdent name="FAN_SPEED_FAULT" org.eventb.core.type="ℤ"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p14" org.eventb.core.predicate="¬Step=BrokenSpeedCheck">
-<org.eventb.core.prIdent name="BrokenSpeedCheck" org.eventb.core.type="Controller_STATES"/>
-<org.eventb.core.prIdent name="Step" org.eventb.core.type="Controller_STATES"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p15" org.eventb.core.predicate="¬Control=Normal">
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="¬Control=Normal">
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Normal" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p17" org.eventb.core.predicate="¬Broken=BrokenSpeedCheck">
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="¬Step=BrokenSpeedCheck">
+<org.eventb.core.prIdent name="BrokenSpeedCheck" org.eventb.core.type="Controller_STATES"/>
+<org.eventb.core.prIdent name="Step" org.eventb.core.type="Controller_STATES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p22" org.eventb.core.predicate="¬Broken=BrokenSpeedCheck">
 <org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="BrokenSpeedCheck" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p23" org.eventb.core.predicate="HWM_PSU∈ℤ">
 <org.eventb.core.prIdent name="HWM_PSU" org.eventb.core.type="ℤ"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p19" org.eventb.core.predicate="¬FailureCount=Broken">
+<org.eventb.core.prPred name="p20" org.eventb.core.predicate="¬FailureCount=Broken">
 <org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="FailureCount" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p20" org.eventb.core.predicate="¬Step=SpeedCheck">
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="¬Step=SpeedCheck">
 <org.eventb.core.prIdent name="SpeedCheck" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Step" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p21" org.eventb.core.predicate="¬Normal=SpeedCheck">
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="¬Normal=SpeedCheck">
 <org.eventb.core.prIdent name="Normal" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="SpeedCheck" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p22" org.eventb.core.predicate="Controller_STATES={Step,Control,Normal,SpeedCheck,FailureCount,Broken,BrokenSpeedCheck}">
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="Controller_STATES={Step,Control,Normal,SpeedCheck,FailureCount,Broken,BrokenSpeedCheck}">
 <org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="BrokenSpeedCheck" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
@@ -1111,21 +1111,21 @@
 <org.eventb.core.prIdent name="Controller_STATES" org.eventb.core.type="ℙ(Controller_STATES)"/>
 <org.eventb.core.prIdent name="Normal" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬Normal=Broken">
-<org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
-<org.eventb.core.prIdent name="Normal" org.eventb.core.type="Controller_STATES"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p1" org.eventb.core.predicate="¬Step=Normal">
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬Step=Normal">
 <org.eventb.core.prIdent name="Normal" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Step" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p5" org.eventb.core.predicate="¬FailureCount=BrokenSpeedCheck">
-<org.eventb.core.prIdent name="BrokenSpeedCheck" org.eventb.core.type="Controller_STATES"/>
-<org.eventb.core.prIdent name="FailureCount" org.eventb.core.type="Controller_STATES"/>
+<org.eventb.core.prPred name="p15" org.eventb.core.predicate="¬Normal=Broken">
+<org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
+<org.eventb.core.prIdent name="Normal" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p4" org.eventb.core.predicate="¬Normal=BrokenSpeedCheck">
+<org.eventb.core.prPred name="p16" org.eventb.core.predicate="¬Normal=BrokenSpeedCheck">
 <org.eventb.core.prIdent name="BrokenSpeedCheck" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Normal" org.eventb.core.type="Controller_STATES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p21" org.eventb.core.predicate="¬FailureCount=BrokenSpeedCheck">
+<org.eventb.core.prIdent name="BrokenSpeedCheck" org.eventb.core.type="Controller_STATES"/>
+<org.eventb.core.prIdent name="FailureCount" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p28" org.eventb.core.predicate="FAN_SPEED_OFF∈ℤ">
 <org.eventb.core.prIdent name="FAN_SPEED_OFF" org.eventb.core.type="ℤ"/>
@@ -1133,19 +1133,19 @@
 <org.eventb.core.prPred name="p26" org.eventb.core.predicate="LWM_AMBIENT∈ℤ">
 <org.eventb.core.prIdent name="LWM_AMBIENT" org.eventb.core.type="ℤ"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p7" org.eventb.core.predicate="¬Control=BrokenSpeedCheck">
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="¬Control=BrokenSpeedCheck">
 <org.eventb.core.prIdent name="BrokenSpeedCheck" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p8" org.eventb.core.predicate="¬SpeedCheck=Broken">
+<org.eventb.core.prPred name="p18" org.eventb.core.predicate="¬SpeedCheck=Broken">
 <org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="SpeedCheck" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p9" org.eventb.core.predicate="¬Control=FailureCount">
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="¬Control=FailureCount">
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="FailureCount" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p10" org.eventb.core.predicate="¬Step=FailureCount">
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="¬Step=FailureCount">
 <org.eventb.core.prIdent name="FailureCount" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Step" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
@@ -1166,7 +1166,7 @@
 <org.eventb.core.prIdent name="Controller_STATES" org.eventb.core.type="ℙ(Controller_STATES)"/>
 <org.eventb.core.prIdent name="Step" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p16" org.eventb.core.predicate="¬SpeedCheck=BrokenSpeedCheck">
+<org.eventb.core.prPred name="p19" org.eventb.core.predicate="¬SpeedCheck=BrokenSpeedCheck">
 <org.eventb.core.prIdent name="BrokenSpeedCheck" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="SpeedCheck" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
@@ -1183,7 +1183,7 @@
 <org.eventb.core.prPred name="p24" org.eventb.core.predicate="LWM_PSU∈ℤ">
 <org.eventb.core.prIdent name="LWM_PSU" org.eventb.core.type="ℤ"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p18" org.eventb.core.predicate="¬Control=Broken">
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="¬Control=Broken">
 <org.eventb.core.prIdent name="Broken" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.prIdent name="Control" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
@@ -1191,7 +1191,7 @@
 <org.eventb.core.prIdent name="Controller_STATES" org.eventb.core.type="ℙ(Controller_STATES)"/>
 <org.eventb.core.prIdent name="FailureCount" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
 </org.eventb.core.prProof>
 </org.eventb.core.prFile>

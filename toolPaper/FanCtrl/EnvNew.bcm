@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <org.eventb.core.scMachineFile org.eventb.core.accurate="true" org.eventb.core.configuration="ch.ethz.eventb.decomposition.pogConfig">
-<org.eventb.core.scSeesContext name="'" org.eventb.core.scTarget="/FanCtrl/FanCtrlContext.bcc" org.eventb.core.source="/FanCtrl/EnvNew.bum|org.eventb.core.machineFile#EnvNew|org.eventb.core.seesContext#_U-JHwMQ3EeKHt4yBjm5K9Q"/>
-<org.eventb.core.scSeesContext name="(" org.eventb.core.scTarget="/FanCtrl/FanCtrlMachineGC_implicitContext.bcc" org.eventb.core.source="/FanCtrl/EnvNew.bum|org.eventb.core.machineFile#EnvNew|org.eventb.core.seesContext#_U-Ju0MQ3EeKHt4yBjm5K9Q"/>
+<org.eventb.core.scSeesContext name="'" org.eventb.core.scTarget="/FanCtrl/FanCtrlContext.bcc" org.eventb.core.source="/FanCtrl/EnvNew.bum|org.eventb.core.machineFile#EnvNew|org.eventb.core.seesContext#_2MZLINQ3EeKJ0LogSXIkJA"/>
+<org.eventb.core.scSeesContext name="(" org.eventb.core.scTarget="/FanCtrl/FanCtrlMachineGC_implicitContext.bcc" org.eventb.core.source="/FanCtrl/EnvNew.bum|org.eventb.core.machineFile#EnvNew|org.eventb.core.seesContext#_2MZLIdQ3EeKJ0LogSXIkJA"/>
 <org.eventb.core.scInternalContext name="FanCtrlContext">
 <org.eventb.core.scAxiom name="'" org.eventb.core.label="typeof_HWM_PSU" org.eventb.core.predicate="HWM_PSU∈ℤ" org.eventb.core.source="/FanCtrl/FanCtrlContext.buc|org.eventb.core.contextFile#FanCtrlContext|org.eventb.core.axiom#+" org.eventb.core.theorem="false"/>
 <org.eventb.core.scAxiom name="(" org.eventb.core.label="typeof_LWM_PSU" org.eventb.core.predicate="LWM_PSU∈ℤ" org.eventb.core.source="/FanCtrl/FanCtrlContext.buc|org.eventb.core.contextFile#FanCtrlContext|org.eventb.core.axiom#," org.eventb.core.theorem="false"/>
@@ -47,7 +47,7 @@
 <org.eventb.core.scConstant name="Step" org.eventb.core.source="/FanCtrl/FanCtrlMachine_implicitContext.buc|org.eventb.core.contextFile#FanCtrlMachine_implicitContext|org.eventb.core.constant#_WQSsUMHrEeK84uchtpZ3cg" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.scInternalContext>
 <org.eventb.core.scInternalContext name="FanCtrlMachineGC_implicitContext">
-<org.eventb.core.scExtendsContext name="'" org.eventb.core.scTarget="/FanCtrl/FanCtrlMachine_implicitContext.bcc|org.eventb.core.scContextFile#FanCtrlMachine_implicitContext" org.eventb.core.source="/FanCtrl/FanCtrlMachineGC_implicitContext.buc|org.eventb.core.contextFile#FanCtrlMachineGC_implicitContext|org.eventb.core.extendsContext#_tyv10MOzEeKrdOk53hhEZg"/>
+<org.eventb.core.scExtendsContext name="'" org.eventb.core.scTarget="/FanCtrl/FanCtrlMachine_implicitContext.bcc|org.eventb.core.scContextFile#FanCtrlMachine_implicitContext" org.eventb.core.source="/FanCtrl/FanCtrlMachineGC_implicitContext.buc|org.eventb.core.contextFile#FanCtrlMachineGC_implicitContext|org.eventb.core.extendsContext#_2RnCUNQ3EeKJ0LogSXIkJA"/>
 </org.eventb.core.scInternalContext>
 <org.eventb.core.scInvariant name="FanCtrlMachineGC_implicitContexu" org.eventb.core.label="typing_E_LM75_tempPSU" org.eventb.core.predicate="E_LM75_tempPSU∈ℤ" org.eventb.core.source="/FanCtrl/EnvNew.bum|org.eventb.core.machineFile#EnvNew|org.eventb.core.invariant#+" org.eventb.core.theorem="true"/>
 <org.eventb.core.scInvariant name="FanCtrlMachineGC_implicitContexv" org.eventb.core.label="typing_E_MAX6650_fanOn" org.eventb.core.predicate="E_MAX6650_fanOn∈BOOL" org.eventb.core.source="/FanCtrl/EnvNew.bum|org.eventb.core.machineFile#EnvNew|org.eventb.core.invariant#," org.eventb.core.theorem="true"/>

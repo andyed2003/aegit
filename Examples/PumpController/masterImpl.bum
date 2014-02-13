@@ -35,14 +35,12 @@
 <org.eventb.core.parameter name="'" org.eventb.codegen.ui.parameterTypeAttribute="Out" org.eventb.core.identifier="q"/>
 <org.eventb.core.guard name=")" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="typing_p" org.eventb.core.predicate="q ∈ ℤ" org.eventb.core.theorem="true"/>
 <org.eventb.core.guard name="(" org.eventb.codegen.ui.typingAttribute="NonTyping" org.eventb.core.label="grd1" org.eventb.core.predicate="q = m_level"/>
-<org.eventb.core.witness name="*" org.eventb.core.label="p" org.eventb.core.predicate="p=q"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="=" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="fmiSetBoolean_c">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="fmiSetBoolean_c"/>
 <org.eventb.core.parameter name="'" org.eventb.codegen.ui.parameterTypeAttribute="Out" org.eventb.core.identifier="r"/>
 <org.eventb.core.guard name=")" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="typing_p" org.eventb.core.predicate="r ∈ BOOL" org.eventb.core.theorem="true"/>
 <org.eventb.core.guard name="(" org.eventb.codegen.ui.typingAttribute="NonTyping" org.eventb.core.label="grd1" org.eventb.core.predicate="r = m_pumpOnReq"/>
-<org.eventb.core.witness name="*" org.eventb.core.label="p" org.eventb.core.predicate="p=r"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="&gt;" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="fmiSetBoolean_e">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="fmiSetBoolean_e"/>

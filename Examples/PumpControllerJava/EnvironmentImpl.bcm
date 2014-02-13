@@ -58,5 +58,7 @@
 <org.eventb.core.scAction name="(" org.eventb.core.assignment="e_level :∈ ℤ" org.eventb.core.label="act1" org.eventb.core.source="/PumpControllerJava/EnvironmentImpl.bum|org.eventb.core.machineFile#EnvironmentImpl|org.eventb.core.event#_Cl3TwI_pEeO90uPncl7G7C|org.eventb.core.action#'"/>
 <org.eventb.core.scAction name=")" org.eventb.core.assignment="e_pumpOnReq :∈ BOOL" org.eventb.core.label="act2" org.eventb.core.source="/PumpControllerJava/EnvironmentImpl.bum|org.eventb.core.machineFile#EnvironmentImpl|org.eventb.core.event#_Cl3TwI_pEeO90uPncl7G7C|org.eventb.core.action#("/>
 </org.eventb.core.scEvent>
-<org.eventb.core.scEvent ch.ethz.eventb.decomposition.external="false" name="e_pumpOnRex" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="read_ePorts" org.eventb.core.source="/PumpControllerJava/EnvironmentImpl.bum|org.eventb.core.machineFile#EnvironmentImpl|org.eventb.core.event#_Cl3TwI_pEeO90uPncl7G7D"/>
+<org.eventb.core.scEvent ch.ethz.eventb.decomposition.external="false" name="e_pumpOnRex" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="read_ePorts" org.eventb.core.source="/PumpControllerJava/EnvironmentImpl.bum|org.eventb.core.machineFile#EnvironmentImpl|org.eventb.core.event#_Cl3TwI_pEeO90uPncl7G7D">
+<org.eventb.core.scAction name="'" org.eventb.core.assignment="e_level ≔ e_level" org.eventb.core.label="act1" org.eventb.core.source="/PumpControllerJava/EnvironmentImpl.bum|org.eventb.core.machineFile#EnvironmentImpl|org.eventb.core.event#_Cl3TwI_pEeO90uPncl7G7D|org.eventb.core.action#'"/>
+</org.eventb.core.scEvent>
 </org.eventb.core.scMachineFile>

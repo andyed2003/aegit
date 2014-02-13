@@ -1,0 +1,3 @@
+project FanCtrl_Main is
+  for Main use ("FanCtrl_Main.adb");
+end FanCtrl_Main;
