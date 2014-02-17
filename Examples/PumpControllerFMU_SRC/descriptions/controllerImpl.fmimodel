@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fmiModelDescription author="University of Southampton" fmiVersion="2.0" generationDateAndTime="2014-02-17T10:31:57.165Z" generationTool="EB2FMU" guid="GUID_controllerImpl_2014-02-17T10:31:57.165Z" modelName="controllerImpl" numberOfEventIndicators="0">
+  <CoSimulation modelIdentifier="controllerImpl"/>
+  <ModelVariables>
+    <ScalarVariable name="c_level" valueReference="0">
+      <Integer/>
+    </ScalarVariable>
+    <ScalarVariable name="c_pumpOnReq" valueReference="0">
+      <Boolean/>
+    </ScalarVariable>
+    <ScalarVariable name="c_pumpOnCmd" valueReference="1">
+      <Boolean/>
+    </ScalarVariable>
+    <ScalarVariable name="c_warn" valueReference="2">
+      <Boolean/>
+    </ScalarVariable>
+    <ScalarVariable name="c_level_internal" valueReference="1">
+      <Integer/>
+    </ScalarVariable>
+    <ScalarVariable name="c_pumpOnReq_internal" valueReference="3">
+      <Boolean/>
+    </ScalarVariable>
+  </ModelVariables>
+</fmiModelDescription>
