@@ -91,6 +91,8 @@ public class PackageFMU implements IObjectActionDelegate {
 		
 		// Construct the libraryName - this may need to change - for the FMU
 		// standard
+		String OSName = System.getProperty("os.name");
+		// TODO appropriate fileExtension
 		String sourceBinaryFileName = "lib" + projectName + ".so";
 		// Get the binary.so
 		IFile debugBinaryFile = debugBinariesFolder.getFile(sourceBinaryFileName);
