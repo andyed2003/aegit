@@ -9,6 +9,7 @@ import java.io.InputStreamReader;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
+import org.eclipse.core.internal.resources.Resource;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
@@ -92,8 +93,10 @@ public class PackageFMU implements IObjectActionDelegate {
 		// Construct the libraryName - this may need to change - for the FMU
 		// standard
 		String OSName = System.getProperty("os.name");
-		// TODO appropriate fileExtension
-		String sourceBinaryFileName = "lib" + projectName + ".so";
+		String fileExt = "unknown";
+		if(OSName.equalsIgnoreCase("linux")) fileExt = ".so";
+		if(OSName.equalsIgnoreCase("windows")) fileExt = ".dll";
+		String sourceBinaryFileName = "lib" + projectName + fileExt;
 		// Get the binary.so
 		IFile debugBinaryFile = debugBinariesFolder.getFile(sourceBinaryFileName);
 		IFile releaseBinaryFile = releaseBinariesFolder.getFile(sourceBinaryFileName);
@@ -103,7 +106,7 @@ public class PackageFMU implements IObjectActionDelegate {
 		}
 		else if(debugBinaryFile.exists() && releaseBinaryFile.exists()){
 			throw new IOException("cannot process both 'debug' and 'release' libraries \n + " +
-					"please delete one - TODO - fix this");
+					"please delete one - TODO - add a dialog to allow the user to select a file.");
 		}
 		else if(debugBinaryFile.exists()){
 			binaryFile = debugBinaryFile;
@@ -130,6 +133,7 @@ public class PackageFMU implements IObjectActionDelegate {
 		// package the model description
 		packageModelDescription(srcDescriptionFile, zipOut);
 		zipOut.close();
+		targetProject.refreshLocal(Resource.DEPTH_INFINITE, null);
 	}
 
 
