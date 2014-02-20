@@ -20,7 +20,26 @@
                class="ac.soton.fmusim.codegen.popup.actions.CodeGen"
                menubarPath="ac.soton.fmusim.codegen.menu1/group1"
                enablesFor="1"
-               id="ac.soton.fmusim.codegen.newAction">
+               id="ac.soton.fmusim.codegen.newAction1">
+         </action>
+      </objectContribution>
+      <objectContribution
+            id="ac.soton.fmusim.codegen.contribution2"
+            objectClass="ac.soton.fmusim.components.diagram.edit.parts.EventBComponentEditPart">
+         <menu
+               id="ac.soton.fmusim.codegen.menu2"
+               label="FMI"
+               path="additions">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+         <action
+               class="ac.soton.fmusim.codegen.popup.actions.CodeGen"
+               enablesFor="1"
+               id="ac.soton.fmusim.codegen.newAction2"
+               label="Generate FMU C Project"
+               menubarPath="ac.soton.fmusim.codegen.menu2/group2">
          </action>
       </objectContribution>
    </extension>

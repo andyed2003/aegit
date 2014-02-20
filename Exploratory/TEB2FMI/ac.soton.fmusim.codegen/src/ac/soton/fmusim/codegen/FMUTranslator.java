@@ -30,11 +30,17 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMLResourceFactoryImpl;
+import org.eclipse.gef.EditPart;
+import org.eclipse.gef.RootEditPart;
+import org.eclipse.gmf.runtime.common.ui.action.ActionManager;
+import org.eclipse.gmf.runtime.diagram.ui.parts.IDiagramEditDomain;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.widgets.DirectoryDialog;
 import org.eclipse.ui.PlatformUI;
@@ -71,6 +77,12 @@ import org.rodinp.core.IRodinFile;
 import org.rodinp.core.IRodinProject;
 import org.rodinp.core.RodinCore;
 import org.rodinp.core.RodinDBException;
+import org.rodinp.internal.core.RodinProject;
+
+import tasking.AutoTask_Machine;
+
+import ac.soton.fmusim.components.diagram.edit.parts.EventBComponentEditPart;
+import ac.soton.fmusim.components.impl.EventBComponentImpl;
 
 import FmiModel.BooleanType;
 import FmiModel.CoSimulationType;
@@ -136,13 +148,35 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			TaskingTranslationException, FMUTranslatorException {
 		// check to see that the user has selected a machine
 		// for translation
-		if (!(s.getFirstElement() instanceof MachineRoot)) {
+		EventBComponentEditPart selectedEditPart = null;
+		if (!(s.getFirstElement() instanceof EventBComponentEditPart)) {
 			throw new FMUTranslatorException(
-					"Only a machine can be selected for translation to an FMU");
+					"Only a component can be selected for translation to an FMU");
 		}
 		else{
-			System.out.println("Translating to FMU C, from a Machine (not consulting the diagram) ");
+			System.out.println("Translating to FMU C from the diagram");
+			selectedEditPart = (EventBComponentEditPart) s.getFirstElement();
 		}
+		
+		EventBComponentImpl eventBComponentImpl = (EventBComponentImpl) selectedEditPart.getNotationView().getElement();
+		Machine emfMachine = eventBComponentImpl.getMachine();
+		TreeIterator<EObject> contents = emfMachine.eAllContents();
+		
+		while(contents.hasNext()){
+			EObject obj = contents.next();
+			if(obj instanceof IRodinProject){
+				System.out.println();
+			}
+			if(obj instanceof AutoTask_Machine){
+				System.out.println();
+			}
+			
+		}
+		
+		// The existing translator is set up to use the machineRoot so we should get this.
+	
+		
+		 
 		super.setSelection(s);
 		doTranslateToFMU(s);
 	}
