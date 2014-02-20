@@ -22,6 +22,7 @@ import org.osgi.service.prefs.BackingStoreException;
 import org.rodinp.core.RodinDBException;
 
 import ac.soton.fmusim.codegen.FMUTranslator;
+import ac.soton.fmusim.codegen.FMUTranslatorException;
 import ac.soton.fmusim.codegen.FMUTranslatorPlugin;
 
 public class CodeGen implements IObjectActionDelegate {
@@ -93,7 +94,10 @@ public class CodeGen implements IObjectActionDelegate {
 			Status status = new Status(IStatus.ERROR, FMUTranslatorPlugin.PLUGIN_ID,
 					"Failed Translation: IL1TranslationException:" + e.getMessage(), e);
 			StatusManager.getManager().handle(status, StatusManager.SHOW);
-		}
+		} catch (FMUTranslatorException e) {
+			Status status = new Status(IStatus.ERROR, FMUTranslatorPlugin.PLUGIN_ID,
+					"Failed Translation: FMUTranslationException:" + e.getMessage(), e);
+			StatusManager.getManager().handle(status, StatusManager.SHOW);		}
 	}
 
 	/**

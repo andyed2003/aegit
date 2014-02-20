@@ -25,6 +25,7 @@ public class EnvironmentImpl implements Runnable {
 			long THREAD_START_TIME = System.currentTimeMillis();
 			synchronized (lock) {
 				// Translated code
+				e_level = e_level;
 			}
 			// [Internal] Code to monitor time between periodic tasks
 			long THREAD_END_TIME = System.currentTimeMillis();
