@@ -197,6 +197,115 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		updateResources();
 	}
 
+	// DESIGN NOTE !!!
+	// How do we prevent the communication events from being translated? Since the master
+	// takes care of the communications, we need to ignore synchronizing events.
+	// The problem is that when initiating translation from the diagram we have no idea
+	// which composed machine describes the synchronizations. There could be a number of
+	// composed machines in a single project, involving the machine to be translated.
+	// We use the following solution: we preclude the use of shared machines!!!
+	// Then we can select events to ignore when they have parameters (since this indicates
+	// that they are communicating, because we don't use local variables in events).
+	
+	
+	
+	// This method translates Event-B models into an IL1 program
+	private static Program translateEventBToIL1(MachineRoot machineRoot)
+			throws TaskingTranslationException, BackingStoreException,
+			CoreException, IOException, URISyntaxException,
+			FMUTranslatorException {
+		// indicate to the tasking translation manager that we are undertaking an FMU translation.
+		// We need this since the FMU translation type is optional and may well be removed.;
+		taskingTranslationManager.setFMUTranslation(true);
+		// load the EMF components
+		RMLDataStruct loadedEMFComponents = EMFLoader.loadEMFMachinesContexts(machineRoot);
+		// insert the machineRoot into an array to send to the translator
+		List<Object> componentList = new ArrayList<Object>();
+		componentList.add(machineRoot);
+		Object[] componentArrays = componentList.toArray();
+		
+		IFile target = null;
+		// Get target's location from the list which is derived from the
+		// structured selection.
+		target = machineRoot.getResource();
+		storeProject(target.getProject(), taskingTranslationManager);
+		
+		Program program = taskingTranslationManager.translateToIL1Entry(componentArrays,
+				null, null, null, loadedEMFComponents);
+		
+		// We delete the temporary subroutines
+		EList<Protected> protectedList = program.getProtected();
+		for (Protected prot : protectedList) {
+			EList<Subroutine> subroutineList = prot.getSubroutines();
+			List<Subroutine> tmpSubroutine = new ArrayList<Subroutine>();
+			for (Subroutine subroutine : subroutineList) {
+				if (!subroutine.isTemporary()) {
+					tmpSubroutine.add(subroutine);
+				}
+			}
+			if (tmpSubroutine.size() != subroutineList.size()) {
+				subroutineList.clear();
+				subroutineList.addAll(tmpSubroutine);
+			}
+		}
+		saveBaseProgram(program, targetFile(target));
+		// We reset this flag, since we have finished.
+		taskingTranslationManager.setFMUTranslation(false);
+		return program;
+	}
+	
+	// This method is equivalent to CProgramIL1Translator, tailored for
+	// use with FMI translation.
+	// It translates protected objects (from FMU Machines) to FMU
+	// implementations.
+	private void translateIL1ToFMU(Program program)
+			throws IL1TranslationUnhandledTypeException, RodinDBException,
+			TaskingTranslationUnhandledTypeException {
+		il1TranslationManager = new IL1TranslationManager();
+
+		// /////////////////////////////////il1TranslationManager.currentTargetLanguage
+		// = ;
+		// These are FMU specific headers. The first is for configuration
+		il1TranslationManager.addIncludeStatement("#include \"config.h\"");
+		il1TranslationManager
+				.addIncludeStatement("#include \"fmiFunctions.h\"");
+		// This is for my FMI Declarations. It contains a
+		// description of my FMI component, for instance.
+		il1TranslationManager.addIncludeStatement("#include \"myFMIDecls.h\"");
+		ArrayList<String> code = null;
+		// Translation Rules
+		Map<IProject, List<ITranslationRule>> translationRules = loadTranslatorRules();
+		il1TranslationManager.setTranslatorRules(translationRules);
+		// Types Rules
+		Map<IProject, List<ITranslationRule>> translationTypeRules = loadTranslatorTypeRules();
+		il1TranslationManager.setTranslatorTypeRules(translationTypeRules);
+		String parentDirectoryPath = getFilePathFromSelected();
+		if (parentDirectoryPath != null) {
+			ArrayList<ClassHeaderInformation> headerInfo = il1TranslationManager
+					.getClassHeaderInformation();
+			ArrayList<String> globalDecls = translatedGlobalDecls(program);
+			// make the file system ready.
+			String newDirectoryPath = generatedSourceFolder.getRawLocation()
+					.toString() + File.separatorChar;
+			EList<Protected> protectedList = program.getProtected();
+			// TRANSLATE EACH protected object
+			for (Protected p : protectedList) {
+				code = il1TranslationManager.translateIL1ElementToCode(p,
+						getTargetLanguage());
+				code.add(0, "#include \"" + COMMON_HEADER_FULL + "\"");
+				code.add("// EndProtected");
+				// Generate the header files.
+				// Each protected file just includes "common.h" which includes
+				// the other
+				// files. Get the global decls to pass to the header.
+				generateFMUHeaders(headerInfo, newDirectoryPath,
+						il1TranslationManager, globalDecls);
+			}
+			generateGlobalHeader(headerInfo, newDirectoryPath,
+					il1TranslationManager, globalDecls);
+		}
+	}
+	
 	private void getTargetProject(
 			TaskingTranslationManager taskingTranslationManager)
 			throws CoreException, TaskingTranslationException, FMUTranslatorException {
@@ -401,107 +510,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		return xmlGC;
 	}
 
-	// This method translates Event-B models into an IL1 program
-	private static Program translateEventBToIL1(MachineRoot machineRoot)
-			throws TaskingTranslationException, BackingStoreException,
-			CoreException, IOException, URISyntaxException,
-			FMUTranslatorException {
-		// indicate to the tasking translation manager that we are undertaking an FMU translation.
-		// We need this since the FMU translation type is optional and may well be removed.;
-		taskingTranslationManager.setFMUTranslation(true);
-		// load the EMF components
-		RMLDataStruct loadedEMFComponents = EMFLoader.loadEMFMachinesContexts(machineRoot);
-		// insert the machineRoot into an array to send to the translator
-		List<Object> componentList = new ArrayList<Object>();
-		componentList.add(machineRoot);
-		Object[] componentArrays = componentList.toArray();
-		
-		IFile target = null;
-		// Get target's location from the list which is derived from the
-		// structured selection.
-		target = machineRoot.getResource();
-		storeProject(target.getProject(), taskingTranslationManager);
-		
-		Program program = taskingTranslationManager.translateToIL1Entry(componentArrays,
-				null, null, null, loadedEMFComponents);
-		
-		// We delete the temporary subroutines
-		EList<Protected> protectedList = program.getProtected();
-		for (Protected prot : protectedList) {
-			EList<Subroutine> subroutineList = prot.getSubroutines();
-			List<Subroutine> tmpSubroutine = new ArrayList<Subroutine>();
-			for (Subroutine subroutine : subroutineList) {
-				if (!subroutine.isTemporary()) {
-					tmpSubroutine.add(subroutine);
-				}
-			}
-			if (tmpSubroutine.size() != subroutineList.size()) {
-				subroutineList.clear();
-				subroutineList.addAll(tmpSubroutine);
-			}
-		}
-		saveBaseProgram(program, targetFile(target));
-		// We reset this flag, since we have finished.
-		taskingTranslationManager.setFMUTranslation(false);
-		return program;
-	}
-	
-	
-	
-	
-	// This method is equivalent to CProgramIL1Translator, tailored for
-	// use with FMI translation.
-	// It translates protected objects (from FMU Machines) to FMU
-	// implementations.
-	private void translateIL1ToFMU(Program program)
-			throws IL1TranslationUnhandledTypeException, RodinDBException,
-			TaskingTranslationUnhandledTypeException {
-		il1TranslationManager = new IL1TranslationManager();
 
-		// /////////////////////////////////il1TranslationManager.currentTargetLanguage
-		// = ;
-		// These are FMU specific headers. The first is for configuration
-		il1TranslationManager.addIncludeStatement("#include \"config.h\"");
-		il1TranslationManager
-				.addIncludeStatement("#include \"fmiFunctions.h\"");
-		// This is for my FMI Declarations. It contains a
-		// description of my FMI component, for instance.
-		il1TranslationManager.addIncludeStatement("#include \"myFMIDecls.h\"");
-		ArrayList<String> code = null;
-		// Translation Rules
-		Map<IProject, List<ITranslationRule>> translationRules = loadTranslatorRules();
-		il1TranslationManager.setTranslatorRules(translationRules);
-		// Types Rules
-		Map<IProject, List<ITranslationRule>> translationTypeRules = loadTranslatorTypeRules();
-		il1TranslationManager.setTranslatorTypeRules(translationTypeRules);
-		String parentDirectoryPath = getFilePathFromSelected();
-		if (parentDirectoryPath != null) {
-			ArrayList<ClassHeaderInformation> headerInfo = il1TranslationManager
-					.getClassHeaderInformation();
-			ArrayList<String> globalDecls = translatedGlobalDecls(program);
-			// make the file system ready.
-			String newDirectoryPath = generatedSourceFolder.getRawLocation()
-					.toString() + File.separatorChar;
-			EList<Protected> protectedList = program.getProtected();
-			// TRANSLATE EACH protected object
-			for (Protected p : protectedList) {
-				code = il1TranslationManager.translateIL1ElementToCode(p,
-						getTargetLanguage());
-				code.add(0, "#include \"" + COMMON_HEADER_FULL + "\"");
-				code.add("// EndProtected");
-				// Generate the header files.
-				// Each protected file just includes "common.h" which includes
-				// the other
-				// files. Get the global decls to pass to the header.
-				generateFMUHeaders(headerInfo, newDirectoryPath,
-						il1TranslationManager, globalDecls);
-			}
-
-			generateGlobalHeader(headerInfo, newDirectoryPath,
-					il1TranslationManager, globalDecls);
-
-		}
-	}
 
 	// This code generates a common header
 	private void generateGlobalHeader(
