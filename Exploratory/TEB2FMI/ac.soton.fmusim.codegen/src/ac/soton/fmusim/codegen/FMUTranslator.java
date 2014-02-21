@@ -8,6 +8,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -37,11 +38,8 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMLResourceFactoryImpl;
-import org.eclipse.gef.EditPart;
-import org.eclipse.gef.RootEditPart;
-import org.eclipse.gmf.runtime.common.ui.action.ActionManager;
-import org.eclipse.gmf.runtime.diagram.ui.parts.IDiagramEditDomain;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.swt.widgets.DirectoryDialog;
 import org.eclipse.ui.PlatformUI;
 import org.eventb.codegen.il1.Declaration;
@@ -65,25 +63,22 @@ import org.eventb.codegen.tasking.TaskingTranslationManager;
 import org.eventb.codegen.tasking.TaskingTranslationUnhandledTypeException;
 import org.eventb.codegen.tasking.utils.CodeGenTaskingUtils;
 import org.eventb.codegen.templates.util.TemplateException;
+import org.eventb.core.IEventBProject;
+import org.eventb.core.IMachineRoot;
 import org.eventb.core.ast.ITypeEnvironment;
 import org.eventb.core.ast.Type;
 import org.eventb.core.basis.MachineRoot;
 import org.eventb.emf.core.machine.Machine;
 import org.eventb.emf.core.machine.Variable;
-import org.eventb.emf.core.machine.impl.MachineImpl;
+import org.eventb.emf.persistence.factory.RodinResource;
 import org.osgi.service.prefs.BackingStoreException;
 import org.rodinp.core.IRodinDB;
 import org.rodinp.core.IRodinFile;
 import org.rodinp.core.IRodinProject;
 import org.rodinp.core.RodinCore;
 import org.rodinp.core.RodinDBException;
-import org.rodinp.internal.core.RodinProject;
 
 import tasking.AutoTask_Machine;
-
-import ac.soton.fmusim.components.diagram.edit.parts.EventBComponentEditPart;
-import ac.soton.fmusim.components.impl.EventBComponentImpl;
-
 import FmiModel.BooleanType;
 import FmiModel.CoSimulationType;
 import FmiModel.DocumentRoot;
@@ -95,6 +90,8 @@ import FmiModel.ModelVariablesType;
 import FmiModel.RealType1;
 import FmiModel.StringType;
 import FmiModel.util.FmiModelResourceImpl;
+import ac.soton.fmusim.components.diagram.edit.parts.EventBComponentEditPart;
+import ac.soton.fmusim.components.impl.EventBComponentImpl;
 
 // This class is the entry point for the translation proper. 
 // UNLIKE the existing C code generator, it does not extend AbstractProgramIL1Translator.
@@ -157,28 +154,20 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			System.out.println("Translating to FMU C from the diagram");
 			selectedEditPart = (EventBComponentEditPart) s.getFirstElement();
 		}
-		
+		// The existing translator is set up to use the machineRoot so we should get this.
+		IStructuredSelection newSelection = new StructuredSelection();
 		EventBComponentImpl eventBComponentImpl = (EventBComponentImpl) selectedEditPart.getNotationView().getElement();
 		Machine emfMachine = eventBComponentImpl.getMachine();
-		TreeIterator<EObject> contents = emfMachine.eAllContents();
-		
-		while(contents.hasNext()){
-			EObject obj = contents.next();
-			if(obj instanceof IRodinProject){
-				System.out.println();
-			}
-			if(obj instanceof AutoTask_Machine){
-				System.out.println();
-			}
-			
+		Resource resource = emfMachine.eResource();
+		if(resource instanceof RodinResource){
+			RodinResource rodinResource = (RodinResource) resource;
+			IRodinProject rodinProject = rodinResource.getRodinFile().getRodinProject();
+			IEventBProject eventBProject = (IEventBProject) rodinProject.getAdapter(IEventBProject.class);
+			IMachineRoot machineRoot = eventBProject.getMachineRoot(emfMachine.getName());
+			newSelection = new StructuredSelection(machineRoot);
 		}
-		
-		// The existing translator is set up to use the machineRoot so we should get this.
-	
-		
-		 
-		super.setSelection(s);
-		doTranslateToFMU(s);
+		super.setSelection(newSelection);
+		doTranslateToFMU(newSelection);
 	}
 
 	private void doTranslateToFMU(IStructuredSelection s)
