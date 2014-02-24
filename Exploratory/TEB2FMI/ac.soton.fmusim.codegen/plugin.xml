@@ -206,11 +206,6 @@
                sourceClass="FMU_Machine"
                taskingTranslatorClass="ac.soton.fmusim.codegen.translator.eb2il1.FMUMachineTaskingTranslator">
          </taskingTranslator>
-         <taskingTranslator
-               name="EventWrapper"
-               sourceClass="EventWrapper"
-               taskingTranslatorClass="ac.soton.fmusim.codegen.translator.eb2il1.FMUEventWrapperTaskingTranslator">
-         </taskingTranslator>
       </emfPackage>
    </extension>
 

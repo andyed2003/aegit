@@ -51,7 +51,7 @@ public class FMUMachineTaskingTranslator extends AbstractTaskingTranslator {
 		Map<String, IL1Element> storedElements = translationManager
 				.getStoredElements();
 
-		// This is where we stash the previously translated subroutines
+		// This is where we stash the translated subroutines
 		// for translation to the FMIDoStep
 		List<Subroutine> fmiDoStepSubroutineList = new ArrayList<Subroutine>();
 		communicatingSubroutines = new ArrayList<Subroutine>();
@@ -83,14 +83,19 @@ public class FMUMachineTaskingTranslator extends AbstractTaskingTranslator {
 							// Any subroutines added are necessarily temporary,
 							// since they are in-lined in the do-step
 							EList<Parameter> formalParameters = subroutine.getFormalParameters();
-							// all subroutines are temporary since all events can be in-lined.
-							// getters and setters can be derived from the diagram
-							subroutine.setTemporary(true);
 							// partition into communicating and doStep subroutines
 							if( formalParameters == null || formalParameters.size() == 0){
+								// non-communicating subroutines are temporary, since events
+								// can be in-lined. 
+								subroutine.setTemporary(true);
 								fmiDoStepSubroutineList.add(subroutine);
 							} else{
+								// Communicating subroutines are required for
+								// getters and setter info
+								subroutine.setTemporary(false);
 								communicatingSubroutines.add(subroutine);
+								translationManager.getCommunicatingSubroutines().add(subroutine);
+								protectedObj.getSubroutines().add(subroutine);
 							}
 						}
 					}
@@ -111,9 +116,7 @@ public class FMUMachineTaskingTranslator extends AbstractTaskingTranslator {
 			throw new TaskingTranslationUnhandledTypeException(source);
 		}
 
-		// Get, what is at the moment, the task body. Hopefully we can rename it
-		// to
-		// FMI DO STEP BODY or some such name, for FMUs.
+		// Get the task body.
 		EList<AbstractExtension> extensionList = containingMachine
 				.getExtensions();
 		for (AbstractExtension ext : extensionList) {

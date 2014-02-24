@@ -2,11 +2,23 @@
 <il1:Program xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:il1="http://il1/1.0" projectName="PumpControllerFMU">
   <decls xsi:type="il1:ConstantDecl" identifier="MIN" type="&#x2124;" initialValue="10" ProjectName="PumpControllerFMU" ComponentName="ctx"/>
   <protected name="ControllerImpl" projectName="PumpControllerFMU" machineName="ControllerImpl">
+    <subroutines name="setWarn_eAPI" machineName="ControllerImpl" projectName="PumpControllerFMU">
+      <formalParameters xsi:type="il1:OutParameter" identifier="c_warn" type=" BOOL" ProjectName="PumpControllerFMU"/>
+    </subroutines>
+    <subroutines name="getPumpOnReq_eAPI" machineName="ControllerImpl" projectName="PumpControllerFMU">
+      <body xsi:type="il1:Action" ParentEventName="getPumpOnReq_eAPI" action="c_pumpOnReq &#x2254; p2"/>
+      <formalParameters xsi:type="il1:InParameter" identifier="p2" type=" BOOL" ProjectName="PumpControllerFMU"/>
+    </subroutines>
+    <subroutines name="getLevel_eAPI" machineName="ControllerImpl" projectName="PumpControllerFMU">
+      <body xsi:type="il1:Action" ParentEventName="getLevel_eAPI" action="c_level &#x2254; p1"/>
+      <formalParameters xsi:type="il1:InParameter" identifier="p1" type=" &#x2124;" ProjectName="PumpControllerFMU"/>
+    </subroutines>
+    <subroutines name="setPumpOnCmd_eAPI" machineName="ControllerImpl" projectName="PumpControllerFMU">
+      <formalParameters xsi:type="il1:OutParameter" identifier="c_pumpOnCmd" type=" BOOL" ProjectName="PumpControllerFMU"/>
+    </subroutines>
     <subroutines name="fmiDoStep" machineName="ControllerImpl" projectName="PumpControllerFMU">
       <body xsi:type="il1:Seq">
-        <leftBranch xsi:type="il1:Action" ParentEventName="getLevel_eAPI" action="c_level &#x2254; p1"/>
         <rightBranch xsi:type="il1:Seq">
-          <leftBranch xsi:type="il1:Action" ParentEventName="getPumpOnReq_eAPI" action="c_pumpOnReq &#x2254; p2"/>
           <rightBranch xsi:type="il1:Seq">
             <leftBranch xsi:type="il1:Seq">
               <leftBranch xsi:type="il1:Action" ParentEventName="internalCommsPre" action="c_level_internal  &#x2254; c_level"/>

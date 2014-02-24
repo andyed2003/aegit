@@ -24,6 +24,10 @@ import org.eventb.core.ast.ITypeEnvironment;
 import org.eventb.core.ast.Type;
 import org.eventb.core.basis.MachineRoot;
 
+import FmiModel.CoSimulationType;
+import FmiModel.FmiModelDescriptionType;
+import FmiModel.FmiSimpleType;
+import FmiModel.TypeDefinitionsType;
 import ac.soton.fmusim.codegen.FMUTranslator;
 
 public class SubroutineListGenerator extends AbstractSubroutineIL1Translator
@@ -113,7 +117,18 @@ public class SubroutineListGenerator extends AbstractSubroutineIL1Translator
 			IL1TranslationManager translationManager)
 			throws IL1TranslationException {
 		ArrayList<String> outCode = new ArrayList<String>();
-
+		
+		boolean USE_NEW_CODE = true;
+		
+		if(USE_NEW_CODE){
+			// generate getters and setters
+			outCode.addAll(newGenerateGetterSetterFunctions());
+			// generate fmiDoStep
+			outCode.addAll(call_NewGenerateFMIDoStepFunction(name, parameterDefinitions, localVariables, guardList,
+					body, isProtected, isEnviron, machineName, actualSource, translationManager));
+			return outCode;
+		}
+		
 		// For an FMU we know that subroutines are either:
 		// 1 - communicating with the master - i.e. an fmiGetXXX, or fmiSetXXX;
 		// or
@@ -142,7 +157,6 @@ public class SubroutineListGenerator extends AbstractSubroutineIL1Translator
 		EList<Parameter> formalParams = actualSource.getFormalParameters();
 		String fmiTypeName = null;
 		String communicationDirection = null;
-
 		// >>>>> // if this has parameter(s) then it must be a getXXX or SetXXX
 		// for the master
 		if (formalParams.size() > 0) {
@@ -268,6 +282,88 @@ public class SubroutineListGenerator extends AbstractSubroutineIL1Translator
 		}
 		return outCode;
 	}
+
+	
+// create some new getters and setters
+	private List<String> newGenerateGetterSetterFunctions() {
+		List<String> outCode = new ArrayList<String>();
+		FmiModelDescriptionType description = FMUTranslator.getDescription();
+		EList<CoSimulationType> coSimTypes = description.getCoSimulation();
+		
+		
+		return outCode;
+	}
+
+	// a new generatefunction method that creates:
+	// in-line actions for subroutines, derived from the taskbody, into the fmiDoStep function
+	// Generate getters/setters for different the types i.e. Integer, Boolean, String, Real
+	private ArrayList<String> call_NewGenerateFMIDoStepFunction(String name,
+			ArrayList<String> parameterDefinitions,
+			ArrayList<ArrayList<String>> localVariables, String guardList,
+			ArrayList<String> body, boolean isProtected, boolean isEnviron,
+			String machineName, Subroutine actualSource,
+			IL1TranslationManager translationManager) throws IL1TranslationException {
+		
+		ArrayList<String> outCode = new ArrayList<String>();
+
+		// if the subroutine is not communicating then map it to the fmiDoStep
+		if(!translationManager.getCommunicatingSubroutines().contains(actualSource)){
+			// Format the parameters
+			String fmiAPIparameters = "fmiComponent c, fmiReal currentCommunicationPoint,"
+					+ " fmiReal communicationStepSize, fmiBoolean noSetFMUStatePriorToCurrentPoint";
+
+			// Uniquely identify each event name using the machine name
+			String doStepSignature = "fmiStatus fmiDoStep(" + fmiAPIparameters
+					+ ")";
+			// This is where we store the function Declaration that goes into
+			// the header for the current C file.
+			headerInfo.getHeaderEntries().add(doStepSignature + ";");
+			outCode.add(doStepSignature);
+			outCode.add("{"); // open function
+
+			// Guards
+			if (!guardList.equals("")) {
+				outCode.add("// Check to see if guard is met");
+				outCode.add("if (" + guardList + ")");
+				outCode.add("{"); // open guarded
+			}
+
+			// Local variables
+			for (ArrayList<String> lVars : localVariables) {
+				outCode.addAll(lVars);
+			}
+
+			List<String> newBody = substituteVariableRefs(body, actualSource,
+					translationManager);
+			// Body code
+			outCode.add("fmi_Component* mc = c;");
+			outCode.add("// Translated code");
+			outCode.addAll(newBody);
+
+			if (!guardList.equals("")) {
+				if (isProtected || isEnviron) {
+					outCode.add("");
+				}
+				outCode.add("}"); // close guarded
+			}
+			outCode.add("return fmiOK;"); // return OK upon successful
+											// completion
+			outCode.add("}"); // close function
+
+		}
+		// the actual source is communicating
+		
+		
+		return outCode;
+	}
+
+	
+	
+	
+	
+	
+	
+	
 
 	@Override
 	protected String generateParameterDefinition(String type,

@@ -86,8 +86,8 @@ import FmiModel.ModelVariablesType;
 import FmiModel.RealType1;
 import FmiModel.StringType;
 import FmiModel.util.FmiModelResourceImpl;
+import ac.soton.fmusim.components.EventBComponent;
 import ac.soton.fmusim.components.diagram.edit.parts.EventBComponentEditPart;
-import ac.soton.fmusim.components.impl.EventBComponentImpl;
 
 // This class is the entry point for the translation proper. 
 // UNLIKE the existing C code generator, it does not extend AbstractProgramIL1Translator.
@@ -131,7 +131,10 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 	private int stringVariableCount = 0;
 	private int integerVariableCount = 0;
 	private int boolVariableCount = 0;
+	private static FmiModelDescriptionType descriptionType;
 	private static IL1TranslationManager il1TranslationManager;
+	private static EventBComponent eventBComponent;
+	
 
 	// Translate the selected Composed Machine/Event-B Machine to FMU(s)
 	public void translateToFMU(IStructuredSelection s)
@@ -144,16 +147,24 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		EventBComponentEditPart selectedEditPart = null;
 		if (!(s.getFirstElement() instanceof EventBComponentEditPart)) {
 			throw new FMUTranslatorException(
-					"Only a component can be selected for translation to an FMU");
+					"Only a component edit part can be selected for translation to an FMU");
 		}
 		else{
 			System.out.println("Translating to FMU C from the diagram");
 			selectedEditPart = (EventBComponentEditPart) s.getFirstElement();
 		}
+			
+			
 		// The existing translator is set up to use the machineRoot so we should get this.
 		IStructuredSelection newSelection = new StructuredSelection();
-		EventBComponentImpl eventBComponentImpl = (EventBComponentImpl) selectedEditPart.getNotationView().getElement();
-		Machine emfMachine = eventBComponentImpl.getMachine();
+		eventBComponent = (EventBComponent) selectedEditPart.getNotationView().getElement();
+		Machine emfMachine = eventBComponent.getMachine();
+		if(emfMachine == null)
+		{
+			throw new FMUTranslatorException(
+					"Only a machine can be translated to an FMU");
+		}
+
 		Resource resource = emfMachine.eResource();
 		if(resource instanceof RodinResource){
 			RodinResource rodinResource = (RodinResource) resource;
@@ -185,14 +196,16 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		IRodinDB rodinDB = RodinCore.getRodinDB();
 		sourceRodinProject = rodinDB.getRodinProject(program.getProjectName());
 		// Create a target Directory
-		getTargetProject(taskingTranslationManager);
+		if(getTargetProject(taskingTranslationManager) == false){
+			return;
+		}
 		// From the program, we can create the modelDescription file
 		createModelDescriptionFile(program);
 		// copy the external (pre-defined) files across
 		ExternalFileHandler fHandler = new ExternalFileHandler();
 		fHandler.handleExternalFiles();
 		// we can generate the FMU from the IL1program.
-		translateIL1ToFMU(program);
+		translateIL1ToFMU(program, taskingTranslationManager);
 		// reflect the changes in the model, back to the workspace.
 		updateResources();
 	}
@@ -258,11 +271,11 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 	// use with FMI translation.
 	// It translates protected objects (from FMU Machines) to FMU
 	// implementations.
-	private void translateIL1ToFMU(Program program)
+	private void translateIL1ToFMU(Program program, TaskingTranslationManager taskingTranslationManager)
 			throws IL1TranslationUnhandledTypeException, RodinDBException,
 			TaskingTranslationUnhandledTypeException {
 		il1TranslationManager = new IL1TranslationManager();
-
+		il1TranslationManager.getCommunicatingSubroutines().addAll(taskingTranslationManager.getCommunicatingSubroutines());
 		// /////////////////////////////////il1TranslationManager.currentTargetLanguage
 		// = ;
 		// These are FMU specific headers. The first is for configuration
@@ -306,7 +319,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		}
 	}
 	
-	private void getTargetProject(
+	private boolean getTargetProject(
 			TaskingTranslationManager taskingTranslationManager)
 			throws CoreException, TaskingTranslationException, FMUTranslatorException {
 		IWorkspace workspace = ResourcesPlugin.getWorkspace();
@@ -314,6 +327,9 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
 		DirectoryDialog dialog = new DirectoryDialog(shell);
 		String string = dialog.open();
+		if(string == null){
+			return false;
+		}
 		IPath path = new Path(string);
 		List<String> segments = Arrays.asList(path.segments());
 		targetProject = root.getProject(segments.get(segments.size() - 1));
@@ -325,6 +341,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		generatedSourceFolder = createCSourceFolder(targetProject,
 				GENERATED_SRC_FOLDER);
 		createCSourceFolder(targetProject, EXTERNAL_SOURCE_FOLDER);
+		return true;
 	}
 
 	private IFolder createCSourceFolder(IProject targetProject,
@@ -425,7 +442,9 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			}
 			resource.getContents().add(docRoot);
 			resource.save(Collections.EMPTY_MAP);
+			setDescription(descriptionType);
 	}// end of createModelDescriptionFile(...);
+
 
 	// create a new file, with fileName, in the named subFolder of 'the'
 	// targetProject.
@@ -801,4 +820,13 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			throw new IL1TranslationException("Type not found: "
 					+ fmiTypeString);
 	}
+
+	public static void setDescription(FmiModelDescriptionType descriptionType_) {
+		descriptionType = descriptionType_;
+	}
+	
+	public static FmiModelDescriptionType getDescription() {
+		return descriptionType;
+	}
+
 }
