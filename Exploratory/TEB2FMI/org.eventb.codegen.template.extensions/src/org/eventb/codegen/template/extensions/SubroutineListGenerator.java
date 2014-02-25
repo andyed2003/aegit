@@ -5,9 +5,6 @@ import java.util.List;
 
 import org.eclipse.emf.common.util.EList;
 import org.eventb.codegen.il1.Declaration;
-import org.eventb.codegen.il1.InParameter;
-import org.eventb.codegen.il1.OutParameter;
-import org.eventb.codegen.il1.Parameter;
 import org.eventb.codegen.il1.Protected;
 import org.eventb.codegen.il1.Subroutine;
 import org.eventb.codegen.il1.translator.ClassHeaderInformation;
@@ -20,14 +17,7 @@ import org.eventb.codegen.il1.translator.core.AbstractIL1TranslatorUtils;
 import org.eventb.codegen.il1.translator.core.AbstractSubroutineIL1Translator;
 import org.eventb.codegen.templates.IGenerator;
 import org.eventb.codegen.templates.IGeneratorData;
-import org.eventb.core.ast.ITypeEnvironment;
-import org.eventb.core.ast.Type;
-import org.eventb.core.basis.MachineRoot;
 
-import FmiModel.CoSimulationType;
-import FmiModel.FmiModelDescriptionType;
-import FmiModel.FmiSimpleType;
-import FmiModel.TypeDefinitionsType;
 import ac.soton.fmusim.codegen.FMUTranslator;
 
 public class SubroutineListGenerator extends AbstractSubroutineIL1Translator
@@ -94,20 +84,6 @@ public class SubroutineListGenerator extends AbstractSubroutineIL1Translator
 		}
 	}
 
-	private String getFMITypeName(String projectName, String machineName,
-			String variableName, IL1TranslationManager translationManager) {
-		String fmiTypeName;
-		MachineRoot root = (MachineRoot) translationManager.getSourceRoot(
-				projectName, machineName);
-		// get the FMI type from the type environment
-		ITypeEnvironment typeEnv = translationManager.getTypeEnvironment(root);
-		Type type = typeEnv.getType(variableName);
-		// We hard Code the translation of the parameter Type String here
-
-		fmiTypeName = FMUTranslator.getFMITypeString(type);
-		return fmiTypeName;
-	}
-
 	@Override
 	protected ArrayList<String> generateFunction(String name,
 			ArrayList<String> parameterDefinitions,
@@ -118,186 +94,18 @@ public class SubroutineListGenerator extends AbstractSubroutineIL1Translator
 			throws IL1TranslationException {
 		ArrayList<String> outCode = new ArrayList<String>();
 		
-		boolean USE_NEW_CODE = true;
 		
-		if(USE_NEW_CODE){
-			// generate getters and setters
-			outCode.addAll(newGenerateGetterSetterFunctions());
 			// generate fmiDoStep
-			outCode.addAll(call_NewGenerateFMIDoStepFunction(name, parameterDefinitions, localVariables, guardList,
+			outCode.addAll(generateFMIDoStepFunction(name, parameterDefinitions, localVariables, guardList,
 					body, isProtected, isEnviron, machineName, actualSource, translationManager));
 			return outCode;
-		}
-		
-		// For an FMU we know that subroutines are either:
-		// 1 - communicating with the master - i.e. an fmiGetXXX, or fmiSetXXX;
-		// or
-		// 2 - the fmiDoStep subroutine.
-		// This should help us to determine the parameters that we need for the
-		// subroutine.
-
-		// Signature for Getters 1:
-		// fmiStatus fmiGetXXX(fmiComponent c, const fmiValueReference vr[],
-		// size_t nvr, fmiInteger value[]);
-
-		// Signature for Setters 1:
-		// fmiStatus fmiSetXXX(fmiComponent c, const fmiValueReference vr[],
-		// size_t nvr, const fmiInteger value[]);
-
-		// Signature for 2:
-		// fmiStatus fmiDoStep(fmiComponent c, fmiReal
-		// currentCommunicationPoint,
-		// fmiReal communicationStepSize, fmiBoolean
-		// noSetFMUStatePriorToCurrentPoint)
-
-		// So - what are we getting? Ints, reals, bools? Let's assume we can
-		// tell from the parameters,
-		// which are typed, and all the same type - because we enforce that
-		// restriction.
-		EList<Parameter> formalParams = actualSource.getFormalParameters();
-		String fmiTypeName = null;
-		String communicationDirection = null;
-		// >>>>> // if this has parameter(s) then it must be a getXXX or SetXXX
-		// for the master
-		if (formalParams.size() > 0) {
-			// Get any of the subroutine parameters, they should all be either
-			// incoming, or outgoing
-			Parameter subroutineParam = formalParams.get(0);
-			// we also need the original event parameter to see if it incoming
-			// or outgoing
-			// FMU Out = master GET
-			// ... the setter passes a const array.
-			String settersArrayModifier = "";
-			if (subroutineParam instanceof OutParameter) {
-				communicationDirection = "Get";
-			}
-			// FMU In = master Set
-			else if (subroutineParam instanceof InParameter) {
-				communicationDirection = "Set";
-				settersArrayModifier = "const ";
-			}
-			String exampleParamName = subroutineParam.getIdentifier();
-			String projectName = actualSource.getProjectName();
-			fmiTypeName = getFMITypeName(projectName, machineName,
-					exampleParamName, translationManager);
-
-			// Format the parameters
-			String fmiAPIparameters = "fmiComponent c, const fmiValueReference vr[], "
-					+ "size_t nvr, "
-					+ settersArrayModifier // this has been set to 'const' for a setter 
-					+ "fmiInteger value[]";
-
-			// Uniquely identify each event name using the machine name
-			outCode.add("");
-			String inOutSignature = "fmiStatus fmi"
-					+ communicationDirection + fmiTypeName + "("
-					+ fmiAPIparameters + ")";
-			outCode.add(inOutSignature);
-			outCode.add("{"); // open function
-
-			// This is where we store the function Declaration that goes into
-			// the
-			// header for the current C file.
-			headerInfo.getHeaderEntries().add(
-					inOutSignature + ";");
-
-			// Guards
-			if (!guardList.equals("")) {
-				outCode.add("// Check to see if guard is met");
-				outCode.add("if (" + guardList + ")");
-				outCode.add("{"); // open guarded
-			}
-			// Local variables
-			for (ArrayList<String> lVars : localVariables) {
-				outCode.addAll(lVars);
-			}
-			List<String> newBody = new ArrayList<String>();
-			// if we have getXXX the create a getter
-			if (communicationDirection.equals("Get")) {
-				newBody = createXXXGetStatements(fmiTypeName,
-						translationManager);
-			}
-			// else create a setter
-			else {
-				newBody = createXXXSetStatements(fmiTypeName,
-						translationManager);
-			}
-			outCode.add("// Translated code");
-			outCode.addAll(newBody);
-
-			if (!guardList.equals("")) {
-				if (isProtected || isEnviron) {
-					outCode.add("");
-				}
-				outCode.add("}"); // close guarded
-			}
-			outCode.add("return fmiOK;"); // return OK upon successful
-											// completion
-			outCode.add("}"); // close function
-		}
-		// >>>>> // else it must be an fmiDOStep subroutine
-		else {
-			outCode.add("");
-			// Format the parameters
-			String fmiAPIparameters = "fmiComponent c, fmiReal currentCommunicationPoint,"
-					+ " fmiReal communicationStepSize, fmiBoolean noSetFMUStatePriorToCurrentPoint";
-
-			// Uniquely identify each event name using the machine name
-			String doStepSignature = "fmiStatus fmiDoStep(" + fmiAPIparameters
-					+ ")";
-			// This is where we store the function Declaration that goes into
-			// the header for the current C file.
-			headerInfo.getHeaderEntries().add(doStepSignature + ";");
-			outCode.add(doStepSignature);
-			outCode.add("{"); // open function
-
-			// Guards
-			if (!guardList.equals("")) {
-				outCode.add("// Check to see if guard is met");
-				outCode.add("if (" + guardList + ")");
-				outCode.add("{"); // open guarded
-			}
-
-			// Local variables
-			for (ArrayList<String> lVars : localVariables) {
-				outCode.addAll(lVars);
-			}
-
-			List<String> newBody = substituteVariableRefs(body, actualSource,
-					translationManager);
-			// Body code
-			outCode.add("fmi_Component* mc = c;");
-			outCode.add("// Translated code");
-			outCode.addAll(newBody);
-
-			if (!guardList.equals("")) {
-				if (isProtected || isEnviron) {
-					outCode.add("");
-				}
-				outCode.add("}"); // close guarded
-			}
-			outCode.add("return fmiOK;"); // return OK upon successful
-											// completion
-			outCode.add("}"); // close function
-		}
-		return outCode;
 	}
 
 	
-// create some new getters and setters
-	private List<String> newGenerateGetterSetterFunctions() {
-		List<String> outCode = new ArrayList<String>();
-		FmiModelDescriptionType description = FMUTranslator.getDescription();
-		EList<CoSimulationType> coSimTypes = description.getCoSimulation();
-		
-		
-		return outCode;
-	}
-
-	// a new generatefunction method that creates:
+	// a generatefunction method that creates:
 	// in-line actions for subroutines, derived from the taskbody, into the fmiDoStep function
 	// Generate getters/setters for different the types i.e. Integer, Boolean, String, Real
-	private ArrayList<String> call_NewGenerateFMIDoStepFunction(String name,
+	private ArrayList<String> generateFMIDoStepFunction(String name,
 			ArrayList<String> parameterDefinitions,
 			ArrayList<ArrayList<String>> localVariables, String guardList,
 			ArrayList<String> body, boolean isProtected, boolean isEnviron,
@@ -352,18 +160,9 @@ public class SubroutineListGenerator extends AbstractSubroutineIL1Translator
 
 		}
 		// the actual source is communicating
-		
-		
 		return outCode;
 	}
 
-	
-	
-	
-	
-	
-	
-	
 
 	@Override
 	protected String generateParameterDefinition(String type,
@@ -390,35 +189,25 @@ public class SubroutineListGenerator extends AbstractSubroutineIL1Translator
 		return new CTranslatorUtils();
 	}
 
-	private List<String> createXXXGetStatements(String fmiTypeName,
-			IL1TranslationManager translationManager)
-			throws IL1TranslationException {
-		String variableArrayRef = FMUTranslator
-				.getVariableRefArrayName(fmiTypeName);
-		List<String> newCode = new ArrayList<String>();
-		newCode.add("int idx = 0;");
-		newCode.add("fmi_Component* mc = c;");
-		newCode.add("for(; idx < nvr; idx = idx + 1){");
-		newCode.add("value[ vr[idx] ] = mc->" + variableArrayRef
-				+ " [ vr[idx] ];");
-		newCode.add("}");
-		return newCode;
-	}
-
-	private List<String> createXXXSetStatements(String fmiTypeName,
-			IL1TranslationManager translationManager)
-			throws IL1TranslationException {
-		String variableArrayRef = FMUTranslator
-				.getVariableRefArrayName(fmiTypeName);
-		List<String> newCode = new ArrayList<String>();
-		newCode.add("int idx = 0;");
-		newCode.add("fmi_Component* mc = c;");
-		newCode.add("for(; idx < nvr; idx = idx + 1){");
-		newCode.add("mc->" + variableArrayRef + " [ vr[idx] ] = "
-				+ "value[ vr[idx] ];");
-		newCode.add("}");
-		return newCode;
-	}
+// We may need a GetReal function generator which should look like
+// the following >>>>>>
+//	private List<String> createGetRealStatement(String fmiTypeName,
+//			IL1TranslationManager translationManager)
+//			throws IL1TranslationException {
+//		String variableArrayRef = FMUTranslator
+//				.getVariableRefArrayName(fmiTypeName);
+//		List<String> newCode = new ArrayList<String>();
+//		newCode.add(fmiStatus getReal(){);	
+//		newCode.add("int idx = 0;");
+//		newCode.add("fmi_Component* mc = c;");
+//		newCode.add("for(; idx < nvr; idx = idx + 1){");
+//		newCode.add("value[ idx ] = mc->" + variableArrayRef
+//				+ " [ vr[idx] ];");
+//		newCode.add("}");
+//		newCode.add("}");
+//		return newCode;
+//	}
+//
 
 	private List<String> substituteVariableRefs(ArrayList<String> body,
 			Subroutine actualSource, IL1TranslationManager translationManager)

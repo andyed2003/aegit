@@ -76,6 +76,7 @@ import org.rodinp.core.RodinCore;
 import org.rodinp.core.RodinDBException;
 
 import FmiModel.BooleanType;
+import FmiModel.CausalityType;
 import FmiModel.CoSimulationType;
 import FmiModel.DocumentRoot;
 import FmiModel.FmiModelDescriptionType;
@@ -87,6 +88,7 @@ import FmiModel.RealType1;
 import FmiModel.StringType;
 import FmiModel.util.FmiModelResourceImpl;
 import ac.soton.fmusim.components.EventBComponent;
+import ac.soton.fmusim.components.Port;
 import ac.soton.fmusim.components.diagram.edit.parts.EventBComponentEditPart;
 
 // This class is the entry point for the translation proper. 
@@ -134,7 +136,8 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 	private static FmiModelDescriptionType descriptionType;
 	private static IL1TranslationManager il1TranslationManager;
 	private static EventBComponent eventBComponent;
-	
+	private List<String> inputPortNames;
+	private List<String> outputPortNames;
 
 	// Translate the selected Composed Machine/Event-B Machine to FMU(s)
 	public void translateToFMU(IStructuredSelection s)
@@ -421,6 +424,8 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			// get the FMI type from the type environment
 			ITypeEnvironment typeEnv = taskingTranslationManager
 					.getTypeEnvironment(root);
+			// extract a list of input/output port names
+			setupInputOutputPortNames();
 			// Iterate through the machine's variables and generate FMIScalar
 			// values
 			for (Variable var : variableList) {
@@ -481,6 +486,9 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		modelVarsType.getScalarVariable().add(scalar);
 		scalar.setName(var.getName());
 		String typeString = getFMITypeString(type);
+
+		if(inputPortNames.contains(var.getName())) scalar.setCausality(CausalityType.INPUT);
+		else if(outputPortNames.contains(var.getName())) scalar.setCausality(CausalityType.OUTPUT);
 		// Add a type if it is an integer
 		if (typeString.equals(INTEGER)) {
 			scalar.setValueReference(integerVariableCount);
@@ -511,6 +519,21 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			BooleanType boolType = FmiModelFactory.eINSTANCE
 					.createBooleanType();
 			scalar.setBoolean(boolType);
+		}
+	}
+
+	private void setupInputOutputPortNames() {
+		// used to define fmiGets and fmiSets functions
+		EList<Port> inputPorts = eventBComponent.getInputs();
+		EList<Port> outputPorts = eventBComponent.getOutputs();
+		// used to find causality
+		inputPortNames = new ArrayList<String>();
+		outputPortNames = new ArrayList<String>();
+		for(Port p: inputPorts){
+			inputPortNames.add(p.getName());
+		}
+		for(Port p: outputPorts){
+			outputPortNames.add(p.getName());
 		}
 	}
 
@@ -828,5 +851,4 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 	public static FmiModelDescriptionType getDescription() {
 		return descriptionType;
 	}
-
 }
