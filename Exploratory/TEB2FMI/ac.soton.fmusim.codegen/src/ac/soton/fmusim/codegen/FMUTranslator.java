@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -29,11 +30,16 @@ import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
+import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.impl.XMLResourceFactoryImpl;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.StructuredSelection;
@@ -45,6 +51,7 @@ import org.eventb.codegen.il1.Program;
 import org.eventb.codegen.il1.Protected;
 import org.eventb.codegen.il1.Subroutine;
 import org.eventb.codegen.il1.TranslatedDecl;
+import org.eventb.codegen.il1.VariableDecl;
 import org.eventb.codegen.il1.impl.Il1PackageImpl;
 import org.eventb.codegen.il1.translator.AbstractTranslateEventBToTarget;
 import org.eventb.codegen.il1.translator.ClassHeaderInformation;
@@ -82,6 +89,7 @@ import FmiModel.DocumentRoot;
 import FmiModel.FmiModelDescriptionType;
 import FmiModel.FmiModelFactory;
 import FmiModel.FmiScalarVariable;
+import FmiModel.InitialType;
 import FmiModel.IntegerType;
 import FmiModel.ModelVariablesType;
 import FmiModel.RealType1;
@@ -138,6 +146,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 	private static EventBComponent eventBComponent;
 	private List<String> inputPortNames;
 	private List<String> outputPortNames;
+
 
 	// Translate the selected Composed Machine/Event-B Machine to FMU(s)
 	public void translateToFMU(IStructuredSelection s)
@@ -427,8 +436,12 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			setupInputOutputPortNames();
 			// Iterate through the machine's variables and generate FMIScalar
 			// values
+			TreeIterator<EObject> contents = program.eAllContents();
+			// variable decl list is used to translate variables to scalars
+			ArrayList<VariableDecl> variableDeclList = createVariableDeclList(contents); 
+
 			for (Variable var : variableList) {
-				variableToFMIScalar(modelVarsType, typeEnv, var);
+				variableToFMIScalar(modelVarsType, typeEnv, var, variableDeclList);
 			}
 			// create a descriptions folder.
 			String fileName = machine.getName()
@@ -477,17 +490,29 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 	// The method populates the ModelVariables segment with scalar
 	// variables, generated from the variable's type etc.
 	private void variableToFMIScalar(ModelVariablesType modelVarsType,
-			ITypeEnvironment typeEnv, Variable var) {
+			ITypeEnvironment typeEnv, Variable var, ArrayList<VariableDecl> variableDeclList) {
 		Type type = typeEnv.getType(var.getName());
 		// Create and set an fmiScalar value for each variable
 		FmiScalarVariable scalar = FmiModelFactory.eINSTANCE
 				.createFmiScalarVariable();
+
 		modelVarsType.getScalarVariable().add(scalar);
 		scalar.setName(var.getName());
 		String typeString = getFMITypeString(type);
 
-		if(inputPortNames.contains(var.getName())) scalar.setCausality(CausalityType.INPUT);
-		else if(outputPortNames.contains(var.getName())) scalar.setCausality(CausalityType.OUTPUT);
+		if(inputPortNames.contains(var.getName())){
+			scalar.setCausality(CausalityType.INPUT);
+			// input causality requires an initial value
+			for(VariableDecl varDecl : variableDeclList){
+				if(varDecl.getIdentifier().equals(var.getName())){
+					scalar.setInitial(InitialType.get(varDecl.getInitialValue()));
+					break;
+				}
+			}
+		}
+		else if(outputPortNames.contains(var.getName())){
+			scalar.setCausality(CausalityType.OUTPUT);
+		}
 		// Add a type if it is an integer
 		if (typeString.equals(INTEGER)) {
 			scalar.setValueReference(integerVariableCount);
@@ -519,6 +544,17 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 					.createBooleanType();
 			scalar.setBoolean(boolType);
 		}
+	}
+
+	private ArrayList<VariableDecl> createVariableDeclList(TreeIterator<EObject> contents) {
+		ArrayList<VariableDecl> variableDeclList = new ArrayList<VariableDecl>();
+		while(contents.hasNext()){
+			EObject obj = contents.next();
+			if(obj instanceof VariableDecl){
+				variableDeclList.add((VariableDecl) obj);
+			}
+		}
+		return variableDeclList;
 	}
 
 	private void setupInputOutputPortNames() {
