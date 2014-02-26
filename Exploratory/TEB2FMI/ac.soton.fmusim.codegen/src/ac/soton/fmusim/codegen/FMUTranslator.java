@@ -392,7 +392,6 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			DocumentRoot docRoot = FmiModelFactory.eINSTANCE
 					.createDocumentRoot();
 			// add this machine documentroot to the list
-			modelDescriptionsManager = ModelDescriptionManager.getDefault();
 			modelDescriptionsManager.getDocumentRoot().add(docRoot);
 			// set various values
 			FmiModelDescriptionType descriptionType = FmiModelFactory.eINSTANCE
