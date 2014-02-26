@@ -147,7 +147,6 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 	private List<String> inputPortNames;
 	private List<String> outputPortNames;
 
-
 	// Translate the selected Composed Machine/Event-B Machine to FMU(s)
 	public void translateToFMU(IStructuredSelection s)
 			throws BackingStoreException, CoreException, IOException,
@@ -160,29 +159,31 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		if (!(s.getFirstElement() instanceof EventBComponentEditPart)) {
 			throw new FMUTranslatorException(
 					"Only a component edit part can be selected for translation to an FMU");
-		}
-		else{
+		} else {
 			System.out.println("Translating to FMU C from the diagram");
 			selectedEditPart = (EventBComponentEditPart) s.getFirstElement();
 		}
-			
-			
-		// The existing translator is set up to use the machineRoot so we should get this.
+
+		// The existing translator is set up to use the machineRoot so we should
+		// get this.
 		IStructuredSelection newSelection = new StructuredSelection();
-		eventBComponent = (EventBComponent) selectedEditPart.getNotationView().getElement();
+		eventBComponent = (EventBComponent) selectedEditPart.getNotationView()
+				.getElement();
 		Machine emfMachine = eventBComponent.getMachine();
-		if(emfMachine == null)
-		{
+		if (emfMachine == null) {
 			throw new FMUTranslatorException(
 					"Only a machine can be translated to an FMU");
 		}
 
 		Resource resource = emfMachine.eResource();
-		if(resource instanceof RodinResource){
+		if (resource instanceof RodinResource) {
 			RodinResource rodinResource = (RodinResource) resource;
-			IRodinProject rodinProject = rodinResource.getRodinFile().getRodinProject();
-			IEventBProject eventBProject = (IEventBProject) rodinProject.getAdapter(IEventBProject.class);
-			IMachineRoot machineRoot = eventBProject.getMachineRoot(emfMachine.getName());
+			IRodinProject rodinProject = rodinResource.getRodinFile()
+					.getRodinProject();
+			IEventBProject eventBProject = (IEventBProject) rodinProject
+					.getAdapter(IEventBProject.class);
+			IMachineRoot machineRoot = eventBProject.getMachineRoot(emfMachine
+					.getName());
 			newSelection = new StructuredSelection(machineRoot);
 		}
 		super.setSelection(newSelection);
@@ -208,7 +209,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		IRodinDB rodinDB = RodinCore.getRodinDB();
 		sourceRodinProject = rodinDB.getRodinProject(program.getProjectName());
 		// Create a target Directory
-		if(getTargetProject(taskingTranslationManager) == false){
+		if (getTargetProject(taskingTranslationManager) == false) {
 			return;
 		}
 		// From the program, we can create the modelDescription file
@@ -223,41 +224,48 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 	}
 
 	// DESIGN NOTE !!!
-	// How do we prevent the communication events from being translated? Since the master
+	// How do we prevent the communication events from being translated? Since
+	// the master
 	// takes care of the communications, we need to ignore synchronizing events.
-	// The problem is that when initiating translation from the diagram we have no idea
-	// which composed machine describes the synchronizations. There could be a number of
-	// composed machines in a single project, involving the machine to be translated.
+	// The problem is that when initiating translation from the diagram we have
+	// no idea
+	// which composed machine describes the synchronizations. There could be a
+	// number of
+	// composed machines in a single project, involving the machine to be
+	// translated.
 	// We use the following solution: we preclude the use of shared machines!!!
-	// Then we can select events to ignore when they have parameters (since this indicates
-	// that they are communicating, because we don't use local variables in events).
-	
-	
-	
+	// Then we can select events to ignore when they have parameters (since this
+	// indicates
+	// that they are communicating, because we don't use local variables in
+	// events).
+
 	// This method translates Event-B models into an IL1 program
 	private static Program translateEventBToIL1(MachineRoot machineRoot)
 			throws TaskingTranslationException, BackingStoreException,
 			CoreException, IOException, URISyntaxException,
 			FMUTranslatorException {
-		// indicate to the tasking translation manager that we are undertaking an FMU translation.
-		// We need this since the FMU translation type is optional and may well be removed.;
+		// indicate to the tasking translation manager that we are undertaking
+		// an FMU translation.
+		// We need this since the FMU translation type is optional and may well
+		// be removed.;
 		taskingTranslationManager.setFMUTranslation(true);
 		// load the EMF components
-		RMLDataStruct loadedEMFComponents = EMFLoader.loadEMFMachinesContexts(machineRoot);
+		RMLDataStruct loadedEMFComponents = EMFLoader
+				.loadEMFMachinesContexts(machineRoot);
 		// insert the machineRoot into an array to send to the translator
 		List<Object> componentList = new ArrayList<Object>();
 		componentList.add(machineRoot);
 		Object[] componentArrays = componentList.toArray();
-		
+
 		IFile target = null;
 		// Get target's location from the list which is derived from the
 		// structured selection.
 		target = machineRoot.getResource();
 		storeProject(target.getProject(), taskingTranslationManager);
-		
-		Program program = taskingTranslationManager.translateToIL1Entry(componentArrays,
-				null, null, null, loadedEMFComponents);
-		
+
+		Program program = taskingTranslationManager.translateToIL1Entry(
+				componentArrays, null, null, null, loadedEMFComponents);
+
 		// We delete the temporary subroutines
 		EList<Protected> protectedList = program.getProtected();
 		for (Protected prot : protectedList) {
@@ -278,16 +286,18 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		taskingTranslationManager.setFMUTranslation(false);
 		return program;
 	}
-	
+
 	// This method is equivalent to CProgramIL1Translator, tailored for
 	// use with FMI translation.
 	// It translates protected objects (from FMU Machines) to FMU
 	// implementations.
-	private void translateIL1ToFMU(Program program, TaskingTranslationManager taskingTranslationManager)
+	private void translateIL1ToFMU(Program program,
+			TaskingTranslationManager taskingTranslationManager)
 			throws IL1TranslationUnhandledTypeException, RodinDBException,
 			TaskingTranslationUnhandledTypeException {
 		il1TranslationManager = new IL1TranslationManager();
-		il1TranslationManager.getCommunicatingSubroutines().addAll(taskingTranslationManager.getCommunicatingSubroutines());
+		il1TranslationManager.getCommunicatingSubroutines().addAll(
+				taskingTranslationManager.getCommunicatingSubroutines());
 		// /////////////////////////////////il1TranslationManager.currentTargetLanguage
 		// = ;
 		// These are FMU specific headers. The first is for configuration
@@ -330,16 +340,17 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 					il1TranslationManager, globalDecls);
 		}
 	}
-	
+
 	private boolean getTargetProject(
 			TaskingTranslationManager taskingTranslationManager)
-			throws CoreException, TaskingTranslationException, FMUTranslatorException {
+			throws CoreException, TaskingTranslationException,
+			FMUTranslatorException {
 		IWorkspace workspace = ResourcesPlugin.getWorkspace();
 		IWorkspaceRoot root = workspace.getRoot();
 		shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
 		DirectoryDialog dialog = new DirectoryDialog(shell);
 		String string = dialog.open();
-		if(string == null){
+		if (string == null) {
 			return false;
 		}
 		IPath path = new Path(string);
@@ -357,7 +368,8 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 	}
 
 	private IFolder createCSourceFolder(IProject targetProject,
-			String newDirectoryName) throws CoreException, CModelException, FMUTranslatorException {
+			String newDirectoryName) throws CoreException, CModelException,
+			FMUTranslatorException {
 		// obtain a model,project and folder
 		CoreModel cModel = CoreModel.getDefault();
 		ICProject cProject = cModel.create(targetProject);
@@ -369,11 +381,12 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		ISourceEntry newSourceEntry = CoreModel
 				.newSourceEntry(targetSourceFolder.getFullPath());
 		// now add it to the cProject info, by creating a new list of entries.
-		if(!cProject.exists()){
-			throw new FMUTranslatorException("Aborting: the target project does not have a C nature");
+		if (!cProject.exists()) {
+			throw new FMUTranslatorException(
+					"Aborting: the target project does not have a C nature");
 		}
 		IPathEntry[] existingPathEntries = cProject.getRawPathEntries();
-		
+
 		List<IPathEntry> newEntries = new ArrayList<IPathEntry>(
 				existingPathEntries.length);
 		// add existingPathEntries to newEntries
@@ -393,75 +406,73 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		Machine machine = taskingTranslationManager.getFMUMachineList().get(0);
 
 		// Reset the value reference array indices for each machine.
-			realVariableCount = 0;
-			stringVariableCount = 0;
-			integerVariableCount = 0;
-			boolVariableCount = 0;
-			// Each fmuMachine will have its own DocumentRoot
-			DocumentRoot docRoot = FmiModelFactory.eINSTANCE
-					.createDocumentRoot();
-			// add this machine documentroot to the list
-			modelDescriptionsManager.getDocumentRoot().add(docRoot);
-			// set various values
-			FmiModelDescriptionType descriptionType = FmiModelFactory.eINSTANCE
-					.createFmiModelDescriptionType();
-			docRoot.setFmiModelDescription(descriptionType);
-			descriptionType.setFmiVersion("2.0");
-			descriptionType.setGenerationTool("EB2FMU");
-			descriptionType.setAuthor("University of Southampton");
-			XMLGregorianCalendar xmlGC = makeDate();
-			descriptionType.setGenerationDateAndTime(xmlGC);
-			descriptionType.setGuid("GUID_" + machine.getName() + "_"
-					+ xmlGC.toXMLFormat());
-			descriptionType.setModelName(machine.getName());
-			descriptionType.setNumberOfEventIndicators(0);
-			// This is a co-simulation
-			CoSimulationType coSimType = FmiModelFactory.eINSTANCE
-					.createCoSimulationType();
-			descriptionType.getCoSimulation().add(coSimType);
-			coSimType.setModelIdentifier(machine.getName());
-			// This is where we store the FMI scalar variables
-			ModelVariablesType modelVarsType = FmiModelFactory.eINSTANCE
-					.createModelVariablesType();
-			descriptionType.setModelVariables(modelVarsType);
-			// Get the info to obtain the type environment
-			IRodinFile mchFile = sourceRodinProject.getRodinFile(machine
-					.getName() + ".bum");
-			MachineRoot root = (MachineRoot) mchFile.getRoot();
-			EList<Variable> variableList = machine.getVariables();
-			// get the FMI type from the type environment
-			ITypeEnvironment typeEnv = taskingTranslationManager
-					.getTypeEnvironment(root);
-			// extract a list of input/output port names
-			setupInputOutputPortNames();
-			// Iterate through the machine's variables and generate FMIScalar
-			// values
-			TreeIterator<EObject> contents = program.eAllContents();
-			// variable decl list is used to translate variables to scalars
-			ArrayList<VariableDecl> variableDeclList = createVariableDeclList(contents); 
+		realVariableCount = 0;
+		stringVariableCount = 0;
+		integerVariableCount = 0;
+		boolVariableCount = 0;
+		// Each fmuMachine will have its own DocumentRoot
+		DocumentRoot docRoot = FmiModelFactory.eINSTANCE.createDocumentRoot();
+		// add this machine documentroot to the list
+		modelDescriptionsManager.getDocumentRoot().add(docRoot);
+		// set various values
+		FmiModelDescriptionType descriptionType = FmiModelFactory.eINSTANCE
+				.createFmiModelDescriptionType();
+		docRoot.setFmiModelDescription(descriptionType);
+		descriptionType.setFmiVersion("2.0");
+		descriptionType.setGenerationTool("EB2FMU");
+		descriptionType.setAuthor("University of Southampton");
+		XMLGregorianCalendar xmlGC = makeDate();
+		descriptionType.setGenerationDateAndTime(xmlGC);
+		descriptionType.setGuid("GUID_" + machine.getName() + "_"
+				+ xmlGC.toXMLFormat());
+		descriptionType.setModelName(machine.getName());
+		descriptionType.setNumberOfEventIndicators(0);
+		// This is a co-simulation
+		CoSimulationType coSimType = FmiModelFactory.eINSTANCE
+				.createCoSimulationType();
+		descriptionType.getCoSimulation().add(coSimType);
+		coSimType.setModelIdentifier(machine.getName());
+		// This is where we store the FMI scalar variables
+		ModelVariablesType modelVarsType = FmiModelFactory.eINSTANCE
+				.createModelVariablesType();
+		descriptionType.setModelVariables(modelVarsType);
+		// Get the info to obtain the type environment
+		IRodinFile mchFile = sourceRodinProject.getRodinFile(machine.getName()
+				+ ".bum");
+		MachineRoot root = (MachineRoot) mchFile.getRoot();
+		EList<Variable> variableList = machine.getVariables();
+		// get the FMI type from the type environment
+		ITypeEnvironment typeEnv = taskingTranslationManager
+				.getTypeEnvironment(root);
+		// extract a list of input/output port names
+		setupInputOutputPortNames();
+		// Iterate through the machine's variables and generate FMIScalar
+		// values
+		TreeIterator<EObject> contents = program.eAllContents();
+		// variable decl list is used to translate variables to scalars
+		ArrayList<VariableDecl> variableDeclList = createVariableDeclList(contents);
 
-			for (Variable var : variableList) {
-				variableToFMIScalar(modelVarsType, typeEnv, var, variableDeclList);
-			}
-			// create a descriptions folder.
-			String fileName = machine.getName()
-					+ "."
-					+ FmiModelFactory.eINSTANCE.getEPackage().getName()
-							.toLowerCase();
-			File newFile = createNewFile(fileName, "descriptions");
-			String netUri = newFile.toURI().toString();
-			URI emfURI = URI.createURI(netUri);
-			ResourceSet resSet = new ResourceSetImpl();
-			Resource resource = resSet.createResource(emfURI);
-			if (resource instanceof FmiModelResourceImpl) {
-				FmiModelResourceImpl fmiModelRes = (FmiModelResourceImpl) resource;
-				fmiModelRes.setEncoding("UTF-8");
-			}
-			resource.getContents().add(docRoot);
-			resource.save(Collections.EMPTY_MAP);
-			setDescription(descriptionType);
+		for (Variable var : variableList) {
+			variableToFMIScalar(modelVarsType, typeEnv, var, variableDeclList);
+		}
+		// create a descriptions folder.
+		String fileName = machine.getName()
+				+ "."
+				+ FmiModelFactory.eINSTANCE.getEPackage().getName()
+						.toLowerCase();
+		File newFile = createNewFile(fileName, "descriptions");
+		String netUri = newFile.toURI().toString();
+		URI emfURI = URI.createURI(netUri);
+		ResourceSet resSet = new ResourceSetImpl();
+		Resource resource = resSet.createResource(emfURI);
+		if (resource instanceof FmiModelResourceImpl) {
+			FmiModelResourceImpl fmiModelRes = (FmiModelResourceImpl) resource;
+			fmiModelRes.setEncoding("UTF-8");
+		}
+		resource.getContents().add(docRoot);
+		resource.save(Collections.EMPTY_MAP);
+		setDescription(descriptionType);
 	}// end of createModelDescriptionFile(...);
-
 
 	// create a new file, with fileName, in the named subFolder of 'the'
 	// targetProject.
@@ -490,7 +501,8 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 	// The method populates the ModelVariables segment with scalar
 	// variables, generated from the variable's type etc.
 	private void variableToFMIScalar(ModelVariablesType modelVarsType,
-			ITypeEnvironment typeEnv, Variable var, ArrayList<VariableDecl> variableDeclList) {
+			ITypeEnvironment typeEnv, Variable var,
+			ArrayList<VariableDecl> variableDeclList) {
 		Type type = typeEnv.getType(var.getName());
 		// Create and set an fmiScalar value for each variable
 		FmiScalarVariable scalar = FmiModelFactory.eINSTANCE
@@ -500,17 +512,10 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		scalar.setName(var.getName());
 		String typeString = getFMITypeString(type);
 
-		if(inputPortNames.contains(var.getName())){
+		if (inputPortNames.contains(var.getName())) {
 			scalar.setCausality(CausalityType.INPUT);
-			// input causality requires an initial value
-			for(VariableDecl varDecl : variableDeclList){
-				if(varDecl.getIdentifier().equals(var.getName())){
-					scalar.setInitial(InitialType.get(varDecl.getInitialValue()));
-					break;
-				}
-			}
-		}
-		else if(outputPortNames.contains(var.getName())){
+			scalar.setInitial(InitialType.EXACT);
+		} else if (outputPortNames.contains(var.getName())) {
 			scalar.setCausality(CausalityType.OUTPUT);
 		}
 		// Add a type if it is an integer
@@ -520,6 +525,16 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			IntegerType integerType = FmiModelFactory.eINSTANCE
 					.createIntegerType();
 			scalar.setInteger(integerType);
+			if (scalar.getCausality() == CausalityType.INPUT) {
+				// input causality requires an initial 'start' value
+				for (VariableDecl varDecl : variableDeclList) {
+					if (varDecl.getIdentifier().equals(var.getName())) {
+						integerType.setStart(Integer.parseInt(varDecl
+								.getInitialValue()));
+						break;
+					}
+				}
+			}
 		}
 		// else if it is a real
 		else if (typeString.equals(REAL)) {
@@ -527,6 +542,16 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			realVariableCount++;
 			RealType1 realType = FmiModelFactory.eINSTANCE.createRealType1();
 			scalar.setReal(realType);
+			if (scalar.getCausality() == CausalityType.INPUT) {
+				// input causality requires an initial 'start' value
+				for (VariableDecl varDecl : variableDeclList) {
+					if (varDecl.getIdentifier().equals(var.getName())) {
+						realType.setStart(Double.parseDouble(varDecl
+								.getInitialValue()));
+						break;
+					}
+				}
+			}
 		}
 		// elseif it is a string
 		else if (typeString.equals(STRING)) {
@@ -535,6 +560,15 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			StringType stringType = FmiModelFactory.eINSTANCE
 					.createStringType();
 			scalar.setString(stringType);
+			if (scalar.getCausality() == CausalityType.INPUT) {
+				// input causality requires an initial 'start' value
+				for (VariableDecl varDecl : variableDeclList) {
+					if (varDecl.getIdentifier().equals(var.getName())) {
+						stringType.setStart(varDecl.getInitialValue());
+						break;
+					}
+				}
+			}
 		}
 		// elsif it is a boolean
 		else if (typeString.equals(BOOLEAN)) {
@@ -543,14 +577,25 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			BooleanType boolType = FmiModelFactory.eINSTANCE
 					.createBooleanType();
 			scalar.setBoolean(boolType);
+			if (scalar.getCausality() == CausalityType.INPUT) {
+				// input causality requires an initial 'start' value
+				for (VariableDecl varDecl : variableDeclList) {
+					if (varDecl.getIdentifier().equals(var.getName())) {
+						boolType.setStart(Boolean.parseBoolean(varDecl
+								.getInitialValue()));
+						break;
+					}
+				}
+			}
 		}
 	}
 
-	private ArrayList<VariableDecl> createVariableDeclList(TreeIterator<EObject> contents) {
+	private ArrayList<VariableDecl> createVariableDeclList(
+			TreeIterator<EObject> contents) {
 		ArrayList<VariableDecl> variableDeclList = new ArrayList<VariableDecl>();
-		while(contents.hasNext()){
+		while (contents.hasNext()) {
 			EObject obj = contents.next();
-			if(obj instanceof VariableDecl){
+			if (obj instanceof VariableDecl) {
 				variableDeclList.add((VariableDecl) obj);
 			}
 		}
@@ -564,10 +609,10 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		// used to find causality
 		inputPortNames = new ArrayList<String>();
 		outputPortNames = new ArrayList<String>();
-		for(Port p: inputPorts){
+		for (Port p : inputPorts) {
 			inputPortNames.add(p.getName());
 		}
-		for(Port p: outputPorts){
+		for (Port p : outputPorts) {
 			outputPortNames.add(p.getName());
 		}
 	}
@@ -586,8 +631,6 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		XMLGregorianCalendar xmlGC = df.newXMLGregorianCalendar(gc);
 		return xmlGC;
 	}
-
-
 
 	// This code generates a common header
 	private void generateGlobalHeader(
@@ -882,7 +925,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 	public static void setDescription(FmiModelDescriptionType descriptionType_) {
 		descriptionType = descriptionType_;
 	}
-	
+
 	public static FmiModelDescriptionType getDescription() {
 		return descriptionType;
 	}
