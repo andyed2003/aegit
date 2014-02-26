@@ -129,7 +129,7 @@ public class PackageFMU implements IObjectActionDelegate {
 		// this will be the new zip file
 		IPath path = srcDescriptionFile.getRawLocation();
 		modelIdentifier = path.removeFileExtension().lastSegment();
-		IFile targetZipFile = targetProject.getFile(modelIdentifier + ".zip");
+		IFile targetZipFile = targetProject.getFile(modelIdentifier + ".fmu");
 		String targetZipName = targetZipFile.getRawLocation().toString();
 		// get output streams to write to the zip
 		FileOutputStream fOut = new FileOutputStream(targetZipName);
@@ -141,7 +141,7 @@ public class PackageFMU implements IObjectActionDelegate {
 		// package the source files
 		packageSources(fmuCodeFolder, fmuExternalsFolder, zipOut);
 		zipOut.close();
-		targetProject.refreshLocal(Resource.DEPTH_INFINITE, null);
+		targetProject.refreshLocal(IResource.DEPTH_INFINITE, null);
 	}
 
 	// We'll package the source code here
@@ -239,7 +239,7 @@ public class PackageFMU implements IObjectActionDelegate {
 				srcDescriptionStream);
 
 		// Create the target description path. It goes in the archive root
-		String tgtDescriptionFileName = "modelDescription.XML";
+		String tgtDescriptionFileName = "modelDescription.xml";
 
 		// create a zip entry
 		ZipEntry ze = new ZipEntry(tgtDescriptionFileName);
