@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<fmiModelDescription author="University of Southampton" fmiVersion="2.0" generationDateAndTime="2014-02-26T09:28:49.337Z" generationTool="EB2FMU" guid="GUID_ControllerImpl_2014-02-26T09:28:49.337Z" modelName="ControllerImpl" numberOfEventIndicators="0">
+<fmiModelDescription author="University of Southampton" fmiVersion="2.0" generationDateAndTime="2014-02-27T11:12:00.136Z" generationTool="EB2FMU" guid="GUID_ControllerImpl_2014-02-27T11:12:00.136Z" modelName="ControllerImpl" numberOfEventIndicators="0">
   <CoSimulation modelIdentifier="ControllerImpl"/>
   <ModelVariables>
-    <ScalarVariable causality="input" name="c_level" valueReference="0">
-      <Integer/>
+    <ScalarVariable causality="input" initial="exact" name="c_level" valueReference="0">
+      <Integer start="100"/>
     </ScalarVariable>
-    <ScalarVariable causality="input" name="c_pumpOnReq" valueReference="0">
-      <Boolean/>
+    <ScalarVariable causality="input" initial="exact" name="c_pumpOnReq" valueReference="0">
+      <Boolean start="false"/>
     </ScalarVariable>
     <ScalarVariable causality="output" name="c_pumpOnCmd" valueReference="1">
       <Boolean/>
@@ -30,4 +30,14 @@
       <Boolean/>
     </ScalarVariable>
   </ModelVariables>
+  <ModelStructure>
+    <Inputs>
+      <Input name="c_level"/>
+      <Input name="c_pumpOnReq"/>
+    </Inputs>
+    <Outputs>
+      <Output name="c_pumpOnCmd"/>
+      <Output name="c_warn"/>
+    </Outputs>
+  </ModelStructure>
 </fmiModelDescription>

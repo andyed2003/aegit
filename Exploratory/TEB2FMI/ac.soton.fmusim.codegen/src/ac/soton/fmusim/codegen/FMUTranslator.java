@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -30,7 +29,6 @@ import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
-import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
@@ -38,8 +36,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.impl.XMLResourceFactoryImpl;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.StructuredSelection;
@@ -90,8 +86,13 @@ import FmiModel.FmiModelDescriptionType;
 import FmiModel.FmiModelFactory;
 import FmiModel.FmiScalarVariable;
 import FmiModel.InitialType;
+import FmiModel.InputType;
+import FmiModel.InputsType;
 import FmiModel.IntegerType;
+import FmiModel.ModelStructureType;
 import FmiModel.ModelVariablesType;
+import FmiModel.OutputType;
+import FmiModel.OutputsType;
 import FmiModel.RealType1;
 import FmiModel.StringType;
 import FmiModel.util.FmiModelResourceImpl;
@@ -141,7 +142,6 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 	private int stringVariableCount = 0;
 	private int integerVariableCount = 0;
 	private int boolVariableCount = 0;
-	private static FmiModelDescriptionType descriptionType;
 	private static IL1TranslationManager il1TranslationManager;
 	private static EventBComponent eventBComponent;
 	private List<String> inputPortNames;
@@ -417,6 +417,10 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		// set various values
 		FmiModelDescriptionType descriptionType = FmiModelFactory.eINSTANCE
 				.createFmiModelDescriptionType();
+		// Add the modlStructure Attribute
+		ModelStructureType modelStructureType = FmiModelFactory.eINSTANCE.createModelStructureType();
+		descriptionType.setModelStructure(modelStructureType);
+		
 		docRoot.setFmiModelDescription(descriptionType);
 		descriptionType.setFmiVersion("2.0");
 		descriptionType.setGenerationTool("EB2FMU");
@@ -453,9 +457,13 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		ArrayList<VariableDecl> variableDeclList = createVariableDeclList(contents);
 
 		for (Variable var : variableList) {
-			variableToFMIScalar(modelVarsType, typeEnv, var, variableDeclList);
+			variableToFMIScalar(modelVarsType, typeEnv, var, variableDeclList, descriptionType);
 		}
-		// create a descriptions folder.
+		
+		// END OF BUILD modelDescription.xml
+		
+		// Now deal with persisting it.
+		// Create a descriptions folder.
 		String fileName = machine.getName()
 				+ "."
 				+ FmiModelFactory.eINSTANCE.getEPackage().getName()
@@ -471,7 +479,6 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		}
 		resource.getContents().add(docRoot);
 		resource.save(Collections.EMPTY_MAP);
-		setDescription(descriptionType);
 	}// end of createModelDescriptionFile(...);
 
 	// create a new file, with fileName, in the named subFolder of 'the'
@@ -502,7 +509,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 	// variables, generated from the variable's type etc.
 	private void variableToFMIScalar(ModelVariablesType modelVarsType,
 			ITypeEnvironment typeEnv, Variable var,
-			ArrayList<VariableDecl> variableDeclList) {
+			ArrayList<VariableDecl> variableDeclList, FmiModelDescriptionType descriptionType) {
 		Type type = typeEnv.getType(var.getName());
 		// Create and set an fmiScalar value for each variable
 		FmiScalarVariable scalar = FmiModelFactory.eINSTANCE
@@ -513,10 +520,17 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		String typeString = getFMITypeString(type);
 
 		if (inputPortNames.contains(var.getName())) {
+			// set the causality in the scalar
 			scalar.setCausality(CausalityType.INPUT);
 			scalar.setInitial(InitialType.EXACT);
+			// set the input name in the modelStructureType
+			createModelStructureInput(var, descriptionType);
+			
 		} else if (outputPortNames.contains(var.getName())) {
+			// set the causality in the scalar
 			scalar.setCausality(CausalityType.OUTPUT);
+			// set the output name in the modelStructureType
+			createModelStructureOutput(var, descriptionType);
 		}
 		// Add a type if it is an integer
 		if (typeString.equals(INTEGER)) {
@@ -588,6 +602,29 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 				}
 			}
 		}
+	}
+
+	private void createModelStructureInput(Variable var, FmiModelDescriptionType descriptionType) {
+		ModelStructureType modelStructure = descriptionType.getModelStructure();
+		if(modelStructure.getInputs() == null){
+			InputsType inputsType = FmiModelFactory.eINSTANCE.createInputsType();
+			modelStructure.setInputs(inputsType);
+		}
+		InputType input = FmiModelFactory.eINSTANCE.createInputType();
+		input.setName(var.getName());
+		modelStructure.getInputs().getInput().add(input);
+		System.out.println();
+	}
+
+	private void createModelStructureOutput(Variable var, FmiModelDescriptionType descriptionType) {
+		ModelStructureType modelStructure = descriptionType.getModelStructure();
+		if(modelStructure.getOutputs() == null){
+			OutputsType outputsType = FmiModelFactory.eINSTANCE.createOutputsType();
+			modelStructure.setOutputs(outputsType);
+		}
+		OutputType output = FmiModelFactory.eINSTANCE.createOutputType();
+		output.setName(var.getName());
+		modelStructure.getOutputs().getOutput().add(output);
 	}
 
 	private ArrayList<VariableDecl> createVariableDeclList(
@@ -920,13 +957,5 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		} else
 			throw new IL1TranslationException("Type not found: "
 					+ fmiTypeString);
-	}
-
-	public static void setDescription(FmiModelDescriptionType descriptionType_) {
-		descriptionType = descriptionType_;
-	}
-
-	public static FmiModelDescriptionType getDescription() {
-		return descriptionType;
 	}
 }
