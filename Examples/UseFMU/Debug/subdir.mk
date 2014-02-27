@@ -17,7 +17,7 @@ C_DEPS += \
 %.o: ../%.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: GCC C Compiler'
-	gcc -I"/home/andy/git/aegit/Examples/TestFMUPumpC/Debug" -I"/home/andy/git/aegit/Examples/TestFMUPumpC" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
+	gcc -I"/home/andy/git/aegit/Examples/TestFMUPumpC/Debug" -I"/home/andy/git/aegit/Examples/TestFMUPumpC" -I"/home/andy/git/aegit/Examples/TestFMUPumpC/external" -O0 -g3 -Wall -c -fmessage-length=0 -fPIC -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 

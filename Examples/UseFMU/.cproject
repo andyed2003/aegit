@@ -30,12 +30,14 @@
 								<option id="gnu.c.compiler.option.include.paths.1437544873" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/TestFMUPumpC/Debug}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/TestFMUPumpC}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/TestFMUPumpC/external}&quot;"/>
 								</option>
+								<option id="gnu.c.compiler.option.misc.pic.1169975389" name="Position Independent Code (-fPIC)" superClass="gnu.c.compiler.option.misc.pic" value="true" valueType="boolean"/>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.882757671" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.c.linker.exe.debug.1112789361" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.exe.debug">
 								<option id="gnu.c.link.option.paths.986057690" name="Library search path (-L)" superClass="gnu.c.link.option.paths" valueType="libPaths">
-									<listOptionValue builtIn="false" value="/home/andy/git/aegit/Examples/TestFMUPumpC/Debug"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/TestFMUPumpC/Debug}&quot;"/>
 								</option>
 								<option id="gnu.c.link.option.libs.1097491554" name="Libraries (-l)" superClass="gnu.c.link.option.libs" valueType="libs">
 									<listOptionValue builtIn="false" value="TestFMUPumpC"/>
