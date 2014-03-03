@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.theory.core.theoryRoot org.eventb.core.configuration="org.eventb.theory.core.thy">
+<org.eventb.theory.core.typeParameter name="'" org.eventb.core.identifier="T"/>
+<org.eventb.theory.core.newOperatorDefinition name="(" org.eventb.core.label="SetImpl" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.directOperatorDefinition name="(" org.eventb.theory.core.formula="T"/>
+<org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="T" org.eventb.core.identifier="t"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name=")" org.eventb.core.label="newSet" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="T" org.eventb.core.identifier="t"/>
+<org.eventb.theory.core.directOperatorDefinition name="(" org.eventb.theory.core.formula="t"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="*" org.eventb.core.label="setUnion" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(T)" org.eventb.core.identifier="a"/>
+<org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="ℙ(T)" org.eventb.core.identifier="b"/>
+<org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="a ∪ b"/>
+</org.eventb.theory.core.newOperatorDefinition>
+</org.eventb.theory.core.theoryRoot>
