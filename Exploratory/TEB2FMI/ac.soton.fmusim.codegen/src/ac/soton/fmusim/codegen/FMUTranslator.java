@@ -215,7 +215,9 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			return;
 		}
 		// From the program, we can create the modelDescription file
-		createModelDescriptionFile(program);
+		//createModelDescriptionFile(program);
+		FMUModelDescriptionV2_0 d = new FMUModelDescriptionV2_0(program, taskingTranslationManager, targetProject, eventBComponent);
+		d.create();
 		// copy the external (pre-defined) files across
 		ExternalFileHandler fHandler = new ExternalFileHandler();
 		fHandler.handleExternalFiles();
