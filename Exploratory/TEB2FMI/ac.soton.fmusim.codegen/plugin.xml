@@ -13,15 +13,22 @@
                path="additions">
             <separator
                   name="group1">
+               <action
+                     class="ac.soton.fmusim.codegen.popup.actions.CodeGenV1_0"
+                     enablesFor="1"
+                     id="ac.soton.fmusim.codegen.newAction3"
+                     label="Generate FMU 1.0 C Project"
+                     menubarPath="ac.soton.fmusim.codegen.menu2/group2">
+               </action>
+               <action
+                     class="ac.soton.fmusim.codegen.popup.actions.CodeGenV2_0"
+                     enablesFor="1"
+                     id="ac.soton.fmusim.codegen.newAction2"
+                     label="Generate FMU 2.0 C Project"
+                     menubarPath="ac.soton.fmusim.codegen.menu2/group2">
+               </action>
             </separator>
          </menu>
-         <action
-               class="ac.soton.fmusim.codegen.popup.actions.CodeGen"
-               enablesFor="1"
-               id="ac.soton.fmusim.codegen.newAction2"
-               label="Generate FMU C Project"
-               menubarPath="ac.soton.fmusim.codegen.menu2/group2">
-         </action>
       </objectContribution>
    </extension>
    <extension

@@ -132,6 +132,8 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 	public static IProject targetProject = null;
 	// The target folder for generated source code.
 	private IFolder generatedSourceFolder = null;
+	// The target FMI version (with 2.0 as the default)
+	private String targetFMIVersion = "2.0";  
 	public final static TargetLanguage targetLanguage = new TargetLanguage(
 			"FMI_C");
 	// The modelDescription file, as an emf model.
@@ -957,5 +959,13 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		} else
 			throw new IL1TranslationException("Type not found: "
 					+ fmiTypeString);
+	}
+
+	public String getTargetFMIVersion() {
+		return targetFMIVersion;
+	}
+
+	public void setTargetFMIVersion(String targetFMIVersion) {
+		this.targetFMIVersion = targetFMIVersion;
 	}
 }

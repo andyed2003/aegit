@@ -25,14 +25,14 @@ import ac.soton.fmusim.codegen.FMUTranslator;
 import ac.soton.fmusim.codegen.FMUTranslatorException;
 import ac.soton.fmusim.codegen.FMUTranslatorPlugin;
 
-public class CodeGen implements IObjectActionDelegate {
+public class CodeGenV1_0 implements IObjectActionDelegate {
 
 	private IStructuredSelection selection;
 
 	/**
 	 * Constructor for Action1.
 	 */
-	public CodeGen() {
+	public CodeGenV1_0() {
 		super();
 	}
 
@@ -47,8 +47,9 @@ public class CodeGen implements IObjectActionDelegate {
 	 */
 	public void run(IAction action) {
 		try {
-			// This method invokes the translation from Event-B to the FMU
+			// This method invokes the translation from Event-B to FMU Version 2.0
 			FMUTranslator fmuTranslator = new FMUTranslator();
+			fmuTranslator.setTargetFMIVersion("1.0");
 			fmuTranslator.translateToFMU(selection);
 			// catch all the things that may go wrong
 		} catch (RodinDBException e) {
