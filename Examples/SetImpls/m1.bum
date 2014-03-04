@@ -6,11 +6,15 @@
 <org.eventb.core.action name="'" org.eventb.core.assignment="mySet ≔ newSet(∅)" org.eventb.core.label="act2"/>
 <org.eventb.core.action name="(" org.eventb.core.assignment="otherSet ≔ newSet(∅)" org.eventb.core.label="act3"/>
 </org.eventb.core.event>
-<org.eventb.core.invariant name="+" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="inv1" org.eventb.core.predicate="mySet ∈ SetImpl(ℤ)"/>
+<org.eventb.core.invariant name="+" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="inv1" org.eventb.core.predicate="mySet ∈ setImpl(ℤ)"/>
 <org.eventb.core.variable name="," org.eventb.core.identifier="otherSet"/>
-<org.eventb.core.invariant name="-" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="inv2" org.eventb.core.predicate="otherSet ∈ SetImpl(ℤ)"/>
+<org.eventb.core.invariant name="-" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="inv2" org.eventb.core.predicate="otherSet ∈ setImpl(ℤ)"/>
 <org.eventb.core.event name="." org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="setUnion">
-<org.eventb.core.action name="'" org.eventb.core.assignment="mySet ≔ setUnion(mySet, otherSet)" org.eventb.core.label="act1"/>
 <org.eventb.core.refinesEvent name="(" org.eventb.core.target="setUnion"/>
+<org.eventb.core.action name="'" org.eventb.core.assignment="mySet ≔ setUnion(mySet, otherSet)" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="/" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="setIntersection">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="setIntersection"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="mySet ≔ setIntersection(mySet, otherSet)" org.eventb.core.label="act1"/>
 </org.eventb.core.event>
 </org.eventb.core.machineFile>

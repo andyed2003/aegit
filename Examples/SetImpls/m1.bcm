@@ -3,8 +3,8 @@
 <org.eventb.core.scRefinesMachine name="'" org.eventb.core.scTarget="/SetImpls/m0.bcm" org.eventb.core.source="/SetImpls/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.refinesMachine#'"/>
 <org.eventb.core.scInvariant name="'" org.eventb.core.label="inv1" org.eventb.core.predicate="mySet∈ℙ(ℤ)" org.eventb.core.source="/SetImpls/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#*" org.eventb.core.theorem="false"/>
 <org.eventb.core.scInvariant name="(" org.eventb.core.label="inv2" org.eventb.core.predicate="otherSet∈ℙ(ℤ)" org.eventb.core.source="/SetImpls/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#-" org.eventb.core.theorem="false"/>
-<org.eventb.core.scInvariant name=")" org.eventb.core.label="inv1" org.eventb.core.predicate="mySet∈SetImpl(ℤ)" org.eventb.core.source="/SetImpls/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#+" org.eventb.core.theorem="false"/>
-<org.eventb.core.scInvariant name="*" org.eventb.core.label="inv2" org.eventb.core.predicate="otherSet∈SetImpl(ℤ)" org.eventb.core.source="/SetImpls/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#-" org.eventb.core.theorem="false"/>
+<org.eventb.core.scInvariant name=")" org.eventb.core.label="inv1" org.eventb.core.predicate="mySet∈setImpl(ℤ)" org.eventb.core.source="/SetImpls/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#+" org.eventb.core.theorem="false"/>
+<org.eventb.core.scInvariant name="*" org.eventb.core.label="inv2" org.eventb.core.predicate="otherSet∈setImpl(ℤ)" org.eventb.core.source="/SetImpls/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#-" org.eventb.core.theorem="false"/>
 <org.eventb.core.scVariable name="mySet" org.eventb.core.abstract="true" org.eventb.core.concrete="true" org.eventb.core.source="/SetImpls/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.variable#)" org.eventb.core.type="ℙ(ℤ)"/>
 <org.eventb.core.scVariable name="otherSet" org.eventb.core.abstract="true" org.eventb.core.concrete="true" org.eventb.core.source="/SetImpls/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.variable#," org.eventb.core.type="ℙ(ℤ)"/>
 <org.eventb.core.scEvent name="otherSeu" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION" org.eventb.core.source="/SetImpls/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#*">
@@ -15,5 +15,9 @@
 <org.eventb.core.scEvent name="otherSev" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="setUnion" org.eventb.core.source="/SetImpls/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#.">
 <org.eventb.core.scRefinesEvent name="'" org.eventb.core.scTarget="/SetImpls/m0.bcm|org.eventb.core.scMachineFile#m0|org.eventb.core.scEvent#otherSev" org.eventb.core.source="/SetImpls/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#.|org.eventb.core.refinesEvent#("/>
 <org.eventb.core.scAction name="(" org.eventb.core.assignment="mySet ≔ setUnion(mySet,otherSet)" org.eventb.core.label="act1" org.eventb.core.source="/SetImpls/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#.|org.eventb.core.action#'"/>
+</org.eventb.core.scEvent>
+<org.eventb.core.scEvent name="otherSew" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="setIntersection" org.eventb.core.source="/SetImpls/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#\/">
+<org.eventb.core.scRefinesEvent name="'" org.eventb.core.scTarget="/SetImpls/m0.bcm|org.eventb.core.scMachineFile#m0|org.eventb.core.scEvent#otherSew" org.eventb.core.source="/SetImpls/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#\/|org.eventb.core.refinesEvent#'"/>
+<org.eventb.core.scAction name="(" org.eventb.core.assignment="mySet ≔ setIntersection(mySet,otherSet)" org.eventb.core.label="act1" org.eventb.core.source="/SetImpls/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#\/|org.eventb.core.action#("/>
 </org.eventb.core.scEvent>
 </org.eventb.core.scMachineFile>
