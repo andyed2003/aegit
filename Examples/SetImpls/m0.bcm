@@ -14,4 +14,9 @@
 <org.eventb.core.scEvent name="otherSew" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="setIntersection" org.eventb.core.source="/SetImpls/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#.">
 <org.eventb.core.scAction name="'" org.eventb.core.assignment="mySet ≔ mySet∩otherSet" org.eventb.core.label="act1" org.eventb.core.source="/SetImpls/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#.|org.eventb.core.action#'"/>
 </org.eventb.core.scEvent>
+<org.eventb.core.scEvent name="otherSex" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="setUnion2" org.eventb.core.source="/SetImpls/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#\/">
+<org.eventb.core.scGuard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="i∈ℤ" org.eventb.core.source="/SetImpls/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#\/|org.eventb.core.guard#)" org.eventb.core.theorem="false"/>
+<org.eventb.core.scParameter name="i" org.eventb.core.source="/SetImpls/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#\/|org.eventb.core.parameter#(" org.eventb.core.type="ℤ"/>
+<org.eventb.core.scAction name="j" org.eventb.core.assignment="mySet ≔ mySet∪{i}" org.eventb.core.label="act1" org.eventb.core.source="/SetImpls/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#\/|org.eventb.core.action#'"/>
+</org.eventb.core.scEvent>
 </org.eventb.core.scMachineFile>

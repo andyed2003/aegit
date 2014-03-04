@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <org.eventb.core.psFile>
-<org.eventb.core.psStatus name="INITIALISATION/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="1" org.eventb.core.psManual="true"/>
-<org.eventb.core.psStatus name="INITIALISATION/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="1" org.eventb.core.psManual="true"/>
-<org.eventb.core.psStatus name="INITIALISATION/act1/SIM" org.eventb.core.confidence="1000" org.eventb.core.poStamp="1" org.eventb.core.psManual="true"/>
-<org.eventb.core.psStatus name="INITIALISATION/act2/SIM" org.eventb.core.confidence="1000" org.eventb.core.poStamp="1" org.eventb.core.psManual="true"/>
-<org.eventb.core.psStatus name="setUnion/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="1" org.eventb.core.psManual="true"/>
-<org.eventb.core.psStatus name="setUnion/act1/SIM" org.eventb.core.confidence="1000" org.eventb.core.poStamp="1" org.eventb.core.psManual="true"/>
-<org.eventb.core.psStatus name="setIntersection/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="1" org.eventb.core.psManual="true"/>
-<org.eventb.core.psStatus name="setIntersection/act1/SIM" org.eventb.core.confidence="1000" org.eventb.core.poStamp="1" org.eventb.core.psManual="true"/>
+<org.eventb.core.psStatus name="INITIALISATION/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="0" org.eventb.core.psManual="true"/>
+<org.eventb.core.psStatus name="INITIALISATION/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="0" org.eventb.core.psManual="true"/>
+<org.eventb.core.psStatus name="INITIALISATION/act1/SIM" org.eventb.core.confidence="1000" org.eventb.core.poStamp="0" org.eventb.core.psManual="true"/>
+<org.eventb.core.psStatus name="INITIALISATION/act2/SIM" org.eventb.core.confidence="1000" org.eventb.core.poStamp="0" org.eventb.core.psManual="true"/>
+<org.eventb.core.psStatus name="setUnion/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="0" org.eventb.core.psManual="true"/>
+<org.eventb.core.psStatus name="setUnion/act1/SIM" org.eventb.core.confidence="1000" org.eventb.core.poStamp="0" org.eventb.core.psManual="true"/>
+<org.eventb.core.psStatus name="setIntersection/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="0" org.eventb.core.psManual="true"/>
+<org.eventb.core.psStatus name="setIntersection/act1/SIM" org.eventb.core.confidence="1000" org.eventb.core.poStamp="0" org.eventb.core.psManual="true"/>
+<org.eventb.core.psStatus name="setUnion2/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="3" org.eventb.core.psManual="true"/>
+<org.eventb.core.psStatus name="setUnion2/act1/SIM" org.eventb.core.confidence="0" org.eventb.core.poStamp="3" org.eventb.core.psBroken="true" org.eventb.core.psManual="true"/>
 </org.eventb.core.psFile>

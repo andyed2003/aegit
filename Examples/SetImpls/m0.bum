@@ -14,4 +14,9 @@
 <org.eventb.core.event name="." org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="setIntersection">
 <org.eventb.core.action name="'" org.eventb.core.assignment="mySet ≔ mySet ∩ otherSet" org.eventb.core.label="act1"/>
 </org.eventb.core.event>
+<org.eventb.core.event name="/" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="setUnion2">
+<org.eventb.core.action name="'" org.eventb.core.assignment="mySet ≔ mySet ∪ {i}" org.eventb.core.label="act1"/>
+<org.eventb.core.parameter name="(" org.eventb.codegen.ui.parameterTypeAttribute="--unset--" org.eventb.core.identifier="i"/>
+<org.eventb.core.guard name=")" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="grd1" org.eventb.core.predicate="i ∈ ℤ"/>
+</org.eventb.core.event>
 </org.eventb.core.machineFile>
