@@ -6,7 +6,7 @@
 <org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="T" org.eventb.core.identifier="t"/>
 </org.eventb.theory.core.newOperatorDefinition>
 <org.eventb.theory.core.newOperatorDefinition name=")" org.eventb.core.label="newSet" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
-<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="T" org.eventb.core.identifier="t"/>
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(T)" org.eventb.core.identifier="t"/>
 <org.eventb.theory.core.directOperatorDefinition name="(" org.eventb.theory.core.formula="t"/>
 </org.eventb.theory.core.newOperatorDefinition>
 <org.eventb.theory.core.newOperatorDefinition name="," org.eventb.core.label="singleton" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
@@ -28,8 +28,9 @@
 <org.eventb.theory.core.metaVariable name="*" org.eventb.core.identifier="a" org.eventb.theory.core.type="ℙ(T)"/>
 <org.eventb.theory.core.metaVariable name="+" org.eventb.core.identifier="b" org.eventb.theory.core.type="ℙ(T)"/>
 <org.eventb.codegen.theory.translator.core.translatorRuleElement name="," org.eventb.codegen.theory.translator.core.formula="a ≔ setIntersection(a,b)" org.eventb.codegen.theory.translator.core.translationElement="a = a.setIntersect(b)" org.eventb.core.label="trns2"/>
-<org.eventb.codegen.theory.translator.core.translatorRuleElement name="-" org.eventb.codegen.theory.translator.core.formula="newSet(T)" org.eventb.codegen.theory.translator.core.translationElement="Set&lt;T&gt;" org.eventb.core.label="trns3"/>
+<org.eventb.codegen.theory.translator.core.translatorRuleElement name="-" org.eventb.codegen.theory.translator.core.formula="newSet(t)" org.eventb.codegen.theory.translator.core.translationElement="new HashSet&lt;T&gt;()" org.eventb.core.label="therule"/>
 <org.eventb.codegen.theory.translator.core.translatorTypeRuleElement name="/" org.eventb.codegen.theory.translator.core.translationElement="Integer" org.eventb.codegen.theory.translator.core.typeFormula="ℤ " org.eventb.core.label="typeTrns2"/>
-<org.eventb.codegen.theory.translator.core.translatorTypeRuleElement name=")" org.eventb.codegen.theory.translator.core.translationElement="new HastSet&lt;T&gt;()" org.eventb.codegen.theory.translator.core.typeFormula="setImpl(T)" org.eventb.core.label="typeTrns1"/>
+<org.eventb.codegen.theory.translator.core.translatorTypeRuleElement name=")" org.eventb.codegen.theory.translator.core.translationElement="Set&lt;T&gt;" org.eventb.codegen.theory.translator.core.typeFormula="setImpl(T)" org.eventb.core.label="typeTrns1"/>
+<org.eventb.theory.core.metaVariable name="0" org.eventb.core.identifier="t" org.eventb.theory.core.type="ℙ(T)"/>
 </org.eventb.codegen.theory.translator.core.translatorElement>
 </org.eventb.theory.core.theoryRoot>
