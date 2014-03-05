@@ -54,6 +54,7 @@ import FmiModel.ModelStructureType;
 import FmiModel.ModelVariablesType;
 import FmiModel.RealType1;
 import FmiModel.StringType;
+import FmiModel.VariabilityType;
 import FmiModel.util.FmiModelResourceImpl;
 import ac.soton.fmusim.components.EventBComponent;
 import ac.soton.fmusim.components.Port;
@@ -311,6 +312,9 @@ public class FMUModelDescriptionV1_0 {
 				}
 			}
 		}
+		// FMI V1.0 does not use this attribute but we set it to discrete
+		// since co-simulation of the FMU is discrete
+		scalar.setVariability(VariabilityType.DISCRETE);
 	}
 
 	private ArrayList<VariableDecl> createVariableDeclList(

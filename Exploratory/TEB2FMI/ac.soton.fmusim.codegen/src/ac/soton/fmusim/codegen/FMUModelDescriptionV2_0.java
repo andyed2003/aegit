@@ -60,6 +60,7 @@ import FmiModel.OutputType;
 import FmiModel.OutputsType;
 import FmiModel.RealType1;
 import FmiModel.StringType;
+import FmiModel.VariabilityType;
 import FmiModel.util.FmiModelResourceImpl;
 import ac.soton.fmusim.components.EventBComponent;
 import ac.soton.fmusim.components.Port;
@@ -227,6 +228,9 @@ public class FMUModelDescriptionV2_0 {
 
 		modelVarsType.getScalarVariable().add(scalar);
 		scalar.setName(var.getName());
+		// All of our translations are to discrete models (currently)
+		scalar.setVariability(VariabilityType.DISCRETE);
+
 		String typeString = getFMITypeString(type);
 
 		if (inputPortNames.contains(var.getName())) {

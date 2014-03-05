@@ -909,7 +909,7 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="variability" eType="#//VariabilityType"
-        defaultValueLiteral="continuous" unsettable="true">
+        defaultValueLiteral="" unsettable="true">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="attribute"/>
         <details key="name" value="variability"/>

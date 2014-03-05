@@ -2844,7 +2844,7 @@ public class FmiModelPackageImpl extends EPackageImpl implements FmiModelPackage
 		initEAttribute(getFmiScalarVariable_Initial(), this.getInitialType(), "initial", null, 0, 1, FmiScalarVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFmiScalarVariable_Name(), theXMLTypePackage.getNormalizedString(), "name", null, 1, 1, FmiScalarVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFmiScalarVariable_ValueReference(), theXMLTypePackage.getUnsignedInt(), "valueReference", null, 0, 1, FmiScalarVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFmiScalarVariable_Variability(), this.getVariabilityType(), "variability", "continuous", 0, 1, FmiScalarVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFmiScalarVariable_Variability(), this.getVariabilityType(), "variability", "", 0, 1, FmiScalarVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(fmiSimpleTypeEClass, FmiSimpleType.class, "FmiSimpleType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFmiSimpleType_Real(), this.getRealType(), null, "real", null, 0, 1, FmiSimpleType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

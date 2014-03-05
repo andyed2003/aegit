@@ -420,7 +420,7 @@ public interface FmiScalarVariable extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Variability</b></em>' attribute.
-	 * The default value is <code>"continuous"</code>.
+	 * The default value is <code>""</code>.
 	 * The literals are from the enumeration {@link FmiModel.VariabilityType}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -434,7 +434,7 @@ public interface FmiScalarVariable extends EObject {
 	 * @see #unsetVariability()
 	 * @see #setVariability(VariabilityType)
 	 * @see FmiModel.FmiModelPackage#getFmiScalarVariable_Variability()
-	 * @model default="continuous" unsettable="true"
+	 * @model default="" unsettable="true"
 	 *        extendedMetaData="kind='attribute' name='variability' namespace='##targetNamespace'"
 	 * @generated
 	 */

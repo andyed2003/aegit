@@ -241,7 +241,7 @@ public class FmiScalarVariableImpl extends EObjectImpl implements FmiScalarVaria
 	 * @generated
 	 * @ordered
 	 */
-	protected static final VariabilityType VARIABILITY_EDEFAULT = VariabilityType.CONTINUOUS;
+	protected static final VariabilityType VARIABILITY_EDEFAULT = VariabilityType.CONSTANT;
 
 	/**
 	 * The cached value of the '{@link #getVariability() <em>Variability</em>}' attribute.
