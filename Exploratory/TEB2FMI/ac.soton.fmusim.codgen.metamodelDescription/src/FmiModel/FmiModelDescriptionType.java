@@ -38,6 +38,8 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  *   <li>{@link FmiModel.FmiModelDescriptionType#getNumberOfEventIndicators <em>Number Of Event Indicators</em>}</li>
  *   <li>{@link FmiModel.FmiModelDescriptionType#getVariableNamingConvention <em>Variable Naming Convention</em>}</li>
  *   <li>{@link FmiModel.FmiModelDescriptionType#getVersion <em>Version</em>}</li>
+ *   <li>{@link FmiModel.FmiModelDescriptionType#getModelIdentifier <em>Model Identifier</em>}</li>
+ *   <li>{@link FmiModel.FmiModelDescriptionType#getNumberOfContinuousStates <em>Number Of Continuous States</em>}</li>
  * </ul>
  * </p>
  *
@@ -265,7 +267,7 @@ public interface FmiModelDescriptionType extends EObject {
 	 * @return the value of the '<em>Model Structure</em>' containment reference.
 	 * @see #setModelStructure(ModelStructureType)
 	 * @see FmiModel.FmiModelPackage#getFmiModelDescriptionType_ModelStructure()
-	 * @model containment="true" required="true"
+	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='ModelStructure' namespace='##targetNamespace'"
 	 * @generated
 	 */
@@ -685,5 +687,85 @@ public interface FmiModelDescriptionType extends EObject {
 	 * @generated
 	 */
 	void setVersion(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Model Identifier</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Short class name according to C-syntax, e.g. "A_B_C". Used as prefix for FMI functions if the functions are provided in C source code or in static libraries, but not if the functions are provided by a DLL/SharedObject. modelIdentifier is also used as name of the static library or DLL/SharedObject.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Model Identifier</em>' attribute.
+	 * @see #setModelIdentifier(String)
+	 * @see FmiModel.FmiModelPackage#getFmiModelDescriptionType_ModelIdentifier()
+	 * @model dataType="org.eclipse.emf.ecore.xml.type.NormalizedString"
+	 *        extendedMetaData="kind='attribute' name='modelIdentifier' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	String getModelIdentifier();
+
+	/**
+	 * Sets the value of the '{@link FmiModel.FmiModelDescriptionType#getModelIdentifier <em>Model Identifier</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Model Identifier</em>' attribute.
+	 * @see #getModelIdentifier()
+	 * @generated
+	 */
+	void setModelIdentifier(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Number Of Continuous States</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Number Of Continuous States</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Number Of Continuous States</em>' attribute.
+	 * @see #isSetNumberOfContinuousStates()
+	 * @see #unsetNumberOfContinuousStates()
+	 * @see #setNumberOfContinuousStates(long)
+	 * @see FmiModel.FmiModelPackage#getFmiModelDescriptionType_NumberOfContinuousStates()
+	 * @model unsettable="true" dataType="org.eclipse.emf.ecore.xml.type.UnsignedInt"
+	 *        extendedMetaData="kind='attribute' name='numberOfContinuousStates' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	long getNumberOfContinuousStates();
+
+	/**
+	 * Sets the value of the '{@link FmiModel.FmiModelDescriptionType#getNumberOfContinuousStates <em>Number Of Continuous States</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Number Of Continuous States</em>' attribute.
+	 * @see #isSetNumberOfContinuousStates()
+	 * @see #unsetNumberOfContinuousStates()
+	 * @see #getNumberOfContinuousStates()
+	 * @generated
+	 */
+	void setNumberOfContinuousStates(long value);
+
+	/**
+	 * Unsets the value of the '{@link FmiModel.FmiModelDescriptionType#getNumberOfContinuousStates <em>Number Of Continuous States</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetNumberOfContinuousStates()
+	 * @see #getNumberOfContinuousStates()
+	 * @see #setNumberOfContinuousStates(long)
+	 * @generated
+	 */
+	void unsetNumberOfContinuousStates();
+
+	/**
+	 * Returns whether the value of the '{@link FmiModel.FmiModelDescriptionType#getNumberOfContinuousStates <em>Number Of Continuous States</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Number Of Continuous States</em>' attribute is set.
+	 * @see #unsetNumberOfContinuousStates()
+	 * @see #getNumberOfContinuousStates()
+	 * @see #setNumberOfContinuousStates(long)
+	 * @generated
+	 */
+	boolean isSetNumberOfContinuousStates();
 
 } // FmiModelDescriptionType

@@ -73,6 +73,8 @@ public class FmiModelDescriptionTypeItemProvider
 			addNumberOfEventIndicatorsPropertyDescriptor(object);
 			addVariableNamingConventionPropertyDescriptor(object);
 			addVersionPropertyDescriptor(object);
+			addModelIdentifierPropertyDescriptor(object);
+			addNumberOfContinuousStatesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -342,6 +344,50 @@ public class FmiModelDescriptionTypeItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Model Identifier feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addModelIdentifierPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_FmiModelDescriptionType_modelIdentifier_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_FmiModelDescriptionType_modelIdentifier_feature", "_UI_FmiModelDescriptionType_type"),
+				 FmiModelPackage.Literals.FMI_MODEL_DESCRIPTION_TYPE__MODEL_IDENTIFIER,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Number Of Continuous States feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNumberOfContinuousStatesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_FmiModelDescriptionType_numberOfContinuousStates_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_FmiModelDescriptionType_numberOfContinuousStates_feature", "_UI_FmiModelDescriptionType_type"),
+				 FmiModelPackage.Literals.FMI_MODEL_DESCRIPTION_TYPE__NUMBER_OF_CONTINUOUS_STATES,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -427,6 +473,8 @@ public class FmiModelDescriptionTypeItemProvider
 			case FmiModelPackage.FMI_MODEL_DESCRIPTION_TYPE__NUMBER_OF_EVENT_INDICATORS:
 			case FmiModelPackage.FMI_MODEL_DESCRIPTION_TYPE__VARIABLE_NAMING_CONVENTION:
 			case FmiModelPackage.FMI_MODEL_DESCRIPTION_TYPE__VERSION:
+			case FmiModelPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_IDENTIFIER:
+			case FmiModelPackage.FMI_MODEL_DESCRIPTION_TYPE__NUMBER_OF_CONTINUOUS_STATES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case FmiModelPackage.FMI_MODEL_DESCRIPTION_TYPE__GROUP:

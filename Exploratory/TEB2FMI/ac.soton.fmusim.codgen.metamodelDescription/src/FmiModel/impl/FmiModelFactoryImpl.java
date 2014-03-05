@@ -2,6 +2,7 @@
  */
 package FmiModel.impl;
 
+import FmiModel.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -71,7 +72,7 @@ public class FmiModelFactoryImpl extends EFactoryImpl implements FmiModelFactory
 	 */
 	public static FmiModelFactory init() {
 		try {
-			FmiModelFactory theFmiModelFactory = (FmiModelFactory)EPackage.Registry.INSTANCE.getEFactory("file:/home/andy/Desktop/FMImodelXSDs/fmiAnnotation.xsd"); 
+			FmiModelFactory theFmiModelFactory = (FmiModelFactory)EPackage.Registry.INSTANCE.getEFactory("http://ac.soton.fmusim.codegen.fmimetamodeldescription"); 
 			if (theFmiModelFactory != null) {
 				return theFmiModelFactory;
 			}

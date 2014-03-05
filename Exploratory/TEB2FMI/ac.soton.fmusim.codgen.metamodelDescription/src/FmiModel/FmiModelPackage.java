@@ -79,7 +79,7 @@ public interface FmiModelPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "file:/home/andy/Desktop/FMImodelXSDs/fmiAnnotation.xsd";
+	String eNS_URI = "http://ac.soton.fmusim.codegen.fmimetamodeldescription";
 
 	/**
 	 * The package namespace name.
@@ -1047,13 +1047,31 @@ public interface FmiModelPackage extends EPackage {
 	int FMI_MODEL_DESCRIPTION_TYPE__VERSION = 21;
 
 	/**
+	 * The feature id for the '<em><b>Model Identifier</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FMI_MODEL_DESCRIPTION_TYPE__MODEL_IDENTIFIER = 22;
+
+	/**
+	 * The feature id for the '<em><b>Number Of Continuous States</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FMI_MODEL_DESCRIPTION_TYPE__NUMBER_OF_CONTINUOUS_STATES = 23;
+
+	/**
 	 * The number of structural features of the '<em>Description Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FMI_MODEL_DESCRIPTION_TYPE_FEATURE_COUNT = 22;
+	int FMI_MODEL_DESCRIPTION_TYPE_FEATURE_COUNT = 24;
 
 	/**
 	 * The meta object id for the '{@link FmiModel.impl.FmiScalarVariableImpl <em>Fmi Scalar Variable</em>}' class.
@@ -3352,6 +3370,28 @@ public interface FmiModelPackage extends EPackage {
 	EAttribute getFmiModelDescriptionType_Version();
 
 	/**
+	 * Returns the meta object for the attribute '{@link FmiModel.FmiModelDescriptionType#getModelIdentifier <em>Model Identifier</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Model Identifier</em>'.
+	 * @see FmiModel.FmiModelDescriptionType#getModelIdentifier()
+	 * @see #getFmiModelDescriptionType()
+	 * @generated
+	 */
+	EAttribute getFmiModelDescriptionType_ModelIdentifier();
+
+	/**
+	 * Returns the meta object for the attribute '{@link FmiModel.FmiModelDescriptionType#getNumberOfContinuousStates <em>Number Of Continuous States</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Number Of Continuous States</em>'.
+	 * @see FmiModel.FmiModelDescriptionType#getNumberOfContinuousStates()
+	 * @see #getFmiModelDescriptionType()
+	 * @generated
+	 */
+	EAttribute getFmiModelDescriptionType_NumberOfContinuousStates();
+
+	/**
 	 * Returns the meta object for class '{@link FmiModel.FmiScalarVariable <em>Fmi Scalar Variable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5483,6 +5523,22 @@ public interface FmiModelPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute FMI_MODEL_DESCRIPTION_TYPE__VERSION = eINSTANCE.getFmiModelDescriptionType_Version();
+
+		/**
+		 * The meta object literal for the '<em><b>Model Identifier</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FMI_MODEL_DESCRIPTION_TYPE__MODEL_IDENTIFIER = eINSTANCE.getFmiModelDescriptionType_ModelIdentifier();
+
+		/**
+		 * The meta object literal for the '<em><b>Number Of Continuous States</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FMI_MODEL_DESCRIPTION_TYPE__NUMBER_OF_CONTINUOUS_STATES = eINSTANCE.getFmiModelDescriptionType_NumberOfContinuousStates();
 
 		/**
 		 * The meta object literal for the '{@link FmiModel.impl.FmiScalarVariableImpl <em>Fmi Scalar Variable</em>}' class.

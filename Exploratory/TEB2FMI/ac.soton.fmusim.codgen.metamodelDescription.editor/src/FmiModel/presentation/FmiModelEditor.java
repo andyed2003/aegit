@@ -570,7 +570,7 @@ public class FmiModelEditor
 			BasicDiagnostic diagnostic =
 				new BasicDiagnostic
 					(Diagnostic.OK,
-					 "ac.soton.fmusim.codgen.metamodelDescription.editor",
+					 "ac.soton.fmusim.codegen.metamodelDescription.editor",
 					 0,
 					 null,
 					 new Object [] { editingDomain.getResourceSet() });
@@ -927,7 +927,7 @@ public class FmiModelEditor
 			BasicDiagnostic basicDiagnostic =
 				new BasicDiagnostic
 					(Diagnostic.ERROR,
-					 "ac.soton.fmusim.codgen.metamodelDescription.editor",
+					 "ac.soton.fmusim.codegen.metamodelDescription.editor",
 					 0,
 					 getString("_UI_CreateModelError_message", resource.getURI()),
 					 new Object [] { exception == null ? (Object)resource : exception });
@@ -938,7 +938,7 @@ public class FmiModelEditor
 			return
 				new BasicDiagnostic
 					(Diagnostic.ERROR,
-					 "ac.soton.fmusim.codgen.metamodelDescription.editor",
+					 "ac.soton.fmusim.codegen.metamodelDescription.editor",
 					 0,
 					 getString("_UI_CreateModelError_message", resource.getURI()),
 					 new Object[] { exception });

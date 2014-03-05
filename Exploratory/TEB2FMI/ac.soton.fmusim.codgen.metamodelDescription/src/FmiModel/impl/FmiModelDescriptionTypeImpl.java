@@ -59,6 +59,8 @@ import FmiModel.VariableNamingConventionType;
  *   <li>{@link FmiModel.impl.FmiModelDescriptionTypeImpl#getNumberOfEventIndicators <em>Number Of Event Indicators</em>}</li>
  *   <li>{@link FmiModel.impl.FmiModelDescriptionTypeImpl#getVariableNamingConvention <em>Variable Naming Convention</em>}</li>
  *   <li>{@link FmiModel.impl.FmiModelDescriptionTypeImpl#getVersion <em>Version</em>}</li>
+ *   <li>{@link FmiModel.impl.FmiModelDescriptionTypeImpl#getModelIdentifier <em>Model Identifier</em>}</li>
+ *   <li>{@link FmiModel.impl.FmiModelDescriptionTypeImpl#getNumberOfContinuousStates <em>Number Of Continuous States</em>}</li>
  * </ul>
  * </p>
  *
@@ -411,6 +413,55 @@ public class FmiModelDescriptionTypeImpl extends EObjectImpl implements FmiModel
 	 * @ordered
 	 */
 	protected String version = VERSION_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getModelIdentifier() <em>Model Identifier</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getModelIdentifier()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String MODEL_IDENTIFIER_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getModelIdentifier() <em>Model Identifier</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getModelIdentifier()
+	 * @generated
+	 * @ordered
+	 */
+	protected String modelIdentifier = MODEL_IDENTIFIER_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getNumberOfContinuousStates() <em>Number Of Continuous States</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNumberOfContinuousStates()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final long NUMBER_OF_CONTINUOUS_STATES_EDEFAULT = 0L;
+
+	/**
+	 * The cached value of the '{@link #getNumberOfContinuousStates() <em>Number Of Continuous States</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNumberOfContinuousStates()
+	 * @generated
+	 * @ordered
+	 */
+	protected long numberOfContinuousStates = NUMBER_OF_CONTINUOUS_STATES_EDEFAULT;
+
+	/**
+	 * This is true if the Number Of Continuous States attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean numberOfContinuousStatesESet;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1094,6 +1145,73 @@ public class FmiModelDescriptionTypeImpl extends EObjectImpl implements FmiModel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getModelIdentifier() {
+		return modelIdentifier;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setModelIdentifier(String newModelIdentifier) {
+		String oldModelIdentifier = modelIdentifier;
+		modelIdentifier = newModelIdentifier;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FmiModelPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_IDENTIFIER, oldModelIdentifier, modelIdentifier));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public long getNumberOfContinuousStates() {
+		return numberOfContinuousStates;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setNumberOfContinuousStates(long newNumberOfContinuousStates) {
+		long oldNumberOfContinuousStates = numberOfContinuousStates;
+		numberOfContinuousStates = newNumberOfContinuousStates;
+		boolean oldNumberOfContinuousStatesESet = numberOfContinuousStatesESet;
+		numberOfContinuousStatesESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FmiModelPackage.FMI_MODEL_DESCRIPTION_TYPE__NUMBER_OF_CONTINUOUS_STATES, oldNumberOfContinuousStates, numberOfContinuousStates, !oldNumberOfContinuousStatesESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void unsetNumberOfContinuousStates() {
+		long oldNumberOfContinuousStates = numberOfContinuousStates;
+		boolean oldNumberOfContinuousStatesESet = numberOfContinuousStatesESet;
+		numberOfContinuousStates = NUMBER_OF_CONTINUOUS_STATES_EDEFAULT;
+		numberOfContinuousStatesESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, FmiModelPackage.FMI_MODEL_DESCRIPTION_TYPE__NUMBER_OF_CONTINUOUS_STATES, oldNumberOfContinuousStates, NUMBER_OF_CONTINUOUS_STATES_EDEFAULT, oldNumberOfContinuousStatesESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetNumberOfContinuousStates() {
+		return numberOfContinuousStatesESet;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -1174,6 +1292,10 @@ public class FmiModelDescriptionTypeImpl extends EObjectImpl implements FmiModel
 				return getVariableNamingConvention();
 			case FmiModelPackage.FMI_MODEL_DESCRIPTION_TYPE__VERSION:
 				return getVersion();
+			case FmiModelPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_IDENTIFIER:
+				return getModelIdentifier();
+			case FmiModelPackage.FMI_MODEL_DESCRIPTION_TYPE__NUMBER_OF_CONTINUOUS_STATES:
+				return getNumberOfContinuousStates();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1255,6 +1377,12 @@ public class FmiModelDescriptionTypeImpl extends EObjectImpl implements FmiModel
 			case FmiModelPackage.FMI_MODEL_DESCRIPTION_TYPE__VERSION:
 				setVersion((String)newValue);
 				return;
+			case FmiModelPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_IDENTIFIER:
+				setModelIdentifier((String)newValue);
+				return;
+			case FmiModelPackage.FMI_MODEL_DESCRIPTION_TYPE__NUMBER_OF_CONTINUOUS_STATES:
+				setNumberOfContinuousStates((Long)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -1333,6 +1461,12 @@ public class FmiModelDescriptionTypeImpl extends EObjectImpl implements FmiModel
 			case FmiModelPackage.FMI_MODEL_DESCRIPTION_TYPE__VERSION:
 				setVersion(VERSION_EDEFAULT);
 				return;
+			case FmiModelPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_IDENTIFIER:
+				setModelIdentifier(MODEL_IDENTIFIER_EDEFAULT);
+				return;
+			case FmiModelPackage.FMI_MODEL_DESCRIPTION_TYPE__NUMBER_OF_CONTINUOUS_STATES:
+				unsetNumberOfContinuousStates();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -1389,6 +1523,10 @@ public class FmiModelDescriptionTypeImpl extends EObjectImpl implements FmiModel
 				return isSetVariableNamingConvention();
 			case FmiModelPackage.FMI_MODEL_DESCRIPTION_TYPE__VERSION:
 				return VERSION_EDEFAULT == null ? version != null : !VERSION_EDEFAULT.equals(version);
+			case FmiModelPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_IDENTIFIER:
+				return MODEL_IDENTIFIER_EDEFAULT == null ? modelIdentifier != null : !MODEL_IDENTIFIER_EDEFAULT.equals(modelIdentifier);
+			case FmiModelPackage.FMI_MODEL_DESCRIPTION_TYPE__NUMBER_OF_CONTINUOUS_STATES:
+				return isSetNumberOfContinuousStates();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1429,6 +1567,10 @@ public class FmiModelDescriptionTypeImpl extends EObjectImpl implements FmiModel
 		if (variableNamingConventionESet) result.append(variableNamingConvention); else result.append("<unset>");
 		result.append(", version: ");
 		result.append(version);
+		result.append(", modelIdentifier: ");
+		result.append(modelIdentifier);
+		result.append(", numberOfContinuousStates: ");
+		if (numberOfContinuousStatesESet) result.append(numberOfContinuousStates); else result.append("<unset>");
 		result.append(')');
 		return result.toString();
 	}

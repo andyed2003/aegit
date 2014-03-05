@@ -45,19 +45,13 @@ import org.rodinp.core.RodinCore;
 
 import FmiModel.BooleanType;
 import FmiModel.CausalityType;
-import FmiModel.CoSimulationType;
 import FmiModel.DocumentRoot;
 import FmiModel.FmiModelDescriptionType;
 import FmiModel.FmiModelFactory;
 import FmiModel.FmiScalarVariable;
-import FmiModel.InitialType;
-import FmiModel.InputType;
-import FmiModel.InputsType;
 import FmiModel.IntegerType;
 import FmiModel.ModelStructureType;
 import FmiModel.ModelVariablesType;
-import FmiModel.OutputType;
-import FmiModel.OutputsType;
 import FmiModel.RealType1;
 import FmiModel.StringType;
 import FmiModel.util.FmiModelResourceImpl;
@@ -69,8 +63,8 @@ import ac.soton.fmusim.components.Port;
 // It is not related to the extensibility mechanism implemented by Chris, i.e. does not
 // use an extension point. However, protected objects, and those nested within, do use it.
 
-public class FMUModelDescriptionV2_0 {
-//	// Declaration of Types handled by the translator.
+public class FMUModelDescriptionV1_0 {
+	// // Declaration of Types handled by the translator.
 	private static final String REAL = "Real";
 	private static final String STRING = "String";
 	private static final String BOOLEAN = "Boolean";
@@ -91,16 +85,17 @@ public class FMUModelDescriptionV2_0 {
 	private List<String> inputPortNames;
 	private List<String> outputPortNames;
 
-	public FMUModelDescriptionV2_0(Program program_, TaskingTranslationManager taskingTranslationManager_,
-			IProject targetProject_, EventBComponent eventBComponent_){
+	public FMUModelDescriptionV1_0(Program program_,
+			TaskingTranslationManager taskingTranslationManager_,
+			IProject targetProject_, EventBComponent eventBComponent_) {
 		program = program_;
 		taskingTranslationManager = taskingTranslationManager_;
 		targetProject = targetProject_;
 		eventBComponent = eventBComponent_;
 	}
-	
-	public void create() throws CModelException, IOException, TaskingTranslationException, CoreException
-			 {
+
+	public void create() throws CModelException, IOException,
+			TaskingTranslationException, CoreException {
 		IRodinDB rodinDB = RodinCore.getRodinDB();
 		sourceRodinProject = rodinDB.getRodinProject(program.getProjectName());
 		// Create a target Directory
@@ -120,19 +115,21 @@ public class FMUModelDescriptionV2_0 {
 		integerVariableCount = 0;
 		boolVariableCount = 0;
 		// Each fmuMachine will have its own DocumentRoot
+		
 		DocumentRoot docRoot = FmiModelFactory.eINSTANCE.createDocumentRoot();
-		ModelDescriptionManager modelDescriptionsManager = ModelDescriptionManager.getDefault();
 		// add this machine documentroot to the list
-		modelDescriptionsManager .getDocumentRootList().add(docRoot);
+		ModelDescriptionManager modelDescriptionsManager = ModelDescriptionManager.getDefault();
+		modelDescriptionsManager.getDocumentRootList().add(docRoot);
 		// set various values
 		FmiModelDescriptionType descriptionType = FmiModelFactory.eINSTANCE
 				.createFmiModelDescriptionType();
 		// Add the modlStructure Attribute
-		ModelStructureType modelStructureType = FmiModelFactory.eINSTANCE.createModelStructureType();
+		ModelStructureType modelStructureType = FmiModelFactory.eINSTANCE
+				.createModelStructureType();
 		descriptionType.setModelStructure(modelStructureType);
-		
+
 		docRoot.setFmiModelDescription(descriptionType);
-		descriptionType.setFmiVersion("2.0");
+		descriptionType.setFmiVersion("1.0");
 		descriptionType.setGenerationTool("EB2FMU");
 		descriptionType.setAuthor("University of Southampton");
 		XMLGregorianCalendar xmlGC = makeDate();
@@ -141,15 +138,21 @@ public class FMUModelDescriptionV2_0 {
 				+ xmlGC.toXMLFormat());
 		descriptionType.setModelName(machine.getName());
 		descriptionType.setNumberOfEventIndicators(0);
-		// This is a co-simulation
-		CoSimulationType coSimType = FmiModelFactory.eINSTANCE
-				.createCoSimulationType();
-		descriptionType.getCoSimulation().add(coSimType);
-		coSimType.setModelIdentifier(machine.getName());
 		// This is where we store the FMI scalar variables
 		ModelVariablesType modelVarsType = FmiModelFactory.eINSTANCE
 				.createModelVariablesType();
+
+		// This is where V1.0 and V2.0 translations differ
+		// There is no co-simulation type.
+		// There is no initial value in the scalar variables
+		// We need a modelIdentifier in the fmiModelDescription
+		// We do not require a modelStructure attribute.
 		descriptionType.setModelVariables(modelVarsType);
+		descriptionType.setModelIdentifier(machine.getName());
+		// The default is zero, until we need to make it configurable
+		descriptionType.setNumberOfContinuousStates(0);
+		descriptionType.setModelStructure(null);
+
 		// Get the info to obtain the type environment
 		IRodinFile mchFile = sourceRodinProject.getRodinFile(machine.getName()
 				+ ".bum");
@@ -167,11 +170,12 @@ public class FMUModelDescriptionV2_0 {
 		ArrayList<VariableDecl> variableDeclList = createVariableDeclList(contents);
 
 		for (Variable var : variableList) {
-			variableToFMIScalar(modelVarsType, typeEnv, var, variableDeclList, descriptionType);
+			variableToFMIScalar(modelVarsType, typeEnv, var, variableDeclList,
+					descriptionType);
 		}
-		
+
 		// END OF BUILD modelDescription.xml
-		
+
 		// Now deal with persisting it.
 		// Create a descriptions folder.
 		String fileName = machine.getName()
@@ -219,7 +223,8 @@ public class FMUModelDescriptionV2_0 {
 	// variables, generated from the variable's type etc.
 	private void variableToFMIScalar(ModelVariablesType modelVarsType,
 			ITypeEnvironment typeEnv, Variable var,
-			ArrayList<VariableDecl> variableDeclList, FmiModelDescriptionType descriptionType) {
+			ArrayList<VariableDecl> variableDeclList,
+			FmiModelDescriptionType descriptionType) {
 		Type type = typeEnv.getType(var.getName());
 		// Create and set an fmiScalar value for each variable
 		FmiScalarVariable scalar = FmiModelFactory.eINSTANCE
@@ -232,15 +237,9 @@ public class FMUModelDescriptionV2_0 {
 		if (inputPortNames.contains(var.getName())) {
 			// set the causality in the scalar
 			scalar.setCausality(CausalityType.INPUT);
-			scalar.setInitial(InitialType.EXACT);
-			// set the input name in the modelStructureType
-			createModelStructureInput(var, descriptionType);
-			
 		} else if (outputPortNames.contains(var.getName())) {
 			// set the causality in the scalar
 			scalar.setCausality(CausalityType.OUTPUT);
-			// set the output name in the modelStructureType
-			createModelStructureOutput(var, descriptionType);
 		}
 		// Add a type if it is an integer
 		if (typeString.equals(INTEGER)) {
@@ -314,28 +313,6 @@ public class FMUModelDescriptionV2_0 {
 		}
 	}
 
-	private void createModelStructureInput(Variable var, FmiModelDescriptionType descriptionType) {
-		ModelStructureType modelStructure = descriptionType.getModelStructure();
-		if(modelStructure.getInputs() == null){
-			InputsType inputsType = FmiModelFactory.eINSTANCE.createInputsType();
-			modelStructure.setInputs(inputsType);
-		}
-		InputType input = FmiModelFactory.eINSTANCE.createInputType();
-		input.setName(var.getName());
-		modelStructure.getInputs().getInput().add(input);
-	}
-
-	private void createModelStructureOutput(Variable var, FmiModelDescriptionType descriptionType) {
-		ModelStructureType modelStructure = descriptionType.getModelStructure();
-		if(modelStructure.getOutputs() == null){
-			OutputsType outputsType = FmiModelFactory.eINSTANCE.createOutputsType();
-			modelStructure.setOutputs(outputsType);
-		}
-		OutputType output = FmiModelFactory.eINSTANCE.createOutputType();
-		output.setName(var.getName());
-		modelStructure.getOutputs().getOutput().add(output);
-	}
-
 	private ArrayList<VariableDecl> createVariableDeclList(
 			TreeIterator<EObject> contents) {
 		ArrayList<VariableDecl> variableDeclList = new ArrayList<VariableDecl>();
@@ -378,7 +355,6 @@ public class FMUModelDescriptionV2_0 {
 		return xmlGC;
 	}
 
-
 	// Create the file associated with the output
 	// The sourceRes is the container of the MainClass
 	// element that we want to transform
@@ -398,7 +374,6 @@ public class FMUModelDescriptionV2_0 {
 		outResource.save(null);
 	}
 
-	
 	// Given an eventB type, return its FMI equivalent
 	public static String getFMITypeString(Type eventBType) {
 		String fmiTypeString = null;

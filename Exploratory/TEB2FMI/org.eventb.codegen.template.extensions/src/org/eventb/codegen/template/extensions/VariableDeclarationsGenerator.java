@@ -42,7 +42,7 @@ public class VariableDeclarationsGenerator implements IGenerator {
 	private void processVariableDecls(List<String> outCode) {
 		String machineName = protectedSource.getMachineName();
 		List<DocumentRoot> docs = ModelDescriptionManager.getDefault()
-				.getDocumentRoot();
+				.getDocumentRootList();
 		// find the document root for this IL1 protected
 		for (DocumentRoot docRoot : docs) {
 			if (docRoot.getFmiModelDescription().getModelName()

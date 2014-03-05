@@ -49,7 +49,7 @@ public class CodeGenV2_0 implements IObjectActionDelegate {
 		try {
 			// This method invokes the translation from Event-B to FMU Version 2.0
 			FMUTranslator fmuTranslator = new FMUTranslator();
-			fmuTranslator.setTargetFMIVersion("2.0");
+			fmuTranslator.setTargetFMIVersion(FMUTranslator.FMI_VERSION_2_0);
 			fmuTranslator.translateToFMU(selection);
 			// catch all the things that may go wrong
 		} catch (RodinDBException e) {

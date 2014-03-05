@@ -1225,6 +1225,24 @@ public class FmiModelPackageImpl extends EPackageImpl implements FmiModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getFmiModelDescriptionType_ModelIdentifier() {
+		return (EAttribute)fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(22);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFmiModelDescriptionType_NumberOfContinuousStates() {
+		return (EAttribute)fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(23);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getFmiScalarVariable() {
 		return fmiScalarVariableEClass;
 	}
@@ -2521,6 +2539,8 @@ public class FmiModelPackageImpl extends EPackageImpl implements FmiModelPackage
 		createEAttribute(fmiModelDescriptionTypeEClass, FMI_MODEL_DESCRIPTION_TYPE__NUMBER_OF_EVENT_INDICATORS);
 		createEAttribute(fmiModelDescriptionTypeEClass, FMI_MODEL_DESCRIPTION_TYPE__VARIABLE_NAMING_CONVENTION);
 		createEAttribute(fmiModelDescriptionTypeEClass, FMI_MODEL_DESCRIPTION_TYPE__VERSION);
+		createEAttribute(fmiModelDescriptionTypeEClass, FMI_MODEL_DESCRIPTION_TYPE__MODEL_IDENTIFIER);
+		createEAttribute(fmiModelDescriptionTypeEClass, FMI_MODEL_DESCRIPTION_TYPE__NUMBER_OF_CONTINUOUS_STATES);
 
 		fmiScalarVariableEClass = createEClass(FMI_SCALAR_VARIABLE);
 		createEReference(fmiScalarVariableEClass, FMI_SCALAR_VARIABLE__REAL);
@@ -2796,7 +2816,7 @@ public class FmiModelPackageImpl extends EPackageImpl implements FmiModelPackage
 		initEReference(getFmiModelDescriptionType_DefaultExperiment(), this.getDefaultExperimentType(), null, "defaultExperiment", null, 0, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFmiModelDescriptionType_VendorAnnotations(), this.getFmiAnnotation(), null, "vendorAnnotations", null, 0, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFmiModelDescriptionType_ModelVariables(), this.getModelVariablesType(), null, "modelVariables", null, 1, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFmiModelDescriptionType_ModelStructure(), this.getModelStructureType(), null, "modelStructure", null, 1, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFmiModelDescriptionType_ModelStructure(), this.getModelStructureType(), null, "modelStructure", null, 0, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFmiModelDescriptionType_Author(), theXMLTypePackage.getString(), "author", null, 0, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFmiModelDescriptionType_Copyright(), theXMLTypePackage.getString(), "copyright", null, 0, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFmiModelDescriptionType_Description(), theXMLTypePackage.getString(), "description", null, 0, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2809,6 +2829,8 @@ public class FmiModelPackageImpl extends EPackageImpl implements FmiModelPackage
 		initEAttribute(getFmiModelDescriptionType_NumberOfEventIndicators(), theXMLTypePackage.getUnsignedInt(), "numberOfEventIndicators", null, 0, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFmiModelDescriptionType_VariableNamingConvention(), this.getVariableNamingConventionType(), "variableNamingConvention", "flat", 0, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFmiModelDescriptionType_Version(), theXMLTypePackage.getNormalizedString(), "version", null, 0, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFmiModelDescriptionType_ModelIdentifier(), theXMLTypePackage.getNormalizedString(), "modelIdentifier", null, 0, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFmiModelDescriptionType_NumberOfContinuousStates(), theXMLTypePackage.getUnsignedInt(), "numberOfContinuousStates", null, 0, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(fmiScalarVariableEClass, FmiScalarVariable.class, "FmiScalarVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFmiScalarVariable_Real(), this.getRealType1(), null, "real", null, 0, 1, FmiScalarVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3687,6 +3709,22 @@ public class FmiModelPackageImpl extends EPackageImpl implements FmiModelPackage
 		   new String[] {
 			 "kind", "attribute",
 			 "name", "version",
+			 "namespace", "##targetNamespace"
+		   });			
+		addAnnotation
+		  (getFmiModelDescriptionType_ModelIdentifier(), 
+		   source, 
+		   new String[] {
+			 "kind", "attribute",
+			 "name", "modelIdentifier",
+			 "namespace", "##targetNamespace"
+		   });		
+		addAnnotation
+		  (getFmiModelDescriptionType_NumberOfContinuousStates(), 
+		   source, 
+		   new String[] {
+			 "kind", "attribute",
+			 "name", "numberOfContinuousStates",
 			 "namespace", "##targetNamespace"
 		   });			
 		addAnnotation
