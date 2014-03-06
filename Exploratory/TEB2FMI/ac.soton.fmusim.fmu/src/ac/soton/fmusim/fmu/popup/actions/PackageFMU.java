@@ -1,5 +1,6 @@
 package ac.soton.fmusim.fmu.popup.actions;
 
+import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -180,7 +181,7 @@ public class PackageFMU implements IObjectActionDelegate {
 				zipOut.putNextEntry(ze);
 				// write the source file content 
 				int value = srcStreamReader.read();
-				while (value > 0) {
+				while (value >= 0) {
 					zipOut.write(value);
 					value = srcStreamReader.read();
 				}
@@ -198,8 +199,16 @@ public class PackageFMU implements IObjectActionDelegate {
 			throw new FileNotFoundException("Cannot Find "
 					+ sourceBinaryFileName);
 		InputStream binaryStream = binaryFile.getContents();
-		InputStreamReader binaryStreamReader = new InputStreamReader(
-				binaryStream);
+		
+		
+		BufferedInputStream bsReader = new BufferedInputStream(binaryStream);
+		
+		
+	//	InputStreamReader binaryStreamReader = new InputStreamReader(
+	//			binaryStream);
+		
+		
+		
 		// create a zip entry
 		String OSName = System.getProperty("os.name");
 		String SunArch = System.getProperty("sun.arch.data.model");
@@ -223,12 +232,13 @@ public class PackageFMU implements IObjectActionDelegate {
 		zipOut.putNextEntry(ze);
 
 		// write the file to the zip entry
-		int value = binaryStreamReader.read();
-		while (value > 0) {
+		//int value = binaryStreamReader.read();
+		int value = bsReader.read();
+		while (value >= 0) {
 			zipOut.write(value);
-			value = binaryStreamReader.read();
+			value = bsReader.read();
 		}
-		binaryStreamReader.close();
+		bsReader.close();
 	}
 
 	private void packageModelDescription(IFile srcDescriptionFile,
@@ -246,7 +256,7 @@ public class PackageFMU implements IObjectActionDelegate {
 
 		// write the file to the zip entry
 		int value = descriptionStreamReader.read();
-		while (value > 0) {
+		while (value >= 0) {
 			zipOut.write(value);
 			value = descriptionStreamReader.read();
 		}
