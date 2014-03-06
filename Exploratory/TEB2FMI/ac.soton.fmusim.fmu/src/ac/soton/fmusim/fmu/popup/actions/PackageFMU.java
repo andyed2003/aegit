@@ -199,15 +199,7 @@ public class PackageFMU implements IObjectActionDelegate {
 			throw new FileNotFoundException("Cannot Find "
 					+ sourceBinaryFileName);
 		InputStream binaryStream = binaryFile.getContents();
-		
-		
-		BufferedInputStream bsReader = new BufferedInputStream(binaryStream);
-		
-		
-	//	InputStreamReader binaryStreamReader = new InputStreamReader(
-	//			binaryStream);
-		
-		
+		BufferedInputStream bufferedStreamReader = new BufferedInputStream(binaryStream);
 		
 		// create a zip entry
 		String OSName = System.getProperty("os.name");
@@ -233,12 +225,12 @@ public class PackageFMU implements IObjectActionDelegate {
 
 		// write the file to the zip entry
 		//int value = binaryStreamReader.read();
-		int value = bsReader.read();
+		int value = bufferedStreamReader.read();
 		while (value >= 0) {
 			zipOut.write(value);
-			value = bsReader.read();
+			value = bufferedStreamReader.read();
 		}
-		bsReader.close();
+		bufferedStreamReader.close();
 	}
 
 	private void packageModelDescription(IFile srcDescriptionFile,

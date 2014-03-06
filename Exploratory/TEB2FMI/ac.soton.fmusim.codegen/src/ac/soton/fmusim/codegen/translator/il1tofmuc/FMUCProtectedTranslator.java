@@ -80,6 +80,7 @@ public class FMUCProtectedTranslator extends AbstractProtectedIL1Translator {
 			StatusManager.getManager().handle(status, StatusManager.SHOW);
 		}
 		ArrayList<String> outCode = new ArrayList<String>();
+		
 		// If any subroutines have been generated during the template
 		// instantiation
 		// we can add the subroutine signatures to the header here.

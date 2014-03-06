@@ -29,6 +29,9 @@ public class TemplateProcessor {
 	private IFolder templateSourceFolder = null;
 	private IFolder targetFolder = null;
 	private IGeneratorData data = null;
+	private String targetName;
+	private List<String> codeArray;
+	private String targetFolderPath;
 
 	public static TemplateProcessor getDefault() {
 		if (templateProcessor == null) {
@@ -97,22 +100,36 @@ public class TemplateProcessor {
 		FileReader reader = new FileReader(templateFile);
 		BufferedReader bufferedReader = new BufferedReader(reader);
 
-		//Instantiate the template
-		List<String> tempArrayList = internalInstantiateTemplate(bufferedReader, templateFolderContentMap);
+		codeArray = internalInstantiateTemplate(bufferedReader, templateFolderContentMap);
 
-		// Save the template: discover its name and the target folder
-		String targetName = "";
+		targetName = "";
 		for(Object d: data.getDataList()){
 			if(d instanceof ProtectedImpl){
 				targetName = ((ProtectedImpl) d).getName();
 				break;
 			}
 		}
-		String targetFolderPath = targetFolder.getRawLocation().addTrailingSeparator().toString();
-		// call the code filer utility
-		CodeFiler.getDefault().save(tempArrayList, targetFolderPath, targetName+".c", "fmi_c");
+		targetFolderPath = targetFolder.getRawLocation().addTrailingSeparator().toString();
+		doPostProcess();
+		doSave();
 	}
 
+
+	private void doPostProcess() {
+		List<String> tmpCodeArray = new ArrayList<String>();
+		for(String s: codeArray){
+			tmpCodeArray.add(s.replace("modelID", targetName));
+		}
+		// replace the old array with the new one
+		codeArray = tmpCodeArray;
+	}
+
+	private void doSave() {
+		// call the code filer utility
+		CodeFiler.getDefault().save(codeArray, targetFolderPath, targetName+".c", "fmi_c");
+	}
+
+	
 	// This takes a buffered reader (pointing to a template), and list of child 
 	// templates. Returning a generated list of lines, for output.
 	public List<String> internalInstantiateTemplate(BufferedReader bufferedReader,

@@ -106,6 +106,8 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			"FMI_C");
 	private static IL1TranslationManager il1TranslationManager;
 	private static EventBComponent eventBComponent;
+	// The machine being translated to an FMU
+	public static IMachineRoot machineRoot;
 	
 	// Translate the selected Composed Machine/Event-B Machine to FMU(s)
 	public void translateToFMU(IStructuredSelection s)
@@ -142,7 +144,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 					.getRodinProject();
 			IEventBProject eventBProject = (IEventBProject) rodinProject
 					.getAdapter(IEventBProject.class);
-			IMachineRoot machineRoot = eventBProject.getMachineRoot(emfMachine
+			machineRoot = eventBProject.getMachineRoot(emfMachine
 					.getName());
 			newSelection = new StructuredSelection(machineRoot);
 		}
@@ -301,8 +303,9 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			for (Protected p : protectedList) {
 				code = il1TranslationManager.translateIL1ElementToCode(p,
 						getTargetLanguage());
-				code.add(0, "#include \"" + COMMON_HEADER_FULL + "\"");
-				code.add("// EndProtected");
+// This doose nothing - delete after checking
+//				code.add(0, "#include \"" + COMMON_HEADER_FULL + "\"");
+//				code.add("// EndProtected");
 				// Generate the header files.
 				// Each protected file just includes "common.h" which includes
 				// the other

@@ -23,7 +23,7 @@
 #define max(a,b) ((a)>(b) ? (a) : (b))
 #endif
 
-static fmiBoolean nullPointer(fmi_Component* comp, const char* f, const char* arg, const void* p){
+static fmiBoolean modelID_nullPointer(fmi_Component* comp, const char* f, const char* arg, const void* p){
     if (!p) {
         comp->state = modelError;
         comp->functions.logger(comp, comp->instanceName, fmiError, "error", 
@@ -33,7 +33,7 @@ static fmiBoolean nullPointer(fmi_Component* comp, const char* f, const char* ar
     return fmiFalse;
 }
 
-static fmiBoolean vrOutOfRange(fmi_Component* comp, const char* f, fmiValueReference vr, int end) {
+static fmiBoolean modelID_vrOutOfRange(fmi_Component* comp, const char* f, fmiValueReference vr, int end) {
     if (vr >= end) {
         comp->functions.logger(comp, comp->instanceName, fmiError, "error",
                 "%s: Illegal value reference %u.", f, vr);
@@ -44,11 +44,11 @@ static fmiBoolean vrOutOfRange(fmi_Component* comp, const char* f, fmiValueRefer
 }  
 
 
-static fmiStatus setString(fmiComponent comp, fmiValueReference vr, fmiString value){
+static fmiStatus modelID_setString(fmiComponent comp, fmiValueReference vr, fmiString value){
     return fmiSetString(comp, &vr, 1, &value);
 }
 
-static fmiBoolean invalidState(fmi_Component* comp, const char* f, int statesExpected){
+static fmiBoolean modelID_invalidState(fmi_Component* comp, const char* f, int statesExpected){
     if (!comp)
         return fmiTrue;
     if (!(comp->state & statesExpected)) {
@@ -61,7 +61,7 @@ static fmiBoolean invalidState(fmi_Component* comp, const char* f, int statesExp
 }
 
 // fname is fmiTerminate or fmiTerminateSlave
-static fmiStatus terminate(char* fname, fmiComponent c){
+static fmiStatus modelID_terminate(char* fname, fmiComponent c){
     fmi_Component* comp = (fmi_Component *)c;
     if (invalidState(comp, fname, modelInitialized))
          return fmiError;
@@ -71,7 +71,7 @@ static fmiStatus terminate(char* fname, fmiComponent c){
 }
 
 // fname is freeModelInstance of freeSlaveInstance
-void freeInstance(char* fname, fmiComponent c) {
+void modelID_freeInstance(char* fname, fmiComponent c) {
     fmi_Component* comp = (fmi_Component *)c;
     if (!comp) return;
     if (comp->loggingOn) comp->functions.logger(c, comp->instanceName, fmiOK, "log", fname);
@@ -88,11 +88,11 @@ void freeInstance(char* fname, fmiComponent c) {
     comp->functions.freeMemory(comp);
 }
 
-const char* fmiGetVersion() {
+const char* modelID_fmiGetVersion() {
     return fmiVersion;
 }
 
-fmiStatus fmiSetDebugLogging(fmiComponent c, fmiBoolean loggingOn, size_t size, const fmiString str[]) {
+fmiStatus modelID_fmiSetDebugLogging(fmiComponent c, fmiBoolean loggingOn, size_t size, const fmiString str[]) {
     fmi_Component* comp = (fmi_Component *)c;
     if (invalidState(comp, "fmiSetDebugLogging", not_modelError))
          return fmiError;
@@ -104,7 +104,7 @@ fmiStatus fmiSetDebugLogging(fmiComponent c, fmiBoolean loggingOn, size_t size, 
 
 
 
-fmiStatus fmiSetReal(fmiComponent c, const fmiValueReference vr[], size_t nvr, const fmiReal value[]){
+fmiStatus modelID_fmiSetReal(fmiComponent c, const fmiValueReference vr[], size_t nvr, const fmiReal value[]){
     int i;
     fmi_Component* comp = (fmi_Component *)c;
     if (invalidState(comp, "fmiSetReal", modelInstantiated|modelInitialized))
@@ -126,7 +126,7 @@ fmiStatus fmiSetReal(fmiComponent c, const fmiValueReference vr[], size_t nvr, c
     return fmiOK;
 }
 
-fmiStatus fmiSetBoolean(fmiComponent c, const fmiValueReference vr[], size_t nvr, const fmiBoolean value[]){
+fmiStatus modelID_fmiSetBoolean(fmiComponent c, const fmiValueReference vr[], size_t nvr, const fmiBoolean value[]){
     int i;
     fmi_Component* comp = (fmi_Component *)c;
     if (invalidState(comp, "fmiSetBoolean", modelInstantiated|modelInitialized))
@@ -147,7 +147,7 @@ fmiStatus fmiSetBoolean(fmiComponent c, const fmiValueReference vr[], size_t nvr
     return fmiOK;
 }
 
-fmiStatus fmiSetString(fmiComponent c, const fmiValueReference vr[], size_t nvr, const fmiString value[]){
+fmiStatus modelID_fmiSetString(fmiComponent c, const fmiValueReference vr[], size_t nvr, const fmiString value[]){
     int i;
     fmi_Component* comp = (fmi_Component *)c;
     if (invalidState(comp, "fmiSetString", modelInstantiated|modelInitialized))
@@ -185,7 +185,7 @@ static fmiReal getReal(fmi_Component* comp, fmiValueReference vr, size_t size, f
 	return -1;
 }
 
-fmiStatus fmiGetReal(fmiComponent c, const fmiValueReference vr[], size_t nvr, fmiReal value[]) {
+fmiStatus modelID_fmiGetReal(fmiComponent c, const fmiValueReference vr[], size_t nvr, fmiReal value[]) {
 #if NUMBER_OF_REALS>0
     int i;
 #endif
@@ -209,7 +209,7 @@ fmiStatus fmiGetReal(fmiComponent c, const fmiValueReference vr[], size_t nvr, f
 }
 
 
-fmiStatus fmiGetInteger(fmiComponent c, const fmiValueReference vr[], size_t nvr, fmiInteger value[]) {
+fmiStatus modelID_fmiGetInteger(fmiComponent c, const fmiValueReference vr[], size_t nvr, fmiInteger value[]) {
     int i;
     fmi_Component* comp = (fmi_Component *)c;
     if (invalidState(comp, "fmiGetInteger", not_modelError))
@@ -228,7 +228,7 @@ fmiStatus fmiGetInteger(fmiComponent c, const fmiValueReference vr[], size_t nvr
     return fmiOK;
 }
 
-fmiStatus fmiGetBoolean(fmiComponent c, const fmiValueReference vr[], size_t nvr, fmiBoolean value[]) {
+fmiStatus modelID_fmiGetBoolean(fmiComponent c, const fmiValueReference vr[], size_t nvr, fmiBoolean value[]) {
     int i;
     fmi_Component* comp = (fmi_Component *)c;
     if (invalidState(comp, "fmiGetBoolean", not_modelError))
@@ -247,7 +247,7 @@ fmiStatus fmiGetBoolean(fmiComponent c, const fmiValueReference vr[], size_t nvr
     return fmiOK;
 }
 
-fmiStatus fmiGetString(fmiComponent c, const fmiValueReference vr[], size_t nvr, fmiString  value[]) {
+fmiStatus modelID_fmiGetString(fmiComponent c, const fmiValueReference vr[], size_t nvr, fmiString  value[]) {
     int i;
     fmi_Component* comp = (fmi_Component *)c;
     if (invalidState(comp, "fmiGetString", not_modelError))
@@ -272,19 +272,19 @@ fmiStatus fmiGetString(fmiComponent c, const fmiValueReference vr[], size_t nvr,
 // FMI functions: only for FMI Co-Simulation 1.0
 // ---------------------------------------------------------------------------
 
-const char* fmiGetTypesPlatform() {
+const char* modelID_fmiGetTypesPlatform() {
     return fmiTypesPlatform;
 }
-fmiStatus fmiTerminateSlave(fmiComponent c) {
+fmiStatus modelID_fmiTerminateSlave(fmiComponent c) {
     return terminate("fmiTerminateSlave", c);
 }
 
 // does nothing here - we use the initialisationsListGenerator
-static void setStartValues(fmi_Component *comp) {
+static void modelID_setStartValues(fmi_Component *comp) {
 
 }
 
-fmiStatus fmiResetSlave(fmiComponent c) {
+fmiStatus modelID_fmiResetSlave(fmiComponent c) {
     fmi_Component* comp = (fmi_Component *)c;
     if (invalidState(comp, "fmiResetSlave", modelInitialized))
          return fmiError;
@@ -294,14 +294,14 @@ fmiStatus fmiResetSlave(fmiComponent c) {
     return fmiOK;
 }
 
-void fmiFreeSlaveInstance(fmiComponent c) {
+void modelID_fmiFreeSlaveInstance(fmiComponent c) {
     fmi_Component* comp = (fmi_Component *)c;
     if (invalidState(comp, "fmiFreeSlaveInstance", modelTerminated))
          return;
     freeInstance("fmiFreeSlaveInstance", c);
 }
 
-fmiStatus fmiSetRealInputDerivatives(fmiComponent c, const fmiValueReference vr[], size_t nvr,
+fmiStatus modelID_fmiSetRealInputDerivatives(fmiComponent c, const fmiValueReference vr[], size_t nvr,
     const fmiInteger order[], const fmiReal value[]) {
     fmi_Component* comp = (fmi_Component *)c;
     fmiCallbackLogger log = comp->functions.logger;
@@ -313,7 +313,7 @@ fmiStatus fmiSetRealInputDerivatives(fmiComponent c, const fmiValueReference vr[
     return fmiWarning;
 }
 
-fmiStatus fmiGetRealOutputDerivatives(fmiComponent c, const fmiValueReference vr[], size_t  nvr,
+fmiStatus modelID_fmiGetRealOutputDerivatives(fmiComponent c, const fmiValueReference vr[], size_t  nvr,
     const fmiInteger order[], fmiReal value[]) {
     int i;
     fmi_Component* comp = (fmi_Component *)c;
@@ -327,7 +327,7 @@ fmiStatus fmiGetRealOutputDerivatives(fmiComponent c, const fmiValueReference vr
     return fmiWarning;
 }
 
-fmiStatus fmiCancelStep(fmiComponent c) {
+fmiStatus modelID_fmiCancelStep(fmiComponent c) {
     fmi_Component* comp = (fmi_Component *)c;
     fmiCallbackLogger log = comp->functions.logger;
     if (invalidState(comp, "fmiCancelStep", modelInitialized))
@@ -339,7 +339,7 @@ fmiStatus fmiCancelStep(fmiComponent c) {
     return fmiError;
 }
 
-static fmiStatus getStatus(char* fname, fmiComponent c, const fmiStatusKind s) {
+static fmiStatus modelID_getStatus(char* fname, fmiComponent c, const fmiStatusKind s) {
     const char* statusKind[3] = {"fmiDoStepStatus","fmiPendingStatus","fmiLastSuccessfulTime"};
     fmi_Component* comp = (fmi_Component *)c;
     fmiCallbackLogger log = comp->functions.logger;
@@ -363,23 +363,23 @@ static fmiStatus getStatus(char* fname, fmiComponent c, const fmiStatusKind s) {
     return fmiError;
 }
 
-fmiStatus fmiGetStatus(fmiComponent c, const fmiStatusKind s, fmiStatus* value) {
+fmiStatus modelID_fmiGetStatus(fmiComponent c, const fmiStatusKind s, fmiStatus* value) {
     return getStatus("fmiGetStatus", c, s);
 }
 
-fmiStatus fmiGetRealStatus(fmiComponent c, const fmiStatusKind s, fmiReal* value){
+fmiStatus modelID_fmiGetRealStatus(fmiComponent c, const fmiStatusKind s, fmiReal* value){
     return getStatus("fmiGetRealStatus", c, s);
 }
 
-fmiStatus fmiGetIntegerStatus(fmiComponent c, const fmiStatusKind s, fmiInteger* value){
+fmiStatus modelID_fmiGetIntegerStatus(fmiComponent c, const fmiStatusKind s, fmiInteger* value){
     return getStatus("fmiGetIntegerStatus", c, s);
 }
 
-fmiStatus fmiGetBooleanStatus(fmiComponent c, const fmiStatusKind s, fmiBoolean* value){
+fmiStatus modelID_fmiGetBooleanStatus(fmiComponent c, const fmiStatusKind s, fmiBoolean* value){
     return getStatus("fmiGetBooleanStatus", c, s);
 }
 
-fmiStatus fmiGetStringStatus(fmiComponent c, const fmiStatusKind s, fmiString*  value){
+fmiStatus modelID_fmiGetStringStatus(fmiComponent c, const fmiStatusKind s, fmiString*  value){
     return getStatus("fmiGetStringStatus", c, s);
 }
 //#endif // all
@@ -448,7 +448,7 @@ fmiStatus fmiGetStringStatus(fmiComponent c, const fmiStatusKind s, fmiString*  
 //}
 
 // fname is fmiInitialize or fmiInitializeSlave
-//static fmiStatus init(char* fname, fmiComponent c, fmiBoolean toleranceControlled, fmiReal relativeTolerance,
+//static fmiStatus modelID_init(char* fname, fmiComponent c, fmiBoolean toleranceControlled, fmiReal relativeTolerance,
 //    fmiEventInfo* eventInfo) {
 //    fmi_Component* comp = (fmi_Component *)c;
 //    if (invalidState(comp, fname, modelInstantiated))
@@ -469,7 +469,7 @@ fmiStatus fmiGetStringStatus(fmiComponent c, const fmiStatusKind s, fmiString*  
 //}
 
 
-fmiStatus fmiSetInteger(fmiComponent c, const fmiValueReference vr[], size_t nvr, const fmiInteger value[]){
+fmiStatus modelID_fmiSetInteger(fmiComponent c, const fmiValueReference vr[], size_t nvr, const fmiInteger value[]){
     int i;
     fmi_Component* comp = (fmi_Component *)c;
     if (invalidState(comp, "fmiSetInteger", modelInstantiated|modelInitialized))
@@ -498,7 +498,7 @@ fmiStatus fmiSetInteger(fmiComponent c, const fmiValueReference vr[], size_t nvr
 //    return instantiateModel("fmiInstantiateSlave", instanceName, GUID, functions, loggingOn);
 //}
 
-//fmiStatus fmiInitializeSlave(fmiComponent c, fmiReal tStart, fmiBoolean StopTimeDefined, fmiReal tStop) {
+//fmiStatus modelID_fmiInitializeSlave(fmiComponent c, fmiReal tStart, fmiBoolean StopTimeDefined, fmiReal tStop) {
 //    fmi_Component* comp = (fmi_Component *)c;
 //    fmiBoolean toleranceControlled = fmiFalse;
 //    fmiReal relativeTolerance = 0;
@@ -512,7 +512,7 @@ fmiStatus fmiSetInteger(fmiComponent c, const fmiValueReference vr[], size_t nvr
 //}
 
 
-//fmiStatus fmiDoStep(fmiComponent c, fmiReal currentCommunicationPoint,
+//fmiStatus modelID_fmiDoStep(fmiComponent c, fmiReal currentCommunicationPoint,
 //    fmiReal communicationStepSize, fmiBoolean newStep) {
 //    fmi_Component* comp = (fmi_Component *)c;
 //    fmiCallbackLogger log = comp->functions.logger;
@@ -624,12 +624,12 @@ fmiStatus fmiSetInteger(fmiComponent c, const fmiValueReference vr[], size_t nvr
 //    return instantiateModel("fmiInstantiateModel", instanceName, GUID, functions, loggingOn);
 //}
 
-//fmiStatus fmiInitialize(fmiComponent c, fmiBoolean toleranceControlled, fmiReal relativeTolerance,
+//fmiStatus modelID_fmiInitialize(fmiComponent c, fmiBoolean toleranceControlled, fmiReal relativeTolerance,
 //    fmiEventInfo* eventInfo) {
 //    return init("fmiInitialize", c, toleranceControlled, relativeTolerance, eventInfo);
 //}
 
-//fmiStatus fmiSetTime(fmiComponent c, fmiReal time) {
+//fmiStatus modelID_fmiSetTime(fmiComponent c, fmiReal time) {
 //    fmi_Component* comp = (fmi_Component *)c;
 //    if (invalidState(comp, "fmiSetTime", modelInstantiated|modelInitialized))
 //         return fmiError;
@@ -639,7 +639,7 @@ fmiStatus fmiSetInteger(fmiComponent c, const fmiValueReference vr[], size_t nvr
 //    return fmiOK;
 //}
 
-//fmiStatus fmiSetContinuousStates(fmiComponent c, const fmiReal x[], size_t nx){
+//fmiStatus modelID_fmiSetContinuousStates(fmiComponent c, const fmiReal x[], size_t nx){
 //    fmi_Component* comp = (fmi_Component *)c;
 //#if NUMBER_OF_REALS>0
 //    int i;
@@ -662,7 +662,7 @@ fmiStatus fmiSetInteger(fmiComponent c, const fmiValueReference vr[], size_t nvr
 //    return fmiOK;
 //}
 
-//fmiStatus fmiEventUpdate(fmiComponent c, fmiBoolean intermediateResults, fmiEventInfo* eventInfo) {
+//fmiStatus modelID_fmiEventUpdate(fmiComponent c, fmiBoolean intermediateResults, fmiEventInfo* eventInfo) {
 //    fmi_Component* comp = (fmi_Component *)c;
 //    if (invalidState(comp, "fmiEventUpdate", modelInitialized))
 //        return fmiError;
@@ -679,7 +679,7 @@ fmiStatus fmiSetInteger(fmiComponent c, const fmiValueReference vr[], size_t nvr
 //    return fmiOK;
 //}
 
-//fmiStatus fmiCompletedIntegratorStep(fmiComponent c, fmiBoolean* callEventUpdate){
+//fmiStatus modelID_fmiCompletedIntegratorStep(fmiComponent c, fmiBoolean* callEventUpdate){
 //    fmi_Component* comp = (fmi_Component *)c;
 //    if (invalidState(comp, "fmiCompletedIntegratorStep", modelInitialized))
 //         return fmiError;
@@ -691,7 +691,7 @@ fmiStatus fmiSetInteger(fmiComponent c, const fmiValueReference vr[], size_t nvr
 //    return fmiOK;
 //}
 
-//fmiStatus fmiGetStateValueReferences(fmiComponent c, fmiValueReference vrx[], size_t nx){
+//fmiStatus modelID_fmiGetStateValueReferences(fmiComponent c, fmiValueReference vrx[], size_t nx){
 //#if NUMBER_OF_REALS>0
 //    int i;
 //#endif
@@ -712,7 +712,7 @@ fmiStatus fmiSetInteger(fmiComponent c, const fmiValueReference vr[], size_t nvr
 //    return fmiOK;
 //}
 
-//fmiStatus fmiGetContinuousStates(fmiComponent c, fmiReal states[], size_t nx){
+//fmiStatus modelID_fmiGetContinuousStates(fmiComponent c, fmiReal states[], size_t nx){
 //#if NUMBER_OF_REALS>0
 //    int i;
 //#endif
@@ -734,7 +734,7 @@ fmiStatus fmiSetInteger(fmiComponent c, const fmiValueReference vr[], size_t nvr
 //    return fmiOK;
 //}
 
-//fmiStatus fmiGetNominalContinuousStates(fmiComponent c, fmiReal x_nominal[], size_t nx){
+//fmiStatus modelID_fmiGetNominalContinuousStates(fmiComponent c, fmiReal x_nominal[], size_t nx){
 //    int i;
 //    fmi_Component* comp = (fmi_Component *)c;
 //    if (invalidState(comp, "fmiGetNominalContinuousStates", not_modelError))
@@ -751,7 +751,7 @@ fmiStatus fmiSetInteger(fmiComponent c, const fmiValueReference vr[], size_t nvr
 //    return fmiOK;
 //}
 
-//fmiStatus fmiGetDerivatives(fmiComponent c, fmiReal derivatives[], size_t nx) {
+//fmiStatus modelID_fmiGetDerivatives(fmiComponent c, fmiReal derivatives[], size_t nx) {
 //#if NUMBER_OF_STATES>0
 //    int i;
 //#endif
@@ -773,7 +773,7 @@ fmiStatus fmiSetInteger(fmiComponent c, const fmiValueReference vr[], size_t nvr
 //    return fmiOK;
 //}
 
-//fmiStatus fmiGetEventIndicators(fmiComponent c, fmiReal eventIndicators[], size_t ni) {
+//fmiStatus modelID_fmiGetEventIndicators(fmiComponent c, fmiReal eventIndicators[], size_t ni) {
 //#if NUMBER_OF_EVENT_INDICATORS>0
 //    int i;
 //#endif
@@ -792,7 +792,7 @@ fmiStatus fmiSetInteger(fmiComponent c, const fmiValueReference vr[], size_t nvr
 //    return fmiOK;
 //}
 
-//fmiStatus fmiTerminate(fmiComponent c){
+//fmiStatus modelID_fmiTerminate(fmiComponent c){
 //    return terminate("fmiTerminate", c);
 //}
 

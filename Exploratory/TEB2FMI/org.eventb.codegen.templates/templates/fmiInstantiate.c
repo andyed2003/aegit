@@ -1,5 +1,5 @@
 //## <addToHeader>
-fmiComponent fmiInstantiateSlave(fmiString instanceName, fmiString fmuGUID,
+fmiComponent modelID_fmiInstantiateSlave(fmiString instanceName, fmiString fmuGUID,
 		fmiString fmuResourceLocation, const fmiCallbackFunctions* functions,
 		fmiBoolean visible, fmiBoolean loggingOn) {
 	// create a fmiComponent and allocate storage space
