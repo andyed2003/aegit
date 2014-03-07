@@ -4,8 +4,8 @@
 <org.eventb.core.variable name=")" org.eventb.codegen.tasking.flattened="true" org.eventb.core.identifier="mySet"/>
 <org.eventb.core.variable name="," org.eventb.codegen.tasking.flattened="true" org.eventb.core.identifier="otherSet"/>
 <org.eventb.core.event name="-" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
-<org.eventb.core.action name="'" org.eventb.core.assignment="mySet ≔ newSet(∅)" org.eventb.core.label="act2"/>
-<org.eventb.core.action name="(" org.eventb.core.assignment="otherSet ≔ newSet(∅)" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="'" org.eventb.core.assignment="mySet ≔ newSet(∅⦂ℙ(ℤ))" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="otherSet ≔ newSet(∅⦂ℙ(ℤ))" org.eventb.core.label="act3"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="." org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="setUnion">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="setUnion"/>

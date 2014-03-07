@@ -131,4 +131,5 @@
 </org.eventb.core.prPred>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 </org.eventb.core.prProof>
+<org.eventb.core.prProof name="INITIALISATION/act2/SIM"/>
 </org.eventb.core.prFile>
