@@ -201,8 +201,8 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 	}
 
 	// DESIGN NOTE !!!
-	// How do we prevent the communication events from being translated? 
-	// Since the master  takes care of the communications, we need to 
+	// How do we prevent the communication events from being translated?
+	// Since the master takes care of the communications, we need to
 	// ignore synchronizing events. The problem is that when initiating
 	// translation from the diagram we have no idea which composed machine
 	// describes the synchronizations. There could be a number of
@@ -262,7 +262,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 	}
 
 	// This method is equivalent to CProgramIL1Translator, tailored for
-	// use with FMI translation. However, it does not translate 
+	// use with FMI translation. However, it does not translate
 	// protected objects (from FMU Machines) to FMU implementations,
 	// since this is done by the template. It mainly loads translation rules
 	// and sets up the header files.
@@ -301,17 +301,17 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			for (Protected p : protectedList) {
 				il1TranslationManager.translateIL1ElementToCode(p,
 						getTargetLanguage());
-			// This doose nothing - delete after checking
-			// code.add(0, "#include \"" + COMMON_HEADER_FULL + "\"");
-			// code.add("// EndProtected");
-			// Generate the header files.
-			// Each protected file just includes "common.h" which includes
-			// the other
-			// files. Get the global decls to pass to the header.
-			generateFMUHeaders(headerInfo, newDirectoryPath,
-					il1TranslationManager, globalDecls);
+				// This doose nothing - delete after checking
+				// code.add(0, "#include \"" + COMMON_HEADER_FULL + "\"");
+				// code.add("// EndProtected");
+				// Generate the header files.
+				// Each protected file just includes "common.h" which includes
+				// the other
+				// files. Get the global decls to pass to the header.
+				generateFMUHeaders(headerInfo, newDirectoryPath,
+						il1TranslationManager, globalDecls);
 			}
-			generateGlobalHeader(headerInfo, newDirectoryPath,
+			generateCommonHeader(headerInfo, newDirectoryPath,
 					il1TranslationManager, globalDecls);
 		}
 	}
@@ -374,7 +374,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 	}
 
 	// This code generates a common header
-	private void generateGlobalHeader(
+	private void generateCommonHeader(
 			ArrayList<ClassHeaderInformation> headerInformation,
 			String directoryName, IL1TranslationManager translationManager,
 			ArrayList<String> globalDecls) {
@@ -419,24 +419,28 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		// Save the common header files for this FMU
 		for (ClassHeaderInformation c : headerInformation) {
 			String headerName = c.getClassName();
-			String headerPreBlock = c.getClassName().toUpperCase() + "_H";
+			String headerFileName = headerName + ".h";
+			if (headerFileName.equals(COMMON_HEADER_FULL)) {
+				String headerPreBlock = c.getClassName().toUpperCase() + "_H";
 
-			ArrayList<String> headerCode = new ArrayList<String>();
-			// headerCode.add(codeGenerateTimestamp);
-			headerCode.add("#ifndef " + headerPreBlock);
-			headerCode.add("#define " + headerPreBlock);
+				ArrayList<String> headerCode = new ArrayList<String>();
+				// headerCode.add(codeGenerateTimestamp);
+				headerCode.add("#ifndef " + headerPreBlock);
+				headerCode.add("#define " + headerPreBlock);
 
-			for (String i : c.getHeaderEntries()) {
-				headerCode.add(i);
+				for (String i : c.getHeaderEntries()) {
+					headerCode.add(i);
+				}
+
+				headerCode.add("#endif");
+				headerCode.add(""); // blank line
+
+				IL1CodeFiler.getDefault().save(headerCode, directoryName,
+						headerName + ".h", il1TranslationManager);
+				// Quit now since we have dealt with the common.h
+				break;
 			}
-
-			headerCode.add("#endif");
-			headerCode.add(""); // blank line
-
-			IL1CodeFiler.getDefault().save(headerCode, directoryName,
-					headerName + ".h", il1TranslationManager);
 		}
-
 	}
 
 	// Create the file associated with the output
@@ -511,14 +515,16 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			ArrayList<String> globalDecls) {
 
 		if (translationManager.getCompilerDependentExecutableCodeBlock().size() > 0) {
-			ArrayList<String> commonCode = new ArrayList<String>();
+			List<String> commonCode = new ArrayList<String>();
 			// commonCode.add(codeGenerateTimestamp);
 			commonCode.add("#include \"" + COMMON_HEADER_FULL + "\"");
 			commonCode.addAll(formatCode(translationManager
 					.getCompilerDependentExecutableCodeBlock(),
 					translationManager));
-
-			doPostProcess(commonCode, MODEL_ID, machineRoot.getElementName());
+			// replace the MODEL_ID string with the machine name in the
+			// generated code.
+			commonCode = doPostProcess(commonCode, MODEL_ID,
+					machineRoot.getElementName());
 			IL1CodeFiler.getDefault().save(commonCode, directoryName,
 					"common.c", il1TranslationManager);
 		}
@@ -540,7 +546,8 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			headerCode.add("#endif");
 			headerCode.add(""); // blank line
 
-			headerCode = doPostProcess(headerCode, MODEL_ID, machineRoot.getElementName());
+			headerCode = doPostProcess(headerCode, MODEL_ID,
+					machineRoot.getElementName());
 			IL1CodeFiler.getDefault().save(headerCode, directoryName,
 					headerName + ".h", il1TranslationManager);
 		}
@@ -666,16 +673,17 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 					+ fmiTypeString);
 	}
 
-	// replaces string1 with string2 in each of the elements of the string array 
-	private List<String> doPostProcess(List<String> codeArray, String target, String replacement) {
+	// replaces string1 with string2 in each of the elements of the string array
+	private List<String> doPostProcess(List<String> codeArray, String target,
+			String replacement) {
 		List<String> tmpCodeArray = new ArrayList<String>();
-		for(String s: codeArray){
+		for (String s : codeArray) {
 			tmpCodeArray.add(s.replace(target, replacement));
 		}
 		// replace the old array with the new one
 		return tmpCodeArray;
 	}
-	
+
 	public String getTargetFMIVersion() {
 		return targetFMIVersion;
 	}

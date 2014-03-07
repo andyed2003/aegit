@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<fmiModelDescription author="University of Southampton" fmiVersion="2.0" generationDateAndTime="2014-03-05T16:53:08.274Z" generationTool="EB2FMU" guid="GUID_ControllerImpl_2014-03-05T16:53:08.274Z" modelName="ControllerImpl" numberOfEventIndicators="0">
+<fmiModelDescription author="University of Southampton" fmiVersion="2.0" generationDateAndTime="2014-03-07T12:21:41.135Z" generationTool="EB2FMU" guid="GUID_ControllerImpl_2014-03-07T12:21:41.135Z" modelName="ControllerImpl" numberOfEventIndicators="0">
   <CoSimulation modelIdentifier="ControllerImpl"/>
+  <DefaultExperiment stepSize="1.0"/>
   <ModelVariables>
     <ScalarVariable causality="input" initial="exact" name="c_level" valueReference="0" variability="discrete">
       <Integer start="100"/>

@@ -23,7 +23,7 @@
 #define max(a,b) ((a)>(b) ? (a) : (b))
 #endif
 
-static fmiBoolean modelID_nullPointer(fmi_Component* comp, const char* f, const char* arg, const void* p){
+static fmiBoolean nullPointer(fmi_Component* comp, const char* f, const char* arg, const void* p){
     if (!p) {
         comp->state = modelError;
         comp->functions.logger(comp, comp->instanceName, fmiError, "error", 
@@ -33,7 +33,7 @@ static fmiBoolean modelID_nullPointer(fmi_Component* comp, const char* f, const 
     return fmiFalse;
 }
 
-static fmiBoolean modelID_vrOutOfRange(fmi_Component* comp, const char* f, fmiValueReference vr, int end) {
+static fmiBoolean vrOutOfRange(fmi_Component* comp, const char* f, fmiValueReference vr, int end) {
     if (vr >= end) {
         comp->functions.logger(comp, comp->instanceName, fmiError, "error",
                 "%s: Illegal value reference %u.", f, vr);
@@ -48,7 +48,7 @@ static fmiStatus modelID_setString(fmiComponent comp, fmiValueReference vr, fmiS
     return fmiSetString(comp, &vr, 1, &value);
 }
 
-static fmiBoolean modelID_invalidState(fmi_Component* comp, const char* f, int statesExpected){
+static fmiBoolean invalidState(fmi_Component* comp, const char* f, int statesExpected){
     if (!comp)
         return fmiTrue;
     if (!(comp->state & statesExpected)) {
@@ -61,7 +61,7 @@ static fmiBoolean modelID_invalidState(fmi_Component* comp, const char* f, int s
 }
 
 // fname is fmiTerminate or fmiTerminateSlave
-static fmiStatus modelID_terminate(char* fname, fmiComponent c){
+static fmiStatus terminate(char* fname, fmiComponent c){
     fmi_Component* comp = (fmi_Component *)c;
     if (invalidState(comp, fname, modelInitialized))
          return fmiError;
@@ -71,7 +71,7 @@ static fmiStatus modelID_terminate(char* fname, fmiComponent c){
 }
 
 // fname is freeModelInstance of freeSlaveInstance
-void modelID_freeInstance(char* fname, fmiComponent c) {
+void freeInstance(char* fname, fmiComponent c) {
     fmi_Component* comp = (fmi_Component *)c;
     if (!comp) return;
     if (comp->loggingOn) comp->functions.logger(c, comp->instanceName, fmiOK, "log", fname);
@@ -280,7 +280,7 @@ fmiStatus modelID_fmiTerminateSlave(fmiComponent c) {
 }
 
 // does nothing here - we use the initialisationsListGenerator
-static void modelID_setStartValues(fmi_Component *comp) {
+static void setStartValues(fmi_Component *comp) {
 
 }
 
@@ -339,7 +339,7 @@ fmiStatus modelID_fmiCancelStep(fmiComponent c) {
     return fmiError;
 }
 
-static fmiStatus modelID_getStatus(char* fname, fmiComponent c, const fmiStatusKind s) {
+static fmiStatus getStatus(char* fname, fmiComponent c, const fmiStatusKind s) {
     const char* statusKind[3] = {"fmiDoStepStatus","fmiPendingStatus","fmiLastSuccessfulTime"};
     fmi_Component* comp = (fmi_Component *)c;
     fmiCallbackLogger log = comp->functions.logger;
