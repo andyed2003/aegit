@@ -14,8 +14,13 @@ public class SetImpl<E> extends HashSet<E> {
 		return this;
 	}
 
-	public SetImpl<E> setIntersect(SetImpl<E> otherSet) {
+	public SetImpl<E> intersect(SetImpl<E> otherSet) {
 		retainAll(otherSet);
+		return this;
+	}
+
+	public SetImpl<E> subtract(SetImpl<E> otherSet) {
+		removeAll(otherSet);
 		return this;
 	}
 

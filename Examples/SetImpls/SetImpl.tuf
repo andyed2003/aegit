@@ -11,7 +11,7 @@
 </org.eventb.theory.core.newOperatorDefinition>
 <org.eventb.theory.core.newOperatorDefinition name="," org.eventb.core.label="singleton" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
 <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="T" org.eventb.core.identifier="a"/>
-<org.eventb.theory.core.directOperatorDefinition name="(" org.eventb.theory.core.formula="{a}"/>
+<org.eventb.theory.core.directOperatorDefinition name="(" org.eventb.theory.core.formula="a"/>
 </org.eventb.theory.core.newOperatorDefinition>
 <org.eventb.theory.core.newOperatorDefinition name="*" org.eventb.core.label="setUnion" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
 <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(T)" org.eventb.core.identifier="a"/>
@@ -30,8 +30,16 @@
 <org.eventb.codegen.theory.translator.core.translatorTypeRuleElement name=")" org.eventb.codegen.theory.translator.core.translationElement="SetImpl&lt;T&gt;" org.eventb.codegen.theory.translator.core.typeFormula="setImpl(T)" org.eventb.core.label="typeTrns1"/>
 <org.eventb.theory.core.metaVariable name="0" org.eventb.core.identifier="t" org.eventb.theory.core.type="ℙ(T)"/>
 <org.eventb.codegen.theory.translator.core.translatorRuleElement name="1" org.eventb.codegen.theory.translator.core.formula="ℤ " org.eventb.codegen.theory.translator.core.translationElement="Integer" org.eventb.core.label="IntegerType"/>
+<org.eventb.codegen.theory.translator.core.translatorRuleElement name="2" org.eventb.codegen.theory.translator.core.formula="{s}" org.eventb.codegen.theory.translator.core.translationElement="s" org.eventb.core.label="singletonRule"/>
 <org.eventb.codegen.theory.translator.core.translatorRuleElement name="(" org.eventb.codegen.theory.translator.core.formula="setUnion(a,b)" org.eventb.codegen.theory.translator.core.translationElement="a.union(b)" org.eventb.core.label="unionRule"/>
-<org.eventb.codegen.theory.translator.core.translatorRuleElement name="," org.eventb.codegen.theory.translator.core.formula="setIntersection(a,b)" org.eventb.codegen.theory.translator.core.translationElement="a.setIntersect(b)" org.eventb.core.label="intersectRule"/>
+<org.eventb.codegen.theory.translator.core.translatorRuleElement name="," org.eventb.codegen.theory.translator.core.formula="setIntersection(a,b)" org.eventb.codegen.theory.translator.core.translationElement="a.intersect(b)" org.eventb.core.label="intersectRule"/>
+<org.eventb.theory.core.metaVariable name="3" org.eventb.core.identifier="s" org.eventb.theory.core.type="T"/>
+<org.eventb.codegen.theory.translator.core.translatorRuleElement name="4" org.eventb.codegen.theory.translator.core.formula="setSubtract(a,b)" org.eventb.codegen.theory.translator.core.translationElement="a.subtract(b)" org.eventb.core.label="subtractRule"/>
 <org.eventb.codegen.theory.translator.core.translatorRuleElement name="-" org.eventb.codegen.theory.translator.core.formula="newSet(∅⦂ℙ(t))" org.eventb.codegen.theory.translator.core.translationElement="new SetImpl&lt;t&gt;()" org.eventb.core.label="newSetRule"/>
 </org.eventb.codegen.theory.translator.core.translatorElement>
+<org.eventb.theory.core.newOperatorDefinition name="." org.eventb.core.label="setSubtract" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(T)" org.eventb.core.identifier="a"/>
+<org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="ℙ(T)" org.eventb.core.identifier="b"/>
+<org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="a ∖ b"/>
+</org.eventb.theory.core.newOperatorDefinition>
 </org.eventb.theory.core.theoryRoot>

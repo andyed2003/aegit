@@ -1,5 +1,7 @@
 package setImpls_java;
 
+import java.util.Set;
+
 // Task: m1Impl
 
 public class m1Impl implements Runnable {
@@ -12,13 +14,16 @@ public class m1Impl implements Runnable {
 	public m1Impl() {
 		mySet.add(1);
 		mySet.add(2);
-		otherSet.add(2);
+		mySet.add(3);
 		otherSet.add(3);
+		otherSet.add(4);
 	}
 
 	public void run() {
+		SetImpl<Integer> origSet = (SetImpl<Integer>) mySet.clone();
+		mySet = mySet.intersect(otherSet);
 		mySet = mySet.union(otherSet);
-		mySet = mySet.setIntersect(otherSet);
+		mySet = mySet.subtract(origSet);
 	}
 
 	// Subroutines

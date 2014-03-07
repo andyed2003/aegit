@@ -5,6 +5,7 @@
 <org.eventb.core.event name="*" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
 <org.eventb.core.action name="'" org.eventb.core.assignment="mySet ≔ newSet(∅)" org.eventb.core.label="act2"/>
 <org.eventb.core.action name="(" org.eventb.core.assignment="otherSet ≔ newSet(∅)" org.eventb.core.label="act3"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="element ≔ 1" org.eventb.core.label="act4"/>
 </org.eventb.core.event>
 <org.eventb.core.invariant name="+" org.eventb.codegen.tasking.flattened="true" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="m1_inv1" org.eventb.core.predicate="mySet ∈ setImpl(ℤ)"/>
 <org.eventb.core.variable name="," org.eventb.core.identifier="otherSet"/>
@@ -13,8 +14,14 @@
 <org.eventb.core.refinesEvent name="(" org.eventb.core.target="setUnion"/>
 <org.eventb.core.action name="'" org.eventb.core.assignment="mySet ≔ setUnion(mySet, otherSet)" org.eventb.core.label="act1"/>
 </org.eventb.core.event>
+<org.eventb.core.event name="0" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="setSubtract">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="setSubtract"/>
+<org.eventb.core.action name="'" org.eventb.core.assignment="mySet ≔ setSubtract(mySet, otherSet)" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
 <org.eventb.core.event name="/" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="setIntersection">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="setIntersection"/>
 <org.eventb.core.action name="(" org.eventb.core.assignment="mySet ≔ setIntersection(mySet, otherSet)" org.eventb.core.label="act1"/>
 </org.eventb.core.event>
+<org.eventb.core.variable name="1" org.eventb.core.identifier="element"/>
+<org.eventb.core.invariant name="2" org.eventb.codegen.ui.typingAttribute="--unset--" org.eventb.core.label="inv1" org.eventb.core.predicate="element ∈ ℤ "/>
 </org.eventb.core.machineFile>

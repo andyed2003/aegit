@@ -3,8 +3,11 @@
   <entryPoint>
     <autoTasks name="m1Impl" projectName="SetImpls" machineName="m1Impl">
       <body xsi:type="il1:Seq">
-        <leftBranch xsi:type="il1:Action" ParentEventName="setUnion" action="mySet &#x2254; setUnion(mySet, otherSet)"/>
-        <rightBranch xsi:type="il1:Action" ParentEventName="setIntersection" action="mySet &#x2254; setIntersection(mySet, otherSet)"/>
+        <leftBranch xsi:type="il1:Action" ParentEventName="setIntersection" action="mySet &#x2254; setIntersection(mySet, otherSet)"/>
+        <rightBranch xsi:type="il1:Seq">
+          <leftBranch xsi:type="il1:Action" ParentEventName="setUnion" action="mySet &#x2254; setUnion(mySet, otherSet)"/>
+          <rightBranch xsi:type="il1:Action" ParentEventName="setSubtract" action="mySet &#x2254; setSubtract(mySet, otherSet)"/>
+        </rightBranch>
       </body>
       <taskType xsi:type="il1:SimpleTaskType" type="OneShot"/>
       <decls xsi:type="il1:VariableDecl" identifier="mySet" type="setImpl(&#x2124;)" initialValue="newSet(&#x2205;&#x2982;&#x2119;(&#x2124;))" ProjectName="SetImpls" ComponentName="m1Impl"/>

@@ -335,88 +335,24 @@
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.theory.rbp.manualRewriteReasoner" org.eventb.core.prRSig="org.eventb.theory.rbp.manualRewriteReasoner"/>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="setUnion2/act1/SIM" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.psManual="true">
+<org.eventb.core.prProof name="setUnion2/act1/SIM" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="" org.eventb.core.psManual="true">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p3"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p4"/>
-<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p5"/>
-<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="singleton expansion on goal" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p6">
-<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p1"/>
-<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="singleton expansion on i∈singleton(z)" org.eventb.core.prHyps="p2">
-<org.eventb.core.prAnte name="'" org.eventb.core.prHyps="p7">
-<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p2"/>
-<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p7"/>
-<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p7" org.eventb.core.prInfHyps="p8"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p7"/>
-<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with i=z" org.eventb.core.prGoal="p6" org.eventb.core.prHyps="p8">
-<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p9">
-<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="setImpl expansion on mySet∈setImpl(ℤ)" org.eventb.core.prHyps="p1">
-<org.eventb.core.prAnte name="'" org.eventb.core.prHyps="p3">
-<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p1"/>
-<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p3"/>
-<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p3"/>
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p0"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p1"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p2"/>
 </org.eventb.core.prAnte>
 </org.eventb.core.prRule>
-</org.eventb.core.prAnte>
-<org.eventb.core.prString name=".poContext" org.eventb.core.prSValue="/SetImpls/m1.bpo|org.eventb.core.poFile#m1"/>
-<org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
-<org.eventb.core.prString name=".theory" org.eventb.core.prSValue="SetImpl"/>
-<org.eventb.core.prString name=".rewRule" org.eventb.core.prSValue="SetImpl.setImpl"/>
-<org.eventb.core.prString name=".ruleDesc" org.eventb.core.prSValue="setImpl expansion"/>
-<org.eventb.core.prString name=".project" org.eventb.core.prSValue="SetImpls"/>
-</org.eventb.core.prRule>
-</org.eventb.core.prAnte>
-</org.eventb.core.prRule>
-</org.eventb.core.prAnte>
-</org.eventb.core.prRule>
-</org.eventb.core.prAnte>
-<org.eventb.core.prString name=".poContext" org.eventb.core.prSValue="/SetImpls/m1.bpo|org.eventb.core.poFile#m1"/>
-<org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
-<org.eventb.core.prString name=".theory" org.eventb.core.prSValue="SetImpl"/>
-<org.eventb.core.prString name=".rewRule" org.eventb.core.prSValue="SetImpl.singleton"/>
-<org.eventb.core.prString name=".ruleDesc" org.eventb.core.prSValue="singleton expansion"/>
-<org.eventb.core.prString name=".project" org.eventb.core.prSValue="SetImpls"/>
-</org.eventb.core.prRule>
-</org.eventb.core.prAnte>
-</org.eventb.core.prRule>
-</org.eventb.core.prAnte>
-<org.eventb.core.prString name=".poContext" org.eventb.core.prSValue="/SetImpls/m1.bpo|org.eventb.core.poFile#m1"/>
-<org.eventb.core.prString name=".pos" org.eventb.core.prSValue="0.1"/>
-<org.eventb.core.prString name=".theory" org.eventb.core.prSValue="SetImpl"/>
-<org.eventb.core.prString name=".rewRule" org.eventb.core.prSValue="SetImpl.singleton"/>
-<org.eventb.core.prString name=".ruleDesc" org.eventb.core.prSValue="singleton expansion"/>
-<org.eventb.core.prString name=".project" org.eventb.core.prSValue="SetImpls"/>
-</org.eventb.core.prRule>
-</org.eventb.core.prAnte>
-</org.eventb.core.prRule>
-<org.eventb.core.prIdent name="i" org.eventb.core.type="ℤ"/>
-<org.eventb.core.prIdent name="mySet" org.eventb.core.type="ℙ(ℤ)"/>
-<org.eventb.core.prIdent name="z" org.eventb.core.type="ℤ"/>
-<org.eventb.core.prPred name="p5" org.eventb.core.predicate="z∈ℤ"/>
-<org.eventb.core.prPred name="p4" org.eventb.core.predicate="otherSet∈ℙ(ℤ)">
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="otherSet∈ℙ(ℤ)">
 <org.eventb.core.prIdent name="otherSet" org.eventb.core.type="ℙ(ℤ)"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p1" org.eventb.core.predicate="mySet∈setImpl(ℤ)"/>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="mySet∈ℙ(ℤ)"/>
-<org.eventb.core.prPred name="p8" org.eventb.core.predicate="i=z"/>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="i∈singleton(z)"/>
-<org.eventb.core.prPred name="p6" org.eventb.core.predicate="setUnion(mySet,{i})=mySet∪{i}"/>
-<org.eventb.core.prPred name="p9" org.eventb.core.predicate="setUnion(mySet,{z})=mySet∪{z}"/>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="setUnion(mySet,singleton(i))=mySet∪{i}"/>
-<org.eventb.core.prPred name="p7" org.eventb.core.predicate="i∈{z}"/>
-<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="mySet∈ℙ(ℤ)">
+<org.eventb.core.prIdent name="mySet" org.eventb.core.type="ℙ(ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="element∈ℤ">
+<org.eventb.core.prIdent name="element" org.eventb.core.type="ℤ"/>
+</org.eventb.core.prPred>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
-<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
-<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.theory.rbp.manualRewriteReasoner" org.eventb.core.prRSig="org.eventb.theory.rbp.manualRewriteReasoner"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="setUnion2/act1/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
@@ -582,7 +518,99 @@
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.theory.rbp.manualRewriteReasoner" org.eventb.core.prRSig="org.eventb.theory.rbp.manualRewriteReasoner"/>
 <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="setUnion2/m1_inv1/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="">
+<org.eventb.core.prProof name="setUnion2/m1_inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.psManual="true">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p2"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p3"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p4"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="setImpl expansion on mySet∈setImpl(ℤ)" org.eventb.core.prHyps="p1">
+<org.eventb.core.prAnte name="'" org.eventb.core.prHyps="p2">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p1"/>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p2"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p2"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="setImpl expansion on goal" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p5">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prGoal="p5" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p6">
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p6" org.eventb.core.prHyps=""/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".poContext" org.eventb.core.prSValue="/SetImpls/m1.bpo|org.eventb.core.poFile#m1"/>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
+<org.eventb.core.prString name=".theory" org.eventb.core.prSValue="SetImpl"/>
+<org.eventb.core.prString name=".rewRule" org.eventb.core.prSValue="SetImpl.setImpl"/>
+<org.eventb.core.prString name=".ruleDesc" org.eventb.core.prSValue="setImpl expansion"/>
+<org.eventb.core.prString name=".project" org.eventb.core.prSValue="SetImpls"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".poContext" org.eventb.core.prSValue="/SetImpls/m1.bpo|org.eventb.core.poFile#m1"/>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
+<org.eventb.core.prString name=".theory" org.eventb.core.prSValue="SetImpl"/>
+<org.eventb.core.prString name=".rewRule" org.eventb.core.prSValue="SetImpl.setImpl"/>
+<org.eventb.core.prString name=".ruleDesc" org.eventb.core.prSValue="setImpl expansion"/>
+<org.eventb.core.prString name=".project" org.eventb.core.prSValue="SetImpls"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="element" org.eventb.core.type="ℤ"/>
+<org.eventb.core.prIdent name="mySet" org.eventb.core.type="ℙ(ℤ)"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="⊤"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="otherSet∈ℙ(ℤ)">
+<org.eventb.core.prIdent name="otherSet" org.eventb.core.type="ℙ(ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="mySet∈setImpl(ℤ)"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="setUnion(mySet,{element})∈setImpl(ℤ)"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="mySet∈ℙ(ℤ)"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="element∈ℤ"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="setUnion(mySet,{element})∈ℙ(ℤ)"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.theory.rbp.manualRewriteReasoner" org.eventb.core.prRSig="org.eventb.theory.rbp.manualRewriteReasoner"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="setSubtract/m1_inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.psManual="true">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p1"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p2"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p3"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="setImpl expansion on goal" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p4">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prGoal="p4" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p5">
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p5" org.eventb.core.prHyps=""/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".poContext" org.eventb.core.prSValue="/SetImpls/m1.bpo|org.eventb.core.poFile#m1"/>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
+<org.eventb.core.prString name=".theory" org.eventb.core.prSValue="SetImpl"/>
+<org.eventb.core.prString name=".rewRule" org.eventb.core.prSValue="SetImpl.setImpl"/>
+<org.eventb.core.prString name=".ruleDesc" org.eventb.core.prSValue="setImpl expansion"/>
+<org.eventb.core.prString name=".project" org.eventb.core.prSValue="SetImpls"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="mySet" org.eventb.core.type="ℙ(ℤ)"/>
+<org.eventb.core.prIdent name="otherSet" org.eventb.core.type="ℙ(ℤ)"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="⊤"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="setSubtract(mySet,otherSet)∈setImpl(ℤ)"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="otherSet∈ℙ(ℤ)"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="mySet∈ℙ(ℤ)"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="setSubtract(mySet,otherSet)∈ℙ(ℤ)"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="element∈ℤ">
+<org.eventb.core.prIdent name="element" org.eventb.core.type="ℤ"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.theory.rbp.manualRewriteReasoner" org.eventb.core.prRSig="org.eventb.theory.rbp.manualRewriteReasoner"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="setSubtract/act1/WD" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
 <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p0"/>
@@ -596,9 +624,83 @@
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="mySet∈ℙ(ℤ)">
 <org.eventb.core.prIdent name="mySet" org.eventb.core.type="ℙ(ℤ)"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="i∈ℤ">
-<org.eventb.core.prIdent name="i" org.eventb.core.type="ℤ"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="element∈ℤ">
+<org.eventb.core.prIdent name="element" org.eventb.core.type="ℤ"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="setSubtract/act1/SIM" org.eventb.core.confidence="0" org.eventb.core.prFresh="x" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.psManual="true">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="rewrites set equality in goal" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p2"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p3"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p4"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="remove ⊆ in goal" org.eventb.core.prGoal="p1" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p5">
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∀ goal (frees x)" org.eventb.core.prGoal="p5" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p6">
+<org.eventb.core.prIdent name="x" org.eventb.core.type="ℤ"/>
+<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p6" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p8" org.eventb.core.prHyps="p7">
+<org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="remove ∈ in goal" org.eventb.core.prGoal="p8" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p9"/>
+<org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p10"/>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p11">
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p2"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p3"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p4"/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="mySet" org.eventb.core.type="ℙ(ℤ)"/>
+<org.eventb.core.prIdent name="otherSet" org.eventb.core.type="ℙ(ℤ)"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="¬x∈otherSet">
+<org.eventb.core.prIdent name="x" org.eventb.core.type="ℤ"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="x∈setSubtract(mySet,otherSet)">
+<org.eventb.core.prIdent name="x" org.eventb.core.type="ℤ"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="otherSet∈ℙ(ℤ)"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="x∈mySet">
+<org.eventb.core.prIdent name="x" org.eventb.core.type="ℤ"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="∀x⦂ℤ·x∈setSubtract(mySet,otherSet)⇒x∈mySet ∖ otherSet"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="mySet∈ℙ(ℤ)"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="mySet ∖ otherSet⊆setSubtract(mySet,otherSet)"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="element∈ℤ">
+<org.eventb.core.prIdent name="element" org.eventb.core.type="ℤ"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="setSubtract(mySet,otherSet)=mySet ∖ otherSet"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="x∈mySet ∖ otherSet">
+<org.eventb.core.prIdent name="x" org.eventb.core.type="ℤ"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="x∈setSubtract(mySet,otherSet)⇒x∈mySet ∖ otherSet">
+<org.eventb.core.prIdent name="x" org.eventb.core.type="ℤ"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="setSubtract(mySet,otherSet)⊆mySet ∖ otherSet"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.setEqlRewrites"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
+<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.rmL1"/>
+<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.ri"/>
 </org.eventb.core.prProof>
 </org.eventb.core.prFile>

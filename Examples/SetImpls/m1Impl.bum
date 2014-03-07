@@ -11,16 +11,20 @@
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="setUnion"/>
 <org.eventb.core.action name="'" org.eventb.core.assignment="mySet ≔ setUnion(mySet, otherSet)" org.eventb.core.label="act1"/>
 </org.eventb.core.event>
-<org.eventb.core.event name="/" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="setIntersection">
-<org.eventb.core.refinesEvent name="'" org.eventb.core.target="setIntersection"/>
-<org.eventb.core.action name="(" org.eventb.core.assignment="mySet ≔ setIntersection(mySet, otherSet)" org.eventb.core.label="act1"/>
-</org.eventb.core.event>
 <org.eventb.tasking.persistence.MachineType name="1" org.eventb.tasking.persistence.machineTypeAttribute="AutoTask" org.eventb.tasking.persistence.priority="5">
 <org.eventb.tasking.persistence.TaskType name="'" org.eventb.tasking.persistence.periodicTaskTypeAttribute="0" org.eventb.tasking.persistence.simpleTaskTypeAttribute="OneShot" org.eventb.tasking.persistence.taskTypeAttribute="Simple"/>
-<org.eventb.tasking.persistence.TaskBody name="(" org.eventb.tasking.persistence.taskBodyAttribute="setUnion;&#10;setIntersection"/>
+<org.eventb.tasking.persistence.TaskBody name="(" org.eventb.tasking.persistence.taskBodyAttribute="setIntersection;&#10;setUnion;&#10;setSubtract"/>
 </org.eventb.tasking.persistence.MachineType>
 <org.eventb.core.invariant name="m1_inv1" org.eventb.codegen.tasking.flattened="true" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="m1_inv1" org.eventb.core.predicate="mySet ∈ setImpl(ℤ)"/>
 <org.eventb.core.invariant name="m1_inv2" org.eventb.codegen.tasking.flattened="true" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="m1_inv2" org.eventb.core.predicate="otherSet ∈ setImpl(ℤ)"/>
 <org.eventb.core.invariant name="inv1" org.eventb.codegen.tasking.flattened="true" org.eventb.codegen.ui.typingAttribute="NonTyping" org.eventb.core.label="inv1" org.eventb.core.predicate="mySet ∈ ℙ(ℤ)"/>
 <org.eventb.core.invariant name="inv2" org.eventb.codegen.tasking.flattened="true" org.eventb.codegen.ui.typingAttribute="NonTyping" org.eventb.core.label="inv2" org.eventb.core.predicate="otherSet ∈ ℙ(ℤ)"/>
+<org.eventb.core.event name="m1_inv3" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="setSubtract">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="setSubtract"/>
+<org.eventb.core.action name="'" org.eventb.core.assignment="mySet ≔ setSubtract(mySet, otherSet)" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="/" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="setIntersection">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="setIntersection"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="mySet ≔ setIntersection(mySet, otherSet)" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
 </org.eventb.core.machineFile>
