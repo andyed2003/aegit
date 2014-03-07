@@ -71,11 +71,11 @@ public class TemplateProcessor {
 	// tag with generated code. Then write the output to a file.
 	public void instantiateTemplate(String templateName, IGeneratorData data_)
 			throws Exception {
-		data  = data_;
+		data = data_;
 		List<IResource> folderMembers = Arrays.asList(templateSourceFolder
 				.members());
 		File templateFile = null;
-		HashMap<String, File> templateFolderContentMap = new HashMap<String, File>(); 
+		HashMap<String, File> templateFolderContentMap = new HashMap<String, File>();
 		for (IResource member : folderMembers) {
 			if (member.getType() == IResource.FILE) {
 				IFile resourceFile = (IFile) member;
@@ -84,40 +84,41 @@ public class TemplateProcessor {
 				IPath path = new Path(uri.getPath());
 				String fileName = path.lastSegment();
 				if (fileName.equals(templateName)) {
-					// We've found the template resource, so log it, 
+					// We've found the template resource, so log it,
 					// but continue looping to add remaining folder contents.
 					templateFile = iFile;
-				}
-				else{
+				} else {
 					templateFolderContentMap.put(fileName, iFile);
 				}
 			}
 		}
-		if(templateFile == null){
-			throw new TemplateException("Template ("+ templateName +") not found in templates folder");
+		if (templateFile == null) {
+			throw new TemplateException("Template (" + templateName
+					+ ") not found in templates folder");
 		}
 		// Let's enable reading of the template.
 		FileReader reader = new FileReader(templateFile);
 		BufferedReader bufferedReader = new BufferedReader(reader);
 
-		codeArray = internalInstantiateTemplate(bufferedReader, templateFolderContentMap);
+		codeArray = internalInstantiateTemplate(bufferedReader,
+				templateFolderContentMap);
 
 		targetName = "";
-		for(Object d: data.getDataList()){
-			if(d instanceof ProtectedImpl){
+		for (Object d : data.getDataList()) {
+			if (d instanceof ProtectedImpl) {
 				targetName = ((ProtectedImpl) d).getName();
 				break;
 			}
 		}
-		targetFolderPath = targetFolder.getRawLocation().addTrailingSeparator().toString();
+		targetFolderPath = targetFolder.getRawLocation().addTrailingSeparator()
+				.toString();
 		doPostProcess();
 		doSave();
 	}
 
-
 	private void doPostProcess() {
 		List<String> tmpCodeArray = new ArrayList<String>();
-		for(String s: codeArray){
+		for (String s : codeArray) {
 			tmpCodeArray.add(s.replace("modelID", targetName));
 		}
 		// replace the old array with the new one
@@ -126,15 +127,15 @@ public class TemplateProcessor {
 
 	private void doSave() {
 		// call the code filer utility
-		CodeFiler.getDefault().save(codeArray, targetFolderPath, targetName+".c", "fmi_c");
+		CodeFiler.getDefault().save(codeArray, targetFolderPath,
+				targetName + ".c", "fmi_c");
 	}
 
-	
-	// This takes a buffered reader (pointing to a template), and list of child 
+	// This takes a buffered reader (pointing to a template), and list of child
 	// templates. Returning a generated list of lines, for output.
-	public List<String> internalInstantiateTemplate(BufferedReader bufferedReader,
-			HashMap<String, File> templateFolderContentMap)
-			throws Exception {
+	public List<String> internalInstantiateTemplate(
+			BufferedReader bufferedReader,
+			HashMap<String, File> templateFolderContentMap) throws Exception {
 		// write all lines to a temporary store for processing
 		List<String> tempArrayList = new ArrayList<String>();
 		// Get a line and copy it. If it has the 'begin
@@ -147,23 +148,25 @@ public class TemplateProcessor {
 				finished = true; // we are at the end of the file.
 			} else {
 				List<String> newLines = null;
-				
+
 				// if we have a keyword, pass it on the the TemplateHelper
-				boolean foundComment = line.contains(TemplateHelper.TAG_COMMENT_CHARS);
+				boolean foundComment = line
+						.contains(TemplateHelper.TAG_COMMENT_CHARS);
 				if (foundComment) {
 					String tagword = getTagword(line);
 					TemplateHelper templateHelper = new TemplateHelper(data);
-					templateHelper.setChildTemplateMap(templateFolderContentMap);
-					// add the reader to the data - so it can be used down stream
+					templateHelper
+							.setChildTemplateMap(templateFolderContentMap);
+					// add the reader to the data - so it can be used down
+					// stream
 					data.getDataList().add(bufferedReader);
 					newLines = templateHelper.generate(tagword);
 					// remove the reader when done
 					data.getDataList().remove(bufferedReader);
 				}
-				if(foundComment){
+				if (foundComment) {
 					tempArrayList.addAll(newLines);
-				}
-				else{
+				} else {
 					tempArrayList.add(line);
 				}
 			}
@@ -178,6 +181,5 @@ public class TemplateProcessor {
 		String keyword = line.substring(firstDelimiter, lastDelimiter);
 		return keyword;
 	}
-
 
 }

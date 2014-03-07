@@ -82,8 +82,8 @@ public class FMUCProtectedTranslator extends AbstractProtectedIL1Translator {
 		ArrayList<String> outCode = new ArrayList<String>();
 		
 		// If any subroutines have been generated during the template
-		// instantiation
-		// we can add the subroutine signatures to the header here.
+		// instantiation we can add the subroutine signatures 
+		// to the header here.
 		outCode.add("");
 		if (subList.size() > 0) {
 			ClassHeaderInformation headerInfo = new ClassHeaderInformation();

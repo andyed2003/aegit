@@ -83,6 +83,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 	public static final String COMMON_HEADER_PARTIAL = "common";
 	public static final String COMMON_HEADER_FULL = COMMON_HEADER_PARTIAL
 			+ ".h";
+	public static final String MODEL_ID = "modelID";
 	// Declaration of Types handled by the translator.
 	public static final String REAL = "Real";
 	public static final String STRING = "String";
@@ -108,8 +109,8 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 	private static EventBComponent eventBComponent;
 	// The machine being translated to an FMU
 	public static IMachineRoot machineRoot;
-	
-	// Translate the selected Composed Machine/Event-B Machine to FMU(s)
+
+	// Translate the selected (Diagram) Component to an FMU
 	public void translateToFMU(IStructuredSelection s)
 			throws BackingStoreException, CoreException, IOException,
 			URISyntaxException, IL1TranslationUnhandledTypeException,
@@ -144,8 +145,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 					.getRodinProject();
 			IEventBProject eventBProject = (IEventBProject) rodinProject
 					.getAdapter(IEventBProject.class);
-			machineRoot = eventBProject.getMachineRoot(emfMachine
-					.getName());
+			machineRoot = eventBProject.getMachineRoot(emfMachine.getName());
 			newSelection = new StructuredSelection(machineRoot);
 		}
 		super.setSelection(newSelection);
@@ -186,9 +186,10 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 					program, taskingTranslationManager, targetProject,
 					eventBComponent);
 			v2ModelDescription.create();
-		}
-		else{
-			throw new FMUTranslatorException("Cannot generate model description for FMI version " + getTargetFMIVersion());
+		} else {
+			throw new FMUTranslatorException(
+					"Cannot generate model description for FMI version "
+							+ getTargetFMIVersion());
 		}
 		// copy the external (pre-defined) files across
 		ExternalFileHandler fHandler = new ExternalFileHandler();
@@ -200,20 +201,17 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 	}
 
 	// DESIGN NOTE !!!
-	// How do we prevent the communication events from being translated? Since
-	// the master
-	// takes care of the communications, we need to ignore synchronizing events.
-	// The problem is that when initiating translation from the diagram we have
-	// no idea
-	// which composed machine describes the synchronizations. There could be a
-	// number of
+	// How do we prevent the communication events from being translated? 
+	// Since the master  takes care of the communications, we need to 
+	// ignore synchronizing events. The problem is that when initiating
+	// translation from the diagram we have no idea which composed machine
+	// describes the synchronizations. There could be a number of
 	// composed machines in a single project, involving the machine to be
 	// translated.
 	// We use the following solution: we preclude the use of shared machines!!!
 	// Then we can select events to ignore when they have parameters (since this
-	// indicates
-	// that they are communicating, because we don't use local variables in
-	// events).
+	// indicates that they are communicating, because we don't use local
+	// variables in events).
 
 	// This method translates Event-B models into an IL1 program
 	private static Program translateEventBToIL1(MachineRoot machineRoot)
@@ -264,9 +262,10 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 	}
 
 	// This method is equivalent to CProgramIL1Translator, tailored for
-	// use with FMI translation.
-	// It translates protected objects (from FMU Machines) to FMU
-	// implementations.
+	// use with FMI translation. However, it does not translate 
+	// protected objects (from FMU Machines) to FMU implementations,
+	// since this is done by the template. It mainly loads translation rules
+	// and sets up the header files.
 	private void translateIL1ToFMU(Program program,
 			TaskingTranslationManager taskingTranslationManager)
 			throws IL1TranslationUnhandledTypeException, RodinDBException,
@@ -283,7 +282,6 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		// This is for my FMI Declarations. It contains a
 		// description of my FMI component, for instance.
 		il1TranslationManager.addIncludeStatement("#include \"myFMIDecls.h\"");
-		ArrayList<String> code = null;
 		// Translation Rules
 		Map<IProject, List<ITranslationRule>> translationRules = loadTranslatorRules();
 		il1TranslationManager.setTranslatorRules(translationRules);
@@ -301,17 +299,17 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			EList<Protected> protectedList = program.getProtected();
 			// TRANSLATE EACH protected object
 			for (Protected p : protectedList) {
-				code = il1TranslationManager.translateIL1ElementToCode(p,
+				il1TranslationManager.translateIL1ElementToCode(p,
 						getTargetLanguage());
-// This doose nothing - delete after checking
-//				code.add(0, "#include \"" + COMMON_HEADER_FULL + "\"");
-//				code.add("// EndProtected");
-				// Generate the header files.
-				// Each protected file just includes "common.h" which includes
-				// the other
-				// files. Get the global decls to pass to the header.
-				generateFMUHeaders(headerInfo, newDirectoryPath,
-						il1TranslationManager, globalDecls);
+			// This doose nothing - delete after checking
+			// code.add(0, "#include \"" + COMMON_HEADER_FULL + "\"");
+			// code.add("// EndProtected");
+			// Generate the header files.
+			// Each protected file just includes "common.h" which includes
+			// the other
+			// files. Get the global decls to pass to the header.
+			generateFMUHeaders(headerInfo, newDirectoryPath,
+					il1TranslationManager, globalDecls);
 			}
 			generateGlobalHeader(headerInfo, newDirectoryPath,
 					il1TranslationManager, globalDecls);
@@ -336,8 +334,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		// add the new project the list of things to be updated in the UI
 		resourceUpdateList.add(targetProject);
 		// create C source folder in the project called "src" for generated
-		// source
-		// and external for inherited code
+		// source and external for inherited code
 		generatedSourceFolder = createCSourceFolder(targetProject,
 				GENERATED_SRC_FOLDER);
 		createCSourceFolder(targetProject, EXTERNAL_SOURCE_FOLDER);
@@ -507,7 +504,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		return globalDecls;
 	}
 
-	// Generate the headers for this FMU
+	// Generate the headers for this FMU. Starting with common.h
 	private void generateFMUHeaders(
 			ArrayList<ClassHeaderInformation> headerInformation,
 			String directoryName, IL1TranslationManager translationManager,
@@ -520,16 +517,18 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			commonCode.addAll(formatCode(translationManager
 					.getCompilerDependentExecutableCodeBlock(),
 					translationManager));
+
+			doPostProcess(commonCode, MODEL_ID, machineRoot.getElementName());
 			IL1CodeFiler.getDefault().save(commonCode, directoryName,
 					"common.c", il1TranslationManager);
 		}
 
-		// Save the header files for this FMU
+		// Save the header file for this FMU
 		for (ClassHeaderInformation c : headerInformation) {
 			String headerName = c.getClassName();
 			String headerPreBlock = c.getClassName().toUpperCase() + "_H";
 
-			ArrayList<String> headerCode = new ArrayList<String>();
+			List<String> headerCode = new ArrayList<String>();
 			// headerCode.add(codeGenerateTimestamp);
 			headerCode.add("#ifndef " + headerPreBlock);
 			headerCode.add("#define " + headerPreBlock);
@@ -541,6 +540,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			headerCode.add("#endif");
 			headerCode.add(""); // blank line
 
+			headerCode = doPostProcess(headerCode, MODEL_ID, machineRoot.getElementName());
 			IL1CodeFiler.getDefault().save(headerCode, directoryName,
 					headerName + ".h", il1TranslationManager);
 		}
@@ -666,6 +666,16 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 					+ fmiTypeString);
 	}
 
+	// replaces string1 with string2 in each of the elements of the string array 
+	private List<String> doPostProcess(List<String> codeArray, String target, String replacement) {
+		List<String> tmpCodeArray = new ArrayList<String>();
+		for(String s: codeArray){
+			tmpCodeArray.add(s.replace(target, replacement));
+		}
+		// replace the old array with the new one
+		return tmpCodeArray;
+	}
+	
 	public String getTargetFMIVersion() {
 		return targetFMIVersion;
 	}
