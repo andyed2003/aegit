@@ -46,6 +46,7 @@ import org.rodinp.core.RodinCore;
 import FmiModel.BooleanType;
 import FmiModel.CausalityType;
 import FmiModel.CoSimulationType;
+import FmiModel.DefaultExperimentType;
 import FmiModel.DocumentRoot;
 import FmiModel.FmiModelDescriptionType;
 import FmiModel.FmiModelFactory;
@@ -128,7 +129,13 @@ public class FMUModelDescriptionV2_0 {
 		// set various values
 		FmiModelDescriptionType descriptionType = FmiModelFactory.eINSTANCE
 				.createFmiModelDescriptionType();
-		// Add the modlStructure Attribute
+		
+		// Add default experiment to store the stepSize
+		DefaultExperimentType defaultExperimentType = FmiModelFactory.eINSTANCE.createDefaultExperimentType();
+		descriptionType.setDefaultExperiment(defaultExperimentType);
+		defaultExperimentType.setStepSize(eventBComponent.getStepPeriod());
+		
+		// Add the modelStructure Attribute
 		ModelStructureType modelStructureType = FmiModelFactory.eINSTANCE.createModelStructureType();
 		descriptionType.setModelStructure(modelStructureType);
 		

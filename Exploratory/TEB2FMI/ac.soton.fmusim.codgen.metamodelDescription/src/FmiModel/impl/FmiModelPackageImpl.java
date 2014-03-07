@@ -811,6 +811,15 @@ public class FmiModelPackageImpl extends EPackageImpl implements FmiModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getDefaultExperimentType_StepSize() {
+		return (EAttribute)defaultExperimentTypeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getDerivativesType() {
 		return derivativesTypeEClass;
 	}
@@ -2486,6 +2495,7 @@ public class FmiModelPackageImpl extends EPackageImpl implements FmiModelPackage
 		createEAttribute(defaultExperimentTypeEClass, DEFAULT_EXPERIMENT_TYPE__START_TIME);
 		createEAttribute(defaultExperimentTypeEClass, DEFAULT_EXPERIMENT_TYPE__STOP_TIME);
 		createEAttribute(defaultExperimentTypeEClass, DEFAULT_EXPERIMENT_TYPE__TOLERANCE);
+		createEAttribute(defaultExperimentTypeEClass, DEFAULT_EXPERIMENT_TYPE__STEP_SIZE);
 
 		derivativesTypeEClass = createEClass(DERIVATIVES_TYPE);
 		createEAttribute(derivativesTypeEClass, DERIVATIVES_TYPE__GROUP);
@@ -2776,6 +2786,7 @@ public class FmiModelPackageImpl extends EPackageImpl implements FmiModelPackage
 		initEAttribute(getDefaultExperimentType_StartTime(), theXMLTypePackage.getDouble(), "startTime", null, 0, 1, DefaultExperimentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDefaultExperimentType_StopTime(), theXMLTypePackage.getDouble(), "stopTime", null, 0, 1, DefaultExperimentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDefaultExperimentType_Tolerance(), theXMLTypePackage.getDouble(), "tolerance", null, 0, 1, DefaultExperimentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDefaultExperimentType_StepSize(), theXMLTypePackage.getDouble(), "stepSize", null, 0, 1, DefaultExperimentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(derivativesTypeEClass, DerivativesType.class, "DerivativesType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDerivativesType_Group(), ecorePackage.getEFeatureMapEntry(), "group", null, 0, -1, DerivativesType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

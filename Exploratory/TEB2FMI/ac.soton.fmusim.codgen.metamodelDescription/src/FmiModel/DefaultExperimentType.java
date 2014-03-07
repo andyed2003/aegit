@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link FmiModel.DefaultExperimentType#getStartTime <em>Start Time</em>}</li>
  *   <li>{@link FmiModel.DefaultExperimentType#getStopTime <em>Stop Time</em>}</li>
  *   <li>{@link FmiModel.DefaultExperimentType#getTolerance <em>Tolerance</em>}</li>
+ *   <li>{@link FmiModel.DefaultExperimentType#getStepSize <em>Step Size</em>}</li>
  * </ul>
  * </p>
  *
@@ -184,5 +185,58 @@ public interface DefaultExperimentType extends EObject {
 	 * @generated
 	 */
 	boolean isSetTolerance();
+
+	/**
+	 * Returns the value of the '<em><b>Step Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Step Size</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Step Size</em>' attribute.
+	 * @see #isSetStepSize()
+	 * @see #unsetStepSize()
+	 * @see #setStepSize(double)
+	 * @see FmiModel.FmiModelPackage#getDefaultExperimentType_StepSize()
+	 * @model unsettable="true" dataType="org.eclipse.emf.ecore.xml.type.Double"
+	 * @generated
+	 */
+	double getStepSize();
+
+	/**
+	 * Sets the value of the '{@link FmiModel.DefaultExperimentType#getStepSize <em>Step Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Step Size</em>' attribute.
+	 * @see #isSetStepSize()
+	 * @see #unsetStepSize()
+	 * @see #getStepSize()
+	 * @generated
+	 */
+	void setStepSize(double value);
+
+	/**
+	 * Unsets the value of the '{@link FmiModel.DefaultExperimentType#getStepSize <em>Step Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetStepSize()
+	 * @see #getStepSize()
+	 * @see #setStepSize(double)
+	 * @generated
+	 */
+	void unsetStepSize();
+
+	/**
+	 * Returns whether the value of the '{@link FmiModel.DefaultExperimentType#getStepSize <em>Step Size</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Step Size</em>' attribute is set.
+	 * @see #unsetStepSize()
+	 * @see #getStepSize()
+	 * @see #setStepSize(double)
+	 * @generated
+	 */
+	boolean isSetStepSize();
 
 } // DefaultExperimentType

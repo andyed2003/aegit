@@ -61,6 +61,7 @@ public class DefaultExperimentTypeItemProvider
 			addStartTimePropertyDescriptor(object);
 			addStopTimePropertyDescriptor(object);
 			addTolerancePropertyDescriptor(object);
+			addStepSizePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -132,6 +133,28 @@ public class DefaultExperimentTypeItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Step Size feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addStepSizePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DefaultExperimentType_stepSize_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DefaultExperimentType_stepSize_feature", "_UI_DefaultExperimentType_type"),
+				 FmiModelPackage.Literals.DEFAULT_EXPERIMENT_TYPE__STEP_SIZE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns DefaultExperimentType.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -169,6 +192,7 @@ public class DefaultExperimentTypeItemProvider
 			case FmiModelPackage.DEFAULT_EXPERIMENT_TYPE__START_TIME:
 			case FmiModelPackage.DEFAULT_EXPERIMENT_TYPE__STOP_TIME:
 			case FmiModelPackage.DEFAULT_EXPERIMENT_TYPE__TOLERANCE:
+			case FmiModelPackage.DEFAULT_EXPERIMENT_TYPE__STEP_SIZE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

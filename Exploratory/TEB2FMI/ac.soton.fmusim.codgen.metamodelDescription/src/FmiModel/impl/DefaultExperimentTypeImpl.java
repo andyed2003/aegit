@@ -20,6 +20,7 @@ import FmiModel.FmiModelPackage;
  *   <li>{@link FmiModel.impl.DefaultExperimentTypeImpl#getStartTime <em>Start Time</em>}</li>
  *   <li>{@link FmiModel.impl.DefaultExperimentTypeImpl#getStopTime <em>Stop Time</em>}</li>
  *   <li>{@link FmiModel.impl.DefaultExperimentTypeImpl#getTolerance <em>Tolerance</em>}</li>
+ *   <li>{@link FmiModel.impl.DefaultExperimentTypeImpl#getStepSize <em>Step Size</em>}</li>
  * </ul>
  * </p>
  *
@@ -112,6 +113,35 @@ public class DefaultExperimentTypeImpl extends EObjectImpl implements DefaultExp
 	 * @ordered
 	 */
 	protected boolean toleranceESet;
+
+	/**
+	 * The default value of the '{@link #getStepSize() <em>Step Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStepSize()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final double STEP_SIZE_EDEFAULT = 0.0;
+
+	/**
+	 * The cached value of the '{@link #getStepSize() <em>Step Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStepSize()
+	 * @generated
+	 * @ordered
+	 */
+	protected double stepSize = STEP_SIZE_EDEFAULT;
+
+	/**
+	 * This is true if the Step Size attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean stepSizeESet;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -275,6 +305,52 @@ public class DefaultExperimentTypeImpl extends EObjectImpl implements DefaultExp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public double getStepSize() {
+		return stepSize;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setStepSize(double newStepSize) {
+		double oldStepSize = stepSize;
+		stepSize = newStepSize;
+		boolean oldStepSizeESet = stepSizeESet;
+		stepSizeESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FmiModelPackage.DEFAULT_EXPERIMENT_TYPE__STEP_SIZE, oldStepSize, stepSize, !oldStepSizeESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void unsetStepSize() {
+		double oldStepSize = stepSize;
+		boolean oldStepSizeESet = stepSizeESet;
+		stepSize = STEP_SIZE_EDEFAULT;
+		stepSizeESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, FmiModelPackage.DEFAULT_EXPERIMENT_TYPE__STEP_SIZE, oldStepSize, STEP_SIZE_EDEFAULT, oldStepSizeESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetStepSize() {
+		return stepSizeESet;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -284,6 +360,8 @@ public class DefaultExperimentTypeImpl extends EObjectImpl implements DefaultExp
 				return getStopTime();
 			case FmiModelPackage.DEFAULT_EXPERIMENT_TYPE__TOLERANCE:
 				return getTolerance();
+			case FmiModelPackage.DEFAULT_EXPERIMENT_TYPE__STEP_SIZE:
+				return getStepSize();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -304,6 +382,9 @@ public class DefaultExperimentTypeImpl extends EObjectImpl implements DefaultExp
 				return;
 			case FmiModelPackage.DEFAULT_EXPERIMENT_TYPE__TOLERANCE:
 				setTolerance((Double)newValue);
+				return;
+			case FmiModelPackage.DEFAULT_EXPERIMENT_TYPE__STEP_SIZE:
+				setStepSize((Double)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -326,6 +407,9 @@ public class DefaultExperimentTypeImpl extends EObjectImpl implements DefaultExp
 			case FmiModelPackage.DEFAULT_EXPERIMENT_TYPE__TOLERANCE:
 				unsetTolerance();
 				return;
+			case FmiModelPackage.DEFAULT_EXPERIMENT_TYPE__STEP_SIZE:
+				unsetStepSize();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -344,6 +428,8 @@ public class DefaultExperimentTypeImpl extends EObjectImpl implements DefaultExp
 				return isSetStopTime();
 			case FmiModelPackage.DEFAULT_EXPERIMENT_TYPE__TOLERANCE:
 				return isSetTolerance();
+			case FmiModelPackage.DEFAULT_EXPERIMENT_TYPE__STEP_SIZE:
+				return isSetStepSize();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -364,6 +450,8 @@ public class DefaultExperimentTypeImpl extends EObjectImpl implements DefaultExp
 		if (stopTimeESet) result.append(stopTime); else result.append("<unset>");
 		result.append(", tolerance: ");
 		if (toleranceESet) result.append(tolerance); else result.append("<unset>");
+		result.append(", stepSize: ");
+		if (stepSizeESet) result.append(stepSize); else result.append("<unset>");
 		result.append(')');
 		return result.toString();
 	}

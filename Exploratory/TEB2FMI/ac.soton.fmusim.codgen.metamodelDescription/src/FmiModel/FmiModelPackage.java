@@ -472,13 +472,22 @@ public interface FmiModelPackage extends EPackage {
 	int DEFAULT_EXPERIMENT_TYPE__TOLERANCE = 2;
 
 	/**
+	 * The feature id for the '<em><b>Step Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEFAULT_EXPERIMENT_TYPE__STEP_SIZE = 3;
+
+	/**
 	 * The number of structural features of the '<em>Default Experiment Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEFAULT_EXPERIMENT_TYPE_FEATURE_COUNT = 3;
+	int DEFAULT_EXPERIMENT_TYPE_FEATURE_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link FmiModel.impl.DerivativesTypeImpl <em>Derivatives Type</em>}' class.
@@ -2871,6 +2880,17 @@ public interface FmiModelPackage extends EPackage {
 	EAttribute getDefaultExperimentType_Tolerance();
 
 	/**
+	 * Returns the meta object for the attribute '{@link FmiModel.DefaultExperimentType#getStepSize <em>Step Size</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Step Size</em>'.
+	 * @see FmiModel.DefaultExperimentType#getStepSize()
+	 * @see #getDefaultExperimentType()
+	 * @generated
+	 */
+	EAttribute getDefaultExperimentType_StepSize();
+
+	/**
 	 * Returns the meta object for class '{@link FmiModel.DerivativesType <em>Derivatives Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5141,6 +5161,14 @@ public interface FmiModelPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DEFAULT_EXPERIMENT_TYPE__TOLERANCE = eINSTANCE.getDefaultExperimentType_Tolerance();
+
+		/**
+		 * The meta object literal for the '<em><b>Step Size</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DEFAULT_EXPERIMENT_TYPE__STEP_SIZE = eINSTANCE.getDefaultExperimentType_StepSize();
 
 		/**
 		 * The meta object literal for the '{@link FmiModel.impl.DerivativesTypeImpl <em>Derivatives Type</em>}' class.
