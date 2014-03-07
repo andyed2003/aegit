@@ -1,3 +1,4 @@
+#include <string.h>
 #include "common.h"
 
 fmi_Component modelInstances[MaxFMUInstances]; // start of with an empty array of components
@@ -28,7 +29,7 @@ int conInstanceCount = 0;
 #define max(a,b) ((a)>(b) ? (a) : (b))
 #endif
 
-static fmiBoolean ControllerImpl_nullPointer(fmi_Component* comp, const char* f,
+static fmiBoolean nullPointer(fmi_Component* comp, const char* f,
 		const char* arg, const void* p) {
 	if (!p) {
 		comp->state = modelError;
@@ -39,8 +40,8 @@ static fmiBoolean ControllerImpl_nullPointer(fmi_Component* comp, const char* f,
 	return fmiFalse;
 }
 
-static fmiBoolean ControllerImpl_vrOutOfRange(fmi_Component* comp,
-		const char* f, fmiValueReference vr, int end) {
+static fmiBoolean vrOutOfRange(fmi_Component* comp, const char* f,
+		fmiValueReference vr, int end) {
 	if (vr >= end) {
 		comp->functions.logger(comp, comp->instanceName, fmiError, "error",
 				"%s: Illegal value reference %u.", f, vr);
@@ -55,8 +56,8 @@ static fmiStatus ControllerImpl_setString(fmiComponent comp,
 	return fmiSetString(comp, &vr, 1, &value);
 }
 
-static fmiBoolean ControllerImpl_invalidState(fmi_Component* comp,
-		const char* f, int statesExpected) {
+static fmiBoolean invalidState(fmi_Component* comp, const char* f,
+		int statesExpected) {
 	if (!comp)
 		return fmiTrue;
 	if (!(comp->state & statesExpected)) {
@@ -69,7 +70,7 @@ static fmiBoolean ControllerImpl_invalidState(fmi_Component* comp,
 }
 
 // fname is fmiTerminate or fmiTerminateSlave
-static fmiStatus ControllerImpl_terminate(char* fname, fmiComponent c) {
+static fmiStatus terminate(char* fname, fmiComponent c) {
 	fmi_Component* comp = (fmi_Component *) c;
 	if (invalidState(comp, fname, modelInitialized))
 		return fmiError;
@@ -80,7 +81,7 @@ static fmiStatus ControllerImpl_terminate(char* fname, fmiComponent c) {
 }
 
 // fname is freeModelInstance of freeSlaveInstance
-void ControllerImpl_freeInstance(char* fname, fmiComponent c) {
+void freeInstance(char* fname, fmiComponent c) {
 	fmi_Component* comp = (fmi_Component *) c;
 	if (!comp)
 		return;
@@ -318,7 +319,7 @@ fmiStatus ControllerImpl_fmiTerminateSlave(fmiComponent c) {
 }
 
 // does nothing here - we use the initialisationsListGenerator
-static void ControllerImpl_setStartValues(fmi_Component *comp) {
+static void setStartValues(fmi_Component *comp) {
 
 }
 
@@ -389,8 +390,7 @@ fmiStatus ControllerImpl_fmiCancelStep(fmiComponent c) {
 	return fmiError;
 }
 
-static fmiStatus ControllerImpl_getStatus(char* fname, fmiComponent c,
-		const fmiStatusKind s) {
+static fmiStatus getStatus(char* fname, fmiComponent c, const fmiStatusKind s) {
 	const char* statusKind[3] = { "fmiDoStepStatus", "fmiPendingStatus",
 			"fmiLastSuccessfulTime" };
 	fmi_Component* comp = (fmi_Component *) c;

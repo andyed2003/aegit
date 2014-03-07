@@ -1,5 +1,5 @@
+#include <string.h>
 #include "common.h"
-
 
 fmi_Component modelInstances[MaxFMUInstances]; // start of with an empty array of components
 int conInstanceCount = 0;
