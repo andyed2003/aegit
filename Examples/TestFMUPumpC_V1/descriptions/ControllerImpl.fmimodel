@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<fmiModelDescription author="University of Southampton" fmiVersion="1.0" generationDateAndTime="2014-03-07T12:17:54.907Z" generationTool="EB2FMU" guid="GUID_ControllerImpl_2014-03-07T12:17:54.907Z" modelName="ControllerImpl" numberOfEventIndicators="0" modelIdentifier="ControllerImpl" numberOfContinuousStates="0">
+<fmiModelDescription author="University of Southampton" fmiVersion="1.0" generationDateAndTime="2014-03-10T08:59:52.698Z" generationTool="EB2FMU" guid="GUID_ControllerImpl_2014-03-10T08:59:52.698Z" modelName="ControllerImpl" numberOfEventIndicators="0" modelIdentifier="ControllerImpl" numberOfContinuousStates="0">
   <ModelVariables>
     <ScalarVariable causality="input" name="c_level" valueReference="0" variability="discrete">
       <Integer start="100"/>
