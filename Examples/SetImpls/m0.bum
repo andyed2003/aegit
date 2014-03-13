@@ -4,6 +4,7 @@
 <org.eventb.core.action name="'" org.eventb.core.assignment="mySet ≔ ∅" org.eventb.core.label="act1"/>
 <org.eventb.core.action name="(" org.eventb.core.assignment="otherSet ≔ ∅" org.eventb.core.label="act2"/>
 <org.eventb.core.action name=")" org.eventb.core.assignment="element ≔ 1" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="altTypeSet ≔ ∅" org.eventb.core.label="act4"/>
 </org.eventb.core.event>
 <org.eventb.core.variable name=")" org.eventb.core.identifier="mySet"/>
 <org.eventb.core.invariant name="*" org.eventb.codegen.tasking.flattened="true" org.eventb.codegen.ui.typingAttribute="NonTyping" org.eventb.core.label="inv1" org.eventb.core.predicate="mySet ∈ ℙ(ℤ)"/>
@@ -26,4 +27,7 @@
 <org.eventb.core.event name="2" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="selectElement">
 <org.eventb.core.action name="'" org.eventb.core.assignment="element :∈ ℤ " org.eventb.core.label="act1"/>
 </org.eventb.core.event>
+<org.eventb.core.seesContext name="4" org.eventb.core.target="ctx"/>
+<org.eventb.core.variable name="5" org.eventb.core.identifier="altTypeSet"/>
+<org.eventb.core.invariant name="6" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="inv4" org.eventb.core.predicate="altTypeSet ∈ ℙ(AltType)"/>
 </org.eventb.core.machineFile>
