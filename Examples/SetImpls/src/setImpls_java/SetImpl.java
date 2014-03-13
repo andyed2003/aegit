@@ -1,6 +1,7 @@
 package setImpls_java;
 
 import java.util.HashSet;
+import java.util.Iterator;
 
 public class SetImpl<E> extends HashSet<E> {
 
@@ -21,6 +22,16 @@ public class SetImpl<E> extends HashSet<E> {
 
 	public SetImpl<E> subtract(SetImpl<E> otherSet) {
 		removeAll(otherSet);
+		return this;
+	}
+
+	public E getFirst() {
+		Iterator<E> iter = iterator();
+		return iter.next();
+	}
+
+	public SetImpl<E> setUnion(E element) {
+		add(element);
 		return this;
 	}
 
