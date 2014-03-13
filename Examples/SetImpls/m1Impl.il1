@@ -23,7 +23,7 @@
       <decls xsi:type="il1:VariableDecl" identifier="otherSet" type="setImpl(&#x2124;)" initialValue="newSet(&#x2205;&#x2982;&#x2119;(&#x2124;))" ProjectName="SetImpls" ComponentName="m1Impl"/>
       <decls xsi:type="il1:VariableDecl" identifier="element" type="&#x2124;" initialValue="0" ProjectName="SetImpls" ComponentName="m1Impl"/>
       <decls xsi:type="il1:VariableDecl" identifier="altTypeSet" type="setImpl(AltType)" initialValue="newSet(&#x2205;&#x2982;&#x2119;(AltType))" ProjectName="SetImpls" ComponentName="m1Impl"/>
-      <decls xsi:type="il1:VariableDecl" identifier="alt1" type="AltType" initialValue="newInst(AltType)" ProjectName="SetImpls" ComponentName="m1Impl"/>
+      <decls xsi:type="il1:VariableDecl" identifier="alt1" type="newType(AltType)" initialValue="newInst(AltType)" ProjectName="SetImpls" ComponentName="m1Impl"/>
     </autoTasks>
   </entryPoint>
 </il1:Program>
