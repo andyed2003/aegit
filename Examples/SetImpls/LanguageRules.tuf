@@ -118,8 +118,7 @@
 <org.eventb.codegen.theory.translator.core.translatorRuleElement name="?" org.eventb.codegen.theory.translator.core.formula="$c ∧ $d" org.eventb.codegen.theory.translator.core.translationElement="$c &amp;&amp; $d" org.eventb.core.label="trns20"/>
 <org.eventb.codegen.theory.translator.core.translatorRuleElement name="@" org.eventb.codegen.theory.translator.core.formula="$c ⇒ $d" org.eventb.codegen.theory.translator.core.translationElement="!$c || $d" org.eventb.core.label="trns21"/>
 <org.eventb.codegen.theory.translator.core.translatorRuleElement name="A" org.eventb.codegen.theory.translator.core.formula="−a" org.eventb.codegen.theory.translator.core.translationElement="(-a)" org.eventb.core.label="trns22"/>
-<org.eventb.codegen.theory.translator.core.translatorTypeRuleElement name="B" org.eventb.codegen.theory.translator.core.translationElement="int" org.eventb.codegen.theory.translator.core.typeFormula="ℤ" org.eventb.core.label="typeTrns1"/>
-<org.eventb.codegen.theory.translator.core.translatorTypeRuleElement name="C" org.eventb.codegen.theory.translator.core.translationElement="boolean" org.eventb.codegen.theory.translator.core.typeFormula="BOOL" org.eventb.core.label="typeTrns2"/>
-<org.eventb.codegen.theory.translator.core.translatorRuleElement name="D" org.eventb.codegen.theory.translator.core.formula="c :∈ Q" org.eventb.codegen.theory.translator.core.translationElement="c = Q" org.eventb.core.label="trns23"/>
+<org.eventb.codegen.theory.translator.core.translatorTypeRuleElement name="B" org.eventb.codegen.theory.translator.core.translationElement="Integer" org.eventb.codegen.theory.translator.core.typeFormula="ℤ" org.eventb.core.label="typeTrns1"/>
+<org.eventb.codegen.theory.translator.core.translatorTypeRuleElement name="C" org.eventb.codegen.theory.translator.core.translationElement="Boolean" org.eventb.codegen.theory.translator.core.typeFormula="BOOL" org.eventb.core.label="typeTrns2"/>
 </org.eventb.codegen.theory.translator.core.translatorElement>
 </org.eventb.theory.core.theoryRoot>

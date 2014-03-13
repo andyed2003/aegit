@@ -4,6 +4,7 @@
 <org.eventb.core.poIdentifier name="AltType" org.eventb.core.type="ℙ(AltType)"/>
 </org.eventb.core.poPredicateSet>
 <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/SetImpls/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="alt1" org.eventb.core.type="AltType"/>
 <org.eventb.core.poIdentifier name="altTypeSet" org.eventb.core.type="ℙ(AltType)"/>
 <org.eventb.core.poIdentifier name="element" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poIdentifier name="mySet" org.eventb.core.type="ℙ(ℤ)"/>
@@ -12,6 +13,7 @@
 <org.eventb.core.poPredicate name="altTypeSev" org.eventb.core.predicate="otherSet∈ℙ(ℤ)" org.eventb.core.source="/SetImpls/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#-"/>
 <org.eventb.core.poPredicate name="altTypeSew" org.eventb.core.predicate="element∈ℤ" org.eventb.core.source="/SetImpls/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#1"/>
 <org.eventb.core.poPredicate name="altTypeSex" org.eventb.core.predicate="altTypeSet∈ℙ(AltType)" org.eventb.core.source="/SetImpls/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#6"/>
+<org.eventb.core.poPredicate name="altTypeSey" org.eventb.core.predicate="alt1∈AltType" org.eventb.core.source="/SetImpls/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#8"/>
 </org.eventb.core.poPredicateSet>
 <org.eventb.core.poSequent name="INITIALISATION/m1_inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SetImpls/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTALLHYPaltTypeSeu"/>
@@ -65,6 +67,7 @@
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SetImpls/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/SetImpls/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poSequent#INITIALISATION\/act4\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
 </org.eventb.core.poSequent>
 <org.eventb.core.poPredicateSet name="EVTIDENTaltTypeSeu" org.eventb.core.parentSet="/SetImpls/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="alt1'" org.eventb.core.type="AltType"/>
 <org.eventb.core.poIdentifier name="mySet'" org.eventb.core.type="ℙ(ℤ)"/>
 <org.eventb.core.poIdentifier name="element'" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poIdentifier name="altTypeSet'" org.eventb.core.type="ℙ(AltType)"/>
@@ -172,5 +175,6 @@
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="otherSet∈setImpl(ℤ)" org.eventb.core.source="/SetImpls/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#-"/>
 <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="element∈ℤ" org.eventb.core.source="/SetImpls/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#2"/>
 <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="altTypeSet∈setImpl(AltType)" org.eventb.core.source="/SetImpls/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#6"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="alt1∈AltType" org.eventb.core.source="/SetImpls/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#9"/>
 </org.eventb.core.poPredicateSet>
 </org.eventb.core.poFile>

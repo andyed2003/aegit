@@ -9,7 +9,7 @@ public class m1Impl implements Runnable
 	protected SetImpl<Integer> otherSet = new SetImpl<Integer>();
 	protected Integer element = 0;
 	protected SetImpl<AltType> altTypeSet = new SetImpl<AltType>();
-	protected  alt1;
+	protected  alt1 = TTT1;
 	protected int priority = 5;
 	
 	public m1Impl()
