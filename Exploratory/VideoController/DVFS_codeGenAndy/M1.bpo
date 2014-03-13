@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.poFile org.eventb.core.poStamp="0">
-<org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poFile org.eventb.core.poStamp="5">
+<org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="5">
 <org.eventb.core.poIdentifier name="FRAMES" org.eventb.core.type="ℙ(FRAMES)"/>
 <org.eventb.core.poIdentifier name="VF" org.eventb.core.type="ℙ(VF)"/>
 <org.eventb.core.poIdentifier name="OPP100" org.eventb.core.type="VF"/>
@@ -18,115 +18,103 @@
 <org.eventb.core.poPredicate name="OPP137" org.eventb.core.predicate="partition(VF,{OPP1G},{OPP130},{OPP100},{OPP50})" org.eventb.core.source="/DVFS_codeGenAndy/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#D"/>
 <org.eventb.core.poPredicate name="OPP138" org.eventb.core.predicate="partition(FRAMES,{f1},{f2})" org.eventb.core.source="/DVFS_codeGenAndy/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#F"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
-<org.eventb.core.poIdentifier name="c_cur_cpu_cycle" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="5">
+<org.eventb.core.poIdentifier name="c_cpu_cycle" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poIdentifier name="c_cur_frm" org.eventb.core.type="FRAMES"/>
 <org.eventb.core.poIdentifier name="c_fps" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="c_frame" org.eventb.core.type="FRAMES"/>
 <org.eventb.core.poIdentifier name="c_frm_cpu_cycle" org.eventb.core.type="ℙ(FRAMES×ℤ)"/>
 <org.eventb.core.poIdentifier name="c_frm_vf" org.eventb.core.type="ℙ(FRAMES×VF)"/>
 <org.eventb.core.poIdentifier name="c_vf" org.eventb.core.type="VF"/>
-<org.eventb.core.poIdentifier name="e_curr_cpu_cycle" org.eventb.core.type="ℤ"/>
-<org.eventb.core.poIdentifier name="e_curr_frame" org.eventb.core.type="FRAMES"/>
+<org.eventb.core.poIdentifier name="e_cpu_cycle" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poIdentifier name="e_fps" org.eventb.core.type="ℤ"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poSequent name="INITIALISATION/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
-<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTALLHYPe_curr_cpu_cyclf"/>
+<org.eventb.core.poSequent name="INITIALISATION/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="5">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTALLHYPc_frm_cpu_cyclf"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(FRAMES×VF))∈FRAMES ⇸ VF" org.eventb.core.source="/DVFS_codeGenAndy/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#@"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DVFS_codeGenAndy/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#8"/>
 <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DVFS_codeGenAndy/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#@"/>
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poSequent#INITIALISATION\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
-<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD4"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="INITIALISATION/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
-<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTALLHYPe_curr_cpu_cyclf"/>
+<org.eventb.core.poSequent name="INITIALISATION/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="5">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTALLHYPc_frm_cpu_cyclf"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(FRAMES×ℤ))∈FRAMES ⇸ ℤ" org.eventb.core.source="/DVFS_codeGenAndy/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#A"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DVFS_codeGenAndy/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#8"/>
 <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DVFS_codeGenAndy/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#A"/>
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poSequent#INITIALISATION\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
-<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD5"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="INITIALISATION/act5/FIS" org.eventb.core.accurate="true" org.eventb.core.poDesc="Feasibility of action" org.eventb.core.poStamp="0">
-<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTALLHYPe_curr_cpu_cyclf"/>
+<org.eventb.core.poSequent name="INITIALISATION/act5/FIS" org.eventb.core.accurate="true" org.eventb.core.poDesc="Feasibility of action" org.eventb.core.poStamp="5">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTALLHYPc_frm_cpu_cyclf"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="FRAMES≠(∅ ⦂ ℙ(FRAMES))" org.eventb.core.source="/DVFS_codeGenAndy/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#8|org.eventb.core.action#+"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DVFS_codeGenAndy/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#8|org.eventb.core.action#+"/>
-<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTALLHYPe_curr_cpu_cyclf"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTALLHYPc_frm_cpu_cyclf"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poPredicateSet name="EVTIDENTe_curr_cpu_cyclf" org.eventb.core.parentSet="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="EVTIDENTc_frm_cpu_cyclf" org.eventb.core.parentSet="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="5">
 <org.eventb.core.poIdentifier name="c_vf'" org.eventb.core.type="VF"/>
 <org.eventb.core.poIdentifier name="e_fps'" org.eventb.core.type="ℤ"/>
-<org.eventb.core.poIdentifier name="c_cur_cpu_cycle'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="e_cpu_cycle'" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poIdentifier name="c_cur_frm'" org.eventb.core.type="FRAMES"/>
 <org.eventb.core.poIdentifier name="c_frm_cpu_cycle'" org.eventb.core.type="ℙ(FRAMES×ℤ)"/>
-<org.eventb.core.poIdentifier name="e_curr_frame'" org.eventb.core.type="FRAMES"/>
+<org.eventb.core.poIdentifier name="c_cpu_cycle'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="c_frame'" org.eventb.core.type="FRAMES"/>
 <org.eventb.core.poIdentifier name="c_frm_vf'" org.eventb.core.type="ℙ(FRAMES×VF)"/>
 <org.eventb.core.poIdentifier name="c_fps'" org.eventb.core.type="ℤ"/>
-<org.eventb.core.poIdentifier name="e_curr_cpu_cycle'" org.eventb.core.type="ℤ"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPe_curr_cpu_cyclf" org.eventb.core.parentSet="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTIDENTe_curr_cpu_cyclf" org.eventb.core.poStamp="0"/>
-<org.eventb.core.poPredicateSet name="EVTIDENTe_curr_cpu_cyclg" org.eventb.core.parentSet="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
-<org.eventb.core.poIdentifier name="e_fps'" org.eventb.core.type="ℤ"/>
-<org.eventb.core.poIdentifier name="e_curr_cpu_cycle'" org.eventb.core.type="ℤ"/>
-</org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPe_curr_cpu_cyclg" org.eventb.core.parentSet="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTIDENTe_curr_cpu_cyclg" org.eventb.core.poStamp="0"/>
-<org.eventb.core.poPredicateSet name="EVTIDENTe_curr_cpu_cyclh" org.eventb.core.parentSet="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="EVTALLHYPc_frm_cpu_cyclf" org.eventb.core.parentSet="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTIDENTc_frm_cpu_cyclf" org.eventb.core.poStamp="5"/>
+<org.eventb.core.poPredicateSet name="EVTIDENTc_frm_cpu_cyclg" org.eventb.core.parentSet="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="5">
 <org.eventb.core.poIdentifier name="p1" org.eventb.core.type="ℤ"/>
-<org.eventb.core.poIdentifier name="c_cur_cpu_cycle'" org.eventb.core.type="ℤ"/>
-<org.eventb.core.poIdentifier name="c_cur_frm'" org.eventb.core.type="FRAMES"/>
-<org.eventb.core.poIdentifier name="p2" org.eventb.core.type="ℤ"/>
-<org.eventb.core.poIdentifier name="p3" org.eventb.core.type="FRAMES"/>
 <org.eventb.core.poIdentifier name="c_fps'" org.eventb.core.type="ℤ"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPe_curr_cpu_cyclh" org.eventb.core.parentSet="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTIDENTe_curr_cpu_cyclh" org.eventb.core.poStamp="0">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="p1=e_curr_cpu_cycle" org.eventb.core.source="/DVFS_codeGenAndy/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#F|org.eventb.core.guard#("/>
-<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="p2=e_fps" org.eventb.core.source="/DVFS_codeGenAndy/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#F|org.eventb.core.guard#+"/>
-<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="p3=e_curr_frame" org.eventb.core.source="/DVFS_codeGenAndy/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#F|org.eventb.core.guard#-"/>
+<org.eventb.core.poPredicateSet name="EVTALLHYPc_frm_cpu_cyclg" org.eventb.core.parentSet="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTIDENTc_frm_cpu_cyclg" org.eventb.core.poStamp="5">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="p1=e_fps" org.eventb.core.source="/DVFS_codeGenAndy/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#F|org.eventb.core.guard#+"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPe_curr_cpu_cycli" org.eventb.core.parentSet="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0"/>
-<org.eventb.core.poSequent name="c_store_vf/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
-<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTALLHYPe_curr_cpu_cyclj"/>
-<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="c_frm_vf∪{c_cur_frm ↦ c_vf}∈FRAMES ⇸ VF" org.eventb.core.source="/DVFS_codeGenAndy/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#@"/>
+<org.eventb.core.poPredicateSet name="EVTIDENTc_frm_cpu_cyclh" org.eventb.core.parentSet="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="5">
+<org.eventb.core.poIdentifier name="c_vf'" org.eventb.core.type="VF"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPc_frm_cpu_cyclh" org.eventb.core.parentSet="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTIDENTc_frm_cpu_cyclh" org.eventb.core.poStamp="5"/>
+<org.eventb.core.poSequent name="c_store_vf/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="5">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTALLHYPc_frm_cpu_cycli"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="c_frm_vf{c_frame ↦ c_vf}∈FRAMES ⇸ VF" org.eventb.core.source="/DVFS_codeGenAndy/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#@"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DVFS_codeGenAndy/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#:"/>
 <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DVFS_codeGenAndy/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#@"/>
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poSequent#c_store_vf\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
-<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD4"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poPredicateSet name="EVTIDENTe_curr_cpu_cyclj" org.eventb.core.parentSet="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="EVTIDENTc_frm_cpu_cycli" org.eventb.core.parentSet="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="5">
 <org.eventb.core.poIdentifier name="c_frm_vf'" org.eventb.core.type="ℙ(FRAMES×VF)"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPe_curr_cpu_cyclj" org.eventb.core.parentSet="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTIDENTe_curr_cpu_cyclj" org.eventb.core.poStamp="0"/>
-<org.eventb.core.poPredicateSet name="EVTIDENTe_curr_cpu_cyclk" org.eventb.core.parentSet="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
-<org.eventb.core.poIdentifier name="c_cur_cpu_cycle'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poPredicateSet name="EVTALLHYPc_frm_cpu_cycli" org.eventb.core.parentSet="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTIDENTc_frm_cpu_cycli" org.eventb.core.poStamp="5"/>
+<org.eventb.core.poPredicateSet name="EVTIDENTc_frm_cpu_cyclj" org.eventb.core.parentSet="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="5">
 <org.eventb.core.poIdentifier name="c_cur_frm'" org.eventb.core.type="FRAMES"/>
-<org.eventb.core.poIdentifier name="f" org.eventb.core.type="FRAMES"/>
-<org.eventb.core.poIdentifier name="cycles_num" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="p2" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="c_cpu_cycle'" org.eventb.core.type="ℤ"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPe_curr_cpu_cyclk" org.eventb.core.parentSet="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTIDENTe_curr_cpu_cyclk" org.eventb.core.poStamp="0">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="f∈dom(c_frm_vf)" org.eventb.core.source="/DVFS_codeGenAndy/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#;|org.eventb.core.guard#("/>
-<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="cycles_num∈ℕ1" org.eventb.core.source="/DVFS_codeGenAndy/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#;|org.eventb.core.guard#*"/>
-<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="c_cur_cpu_cycle=0" org.eventb.core.source="/DVFS_codeGenAndy/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#;|org.eventb.core.guard#-"/>
-<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="f∉dom(c_frm_cpu_cycle)" org.eventb.core.source="/DVFS_codeGenAndy/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#;|org.eventb.core.guard#."/>
+<org.eventb.core.poPredicateSet name="EVTALLHYPc_frm_cpu_cyclj" org.eventb.core.parentSet="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTIDENTc_frm_cpu_cyclj" org.eventb.core.poStamp="5">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="p2=e_cpu_cycle" org.eventb.core.source="/DVFS_codeGenAndy/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#;|org.eventb.core.guard#."/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poSequent name="c_store_cpu_cycle/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
-<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTALLHYPe_curr_cpu_cycll"/>
-<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="c_frm_cpu_cycle∪{c_cur_frm ↦ c_cur_cpu_cycle}∈FRAMES ⇸ ℤ" org.eventb.core.source="/DVFS_codeGenAndy/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#A"/>
+<org.eventb.core.poSequent name="c_monitor_cpu_cycle/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="5">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTALLHYPc_frm_cpu_cyclk"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="c_frm_cpu_cycle{c_cur_frm ↦ c_cpu_cycle}∈FRAMES ⇸ ℤ" org.eventb.core.source="/DVFS_codeGenAndy/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#A"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DVFS_codeGenAndy/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#="/>
 <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DVFS_codeGenAndy/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#A"/>
-<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poSequent#c_store_cpu_cycle\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
-<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poSequent#c_monitor_cpu_cycle\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD5"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poPredicateSet name="EVTIDENTe_curr_cpu_cycll" org.eventb.core.parentSet="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="EVTIDENTc_frm_cpu_cyclk" org.eventb.core.parentSet="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="5">
 <org.eventb.core.poIdentifier name="c_frm_cpu_cycle'" org.eventb.core.type="ℙ(FRAMES×ℤ)"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPe_curr_cpu_cycll" org.eventb.core.parentSet="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTIDENTe_curr_cpu_cycll" org.eventb.core.poStamp="0"/>
-<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="EVTALLHYPc_frm_cpu_cyclk" org.eventb.core.parentSet="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTIDENTc_frm_cpu_cyclk" org.eventb.core.poStamp="5"/>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/DVFS_codeGenAndy/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="5">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="e_fps∈ℤ" org.eventb.core.source="/DVFS_codeGenAndy/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#?"/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="c_fps∈ℤ" org.eventb.core.source="/DVFS_codeGenAndy/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#J"/>
-<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="c_frm_vf∈FRAMES ⇸ VF" org.eventb.core.source="/DVFS_codeGenAndy/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#@"/>
-<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="c_frm_cpu_cycle∈FRAMES ⇸ ℤ" org.eventb.core.source="/DVFS_codeGenAndy/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#A"/>
-<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="c_cur_cpu_cycle∈ℤ" org.eventb.core.source="/DVFS_codeGenAndy/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#B"/>
-<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="e_curr_cpu_cycle∈ℤ" org.eventb.core.source="/DVFS_codeGenAndy/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#H"/>
-<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="c_cur_frm∈FRAMES" org.eventb.core.source="/DVFS_codeGenAndy/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#C"/>
-<org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="c_vf∈VF" org.eventb.core.source="/DVFS_codeGenAndy/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#L"/>
-<org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="e_curr_frame∈FRAMES" org.eventb.core.source="/DVFS_codeGenAndy/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#Q"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="c_cpu_cycle∈ℤ" org.eventb.core.source="/DVFS_codeGenAndy/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#B"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="e_cpu_cycle∈ℤ" org.eventb.core.source="/DVFS_codeGenAndy/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#H"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="c_frm_vf∈FRAMES ⇸ VF" org.eventb.core.source="/DVFS_codeGenAndy/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#@"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="c_frm_cpu_cycle∈FRAMES ⇸ ℤ" org.eventb.core.source="/DVFS_codeGenAndy/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#A"/>
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="c_vf∈VF" org.eventb.core.source="/DVFS_codeGenAndy/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#L"/>
+<org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="c_frame∈FRAMES" org.eventb.core.source="/DVFS_codeGenAndy/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#Q"/>
+<org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="c_cur_frm∈FRAMES" org.eventb.core.source="/DVFS_codeGenAndy/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#C"/>
 </org.eventb.core.poPredicateSet>
 </org.eventb.core.poFile>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.poFile org.eventb.core.poStamp="0">
+<org.eventb.core.poFile org.eventb.core.poStamp="2">
 <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="FRAMES" org.eventb.core.type="ℙ(FRAMES)"/>
 <org.eventb.core.poIdentifier name="VF" org.eventb.core.type="ℙ(VF)"/>
@@ -10,7 +10,7 @@
 <org.eventb.core.poIdentifier name="f1" org.eventb.core.type="FRAMES"/>
 <org.eventb.core.poIdentifier name="f2" org.eventb.core.type="FRAMES"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/DVFS_codeGenAndy/C0.bpo|org.eventb.core.poFile#C0|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/DVFS_codeGenAndy/C0.bpo|org.eventb.core.poFile#C0|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="2">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="f1∈FRAMES" org.eventb.core.source="/DVFS_codeGenAndy/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#I"/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="f2∈FRAMES" org.eventb.core.source="/DVFS_codeGenAndy/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#J"/>
 <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="OPP1G∈VF" org.eventb.core.source="/DVFS_codeGenAndy/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#?"/>
