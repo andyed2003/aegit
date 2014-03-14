@@ -13,7 +13,7 @@
 <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="T" org.eventb.core.identifier="a"/>
 <org.eventb.theory.core.directOperatorDefinition name="(" org.eventb.theory.core.formula="{a}"/>
 </org.eventb.theory.core.newOperatorDefinition>
-<org.eventb.theory.core.newOperatorDefinition name="*" org.eventb.core.comment="defines setImpl union" org.eventb.core.label="setUnion" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.newOperatorDefinition name="*" org.eventb.core.comment="defines setImpl union" org.eventb.core.label="setUnion" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="true" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
 <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(T)" org.eventb.core.identifier="a"/>
 <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="ℙ(T)" org.eventb.core.identifier="b"/>
 <org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="a ∪ b"/>
@@ -37,7 +37,6 @@
 <org.eventb.codegen.theory.translator.core.translatorRuleElement name="4" org.eventb.codegen.theory.translator.core.formula="setSubtract(a,b)" org.eventb.codegen.theory.translator.core.translationElement="a.subtract(b)" org.eventb.core.label="subtractRule"/>
 <org.eventb.codegen.theory.translator.core.translatorRuleElement name="-" org.eventb.codegen.theory.translator.core.formula="newSet(∅⦂ℙ(t))" org.eventb.codegen.theory.translator.core.translationElement="new SetImpl&lt;t&gt;()" org.eventb.core.label="newSetRule"/>
 <org.eventb.codegen.theory.translator.core.translatorRuleElement name="5" org.eventb.codegen.theory.translator.core.formula="setReduce(a)" org.eventb.codegen.theory.translator.core.translationElement="a.getFirst()" org.eventb.core.label="setReduceRule"/>
-<org.eventb.codegen.theory.translator.core.translatorRuleElement name="6" org.eventb.codegen.theory.translator.core.formula="a ∪ singleton(s)" org.eventb.codegen.theory.translator.core.translationElement="a.setUnion(s)" org.eventb.core.label="trns1"/>
 <org.eventb.codegen.theory.translator.core.translatorRuleElement name="7" org.eventb.codegen.theory.translator.core.formula="singleton(s) ∪ a" org.eventb.codegen.theory.translator.core.translationElement="a.setUnion(s)" org.eventb.core.label="trns2"/>
 <org.eventb.codegen.theory.translator.core.translatorRuleElement name="9" org.eventb.codegen.theory.translator.core.formula="newInst(T)" org.eventb.codegen.theory.translator.core.translationElement="new T()" org.eventb.core.label="trns3"/>
 </org.eventb.codegen.theory.translator.core.translatorElement>
