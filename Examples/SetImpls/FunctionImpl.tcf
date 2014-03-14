@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.theory.core.deployedTheoryRoot org.eventb.core.accurate="true" org.eventb.core.comment="GENERATED THEORY FILE: !DO NOT CHANGE!" org.eventb.theory.core.modificationHashValue="3c864b6c3ab6583599bf44fc62f88680" org.eventb.theory.core.outdated="false">
+<org.eventb.theory.core.scTheoryRoot org.eventb.core.accurate="true" org.eventb.core.configuration="org.eventb.theory.core.thy" org.eventb.core.source="/SetImpls/FunctionImpl.tuf">
 <org.eventb.theory.core.scTypeParameter name="D" org.eventb.core.source="/SetImpls/FunctionImpl.tuf|org.eventb.theory.core.theoryRoot#FunctionImpl|org.eventb.theory.core.typeParameter#'" org.eventb.core.type="ℙ(D)"/>
 <org.eventb.theory.core.scTypeParameter name="R" org.eventb.core.source="/SetImpls/FunctionImpl.tuf|org.eventb.theory.core.theoryRoot#FunctionImpl|org.eventb.theory.core.typeParameter#(" org.eventb.core.type="ℙ(R)"/>
 <org.eventb.theory.core.scNewOperatorDefinition name="S" org.eventb.core.label="pfunImpl" org.eventb.core.predicate="⊤" org.eventb.core.source="/SetImpls/FunctionImpl.tuf|org.eventb.theory.core.theoryRoot#FunctionImpl|org.eventb.theory.core.newOperatorDefinition#)" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(D×R)" org.eventb.theory.core.wd="⊤">
@@ -14,4 +14,4 @@
 <org.eventb.theory.core.scRewriteRuleRHS name="pfunImpl rhs" org.eventb.core.label="pfunImpl rhs" org.eventb.core.predicate="⊤" org.eventb.core.source="/SetImpls/FunctionImpl.tuf|org.eventb.theory.core.theoryRoot#FunctionImpl|org.eventb.theory.core.newOperatorDefinition#)" org.eventb.theory.core.formula="D × R"/>
 </org.eventb.theory.core.scRewriteRule>
 </org.eventb.theory.core.scProofRulesBlock>
-</org.eventb.theory.core.deployedTheoryRoot>
+</org.eventb.theory.core.scTheoryRoot>
