@@ -41,5 +41,5 @@
 <org.eventb.core.variable name="8" org.eventb.core.identifier="alt1"/>
 <org.eventb.core.invariant name="9" org.eventb.codegen.ui.typingAttribute="--unset--" org.eventb.core.label="inv3" org.eventb.core.predicate="alt1 ∈ AltType"/>
 <org.eventb.core.variable name=":" org.eventb.core.identifier="func"/>
-<org.eventb.core.invariant name=";" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="inv4" org.eventb.core.predicate="func ∈ AltType ⇸ AltType"/>
+<org.eventb.core.invariant name=";" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="inv4" org.eventb.core.predicate="func ∈ pfunImpl(AltType, AltType)"/>
 </org.eventb.core.machineFile>

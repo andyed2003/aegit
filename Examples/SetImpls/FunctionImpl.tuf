@@ -5,6 +5,6 @@
 <org.eventb.theory.core.newOperatorDefinition name=")" org.eventb.core.label="pfunImpl" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
 <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="D" org.eventb.core.identifier="d"/>
 <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="R" org.eventb.core.identifier="r"/>
-<org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="d ⇸ r"/>
+<org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="D ⇸ R"/>
 </org.eventb.theory.core.newOperatorDefinition>
 </org.eventb.theory.core.theoryRoot>
