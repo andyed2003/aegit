@@ -39,8 +39,15 @@
 <org.eventb.core.invariant name="6" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="inv2" org.eventb.core.predicate="altTypeSet ∈ setImpl(AltType)"/>
 <org.eventb.core.seesContext name="7" org.eventb.core.target="ctx"/>
 <org.eventb.core.variable name="8" org.eventb.core.identifier="alt1"/>
-<org.eventb.core.invariant name="9" org.eventb.codegen.ui.typingAttribute="--unset--" org.eventb.core.label="inv3" org.eventb.core.predicate="alt1 ∈ AltType"/>
+<org.eventb.core.invariant name="9" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.comment="func ∈ pfunImpl(AltType, AltType)" org.eventb.core.label="inv3" org.eventb.core.predicate="alt1 ∈ AltType"/>
 <org.eventb.core.variable name=":" org.eventb.core.identifier="func"/>
-<org.eventb.core.invariant name="=" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="inv5" org.eventb.core.predicate="func ∈ ℙ(AltType × AltType)"/>
-<org.eventb.core.invariant name=";" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="inv4" org.eventb.core.predicate="func ∈ pfunImpl(alt_1, alt_2)"/>
+<org.eventb.core.invariant name=";" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="inv4" org.eventb.core.predicate="func ∈ pfunImpl(AltType, AltType)"/>
+<org.eventb.core.event name="=" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="funUpdate">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="funUpdate"/>
+<org.eventb.core.action name="'" org.eventb.core.assignment="func ≔ update(func, alt_1, alt_2)" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="&gt;" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="funApplicn">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="funApplicn"/>
+<org.eventb.core.action name="'" org.eventb.core.assignment="alt1 ≔ lookup(func, alt_1)" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
 </org.eventb.core.machineFile>
