@@ -4,6 +4,7 @@ package setImpls_java;
 import java.util.HashMap;
 
 public class MainEntry {
+
 	//	Stores all tasks and shared machines with their names
 	private static HashMap<String, Object> tasks = new HashMap<String, Object>();
 

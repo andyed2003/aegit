@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="ASCII"?>
 <il1:Program xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:il1="http://il1/1.0" projectName="SetImpls">
+  <decls xsi:type="il1:ConstantDecl" identifier="alt_1" type="AltType" ProjectName="SetImpls" ComponentName="ctx"/>
+  <decls xsi:type="il1:ConstantDecl" identifier="alt_2" type="AltType" ProjectName="SetImpls" ComponentName="ctx"/>
   <entryPoint>
     <autoTasks name="m1Impl" projectName="SetImpls" machineName="m1Impl">
       <body xsi:type="il1:Seq">
@@ -12,7 +14,13 @@
               <leftBranch xsi:type="il1:Action" ParentEventName="selectElement" action="element :&#x2208; setReduce(mySet) "/>
               <rightBranch xsi:type="il1:Seq">
                 <leftBranch xsi:type="il1:Action" ParentEventName="setUnion2" action="mySet &#x2254; mySet &#x222a; singleton(element)"/>
-                <rightBranch xsi:type="il1:Action" ParentEventName="setUnion3" action="altTypeSet &#x2254; altTypeSet &#x222a; singleton(alt1)"/>
+                <rightBranch xsi:type="il1:Seq">
+                  <leftBranch xsi:type="il1:Action" ParentEventName="setUnion3" action="altTypeSet &#x2254; altTypeSet &#x222a; singleton(alt1)"/>
+                  <rightBranch xsi:type="il1:Seq">
+                    <leftBranch xsi:type="il1:Action" ParentEventName="funUpdate" action="func &#x2254; pfunUpdate(func, alt1, alt2)"/>
+                    <rightBranch xsi:type="il1:Action" ParentEventName="funApplicn" action="alt1 &#x2254; pfunLookup(func, alt1)"/>
+                  </rightBranch>
+                </rightBranch>
               </rightBranch>
             </rightBranch>
           </rightBranch>
@@ -24,6 +32,8 @@
       <decls xsi:type="il1:VariableDecl" identifier="element" type="&#x2124;" initialValue="0" ProjectName="SetImpls" ComponentName="m1Impl"/>
       <decls xsi:type="il1:VariableDecl" identifier="altTypeSet" type="setImpl(AltType)" initialValue="newSet(&#x2205;&#x2982;&#x2119;(AltType))" ProjectName="SetImpls" ComponentName="m1Impl"/>
       <decls xsi:type="il1:VariableDecl" identifier="alt1" type="newType(AltType)" initialValue="newInst(AltType)" ProjectName="SetImpls" ComponentName="m1Impl"/>
+      <decls xsi:type="il1:VariableDecl" identifier="alt2" type="newType(AltType)" initialValue="newInst(AltType)" ProjectName="SetImpls" ComponentName="m1Impl"/>
+      <decls xsi:type="il1:VariableDecl" identifier="func" type="pfunImpl(AltType, AltType)" initialValue="newpFunImpl(&#x2205;&#x2982;&#x2119;(AltType &#xd7; AltType))" ProjectName="SetImpls" ComponentName="m1Impl"/>
     </autoTasks>
   </entryPoint>
 </il1:Program>

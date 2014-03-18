@@ -34,7 +34,7 @@
 <org.eventb.core.scAction name="*" org.eventb.core.assignment="element ≔ 1" org.eventb.core.label="act4" org.eventb.core.source="/SetImpls/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#*|org.eventb.core.action#)"/>
 <org.eventb.core.scAction name="+" org.eventb.core.assignment="altTypeSet ≔ newSet(∅ ⦂ ℙ(AltType))" org.eventb.core.label="act5" org.eventb.core.source="/SetImpls/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#*|org.eventb.core.action#*"/>
 <org.eventb.core.scAction name="," org.eventb.core.assignment="alt1 :∈ AltType" org.eventb.core.label="act6" org.eventb.core.source="/SetImpls/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#*|org.eventb.core.action#+"/>
-<org.eventb.core.scAction name="-" org.eventb.core.assignment="func ≔ ∅ ⦂ ℙ(AltType×AltType)" org.eventb.core.label="act7" org.eventb.core.source="/SetImpls/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#*|org.eventb.core.action#,"/>
+<org.eventb.core.scAction name="-" org.eventb.core.assignment="func ≔ newpFunImpl(∅ ⦂ ℙ(AltType×AltType))" org.eventb.core.label="act7" org.eventb.core.source="/SetImpls/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#*|org.eventb.core.action#,"/>
 </org.eventb.core.scEvent>
 <org.eventb.core.scEvent name="altTypeSev" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="setUnion" org.eventb.core.source="/SetImpls/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#.">
 <org.eventb.core.scRefinesEvent name="'" org.eventb.core.scTarget="/SetImpls/m0.bcm|org.eventb.core.scMachineFile#m0|org.eventb.core.scEvent#altTypeSev" org.eventb.core.source="/SetImpls/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#.|org.eventb.core.refinesEvent#("/>
@@ -58,10 +58,10 @@
 </org.eventb.core.scEvent>
 <org.eventb.core.scEvent name="altTypeSe{" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="funUpdate" org.eventb.core.source="/SetImpls/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#=">
 <org.eventb.core.scRefinesEvent name="'" org.eventb.core.scTarget="/SetImpls/m0.bcm|org.eventb.core.scMachineFile#m0|org.eventb.core.scEvent#altTypeSe{" org.eventb.core.source="/SetImpls/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#=|org.eventb.core.refinesEvent#'"/>
-<org.eventb.core.scAction name="(" org.eventb.core.assignment="func ≔ update(func,alt_1,alt_2)" org.eventb.core.label="act1" org.eventb.core.source="/SetImpls/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#=|org.eventb.core.action#'"/>
+<org.eventb.core.scAction name="(" org.eventb.core.assignment="func ≔ pfunUpdate(func,alt_1,alt_2)" org.eventb.core.label="act1" org.eventb.core.source="/SetImpls/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#=|org.eventb.core.action#'"/>
 </org.eventb.core.scEvent>
 <org.eventb.core.scEvent name="altTypeSe|" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="funApplicn" org.eventb.core.source="/SetImpls/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#&gt;">
 <org.eventb.core.scRefinesEvent name="'" org.eventb.core.scTarget="/SetImpls/m0.bcm|org.eventb.core.scMachineFile#m0|org.eventb.core.scEvent#altTypeSe\|" org.eventb.core.source="/SetImpls/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#&gt;|org.eventb.core.refinesEvent#'"/>
-<org.eventb.core.scAction name="(" org.eventb.core.assignment="alt1 ≔ lookup(func,alt_1)" org.eventb.core.label="act1" org.eventb.core.source="/SetImpls/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#&gt;|org.eventb.core.action#'"/>
+<org.eventb.core.scAction name="(" org.eventb.core.assignment="alt1 ≔ pfunLookup(func,alt_1)" org.eventb.core.label="act1" org.eventb.core.source="/SetImpls/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#&gt;|org.eventb.core.action#'"/>
 </org.eventb.core.scEvent>
 </org.eventb.core.scMachineFile>

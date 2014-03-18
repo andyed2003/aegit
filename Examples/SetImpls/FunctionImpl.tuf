@@ -2,25 +2,33 @@
 <org.eventb.theory.core.theoryRoot org.eventb.core.configuration="org.eventb.codegen.theory.translator.core.thyTranslator">
 <org.eventb.theory.core.typeParameter name="'" org.eventb.core.identifier="D"/>
 <org.eventb.theory.core.typeParameter name="(" org.eventb.core.identifier="R"/>
-<org.eventb.theory.core.newOperatorDefinition name=")" org.eventb.core.label="pfunImpl" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.newOperatorDefinition name=")" org.eventb.core.comment="The definition of the implementable function &#10;with arguments for the types of domain D&#10;and range R" org.eventb.core.label="pfunImpl" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
 <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(D)" org.eventb.core.identifier="d"/>
 <org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="d⇸r"/>
 <org.eventb.theory.core.operatorArgument name="*" org.eventb.core.expression="ℙ(R)" org.eventb.core.identifier="r"/>
 </org.eventb.theory.core.newOperatorDefinition>
-<org.eventb.theory.core.newOperatorDefinition name="," org.eventb.core.label="update" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.codegen.theory.translator.core.translatorElement name="." org.eventb.codegen.theory.translator.core.targetLanguage="Java">
+<org.eventb.codegen.theory.translator.core.translatorRuleElement name="'" org.eventb.codegen.theory.translator.core.formula="newpFunImpl(∅⦂ℙ(D×R))" org.eventb.codegen.theory.translator.core.translationElement="new HashMapImpl&lt;D,R&gt;()" org.eventb.core.label="newpFunImplRule"/>
+<org.eventb.codegen.theory.translator.core.translatorTypeRuleElement name="*" org.eventb.codegen.theory.translator.core.translationElement="HashMapImpl&lt;D,R&gt;" org.eventb.codegen.theory.translator.core.typeFormula="pfunImpl(D,R)" org.eventb.core.label="pfunImplRule"/>
+<org.eventb.codegen.theory.translator.core.translatorRuleElement name="+" org.eventb.codegen.theory.translator.core.formula="pfunUpdate(f,d,r)" org.eventb.codegen.theory.translator.core.translationElement="f.put2(d,r)" org.eventb.core.label="pfunUpdateRule"/>
+<org.eventb.codegen.theory.translator.core.translatorRuleElement name="," org.eventb.codegen.theory.translator.core.formula="pfunLookup(f,d)" org.eventb.codegen.theory.translator.core.translationElement="f.get(d)" org.eventb.core.label="pfunLookupRule"/>
+<org.eventb.theory.core.metaVariable name="-" org.eventb.core.identifier="f" org.eventb.theory.core.type="ℙ(D×R)"/>
+<org.eventb.theory.core.metaVariable name="(" org.eventb.core.identifier="d" org.eventb.theory.core.type="D"/>
+<org.eventb.theory.core.metaVariable name=")" org.eventb.core.identifier="r" org.eventb.theory.core.type="R"/>
+</org.eventb.codegen.theory.translator.core.translatorElement>
+<org.eventb.theory.core.newOperatorDefinition name="/" org.eventb.core.comment="a constructor for  an empty funImpl:&#10;a collection of elements of type D ** R&#10;The code generator gets the type info from here." org.eventb.core.label="newpFunImpl" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="D ⇸ R" org.eventb.core.identifier="f"/>
+<org.eventb.theory.core.directOperatorDefinition name="(" org.eventb.theory.core.formula="∅⦂ℙ(D × R)"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="," org.eventb.core.comment="update the collection f with the maplet {d |-&gt; r}" org.eventb.core.label="pfunUpdate" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
 <org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="f  {d↦r}"/>
 <org.eventb.theory.core.operatorArgument name="*" org.eventb.core.expression="D ⇸ R" org.eventb.core.identifier="f"/>
 <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="D" org.eventb.core.identifier="d"/>
 <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="R" org.eventb.core.identifier="r"/>
 </org.eventb.theory.core.newOperatorDefinition>
-<org.eventb.theory.core.newOperatorDefinition name="-" org.eventb.core.label="lookup" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.newOperatorDefinition name="-" org.eventb.core.comment="retrieve/application of f(d) " org.eventb.core.label="pfunLookup" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
 <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="D⇸R" org.eventb.core.identifier="f"/>
 <org.eventb.theory.core.directOperatorDefinition name="(" org.eventb.theory.core.formula="f(d)"/>
 <org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="D" org.eventb.core.identifier="d"/>
-</org.eventb.theory.core.newOperatorDefinition>
-<org.eventb.codegen.theory.translator.core.translatorElement name="." org.eventb.codegen.theory.translator.core.targetLanguage="Java"/>
-<org.eventb.theory.core.newOperatorDefinition name="/" org.eventb.core.label="newpFunImpl" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
-<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="D ⇸ R" org.eventb.core.identifier="s"/>
-<org.eventb.theory.core.directOperatorDefinition name="(" org.eventb.theory.core.formula="∅⦂ℙ(D × R)"/>
 </org.eventb.theory.core.newOperatorDefinition>
 </org.eventb.theory.core.theoryRoot>
