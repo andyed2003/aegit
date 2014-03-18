@@ -6,6 +6,7 @@
 <org.eventb.core.poIdentifier name="alt_2" org.eventb.core.type="AltType"/>
 <org.eventb.core.poPredicate name="AltTypf" org.eventb.core.predicate="alt_1∈AltType" org.eventb.core.source="/SetImpls/ctx.buc|org.eventb.core.contextFile#ctx|org.eventb.core.axiom#*"/>
 <org.eventb.core.poPredicate name="AltTypg" org.eventb.core.predicate="alt_2∈AltType" org.eventb.core.source="/SetImpls/ctx.buc|org.eventb.core.contextFile#ctx|org.eventb.core.axiom#+"/>
+<org.eventb.core.poPredicate name="AltTyph" org.eventb.core.predicate="partition(AltType,{alt_1},{alt_2})" org.eventb.core.source="/SetImpls/ctx.buc|org.eventb.core.contextFile#ctx|org.eventb.core.axiom#,"/>
 </org.eventb.core.poPredicateSet>
 <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/SetImpls/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="alt1" org.eventb.core.type="AltType"/>

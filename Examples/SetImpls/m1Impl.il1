@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="ASCII"?>
 <il1:Program xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:il1="http://il1/1.0" projectName="SetImpls">
+  <decls xsi:type="il1:Enumeration" identifier="AltType" ProjectName="SetImpls" ComponentName="ctx">
+    <literalValues>alt_1</literalValues>
+    <literalValues>alt_2</literalValues>
+  </decls>
   <decls xsi:type="il1:ConstantDecl" identifier="alt_1" type="AltType" ProjectName="SetImpls" ComponentName="ctx"/>
   <decls xsi:type="il1:ConstantDecl" identifier="alt_2" type="AltType" ProjectName="SetImpls" ComponentName="ctx"/>
   <entryPoint>

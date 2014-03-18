@@ -4,6 +4,9 @@ package setImpls_java;
 import java.util.HashMap;
 
 public class MainEntry {
+	public enum AltTypeEnum {
+		alt_1, alt_2,
+	}
 
 	//	Stores all tasks and shared machines with their names
 	private static HashMap<String, Object> tasks = new HashMap<String, Object>();

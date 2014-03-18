@@ -1,5 +1,5 @@
 package setImpls_java;
 
-public class AltType {
+public class AltType{
 
 }

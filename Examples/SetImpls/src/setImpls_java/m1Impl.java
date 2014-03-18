@@ -1,6 +1,5 @@
 package setImpls_java;
 
-import static setImpls_java.MainEntry.*;
 
 // Task: m1Impl
 
