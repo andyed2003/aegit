@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.poIdentifier name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.poIdentifier name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/SetImpls/ctx.bpo|org.eventb.core.poFile#ctx|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="alt_1∈AltType" org.eventb.core.source="/SetImpls/ctx.buc|org.eventb.core.contextFile#ctx|org.eventb.core.axiom#*"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="alt_2∈AltType" org.eventb.core.source="/SetImpls/ctx.buc|org.eventb.core.contextFile#ctx|org.eventb.core.axiom#+"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="partition(AltType,{alt_1},{alt_2})" org.eventb.core.source="/SetImpls/ctx.buc|org.eventb.core.contextFile#ctx|org.eventb.core.axiom#,"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

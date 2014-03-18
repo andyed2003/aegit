@@ -122,6 +122,17 @@
     <element xmi:type="components:FMUComponent" href="default.cmp#//@components.1"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DNrrE6g6EeOl7OuXdZ8xuA" x="285" y="60"/>
   </children>
+  <children xmi:type="notation:Node" xmi:id="_LsgkMK2uEeOU5PrkqCks1A" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_LshLQK2uEeOU5PrkqCks1A" type="5001"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_LshLQa2uEeOU5PrkqCks1A" type="7001">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_LshLQq2uEeOU5PrkqCks1A"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_LshLQ62uEeOU5PrkqCks1A"/>
+    </children>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_LsgkMa2uEeOU5PrkqCks1A"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_LsgkMq2uEeOU5PrkqCks1A" fontName="Ubuntu"/>
+    <element xmi:type="components:FMUComponent" href="default.cmp#//@components.2"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LsgkM62uEeOU5PrkqCks1A" x="530" y="60"/>
+  </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_sQutwI84EeO8J6YRWFGUhQ"/>
   <element xmi:type="components:ComponentDiagram" href="default.cmp#/"/>
   <edges xmi:type="notation:Connector" xmi:id="_kbWTQJPVEeOUTrmx2j5ogQ" type="4001" source="_9Sr1uJPUEeOUTrmx2j5ogQ" target="_ZdnaYJPVEeOUTrmx2j5ogQ">

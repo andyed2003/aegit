@@ -27,7 +27,8 @@ public class SetImpl<E> extends HashSet<E> {
 
 	public E getFirst() {
 		Iterator<E> iter = iterator();
-		return iter.next();
+		if(iter.hasNext()) return iter.next();
+		else return null;
 	}
 
 	public SetImpl<E> setUnion(E element) {
