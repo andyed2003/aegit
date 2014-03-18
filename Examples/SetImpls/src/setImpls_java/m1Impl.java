@@ -1,5 +1,7 @@
 package setImpls_java;
 
+import static setImpls_java.MainEntry.*;
+
 // Task: m1Impl
 
 public class m1Impl implements Runnable {
@@ -7,7 +9,7 @@ public class m1Impl implements Runnable {
 	// Instance variables and constants
 	protected SetImpl<Integer> mySet = new SetImpl<Integer>();
 	protected SetImpl<Integer> otherSet = new SetImpl<Integer>();
-	protected Integer element = 0;
+	protected Integer element = new Integer(0);
 	protected SetImpl<AltType> altTypeSet = new SetImpl<AltType>();
 	protected AltType alt1 = new AltType();
 	protected AltType alt2 = new AltType();

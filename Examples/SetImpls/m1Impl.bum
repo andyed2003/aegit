@@ -6,8 +6,8 @@
 <org.eventb.core.event name="-" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
 <org.eventb.core.action name="'" org.eventb.core.assignment="mySet ≔ newSet(∅⦂ℙ(ℤ))" org.eventb.core.label="act2"/>
 <org.eventb.core.action name="(" org.eventb.core.assignment="otherSet ≔ newSet(∅⦂ℙ(ℤ))" org.eventb.core.label="act3"/>
-<org.eventb.core.action name=")" org.eventb.core.assignment="element ≔ 0" org.eventb.core.label="act4"/>
 <org.eventb.core.action name="*" org.eventb.core.assignment="altTypeSet ≔ newSet(∅⦂ℙ(AltType))" org.eventb.core.label="act5"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="element :∈ newInst2(ℤ, 0)" org.eventb.core.label="act4"/>
 <org.eventb.core.action name="," org.eventb.core.assignment="alt1 :∈ newInst(AltType)" org.eventb.core.label="act7"/>
 <org.eventb.core.action name="." org.eventb.core.assignment="alt2 :∈ newInst(AltType)" org.eventb.core.label="act9"/>
 <org.eventb.core.action name="-" org.eventb.core.assignment="func ≔ newpFunImpl(∅⦂ℙ(AltType × AltType))" org.eventb.core.label="act8"/>

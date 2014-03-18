@@ -39,6 +39,7 @@
 <org.eventb.codegen.theory.translator.core.translatorRuleElement name="5" org.eventb.codegen.theory.translator.core.formula="setReduce(a)" org.eventb.codegen.theory.translator.core.translationElement="a.getFirst()" org.eventb.core.label="setReduceRule"/>
 <org.eventb.codegen.theory.translator.core.translatorRuleElement name="7" org.eventb.codegen.theory.translator.core.formula="singleton(s) ∪ a" org.eventb.codegen.theory.translator.core.translationElement="a.setUnion(s)" org.eventb.core.label="trns2"/>
 <org.eventb.codegen.theory.translator.core.translatorRuleElement name="9" org.eventb.codegen.theory.translator.core.formula="newInst(T)" org.eventb.codegen.theory.translator.core.translationElement="new T()" org.eventb.core.label="trns3"/>
+<org.eventb.codegen.theory.translator.core.translatorRuleElement name=":" org.eventb.codegen.theory.translator.core.formula="newInst2(t,s)" org.eventb.codegen.theory.translator.core.translationElement="new t(s)" org.eventb.core.label="trns4"/>
 </org.eventb.codegen.theory.translator.core.translatorElement>
 <org.eventb.theory.core.newOperatorDefinition name="." org.eventb.core.comment="defines setImp subtraction" org.eventb.core.label="setSubtract" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
 <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(T)" org.eventb.core.identifier="a"/>
@@ -56,5 +57,10 @@
 <org.eventb.theory.core.newOperatorDefinition name="0" org.eventb.core.comment="constructor for an element of type T" org.eventb.core.label="newInst" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
 <org.eventb.theory.core.directOperatorDefinition name="(" org.eventb.theory.core.formula="t"/>
 <org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="T" org.eventb.core.identifier="t"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="2" org.eventb.core.label="newInst2" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(T)" org.eventb.core.identifier="t"/>
+<org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="T" org.eventb.core.identifier="v"/>
+<org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="t"/>
 </org.eventb.theory.core.newOperatorDefinition>
 </org.eventb.theory.core.theoryRoot>
