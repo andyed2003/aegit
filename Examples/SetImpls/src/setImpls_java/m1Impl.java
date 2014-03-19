@@ -1,5 +1,10 @@
 package setImpls_java;
 
+import static setImpls_java.MainEntry.AltTypeEnum.alt_1;
+import static setImpls_java.MainEntry.AltTypeEnum.alt_2;
+import static setImpls_java.MainEntry.AltTypeEnum.*;
+import setImpls_java.MainEntry.AltTypeEnum;
+import static setImpls_java.MainEntry.*;
 
 // Task: m1Impl
 
