@@ -9,6 +9,7 @@ RM := rm -rf
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include src/subdir.mk
+-include Release/src/subdir.mk
 -include subdir.mk
 -include objects.mk
 
@@ -23,19 +24,19 @@ endif
 # Add inputs and outputs from these tool invocations to the build variables 
 
 # All Target
-all: libTestFMUPumpC_V1.so
+all: TestFMUPumpC_V1.dll
 
 # Tool invocations
-libTestFMUPumpC_V1.so: $(OBJS) $(USER_OBJS)
+TestFMUPumpC_V1.dll: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C Linker'
-	gcc -shared -o "libTestFMUPumpC_V1.so" $(OBJS) $(USER_OBJS) $(LIBS)
+	i686-w64-mingw32-gcc -shared -o "TestFMUPumpC_V1.dll" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(OBJS)$(C_DEPS)$(LIBRARIES) libTestFMUPumpC_V1.so
+	-$(RM) $(OBJS)$(C_DEPS)$(LIBRARIES) TestFMUPumpC_V1.dll
 	-@echo ' '
 
 .PHONY: all clean dependents
