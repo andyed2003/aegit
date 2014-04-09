@@ -9,7 +9,6 @@ RM := rm -rf
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include src/subdir.mk
--include Release/src/subdir.mk
 -include subdir.mk
 -include objects.mk
 
@@ -30,7 +29,7 @@ all: TestFMUPumpC_V1.dll
 TestFMUPumpC_V1.dll: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C Linker'
-	i686-w64-mingw32-gcc -shared -o "TestFMUPumpC_V1.dll" $(OBJS) $(USER_OBJS) $(LIBS)
+	x86_64-w64-mingw32-gcc -shared -o "TestFMUPumpC_V1.dll" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
