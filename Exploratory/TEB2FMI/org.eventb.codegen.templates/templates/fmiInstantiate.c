@@ -11,7 +11,7 @@ fmiComponent fmiInstantiateSlave(fmiString instanceName, fmiString fmuGUID,
 		c->validInstance = fmiTrue;
 		// set the name etc
 		c->instanceName = instanceName;
-		c->fmuGUID = fmuGUID;
+		c->GUID = fmuGUID;
 		//add instance to collection;
 		modelInstances[conInstanceCount] = *c;
 		conInstanceCount = conInstanceCount + 1;

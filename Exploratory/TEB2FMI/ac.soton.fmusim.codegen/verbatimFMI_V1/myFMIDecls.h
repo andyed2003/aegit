@@ -22,8 +22,9 @@ typedef enum {
 typedef struct{
 	fmiBoolean validInstance;
 	fmiString instanceName;
-	fmiString fmuGUID;
+	fmiString GUID;
     fmiCallbackFunctions functions;
+    fmiReal time;
     ModelState state;
     fmiBoolean loggingOn;
 	fmiValueReference i[NUMBER_OF_INTEGERS]; // my array of fmiValueReferences to integers
