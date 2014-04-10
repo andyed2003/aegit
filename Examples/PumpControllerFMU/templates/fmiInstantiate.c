@@ -1,9 +1,9 @@
 //## <addToHeader>
-fmiComponent modelID_fmiInstantiateSlave(fmiString instanceName, fmiString fmuGUID,
+fmiComponent fmiInstantiateSlave(fmiString instanceName, fmiString fmuGUID,
 		fmiString fmuResourceLocation, const fmiCallbackFunctions* functions,
 		fmiBoolean visible, fmiBoolean loggingOn) {
 	// create a fmiComponent and allocate storage space
-	fmi_Component *c = malloc(sizeof(*c));
+	ModelInstance *c = malloc(sizeof(*c));
 	if (!(conInstanceCount <= (MaxFMUInstances - 1))) {
 		c->validInstance = fmiFalse;
 		return c;

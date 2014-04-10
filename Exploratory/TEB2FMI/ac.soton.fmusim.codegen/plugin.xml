@@ -22,6 +22,7 @@
                label="Generate FMU 1.0 C Project"
                menubarPath="ac.soton.fmusim.codegen.menu2/group2">
          </action>
+<!--
          <action
                class="ac.soton.fmusim.codegen.popup.actions.CodeGenV2_0"
                enablesFor="1"
@@ -29,6 +30,7 @@
                label="Generate FMU 2.0 C Project"
                menubarPath="ac.soton.fmusim.codegen.menu2/group2">
          </action>
+ -->
       </objectContribution>
    </extension>
    <extension

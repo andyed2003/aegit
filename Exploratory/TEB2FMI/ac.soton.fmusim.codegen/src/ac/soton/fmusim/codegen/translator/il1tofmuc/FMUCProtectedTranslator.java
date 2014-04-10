@@ -90,7 +90,7 @@ public class FMUCProtectedTranslator extends AbstractProtectedIL1Translator {
 			headerInfo.setClassName(actualSource.getName());
 			for (ArrayList<String> sub : subList) {
 				// The first line will contain the information to be placed in
-				// the header file for this environ machine object
+				// the header file for this machine
 				for (String s : sub) {
 					headerInfo.getHeaderEntries().add(s + ";");
 					outCode.add("");

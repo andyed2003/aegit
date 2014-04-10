@@ -167,7 +167,9 @@ public class PackageFMU implements IObjectActionDelegate {
 			IFile releaseBinaryFile = releaseBinariesFolder
 					.getFile(sourceBinaryFileName);
 			if (!releaseBinaryFile.exists()) {
-				throw new IOException("'release' library does not exist \n");
+				throw new IOException("Error no suitable library discovered,\n"	+
+						"try a WORKSPACE REFRESH" +
+						" (since the compiler doesn't seem to do it)");
 			} else
 				binaryFile = releaseBinaryFile;
 
@@ -203,9 +205,8 @@ public class PackageFMU implements IObjectActionDelegate {
 			String resourceName = fullPath.lastSegment();
 			boolean ignore = false;
 			// ignore the file if it is one of these
-			if (resourceName.equalsIgnoreCase("fmiTypesPlatform.h")
-					|| resourceName.equalsIgnoreCase("fmFunctionTypes.h")
-					|| resourceName.equalsIgnoreCase("fmiFunctions.h")) {
+			if (resourceName.equalsIgnoreCase("fmiModelFunctions.h")
+					|| resourceName.equalsIgnoreCase("fmiModelTypes.h")) {
 				ignore = true;
 			}
 

@@ -33,7 +33,7 @@ typedef struct{
 #ifdef FMI_COSIMULATION
     fmiEventInfo eventInfo;
 #endif
-} fmi_Component;
+} ModelInstance;
 
 
 #endif /* myFMIDECLS_H_ */

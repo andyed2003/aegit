@@ -144,7 +144,7 @@ public class SubroutineListGenerator extends AbstractSubroutineIL1Translator
 			List<String> newBody = substituteVariableRefs(body, actualSource,
 					translationManager);
 			// Body code
-			outCode.add("fmi_Component* mc = c;");
+			outCode.add("ModelInstance* mc = c;");
 			outCode.add("// Translated code");
 			outCode.addAll(newBody);
 
@@ -199,7 +199,7 @@ public class SubroutineListGenerator extends AbstractSubroutineIL1Translator
 //		List<String> newCode = new ArrayList<String>();
 //		newCode.add(fmiStatus modelID_getReal(){);	
 //		newCode.add("int idx = 0;");
-//		newCode.add("fmi_Component* mc = c;");
+//		newCode.add("ModelInstance* mc = c;");
 //		newCode.add("for(; idx < nvr; idx = idx + 1){");
 //		newCode.add("value[ idx ] = mc->" + variableArrayRef
 //				+ " [ vr[idx] ];");

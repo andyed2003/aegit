@@ -1,9 +1,9 @@
 //## <addToHeader>
-fmiStatus modelID_fmiInitializeSlave(fmiComponent c,
+fmiStatus fmiInitializeSlave(fmiComponent c,
 		fmiReal relativeTolerance, fmiReal tStart,
 		fmiBoolean stopTimeDefined, fmiReal tStop) {
 
-	fmi_Component* mc = c;
+	ModelInstance* mc = c;
 		//## <initialisationsList>
 
 		//## <stateMachineProgramCounterIni>

@@ -278,7 +278,7 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 		// These are FMU specific headers. The first is for configuration
 		il1TranslationManager.addIncludeStatement("#include \"config.h\"");
 		il1TranslationManager
-				.addIncludeStatement("#include \"fmiFunctions.h\"");
+				.addIncludeStatement("#include \"fmiModelFunctions.h\"");
 		// This is for my FMI Declarations. It contains a
 		// description of my FMI component, for instance.
 		il1TranslationManager.addIncludeStatement("#include \"myFMIDecls.h\"");
@@ -523,8 +523,11 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 					translationManager));
 			// replace the MODEL_ID string with the machine name in the
 			// generated code.
-			commonCode = doPostProcess(commonCode, MODEL_ID,
-					machineRoot.getElementName());
+			
+//			// Not required for .dlls and .so generated fmus. Only
+//			// required for Source only fmus
+//			commonCode = doPostProcess(commonCode, MODEL_ID,
+//					machineRoot.getElementName());
 			IL1CodeFiler.getDefault().save(commonCode, directoryName,
 					"common.c", il1TranslationManager);
 		}
@@ -538,7 +541,8 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			// headerCode.add(codeGenerateTimestamp);
 			headerCode.add("#ifndef " + headerPreBlock);
 			headerCode.add("#define " + headerPreBlock);
-
+			headerCode.add("#define MODEL_IDENTIFIER " + headerName);
+			
 			for (String i : c.getHeaderEntries()) {
 				headerCode.add(i);
 			}
@@ -546,8 +550,10 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 			headerCode.add("#endif");
 			headerCode.add(""); // blank line
 
-			headerCode = doPostProcess(headerCode, MODEL_ID,
-					machineRoot.getElementName());
+//			// Not required for .dlls and .so generated fmus. Only
+//			// required for Source only fmus
+//			headerCode = doPostProcess(headerCode, MODEL_ID,
+//					machineRoot.getElementName());
 			IL1CodeFiler.getDefault().save(headerCode, directoryName,
 					headerName + ".h", il1TranslationManager);
 		}
