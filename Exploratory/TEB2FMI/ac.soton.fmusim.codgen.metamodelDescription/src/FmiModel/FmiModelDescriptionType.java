@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  *   <li>{@link FmiModel.FmiModelDescriptionType#getVendorAnnotations <em>Vendor Annotations</em>}</li>
  *   <li>{@link FmiModel.FmiModelDescriptionType#getModelVariables <em>Model Variables</em>}</li>
  *   <li>{@link FmiModel.FmiModelDescriptionType#getModelStructure <em>Model Structure</em>}</li>
+ *   <li>{@link FmiModel.FmiModelDescriptionType#getImplementation <em>Implementation</em>}</li>
  *   <li>{@link FmiModel.FmiModelDescriptionType#getAuthor <em>Author</em>}</li>
  *   <li>{@link FmiModel.FmiModelDescriptionType#getCopyright <em>Copyright</em>}</li>
  *   <li>{@link FmiModel.FmiModelDescriptionType#getDescription <em>Description</em>}</li>
@@ -282,6 +283,33 @@ public interface FmiModelDescriptionType extends EObject {
 	 * @generated
 	 */
 	void setModelStructure(ModelStructureType value);
+
+	/**
+	 * Returns the value of the '<em><b>Implementation</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Implementation</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Implementation</em>' containment reference.
+	 * @see #setImplementation(Implementation)
+	 * @see FmiModel.FmiModelPackage#getFmiModelDescriptionType_Implementation()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='Implementation' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Implementation getImplementation();
+
+	/**
+	 * Sets the value of the '{@link FmiModel.FmiModelDescriptionType#getImplementation <em>Implementation</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Implementation</em>' containment reference.
+	 * @see #getImplementation()
+	 * @generated
+	 */
+	void setImplementation(Implementation value);
 
 	/**
 	 * Returns the value of the '<em><b>Author</b></em>' attribute.

@@ -19,6 +19,8 @@ import FmiModel.BooleanType;
 import FmiModel.CategoryType;
 import FmiModel.CausalityType;
 import FmiModel.CoSimulationType;
+import FmiModel.CoSimulation_StandAlone;
+import FmiModel.CoSimulation_Tool;
 import FmiModel.DefaultExperimentType;
 import FmiModel.DerivativeType;
 import FmiModel.DerivativesType;
@@ -27,7 +29,9 @@ import FmiModel.DocumentRoot;
 import FmiModel.EnumerationType;
 import FmiModel.EnumerationType1;
 import FmiModel.FmiAnnotation;
+import FmiModel.FmiCoSimulationCapabilitiesType;
 import FmiModel.FmiDependencyFactorKind;
+import FmiModel.FmiImplementationType;
 import FmiModel.FmiModelDescriptionType;
 import FmiModel.FmiModelFactory;
 import FmiModel.FmiModelPackage;
@@ -35,6 +39,7 @@ import FmiModel.FmiScalarVariable;
 import FmiModel.FmiSimpleType;
 import FmiModel.FmiUnit;
 import FmiModel.FmiVariableDependency;
+import FmiModel.Implementation;
 import FmiModel.InitialType;
 import FmiModel.InputType;
 import FmiModel.InputsType;
@@ -55,6 +60,8 @@ import FmiModel.TypeDefinitionsType;
 import FmiModel.UnitDefinitionsType;
 import FmiModel.VariabilityType;
 import FmiModel.VariableNamingConventionType;
+import FmiModel.coSimulation_StandAlone;
+import FmiModel.coSimulation_Tool;
 import FmiModel.util.FmiModelValidator;
 
 /**
@@ -301,6 +308,34 @@ public class FmiModelPackageImpl extends EPackageImpl implements FmiModelPackage
 	 * @generated
 	 */
 	private EClass unitDefinitionsTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass implementationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass fmiCoSimulationCapabilitiesTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass coSimulation_StandAloneEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass coSimulation_ToolEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -632,7 +667,7 @@ public class FmiModelPackageImpl extends EPackageImpl implements FmiModelPackage
 	 * @generated
 	 */
 	public EAttribute getCoSimulationType_CanBeInstantiatedOnlyOncePerProcess() {
-		return (EAttribute)coSimulationTypeEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)coSimulationTypeEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -641,7 +676,7 @@ public class FmiModelPackageImpl extends EPackageImpl implements FmiModelPackage
 	 * @generated
 	 */
 	public EAttribute getCoSimulationType_CanGetAndSetFMUstate() {
-		return (EAttribute)coSimulationTypeEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)coSimulationTypeEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -650,6 +685,15 @@ public class FmiModelPackageImpl extends EPackageImpl implements FmiModelPackage
 	 * @generated
 	 */
 	public EAttribute getCoSimulationType_CanHandleEvents() {
+		return (EAttribute)coSimulationTypeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCoSimulationType_CanRejectSteps() {
 		return (EAttribute)coSimulationTypeEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -659,7 +703,7 @@ public class FmiModelPackageImpl extends EPackageImpl implements FmiModelPackage
 	 * @generated
 	 */
 	public EAttribute getCoSimulationType_CanHandleVariableCommunicationStepSize() {
-		return (EAttribute)coSimulationTypeEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)coSimulationTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -668,7 +712,7 @@ public class FmiModelPackageImpl extends EPackageImpl implements FmiModelPackage
 	 * @generated
 	 */
 	public EAttribute getCoSimulationType_CanInterpolateInputs() {
-		return (EAttribute)coSimulationTypeEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)coSimulationTypeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -677,33 +721,6 @@ public class FmiModelPackageImpl extends EPackageImpl implements FmiModelPackage
 	 * @generated
 	 */
 	public EAttribute getCoSimulationType_CanNotUseMemoryManagementFunctions() {
-		return (EAttribute)coSimulationTypeEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getCoSimulationType_CanRunAsynchronuously() {
-		return (EAttribute)coSimulationTypeEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getCoSimulationType_CanSerializeFMUstate() {
-		return (EAttribute)coSimulationTypeEClass.getEStructuralFeatures().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getCoSimulationType_CanSignalEvents() {
 		return (EAttribute)coSimulationTypeEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -712,8 +729,8 @@ public class FmiModelPackageImpl extends EPackageImpl implements FmiModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCoSimulationType_MaxOutputDerivativeOrder() {
-		return (EAttribute)coSimulationTypeEClass.getEStructuralFeatures().get(9);
+	public EAttribute getCoSimulationType_CanRunAsynchronuously() {
+		return (EAttribute)coSimulationTypeEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -721,7 +738,7 @@ public class FmiModelPackageImpl extends EPackageImpl implements FmiModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCoSimulationType_ModelIdentifier() {
+	public EAttribute getCoSimulationType_CanSerializeFMUstate() {
 		return (EAttribute)coSimulationTypeEClass.getEStructuralFeatures().get(10);
 	}
 
@@ -730,7 +747,25 @@ public class FmiModelPackageImpl extends EPackageImpl implements FmiModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCoSimulationType_NeedsExecutionTool() {
+	public EAttribute getCoSimulationType_CanSignalEvents() {
+		return (EAttribute)coSimulationTypeEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCoSimulationType_MaxOutputDerivativeOrder() {
+		return (EAttribute)coSimulationTypeEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCoSimulationType_ModelIdentifier() {
 		return (EAttribute)coSimulationTypeEClass.getEStructuralFeatures().get(11);
 	}
 
@@ -739,7 +774,7 @@ public class FmiModelPackageImpl extends EPackageImpl implements FmiModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCoSimulationType_ProvidesPartialDerivativesOfDerivativeFunctionWrtInputs() {
+	public EAttribute getCoSimulationType_NeedsExecutionTool() {
 		return (EAttribute)coSimulationTypeEClass.getEStructuralFeatures().get(12);
 	}
 
@@ -748,7 +783,7 @@ public class FmiModelPackageImpl extends EPackageImpl implements FmiModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCoSimulationType_ProvidesPartialDerivativesOfDerivativeFunctionWrtStates() {
+	public EAttribute getCoSimulationType_ProvidesPartialDerivativesOfDerivativeFunctionWrtInputs() {
 		return (EAttribute)coSimulationTypeEClass.getEStructuralFeatures().get(13);
 	}
 
@@ -757,7 +792,7 @@ public class FmiModelPackageImpl extends EPackageImpl implements FmiModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCoSimulationType_ProvidesPartialDerivativesOfOutputFunctionWrtInputs() {
+	public EAttribute getCoSimulationType_ProvidesPartialDerivativesOfDerivativeFunctionWrtStates() {
 		return (EAttribute)coSimulationTypeEClass.getEStructuralFeatures().get(14);
 	}
 
@@ -766,8 +801,17 @@ public class FmiModelPackageImpl extends EPackageImpl implements FmiModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCoSimulationType_ProvidesPartialDerivativesOfOutputFunctionWrtStates() {
+	public EAttribute getCoSimulationType_ProvidesPartialDerivativesOfOutputFunctionWrtInputs() {
 		return (EAttribute)coSimulationTypeEClass.getEStructuralFeatures().get(15);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCoSimulationType_ProvidesPartialDerivativesOfOutputFunctionWrtStates() {
+		return (EAttribute)coSimulationTypeEClass.getEStructuralFeatures().get(16);
 	}
 
 	/**
@@ -1126,8 +1170,8 @@ public class FmiModelPackageImpl extends EPackageImpl implements FmiModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFmiModelDescriptionType_Author() {
-		return (EAttribute)fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(10);
+	public EReference getFmiModelDescriptionType_Implementation() {
+		return (EReference)fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -1135,7 +1179,7 @@ public class FmiModelPackageImpl extends EPackageImpl implements FmiModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFmiModelDescriptionType_Copyright() {
+	public EAttribute getFmiModelDescriptionType_Author() {
 		return (EAttribute)fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(11);
 	}
 
@@ -1144,7 +1188,7 @@ public class FmiModelPackageImpl extends EPackageImpl implements FmiModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFmiModelDescriptionType_Description() {
+	public EAttribute getFmiModelDescriptionType_Copyright() {
 		return (EAttribute)fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(12);
 	}
 
@@ -1153,7 +1197,7 @@ public class FmiModelPackageImpl extends EPackageImpl implements FmiModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFmiModelDescriptionType_FmiVersion() {
+	public EAttribute getFmiModelDescriptionType_Description() {
 		return (EAttribute)fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(13);
 	}
 
@@ -1162,7 +1206,7 @@ public class FmiModelPackageImpl extends EPackageImpl implements FmiModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFmiModelDescriptionType_GenerationDateAndTime() {
+	public EAttribute getFmiModelDescriptionType_FmiVersion() {
 		return (EAttribute)fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(14);
 	}
 
@@ -1171,7 +1215,7 @@ public class FmiModelPackageImpl extends EPackageImpl implements FmiModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFmiModelDescriptionType_GenerationTool() {
+	public EAttribute getFmiModelDescriptionType_GenerationDateAndTime() {
 		return (EAttribute)fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(15);
 	}
 
@@ -1180,7 +1224,7 @@ public class FmiModelPackageImpl extends EPackageImpl implements FmiModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFmiModelDescriptionType_Guid() {
+	public EAttribute getFmiModelDescriptionType_GenerationTool() {
 		return (EAttribute)fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(16);
 	}
 
@@ -1189,7 +1233,7 @@ public class FmiModelPackageImpl extends EPackageImpl implements FmiModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFmiModelDescriptionType_License() {
+	public EAttribute getFmiModelDescriptionType_Guid() {
 		return (EAttribute)fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(17);
 	}
 
@@ -1198,7 +1242,7 @@ public class FmiModelPackageImpl extends EPackageImpl implements FmiModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFmiModelDescriptionType_ModelName() {
+	public EAttribute getFmiModelDescriptionType_License() {
 		return (EAttribute)fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(18);
 	}
 
@@ -1207,7 +1251,7 @@ public class FmiModelPackageImpl extends EPackageImpl implements FmiModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFmiModelDescriptionType_NumberOfEventIndicators() {
+	public EAttribute getFmiModelDescriptionType_ModelName() {
 		return (EAttribute)fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(19);
 	}
 
@@ -1216,7 +1260,7 @@ public class FmiModelPackageImpl extends EPackageImpl implements FmiModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFmiModelDescriptionType_VariableNamingConvention() {
+	public EAttribute getFmiModelDescriptionType_NumberOfEventIndicators() {
 		return (EAttribute)fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(20);
 	}
 
@@ -1225,7 +1269,7 @@ public class FmiModelPackageImpl extends EPackageImpl implements FmiModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFmiModelDescriptionType_Version() {
+	public EAttribute getFmiModelDescriptionType_VariableNamingConvention() {
 		return (EAttribute)fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(21);
 	}
 
@@ -1234,7 +1278,7 @@ public class FmiModelPackageImpl extends EPackageImpl implements FmiModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFmiModelDescriptionType_ModelIdentifier() {
+	public EAttribute getFmiModelDescriptionType_Version() {
 		return (EAttribute)fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(22);
 	}
 
@@ -1243,8 +1287,17 @@ public class FmiModelPackageImpl extends EPackageImpl implements FmiModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFmiModelDescriptionType_NumberOfContinuousStates() {
+	public EAttribute getFmiModelDescriptionType_ModelIdentifier() {
 		return (EAttribute)fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(23);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFmiModelDescriptionType_NumberOfContinuousStates() {
+		return (EAttribute)fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(24);
 	}
 
 	/**
@@ -2305,6 +2358,60 @@ public class FmiModelPackageImpl extends EPackageImpl implements FmiModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getImplementation() {
+		return implementationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getImplementation_FmiCoSimulationCapabilities() {
+		return (EReference)implementationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getFmiCoSimulationCapabilitiesType() {
+		return fmiCoSimulationCapabilitiesTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFmiCoSimulationCapabilitiesType_Capabilities() {
+		return (EReference)fmiCoSimulationCapabilitiesTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getCoSimulation_StandAlone() {
+		return coSimulation_StandAloneEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getCoSimulation_Tool() {
+		return coSimulation_ToolEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getCausalityType() {
 		return causalityTypeEEnum;
 	}
@@ -2474,16 +2581,17 @@ public class FmiModelPackageImpl extends EPackageImpl implements FmiModelPackage
 		createEAttribute(categoryTypeEClass, CATEGORY_TYPE__NAME);
 
 		coSimulationTypeEClass = createEClass(CO_SIMULATION_TYPE);
-		createEAttribute(coSimulationTypeEClass, CO_SIMULATION_TYPE__CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS);
-		createEAttribute(coSimulationTypeEClass, CO_SIMULATION_TYPE__CAN_GET_AND_SET_FM_USTATE);
-		createEAttribute(coSimulationTypeEClass, CO_SIMULATION_TYPE__CAN_HANDLE_EVENTS);
 		createEAttribute(coSimulationTypeEClass, CO_SIMULATION_TYPE__CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE);
+		createEAttribute(coSimulationTypeEClass, CO_SIMULATION_TYPE__CAN_HANDLE_EVENTS);
+		createEAttribute(coSimulationTypeEClass, CO_SIMULATION_TYPE__CAN_REJECT_STEPS);
 		createEAttribute(coSimulationTypeEClass, CO_SIMULATION_TYPE__CAN_INTERPOLATE_INPUTS);
-		createEAttribute(coSimulationTypeEClass, CO_SIMULATION_TYPE__CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS);
-		createEAttribute(coSimulationTypeEClass, CO_SIMULATION_TYPE__CAN_RUN_ASYNCHRONUOUSLY);
-		createEAttribute(coSimulationTypeEClass, CO_SIMULATION_TYPE__CAN_SERIALIZE_FM_USTATE);
-		createEAttribute(coSimulationTypeEClass, CO_SIMULATION_TYPE__CAN_SIGNAL_EVENTS);
 		createEAttribute(coSimulationTypeEClass, CO_SIMULATION_TYPE__MAX_OUTPUT_DERIVATIVE_ORDER);
+		createEAttribute(coSimulationTypeEClass, CO_SIMULATION_TYPE__CAN_RUN_ASYNCHRONUOUSLY);
+		createEAttribute(coSimulationTypeEClass, CO_SIMULATION_TYPE__CAN_SIGNAL_EVENTS);
+		createEAttribute(coSimulationTypeEClass, CO_SIMULATION_TYPE__CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS);
+		createEAttribute(coSimulationTypeEClass, CO_SIMULATION_TYPE__CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS);
+		createEAttribute(coSimulationTypeEClass, CO_SIMULATION_TYPE__CAN_GET_AND_SET_FM_USTATE);
+		createEAttribute(coSimulationTypeEClass, CO_SIMULATION_TYPE__CAN_SERIALIZE_FM_USTATE);
 		createEAttribute(coSimulationTypeEClass, CO_SIMULATION_TYPE__MODEL_IDENTIFIER);
 		createEAttribute(coSimulationTypeEClass, CO_SIMULATION_TYPE__NEEDS_EXECUTION_TOOL);
 		createEAttribute(coSimulationTypeEClass, CO_SIMULATION_TYPE__PROVIDES_PARTIAL_DERIVATIVES_OF_DERIVATIVE_FUNCTION_WRT_INPUTS);
@@ -2537,6 +2645,7 @@ public class FmiModelPackageImpl extends EPackageImpl implements FmiModelPackage
 		createEReference(fmiModelDescriptionTypeEClass, FMI_MODEL_DESCRIPTION_TYPE__VENDOR_ANNOTATIONS);
 		createEReference(fmiModelDescriptionTypeEClass, FMI_MODEL_DESCRIPTION_TYPE__MODEL_VARIABLES);
 		createEReference(fmiModelDescriptionTypeEClass, FMI_MODEL_DESCRIPTION_TYPE__MODEL_STRUCTURE);
+		createEReference(fmiModelDescriptionTypeEClass, FMI_MODEL_DESCRIPTION_TYPE__IMPLEMENTATION);
 		createEAttribute(fmiModelDescriptionTypeEClass, FMI_MODEL_DESCRIPTION_TYPE__AUTHOR);
 		createEAttribute(fmiModelDescriptionTypeEClass, FMI_MODEL_DESCRIPTION_TYPE__COPYRIGHT);
 		createEAttribute(fmiModelDescriptionTypeEClass, FMI_MODEL_DESCRIPTION_TYPE__DESCRIPTION);
@@ -2691,6 +2800,16 @@ public class FmiModelPackageImpl extends EPackageImpl implements FmiModelPackage
 		createEAttribute(unitDefinitionsTypeEClass, UNIT_DEFINITIONS_TYPE__GROUP);
 		createEReference(unitDefinitionsTypeEClass, UNIT_DEFINITIONS_TYPE__UNIT);
 
+		implementationEClass = createEClass(IMPLEMENTATION);
+		createEReference(implementationEClass, IMPLEMENTATION__FMI_CO_SIMULATION_CAPABILITIES);
+
+		fmiCoSimulationCapabilitiesTypeEClass = createEClass(FMI_CO_SIMULATION_CAPABILITIES_TYPE);
+		createEReference(fmiCoSimulationCapabilitiesTypeEClass, FMI_CO_SIMULATION_CAPABILITIES_TYPE__CAPABILITIES);
+
+		coSimulation_StandAloneEClass = createEClass(CO_SIMULATION_STAND_ALONE);
+
+		coSimulation_ToolEClass = createEClass(CO_SIMULATION_TOOL);
+
 		// Create enums
 		causalityTypeEEnum = createEEnum(CAUSALITY_TYPE);
 		fmiDependencyFactorKindEEnum = createEEnum(FMI_DEPENDENCY_FACTOR_KIND);
@@ -2743,6 +2862,8 @@ public class FmiModelPackageImpl extends EPackageImpl implements FmiModelPackage
 		// Add supertypes to classes
 		derivativeTypeEClass.getESuperTypes().add(this.getFmiVariableDependency());
 		outputTypeEClass.getESuperTypes().add(this.getFmiVariableDependency());
+		coSimulation_StandAloneEClass.getESuperTypes().add(this.getImplementation());
+		coSimulation_ToolEClass.getESuperTypes().add(this.getImplementation());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(baseUnitTypeEClass, BaseUnitType.class, "BaseUnitType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2765,16 +2886,17 @@ public class FmiModelPackageImpl extends EPackageImpl implements FmiModelPackage
 		initEAttribute(getCategoryType_Name(), theXMLTypePackage.getNormalizedString(), "name", null, 0, 1, CategoryType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(coSimulationTypeEClass, CoSimulationType.class, "CoSimulationType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCoSimulationType_CanBeInstantiatedOnlyOncePerProcess(), theXMLTypePackage.getBoolean(), "canBeInstantiatedOnlyOncePerProcess", "false", 0, 1, CoSimulationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCoSimulationType_CanGetAndSetFMUstate(), theXMLTypePackage.getBoolean(), "canGetAndSetFMUstate", "false", 0, 1, CoSimulationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCoSimulationType_CanHandleEvents(), theXMLTypePackage.getBoolean(), "canHandleEvents", "false", 0, 1, CoSimulationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCoSimulationType_CanHandleVariableCommunicationStepSize(), theXMLTypePackage.getBoolean(), "canHandleVariableCommunicationStepSize", "false", 0, 1, CoSimulationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCoSimulationType_CanHandleEvents(), theXMLTypePackage.getBoolean(), "canHandleEvents", "false", 0, 1, CoSimulationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCoSimulationType_CanRejectSteps(), theXMLTypePackage.getBoolean(), "canRejectSteps", "false", 0, 1, CoSimulationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCoSimulationType_CanInterpolateInputs(), theXMLTypePackage.getBoolean(), "canInterpolateInputs", "false", 0, 1, CoSimulationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCoSimulationType_CanNotUseMemoryManagementFunctions(), theXMLTypePackage.getBoolean(), "canNotUseMemoryManagementFunctions", "false", 0, 1, CoSimulationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCoSimulationType_CanRunAsynchronuously(), theXMLTypePackage.getBoolean(), "canRunAsynchronuously", "false", 0, 1, CoSimulationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCoSimulationType_CanSerializeFMUstate(), theXMLTypePackage.getBoolean(), "canSerializeFMUstate", "false", 0, 1, CoSimulationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCoSimulationType_CanSignalEvents(), theXMLTypePackage.getBoolean(), "canSignalEvents", "false", 0, 1, CoSimulationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCoSimulationType_MaxOutputDerivativeOrder(), theXMLTypePackage.getUnsignedInt(), "maxOutputDerivativeOrder", "0", 0, 1, CoSimulationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCoSimulationType_CanRunAsynchronuously(), theXMLTypePackage.getBoolean(), "canRunAsynchronuously", "false", 0, 1, CoSimulationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCoSimulationType_CanSignalEvents(), theXMLTypePackage.getBoolean(), "canSignalEvents", "false", 0, 1, CoSimulationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCoSimulationType_CanBeInstantiatedOnlyOncePerProcess(), theXMLTypePackage.getBoolean(), "canBeInstantiatedOnlyOncePerProcess", "false", 0, 1, CoSimulationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCoSimulationType_CanNotUseMemoryManagementFunctions(), theXMLTypePackage.getBoolean(), "canNotUseMemoryManagementFunctions", "false", 0, 1, CoSimulationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCoSimulationType_CanGetAndSetFMUstate(), theXMLTypePackage.getBoolean(), "canGetAndSetFMUstate", "false", 0, 1, CoSimulationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCoSimulationType_CanSerializeFMUstate(), theXMLTypePackage.getBoolean(), "canSerializeFMUstate", "false", 0, 1, CoSimulationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCoSimulationType_ModelIdentifier(), theXMLTypePackage.getNormalizedString(), "modelIdentifier", null, 1, 1, CoSimulationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCoSimulationType_NeedsExecutionTool(), theXMLTypePackage.getBoolean(), "needsExecutionTool", "false", 0, 1, CoSimulationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCoSimulationType_ProvidesPartialDerivativesOfDerivativeFunctionWrtInputs(), theXMLTypePackage.getBoolean(), "providesPartialDerivativesOfDerivativeFunctionWrtInputs", "false", 0, 1, CoSimulationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2828,6 +2950,7 @@ public class FmiModelPackageImpl extends EPackageImpl implements FmiModelPackage
 		initEReference(getFmiModelDescriptionType_VendorAnnotations(), this.getFmiAnnotation(), null, "vendorAnnotations", null, 0, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFmiModelDescriptionType_ModelVariables(), this.getModelVariablesType(), null, "modelVariables", null, 1, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFmiModelDescriptionType_ModelStructure(), this.getModelStructureType(), null, "modelStructure", null, 0, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFmiModelDescriptionType_Implementation(), this.getImplementation(), null, "implementation", null, 0, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFmiModelDescriptionType_Author(), theXMLTypePackage.getString(), "author", null, 0, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFmiModelDescriptionType_Copyright(), theXMLTypePackage.getString(), "copyright", null, 0, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFmiModelDescriptionType_Description(), theXMLTypePackage.getString(), "description", null, 0, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2981,6 +3104,16 @@ public class FmiModelPackageImpl extends EPackageImpl implements FmiModelPackage
 		initEClass(unitDefinitionsTypeEClass, UnitDefinitionsType.class, "UnitDefinitionsType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getUnitDefinitionsType_Group(), ecorePackage.getEFeatureMapEntry(), "group", null, 0, -1, UnitDefinitionsType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getUnitDefinitionsType_Unit(), this.getFmiUnit(), null, "unit", null, 0, -1, UnitDefinitionsType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+
+		initEClass(implementationEClass, Implementation.class, "Implementation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getImplementation_FmiCoSimulationCapabilities(), this.getCoSimulationType(), null, "fmiCoSimulationCapabilities", null, 0, -1, Implementation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(fmiCoSimulationCapabilitiesTypeEClass, FmiCoSimulationCapabilitiesType.class, "FmiCoSimulationCapabilitiesType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getFmiCoSimulationCapabilitiesType_Capabilities(), this.getCoSimulationType(), null, "capabilities", null, 0, -1, FmiCoSimulationCapabilitiesType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(coSimulation_StandAloneEClass, CoSimulation_StandAlone.class, "CoSimulation_StandAlone", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(coSimulation_ToolEClass, CoSimulation_Tool.class, "CoSimulation_Tool", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(causalityTypeEEnum, CausalityType.class, "CausalityType");
@@ -3189,19 +3322,11 @@ public class FmiModelPackageImpl extends EPackageImpl implements FmiModelPackage
 			 "kind", "empty"
 		   });		
 		addAnnotation
-		  (getCoSimulationType_CanBeInstantiatedOnlyOncePerProcess(), 
+		  (getCoSimulationType_CanHandleVariableCommunicationStepSize(), 
 		   source, 
 		   new String[] {
 			 "kind", "attribute",
-			 "name", "canBeInstantiatedOnlyOncePerProcess",
-			 "namespace", "##targetNamespace"
-		   });		
-		addAnnotation
-		  (getCoSimulationType_CanGetAndSetFMUstate(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "canGetAndSetFMUstate",
+			 "name", "canHandleVariableCommunicationStepSize",
 			 "namespace", "##targetNamespace"
 		   });		
 		addAnnotation
@@ -3213,11 +3338,11 @@ public class FmiModelPackageImpl extends EPackageImpl implements FmiModelPackage
 			 "namespace", "##targetNamespace"
 		   });		
 		addAnnotation
-		  (getCoSimulationType_CanHandleVariableCommunicationStepSize(), 
+		  (getCoSimulationType_CanRejectSteps(), 
 		   source, 
 		   new String[] {
 			 "kind", "attribute",
-			 "name", "canHandleVariableCommunicationStepSize",
+			 "name", "canRunAsynchronuously",
 			 "namespace", "##targetNamespace"
 		   });		
 		addAnnotation
@@ -3229,11 +3354,11 @@ public class FmiModelPackageImpl extends EPackageImpl implements FmiModelPackage
 			 "namespace", "##targetNamespace"
 		   });		
 		addAnnotation
-		  (getCoSimulationType_CanNotUseMemoryManagementFunctions(), 
+		  (getCoSimulationType_MaxOutputDerivativeOrder(), 
 		   source, 
 		   new String[] {
 			 "kind", "attribute",
-			 "name", "canNotUseMemoryManagementFunctions",
+			 "name", "maxOutputDerivativeOrder",
 			 "namespace", "##targetNamespace"
 		   });		
 		addAnnotation
@@ -3245,14 +3370,6 @@ public class FmiModelPackageImpl extends EPackageImpl implements FmiModelPackage
 			 "namespace", "##targetNamespace"
 		   });		
 		addAnnotation
-		  (getCoSimulationType_CanSerializeFMUstate(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "canSerializeFMUstate",
-			 "namespace", "##targetNamespace"
-		   });		
-		addAnnotation
 		  (getCoSimulationType_CanSignalEvents(), 
 		   source, 
 		   new String[] {
@@ -3261,11 +3378,35 @@ public class FmiModelPackageImpl extends EPackageImpl implements FmiModelPackage
 			 "namespace", "##targetNamespace"
 		   });		
 		addAnnotation
-		  (getCoSimulationType_MaxOutputDerivativeOrder(), 
+		  (getCoSimulationType_CanBeInstantiatedOnlyOncePerProcess(), 
 		   source, 
 		   new String[] {
 			 "kind", "attribute",
-			 "name", "maxOutputDerivativeOrder",
+			 "name", "canBeInstantiatedOnlyOncePerProcess",
+			 "namespace", "##targetNamespace"
+		   });		
+		addAnnotation
+		  (getCoSimulationType_CanNotUseMemoryManagementFunctions(), 
+		   source, 
+		   new String[] {
+			 "kind", "attribute",
+			 "name", "canNotUseMemoryManagementFunctions",
+			 "namespace", "##targetNamespace"
+		   });		
+		addAnnotation
+		  (getCoSimulationType_CanGetAndSetFMUstate(), 
+		   source, 
+		   new String[] {
+			 "kind", "attribute",
+			 "name", "canGetAndSetFMUstate",
+			 "namespace", "##targetNamespace"
+		   });		
+		addAnnotation
+		  (getCoSimulationType_CanSerializeFMUstate(), 
+		   source, 
+		   new String[] {
+			 "kind", "attribute",
+			 "name", "canSerializeFMUstate",
 			 "namespace", "##targetNamespace"
 		   });			
 		addAnnotation
@@ -3624,6 +3765,14 @@ public class FmiModelPackageImpl extends EPackageImpl implements FmiModelPackage
 		   new String[] {
 			 "kind", "element",
 			 "name", "ModelStructure",
+			 "namespace", "##targetNamespace"
+		   });		
+		addAnnotation
+		  (getFmiModelDescriptionType_Implementation(), 
+		   source, 
+		   new String[] {
+			 "kind", "element",
+			 "name", "Implementation",
 			 "namespace", "##targetNamespace"
 		   });		
 		addAnnotation

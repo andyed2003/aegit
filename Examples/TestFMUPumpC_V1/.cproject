@@ -35,7 +35,7 @@
 								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.exe.debug.option.optimization.level.638973530" name="Optimization Level" superClass="gnu.c.compiler.exe.debug.option.optimization.level" valueType="enumerated"/>
 								<option id="gnu.c.compiler.exe.debug.option.debugging.level.1114792972" name="Debug Level" superClass="gnu.c.compiler.exe.debug.option.debugging.level" value="gnu.c.debugging.level.max" valueType="enumerated"/>
 								<option id="gnu.c.compiler.option.include.paths.1199292899" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="/home/andy/Desktop/Applications/eclipse4.2/runtime-EclipseApplication/TestFMUPumpC_V1/TestFMUPumpC2/external"/>
+									<listOptionValue builtIn="false" value="/home/andy/git/aegit/Examples/TestFMUPumpC_V1/TestFMUPumpC_V1/PumpControllerFMU/external"/>
 								</option>
 								<option id="gnu.c.compiler.option.misc.pic.2117228190" name="Position Independent Code (-fPIC)" superClass="gnu.c.compiler.option.misc.pic" value="true" valueType="boolean"/>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.941411885" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
@@ -52,7 +52,7 @@
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.assembler.exe.debug.1841828635" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.exe.debug">
 								<option id="gnu.both.asm.option.include.paths.1983613140" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="/home/andy/Desktop/Applications/eclipse4.2/runtime-EclipseApplication/TestFMUPumpC_V1/TestFMUPumpC2/external"/>
+									<listOptionValue builtIn="false" value="/home/andy/git/aegit/Examples/TestFMUPumpC_V1/TestFMUPumpC_V1/PumpControllerFMU/external"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.160246198" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>

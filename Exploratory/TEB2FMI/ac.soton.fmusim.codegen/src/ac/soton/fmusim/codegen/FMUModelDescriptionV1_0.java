@@ -45,6 +45,8 @@ import org.rodinp.core.RodinCore;
 
 import FmiModel.BooleanType;
 import FmiModel.CausalityType;
+import FmiModel.CoSimulationType;
+import FmiModel.CoSimulation_StandAlone;
 import FmiModel.DocumentRoot;
 import FmiModel.FmiModelDescriptionType;
 import FmiModel.FmiModelFactory;
@@ -55,6 +57,7 @@ import FmiModel.ModelVariablesType;
 import FmiModel.RealType1;
 import FmiModel.StringType;
 import FmiModel.VariabilityType;
+import FmiModel.coSimulation_StandAlone;
 import FmiModel.util.FmiModelResourceImpl;
 import ac.soton.fmusim.components.EventBComponent;
 import ac.soton.fmusim.components.Port;
@@ -154,6 +157,12 @@ public class FMUModelDescriptionV1_0 {
 		descriptionType.setNumberOfContinuousStates(0);
 		descriptionType.setModelStructure(null);
 
+		// the FMI V1 requires an implementation : fmiImplementation
+		// with co-simulation stand-alone type
+		CoSimulation_StandAlone coSimStandAlone = FmiModelFactory.eINSTANCE.createCoSimulation_StandAlone();
+		descriptionType.setImplementation(coSimStandAlone);
+		
+		
 		// Get the info to obtain the type environment
 		IRodinFile mchFile = sourceRodinProject.getRodinFile(machine.getName()
 				+ ".bum");

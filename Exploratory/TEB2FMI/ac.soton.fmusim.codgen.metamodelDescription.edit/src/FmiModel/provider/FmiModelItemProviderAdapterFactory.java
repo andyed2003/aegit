@@ -853,6 +853,75 @@ public class FmiModelItemProviderAdapterFactory extends FmiModelAdapterFactory i
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link FmiModel.FmiCoSimulationCapabilitiesType} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FmiCoSimulationCapabilitiesTypeItemProvider fmiCoSimulationCapabilitiesTypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link FmiModel.FmiCoSimulationCapabilitiesType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFmiCoSimulationCapabilitiesTypeAdapter() {
+		if (fmiCoSimulationCapabilitiesTypeItemProvider == null) {
+			fmiCoSimulationCapabilitiesTypeItemProvider = new FmiCoSimulationCapabilitiesTypeItemProvider(this);
+		}
+
+		return fmiCoSimulationCapabilitiesTypeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link FmiModel.CoSimulation_StandAlone} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CoSimulation_StandAloneItemProvider coSimulation_StandAloneItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link FmiModel.CoSimulation_StandAlone}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCoSimulation_StandAloneAdapter() {
+		if (coSimulation_StandAloneItemProvider == null) {
+			coSimulation_StandAloneItemProvider = new CoSimulation_StandAloneItemProvider(this);
+		}
+
+		return coSimulation_StandAloneItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link FmiModel.CoSimulation_Tool} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CoSimulation_ToolItemProvider coSimulation_ToolItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link FmiModel.CoSimulation_Tool}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCoSimulation_ToolAdapter() {
+		if (coSimulation_ToolItemProvider == null) {
+			coSimulation_ToolItemProvider = new CoSimulation_ToolItemProvider(this);
+		}
+
+		return coSimulation_ToolItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -985,6 +1054,9 @@ public class FmiModelItemProviderAdapterFactory extends FmiModelAdapterFactory i
 		if (stringTypeItemProvider != null) stringTypeItemProvider.dispose();
 		if (typeDefinitionsTypeItemProvider != null) typeDefinitionsTypeItemProvider.dispose();
 		if (unitDefinitionsTypeItemProvider != null) unitDefinitionsTypeItemProvider.dispose();
+		if (fmiCoSimulationCapabilitiesTypeItemProvider != null) fmiCoSimulationCapabilitiesTypeItemProvider.dispose();
+		if (coSimulation_StandAloneItemProvider != null) coSimulation_StandAloneItemProvider.dispose();
+		if (coSimulation_ToolItemProvider != null) coSimulation_ToolItemProvider.dispose();
 	}
 
 }

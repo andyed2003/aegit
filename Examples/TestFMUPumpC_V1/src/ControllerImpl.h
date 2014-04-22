@@ -13,8 +13,7 @@ static fmiValueReference commit_ControllerImpl_ = 6;
 fmiComponent fmiInstantiateSlave(fmiString instanceName, fmiString fmuGUID,
 		fmiString fmuResourceLocation, const fmiCallbackFunctions* functions,
 		fmiBoolean visible, fmiBoolean loggingOn);
-fmiStatus fmiInitializeSlave(fmiComponent c, fmiReal relativeTolerance,
-		fmiReal tStart, fmiBoolean stopTimeDefined, fmiReal tStop);
+fmiStatus initialize(ModelInstance* c, fmiEventInfo* eventInfo);
 fmiStatus modelID_fmiDoStep(fmiComponent c, fmiReal currentCommunicationPoint,
 		fmiReal communicationStepSize,
 		fmiBoolean noSetFMUStatePriorToCurrentPoint);

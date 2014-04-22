@@ -12,16 +12,17 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link FmiModel.CoSimulationType#isCanBeInstantiatedOnlyOncePerProcess <em>Can Be Instantiated Only Once Per Process</em>}</li>
- *   <li>{@link FmiModel.CoSimulationType#isCanGetAndSetFMUstate <em>Can Get And Set FM Ustate</em>}</li>
- *   <li>{@link FmiModel.CoSimulationType#isCanHandleEvents <em>Can Handle Events</em>}</li>
  *   <li>{@link FmiModel.CoSimulationType#isCanHandleVariableCommunicationStepSize <em>Can Handle Variable Communication Step Size</em>}</li>
+ *   <li>{@link FmiModel.CoSimulationType#isCanHandleEvents <em>Can Handle Events</em>}</li>
+ *   <li>{@link FmiModel.CoSimulationType#isCanRejectSteps <em>Can Reject Steps</em>}</li>
  *   <li>{@link FmiModel.CoSimulationType#isCanInterpolateInputs <em>Can Interpolate Inputs</em>}</li>
- *   <li>{@link FmiModel.CoSimulationType#isCanNotUseMemoryManagementFunctions <em>Can Not Use Memory Management Functions</em>}</li>
- *   <li>{@link FmiModel.CoSimulationType#isCanRunAsynchronuously <em>Can Run Asynchronuously</em>}</li>
- *   <li>{@link FmiModel.CoSimulationType#isCanSerializeFMUstate <em>Can Serialize FM Ustate</em>}</li>
- *   <li>{@link FmiModel.CoSimulationType#isCanSignalEvents <em>Can Signal Events</em>}</li>
  *   <li>{@link FmiModel.CoSimulationType#getMaxOutputDerivativeOrder <em>Max Output Derivative Order</em>}</li>
+ *   <li>{@link FmiModel.CoSimulationType#isCanRunAsynchronuously <em>Can Run Asynchronuously</em>}</li>
+ *   <li>{@link FmiModel.CoSimulationType#isCanSignalEvents <em>Can Signal Events</em>}</li>
+ *   <li>{@link FmiModel.CoSimulationType#isCanBeInstantiatedOnlyOncePerProcess <em>Can Be Instantiated Only Once Per Process</em>}</li>
+ *   <li>{@link FmiModel.CoSimulationType#isCanNotUseMemoryManagementFunctions <em>Can Not Use Memory Management Functions</em>}</li>
+ *   <li>{@link FmiModel.CoSimulationType#isCanGetAndSetFMUstate <em>Can Get And Set FM Ustate</em>}</li>
+ *   <li>{@link FmiModel.CoSimulationType#isCanSerializeFMUstate <em>Can Serialize FM Ustate</em>}</li>
  *   <li>{@link FmiModel.CoSimulationType#getModelIdentifier <em>Model Identifier</em>}</li>
  *   <li>{@link FmiModel.CoSimulationType#isNeedsExecutionTool <em>Needs Execution Tool</em>}</li>
  *   <li>{@link FmiModel.CoSimulationType#isProvidesPartialDerivativesOfDerivativeFunctionWrtInputs <em>Provides Partial Derivatives Of Derivative Function Wrt Inputs</em>}</li>
@@ -200,6 +201,61 @@ public interface CoSimulationType extends EObject {
 	 * @generated
 	 */
 	boolean isSetCanHandleEvents();
+
+	/**
+	 * Returns the value of the '<em><b>Can Reject Steps</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Can Reject Steps</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Can Reject Steps</em>' attribute.
+	 * @see #isSetCanRejectSteps()
+	 * @see #unsetCanRejectSteps()
+	 * @see #setCanRejectSteps(boolean)
+	 * @see FmiModel.FmiModelPackage#getCoSimulationType_CanRejectSteps()
+	 * @model default="false" unsettable="true" dataType="org.eclipse.emf.ecore.xml.type.Boolean"
+	 *        extendedMetaData="kind='attribute' name='canRunAsynchronuously' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	boolean isCanRejectSteps();
+
+	/**
+	 * Sets the value of the '{@link FmiModel.CoSimulationType#isCanRejectSteps <em>Can Reject Steps</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Can Reject Steps</em>' attribute.
+	 * @see #isSetCanRejectSteps()
+	 * @see #unsetCanRejectSteps()
+	 * @see #isCanRejectSteps()
+	 * @generated
+	 */
+	void setCanRejectSteps(boolean value);
+
+	/**
+	 * Unsets the value of the '{@link FmiModel.CoSimulationType#isCanRejectSteps <em>Can Reject Steps</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetCanRejectSteps()
+	 * @see #isCanRejectSteps()
+	 * @see #setCanRejectSteps(boolean)
+	 * @generated
+	 */
+	void unsetCanRejectSteps();
+
+	/**
+	 * Returns whether the value of the '{@link FmiModel.CoSimulationType#isCanRejectSteps <em>Can Reject Steps</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Can Reject Steps</em>' attribute is set.
+	 * @see #unsetCanRejectSteps()
+	 * @see #isCanRejectSteps()
+	 * @see #setCanRejectSteps(boolean)
+	 * @generated
+	 */
+	boolean isSetCanRejectSteps();
 
 	/**
 	 * Returns the value of the '<em><b>Can Handle Variable Communication Step Size</b></em>' attribute.

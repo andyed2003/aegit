@@ -204,6 +204,14 @@ public class FmiModelValidator extends EObjectValidator {
 				return validateTypeDefinitionsType((TypeDefinitionsType)value, diagnostics, context);
 			case FmiModelPackage.UNIT_DEFINITIONS_TYPE:
 				return validateUnitDefinitionsType((UnitDefinitionsType)value, diagnostics, context);
+			case FmiModelPackage.IMPLEMENTATION:
+				return validateImplementation((Implementation)value, diagnostics, context);
+			case FmiModelPackage.FMI_CO_SIMULATION_CAPABILITIES_TYPE:
+				return validateFmiCoSimulationCapabilitiesType((FmiCoSimulationCapabilitiesType)value, diagnostics, context);
+			case FmiModelPackage.CO_SIMULATION_STAND_ALONE:
+				return validateCoSimulation_StandAlone((CoSimulation_StandAlone)value, diagnostics, context);
+			case FmiModelPackage.CO_SIMULATION_TOOL:
+				return validateCoSimulation_Tool((CoSimulation_Tool)value, diagnostics, context);
 			case FmiModelPackage.CAUSALITY_TYPE:
 				return validateCausalityType((CausalityType)value, diagnostics, context);
 			case FmiModelPackage.FMI_DEPENDENCY_FACTOR_KIND:
@@ -541,6 +549,42 @@ public class FmiModelValidator extends EObjectValidator {
 	 */
 	public boolean validateUnitDefinitionsType(UnitDefinitionsType unitDefinitionsType, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(unitDefinitionsType, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateImplementation(Implementation implementation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(implementation, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateFmiCoSimulationCapabilitiesType(FmiCoSimulationCapabilitiesType fmiCoSimulationCapabilitiesType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(fmiCoSimulationCapabilitiesType, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCoSimulation_StandAlone(CoSimulation_StandAlone coSimulation_StandAlone, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(coSimulation_StandAlone, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCoSimulation_Tool(CoSimulation_Tool coSimulation_Tool, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(coSimulation_Tool, diagnostics, context);
 	}
 
 	/**

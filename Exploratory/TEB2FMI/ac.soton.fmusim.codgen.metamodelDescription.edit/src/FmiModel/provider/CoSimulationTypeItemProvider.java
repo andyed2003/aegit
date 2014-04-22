@@ -58,16 +58,17 @@ public class CoSimulationTypeItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addCanBeInstantiatedOnlyOncePerProcessPropertyDescriptor(object);
-			addCanGetAndSetFMUstatePropertyDescriptor(object);
-			addCanHandleEventsPropertyDescriptor(object);
 			addCanHandleVariableCommunicationStepSizePropertyDescriptor(object);
+			addCanHandleEventsPropertyDescriptor(object);
+			addCanRejectStepsPropertyDescriptor(object);
 			addCanInterpolateInputsPropertyDescriptor(object);
-			addCanNotUseMemoryManagementFunctionsPropertyDescriptor(object);
-			addCanRunAsynchronuouslyPropertyDescriptor(object);
-			addCanSerializeFMUstatePropertyDescriptor(object);
-			addCanSignalEventsPropertyDescriptor(object);
 			addMaxOutputDerivativeOrderPropertyDescriptor(object);
+			addCanRunAsynchronuouslyPropertyDescriptor(object);
+			addCanSignalEventsPropertyDescriptor(object);
+			addCanBeInstantiatedOnlyOncePerProcessPropertyDescriptor(object);
+			addCanNotUseMemoryManagementFunctionsPropertyDescriptor(object);
+			addCanGetAndSetFMUstatePropertyDescriptor(object);
+			addCanSerializeFMUstatePropertyDescriptor(object);
 			addModelIdentifierPropertyDescriptor(object);
 			addNeedsExecutionToolPropertyDescriptor(object);
 			addProvidesPartialDerivativesOfDerivativeFunctionWrtInputsPropertyDescriptor(object);
@@ -136,6 +137,28 @@ public class CoSimulationTypeItemProvider
 				 getString("_UI_CoSimulationType_canHandleEvents_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CoSimulationType_canHandleEvents_feature", "_UI_CoSimulationType_type"),
 				 FmiModelPackage.Literals.CO_SIMULATION_TYPE__CAN_HANDLE_EVENTS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Can Reject Steps feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCanRejectStepsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CoSimulationType_canRejectSteps_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CoSimulationType_canRejectSteps_feature", "_UI_CoSimulationType_type"),
+				 FmiModelPackage.Literals.CO_SIMULATION_TYPE__CAN_REJECT_STEPS,
 				 true,
 				 false,
 				 false,
@@ -450,7 +473,7 @@ public class CoSimulationTypeItemProvider
 	@Override
 	public String getText(Object object) {
 		CoSimulationType coSimulationType = (CoSimulationType)object;
-		return getString("_UI_CoSimulationType_type") + " " + coSimulationType.isCanBeInstantiatedOnlyOncePerProcess();
+		return getString("_UI_CoSimulationType_type") + " " + coSimulationType.isCanHandleVariableCommunicationStepSize();
 	}
 
 	/**
@@ -465,16 +488,17 @@ public class CoSimulationTypeItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(CoSimulationType.class)) {
-			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS:
-			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_GET_AND_SET_FM_USTATE:
-			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_HANDLE_EVENTS:
 			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE:
+			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_HANDLE_EVENTS:
+			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_REJECT_STEPS:
 			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_INTERPOLATE_INPUTS:
-			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS:
-			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_RUN_ASYNCHRONUOUSLY:
-			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_SERIALIZE_FM_USTATE:
-			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_SIGNAL_EVENTS:
 			case FmiModelPackage.CO_SIMULATION_TYPE__MAX_OUTPUT_DERIVATIVE_ORDER:
+			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_RUN_ASYNCHRONUOUSLY:
+			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_SIGNAL_EVENTS:
+			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS:
+			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS:
+			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_GET_AND_SET_FM_USTATE:
+			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_SERIALIZE_FM_USTATE:
 			case FmiModelPackage.CO_SIMULATION_TYPE__MODEL_IDENTIFIER:
 			case FmiModelPackage.CO_SIMULATION_TYPE__NEEDS_EXECUTION_TOOL:
 			case FmiModelPackage.CO_SIMULATION_TYPE__PROVIDES_PARTIAL_DERIVATIVES_OF_DERIVATIVE_FUNCTION_WRT_INPUTS:

@@ -328,6 +328,33 @@ public interface FmiModelFactory extends EFactory {
 	UnitDefinitionsType createUnitDefinitionsType();
 
 	/**
+	 * Returns a new object of class '<em>Fmi Co Simulation Capabilities Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Fmi Co Simulation Capabilities Type</em>'.
+	 * @generated
+	 */
+	FmiCoSimulationCapabilitiesType createFmiCoSimulationCapabilitiesType();
+
+	/**
+	 * Returns a new object of class '<em>Co Simulation Stand Alone</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Co Simulation Stand Alone</em>'.
+	 * @generated
+	 */
+	CoSimulation_StandAlone createCoSimulation_StandAlone();
+
+	/**
+	 * Returns a new object of class '<em>Co Simulation Tool</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Co Simulation Tool</em>'.
+	 * @generated
+	 */
+	CoSimulation_Tool createCoSimulation_Tool();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

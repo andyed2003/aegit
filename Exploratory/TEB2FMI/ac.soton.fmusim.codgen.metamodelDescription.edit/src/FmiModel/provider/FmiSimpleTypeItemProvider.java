@@ -246,6 +246,21 @@ public class FmiSimpleTypeItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(FmiModelPackage.Literals.FMI_SIMPLE_TYPE__BOOLEAN,
+				 FmiModelFactory.eINSTANCE.createFmiCoSimulationCapabilitiesType()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(FmiModelPackage.Literals.FMI_SIMPLE_TYPE__BOOLEAN,
+				 FmiModelFactory.eINSTANCE.createCoSimulation_StandAlone()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(FmiModelPackage.Literals.FMI_SIMPLE_TYPE__BOOLEAN,
+				 FmiModelFactory.eINSTANCE.createCoSimulation_Tool()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(FmiModelPackage.Literals.FMI_SIMPLE_TYPE__BOOLEAN,
 				 XMLTypeFactory.eINSTANCE.createAnyType()));
 
 		newChildDescriptors.add
@@ -272,6 +287,21 @@ public class FmiSimpleTypeItemProvider
 			(createChildParameter
 				(FmiModelPackage.Literals.FMI_SIMPLE_TYPE__STRING,
 				 FmiModelFactory.eINSTANCE.createFmiUnit()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(FmiModelPackage.Literals.FMI_SIMPLE_TYPE__STRING,
+				 FmiModelFactory.eINSTANCE.createFmiCoSimulationCapabilitiesType()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(FmiModelPackage.Literals.FMI_SIMPLE_TYPE__STRING,
+				 FmiModelFactory.eINSTANCE.createCoSimulation_StandAlone()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(FmiModelPackage.Literals.FMI_SIMPLE_TYPE__STRING,
+				 FmiModelFactory.eINSTANCE.createCoSimulation_Tool()));
 
 		newChildDescriptors.add
 			(createChildParameter

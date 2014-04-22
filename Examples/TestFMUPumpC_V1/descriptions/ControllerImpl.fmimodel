@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<fmiModelDescription author="University of Southampton" fmiVersion="1.0" generationDateAndTime="2014-04-10T16:35:55.196+01:00" generationTool="EB2FMU" guid="GUID_ControllerImpl_2014-04-10T16:35:55.196+01:00" modelName="ControllerImpl" numberOfEventIndicators="0" modelIdentifier="ControllerImpl" numberOfContinuousStates="0">
+<fmiModelDescription xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://ac.soton.fmusim.codegen.fmimetamodeldescription" author="University of Southampton" fmiVersion="1.0" generationDateAndTime="2014-04-22T17:05:36.858+01:00" generationTool="EB2FMU" guid="GUID_ControllerImpl_2014-04-22T17:05:36.858+01:00" modelName="ControllerImpl" numberOfEventIndicators="0" modelIdentifier="ControllerImpl" numberOfContinuousStates="0">
   <ModelVariables>
     <ScalarVariable causality="input" name="c_level" valueReference="0" variability="discrete">
       <Integer start="100"/>
@@ -29,4 +29,5 @@
       <Boolean/>
     </ScalarVariable>
   </ModelVariables>
+  <ImplementationType xsi:type="CoSimulation_StandAlone"/>
 </fmiModelDescription>

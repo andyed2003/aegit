@@ -407,6 +407,7 @@ public class FmiModelDescriptionTypeItemProvider
 			childrenFeatures.add(FmiModelPackage.Literals.FMI_MODEL_DESCRIPTION_TYPE__VENDOR_ANNOTATIONS);
 			childrenFeatures.add(FmiModelPackage.Literals.FMI_MODEL_DESCRIPTION_TYPE__MODEL_VARIABLES);
 			childrenFeatures.add(FmiModelPackage.Literals.FMI_MODEL_DESCRIPTION_TYPE__MODEL_STRUCTURE);
+			childrenFeatures.add(FmiModelPackage.Literals.FMI_MODEL_DESCRIPTION_TYPE__IMPLEMENTATION);
 		}
 		return childrenFeatures;
 	}
@@ -485,6 +486,7 @@ public class FmiModelDescriptionTypeItemProvider
 			case FmiModelPackage.FMI_MODEL_DESCRIPTION_TYPE__VENDOR_ANNOTATIONS:
 			case FmiModelPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_VARIABLES:
 			case FmiModelPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_STRUCTURE:
+			case FmiModelPackage.FMI_MODEL_DESCRIPTION_TYPE__IMPLEMENTATION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -550,6 +552,16 @@ public class FmiModelDescriptionTypeItemProvider
 			(createChildParameter
 				(FmiModelPackage.Literals.FMI_MODEL_DESCRIPTION_TYPE__MODEL_STRUCTURE,
 				 FmiModelFactory.eINSTANCE.createModelStructureType()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(FmiModelPackage.Literals.FMI_MODEL_DESCRIPTION_TYPE__IMPLEMENTATION,
+				 FmiModelFactory.eINSTANCE.createCoSimulation_StandAlone()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(FmiModelPackage.Literals.FMI_MODEL_DESCRIPTION_TYPE__IMPLEMENTATION,
+				 FmiModelFactory.eINSTANCE.createCoSimulation_Tool()));
 	}
 
 	/**

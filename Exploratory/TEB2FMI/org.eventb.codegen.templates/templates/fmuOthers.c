@@ -1,4 +1,3 @@
-/* ---------------------------------------------------------------------------*
  /* ---------------------------------------------------------------------------*
  * Implementation of the FMU interface based on functions and macros to
  * be defined by the includer of this file.
@@ -91,7 +90,8 @@ fmiComponent fmiInstantiateModel(fmiString instanceName, fmiString GUID,
     comp->functions = functions;
     comp->loggingOn = loggingOn;
     comp->state = modelInstantiated;
-    setStartValues(comp); // to be implemented by the includer of this file
+    // not used here
+    // setStartValues(comp); // to be implemented by the includer of this file
     return comp;
 }
 
@@ -224,8 +224,13 @@ fmiStatus fmiSetContinuousStates(fmiComponent c, const fmiReal x[], size_t nx){
 // FMI functions: get variable values from the FMU
 // ---------------------------------------------------------------------------
 
+// called by fmiGetReal, fmiGetContinuousStates and fmiGetDerivatives
+// This should not be called in current implementations
+fmiReal getReal(ModelInstance* comp, fmiValueReference vr){
+   return 0;
+ }
+
 fmiStatus fmiGetReal(fmiComponent c, const fmiValueReference vr[], size_t nvr, fmiReal value[]) {
-    int i;
     ModelInstance* comp = (ModelInstance *)c;
     if (invalidState(comp, "fmiGetReal", not_modelError))
         return fmiError;
@@ -234,6 +239,7 @@ fmiStatus fmiGetReal(fmiComponent c, const fmiValueReference vr[], size_t nvr, f
     if (nvr>0 && nullPointer(comp, "fmiGetReal", "value[]", value))
          return fmiError;
 #if NUMBER_OF_REALS>0
+    int i;
     for (i=0; i<nvr; i++) {
         if (vrOutOfRange(comp, "fmiGetReal", vr[i], NUMBER_OF_REALS))
             return fmiError;
@@ -319,13 +325,13 @@ fmiStatus fmiGetDerivatives(fmiComponent c, fmiReal derivatives[], size_t nx) {
 }
 
 fmiStatus fmiGetEventIndicators(fmiComponent c, fmiReal eventIndicators[], size_t ni) {
-    int i;
     ModelInstance* comp = (ModelInstance *)c;
     if (invalidState(comp, "fmiGetEventIndicators", not_modelError))
         return fmiError;
     if (invalidNumber(comp, "fmiGetEventIndicators", "ni", ni, NUMBER_OF_EVENT_INDICATORS))
         return fmiError;
 #if NUMBER_OF_EVENT_INDICATORS>0
+    int i;
     for (i=0; i<ni; i++) {
         eventIndicators[i] = getEventIndicator(comp, i); // to be implemented by the includer of this file
         if (comp->loggingOn) comp->functions.logger(c, comp->instanceName, fmiOK, "log",
@@ -372,7 +378,8 @@ fmiStatus fmiEventUpdate(fmiComponent c, fmiBoolean intermediateResults, fmiEven
     eventInfo->stateValuesChanged  = fmiFalse;
     eventInfo->terminateSimulation = fmiFalse;
     eventInfo->upcomingTimeEvent   = fmiFalse;
-    eventUpdate(comp, eventInfo); // to be implemented by the includer of this file
+    // Not used in here.
+    // eventUpdate(comp, eventInfo); // to be implemented by the includer of this file
     return fmiOK;
 }
 

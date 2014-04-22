@@ -135,6 +135,9 @@ public class FmiModelFactoryImpl extends EFactoryImpl implements FmiModelFactory
 			case FmiModelPackage.STRING_TYPE: return createStringType();
 			case FmiModelPackage.TYPE_DEFINITIONS_TYPE: return createTypeDefinitionsType();
 			case FmiModelPackage.UNIT_DEFINITIONS_TYPE: return createUnitDefinitionsType();
+			case FmiModelPackage.FMI_CO_SIMULATION_CAPABILITIES_TYPE: return createFmiCoSimulationCapabilitiesType();
+			case FmiModelPackage.CO_SIMULATION_STAND_ALONE: return createCoSimulation_StandAlone();
+			case FmiModelPackage.CO_SIMULATION_TOOL: return createCoSimulation_Tool();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -560,6 +563,36 @@ public class FmiModelFactoryImpl extends EFactoryImpl implements FmiModelFactory
 	public UnitDefinitionsType createUnitDefinitionsType() {
 		UnitDefinitionsTypeImpl unitDefinitionsType = new UnitDefinitionsTypeImpl();
 		return unitDefinitionsType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FmiCoSimulationCapabilitiesType createFmiCoSimulationCapabilitiesType() {
+		FmiCoSimulationCapabilitiesTypeImpl fmiCoSimulationCapabilitiesType = new FmiCoSimulationCapabilitiesTypeImpl();
+		return fmiCoSimulationCapabilitiesType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CoSimulation_StandAlone createCoSimulation_StandAlone() {
+		CoSimulation_StandAloneImpl coSimulation_StandAlone = new CoSimulation_StandAloneImpl();
+		return coSimulation_StandAlone;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CoSimulation_Tool createCoSimulation_Tool() {
+		CoSimulation_ToolImpl coSimulation_Tool = new CoSimulation_ToolImpl();
+		return coSimulation_Tool;
 	}
 
 	/**

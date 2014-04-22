@@ -282,22 +282,13 @@ public interface FmiModelPackage extends EPackage {
 	int CO_SIMULATION_TYPE = 3;
 
 	/**
-	 * The feature id for the '<em><b>Can Be Instantiated Only Once Per Process</b></em>' attribute.
+	 * The feature id for the '<em><b>Can Handle Variable Communication Step Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CO_SIMULATION_TYPE__CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS = 0;
-
-	/**
-	 * The feature id for the '<em><b>Can Get And Set FM Ustate</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CO_SIMULATION_TYPE__CAN_GET_AND_SET_FM_USTATE = 1;
+	int CO_SIMULATION_TYPE__CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE = 0;
 
 	/**
 	 * The feature id for the '<em><b>Can Handle Events</b></em>' attribute.
@@ -306,16 +297,16 @@ public interface FmiModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CO_SIMULATION_TYPE__CAN_HANDLE_EVENTS = 2;
+	int CO_SIMULATION_TYPE__CAN_HANDLE_EVENTS = 1;
 
 	/**
-	 * The feature id for the '<em><b>Can Handle Variable Communication Step Size</b></em>' attribute.
+	 * The feature id for the '<em><b>Can Reject Steps</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CO_SIMULATION_TYPE__CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE = 3;
+	int CO_SIMULATION_TYPE__CAN_REJECT_STEPS = 2;
 
 	/**
 	 * The feature id for the '<em><b>Can Interpolate Inputs</b></em>' attribute.
@@ -324,43 +315,7 @@ public interface FmiModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CO_SIMULATION_TYPE__CAN_INTERPOLATE_INPUTS = 4;
-
-	/**
-	 * The feature id for the '<em><b>Can Not Use Memory Management Functions</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CO_SIMULATION_TYPE__CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS = 5;
-
-	/**
-	 * The feature id for the '<em><b>Can Run Asynchronuously</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CO_SIMULATION_TYPE__CAN_RUN_ASYNCHRONUOUSLY = 6;
-
-	/**
-	 * The feature id for the '<em><b>Can Serialize FM Ustate</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CO_SIMULATION_TYPE__CAN_SERIALIZE_FM_USTATE = 7;
-
-	/**
-	 * The feature id for the '<em><b>Can Signal Events</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CO_SIMULATION_TYPE__CAN_SIGNAL_EVENTS = 8;
+	int CO_SIMULATION_TYPE__CAN_INTERPOLATE_INPUTS = 3;
 
 	/**
 	 * The feature id for the '<em><b>Max Output Derivative Order</b></em>' attribute.
@@ -369,7 +324,61 @@ public interface FmiModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CO_SIMULATION_TYPE__MAX_OUTPUT_DERIVATIVE_ORDER = 9;
+	int CO_SIMULATION_TYPE__MAX_OUTPUT_DERIVATIVE_ORDER = 4;
+
+	/**
+	 * The feature id for the '<em><b>Can Run Asynchronuously</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CO_SIMULATION_TYPE__CAN_RUN_ASYNCHRONUOUSLY = 5;
+
+	/**
+	 * The feature id for the '<em><b>Can Signal Events</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CO_SIMULATION_TYPE__CAN_SIGNAL_EVENTS = 6;
+
+	/**
+	 * The feature id for the '<em><b>Can Be Instantiated Only Once Per Process</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CO_SIMULATION_TYPE__CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS = 7;
+
+	/**
+	 * The feature id for the '<em><b>Can Not Use Memory Management Functions</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CO_SIMULATION_TYPE__CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS = 8;
+
+	/**
+	 * The feature id for the '<em><b>Can Get And Set FM Ustate</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CO_SIMULATION_TYPE__CAN_GET_AND_SET_FM_USTATE = 9;
+
+	/**
+	 * The feature id for the '<em><b>Can Serialize FM Ustate</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CO_SIMULATION_TYPE__CAN_SERIALIZE_FM_USTATE = 10;
 
 	/**
 	 * The feature id for the '<em><b>Model Identifier</b></em>' attribute.
@@ -378,7 +387,7 @@ public interface FmiModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CO_SIMULATION_TYPE__MODEL_IDENTIFIER = 10;
+	int CO_SIMULATION_TYPE__MODEL_IDENTIFIER = 11;
 
 	/**
 	 * The feature id for the '<em><b>Needs Execution Tool</b></em>' attribute.
@@ -387,7 +396,7 @@ public interface FmiModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CO_SIMULATION_TYPE__NEEDS_EXECUTION_TOOL = 11;
+	int CO_SIMULATION_TYPE__NEEDS_EXECUTION_TOOL = 12;
 
 	/**
 	 * The feature id for the '<em><b>Provides Partial Derivatives Of Derivative Function Wrt Inputs</b></em>' attribute.
@@ -396,7 +405,7 @@ public interface FmiModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CO_SIMULATION_TYPE__PROVIDES_PARTIAL_DERIVATIVES_OF_DERIVATIVE_FUNCTION_WRT_INPUTS = 12;
+	int CO_SIMULATION_TYPE__PROVIDES_PARTIAL_DERIVATIVES_OF_DERIVATIVE_FUNCTION_WRT_INPUTS = 13;
 
 	/**
 	 * The feature id for the '<em><b>Provides Partial Derivatives Of Derivative Function Wrt States</b></em>' attribute.
@@ -405,7 +414,7 @@ public interface FmiModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CO_SIMULATION_TYPE__PROVIDES_PARTIAL_DERIVATIVES_OF_DERIVATIVE_FUNCTION_WRT_STATES = 13;
+	int CO_SIMULATION_TYPE__PROVIDES_PARTIAL_DERIVATIVES_OF_DERIVATIVE_FUNCTION_WRT_STATES = 14;
 
 	/**
 	 * The feature id for the '<em><b>Provides Partial Derivatives Of Output Function Wrt Inputs</b></em>' attribute.
@@ -414,7 +423,7 @@ public interface FmiModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CO_SIMULATION_TYPE__PROVIDES_PARTIAL_DERIVATIVES_OF_OUTPUT_FUNCTION_WRT_INPUTS = 14;
+	int CO_SIMULATION_TYPE__PROVIDES_PARTIAL_DERIVATIVES_OF_OUTPUT_FUNCTION_WRT_INPUTS = 15;
 
 	/**
 	 * The feature id for the '<em><b>Provides Partial Derivatives Of Output Function Wrt States</b></em>' attribute.
@@ -423,7 +432,7 @@ public interface FmiModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CO_SIMULATION_TYPE__PROVIDES_PARTIAL_DERIVATIVES_OF_OUTPUT_FUNCTION_WRT_STATES = 15;
+	int CO_SIMULATION_TYPE__PROVIDES_PARTIAL_DERIVATIVES_OF_OUTPUT_FUNCTION_WRT_STATES = 16;
 
 	/**
 	 * The number of structural features of the '<em>Co Simulation Type</em>' class.
@@ -432,7 +441,7 @@ public interface FmiModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CO_SIMULATION_TYPE_FEATURE_COUNT = 16;
+	int CO_SIMULATION_TYPE_FEATURE_COUNT = 17;
 
 	/**
 	 * The meta object id for the '{@link FmiModel.impl.DefaultExperimentTypeImpl <em>Default Experiment Type</em>}' class.
@@ -948,13 +957,22 @@ public interface FmiModelPackage extends EPackage {
 	int FMI_MODEL_DESCRIPTION_TYPE__MODEL_STRUCTURE = 9;
 
 	/**
+	 * The feature id for the '<em><b>Implementation</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FMI_MODEL_DESCRIPTION_TYPE__IMPLEMENTATION = 10;
+
+	/**
 	 * The feature id for the '<em><b>Author</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FMI_MODEL_DESCRIPTION_TYPE__AUTHOR = 10;
+	int FMI_MODEL_DESCRIPTION_TYPE__AUTHOR = 11;
 
 	/**
 	 * The feature id for the '<em><b>Copyright</b></em>' attribute.
@@ -963,7 +981,7 @@ public interface FmiModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FMI_MODEL_DESCRIPTION_TYPE__COPYRIGHT = 11;
+	int FMI_MODEL_DESCRIPTION_TYPE__COPYRIGHT = 12;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -972,7 +990,7 @@ public interface FmiModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FMI_MODEL_DESCRIPTION_TYPE__DESCRIPTION = 12;
+	int FMI_MODEL_DESCRIPTION_TYPE__DESCRIPTION = 13;
 
 	/**
 	 * The feature id for the '<em><b>Fmi Version</b></em>' attribute.
@@ -981,7 +999,7 @@ public interface FmiModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FMI_MODEL_DESCRIPTION_TYPE__FMI_VERSION = 13;
+	int FMI_MODEL_DESCRIPTION_TYPE__FMI_VERSION = 14;
 
 	/**
 	 * The feature id for the '<em><b>Generation Date And Time</b></em>' attribute.
@@ -990,7 +1008,7 @@ public interface FmiModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FMI_MODEL_DESCRIPTION_TYPE__GENERATION_DATE_AND_TIME = 14;
+	int FMI_MODEL_DESCRIPTION_TYPE__GENERATION_DATE_AND_TIME = 15;
 
 	/**
 	 * The feature id for the '<em><b>Generation Tool</b></em>' attribute.
@@ -999,7 +1017,7 @@ public interface FmiModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FMI_MODEL_DESCRIPTION_TYPE__GENERATION_TOOL = 15;
+	int FMI_MODEL_DESCRIPTION_TYPE__GENERATION_TOOL = 16;
 
 	/**
 	 * The feature id for the '<em><b>Guid</b></em>' attribute.
@@ -1008,7 +1026,7 @@ public interface FmiModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FMI_MODEL_DESCRIPTION_TYPE__GUID = 16;
+	int FMI_MODEL_DESCRIPTION_TYPE__GUID = 17;
 
 	/**
 	 * The feature id for the '<em><b>License</b></em>' attribute.
@@ -1017,7 +1035,7 @@ public interface FmiModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FMI_MODEL_DESCRIPTION_TYPE__LICENSE = 17;
+	int FMI_MODEL_DESCRIPTION_TYPE__LICENSE = 18;
 
 	/**
 	 * The feature id for the '<em><b>Model Name</b></em>' attribute.
@@ -1026,7 +1044,7 @@ public interface FmiModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FMI_MODEL_DESCRIPTION_TYPE__MODEL_NAME = 18;
+	int FMI_MODEL_DESCRIPTION_TYPE__MODEL_NAME = 19;
 
 	/**
 	 * The feature id for the '<em><b>Number Of Event Indicators</b></em>' attribute.
@@ -1035,7 +1053,7 @@ public interface FmiModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FMI_MODEL_DESCRIPTION_TYPE__NUMBER_OF_EVENT_INDICATORS = 19;
+	int FMI_MODEL_DESCRIPTION_TYPE__NUMBER_OF_EVENT_INDICATORS = 20;
 
 	/**
 	 * The feature id for the '<em><b>Variable Naming Convention</b></em>' attribute.
@@ -1044,7 +1062,7 @@ public interface FmiModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FMI_MODEL_DESCRIPTION_TYPE__VARIABLE_NAMING_CONVENTION = 20;
+	int FMI_MODEL_DESCRIPTION_TYPE__VARIABLE_NAMING_CONVENTION = 21;
 
 	/**
 	 * The feature id for the '<em><b>Version</b></em>' attribute.
@@ -1053,7 +1071,7 @@ public interface FmiModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FMI_MODEL_DESCRIPTION_TYPE__VERSION = 21;
+	int FMI_MODEL_DESCRIPTION_TYPE__VERSION = 22;
 
 	/**
 	 * The feature id for the '<em><b>Model Identifier</b></em>' attribute.
@@ -1062,7 +1080,7 @@ public interface FmiModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FMI_MODEL_DESCRIPTION_TYPE__MODEL_IDENTIFIER = 22;
+	int FMI_MODEL_DESCRIPTION_TYPE__MODEL_IDENTIFIER = 23;
 
 	/**
 	 * The feature id for the '<em><b>Number Of Continuous States</b></em>' attribute.
@@ -1071,7 +1089,7 @@ public interface FmiModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FMI_MODEL_DESCRIPTION_TYPE__NUMBER_OF_CONTINUOUS_STATES = 23;
+	int FMI_MODEL_DESCRIPTION_TYPE__NUMBER_OF_CONTINUOUS_STATES = 24;
 
 	/**
 	 * The number of structural features of the '<em>Description Type</em>' class.
@@ -1080,7 +1098,7 @@ public interface FmiModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FMI_MODEL_DESCRIPTION_TYPE_FEATURE_COUNT = 24;
+	int FMI_MODEL_DESCRIPTION_TYPE_FEATURE_COUNT = 25;
 
 	/**
 	 * The meta object id for the '{@link FmiModel.impl.FmiScalarVariableImpl <em>Fmi Scalar Variable</em>}' class.
@@ -2337,6 +2355,118 @@ public interface FmiModelPackage extends EPackage {
 	int UNIT_DEFINITIONS_TYPE_FEATURE_COUNT = 2;
 
 	/**
+	 * The meta object id for the '{@link FmiModel.impl.ImplementationImpl <em>Implementation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see FmiModel.impl.ImplementationImpl
+	 * @see FmiModel.impl.FmiModelPackageImpl#getImplementation()
+	 * @generated
+	 */
+	int IMPLEMENTATION = 34;
+
+	/**
+	 * The feature id for the '<em><b>Fmi Co Simulation Capabilities</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPLEMENTATION__FMI_CO_SIMULATION_CAPABILITIES = 0;
+
+	/**
+	 * The number of structural features of the '<em>Implementation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPLEMENTATION_FEATURE_COUNT = 1;
+
+	/**
+	 * The meta object id for the '{@link FmiModel.impl.FmiCoSimulationCapabilitiesTypeImpl <em>Fmi Co Simulation Capabilities Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see FmiModel.impl.FmiCoSimulationCapabilitiesTypeImpl
+	 * @see FmiModel.impl.FmiModelPackageImpl#getFmiCoSimulationCapabilitiesType()
+	 * @generated
+	 */
+	int FMI_CO_SIMULATION_CAPABILITIES_TYPE = 35;
+
+	/**
+	 * The feature id for the '<em><b>Capabilities</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FMI_CO_SIMULATION_CAPABILITIES_TYPE__CAPABILITIES = 0;
+
+	/**
+	 * The number of structural features of the '<em>Fmi Co Simulation Capabilities Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FMI_CO_SIMULATION_CAPABILITIES_TYPE_FEATURE_COUNT = 1;
+
+	/**
+	 * The meta object id for the '{@link FmiModel.impl.CoSimulation_StandAloneImpl <em>Co Simulation Stand Alone</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see FmiModel.impl.CoSimulation_StandAloneImpl
+	 * @see FmiModel.impl.FmiModelPackageImpl#getCoSimulation_StandAlone()
+	 * @generated
+	 */
+	int CO_SIMULATION_STAND_ALONE = 36;
+
+	/**
+	 * The feature id for the '<em><b>Fmi Co Simulation Capabilities</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CO_SIMULATION_STAND_ALONE__FMI_CO_SIMULATION_CAPABILITIES = IMPLEMENTATION__FMI_CO_SIMULATION_CAPABILITIES;
+
+	/**
+	 * The number of structural features of the '<em>Co Simulation Stand Alone</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CO_SIMULATION_STAND_ALONE_FEATURE_COUNT = IMPLEMENTATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link FmiModel.impl.CoSimulation_ToolImpl <em>Co Simulation Tool</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see FmiModel.impl.CoSimulation_ToolImpl
+	 * @see FmiModel.impl.FmiModelPackageImpl#getCoSimulation_Tool()
+	 * @generated
+	 */
+	int CO_SIMULATION_TOOL = 37;
+
+	/**
+	 * The feature id for the '<em><b>Fmi Co Simulation Capabilities</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CO_SIMULATION_TOOL__FMI_CO_SIMULATION_CAPABILITIES = IMPLEMENTATION__FMI_CO_SIMULATION_CAPABILITIES;
+
+	/**
+	 * The number of structural features of the '<em>Co Simulation Tool</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CO_SIMULATION_TOOL_FEATURE_COUNT = IMPLEMENTATION_FEATURE_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link FmiModel.CausalityType <em>Causality Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2344,7 +2474,7 @@ public interface FmiModelPackage extends EPackage {
 	 * @see FmiModel.impl.FmiModelPackageImpl#getCausalityType()
 	 * @generated
 	 */
-	int CAUSALITY_TYPE = 34;
+	int CAUSALITY_TYPE = 38;
 
 	/**
 	 * The meta object id for the '{@link FmiModel.FmiDependencyFactorKind <em>Fmi Dependency Factor Kind</em>}' enum.
@@ -2354,7 +2484,7 @@ public interface FmiModelPackage extends EPackage {
 	 * @see FmiModel.impl.FmiModelPackageImpl#getFmiDependencyFactorKind()
 	 * @generated
 	 */
-	int FMI_DEPENDENCY_FACTOR_KIND = 35;
+	int FMI_DEPENDENCY_FACTOR_KIND = 39;
 
 	/**
 	 * The meta object id for the '{@link FmiModel.InitialType <em>Initial Type</em>}' enum.
@@ -2364,7 +2494,7 @@ public interface FmiModelPackage extends EPackage {
 	 * @see FmiModel.impl.FmiModelPackageImpl#getInitialType()
 	 * @generated
 	 */
-	int INITIAL_TYPE = 36;
+	int INITIAL_TYPE = 40;
 
 	/**
 	 * The meta object id for the '{@link FmiModel.VariabilityType <em>Variability Type</em>}' enum.
@@ -2374,7 +2504,7 @@ public interface FmiModelPackage extends EPackage {
 	 * @see FmiModel.impl.FmiModelPackageImpl#getVariabilityType()
 	 * @generated
 	 */
-	int VARIABILITY_TYPE = 37;
+	int VARIABILITY_TYPE = 41;
 
 	/**
 	 * The meta object id for the '{@link FmiModel.VariableNamingConventionType <em>Variable Naming Convention Type</em>}' enum.
@@ -2384,7 +2514,7 @@ public interface FmiModelPackage extends EPackage {
 	 * @see FmiModel.impl.FmiModelPackageImpl#getVariableNamingConventionType()
 	 * @generated
 	 */
-	int VARIABLE_NAMING_CONVENTION_TYPE = 38;
+	int VARIABLE_NAMING_CONVENTION_TYPE = 42;
 
 	/**
 	 * The meta object id for the '<em>Causality Type Object</em>' data type.
@@ -2394,7 +2524,7 @@ public interface FmiModelPackage extends EPackage {
 	 * @see FmiModel.impl.FmiModelPackageImpl#getCausalityTypeObject()
 	 * @generated
 	 */
-	int CAUSALITY_TYPE_OBJECT = 39;
+	int CAUSALITY_TYPE_OBJECT = 43;
 
 	/**
 	 * The meta object id for the '<em>Fmi Dependency Factor Kind Object</em>' data type.
@@ -2404,7 +2534,7 @@ public interface FmiModelPackage extends EPackage {
 	 * @see FmiModel.impl.FmiModelPackageImpl#getFmiDependencyFactorKindObject()
 	 * @generated
 	 */
-	int FMI_DEPENDENCY_FACTOR_KIND_OBJECT = 40;
+	int FMI_DEPENDENCY_FACTOR_KIND_OBJECT = 44;
 
 	/**
 	 * The meta object id for the '<em>Initial Type Object</em>' data type.
@@ -2414,7 +2544,7 @@ public interface FmiModelPackage extends EPackage {
 	 * @see FmiModel.impl.FmiModelPackageImpl#getInitialTypeObject()
 	 * @generated
 	 */
-	int INITIAL_TYPE_OBJECT = 41;
+	int INITIAL_TYPE_OBJECT = 45;
 
 	/**
 	 * The meta object id for the '<em>Input Dependencies Type</em>' data type.
@@ -2424,7 +2554,7 @@ public interface FmiModelPackage extends EPackage {
 	 * @see FmiModel.impl.FmiModelPackageImpl#getInputDependenciesType()
 	 * @generated
 	 */
-	int INPUT_DEPENDENCIES_TYPE = 42;
+	int INPUT_DEPENDENCIES_TYPE = 46;
 
 	/**
 	 * The meta object id for the '<em>Input Factor Kinds Type</em>' data type.
@@ -2434,7 +2564,7 @@ public interface FmiModelPackage extends EPackage {
 	 * @see FmiModel.impl.FmiModelPackageImpl#getInputFactorKindsType()
 	 * @generated
 	 */
-	int INPUT_FACTOR_KINDS_TYPE = 43;
+	int INPUT_FACTOR_KINDS_TYPE = 47;
 
 	/**
 	 * The meta object id for the '<em>State Dependencies Type</em>' data type.
@@ -2444,7 +2574,7 @@ public interface FmiModelPackage extends EPackage {
 	 * @see FmiModel.impl.FmiModelPackageImpl#getStateDependenciesType()
 	 * @generated
 	 */
-	int STATE_DEPENDENCIES_TYPE = 44;
+	int STATE_DEPENDENCIES_TYPE = 48;
 
 	/**
 	 * The meta object id for the '<em>State Factor Kinds Type</em>' data type.
@@ -2454,7 +2584,7 @@ public interface FmiModelPackage extends EPackage {
 	 * @see FmiModel.impl.FmiModelPackageImpl#getStateFactorKindsType()
 	 * @generated
 	 */
-	int STATE_FACTOR_KINDS_TYPE = 45;
+	int STATE_FACTOR_KINDS_TYPE = 49;
 
 	/**
 	 * The meta object id for the '<em>Variability Type Object</em>' data type.
@@ -2464,7 +2594,7 @@ public interface FmiModelPackage extends EPackage {
 	 * @see FmiModel.impl.FmiModelPackageImpl#getVariabilityTypeObject()
 	 * @generated
 	 */
-	int VARIABILITY_TYPE_OBJECT = 46;
+	int VARIABILITY_TYPE_OBJECT = 50;
 
 	/**
 	 * The meta object id for the '<em>Variable Naming Convention Type Object</em>' data type.
@@ -2474,7 +2604,7 @@ public interface FmiModelPackage extends EPackage {
 	 * @see FmiModel.impl.FmiModelPackageImpl#getVariableNamingConventionTypeObject()
 	 * @generated
 	 */
-	int VARIABLE_NAMING_CONVENTION_TYPE_OBJECT = 47;
+	int VARIABLE_NAMING_CONVENTION_TYPE_OBJECT = 51;
 
 
 	/**
@@ -2692,6 +2822,17 @@ public interface FmiModelPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getCoSimulationType_CanHandleEvents();
+
+	/**
+	 * Returns the meta object for the attribute '{@link FmiModel.CoSimulationType#isCanRejectSteps <em>Can Reject Steps</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Can Reject Steps</em>'.
+	 * @see FmiModel.CoSimulationType#isCanRejectSteps()
+	 * @see #getCoSimulationType()
+	 * @generated
+	 */
+	EAttribute getCoSimulationType_CanRejectSteps();
 
 	/**
 	 * Returns the meta object for the attribute '{@link FmiModel.CoSimulationType#isCanHandleVariableCommunicationStepSize <em>Can Handle Variable Communication Step Size</em>}'.
@@ -3256,6 +3397,17 @@ public interface FmiModelPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getFmiModelDescriptionType_ModelStructure();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link FmiModel.FmiModelDescriptionType#getImplementation <em>Implementation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Implementation</em>'.
+	 * @see FmiModel.FmiModelDescriptionType#getImplementation()
+	 * @see #getFmiModelDescriptionType()
+	 * @generated
+	 */
+	EReference getFmiModelDescriptionType_Implementation();
 
 	/**
 	 * Returns the meta object for the attribute '{@link FmiModel.FmiModelDescriptionType#getAuthor <em>Author</em>}'.
@@ -4677,6 +4829,68 @@ public interface FmiModelPackage extends EPackage {
 	EReference getUnitDefinitionsType_Unit();
 
 	/**
+	 * Returns the meta object for class '{@link FmiModel.Implementation <em>Implementation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Implementation</em>'.
+	 * @see FmiModel.Implementation
+	 * @generated
+	 */
+	EClass getImplementation();
+
+	/**
+	 * Returns the meta object for the reference list '{@link FmiModel.Implementation#getFmiCoSimulationCapabilities <em>Fmi Co Simulation Capabilities</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Fmi Co Simulation Capabilities</em>'.
+	 * @see FmiModel.Implementation#getFmiCoSimulationCapabilities()
+	 * @see #getImplementation()
+	 * @generated
+	 */
+	EReference getImplementation_FmiCoSimulationCapabilities();
+
+	/**
+	 * Returns the meta object for class '{@link FmiModel.FmiCoSimulationCapabilitiesType <em>Fmi Co Simulation Capabilities Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Fmi Co Simulation Capabilities Type</em>'.
+	 * @see FmiModel.FmiCoSimulationCapabilitiesType
+	 * @generated
+	 */
+	EClass getFmiCoSimulationCapabilitiesType();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link FmiModel.FmiCoSimulationCapabilitiesType#getCapabilities <em>Capabilities</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Capabilities</em>'.
+	 * @see FmiModel.FmiCoSimulationCapabilitiesType#getCapabilities()
+	 * @see #getFmiCoSimulationCapabilitiesType()
+	 * @generated
+	 */
+	EReference getFmiCoSimulationCapabilitiesType_Capabilities();
+
+	/**
+	 * Returns the meta object for class '{@link FmiModel.CoSimulation_StandAlone <em>Co Simulation Stand Alone</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Co Simulation Stand Alone</em>'.
+	 * @see FmiModel.CoSimulation_StandAlone
+	 * @generated
+	 */
+	EClass getCoSimulation_StandAlone();
+
+	/**
+	 * Returns the meta object for class '{@link FmiModel.CoSimulation_Tool <em>Co Simulation Tool</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Co Simulation Tool</em>'.
+	 * @see FmiModel.CoSimulation_Tool
+	 * @generated
+	 */
+	EClass getCoSimulation_Tool();
+
+	/**
 	 * Returns the meta object for enum '{@link FmiModel.CausalityType <em>Causality Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5023,6 +5237,14 @@ public interface FmiModelPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CO_SIMULATION_TYPE__CAN_HANDLE_EVENTS = eINSTANCE.getCoSimulationType_CanHandleEvents();
+
+		/**
+		 * The meta object literal for the '<em><b>Can Reject Steps</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CO_SIMULATION_TYPE__CAN_REJECT_STEPS = eINSTANCE.getCoSimulationType_CanRejectSteps();
 
 		/**
 		 * The meta object literal for the '<em><b>Can Handle Variable Communication Step Size</b></em>' attribute feature.
@@ -5455,6 +5677,14 @@ public interface FmiModelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference FMI_MODEL_DESCRIPTION_TYPE__MODEL_STRUCTURE = eINSTANCE.getFmiModelDescriptionType_ModelStructure();
+
+		/**
+		 * The meta object literal for the '<em><b>Implementation</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FMI_MODEL_DESCRIPTION_TYPE__IMPLEMENTATION = eINSTANCE.getFmiModelDescriptionType_Implementation();
 
 		/**
 		 * The meta object literal for the '<em><b>Author</b></em>' attribute feature.
@@ -6547,6 +6777,62 @@ public interface FmiModelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference UNIT_DEFINITIONS_TYPE__UNIT = eINSTANCE.getUnitDefinitionsType_Unit();
+
+		/**
+		 * The meta object literal for the '{@link FmiModel.impl.ImplementationImpl <em>Implementation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see FmiModel.impl.ImplementationImpl
+		 * @see FmiModel.impl.FmiModelPackageImpl#getImplementation()
+		 * @generated
+		 */
+		EClass IMPLEMENTATION = eINSTANCE.getImplementation();
+
+		/**
+		 * The meta object literal for the '<em><b>Fmi Co Simulation Capabilities</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IMPLEMENTATION__FMI_CO_SIMULATION_CAPABILITIES = eINSTANCE.getImplementation_FmiCoSimulationCapabilities();
+
+		/**
+		 * The meta object literal for the '{@link FmiModel.impl.FmiCoSimulationCapabilitiesTypeImpl <em>Fmi Co Simulation Capabilities Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see FmiModel.impl.FmiCoSimulationCapabilitiesTypeImpl
+		 * @see FmiModel.impl.FmiModelPackageImpl#getFmiCoSimulationCapabilitiesType()
+		 * @generated
+		 */
+		EClass FMI_CO_SIMULATION_CAPABILITIES_TYPE = eINSTANCE.getFmiCoSimulationCapabilitiesType();
+
+		/**
+		 * The meta object literal for the '<em><b>Capabilities</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FMI_CO_SIMULATION_CAPABILITIES_TYPE__CAPABILITIES = eINSTANCE.getFmiCoSimulationCapabilitiesType_Capabilities();
+
+		/**
+		 * The meta object literal for the '{@link FmiModel.impl.CoSimulation_StandAloneImpl <em>Co Simulation Stand Alone</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see FmiModel.impl.CoSimulation_StandAloneImpl
+		 * @see FmiModel.impl.FmiModelPackageImpl#getCoSimulation_StandAlone()
+		 * @generated
+		 */
+		EClass CO_SIMULATION_STAND_ALONE = eINSTANCE.getCoSimulation_StandAlone();
+
+		/**
+		 * The meta object literal for the '{@link FmiModel.impl.CoSimulation_ToolImpl <em>Co Simulation Tool</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see FmiModel.impl.CoSimulation_ToolImpl
+		 * @see FmiModel.impl.FmiModelPackageImpl#getCoSimulation_Tool()
+		 * @generated
+		 */
+		EClass CO_SIMULATION_TOOL = eINSTANCE.getCoSimulation_Tool();
 
 		/**
 		 * The meta object literal for the '{@link FmiModel.CausalityType <em>Causality Type</em>}' enum.

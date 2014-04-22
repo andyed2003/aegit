@@ -237,6 +237,22 @@ public class FmiModelAdapterFactory extends AdapterFactoryImpl {
 				return createUnitDefinitionsTypeAdapter();
 			}
 			@Override
+			public Adapter caseImplementation(Implementation object) {
+				return createImplementationAdapter();
+			}
+			@Override
+			public Adapter caseFmiCoSimulationCapabilitiesType(FmiCoSimulationCapabilitiesType object) {
+				return createFmiCoSimulationCapabilitiesTypeAdapter();
+			}
+			@Override
+			public Adapter caseCoSimulation_StandAlone(CoSimulation_StandAlone object) {
+				return createCoSimulation_StandAloneAdapter();
+			}
+			@Override
+			public Adapter caseCoSimulation_Tool(CoSimulation_Tool object) {
+				return createCoSimulation_ToolAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -729,6 +745,62 @@ public class FmiModelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createUnitDefinitionsTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link FmiModel.Implementation <em>Implementation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see FmiModel.Implementation
+	 * @generated
+	 */
+	public Adapter createImplementationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link FmiModel.FmiCoSimulationCapabilitiesType <em>Fmi Co Simulation Capabilities Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see FmiModel.FmiCoSimulationCapabilitiesType
+	 * @generated
+	 */
+	public Adapter createFmiCoSimulationCapabilitiesTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link FmiModel.CoSimulation_StandAlone <em>Co Simulation Stand Alone</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see FmiModel.CoSimulation_StandAlone
+	 * @generated
+	 */
+	public Adapter createCoSimulation_StandAloneAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link FmiModel.CoSimulation_Tool <em>Co Simulation Tool</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see FmiModel.CoSimulation_Tool
+	 * @generated
+	 */
+	public Adapter createCoSimulation_ToolAdapter() {
 		return null;
 	}
 

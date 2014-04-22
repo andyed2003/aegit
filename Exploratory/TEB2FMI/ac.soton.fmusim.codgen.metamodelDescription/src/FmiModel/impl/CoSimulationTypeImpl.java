@@ -17,16 +17,17 @@ import FmiModel.FmiModelPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link FmiModel.impl.CoSimulationTypeImpl#isCanBeInstantiatedOnlyOncePerProcess <em>Can Be Instantiated Only Once Per Process</em>}</li>
- *   <li>{@link FmiModel.impl.CoSimulationTypeImpl#isCanGetAndSetFMUstate <em>Can Get And Set FM Ustate</em>}</li>
- *   <li>{@link FmiModel.impl.CoSimulationTypeImpl#isCanHandleEvents <em>Can Handle Events</em>}</li>
  *   <li>{@link FmiModel.impl.CoSimulationTypeImpl#isCanHandleVariableCommunicationStepSize <em>Can Handle Variable Communication Step Size</em>}</li>
+ *   <li>{@link FmiModel.impl.CoSimulationTypeImpl#isCanHandleEvents <em>Can Handle Events</em>}</li>
+ *   <li>{@link FmiModel.impl.CoSimulationTypeImpl#isCanRejectSteps <em>Can Reject Steps</em>}</li>
  *   <li>{@link FmiModel.impl.CoSimulationTypeImpl#isCanInterpolateInputs <em>Can Interpolate Inputs</em>}</li>
- *   <li>{@link FmiModel.impl.CoSimulationTypeImpl#isCanNotUseMemoryManagementFunctions <em>Can Not Use Memory Management Functions</em>}</li>
- *   <li>{@link FmiModel.impl.CoSimulationTypeImpl#isCanRunAsynchronuously <em>Can Run Asynchronuously</em>}</li>
- *   <li>{@link FmiModel.impl.CoSimulationTypeImpl#isCanSerializeFMUstate <em>Can Serialize FM Ustate</em>}</li>
- *   <li>{@link FmiModel.impl.CoSimulationTypeImpl#isCanSignalEvents <em>Can Signal Events</em>}</li>
  *   <li>{@link FmiModel.impl.CoSimulationTypeImpl#getMaxOutputDerivativeOrder <em>Max Output Derivative Order</em>}</li>
+ *   <li>{@link FmiModel.impl.CoSimulationTypeImpl#isCanRunAsynchronuously <em>Can Run Asynchronuously</em>}</li>
+ *   <li>{@link FmiModel.impl.CoSimulationTypeImpl#isCanSignalEvents <em>Can Signal Events</em>}</li>
+ *   <li>{@link FmiModel.impl.CoSimulationTypeImpl#isCanBeInstantiatedOnlyOncePerProcess <em>Can Be Instantiated Only Once Per Process</em>}</li>
+ *   <li>{@link FmiModel.impl.CoSimulationTypeImpl#isCanNotUseMemoryManagementFunctions <em>Can Not Use Memory Management Functions</em>}</li>
+ *   <li>{@link FmiModel.impl.CoSimulationTypeImpl#isCanGetAndSetFMUstate <em>Can Get And Set FM Ustate</em>}</li>
+ *   <li>{@link FmiModel.impl.CoSimulationTypeImpl#isCanSerializeFMUstate <em>Can Serialize FM Ustate</em>}</li>
  *   <li>{@link FmiModel.impl.CoSimulationTypeImpl#getModelIdentifier <em>Model Identifier</em>}</li>
  *   <li>{@link FmiModel.impl.CoSimulationTypeImpl#isNeedsExecutionTool <em>Needs Execution Tool</em>}</li>
  *   <li>{@link FmiModel.impl.CoSimulationTypeImpl#isProvidesPartialDerivativesOfDerivativeFunctionWrtInputs <em>Provides Partial Derivatives Of Derivative Function Wrt Inputs</em>}</li>
@@ -40,62 +41,33 @@ import FmiModel.FmiModelPackage;
  */
 public class CoSimulationTypeImpl extends EObjectImpl implements CoSimulationType {
 	/**
-	 * The default value of the '{@link #isCanBeInstantiatedOnlyOncePerProcess() <em>Can Be Instantiated Only Once Per Process</em>}' attribute.
+	 * The default value of the '{@link #isCanHandleVariableCommunicationStepSize() <em>Can Handle Variable Communication Step Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isCanBeInstantiatedOnlyOncePerProcess()
+	 * @see #isCanHandleVariableCommunicationStepSize()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS_EDEFAULT = false;
+	protected static final boolean CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE_EDEFAULT = false;
 
 	/**
-	 * The cached value of the '{@link #isCanBeInstantiatedOnlyOncePerProcess() <em>Can Be Instantiated Only Once Per Process</em>}' attribute.
+	 * The cached value of the '{@link #isCanHandleVariableCommunicationStepSize() <em>Can Handle Variable Communication Step Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isCanBeInstantiatedOnlyOncePerProcess()
+	 * @see #isCanHandleVariableCommunicationStepSize()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean canBeInstantiatedOnlyOncePerProcess = CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS_EDEFAULT;
+	protected boolean canHandleVariableCommunicationStepSize = CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE_EDEFAULT;
 
 	/**
-	 * This is true if the Can Be Instantiated Only Once Per Process attribute has been set.
+	 * This is true if the Can Handle Variable Communication Step Size attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean canBeInstantiatedOnlyOncePerProcessESet;
-
-	/**
-	 * The default value of the '{@link #isCanGetAndSetFMUstate() <em>Can Get And Set FM Ustate</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isCanGetAndSetFMUstate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean CAN_GET_AND_SET_FM_USTATE_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isCanGetAndSetFMUstate() <em>Can Get And Set FM Ustate</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isCanGetAndSetFMUstate()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean canGetAndSetFMUstate = CAN_GET_AND_SET_FM_USTATE_EDEFAULT;
-
-	/**
-	 * This is true if the Can Get And Set FM Ustate attribute has been set.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean canGetAndSetFMUstateESet;
+	protected boolean canHandleVariableCommunicationStepSizeESet;
 
 	/**
 	 * The default value of the '{@link #isCanHandleEvents() <em>Can Handle Events</em>}' attribute.
@@ -127,33 +99,33 @@ public class CoSimulationTypeImpl extends EObjectImpl implements CoSimulationTyp
 	protected boolean canHandleEventsESet;
 
 	/**
-	 * The default value of the '{@link #isCanHandleVariableCommunicationStepSize() <em>Can Handle Variable Communication Step Size</em>}' attribute.
+	 * The default value of the '{@link #isCanRejectSteps() <em>Can Reject Steps</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isCanHandleVariableCommunicationStepSize()
+	 * @see #isCanRejectSteps()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE_EDEFAULT = false;
+	protected static final boolean CAN_REJECT_STEPS_EDEFAULT = false;
 
 	/**
-	 * The cached value of the '{@link #isCanHandleVariableCommunicationStepSize() <em>Can Handle Variable Communication Step Size</em>}' attribute.
+	 * The cached value of the '{@link #isCanRejectSteps() <em>Can Reject Steps</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isCanHandleVariableCommunicationStepSize()
+	 * @see #isCanRejectSteps()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean canHandleVariableCommunicationStepSize = CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE_EDEFAULT;
+	protected boolean canRejectSteps = CAN_REJECT_STEPS_EDEFAULT;
 
 	/**
-	 * This is true if the Can Handle Variable Communication Step Size attribute has been set.
+	 * This is true if the Can Reject Steps attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean canHandleVariableCommunicationStepSizeESet;
+	protected boolean canRejectStepsESet;
 
 	/**
 	 * The default value of the '{@link #isCanInterpolateInputs() <em>Can Interpolate Inputs</em>}' attribute.
@@ -185,33 +157,33 @@ public class CoSimulationTypeImpl extends EObjectImpl implements CoSimulationTyp
 	protected boolean canInterpolateInputsESet;
 
 	/**
-	 * The default value of the '{@link #isCanNotUseMemoryManagementFunctions() <em>Can Not Use Memory Management Functions</em>}' attribute.
+	 * The default value of the '{@link #getMaxOutputDerivativeOrder() <em>Max Output Derivative Order</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isCanNotUseMemoryManagementFunctions()
+	 * @see #getMaxOutputDerivativeOrder()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS_EDEFAULT = false;
+	protected static final long MAX_OUTPUT_DERIVATIVE_ORDER_EDEFAULT = 0L;
 
 	/**
-	 * The cached value of the '{@link #isCanNotUseMemoryManagementFunctions() <em>Can Not Use Memory Management Functions</em>}' attribute.
+	 * The cached value of the '{@link #getMaxOutputDerivativeOrder() <em>Max Output Derivative Order</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isCanNotUseMemoryManagementFunctions()
+	 * @see #getMaxOutputDerivativeOrder()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean canNotUseMemoryManagementFunctions = CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS_EDEFAULT;
+	protected long maxOutputDerivativeOrder = MAX_OUTPUT_DERIVATIVE_ORDER_EDEFAULT;
 
 	/**
-	 * This is true if the Can Not Use Memory Management Functions attribute has been set.
+	 * This is true if the Max Output Derivative Order attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean canNotUseMemoryManagementFunctionsESet;
+	protected boolean maxOutputDerivativeOrderESet;
 
 	/**
 	 * The default value of the '{@link #isCanRunAsynchronuously() <em>Can Run Asynchronuously</em>}' attribute.
@@ -243,35 +215,6 @@ public class CoSimulationTypeImpl extends EObjectImpl implements CoSimulationTyp
 	protected boolean canRunAsynchronuouslyESet;
 
 	/**
-	 * The default value of the '{@link #isCanSerializeFMUstate() <em>Can Serialize FM Ustate</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isCanSerializeFMUstate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean CAN_SERIALIZE_FM_USTATE_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isCanSerializeFMUstate() <em>Can Serialize FM Ustate</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isCanSerializeFMUstate()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean canSerializeFMUstate = CAN_SERIALIZE_FM_USTATE_EDEFAULT;
-
-	/**
-	 * This is true if the Can Serialize FM Ustate attribute has been set.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean canSerializeFMUstateESet;
-
-	/**
 	 * The default value of the '{@link #isCanSignalEvents() <em>Can Signal Events</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -301,33 +244,120 @@ public class CoSimulationTypeImpl extends EObjectImpl implements CoSimulationTyp
 	protected boolean canSignalEventsESet;
 
 	/**
-	 * The default value of the '{@link #getMaxOutputDerivativeOrder() <em>Max Output Derivative Order</em>}' attribute.
+	 * The default value of the '{@link #isCanBeInstantiatedOnlyOncePerProcess() <em>Can Be Instantiated Only Once Per Process</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMaxOutputDerivativeOrder()
+	 * @see #isCanBeInstantiatedOnlyOncePerProcess()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final long MAX_OUTPUT_DERIVATIVE_ORDER_EDEFAULT = 0L;
+	protected static final boolean CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS_EDEFAULT = false;
 
 	/**
-	 * The cached value of the '{@link #getMaxOutputDerivativeOrder() <em>Max Output Derivative Order</em>}' attribute.
+	 * The cached value of the '{@link #isCanBeInstantiatedOnlyOncePerProcess() <em>Can Be Instantiated Only Once Per Process</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMaxOutputDerivativeOrder()
+	 * @see #isCanBeInstantiatedOnlyOncePerProcess()
 	 * @generated
 	 * @ordered
 	 */
-	protected long maxOutputDerivativeOrder = MAX_OUTPUT_DERIVATIVE_ORDER_EDEFAULT;
+	protected boolean canBeInstantiatedOnlyOncePerProcess = CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS_EDEFAULT;
 
 	/**
-	 * This is true if the Max Output Derivative Order attribute has been set.
+	 * This is true if the Can Be Instantiated Only Once Per Process attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean maxOutputDerivativeOrderESet;
+	protected boolean canBeInstantiatedOnlyOncePerProcessESet;
+
+	/**
+	 * The default value of the '{@link #isCanNotUseMemoryManagementFunctions() <em>Can Not Use Memory Management Functions</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isCanNotUseMemoryManagementFunctions()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isCanNotUseMemoryManagementFunctions() <em>Can Not Use Memory Management Functions</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isCanNotUseMemoryManagementFunctions()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean canNotUseMemoryManagementFunctions = CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS_EDEFAULT;
+
+	/**
+	 * This is true if the Can Not Use Memory Management Functions attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean canNotUseMemoryManagementFunctionsESet;
+
+	/**
+	 * The default value of the '{@link #isCanGetAndSetFMUstate() <em>Can Get And Set FM Ustate</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isCanGetAndSetFMUstate()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean CAN_GET_AND_SET_FM_USTATE_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isCanGetAndSetFMUstate() <em>Can Get And Set FM Ustate</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isCanGetAndSetFMUstate()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean canGetAndSetFMUstate = CAN_GET_AND_SET_FM_USTATE_EDEFAULT;
+
+	/**
+	 * This is true if the Can Get And Set FM Ustate attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean canGetAndSetFMUstateESet;
+
+	/**
+	 * The default value of the '{@link #isCanSerializeFMUstate() <em>Can Serialize FM Ustate</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isCanSerializeFMUstate()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean CAN_SERIALIZE_FM_USTATE_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isCanSerializeFMUstate() <em>Can Serialize FM Ustate</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isCanSerializeFMUstate()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean canSerializeFMUstate = CAN_SERIALIZE_FM_USTATE_EDEFAULT;
+
+	/**
+	 * This is true if the Can Serialize FM Ustate attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean canSerializeFMUstateESet;
 
 	/**
 	 * The default value of the '{@link #getModelIdentifier() <em>Model Identifier</em>}' attribute.
@@ -649,6 +679,52 @@ public class CoSimulationTypeImpl extends EObjectImpl implements CoSimulationTyp
 	 */
 	public boolean isSetCanHandleEvents() {
 		return canHandleEventsESet;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isCanRejectSteps() {
+		return canRejectSteps;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCanRejectSteps(boolean newCanRejectSteps) {
+		boolean oldCanRejectSteps = canRejectSteps;
+		canRejectSteps = newCanRejectSteps;
+		boolean oldCanRejectStepsESet = canRejectStepsESet;
+		canRejectStepsESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FmiModelPackage.CO_SIMULATION_TYPE__CAN_REJECT_STEPS, oldCanRejectSteps, canRejectSteps, !oldCanRejectStepsESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void unsetCanRejectSteps() {
+		boolean oldCanRejectSteps = canRejectSteps;
+		boolean oldCanRejectStepsESet = canRejectStepsESet;
+		canRejectSteps = CAN_REJECT_STEPS_EDEFAULT;
+		canRejectStepsESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, FmiModelPackage.CO_SIMULATION_TYPE__CAN_REJECT_STEPS, oldCanRejectSteps, CAN_REJECT_STEPS_EDEFAULT, oldCanRejectStepsESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetCanRejectSteps() {
+		return canRejectStepsESet;
 	}
 
 	/**
@@ -1232,26 +1308,28 @@ public class CoSimulationTypeImpl extends EObjectImpl implements CoSimulationTyp
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS:
-				return isCanBeInstantiatedOnlyOncePerProcess();
-			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_GET_AND_SET_FM_USTATE:
-				return isCanGetAndSetFMUstate();
-			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_HANDLE_EVENTS:
-				return isCanHandleEvents();
 			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE:
 				return isCanHandleVariableCommunicationStepSize();
+			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_HANDLE_EVENTS:
+				return isCanHandleEvents();
+			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_REJECT_STEPS:
+				return isCanRejectSteps();
 			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_INTERPOLATE_INPUTS:
 				return isCanInterpolateInputs();
-			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS:
-				return isCanNotUseMemoryManagementFunctions();
-			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_RUN_ASYNCHRONUOUSLY:
-				return isCanRunAsynchronuously();
-			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_SERIALIZE_FM_USTATE:
-				return isCanSerializeFMUstate();
-			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_SIGNAL_EVENTS:
-				return isCanSignalEvents();
 			case FmiModelPackage.CO_SIMULATION_TYPE__MAX_OUTPUT_DERIVATIVE_ORDER:
 				return getMaxOutputDerivativeOrder();
+			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_RUN_ASYNCHRONUOUSLY:
+				return isCanRunAsynchronuously();
+			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_SIGNAL_EVENTS:
+				return isCanSignalEvents();
+			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS:
+				return isCanBeInstantiatedOnlyOncePerProcess();
+			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS:
+				return isCanNotUseMemoryManagementFunctions();
+			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_GET_AND_SET_FM_USTATE:
+				return isCanGetAndSetFMUstate();
+			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_SERIALIZE_FM_USTATE:
+				return isCanSerializeFMUstate();
 			case FmiModelPackage.CO_SIMULATION_TYPE__MODEL_IDENTIFIER:
 				return getModelIdentifier();
 			case FmiModelPackage.CO_SIMULATION_TYPE__NEEDS_EXECUTION_TOOL:
@@ -1276,35 +1354,38 @@ public class CoSimulationTypeImpl extends EObjectImpl implements CoSimulationTyp
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS:
-				setCanBeInstantiatedOnlyOncePerProcess((Boolean)newValue);
-				return;
-			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_GET_AND_SET_FM_USTATE:
-				setCanGetAndSetFMUstate((Boolean)newValue);
+			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE:
+				setCanHandleVariableCommunicationStepSize((Boolean)newValue);
 				return;
 			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_HANDLE_EVENTS:
 				setCanHandleEvents((Boolean)newValue);
 				return;
-			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE:
-				setCanHandleVariableCommunicationStepSize((Boolean)newValue);
+			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_REJECT_STEPS:
+				setCanRejectSteps((Boolean)newValue);
 				return;
 			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_INTERPOLATE_INPUTS:
 				setCanInterpolateInputs((Boolean)newValue);
 				return;
-			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS:
-				setCanNotUseMemoryManagementFunctions((Boolean)newValue);
+			case FmiModelPackage.CO_SIMULATION_TYPE__MAX_OUTPUT_DERIVATIVE_ORDER:
+				setMaxOutputDerivativeOrder((Long)newValue);
 				return;
 			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_RUN_ASYNCHRONUOUSLY:
 				setCanRunAsynchronuously((Boolean)newValue);
 				return;
-			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_SERIALIZE_FM_USTATE:
-				setCanSerializeFMUstate((Boolean)newValue);
-				return;
 			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_SIGNAL_EVENTS:
 				setCanSignalEvents((Boolean)newValue);
 				return;
-			case FmiModelPackage.CO_SIMULATION_TYPE__MAX_OUTPUT_DERIVATIVE_ORDER:
-				setMaxOutputDerivativeOrder((Long)newValue);
+			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS:
+				setCanBeInstantiatedOnlyOncePerProcess((Boolean)newValue);
+				return;
+			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS:
+				setCanNotUseMemoryManagementFunctions((Boolean)newValue);
+				return;
+			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_GET_AND_SET_FM_USTATE:
+				setCanGetAndSetFMUstate((Boolean)newValue);
+				return;
+			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_SERIALIZE_FM_USTATE:
+				setCanSerializeFMUstate((Boolean)newValue);
 				return;
 			case FmiModelPackage.CO_SIMULATION_TYPE__MODEL_IDENTIFIER:
 				setModelIdentifier((String)newValue);
@@ -1336,35 +1417,38 @@ public class CoSimulationTypeImpl extends EObjectImpl implements CoSimulationTyp
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS:
-				unsetCanBeInstantiatedOnlyOncePerProcess();
-				return;
-			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_GET_AND_SET_FM_USTATE:
-				unsetCanGetAndSetFMUstate();
+			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE:
+				unsetCanHandleVariableCommunicationStepSize();
 				return;
 			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_HANDLE_EVENTS:
 				unsetCanHandleEvents();
 				return;
-			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE:
-				unsetCanHandleVariableCommunicationStepSize();
+			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_REJECT_STEPS:
+				unsetCanRejectSteps();
 				return;
 			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_INTERPOLATE_INPUTS:
 				unsetCanInterpolateInputs();
 				return;
-			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS:
-				unsetCanNotUseMemoryManagementFunctions();
+			case FmiModelPackage.CO_SIMULATION_TYPE__MAX_OUTPUT_DERIVATIVE_ORDER:
+				unsetMaxOutputDerivativeOrder();
 				return;
 			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_RUN_ASYNCHRONUOUSLY:
 				unsetCanRunAsynchronuously();
 				return;
-			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_SERIALIZE_FM_USTATE:
-				unsetCanSerializeFMUstate();
-				return;
 			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_SIGNAL_EVENTS:
 				unsetCanSignalEvents();
 				return;
-			case FmiModelPackage.CO_SIMULATION_TYPE__MAX_OUTPUT_DERIVATIVE_ORDER:
-				unsetMaxOutputDerivativeOrder();
+			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS:
+				unsetCanBeInstantiatedOnlyOncePerProcess();
+				return;
+			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS:
+				unsetCanNotUseMemoryManagementFunctions();
+				return;
+			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_GET_AND_SET_FM_USTATE:
+				unsetCanGetAndSetFMUstate();
+				return;
+			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_SERIALIZE_FM_USTATE:
+				unsetCanSerializeFMUstate();
 				return;
 			case FmiModelPackage.CO_SIMULATION_TYPE__MODEL_IDENTIFIER:
 				setModelIdentifier(MODEL_IDENTIFIER_EDEFAULT);
@@ -1396,26 +1480,28 @@ public class CoSimulationTypeImpl extends EObjectImpl implements CoSimulationTyp
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS:
-				return isSetCanBeInstantiatedOnlyOncePerProcess();
-			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_GET_AND_SET_FM_USTATE:
-				return isSetCanGetAndSetFMUstate();
-			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_HANDLE_EVENTS:
-				return isSetCanHandleEvents();
 			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE:
 				return isSetCanHandleVariableCommunicationStepSize();
+			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_HANDLE_EVENTS:
+				return isSetCanHandleEvents();
+			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_REJECT_STEPS:
+				return isSetCanRejectSteps();
 			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_INTERPOLATE_INPUTS:
 				return isSetCanInterpolateInputs();
-			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS:
-				return isSetCanNotUseMemoryManagementFunctions();
-			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_RUN_ASYNCHRONUOUSLY:
-				return isSetCanRunAsynchronuously();
-			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_SERIALIZE_FM_USTATE:
-				return isSetCanSerializeFMUstate();
-			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_SIGNAL_EVENTS:
-				return isSetCanSignalEvents();
 			case FmiModelPackage.CO_SIMULATION_TYPE__MAX_OUTPUT_DERIVATIVE_ORDER:
 				return isSetMaxOutputDerivativeOrder();
+			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_RUN_ASYNCHRONUOUSLY:
+				return isSetCanRunAsynchronuously();
+			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_SIGNAL_EVENTS:
+				return isSetCanSignalEvents();
+			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS:
+				return isSetCanBeInstantiatedOnlyOncePerProcess();
+			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS:
+				return isSetCanNotUseMemoryManagementFunctions();
+			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_GET_AND_SET_FM_USTATE:
+				return isSetCanGetAndSetFMUstate();
+			case FmiModelPackage.CO_SIMULATION_TYPE__CAN_SERIALIZE_FM_USTATE:
+				return isSetCanSerializeFMUstate();
 			case FmiModelPackage.CO_SIMULATION_TYPE__MODEL_IDENTIFIER:
 				return MODEL_IDENTIFIER_EDEFAULT == null ? modelIdentifier != null : !MODEL_IDENTIFIER_EDEFAULT.equals(modelIdentifier);
 			case FmiModelPackage.CO_SIMULATION_TYPE__NEEDS_EXECUTION_TOOL:
@@ -1442,26 +1528,28 @@ public class CoSimulationTypeImpl extends EObjectImpl implements CoSimulationTyp
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (canBeInstantiatedOnlyOncePerProcess: ");
-		if (canBeInstantiatedOnlyOncePerProcessESet) result.append(canBeInstantiatedOnlyOncePerProcess); else result.append("<unset>");
-		result.append(", canGetAndSetFMUstate: ");
-		if (canGetAndSetFMUstateESet) result.append(canGetAndSetFMUstate); else result.append("<unset>");
+		result.append(" (canHandleVariableCommunicationStepSize: ");
+		if (canHandleVariableCommunicationStepSizeESet) result.append(canHandleVariableCommunicationStepSize); else result.append("<unset>");
 		result.append(", canHandleEvents: ");
 		if (canHandleEventsESet) result.append(canHandleEvents); else result.append("<unset>");
-		result.append(", canHandleVariableCommunicationStepSize: ");
-		if (canHandleVariableCommunicationStepSizeESet) result.append(canHandleVariableCommunicationStepSize); else result.append("<unset>");
+		result.append(", canRejectSteps: ");
+		if (canRejectStepsESet) result.append(canRejectSteps); else result.append("<unset>");
 		result.append(", canInterpolateInputs: ");
 		if (canInterpolateInputsESet) result.append(canInterpolateInputs); else result.append("<unset>");
-		result.append(", canNotUseMemoryManagementFunctions: ");
-		if (canNotUseMemoryManagementFunctionsESet) result.append(canNotUseMemoryManagementFunctions); else result.append("<unset>");
-		result.append(", canRunAsynchronuously: ");
-		if (canRunAsynchronuouslyESet) result.append(canRunAsynchronuously); else result.append("<unset>");
-		result.append(", canSerializeFMUstate: ");
-		if (canSerializeFMUstateESet) result.append(canSerializeFMUstate); else result.append("<unset>");
-		result.append(", canSignalEvents: ");
-		if (canSignalEventsESet) result.append(canSignalEvents); else result.append("<unset>");
 		result.append(", maxOutputDerivativeOrder: ");
 		if (maxOutputDerivativeOrderESet) result.append(maxOutputDerivativeOrder); else result.append("<unset>");
+		result.append(", canRunAsynchronuously: ");
+		if (canRunAsynchronuouslyESet) result.append(canRunAsynchronuously); else result.append("<unset>");
+		result.append(", canSignalEvents: ");
+		if (canSignalEventsESet) result.append(canSignalEvents); else result.append("<unset>");
+		result.append(", canBeInstantiatedOnlyOncePerProcess: ");
+		if (canBeInstantiatedOnlyOncePerProcessESet) result.append(canBeInstantiatedOnlyOncePerProcess); else result.append("<unset>");
+		result.append(", canNotUseMemoryManagementFunctions: ");
+		if (canNotUseMemoryManagementFunctionsESet) result.append(canNotUseMemoryManagementFunctions); else result.append("<unset>");
+		result.append(", canGetAndSetFMUstate: ");
+		if (canGetAndSetFMUstateESet) result.append(canGetAndSetFMUstate); else result.append("<unset>");
+		result.append(", canSerializeFMUstate: ");
+		if (canSerializeFMUstateESet) result.append(canSerializeFMUstate); else result.append("<unset>");
 		result.append(", modelIdentifier: ");
 		result.append(modelIdentifier);
 		result.append(", needsExecutionTool: ");

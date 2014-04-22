@@ -306,6 +306,32 @@ public class FmiModelSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case FmiModelPackage.IMPLEMENTATION: {
+				Implementation implementation = (Implementation)theEObject;
+				T result = caseImplementation(implementation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case FmiModelPackage.FMI_CO_SIMULATION_CAPABILITIES_TYPE: {
+				FmiCoSimulationCapabilitiesType fmiCoSimulationCapabilitiesType = (FmiCoSimulationCapabilitiesType)theEObject;
+				T result = caseFmiCoSimulationCapabilitiesType(fmiCoSimulationCapabilitiesType);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case FmiModelPackage.CO_SIMULATION_STAND_ALONE: {
+				CoSimulation_StandAlone coSimulation_StandAlone = (CoSimulation_StandAlone)theEObject;
+				T result = caseCoSimulation_StandAlone(coSimulation_StandAlone);
+				if (result == null) result = caseImplementation(coSimulation_StandAlone);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case FmiModelPackage.CO_SIMULATION_TOOL: {
+				CoSimulation_Tool coSimulation_Tool = (CoSimulation_Tool)theEObject;
+				T result = caseCoSimulation_Tool(coSimulation_Tool);
+				if (result == null) result = caseImplementation(coSimulation_Tool);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -817,6 +843,66 @@ public class FmiModelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseUnitDefinitionsType(UnitDefinitionsType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Implementation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Implementation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseImplementation(Implementation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Fmi Co Simulation Capabilities Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Fmi Co Simulation Capabilities Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFmiCoSimulationCapabilitiesType(FmiCoSimulationCapabilitiesType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Co Simulation Stand Alone</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Co Simulation Stand Alone</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCoSimulation_StandAlone(CoSimulation_StandAlone object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Co Simulation Tool</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Co Simulation Tool</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCoSimulation_Tool(CoSimulation_Tool object) {
 		return null;
 	}
 
