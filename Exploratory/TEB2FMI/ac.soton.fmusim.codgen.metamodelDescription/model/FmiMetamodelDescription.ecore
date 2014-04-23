@@ -684,7 +684,7 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="implementation" eType="#//Implementation"
-        containment="true">
+        derived="true" containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="Implementation"/>
@@ -1899,9 +1899,9 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Implementation" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="fmiCoSimulationCapabilities"
-        upperBound="-1" eType="#//CoSimulationType"/>
+        upperBound="-1" eType="#//CoSimulationType" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FmiCoSimulationCapabilitiesType">
+  <eClassifiers xsi:type="ecore:EClass" name="FmiCoSimulationCapabilitiesType" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="capabilities" upperBound="-1"
         eType="#//CoSimulationType" containment="true"/>
   </eClassifiers>

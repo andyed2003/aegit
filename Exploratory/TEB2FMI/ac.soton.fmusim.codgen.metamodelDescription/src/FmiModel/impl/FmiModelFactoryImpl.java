@@ -2,6 +2,7 @@
  */
 package FmiModel.impl;
 
+import FmiModel.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -137,7 +138,6 @@ public class FmiModelFactoryImpl extends EFactoryImpl implements FmiModelFactory
 			case FmiModelPackage.STRING_TYPE: return createStringType();
 			case FmiModelPackage.TYPE_DEFINITIONS_TYPE: return createTypeDefinitionsType();
 			case FmiModelPackage.UNIT_DEFINITIONS_TYPE: return createUnitDefinitionsType();
-			case FmiModelPackage.FMI_CO_SIMULATION_CAPABILITIES_TYPE: return createFmiCoSimulationCapabilitiesType();
 			case FmiModelPackage.CO_SIMULATION_STAND_ALONE: return createCoSimulation_StandAlone();
 			case FmiModelPackage.CO_SIMULATION_TOOL: return createCoSimulation_Tool();
 			default:
@@ -565,16 +565,6 @@ public class FmiModelFactoryImpl extends EFactoryImpl implements FmiModelFactory
 	public UnitDefinitionsType createUnitDefinitionsType() {
 		UnitDefinitionsTypeImpl unitDefinitionsType = new UnitDefinitionsTypeImpl();
 		return unitDefinitionsType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public FmiCoSimulationCapabilitiesType createFmiCoSimulationCapabilitiesType() {
-		FmiCoSimulationCapabilitiesTypeImpl fmiCoSimulationCapabilitiesType = new FmiCoSimulationCapabilitiesTypeImpl();
-		return fmiCoSimulationCapabilitiesType;
 	}
 
 	/**

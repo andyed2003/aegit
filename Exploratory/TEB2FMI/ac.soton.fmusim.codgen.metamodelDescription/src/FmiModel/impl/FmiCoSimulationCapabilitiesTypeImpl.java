@@ -29,7 +29,7 @@ import FmiModel.FmiModelPackage;
  *
  * @generated
  */
-public class FmiCoSimulationCapabilitiesTypeImpl extends EObjectImpl implements FmiCoSimulationCapabilitiesType {
+public abstract class FmiCoSimulationCapabilitiesTypeImpl extends EObjectImpl implements FmiCoSimulationCapabilitiesType {
 	/**
 	 * The cached value of the '{@link #getCapabilities() <em>Capabilities</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

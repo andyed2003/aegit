@@ -2365,7 +2365,7 @@ public interface FmiModelPackage extends EPackage {
 	int IMPLEMENTATION = 34;
 
 	/**
-	 * The feature id for the '<em><b>Fmi Co Simulation Capabilities</b></em>' reference list.
+	 * The feature id for the '<em><b>Fmi Co Simulation Capabilities</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2421,7 +2421,7 @@ public interface FmiModelPackage extends EPackage {
 	int CO_SIMULATION_STAND_ALONE = 36;
 
 	/**
-	 * The feature id for the '<em><b>Fmi Co Simulation Capabilities</b></em>' reference list.
+	 * The feature id for the '<em><b>Fmi Co Simulation Capabilities</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2449,7 +2449,7 @@ public interface FmiModelPackage extends EPackage {
 	int CO_SIMULATION_TOOL = 37;
 
 	/**
-	 * The feature id for the '<em><b>Fmi Co Simulation Capabilities</b></em>' reference list.
+	 * The feature id for the '<em><b>Fmi Co Simulation Capabilities</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -4839,10 +4839,10 @@ public interface FmiModelPackage extends EPackage {
 	EClass getImplementation();
 
 	/**
-	 * Returns the meta object for the reference list '{@link FmiModel.Implementation#getFmiCoSimulationCapabilities <em>Fmi Co Simulation Capabilities</em>}'.
+	 * Returns the meta object for the containment reference list '{@link FmiModel.Implementation#getFmiCoSimulationCapabilities <em>Fmi Co Simulation Capabilities</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Fmi Co Simulation Capabilities</em>'.
+	 * @return the meta object for the containment reference list '<em>Fmi Co Simulation Capabilities</em>'.
 	 * @see FmiModel.Implementation#getFmiCoSimulationCapabilities()
 	 * @see #getImplementation()
 	 * @generated
@@ -6789,7 +6789,7 @@ public interface FmiModelPackage extends EPackage {
 		EClass IMPLEMENTATION = eINSTANCE.getImplementation();
 
 		/**
-		 * The meta object literal for the '<em><b>Fmi Co Simulation Capabilities</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Fmi Co Simulation Capabilities</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

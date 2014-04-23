@@ -27,10 +27,10 @@ typedef struct{
     fmiReal time;
     ModelState state;
     fmiBoolean loggingOn;
-	fmiValueReference i[NUMBER_OF_INTEGERS]; // my array of fmiValueReferences to integers
-	fmiValueReference b[NUMBER_OF_BOOLEANS]; // my array of fmiValueReferences to booleans
-	fmiValueReference r[NUMBER_OF_REALS]; // my array of fmiValueReferences to real
-	fmiValueReference s[NUMBER_OF_STRINGS]; // my array of fmiValueReferences to strings
+	fmiInteger i[NUMBER_OF_INTEGERS]; // my array of fmiValueReferences to integers
+	fmiBoolean b[NUMBER_OF_BOOLEANS]; // my array of fmiValueReferences to booleans
+	fmiReal r[NUMBER_OF_REALS]; // my array of fmiValueReferences to real
+	fmiString s[NUMBER_OF_STRINGS]; // my array of fmiValueReferences to strings
 #ifdef FMI_COSIMULATION
     fmiEventInfo eventInfo;
 #endif

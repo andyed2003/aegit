@@ -4,9 +4,13 @@ package FmiModel.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import FmiModel.CoSimulationType;
@@ -28,7 +32,7 @@ import FmiModel.Implementation;
  */
 public abstract class ImplementationImpl extends EObjectImpl implements Implementation {
 	/**
-	 * The cached value of the '{@link #getFmiCoSimulationCapabilities() <em>Fmi Co Simulation Capabilities</em>}' reference list.
+	 * The cached value of the '{@link #getFmiCoSimulationCapabilities() <em>Fmi Co Simulation Capabilities</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getFmiCoSimulationCapabilities()
@@ -63,9 +67,23 @@ public abstract class ImplementationImpl extends EObjectImpl implements Implemen
 	 */
 	public EList<CoSimulationType> getFmiCoSimulationCapabilities() {
 		if (fmiCoSimulationCapabilities == null) {
-			fmiCoSimulationCapabilities = new EObjectResolvingEList<CoSimulationType>(CoSimulationType.class, this, FmiModelPackage.IMPLEMENTATION__FMI_CO_SIMULATION_CAPABILITIES);
+			fmiCoSimulationCapabilities = new EObjectContainmentEList<CoSimulationType>(CoSimulationType.class, this, FmiModelPackage.IMPLEMENTATION__FMI_CO_SIMULATION_CAPABILITIES);
 		}
 		return fmiCoSimulationCapabilities;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case FmiModelPackage.IMPLEMENTATION__FMI_CO_SIMULATION_CAPABILITIES:
+				return ((InternalEList<?>)getFmiCoSimulationCapabilities()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**

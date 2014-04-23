@@ -295,7 +295,7 @@ public interface FmiModelDescriptionType extends EObject {
 	 * @return the value of the '<em>Implementation</em>' containment reference.
 	 * @see #setImplementation(Implementation)
 	 * @see FmiModel.FmiModelPackage#getFmiModelDescriptionType_Implementation()
-	 * @model containment="true"
+	 * @model containment="true" derived="true"
 	 *        extendedMetaData="kind='element' name='Implementation' namespace='##targetNamespace'"
 	 * @generated
 	 */

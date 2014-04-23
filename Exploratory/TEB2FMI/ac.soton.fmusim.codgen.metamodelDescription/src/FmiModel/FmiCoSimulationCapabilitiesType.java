@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see FmiModel.FmiModelPackage#getFmiCoSimulationCapabilitiesType()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface FmiCoSimulationCapabilitiesType extends EObject {

@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Implementation extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Fmi Co Simulation Capabilities</b></em>' reference list.
+	 * Returns the value of the '<em><b>Fmi Co Simulation Capabilities</b></em>' containment reference list.
 	 * The list contents are of type {@link FmiModel.CoSimulationType}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -31,9 +31,9 @@ public interface Implementation extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Fmi Co Simulation Capabilities</em>' reference list.
+	 * @return the value of the '<em>Fmi Co Simulation Capabilities</em>' containment reference list.
 	 * @see FmiModel.FmiModelPackage#getImplementation_FmiCoSimulationCapabilities()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<CoSimulationType> getFmiCoSimulationCapabilities();

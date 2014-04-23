@@ -853,29 +853,6 @@ public class FmiModelItemProviderAdapterFactory extends FmiModelAdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link FmiModel.FmiCoSimulationCapabilitiesType} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected FmiCoSimulationCapabilitiesTypeItemProvider fmiCoSimulationCapabilitiesTypeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link FmiModel.FmiCoSimulationCapabilitiesType}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createFmiCoSimulationCapabilitiesTypeAdapter() {
-		if (fmiCoSimulationCapabilitiesTypeItemProvider == null) {
-			fmiCoSimulationCapabilitiesTypeItemProvider = new FmiCoSimulationCapabilitiesTypeItemProvider(this);
-		}
-
-		return fmiCoSimulationCapabilitiesTypeItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link FmiModel.CoSimulation_StandAlone} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1054,7 +1031,6 @@ public class FmiModelItemProviderAdapterFactory extends FmiModelAdapterFactory i
 		if (stringTypeItemProvider != null) stringTypeItemProvider.dispose();
 		if (typeDefinitionsTypeItemProvider != null) typeDefinitionsTypeItemProvider.dispose();
 		if (unitDefinitionsTypeItemProvider != null) unitDefinitionsTypeItemProvider.dispose();
-		if (fmiCoSimulationCapabilitiesTypeItemProvider != null) fmiCoSimulationCapabilitiesTypeItemProvider.dispose();
 		if (coSimulation_StandAloneItemProvider != null) coSimulation_StandAloneItemProvider.dispose();
 		if (coSimulation_ToolItemProvider != null) coSimulation_ToolItemProvider.dispose();
 	}

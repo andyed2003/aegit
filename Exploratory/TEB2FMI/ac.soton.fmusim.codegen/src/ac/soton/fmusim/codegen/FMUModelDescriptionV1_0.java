@@ -125,10 +125,6 @@ public class FMUModelDescriptionV1_0 {
 		// set various values
 		FmiModelDescriptionType descriptionType = FmiModelFactory.eINSTANCE
 				.createFmiModelDescriptionType();
-		// Add the modlStructure Attribute
-		ModelStructureType modelStructureType = FmiModelFactory.eINSTANCE
-				.createModelStructureType();
-		descriptionType.setModelStructure(modelStructureType);
 
 		docRoot.setFmiModelDescription(descriptionType);
 		descriptionType.setFmiVersion("1.0");
@@ -144,16 +140,10 @@ public class FMUModelDescriptionV1_0 {
 		ModelVariablesType modelVarsType = FmiModelFactory.eINSTANCE
 				.createModelVariablesType();
 
-		// This is where V1.0 and V2.0 translations differ
-		// There is no co-simulation type.
-		// There is no initial value in the scalar variables
-		// We need a modelIdentifier in the fmiModelDescription
-		// We do not require a modelStructure attribute.
 		descriptionType.setModelVariables(modelVarsType);
 		descriptionType.setModelIdentifier(machine.getName());
 		// The default is zero, until we need to make it configurable
 		descriptionType.setNumberOfContinuousStates(0);
-		descriptionType.setModelStructure(null);
 
 		// the FMI V1 requires an implementation : fmiImplementation
 		// with co-simulation stand-alone type
