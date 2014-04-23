@@ -8,7 +8,8 @@ Bundle-Activator: FmiModel.provider.FmiMetamodelDescriptionEditPlugin$Implementa
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Export-Package: FmiModel.provider
+Export-Package: FmiModel.provider,
+ FmiModelDescriptionV1.provider
 Require-Bundle: org.eclipse.core.runtime,
  ac.soton.fmusim.codegen.metamodelDescription;visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport

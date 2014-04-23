@@ -5,9 +5,9 @@ import java.util.List;
 
 import org.eclipse.emf.common.util.EList;
 
-import FmiModel.DocumentRoot;
-import FmiModel.FmiScalarVariable;
-import FmiModel.ModelVariablesType;
+import FmiModelDescriptionV1.DocumentRoot;
+import FmiModelDescriptionV1.FmiScalarVariable;
+import FmiModelDescriptionV1.ModelVariablesType;
 
 public class ModelDescriptionManager {
 
@@ -28,7 +28,7 @@ public class ModelDescriptionManager {
 	public List<DocumentRoot> getDocumentRootList() {
 		return docRootList;
 	}
-
+	
 	public void setDocumentRootList(List<DocumentRoot> docRoot) {
 		this.docRootList = docRoot;
 	}

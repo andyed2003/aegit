@@ -125,7 +125,15 @@ public class FMUModelDescriptionV2_0 {
 		DocumentRoot docRoot = FmiModelFactory.eINSTANCE.createDocumentRoot();
 		ModelDescriptionManager modelDescriptionsManager = ModelDescriptionManager.getDefault();
 		// add this machine documentroot to the list
-		modelDescriptionsManager .getDocumentRootList().add(docRoot);
+// **************************************************************************//		
+// IF we implement an FMI V2 version of this, we will need to add a 
+// modelDescriptionsManager that can handle  FmiModelFactory.DocumentRoot.
+// Since We only handle FMU v1 in the current manager.
+//		such as
+//		FmiModel.DocumentRoot docRoot = FmiModelFactory.eINSTANCE.createDocumentRoot();
+//		modelDescriptionsManagerV2.getDocumentRootList().add(docRoot);
+// **************************************************************************//
+		
 		// set various values
 		FmiModelDescriptionType descriptionType = FmiModelFactory.eINSTANCE
 				.createFmiModelDescriptionType();

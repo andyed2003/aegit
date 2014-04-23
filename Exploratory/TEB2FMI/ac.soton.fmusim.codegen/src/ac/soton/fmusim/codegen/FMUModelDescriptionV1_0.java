@@ -43,20 +43,12 @@ import org.rodinp.core.IRodinFile;
 import org.rodinp.core.IRodinProject;
 import org.rodinp.core.RodinCore;
 
-import FmiModel.BooleanType;
-import FmiModel.CausalityType;
-import FmiModel.CoSimulation_StandAlone;
-import FmiModel.DocumentRoot;
-import FmiModel.FmiModelDescriptionType;
-import FmiModel.FmiModelFactory;
-import FmiModel.FmiScalarVariable;
-import FmiModel.IntegerType;
-import FmiModel.ModelStructureType;
-import FmiModel.ModelVariablesType;
-import FmiModel.RealType1;
-import FmiModel.StringType;
-import FmiModel.VariabilityType;
-import FmiModel.util.FmiModelResourceImpl;
+import FmiModelDescriptionV1.CoSimulation_StandAlone;
+import FmiModelDescriptionV1.FmiModelDescriptionV1Factory;
+import FmiModelDescriptionV1.ImplementationType;
+import FmiModelDescriptionV1.RealType;
+import FmiModelDescriptionV1.ToolType;
+import FmiModelDescriptionV1.util.FmiModelDescriptionV1ResourceImpl;
 import ac.soton.fmusim.components.EventBComponent;
 import ac.soton.fmusim.components.Port;
 
@@ -118,12 +110,12 @@ public class FMUModelDescriptionV1_0 {
 		boolVariableCount = 0;
 		// Each fmuMachine will have its own DocumentRoot
 		
-		DocumentRoot docRoot = FmiModelFactory.eINSTANCE.createDocumentRoot();
+		FmiModelDescriptionV1.DocumentRoot docRoot = FmiModelDescriptionV1Factory.eINSTANCE.createDocumentRoot();
 		// add this machine documentroot to the list
 		ModelDescriptionManager modelDescriptionsManager = ModelDescriptionManager.getDefault();
 		modelDescriptionsManager.getDocumentRootList().add(docRoot);
 		// set various values
-		FmiModelDescriptionType descriptionType = FmiModelFactory.eINSTANCE
+		 FmiModelDescriptionV1.FmiModelDescriptionType descriptionType = FmiModelDescriptionV1Factory.eINSTANCE
 				.createFmiModelDescriptionType();
 
 		docRoot.setFmiModelDescription(descriptionType);
@@ -137,7 +129,7 @@ public class FMUModelDescriptionV1_0 {
 		descriptionType.setModelName(machine.getName());
 		descriptionType.setNumberOfEventIndicators(0);
 		// This is where we store the FMI scalar variables
-		ModelVariablesType modelVarsType = FmiModelFactory.eINSTANCE
+		FmiModelDescriptionV1.ModelVariablesType modelVarsType = FmiModelDescriptionV1Factory.eINSTANCE
 				.createModelVariablesType();
 
 		descriptionType.setModelVariables(modelVarsType);
@@ -147,8 +139,10 @@ public class FMUModelDescriptionV1_0 {
 
 		// the FMI V1 requires an implementation : fmiImplementation
 		// with co-simulation stand-alone type
-		CoSimulation_StandAlone coSimStandAlone = FmiModelFactory.eINSTANCE.createCoSimulation_StandAlone();
-		descriptionType.setImplementation(coSimStandAlone);
+//		ImplementationType implementationType = FmiModelDescriptionV1Factory.eINSTANCE.createImplementationType();
+		CoSimulation_StandAlone standAloneType = FmiModelDescriptionV1Factory.eINSTANCE.createCoSimulation_StandAlone();
+//		implementationType.setFmiImplementation(standAloneType);
+		descriptionType.setImplementation(standAloneType);
 		
 		
 		// Get the info to obtain the type environment
@@ -178,15 +172,15 @@ public class FMUModelDescriptionV1_0 {
 		// Create a descriptions folder.
 		String fileName = machine.getName()
 				+ "."
-				+ FmiModelFactory.eINSTANCE.getEPackage().getName()
+				+ FmiModelDescriptionV1Factory.eINSTANCE.getEPackage().getName()
 						.toLowerCase();
 		File newFile = createNewFile(fileName, "descriptions");
 		String netUri = newFile.toURI().toString();
 		URI emfURI = URI.createURI(netUri);
 		ResourceSet resSet = new ResourceSetImpl();
 		Resource resource = resSet.createResource(emfURI);
-		if (resource instanceof FmiModelResourceImpl) {
-			FmiModelResourceImpl fmiModelRes = (FmiModelResourceImpl) resource;
+		if (resource instanceof FmiModelDescriptionV1ResourceImpl) {
+			FmiModelDescriptionV1ResourceImpl fmiModelRes = (FmiModelDescriptionV1ResourceImpl) resource;
 			fmiModelRes.setEncoding("UTF-8");
 		}
 		resource.getContents().add(docRoot);
@@ -219,13 +213,13 @@ public class FMUModelDescriptionV1_0 {
 
 	// The method populates the ModelVariables segment with scalar
 	// variables, generated from the variable's type etc.
-	private void variableToFMIScalar(ModelVariablesType modelVarsType,
+	private void variableToFMIScalar(FmiModelDescriptionV1.ModelVariablesType modelVarsType,
 			ITypeEnvironment typeEnv, Variable var,
 			ArrayList<VariableDecl> variableDeclList,
-			FmiModelDescriptionType descriptionType) {
+			FmiModelDescriptionV1.FmiModelDescriptionType descriptionType) {
 		Type type = typeEnv.getType(var.getName());
 		// Create and set an fmiScalar value for each variable
-		FmiScalarVariable scalar = FmiModelFactory.eINSTANCE
+		  FmiModelDescriptionV1.FmiScalarVariable scalar = FmiModelDescriptionV1Factory.eINSTANCE
 				.createFmiScalarVariable();
 
 		modelVarsType.getScalarVariable().add(scalar);
@@ -234,19 +228,19 @@ public class FMUModelDescriptionV1_0 {
 
 		if (inputPortNames.contains(var.getName())) {
 			// set the causality in the scalar
-			scalar.setCausality(CausalityType.INPUT);
+			scalar.setCausality(FmiModelDescriptionV1.CausalityType.INPUT);
 		} else if (outputPortNames.contains(var.getName())) {
 			// set the causality in the scalar
-			scalar.setCausality(CausalityType.OUTPUT);
+			scalar.setCausality(FmiModelDescriptionV1.CausalityType.OUTPUT);
 		}
 		// Add a type if it is an integer
 		if (typeString.equals(INTEGER)) {
 			scalar.setValueReference(integerVariableCount);
 			integerVariableCount++;
-			IntegerType integerType = FmiModelFactory.eINSTANCE
+			FmiModelDescriptionV1.IntegerType integerType = FmiModelDescriptionV1Factory.eINSTANCE
 					.createIntegerType();
 			scalar.setInteger(integerType);
-			if (scalar.getCausality() == CausalityType.INPUT) {
+			if (scalar.getCausality() == FmiModelDescriptionV1.CausalityType.INPUT) {
 				// input causality requires an initial 'start' value
 				for (VariableDecl varDecl : variableDeclList) {
 					if (varDecl.getIdentifier().equals(var.getName())) {
@@ -261,9 +255,9 @@ public class FMUModelDescriptionV1_0 {
 		else if (typeString.equals(REAL)) {
 			scalar.setValueReference(realVariableCount);
 			realVariableCount++;
-			RealType1 realType = FmiModelFactory.eINSTANCE.createRealType1();
+			RealType realType = FmiModelDescriptionV1Factory.eINSTANCE.createRealType();
 			scalar.setReal(realType);
-			if (scalar.getCausality() == CausalityType.INPUT) {
+			if (scalar.getCausality() == FmiModelDescriptionV1.CausalityType.INPUT) {
 				// input causality requires an initial 'start' value
 				for (VariableDecl varDecl : variableDeclList) {
 					if (varDecl.getIdentifier().equals(var.getName())) {
@@ -278,10 +272,10 @@ public class FMUModelDescriptionV1_0 {
 		else if (typeString.equals(STRING)) {
 			scalar.setValueReference(stringVariableCount);
 			stringVariableCount++;
-			StringType stringType = FmiModelFactory.eINSTANCE
+			FmiModelDescriptionV1.StringType stringType = FmiModelDescriptionV1Factory.eINSTANCE
 					.createStringType();
 			scalar.setString(stringType);
-			if (scalar.getCausality() == CausalityType.INPUT) {
+			if (scalar.getCausality() == FmiModelDescriptionV1.CausalityType.INPUT) {
 				// input causality requires an initial 'start' value
 				for (VariableDecl varDecl : variableDeclList) {
 					if (varDecl.getIdentifier().equals(var.getName())) {
@@ -295,10 +289,10 @@ public class FMUModelDescriptionV1_0 {
 		else if (typeString.equals(BOOLEAN)) {
 			scalar.setValueReference(boolVariableCount);
 			boolVariableCount++;
-			BooleanType boolType = FmiModelFactory.eINSTANCE
+			 FmiModelDescriptionV1.BooleanType boolType = FmiModelDescriptionV1Factory.eINSTANCE
 					.createBooleanType();
 			scalar.setBoolean(boolType);
-			if (scalar.getCausality() == CausalityType.INPUT) {
+			if (scalar.getCausality() == FmiModelDescriptionV1.CausalityType.INPUT) {
 				// input causality requires an initial 'start' value
 				for (VariableDecl varDecl : variableDeclList) {
 					if (varDecl.getIdentifier().equals(var.getName())) {
@@ -311,7 +305,7 @@ public class FMUModelDescriptionV1_0 {
 		}
 		// FMI V1.0 does not use this attribute but we set it to discrete
 		// since co-simulation of the FMU is discrete
-		scalar.setVariability(VariabilityType.DISCRETE);
+		scalar.setVariability(FmiModelDescriptionV1.VariabilityType.DISCRETE);
 	}
 
 	private ArrayList<VariableDecl> createVariableDeclList(

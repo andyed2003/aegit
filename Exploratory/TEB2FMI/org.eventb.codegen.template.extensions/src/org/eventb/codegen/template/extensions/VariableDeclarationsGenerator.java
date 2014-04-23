@@ -10,8 +10,8 @@ import org.eventb.codegen.il1.translator.IL1TranslationManager;
 import org.eventb.codegen.templates.IGenerator;
 import org.eventb.codegen.templates.IGeneratorData;
 
-import FmiModel.DocumentRoot;
-import FmiModel.FmiScalarVariable;
+import FmiModelDescriptionV1.DocumentRoot;
+import FmiModelDescriptionV1.FmiScalarVariable;
 import ac.soton.fmusim.codegen.FMUTranslatorHelper;
 import ac.soton.fmusim.codegen.ModelDescriptionManager;
 
