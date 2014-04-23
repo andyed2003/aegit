@@ -2,7 +2,6 @@
  */
 package FmiModel.impl;
 
-import FmiModel.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,6 +19,8 @@ import FmiModel.BooleanType;
 import FmiModel.CategoryType;
 import FmiModel.CausalityType;
 import FmiModel.CoSimulationType;
+import FmiModel.CoSimulation_StandAlone;
+import FmiModel.CoSimulation_Tool;
 import FmiModel.DefaultExperimentType;
 import FmiModel.DerivativeType;
 import FmiModel.DerivativesType;
@@ -28,6 +29,7 @@ import FmiModel.DocumentRoot;
 import FmiModel.EnumerationType;
 import FmiModel.EnumerationType1;
 import FmiModel.FmiAnnotation;
+import FmiModel.FmiCoSimulationCapabilitiesType;
 import FmiModel.FmiDependencyFactorKind;
 import FmiModel.FmiModelDescriptionType;
 import FmiModel.FmiModelFactory;

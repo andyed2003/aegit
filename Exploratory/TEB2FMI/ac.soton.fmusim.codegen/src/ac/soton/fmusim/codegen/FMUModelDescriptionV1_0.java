@@ -45,7 +45,6 @@ import org.rodinp.core.RodinCore;
 
 import FmiModel.BooleanType;
 import FmiModel.CausalityType;
-import FmiModel.CoSimulationType;
 import FmiModel.CoSimulation_StandAlone;
 import FmiModel.DocumentRoot;
 import FmiModel.FmiModelDescriptionType;
@@ -57,7 +56,6 @@ import FmiModel.ModelVariablesType;
 import FmiModel.RealType1;
 import FmiModel.StringType;
 import FmiModel.VariabilityType;
-import FmiModel.coSimulation_StandAlone;
 import FmiModel.util.FmiModelResourceImpl;
 import ac.soton.fmusim.components.EventBComponent;
 import ac.soton.fmusim.components.Port;

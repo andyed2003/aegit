@@ -2,19 +2,16 @@
  */
 package FmiModel.impl;
 
-import FmiModel.CoSimulationType;
-import FmiModel.FmiModelPackage;
-import FmiModel.Implementation;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+
+import FmiModel.CoSimulationType;
+import FmiModel.FmiModelPackage;
+import FmiModel.Implementation;
 
 /**
  * <!-- begin-user-doc -->

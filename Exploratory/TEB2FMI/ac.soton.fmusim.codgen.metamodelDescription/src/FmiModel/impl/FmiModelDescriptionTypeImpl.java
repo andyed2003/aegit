@@ -20,7 +20,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import FmiModel.CoSimulationType;
 import FmiModel.DefaultExperimentType;
 import FmiModel.FmiAnnotation;
-import FmiModel.FmiImplementationType;
 import FmiModel.FmiModelDescriptionType;
 import FmiModel.FmiModelPackage;
 import FmiModel.Implementation;

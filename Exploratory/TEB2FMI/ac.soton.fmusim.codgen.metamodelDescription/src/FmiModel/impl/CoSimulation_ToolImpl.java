@@ -2,10 +2,10 @@
  */
 package FmiModel.impl;
 
+import org.eclipse.emf.ecore.EClass;
+
 import FmiModel.CoSimulation_Tool;
 import FmiModel.FmiModelPackage;
-
-import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->

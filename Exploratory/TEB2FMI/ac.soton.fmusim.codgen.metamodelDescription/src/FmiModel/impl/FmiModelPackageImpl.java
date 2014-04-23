@@ -31,7 +31,6 @@ import FmiModel.EnumerationType1;
 import FmiModel.FmiAnnotation;
 import FmiModel.FmiCoSimulationCapabilitiesType;
 import FmiModel.FmiDependencyFactorKind;
-import FmiModel.FmiImplementationType;
 import FmiModel.FmiModelDescriptionType;
 import FmiModel.FmiModelFactory;
 import FmiModel.FmiModelPackage;
@@ -60,8 +59,6 @@ import FmiModel.TypeDefinitionsType;
 import FmiModel.UnitDefinitionsType;
 import FmiModel.VariabilityType;
 import FmiModel.VariableNamingConventionType;
-import FmiModel.coSimulation_StandAlone;
-import FmiModel.coSimulation_Tool;
 import FmiModel.util.FmiModelValidator;
 
 /**

@@ -2,7 +2,6 @@
  */
 package FmiModel.util;
 
-import FmiModel.*;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
@@ -12,6 +11,8 @@ import FmiModel.BaseUnitType;
 import FmiModel.BooleanType;
 import FmiModel.CategoryType;
 import FmiModel.CoSimulationType;
+import FmiModel.CoSimulation_StandAlone;
+import FmiModel.CoSimulation_Tool;
 import FmiModel.DefaultExperimentType;
 import FmiModel.DerivativeType;
 import FmiModel.DerivativesType;
@@ -20,12 +21,14 @@ import FmiModel.DocumentRoot;
 import FmiModel.EnumerationType;
 import FmiModel.EnumerationType1;
 import FmiModel.FmiAnnotation;
+import FmiModel.FmiCoSimulationCapabilitiesType;
 import FmiModel.FmiModelDescriptionType;
 import FmiModel.FmiModelPackage;
 import FmiModel.FmiScalarVariable;
 import FmiModel.FmiSimpleType;
 import FmiModel.FmiUnit;
 import FmiModel.FmiVariableDependency;
+import FmiModel.Implementation;
 import FmiModel.InputType;
 import FmiModel.InputsType;
 import FmiModel.IntegerType;
