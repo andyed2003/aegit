@@ -23,12 +23,12 @@
 
    <extension point="org.eclipse.ui.editors">
       <editor
-            id="FmiModel.presentation.FmiModelEditorID"
+            id="FmiModelV1.presentation.FmiModelEditorID"
             name="%_UI_FmiModelEditor_label"
             icon="icons/full/obj16/FmiModelModelFile.gif"
-            extensions="fmimodel"
-            class="FmiModel.presentation.FmiModelEditor"
-            contributorClass="FmiModel.presentation.FmiModelActionBarContributor">
+            extensions="fmimodelv1"
+            class="FmiModelV1.presentation.FmiModelV1Editor"
+            contributorClass="FmiModelV1.presentation.FmiModelV1ActionBarContributor">
       </editor>
    </extension>
 

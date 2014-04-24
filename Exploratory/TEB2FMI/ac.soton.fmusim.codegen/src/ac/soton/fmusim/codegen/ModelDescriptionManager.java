@@ -5,9 +5,9 @@ import java.util.List;
 
 import org.eclipse.emf.common.util.EList;
 
-import FmiModelDescriptionV1.DocumentRoot;
-import FmiModelDescriptionV1.FmiScalarVariable;
-import FmiModelDescriptionV1.ModelVariablesType;
+import FmiModelV1.DocumentRoot;
+import FmiModelV1.FmiScalarVariable;
+import FmiModelV1.ModelVariablesType;
 
 public class ModelDescriptionManager {
 

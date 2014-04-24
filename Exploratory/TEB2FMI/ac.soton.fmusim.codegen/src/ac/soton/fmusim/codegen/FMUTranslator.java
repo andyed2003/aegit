@@ -181,12 +181,14 @@ public class FMUTranslator extends AbstractTranslateEventBToTarget {
 					program, taskingTranslationManager, targetProject,
 					eventBComponent);
 			v1ModelDescription.create();
-		} else if (getTargetFMIVersion().equalsIgnoreCase(FMI_VERSION_2_0)) {
-			FMUModelDescriptionV2_0 v2ModelDescription = new FMUModelDescriptionV2_0(
-					program, taskingTranslationManager, targetProject,
-					eventBComponent);
-			v2ModelDescription.create();
-		} else {
+		} 
+//		else if (getTargetFMIVersion().equalsIgnoreCase(FMI_VERSION_2_0)) {
+//			FMUModelDescriptionV2_0 v2ModelDescription = new FMUModelDescriptionV2_0(
+//					program, taskingTranslationManager, targetProject,
+//					eventBComponent);
+//			v2ModelDescription.create();
+//		}
+		else {
 			throw new FMUTranslatorException(
 					"Cannot generate model description for FMI version "
 							+ getTargetFMIVersion());

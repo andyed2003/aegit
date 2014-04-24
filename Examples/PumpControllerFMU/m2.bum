@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd;org.eventb.codegen.ui.cgConfig" version="5">
+<org.eventb.core.machineFile org.eventb.core.comment="gf" org.eventb.core.configuration="org.eventb.core.fwd;org.eventb.codegen.ui.cgConfig" version="5">
 <org.eventb.core.refinesMachine name="'" org.eventb.core.target="m1"/>
 <org.eventb.core.seesContext name="N" org.eventb.core.target="ctx"/>
 <org.eventb.core.variable name="(" org.eventb.core.identifier="c_level"/>
