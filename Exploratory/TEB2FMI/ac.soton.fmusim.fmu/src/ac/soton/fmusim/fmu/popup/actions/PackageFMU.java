@@ -1,6 +1,7 @@
 package ac.soton.fmusim.fmu.popup.actions;
 
 import java.io.BufferedInputStream;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -12,6 +13,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
+
+import javax.xml.bind.annotation.XmlList;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
@@ -278,20 +281,46 @@ public class PackageFMU implements IObjectActionDelegate {
 		InputStream srcDescriptionStream = srcDescriptionFile.getContents();
 		InputStreamReader descriptionStreamReader = new InputStreamReader(
 				srcDescriptionStream);
-
+		
+		
+		
 		// Create the target description path. It goes in the archive root
 		String tgtDescriptionFileName = "modelDescription.xml";
 
 		// create a zip entry
 		ZipEntry ze = new ZipEntry(tgtDescriptionFileName);
 		zipOut.putNextEntry(ze);
+		
+// Begin new approach to writing the XML
+// filtering out the documentRoot tag
+		BufferedReader bufferedReader = new BufferedReader(descriptionStreamReader);
 
-		// write the file to the zip entry
-		int value = descriptionStreamReader.read();
-		while (value >= 0) {
-			zipOut.write(value);
-			value = descriptionStreamReader.read();
+		
+		String line = bufferedReader.readLine();
+		
+		while(line != null){
+			if(!line.contains("DocumentRoot")){
+				if(line.contains("xsi:")){
+					line = line.replace("xsi:", "");
+				}
+				
+				for(int index = 0; index < line.length(); index++){
+					char l = line.charAt(index);
+					zipOut.write(l);
+				}
+				zipOut.write('\n');
+			}
+			line = bufferedReader.readLine();
 		}
+// end new approach		
+		
+		
+		// write the file to the zip entry
+//		int value = descriptionStreamReader.read();
+//		while (value >= 0) {
+//			zipOut.write(value);
+//			value = descriptionStreamReader.read();
+//		}
 		descriptionStreamReader.close();
 	}
 
