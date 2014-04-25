@@ -4,6 +4,8 @@ package FmiModelV1;
 
 import javax.xml.datatype.XMLGregorianCalendar;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -174,30 +176,20 @@ public interface FmiModelDescriptionType extends EObject {
 	void setModelVariables(ModelVariablesType value);
 
 	/**
-	 * Returns the value of the '<em><b>Implementation</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Implementation</b></em>' containment reference list.
+	 * The list contents are of type {@link FmiModelV1.ImplementationType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The type of the implementation
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Implementation</em>' containment reference.
-	 * @see #setImplementation(ImplementationType)
+	 * @return the value of the '<em>Implementation</em>' containment reference list.
 	 * @see FmiModelV1.FmiModelV1Package#getFmiModelDescriptionType_Implementation()
-	 * @model containment="true" derived="true"
+	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='Implementation' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	ImplementationType getImplementation();
-
-	/**
-	 * Sets the value of the '{@link FmiModelV1.FmiModelDescriptionType#getImplementation <em>Implementation</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Implementation</em>' containment reference.
-	 * @see #getImplementation()
-	 * @generated
-	 */
-	void setImplementation(ImplementationType value);
+	EList<ImplementationType> getImplementation();
 
 	/**
 	 * Returns the value of the '<em><b>Author</b></em>' attribute.

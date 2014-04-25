@@ -578,72 +578,72 @@ public class FmiModelV1ItemProviderAdapterFactory extends FmiModelV1AdapterFacto
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link FmiModelV1.Capabilities} instances.
+	 * This keeps track of the one adapter used for all {@link FmiModelV1.CapabilitiesType} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CapabilitiesItemProvider capabilitiesItemProvider;
+	protected CapabilitiesTypeItemProvider capabilitiesTypeItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link FmiModelV1.Capabilities}.
+	 * This creates an adapter for a {@link FmiModelV1.CapabilitiesType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createCapabilitiesAdapter() {
-		if (capabilitiesItemProvider == null) {
-			capabilitiesItemProvider = new CapabilitiesItemProvider(this);
+	public Adapter createCapabilitiesTypeAdapter() {
+		if (capabilitiesTypeItemProvider == null) {
+			capabilitiesTypeItemProvider = new CapabilitiesTypeItemProvider(this);
 		}
 
-		return capabilitiesItemProvider;
+		return capabilitiesTypeItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link FmiModelV1.CoSimulation_StandAlone} instances.
+	 * This keeps track of the one adapter used for all {@link FmiModelV1.ImplementationType} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CoSimulation_StandAloneItemProvider coSimulation_StandAloneItemProvider;
+	protected ImplementationTypeItemProvider implementationTypeItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link FmiModelV1.CoSimulation_StandAlone}.
+	 * This creates an adapter for a {@link FmiModelV1.ImplementationType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createCoSimulation_StandAloneAdapter() {
-		if (coSimulation_StandAloneItemProvider == null) {
-			coSimulation_StandAloneItemProvider = new CoSimulation_StandAloneItemProvider(this);
+	public Adapter createImplementationTypeAdapter() {
+		if (implementationTypeItemProvider == null) {
+			implementationTypeItemProvider = new ImplementationTypeItemProvider(this);
 		}
 
-		return coSimulation_StandAloneItemProvider;
+		return implementationTypeItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link FmiModelV1.CoSimulation_Tool} instances.
+	 * This keeps track of the one adapter used for all {@link FmiModelV1.CoSimulation_StandAloneType} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CoSimulation_ToolItemProvider coSimulation_ToolItemProvider;
+	protected CoSimulation_StandAloneTypeItemProvider coSimulation_StandAloneTypeItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link FmiModelV1.CoSimulation_Tool}.
+	 * This creates an adapter for a {@link FmiModelV1.CoSimulation_StandAloneType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createCoSimulation_ToolAdapter() {
-		if (coSimulation_ToolItemProvider == null) {
-			coSimulation_ToolItemProvider = new CoSimulation_ToolItemProvider(this);
+	public Adapter createCoSimulation_StandAloneTypeAdapter() {
+		if (coSimulation_StandAloneTypeItemProvider == null) {
+			coSimulation_StandAloneTypeItemProvider = new CoSimulation_StandAloneTypeItemProvider(this);
 		}
 
-		return coSimulation_ToolItemProvider;
+		return coSimulation_StandAloneTypeItemProvider;
 	}
 
 	/**
@@ -790,9 +790,9 @@ public class FmiModelV1ItemProviderAdapterFactory extends FmiModelV1AdapterFacto
 		if (toolTypeItemProvider != null) toolTypeItemProvider.dispose();
 		if (typeDefinitionsTypeItemProvider != null) typeDefinitionsTypeItemProvider.dispose();
 		if (unitDefinitionsTypeItemProvider != null) unitDefinitionsTypeItemProvider.dispose();
-		if (capabilitiesItemProvider != null) capabilitiesItemProvider.dispose();
-		if (coSimulation_StandAloneItemProvider != null) coSimulation_StandAloneItemProvider.dispose();
-		if (coSimulation_ToolItemProvider != null) coSimulation_ToolItemProvider.dispose();
+		if (capabilitiesTypeItemProvider != null) capabilitiesTypeItemProvider.dispose();
+		if (implementationTypeItemProvider != null) implementationTypeItemProvider.dispose();
+		if (coSimulation_StandAloneTypeItemProvider != null) coSimulation_StandAloneTypeItemProvider.dispose();
 		if (vendorAnnotationsTypeItemProvider != null) vendorAnnotationsTypeItemProvider.dispose();
 	}
 

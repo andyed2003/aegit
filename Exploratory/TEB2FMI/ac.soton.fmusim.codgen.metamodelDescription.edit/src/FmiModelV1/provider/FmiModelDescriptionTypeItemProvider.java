@@ -480,12 +480,7 @@ public class FmiModelDescriptionTypeItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(FmiModelV1Package.Literals.FMI_MODEL_DESCRIPTION_TYPE__IMPLEMENTATION,
-				 FmiModelV1Factory.eINSTANCE.createCoSimulation_StandAlone()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(FmiModelV1Package.Literals.FMI_MODEL_DESCRIPTION_TYPE__IMPLEMENTATION,
-				 FmiModelV1Factory.eINSTANCE.createCoSimulation_Tool()));
+				 FmiModelV1Factory.eINSTANCE.createImplementationType()));
 	}
 
 	/**

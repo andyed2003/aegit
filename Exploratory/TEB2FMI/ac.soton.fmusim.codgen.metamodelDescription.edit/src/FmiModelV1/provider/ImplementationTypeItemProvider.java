@@ -77,7 +77,7 @@ public class ImplementationTypeItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(FmiModelV1Package.Literals.IMPLEMENTATION_TYPE__CAPABILITIES);
+			childrenFeatures.add(FmiModelV1Package.Literals.IMPLEMENTATION_TYPE__CO_SIMULATION_STAND_ALONE);
 		}
 		return childrenFeatures;
 	}
@@ -93,6 +93,17 @@ public class ImplementationTypeItemProvider
 		// adding (see {@link AddCommand}) it as a child.
 
 		return super.getChildFeature(object, child);
+	}
+
+	/**
+	 * This returns ImplementationType.gif.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ImplementationType"));
 	}
 
 	/**
@@ -118,7 +129,7 @@ public class ImplementationTypeItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ImplementationType.class)) {
-			case FmiModelV1Package.IMPLEMENTATION_TYPE__CAPABILITIES:
+			case FmiModelV1Package.IMPLEMENTATION_TYPE__CO_SIMULATION_STAND_ALONE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -138,8 +149,8 @@ public class ImplementationTypeItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(FmiModelV1Package.Literals.IMPLEMENTATION_TYPE__CAPABILITIES,
-				 FmiModelV1Factory.eINSTANCE.createCapabilities()));
+				(FmiModelV1Package.Literals.IMPLEMENTATION_TYPE__CO_SIMULATION_STAND_ALONE,
+				 FmiModelV1Factory.eINSTANCE.createCoSimulation_StandAloneType()));
 	}
 
 	/**

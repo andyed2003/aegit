@@ -695,7 +695,7 @@ public interface FmiModelV1Package extends EPackage {
 	int FMI_MODEL_DESCRIPTION_TYPE__MODEL_VARIABLES = 4;
 
 	/**
-	 * The feature id for the '<em><b>Implementation</b></em>' containment reference.
+	 * The feature id for the '<em><b>Implementation</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1580,14 +1580,14 @@ public interface FmiModelV1Package extends EPackage {
 	int UNIT_DEFINITIONS_TYPE_FEATURE_COUNT = 2;
 
 	/**
-	 * The meta object id for the '{@link FmiModelV1.impl.CapabilitiesImpl <em>Capabilities</em>}' class.
+	 * The meta object id for the '{@link FmiModelV1.impl.CapabilitiesTypeImpl <em>Capabilities Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see FmiModelV1.impl.CapabilitiesImpl
-	 * @see FmiModelV1.impl.FmiModelV1PackageImpl#getCapabilities()
+	 * @see FmiModelV1.impl.CapabilitiesTypeImpl
+	 * @see FmiModelV1.impl.FmiModelV1PackageImpl#getCapabilitiesType()
 	 * @generated
 	 */
-	int CAPABILITIES = 22;
+	int CAPABILITIES_TYPE = 22;
 
 	/**
 	 * The feature id for the '<em><b>Can Handle Variable Communication Step Size</b></em>' attribute.
@@ -1596,7 +1596,7 @@ public interface FmiModelV1Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CAPABILITIES__CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE = 0;
+	int CAPABILITIES_TYPE__CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE = 0;
 
 	/**
 	 * The feature id for the '<em><b>Can Handle Events</b></em>' attribute.
@@ -1605,7 +1605,7 @@ public interface FmiModelV1Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CAPABILITIES__CAN_HANDLE_EVENTS = 1;
+	int CAPABILITIES_TYPE__CAN_HANDLE_EVENTS = 1;
 
 	/**
 	 * The feature id for the '<em><b>Can Reject Steps</b></em>' attribute.
@@ -1614,7 +1614,7 @@ public interface FmiModelV1Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CAPABILITIES__CAN_REJECT_STEPS = 2;
+	int CAPABILITIES_TYPE__CAN_REJECT_STEPS = 2;
 
 	/**
 	 * The feature id for the '<em><b>Can Interpolate Inputs</b></em>' attribute.
@@ -1623,7 +1623,7 @@ public interface FmiModelV1Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CAPABILITIES__CAN_INTERPOLATE_INPUTS = 3;
+	int CAPABILITIES_TYPE__CAN_INTERPOLATE_INPUTS = 3;
 
 	/**
 	 * The feature id for the '<em><b>Max Output Derivative Order</b></em>' attribute.
@@ -1632,7 +1632,7 @@ public interface FmiModelV1Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CAPABILITIES__MAX_OUTPUT_DERIVATIVE_ORDER = 4;
+	int CAPABILITIES_TYPE__MAX_OUTPUT_DERIVATIVE_ORDER = 4;
 
 	/**
 	 * The feature id for the '<em><b>Can Run Asynchronuously</b></em>' attribute.
@@ -1641,7 +1641,7 @@ public interface FmiModelV1Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CAPABILITIES__CAN_RUN_ASYNCHRONUOUSLY = 5;
+	int CAPABILITIES_TYPE__CAN_RUN_ASYNCHRONUOUSLY = 5;
 
 	/**
 	 * The feature id for the '<em><b>Can Signal Events</b></em>' attribute.
@@ -1650,7 +1650,7 @@ public interface FmiModelV1Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CAPABILITIES__CAN_SIGNAL_EVENTS = 6;
+	int CAPABILITIES_TYPE__CAN_SIGNAL_EVENTS = 6;
 
 	/**
 	 * The feature id for the '<em><b>Can Be Instantiated Only Once Per Process</b></em>' attribute.
@@ -1659,7 +1659,7 @@ public interface FmiModelV1Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CAPABILITIES__CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS = 7;
+	int CAPABILITIES_TYPE__CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS = 7;
 
 	/**
 	 * The feature id for the '<em><b>Can Not Use Memory Management Functions</b></em>' attribute.
@@ -1668,7 +1668,7 @@ public interface FmiModelV1Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CAPABILITIES__CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS = 8;
+	int CAPABILITIES_TYPE__CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS = 8;
 
 	/**
 	 * The feature id for the '<em><b>Can Get And Set FM Ustate</b></em>' attribute.
@@ -1677,7 +1677,7 @@ public interface FmiModelV1Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CAPABILITIES__CAN_GET_AND_SET_FM_USTATE = 9;
+	int CAPABILITIES_TYPE__CAN_GET_AND_SET_FM_USTATE = 9;
 
 	/**
 	 * The feature id for the '<em><b>Can Serialize FM Ustate</b></em>' attribute.
@@ -1686,7 +1686,7 @@ public interface FmiModelV1Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CAPABILITIES__CAN_SERIALIZE_FM_USTATE = 10;
+	int CAPABILITIES_TYPE__CAN_SERIALIZE_FM_USTATE = 10;
 
 	/**
 	 * The feature id for the '<em><b>Model Identifier</b></em>' attribute.
@@ -1695,7 +1695,7 @@ public interface FmiModelV1Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CAPABILITIES__MODEL_IDENTIFIER = 11;
+	int CAPABILITIES_TYPE__MODEL_IDENTIFIER = 11;
 
 	/**
 	 * The feature id for the '<em><b>Needs Execution Tool</b></em>' attribute.
@@ -1704,16 +1704,16 @@ public interface FmiModelV1Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CAPABILITIES__NEEDS_EXECUTION_TOOL = 12;
+	int CAPABILITIES_TYPE__NEEDS_EXECUTION_TOOL = 12;
 
 	/**
-	 * The number of structural features of the '<em>Capabilities</em>' class.
+	 * The number of structural features of the '<em>Capabilities Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CAPABILITIES_FEATURE_COUNT = 13;
+	int CAPABILITIES_TYPE_FEATURE_COUNT = 13;
 
 	/**
 	 * The meta object id for the '{@link FmiModelV1.impl.ImplementationTypeImpl <em>Implementation Type</em>}' class.
@@ -1726,13 +1726,13 @@ public interface FmiModelV1Package extends EPackage {
 	int IMPLEMENTATION_TYPE = 23;
 
 	/**
-	 * The feature id for the '<em><b>Capabilities</b></em>' containment reference.
+	 * The feature id for the '<em><b>Co Simulation Stand Alone</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMPLEMENTATION_TYPE__CAPABILITIES = 0;
+	int IMPLEMENTATION_TYPE__CO_SIMULATION_STAND_ALONE = 0;
 
 	/**
 	 * The number of structural features of the '<em>Implementation Type</em>' class.
@@ -1744,14 +1744,14 @@ public interface FmiModelV1Package extends EPackage {
 	int IMPLEMENTATION_TYPE_FEATURE_COUNT = 1;
 
 	/**
-	 * The meta object id for the '{@link FmiModelV1.impl.CoSimulation_StandAloneImpl <em>Co Simulation Stand Alone</em>}' class.
+	 * The meta object id for the '{@link FmiModelV1.impl.CoSimulation_StandAloneTypeImpl <em>Co Simulation Stand Alone Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see FmiModelV1.impl.CoSimulation_StandAloneImpl
-	 * @see FmiModelV1.impl.FmiModelV1PackageImpl#getCoSimulation_StandAlone()
+	 * @see FmiModelV1.impl.CoSimulation_StandAloneTypeImpl
+	 * @see FmiModelV1.impl.FmiModelV1PackageImpl#getCoSimulation_StandAloneType()
 	 * @generated
 	 */
-	int CO_SIMULATION_STAND_ALONE = 24;
+	int CO_SIMULATION_STAND_ALONE_TYPE = 24;
 
 	/**
 	 * The feature id for the '<em><b>Capabilities</b></em>' containment reference.
@@ -1760,44 +1760,16 @@ public interface FmiModelV1Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CO_SIMULATION_STAND_ALONE__CAPABILITIES = IMPLEMENTATION_TYPE__CAPABILITIES;
+	int CO_SIMULATION_STAND_ALONE_TYPE__CAPABILITIES = 0;
 
 	/**
-	 * The number of structural features of the '<em>Co Simulation Stand Alone</em>' class.
+	 * The number of structural features of the '<em>Co Simulation Stand Alone Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CO_SIMULATION_STAND_ALONE_FEATURE_COUNT = IMPLEMENTATION_TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link FmiModelV1.impl.CoSimulation_ToolImpl <em>Co Simulation Tool</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see FmiModelV1.impl.CoSimulation_ToolImpl
-	 * @see FmiModelV1.impl.FmiModelV1PackageImpl#getCoSimulation_Tool()
-	 * @generated
-	 */
-	int CO_SIMULATION_TOOL = 25;
-
-	/**
-	 * The feature id for the '<em><b>Capabilities</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CO_SIMULATION_TOOL__CAPABILITIES = IMPLEMENTATION_TYPE__CAPABILITIES;
-
-	/**
-	 * The number of structural features of the '<em>Co Simulation Tool</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CO_SIMULATION_TOOL_FEATURE_COUNT = IMPLEMENTATION_TYPE_FEATURE_COUNT + 0;
+	int CO_SIMULATION_STAND_ALONE_TYPE_FEATURE_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link FmiModelV1.impl.VendorAnnotationsTypeImpl <em>Vendor Annotations Type</em>}' class.
@@ -1807,7 +1779,7 @@ public interface FmiModelV1Package extends EPackage {
 	 * @see FmiModelV1.impl.FmiModelV1PackageImpl#getVendorAnnotationsType()
 	 * @generated
 	 */
-	int VENDOR_ANNOTATIONS_TYPE = 26;
+	int VENDOR_ANNOTATIONS_TYPE = 25;
 
 	/**
 	 * The feature id for the '<em><b>Group</b></em>' attribute list.
@@ -1844,7 +1816,7 @@ public interface FmiModelV1Package extends EPackage {
 	 * @see FmiModelV1.impl.FmiModelV1PackageImpl#getAliasType()
 	 * @generated
 	 */
-	int ALIAS_TYPE = 27;
+	int ALIAS_TYPE = 26;
 
 	/**
 	 * The meta object id for the '{@link FmiModelV1.CausalityType <em>Causality Type</em>}' enum.
@@ -1854,7 +1826,7 @@ public interface FmiModelV1Package extends EPackage {
 	 * @see FmiModelV1.impl.FmiModelV1PackageImpl#getCausalityType()
 	 * @generated
 	 */
-	int CAUSALITY_TYPE = 28;
+	int CAUSALITY_TYPE = 27;
 
 	/**
 	 * The meta object id for the '{@link FmiModelV1.VariabilityType <em>Variability Type</em>}' enum.
@@ -1864,7 +1836,7 @@ public interface FmiModelV1Package extends EPackage {
 	 * @see FmiModelV1.impl.FmiModelV1PackageImpl#getVariabilityType()
 	 * @generated
 	 */
-	int VARIABILITY_TYPE = 29;
+	int VARIABILITY_TYPE = 28;
 
 	/**
 	 * The meta object id for the '{@link FmiModelV1.VariableNamingConventionType <em>Variable Naming Convention Type</em>}' enum.
@@ -1874,7 +1846,7 @@ public interface FmiModelV1Package extends EPackage {
 	 * @see FmiModelV1.impl.FmiModelV1PackageImpl#getVariableNamingConventionType()
 	 * @generated
 	 */
-	int VARIABLE_NAMING_CONVENTION_TYPE = 30;
+	int VARIABLE_NAMING_CONVENTION_TYPE = 29;
 
 	/**
 	 * The meta object id for the '<em>Alias Type Object</em>' data type.
@@ -1884,7 +1856,7 @@ public interface FmiModelV1Package extends EPackage {
 	 * @see FmiModelV1.impl.FmiModelV1PackageImpl#getAliasTypeObject()
 	 * @generated
 	 */
-	int ALIAS_TYPE_OBJECT = 31;
+	int ALIAS_TYPE_OBJECT = 30;
 
 	/**
 	 * The meta object id for the '<em>Causality Type Object</em>' data type.
@@ -1894,7 +1866,7 @@ public interface FmiModelV1Package extends EPackage {
 	 * @see FmiModelV1.impl.FmiModelV1PackageImpl#getCausalityTypeObject()
 	 * @generated
 	 */
-	int CAUSALITY_TYPE_OBJECT = 32;
+	int CAUSALITY_TYPE_OBJECT = 31;
 
 	/**
 	 * The meta object id for the '<em>Variability Type Object</em>' data type.
@@ -1904,7 +1876,7 @@ public interface FmiModelV1Package extends EPackage {
 	 * @see FmiModelV1.impl.FmiModelV1PackageImpl#getVariabilityTypeObject()
 	 * @generated
 	 */
-	int VARIABILITY_TYPE_OBJECT = 33;
+	int VARIABILITY_TYPE_OBJECT = 32;
 
 	/**
 	 * The meta object id for the '<em>Variable Naming Convention Type Object</em>' data type.
@@ -1914,7 +1886,7 @@ public interface FmiModelV1Package extends EPackage {
 	 * @see FmiModelV1.impl.FmiModelV1PackageImpl#getVariableNamingConventionTypeObject()
 	 * @generated
 	 */
-	int VARIABLE_NAMING_CONVENTION_TYPE_OBJECT = 34;
+	int VARIABLE_NAMING_CONVENTION_TYPE_OBJECT = 33;
 
 
 	/**
@@ -2414,10 +2386,10 @@ public interface FmiModelV1Package extends EPackage {
 	EReference getFmiModelDescriptionType_ModelVariables();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link FmiModelV1.FmiModelDescriptionType#getImplementation <em>Implementation</em>}'.
+	 * Returns the meta object for the containment reference list '{@link FmiModelV1.FmiModelDescriptionType#getImplementation <em>Implementation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Implementation</em>'.
+	 * @return the meta object for the containment reference list '<em>Implementation</em>'.
 	 * @see FmiModelV1.FmiModelDescriptionType#getImplementation()
 	 * @see #getFmiModelDescriptionType()
 	 * @generated
@@ -3326,157 +3298,157 @@ public interface FmiModelV1Package extends EPackage {
 	EReference getUnitDefinitionsType_BaseUnit();
 
 	/**
-	 * Returns the meta object for class '{@link FmiModelV1.Capabilities <em>Capabilities</em>}'.
+	 * Returns the meta object for class '{@link FmiModelV1.CapabilitiesType <em>Capabilities Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Capabilities</em>'.
-	 * @see FmiModelV1.Capabilities
+	 * @return the meta object for class '<em>Capabilities Type</em>'.
+	 * @see FmiModelV1.CapabilitiesType
 	 * @generated
 	 */
-	EClass getCapabilities();
+	EClass getCapabilitiesType();
 
 	/**
-	 * Returns the meta object for the attribute '{@link FmiModelV1.Capabilities#isCanHandleVariableCommunicationStepSize <em>Can Handle Variable Communication Step Size</em>}'.
+	 * Returns the meta object for the attribute '{@link FmiModelV1.CapabilitiesType#isCanHandleVariableCommunicationStepSize <em>Can Handle Variable Communication Step Size</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Can Handle Variable Communication Step Size</em>'.
-	 * @see FmiModelV1.Capabilities#isCanHandleVariableCommunicationStepSize()
-	 * @see #getCapabilities()
+	 * @see FmiModelV1.CapabilitiesType#isCanHandleVariableCommunicationStepSize()
+	 * @see #getCapabilitiesType()
 	 * @generated
 	 */
-	EAttribute getCapabilities_CanHandleVariableCommunicationStepSize();
+	EAttribute getCapabilitiesType_CanHandleVariableCommunicationStepSize();
 
 	/**
-	 * Returns the meta object for the attribute '{@link FmiModelV1.Capabilities#isCanHandleEvents <em>Can Handle Events</em>}'.
+	 * Returns the meta object for the attribute '{@link FmiModelV1.CapabilitiesType#isCanHandleEvents <em>Can Handle Events</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Can Handle Events</em>'.
-	 * @see FmiModelV1.Capabilities#isCanHandleEvents()
-	 * @see #getCapabilities()
+	 * @see FmiModelV1.CapabilitiesType#isCanHandleEvents()
+	 * @see #getCapabilitiesType()
 	 * @generated
 	 */
-	EAttribute getCapabilities_CanHandleEvents();
+	EAttribute getCapabilitiesType_CanHandleEvents();
 
 	/**
-	 * Returns the meta object for the attribute '{@link FmiModelV1.Capabilities#isCanRejectSteps <em>Can Reject Steps</em>}'.
+	 * Returns the meta object for the attribute '{@link FmiModelV1.CapabilitiesType#isCanRejectSteps <em>Can Reject Steps</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Can Reject Steps</em>'.
-	 * @see FmiModelV1.Capabilities#isCanRejectSteps()
-	 * @see #getCapabilities()
+	 * @see FmiModelV1.CapabilitiesType#isCanRejectSteps()
+	 * @see #getCapabilitiesType()
 	 * @generated
 	 */
-	EAttribute getCapabilities_CanRejectSteps();
+	EAttribute getCapabilitiesType_CanRejectSteps();
 
 	/**
-	 * Returns the meta object for the attribute '{@link FmiModelV1.Capabilities#isCanInterpolateInputs <em>Can Interpolate Inputs</em>}'.
+	 * Returns the meta object for the attribute '{@link FmiModelV1.CapabilitiesType#isCanInterpolateInputs <em>Can Interpolate Inputs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Can Interpolate Inputs</em>'.
-	 * @see FmiModelV1.Capabilities#isCanInterpolateInputs()
-	 * @see #getCapabilities()
+	 * @see FmiModelV1.CapabilitiesType#isCanInterpolateInputs()
+	 * @see #getCapabilitiesType()
 	 * @generated
 	 */
-	EAttribute getCapabilities_CanInterpolateInputs();
+	EAttribute getCapabilitiesType_CanInterpolateInputs();
 
 	/**
-	 * Returns the meta object for the attribute '{@link FmiModelV1.Capabilities#getMaxOutputDerivativeOrder <em>Max Output Derivative Order</em>}'.
+	 * Returns the meta object for the attribute '{@link FmiModelV1.CapabilitiesType#getMaxOutputDerivativeOrder <em>Max Output Derivative Order</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Max Output Derivative Order</em>'.
-	 * @see FmiModelV1.Capabilities#getMaxOutputDerivativeOrder()
-	 * @see #getCapabilities()
+	 * @see FmiModelV1.CapabilitiesType#getMaxOutputDerivativeOrder()
+	 * @see #getCapabilitiesType()
 	 * @generated
 	 */
-	EAttribute getCapabilities_MaxOutputDerivativeOrder();
+	EAttribute getCapabilitiesType_MaxOutputDerivativeOrder();
 
 	/**
-	 * Returns the meta object for the attribute '{@link FmiModelV1.Capabilities#isCanRunAsynchronuously <em>Can Run Asynchronuously</em>}'.
+	 * Returns the meta object for the attribute '{@link FmiModelV1.CapabilitiesType#isCanRunAsynchronuously <em>Can Run Asynchronuously</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Can Run Asynchronuously</em>'.
-	 * @see FmiModelV1.Capabilities#isCanRunAsynchronuously()
-	 * @see #getCapabilities()
+	 * @see FmiModelV1.CapabilitiesType#isCanRunAsynchronuously()
+	 * @see #getCapabilitiesType()
 	 * @generated
 	 */
-	EAttribute getCapabilities_CanRunAsynchronuously();
+	EAttribute getCapabilitiesType_CanRunAsynchronuously();
 
 	/**
-	 * Returns the meta object for the attribute '{@link FmiModelV1.Capabilities#isCanSignalEvents <em>Can Signal Events</em>}'.
+	 * Returns the meta object for the attribute '{@link FmiModelV1.CapabilitiesType#isCanSignalEvents <em>Can Signal Events</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Can Signal Events</em>'.
-	 * @see FmiModelV1.Capabilities#isCanSignalEvents()
-	 * @see #getCapabilities()
+	 * @see FmiModelV1.CapabilitiesType#isCanSignalEvents()
+	 * @see #getCapabilitiesType()
 	 * @generated
 	 */
-	EAttribute getCapabilities_CanSignalEvents();
+	EAttribute getCapabilitiesType_CanSignalEvents();
 
 	/**
-	 * Returns the meta object for the attribute '{@link FmiModelV1.Capabilities#isCanBeInstantiatedOnlyOncePerProcess <em>Can Be Instantiated Only Once Per Process</em>}'.
+	 * Returns the meta object for the attribute '{@link FmiModelV1.CapabilitiesType#isCanBeInstantiatedOnlyOncePerProcess <em>Can Be Instantiated Only Once Per Process</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Can Be Instantiated Only Once Per Process</em>'.
-	 * @see FmiModelV1.Capabilities#isCanBeInstantiatedOnlyOncePerProcess()
-	 * @see #getCapabilities()
+	 * @see FmiModelV1.CapabilitiesType#isCanBeInstantiatedOnlyOncePerProcess()
+	 * @see #getCapabilitiesType()
 	 * @generated
 	 */
-	EAttribute getCapabilities_CanBeInstantiatedOnlyOncePerProcess();
+	EAttribute getCapabilitiesType_CanBeInstantiatedOnlyOncePerProcess();
 
 	/**
-	 * Returns the meta object for the attribute '{@link FmiModelV1.Capabilities#isCanNotUseMemoryManagementFunctions <em>Can Not Use Memory Management Functions</em>}'.
+	 * Returns the meta object for the attribute '{@link FmiModelV1.CapabilitiesType#isCanNotUseMemoryManagementFunctions <em>Can Not Use Memory Management Functions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Can Not Use Memory Management Functions</em>'.
-	 * @see FmiModelV1.Capabilities#isCanNotUseMemoryManagementFunctions()
-	 * @see #getCapabilities()
+	 * @see FmiModelV1.CapabilitiesType#isCanNotUseMemoryManagementFunctions()
+	 * @see #getCapabilitiesType()
 	 * @generated
 	 */
-	EAttribute getCapabilities_CanNotUseMemoryManagementFunctions();
+	EAttribute getCapabilitiesType_CanNotUseMemoryManagementFunctions();
 
 	/**
-	 * Returns the meta object for the attribute '{@link FmiModelV1.Capabilities#isCanGetAndSetFMUstate <em>Can Get And Set FM Ustate</em>}'.
+	 * Returns the meta object for the attribute '{@link FmiModelV1.CapabilitiesType#isCanGetAndSetFMUstate <em>Can Get And Set FM Ustate</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Can Get And Set FM Ustate</em>'.
-	 * @see FmiModelV1.Capabilities#isCanGetAndSetFMUstate()
-	 * @see #getCapabilities()
+	 * @see FmiModelV1.CapabilitiesType#isCanGetAndSetFMUstate()
+	 * @see #getCapabilitiesType()
 	 * @generated
 	 */
-	EAttribute getCapabilities_CanGetAndSetFMUstate();
+	EAttribute getCapabilitiesType_CanGetAndSetFMUstate();
 
 	/**
-	 * Returns the meta object for the attribute '{@link FmiModelV1.Capabilities#isCanSerializeFMUstate <em>Can Serialize FM Ustate</em>}'.
+	 * Returns the meta object for the attribute '{@link FmiModelV1.CapabilitiesType#isCanSerializeFMUstate <em>Can Serialize FM Ustate</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Can Serialize FM Ustate</em>'.
-	 * @see FmiModelV1.Capabilities#isCanSerializeFMUstate()
-	 * @see #getCapabilities()
+	 * @see FmiModelV1.CapabilitiesType#isCanSerializeFMUstate()
+	 * @see #getCapabilitiesType()
 	 * @generated
 	 */
-	EAttribute getCapabilities_CanSerializeFMUstate();
+	EAttribute getCapabilitiesType_CanSerializeFMUstate();
 
 	/**
-	 * Returns the meta object for the attribute '{@link FmiModelV1.Capabilities#getModelIdentifier <em>Model Identifier</em>}'.
+	 * Returns the meta object for the attribute '{@link FmiModelV1.CapabilitiesType#getModelIdentifier <em>Model Identifier</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Model Identifier</em>'.
-	 * @see FmiModelV1.Capabilities#getModelIdentifier()
-	 * @see #getCapabilities()
+	 * @see FmiModelV1.CapabilitiesType#getModelIdentifier()
+	 * @see #getCapabilitiesType()
 	 * @generated
 	 */
-	EAttribute getCapabilities_ModelIdentifier();
+	EAttribute getCapabilitiesType_ModelIdentifier();
 
 	/**
-	 * Returns the meta object for the attribute '{@link FmiModelV1.Capabilities#isNeedsExecutionTool <em>Needs Execution Tool</em>}'.
+	 * Returns the meta object for the attribute '{@link FmiModelV1.CapabilitiesType#isNeedsExecutionTool <em>Needs Execution Tool</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Needs Execution Tool</em>'.
-	 * @see FmiModelV1.Capabilities#isNeedsExecutionTool()
-	 * @see #getCapabilities()
+	 * @see FmiModelV1.CapabilitiesType#isNeedsExecutionTool()
+	 * @see #getCapabilitiesType()
 	 * @generated
 	 */
-	EAttribute getCapabilities_NeedsExecutionTool();
+	EAttribute getCapabilitiesType_NeedsExecutionTool();
 
 	/**
 	 * Returns the meta object for class '{@link FmiModelV1.ImplementationType <em>Implementation Type</em>}'.
@@ -3489,35 +3461,36 @@ public interface FmiModelV1Package extends EPackage {
 	EClass getImplementationType();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link FmiModelV1.ImplementationType#getCapabilities <em>Capabilities</em>}'.
+	 * Returns the meta object for the containment reference '{@link FmiModelV1.ImplementationType#getCoSimulation_StandAlone <em>Co Simulation Stand Alone</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Capabilities</em>'.
-	 * @see FmiModelV1.ImplementationType#getCapabilities()
+	 * @return the meta object for the containment reference '<em>Co Simulation Stand Alone</em>'.
+	 * @see FmiModelV1.ImplementationType#getCoSimulation_StandAlone()
 	 * @see #getImplementationType()
 	 * @generated
 	 */
-	EReference getImplementationType_Capabilities();
+	EReference getImplementationType_CoSimulation_StandAlone();
 
 	/**
-	 * Returns the meta object for class '{@link FmiModelV1.CoSimulation_StandAlone <em>Co Simulation Stand Alone</em>}'.
+	 * Returns the meta object for class '{@link FmiModelV1.CoSimulation_StandAloneType <em>Co Simulation Stand Alone Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Co Simulation Stand Alone</em>'.
-	 * @see FmiModelV1.CoSimulation_StandAlone
+	 * @return the meta object for class '<em>Co Simulation Stand Alone Type</em>'.
+	 * @see FmiModelV1.CoSimulation_StandAloneType
 	 * @generated
 	 */
-	EClass getCoSimulation_StandAlone();
+	EClass getCoSimulation_StandAloneType();
 
 	/**
-	 * Returns the meta object for class '{@link FmiModelV1.CoSimulation_Tool <em>Co Simulation Tool</em>}'.
+	 * Returns the meta object for the containment reference '{@link FmiModelV1.CoSimulation_StandAloneType#getCapabilities <em>Capabilities</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Co Simulation Tool</em>'.
-	 * @see FmiModelV1.CoSimulation_Tool
+	 * @return the meta object for the containment reference '<em>Capabilities</em>'.
+	 * @see FmiModelV1.CoSimulation_StandAloneType#getCapabilities()
+	 * @see #getCoSimulation_StandAloneType()
 	 * @generated
 	 */
-	EClass getCoSimulation_Tool();
+	EReference getCoSimulation_StandAloneType_Capabilities();
 
 	/**
 	 * Returns the meta object for class '{@link FmiModelV1.VendorAnnotationsType <em>Vendor Annotations Type</em>}'.
@@ -4050,7 +4023,7 @@ public interface FmiModelV1Package extends EPackage {
 		EReference FMI_MODEL_DESCRIPTION_TYPE__MODEL_VARIABLES = eINSTANCE.getFmiModelDescriptionType_ModelVariables();
 
 		/**
-		 * The meta object literal for the '<em><b>Implementation</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Implementation</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -4746,14 +4719,14 @@ public interface FmiModelV1Package extends EPackage {
 		EReference UNIT_DEFINITIONS_TYPE__BASE_UNIT = eINSTANCE.getUnitDefinitionsType_BaseUnit();
 
 		/**
-		 * The meta object literal for the '{@link FmiModelV1.impl.CapabilitiesImpl <em>Capabilities</em>}' class.
+		 * The meta object literal for the '{@link FmiModelV1.impl.CapabilitiesTypeImpl <em>Capabilities Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see FmiModelV1.impl.CapabilitiesImpl
-		 * @see FmiModelV1.impl.FmiModelV1PackageImpl#getCapabilities()
+		 * @see FmiModelV1.impl.CapabilitiesTypeImpl
+		 * @see FmiModelV1.impl.FmiModelV1PackageImpl#getCapabilitiesType()
 		 * @generated
 		 */
-		EClass CAPABILITIES = eINSTANCE.getCapabilities();
+		EClass CAPABILITIES_TYPE = eINSTANCE.getCapabilitiesType();
 
 		/**
 		 * The meta object literal for the '<em><b>Can Handle Variable Communication Step Size</b></em>' attribute feature.
@@ -4761,7 +4734,7 @@ public interface FmiModelV1Package extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CAPABILITIES__CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE = eINSTANCE.getCapabilities_CanHandleVariableCommunicationStepSize();
+		EAttribute CAPABILITIES_TYPE__CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE = eINSTANCE.getCapabilitiesType_CanHandleVariableCommunicationStepSize();
 
 		/**
 		 * The meta object literal for the '<em><b>Can Handle Events</b></em>' attribute feature.
@@ -4769,7 +4742,7 @@ public interface FmiModelV1Package extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CAPABILITIES__CAN_HANDLE_EVENTS = eINSTANCE.getCapabilities_CanHandleEvents();
+		EAttribute CAPABILITIES_TYPE__CAN_HANDLE_EVENTS = eINSTANCE.getCapabilitiesType_CanHandleEvents();
 
 		/**
 		 * The meta object literal for the '<em><b>Can Reject Steps</b></em>' attribute feature.
@@ -4777,7 +4750,7 @@ public interface FmiModelV1Package extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CAPABILITIES__CAN_REJECT_STEPS = eINSTANCE.getCapabilities_CanRejectSteps();
+		EAttribute CAPABILITIES_TYPE__CAN_REJECT_STEPS = eINSTANCE.getCapabilitiesType_CanRejectSteps();
 
 		/**
 		 * The meta object literal for the '<em><b>Can Interpolate Inputs</b></em>' attribute feature.
@@ -4785,7 +4758,7 @@ public interface FmiModelV1Package extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CAPABILITIES__CAN_INTERPOLATE_INPUTS = eINSTANCE.getCapabilities_CanInterpolateInputs();
+		EAttribute CAPABILITIES_TYPE__CAN_INTERPOLATE_INPUTS = eINSTANCE.getCapabilitiesType_CanInterpolateInputs();
 
 		/**
 		 * The meta object literal for the '<em><b>Max Output Derivative Order</b></em>' attribute feature.
@@ -4793,7 +4766,7 @@ public interface FmiModelV1Package extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CAPABILITIES__MAX_OUTPUT_DERIVATIVE_ORDER = eINSTANCE.getCapabilities_MaxOutputDerivativeOrder();
+		EAttribute CAPABILITIES_TYPE__MAX_OUTPUT_DERIVATIVE_ORDER = eINSTANCE.getCapabilitiesType_MaxOutputDerivativeOrder();
 
 		/**
 		 * The meta object literal for the '<em><b>Can Run Asynchronuously</b></em>' attribute feature.
@@ -4801,7 +4774,7 @@ public interface FmiModelV1Package extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CAPABILITIES__CAN_RUN_ASYNCHRONUOUSLY = eINSTANCE.getCapabilities_CanRunAsynchronuously();
+		EAttribute CAPABILITIES_TYPE__CAN_RUN_ASYNCHRONUOUSLY = eINSTANCE.getCapabilitiesType_CanRunAsynchronuously();
 
 		/**
 		 * The meta object literal for the '<em><b>Can Signal Events</b></em>' attribute feature.
@@ -4809,7 +4782,7 @@ public interface FmiModelV1Package extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CAPABILITIES__CAN_SIGNAL_EVENTS = eINSTANCE.getCapabilities_CanSignalEvents();
+		EAttribute CAPABILITIES_TYPE__CAN_SIGNAL_EVENTS = eINSTANCE.getCapabilitiesType_CanSignalEvents();
 
 		/**
 		 * The meta object literal for the '<em><b>Can Be Instantiated Only Once Per Process</b></em>' attribute feature.
@@ -4817,7 +4790,7 @@ public interface FmiModelV1Package extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CAPABILITIES__CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS = eINSTANCE.getCapabilities_CanBeInstantiatedOnlyOncePerProcess();
+		EAttribute CAPABILITIES_TYPE__CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS = eINSTANCE.getCapabilitiesType_CanBeInstantiatedOnlyOncePerProcess();
 
 		/**
 		 * The meta object literal for the '<em><b>Can Not Use Memory Management Functions</b></em>' attribute feature.
@@ -4825,7 +4798,7 @@ public interface FmiModelV1Package extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CAPABILITIES__CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS = eINSTANCE.getCapabilities_CanNotUseMemoryManagementFunctions();
+		EAttribute CAPABILITIES_TYPE__CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS = eINSTANCE.getCapabilitiesType_CanNotUseMemoryManagementFunctions();
 
 		/**
 		 * The meta object literal for the '<em><b>Can Get And Set FM Ustate</b></em>' attribute feature.
@@ -4833,7 +4806,7 @@ public interface FmiModelV1Package extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CAPABILITIES__CAN_GET_AND_SET_FM_USTATE = eINSTANCE.getCapabilities_CanGetAndSetFMUstate();
+		EAttribute CAPABILITIES_TYPE__CAN_GET_AND_SET_FM_USTATE = eINSTANCE.getCapabilitiesType_CanGetAndSetFMUstate();
 
 		/**
 		 * The meta object literal for the '<em><b>Can Serialize FM Ustate</b></em>' attribute feature.
@@ -4841,7 +4814,7 @@ public interface FmiModelV1Package extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CAPABILITIES__CAN_SERIALIZE_FM_USTATE = eINSTANCE.getCapabilities_CanSerializeFMUstate();
+		EAttribute CAPABILITIES_TYPE__CAN_SERIALIZE_FM_USTATE = eINSTANCE.getCapabilitiesType_CanSerializeFMUstate();
 
 		/**
 		 * The meta object literal for the '<em><b>Model Identifier</b></em>' attribute feature.
@@ -4849,7 +4822,7 @@ public interface FmiModelV1Package extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CAPABILITIES__MODEL_IDENTIFIER = eINSTANCE.getCapabilities_ModelIdentifier();
+		EAttribute CAPABILITIES_TYPE__MODEL_IDENTIFIER = eINSTANCE.getCapabilitiesType_ModelIdentifier();
 
 		/**
 		 * The meta object literal for the '<em><b>Needs Execution Tool</b></em>' attribute feature.
@@ -4857,7 +4830,7 @@ public interface FmiModelV1Package extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CAPABILITIES__NEEDS_EXECUTION_TOOL = eINSTANCE.getCapabilities_NeedsExecutionTool();
+		EAttribute CAPABILITIES_TYPE__NEEDS_EXECUTION_TOOL = eINSTANCE.getCapabilitiesType_NeedsExecutionTool();
 
 		/**
 		 * The meta object literal for the '{@link FmiModelV1.impl.ImplementationTypeImpl <em>Implementation Type</em>}' class.
@@ -4870,32 +4843,30 @@ public interface FmiModelV1Package extends EPackage {
 		EClass IMPLEMENTATION_TYPE = eINSTANCE.getImplementationType();
 
 		/**
+		 * The meta object literal for the '<em><b>Co Simulation Stand Alone</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IMPLEMENTATION_TYPE__CO_SIMULATION_STAND_ALONE = eINSTANCE.getImplementationType_CoSimulation_StandAlone();
+
+		/**
+		 * The meta object literal for the '{@link FmiModelV1.impl.CoSimulation_StandAloneTypeImpl <em>Co Simulation Stand Alone Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see FmiModelV1.impl.CoSimulation_StandAloneTypeImpl
+		 * @see FmiModelV1.impl.FmiModelV1PackageImpl#getCoSimulation_StandAloneType()
+		 * @generated
+		 */
+		EClass CO_SIMULATION_STAND_ALONE_TYPE = eINSTANCE.getCoSimulation_StandAloneType();
+
+		/**
 		 * The meta object literal for the '<em><b>Capabilities</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference IMPLEMENTATION_TYPE__CAPABILITIES = eINSTANCE.getImplementationType_Capabilities();
-
-		/**
-		 * The meta object literal for the '{@link FmiModelV1.impl.CoSimulation_StandAloneImpl <em>Co Simulation Stand Alone</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see FmiModelV1.impl.CoSimulation_StandAloneImpl
-		 * @see FmiModelV1.impl.FmiModelV1PackageImpl#getCoSimulation_StandAlone()
-		 * @generated
-		 */
-		EClass CO_SIMULATION_STAND_ALONE = eINSTANCE.getCoSimulation_StandAlone();
-
-		/**
-		 * The meta object literal for the '{@link FmiModelV1.impl.CoSimulation_ToolImpl <em>Co Simulation Tool</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see FmiModelV1.impl.CoSimulation_ToolImpl
-		 * @see FmiModelV1.impl.FmiModelV1PackageImpl#getCoSimulation_Tool()
-		 * @generated
-		 */
-		EClass CO_SIMULATION_TOOL = eINSTANCE.getCoSimulation_Tool();
+		EReference CO_SIMULATION_STAND_ALONE_TYPE__CAPABILITIES = eINSTANCE.getCoSimulation_StandAloneType_Capabilities();
 
 		/**
 		 * The meta object literal for the '{@link FmiModelV1.impl.VendorAnnotationsTypeImpl <em>Vendor Annotations Type</em>}' class.

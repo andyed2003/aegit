@@ -6,7 +6,7 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Capabilities</b></em>'.
+ * A representation of the model object '<em><b>Capabilities Type</b></em>'.
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
@@ -16,27 +16,27 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link FmiModelV1.Capabilities#isCanHandleVariableCommunicationStepSize <em>Can Handle Variable Communication Step Size</em>}</li>
- *   <li>{@link FmiModelV1.Capabilities#isCanHandleEvents <em>Can Handle Events</em>}</li>
- *   <li>{@link FmiModelV1.Capabilities#isCanRejectSteps <em>Can Reject Steps</em>}</li>
- *   <li>{@link FmiModelV1.Capabilities#isCanInterpolateInputs <em>Can Interpolate Inputs</em>}</li>
- *   <li>{@link FmiModelV1.Capabilities#getMaxOutputDerivativeOrder <em>Max Output Derivative Order</em>}</li>
- *   <li>{@link FmiModelV1.Capabilities#isCanRunAsynchronuously <em>Can Run Asynchronuously</em>}</li>
- *   <li>{@link FmiModelV1.Capabilities#isCanSignalEvents <em>Can Signal Events</em>}</li>
- *   <li>{@link FmiModelV1.Capabilities#isCanBeInstantiatedOnlyOncePerProcess <em>Can Be Instantiated Only Once Per Process</em>}</li>
- *   <li>{@link FmiModelV1.Capabilities#isCanNotUseMemoryManagementFunctions <em>Can Not Use Memory Management Functions</em>}</li>
- *   <li>{@link FmiModelV1.Capabilities#isCanGetAndSetFMUstate <em>Can Get And Set FM Ustate</em>}</li>
- *   <li>{@link FmiModelV1.Capabilities#isCanSerializeFMUstate <em>Can Serialize FM Ustate</em>}</li>
- *   <li>{@link FmiModelV1.Capabilities#getModelIdentifier <em>Model Identifier</em>}</li>
- *   <li>{@link FmiModelV1.Capabilities#isNeedsExecutionTool <em>Needs Execution Tool</em>}</li>
+ *   <li>{@link FmiModelV1.CapabilitiesType#isCanHandleVariableCommunicationStepSize <em>Can Handle Variable Communication Step Size</em>}</li>
+ *   <li>{@link FmiModelV1.CapabilitiesType#isCanHandleEvents <em>Can Handle Events</em>}</li>
+ *   <li>{@link FmiModelV1.CapabilitiesType#isCanRejectSteps <em>Can Reject Steps</em>}</li>
+ *   <li>{@link FmiModelV1.CapabilitiesType#isCanInterpolateInputs <em>Can Interpolate Inputs</em>}</li>
+ *   <li>{@link FmiModelV1.CapabilitiesType#getMaxOutputDerivativeOrder <em>Max Output Derivative Order</em>}</li>
+ *   <li>{@link FmiModelV1.CapabilitiesType#isCanRunAsynchronuously <em>Can Run Asynchronuously</em>}</li>
+ *   <li>{@link FmiModelV1.CapabilitiesType#isCanSignalEvents <em>Can Signal Events</em>}</li>
+ *   <li>{@link FmiModelV1.CapabilitiesType#isCanBeInstantiatedOnlyOncePerProcess <em>Can Be Instantiated Only Once Per Process</em>}</li>
+ *   <li>{@link FmiModelV1.CapabilitiesType#isCanNotUseMemoryManagementFunctions <em>Can Not Use Memory Management Functions</em>}</li>
+ *   <li>{@link FmiModelV1.CapabilitiesType#isCanGetAndSetFMUstate <em>Can Get And Set FM Ustate</em>}</li>
+ *   <li>{@link FmiModelV1.CapabilitiesType#isCanSerializeFMUstate <em>Can Serialize FM Ustate</em>}</li>
+ *   <li>{@link FmiModelV1.CapabilitiesType#getModelIdentifier <em>Model Identifier</em>}</li>
+ *   <li>{@link FmiModelV1.CapabilitiesType#isNeedsExecutionTool <em>Needs Execution Tool</em>}</li>
  * </ul>
  * </p>
  *
- * @see FmiModelV1.FmiModelV1Package#getCapabilities()
- * @model extendedMetaData="name='fmiCapabilities' kind='elementOnly'"
+ * @see FmiModelV1.FmiModelV1Package#getCapabilitiesType()
+ * @model extendedMetaData="name='Capabilities_._type' kind='elementOnly'"
  * @generated
  */
-public interface Capabilities extends EObject {
+public interface CapabilitiesType extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Can Handle Variable Communication Step Size</b></em>' attribute.
 	 * The default value is <code>"false"</code>.
@@ -50,7 +50,7 @@ public interface Capabilities extends EObject {
 	 * @see #isSetCanHandleVariableCommunicationStepSize()
 	 * @see #unsetCanHandleVariableCommunicationStepSize()
 	 * @see #setCanHandleVariableCommunicationStepSize(boolean)
-	 * @see FmiModelV1.FmiModelV1Package#getCapabilities_CanHandleVariableCommunicationStepSize()
+	 * @see FmiModelV1.FmiModelV1Package#getCapabilitiesType_CanHandleVariableCommunicationStepSize()
 	 * @model default="false" unsettable="true" dataType="org.eclipse.emf.ecore.xml.type.Boolean"
 	 *        extendedMetaData="kind='attribute' name='canHandleVariableCommunicationStepSize' namespace='##targetNamespace'"
 	 * @generated
@@ -58,7 +58,7 @@ public interface Capabilities extends EObject {
 	boolean isCanHandleVariableCommunicationStepSize();
 
 	/**
-	 * Sets the value of the '{@link FmiModelV1.Capabilities#isCanHandleVariableCommunicationStepSize <em>Can Handle Variable Communication Step Size</em>}' attribute.
+	 * Sets the value of the '{@link FmiModelV1.CapabilitiesType#isCanHandleVariableCommunicationStepSize <em>Can Handle Variable Communication Step Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Can Handle Variable Communication Step Size</em>' attribute.
@@ -70,7 +70,7 @@ public interface Capabilities extends EObject {
 	void setCanHandleVariableCommunicationStepSize(boolean value);
 
 	/**
-	 * Unsets the value of the '{@link FmiModelV1.Capabilities#isCanHandleVariableCommunicationStepSize <em>Can Handle Variable Communication Step Size</em>}' attribute.
+	 * Unsets the value of the '{@link FmiModelV1.CapabilitiesType#isCanHandleVariableCommunicationStepSize <em>Can Handle Variable Communication Step Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #isSetCanHandleVariableCommunicationStepSize()
@@ -81,7 +81,7 @@ public interface Capabilities extends EObject {
 	void unsetCanHandleVariableCommunicationStepSize();
 
 	/**
-	 * Returns whether the value of the '{@link FmiModelV1.Capabilities#isCanHandleVariableCommunicationStepSize <em>Can Handle Variable Communication Step Size</em>}' attribute is set.
+	 * Returns whether the value of the '{@link FmiModelV1.CapabilitiesType#isCanHandleVariableCommunicationStepSize <em>Can Handle Variable Communication Step Size</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return whether the value of the '<em>Can Handle Variable Communication Step Size</em>' attribute is set.
@@ -105,7 +105,7 @@ public interface Capabilities extends EObject {
 	 * @see #isSetCanHandleEvents()
 	 * @see #unsetCanHandleEvents()
 	 * @see #setCanHandleEvents(boolean)
-	 * @see FmiModelV1.FmiModelV1Package#getCapabilities_CanHandleEvents()
+	 * @see FmiModelV1.FmiModelV1Package#getCapabilitiesType_CanHandleEvents()
 	 * @model default="false" unsettable="true" dataType="org.eclipse.emf.ecore.xml.type.Boolean"
 	 *        extendedMetaData="kind='attribute' name='canHandleEvents' namespace='##targetNamespace'"
 	 * @generated
@@ -113,7 +113,7 @@ public interface Capabilities extends EObject {
 	boolean isCanHandleEvents();
 
 	/**
-	 * Sets the value of the '{@link FmiModelV1.Capabilities#isCanHandleEvents <em>Can Handle Events</em>}' attribute.
+	 * Sets the value of the '{@link FmiModelV1.CapabilitiesType#isCanHandleEvents <em>Can Handle Events</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Can Handle Events</em>' attribute.
@@ -125,7 +125,7 @@ public interface Capabilities extends EObject {
 	void setCanHandleEvents(boolean value);
 
 	/**
-	 * Unsets the value of the '{@link FmiModelV1.Capabilities#isCanHandleEvents <em>Can Handle Events</em>}' attribute.
+	 * Unsets the value of the '{@link FmiModelV1.CapabilitiesType#isCanHandleEvents <em>Can Handle Events</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #isSetCanHandleEvents()
@@ -136,7 +136,7 @@ public interface Capabilities extends EObject {
 	void unsetCanHandleEvents();
 
 	/**
-	 * Returns whether the value of the '{@link FmiModelV1.Capabilities#isCanHandleEvents <em>Can Handle Events</em>}' attribute is set.
+	 * Returns whether the value of the '{@link FmiModelV1.CapabilitiesType#isCanHandleEvents <em>Can Handle Events</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return whether the value of the '<em>Can Handle Events</em>' attribute is set.
@@ -160,7 +160,7 @@ public interface Capabilities extends EObject {
 	 * @see #isSetCanRejectSteps()
 	 * @see #unsetCanRejectSteps()
 	 * @see #setCanRejectSteps(boolean)
-	 * @see FmiModelV1.FmiModelV1Package#getCapabilities_CanRejectSteps()
+	 * @see FmiModelV1.FmiModelV1Package#getCapabilitiesType_CanRejectSteps()
 	 * @model default="false" unsettable="true" dataType="org.eclipse.emf.ecore.xml.type.Boolean"
 	 *        extendedMetaData="kind='attribute' name='canRunAsynchronuously' namespace='##targetNamespace'"
 	 * @generated
@@ -168,7 +168,7 @@ public interface Capabilities extends EObject {
 	boolean isCanRejectSteps();
 
 	/**
-	 * Sets the value of the '{@link FmiModelV1.Capabilities#isCanRejectSteps <em>Can Reject Steps</em>}' attribute.
+	 * Sets the value of the '{@link FmiModelV1.CapabilitiesType#isCanRejectSteps <em>Can Reject Steps</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Can Reject Steps</em>' attribute.
@@ -180,7 +180,7 @@ public interface Capabilities extends EObject {
 	void setCanRejectSteps(boolean value);
 
 	/**
-	 * Unsets the value of the '{@link FmiModelV1.Capabilities#isCanRejectSteps <em>Can Reject Steps</em>}' attribute.
+	 * Unsets the value of the '{@link FmiModelV1.CapabilitiesType#isCanRejectSteps <em>Can Reject Steps</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #isSetCanRejectSteps()
@@ -191,7 +191,7 @@ public interface Capabilities extends EObject {
 	void unsetCanRejectSteps();
 
 	/**
-	 * Returns whether the value of the '{@link FmiModelV1.Capabilities#isCanRejectSteps <em>Can Reject Steps</em>}' attribute is set.
+	 * Returns whether the value of the '{@link FmiModelV1.CapabilitiesType#isCanRejectSteps <em>Can Reject Steps</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return whether the value of the '<em>Can Reject Steps</em>' attribute is set.
@@ -215,7 +215,7 @@ public interface Capabilities extends EObject {
 	 * @see #isSetCanInterpolateInputs()
 	 * @see #unsetCanInterpolateInputs()
 	 * @see #setCanInterpolateInputs(boolean)
-	 * @see FmiModelV1.FmiModelV1Package#getCapabilities_CanInterpolateInputs()
+	 * @see FmiModelV1.FmiModelV1Package#getCapabilitiesType_CanInterpolateInputs()
 	 * @model default="false" unsettable="true" dataType="org.eclipse.emf.ecore.xml.type.Boolean"
 	 *        extendedMetaData="kind='attribute' name='canInterpolateInputs' namespace='##targetNamespace'"
 	 * @generated
@@ -223,7 +223,7 @@ public interface Capabilities extends EObject {
 	boolean isCanInterpolateInputs();
 
 	/**
-	 * Sets the value of the '{@link FmiModelV1.Capabilities#isCanInterpolateInputs <em>Can Interpolate Inputs</em>}' attribute.
+	 * Sets the value of the '{@link FmiModelV1.CapabilitiesType#isCanInterpolateInputs <em>Can Interpolate Inputs</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Can Interpolate Inputs</em>' attribute.
@@ -235,7 +235,7 @@ public interface Capabilities extends EObject {
 	void setCanInterpolateInputs(boolean value);
 
 	/**
-	 * Unsets the value of the '{@link FmiModelV1.Capabilities#isCanInterpolateInputs <em>Can Interpolate Inputs</em>}' attribute.
+	 * Unsets the value of the '{@link FmiModelV1.CapabilitiesType#isCanInterpolateInputs <em>Can Interpolate Inputs</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #isSetCanInterpolateInputs()
@@ -246,7 +246,7 @@ public interface Capabilities extends EObject {
 	void unsetCanInterpolateInputs();
 
 	/**
-	 * Returns whether the value of the '{@link FmiModelV1.Capabilities#isCanInterpolateInputs <em>Can Interpolate Inputs</em>}' attribute is set.
+	 * Returns whether the value of the '{@link FmiModelV1.CapabilitiesType#isCanInterpolateInputs <em>Can Interpolate Inputs</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return whether the value of the '<em>Can Interpolate Inputs</em>' attribute is set.
@@ -270,7 +270,7 @@ public interface Capabilities extends EObject {
 	 * @see #isSetMaxOutputDerivativeOrder()
 	 * @see #unsetMaxOutputDerivativeOrder()
 	 * @see #setMaxOutputDerivativeOrder(long)
-	 * @see FmiModelV1.FmiModelV1Package#getCapabilities_MaxOutputDerivativeOrder()
+	 * @see FmiModelV1.FmiModelV1Package#getCapabilitiesType_MaxOutputDerivativeOrder()
 	 * @model default="0" unsettable="true" dataType="org.eclipse.emf.ecore.xml.type.UnsignedInt"
 	 *        extendedMetaData="kind='attribute' name='maxOutputDerivativeOrder' namespace='##targetNamespace'"
 	 * @generated
@@ -278,7 +278,7 @@ public interface Capabilities extends EObject {
 	long getMaxOutputDerivativeOrder();
 
 	/**
-	 * Sets the value of the '{@link FmiModelV1.Capabilities#getMaxOutputDerivativeOrder <em>Max Output Derivative Order</em>}' attribute.
+	 * Sets the value of the '{@link FmiModelV1.CapabilitiesType#getMaxOutputDerivativeOrder <em>Max Output Derivative Order</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Max Output Derivative Order</em>' attribute.
@@ -290,7 +290,7 @@ public interface Capabilities extends EObject {
 	void setMaxOutputDerivativeOrder(long value);
 
 	/**
-	 * Unsets the value of the '{@link FmiModelV1.Capabilities#getMaxOutputDerivativeOrder <em>Max Output Derivative Order</em>}' attribute.
+	 * Unsets the value of the '{@link FmiModelV1.CapabilitiesType#getMaxOutputDerivativeOrder <em>Max Output Derivative Order</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #isSetMaxOutputDerivativeOrder()
@@ -301,7 +301,7 @@ public interface Capabilities extends EObject {
 	void unsetMaxOutputDerivativeOrder();
 
 	/**
-	 * Returns whether the value of the '{@link FmiModelV1.Capabilities#getMaxOutputDerivativeOrder <em>Max Output Derivative Order</em>}' attribute is set.
+	 * Returns whether the value of the '{@link FmiModelV1.CapabilitiesType#getMaxOutputDerivativeOrder <em>Max Output Derivative Order</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return whether the value of the '<em>Max Output Derivative Order</em>' attribute is set.
@@ -325,7 +325,7 @@ public interface Capabilities extends EObject {
 	 * @see #isSetCanRunAsynchronuously()
 	 * @see #unsetCanRunAsynchronuously()
 	 * @see #setCanRunAsynchronuously(boolean)
-	 * @see FmiModelV1.FmiModelV1Package#getCapabilities_CanRunAsynchronuously()
+	 * @see FmiModelV1.FmiModelV1Package#getCapabilitiesType_CanRunAsynchronuously()
 	 * @model default="false" unsettable="true" dataType="org.eclipse.emf.ecore.xml.type.Boolean"
 	 *        extendedMetaData="kind='attribute' name='canRunAsynchronuously' namespace='##targetNamespace'"
 	 * @generated
@@ -333,7 +333,7 @@ public interface Capabilities extends EObject {
 	boolean isCanRunAsynchronuously();
 
 	/**
-	 * Sets the value of the '{@link FmiModelV1.Capabilities#isCanRunAsynchronuously <em>Can Run Asynchronuously</em>}' attribute.
+	 * Sets the value of the '{@link FmiModelV1.CapabilitiesType#isCanRunAsynchronuously <em>Can Run Asynchronuously</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Can Run Asynchronuously</em>' attribute.
@@ -345,7 +345,7 @@ public interface Capabilities extends EObject {
 	void setCanRunAsynchronuously(boolean value);
 
 	/**
-	 * Unsets the value of the '{@link FmiModelV1.Capabilities#isCanRunAsynchronuously <em>Can Run Asynchronuously</em>}' attribute.
+	 * Unsets the value of the '{@link FmiModelV1.CapabilitiesType#isCanRunAsynchronuously <em>Can Run Asynchronuously</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #isSetCanRunAsynchronuously()
@@ -356,7 +356,7 @@ public interface Capabilities extends EObject {
 	void unsetCanRunAsynchronuously();
 
 	/**
-	 * Returns whether the value of the '{@link FmiModelV1.Capabilities#isCanRunAsynchronuously <em>Can Run Asynchronuously</em>}' attribute is set.
+	 * Returns whether the value of the '{@link FmiModelV1.CapabilitiesType#isCanRunAsynchronuously <em>Can Run Asynchronuously</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return whether the value of the '<em>Can Run Asynchronuously</em>' attribute is set.
@@ -380,7 +380,7 @@ public interface Capabilities extends EObject {
 	 * @see #isSetCanSignalEvents()
 	 * @see #unsetCanSignalEvents()
 	 * @see #setCanSignalEvents(boolean)
-	 * @see FmiModelV1.FmiModelV1Package#getCapabilities_CanSignalEvents()
+	 * @see FmiModelV1.FmiModelV1Package#getCapabilitiesType_CanSignalEvents()
 	 * @model default="false" unsettable="true" dataType="org.eclipse.emf.ecore.xml.type.Boolean"
 	 *        extendedMetaData="kind='attribute' name='canSignalEvents' namespace='##targetNamespace'"
 	 * @generated
@@ -388,7 +388,7 @@ public interface Capabilities extends EObject {
 	boolean isCanSignalEvents();
 
 	/**
-	 * Sets the value of the '{@link FmiModelV1.Capabilities#isCanSignalEvents <em>Can Signal Events</em>}' attribute.
+	 * Sets the value of the '{@link FmiModelV1.CapabilitiesType#isCanSignalEvents <em>Can Signal Events</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Can Signal Events</em>' attribute.
@@ -400,7 +400,7 @@ public interface Capabilities extends EObject {
 	void setCanSignalEvents(boolean value);
 
 	/**
-	 * Unsets the value of the '{@link FmiModelV1.Capabilities#isCanSignalEvents <em>Can Signal Events</em>}' attribute.
+	 * Unsets the value of the '{@link FmiModelV1.CapabilitiesType#isCanSignalEvents <em>Can Signal Events</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #isSetCanSignalEvents()
@@ -411,7 +411,7 @@ public interface Capabilities extends EObject {
 	void unsetCanSignalEvents();
 
 	/**
-	 * Returns whether the value of the '{@link FmiModelV1.Capabilities#isCanSignalEvents <em>Can Signal Events</em>}' attribute is set.
+	 * Returns whether the value of the '{@link FmiModelV1.CapabilitiesType#isCanSignalEvents <em>Can Signal Events</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return whether the value of the '<em>Can Signal Events</em>' attribute is set.
@@ -435,7 +435,7 @@ public interface Capabilities extends EObject {
 	 * @see #isSetCanBeInstantiatedOnlyOncePerProcess()
 	 * @see #unsetCanBeInstantiatedOnlyOncePerProcess()
 	 * @see #setCanBeInstantiatedOnlyOncePerProcess(boolean)
-	 * @see FmiModelV1.FmiModelV1Package#getCapabilities_CanBeInstantiatedOnlyOncePerProcess()
+	 * @see FmiModelV1.FmiModelV1Package#getCapabilitiesType_CanBeInstantiatedOnlyOncePerProcess()
 	 * @model default="false" unsettable="true" dataType="org.eclipse.emf.ecore.xml.type.Boolean"
 	 *        extendedMetaData="kind='attribute' name='canBeInstantiatedOnlyOncePerProcess' namespace='##targetNamespace'"
 	 * @generated
@@ -443,7 +443,7 @@ public interface Capabilities extends EObject {
 	boolean isCanBeInstantiatedOnlyOncePerProcess();
 
 	/**
-	 * Sets the value of the '{@link FmiModelV1.Capabilities#isCanBeInstantiatedOnlyOncePerProcess <em>Can Be Instantiated Only Once Per Process</em>}' attribute.
+	 * Sets the value of the '{@link FmiModelV1.CapabilitiesType#isCanBeInstantiatedOnlyOncePerProcess <em>Can Be Instantiated Only Once Per Process</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Can Be Instantiated Only Once Per Process</em>' attribute.
@@ -455,7 +455,7 @@ public interface Capabilities extends EObject {
 	void setCanBeInstantiatedOnlyOncePerProcess(boolean value);
 
 	/**
-	 * Unsets the value of the '{@link FmiModelV1.Capabilities#isCanBeInstantiatedOnlyOncePerProcess <em>Can Be Instantiated Only Once Per Process</em>}' attribute.
+	 * Unsets the value of the '{@link FmiModelV1.CapabilitiesType#isCanBeInstantiatedOnlyOncePerProcess <em>Can Be Instantiated Only Once Per Process</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #isSetCanBeInstantiatedOnlyOncePerProcess()
@@ -466,7 +466,7 @@ public interface Capabilities extends EObject {
 	void unsetCanBeInstantiatedOnlyOncePerProcess();
 
 	/**
-	 * Returns whether the value of the '{@link FmiModelV1.Capabilities#isCanBeInstantiatedOnlyOncePerProcess <em>Can Be Instantiated Only Once Per Process</em>}' attribute is set.
+	 * Returns whether the value of the '{@link FmiModelV1.CapabilitiesType#isCanBeInstantiatedOnlyOncePerProcess <em>Can Be Instantiated Only Once Per Process</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return whether the value of the '<em>Can Be Instantiated Only Once Per Process</em>' attribute is set.
@@ -490,7 +490,7 @@ public interface Capabilities extends EObject {
 	 * @see #isSetCanNotUseMemoryManagementFunctions()
 	 * @see #unsetCanNotUseMemoryManagementFunctions()
 	 * @see #setCanNotUseMemoryManagementFunctions(boolean)
-	 * @see FmiModelV1.FmiModelV1Package#getCapabilities_CanNotUseMemoryManagementFunctions()
+	 * @see FmiModelV1.FmiModelV1Package#getCapabilitiesType_CanNotUseMemoryManagementFunctions()
 	 * @model default="false" unsettable="true" dataType="org.eclipse.emf.ecore.xml.type.Boolean"
 	 *        extendedMetaData="kind='attribute' name='canNotUseMemoryManagementFunctions' namespace='##targetNamespace'"
 	 * @generated
@@ -498,7 +498,7 @@ public interface Capabilities extends EObject {
 	boolean isCanNotUseMemoryManagementFunctions();
 
 	/**
-	 * Sets the value of the '{@link FmiModelV1.Capabilities#isCanNotUseMemoryManagementFunctions <em>Can Not Use Memory Management Functions</em>}' attribute.
+	 * Sets the value of the '{@link FmiModelV1.CapabilitiesType#isCanNotUseMemoryManagementFunctions <em>Can Not Use Memory Management Functions</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Can Not Use Memory Management Functions</em>' attribute.
@@ -510,7 +510,7 @@ public interface Capabilities extends EObject {
 	void setCanNotUseMemoryManagementFunctions(boolean value);
 
 	/**
-	 * Unsets the value of the '{@link FmiModelV1.Capabilities#isCanNotUseMemoryManagementFunctions <em>Can Not Use Memory Management Functions</em>}' attribute.
+	 * Unsets the value of the '{@link FmiModelV1.CapabilitiesType#isCanNotUseMemoryManagementFunctions <em>Can Not Use Memory Management Functions</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #isSetCanNotUseMemoryManagementFunctions()
@@ -521,7 +521,7 @@ public interface Capabilities extends EObject {
 	void unsetCanNotUseMemoryManagementFunctions();
 
 	/**
-	 * Returns whether the value of the '{@link FmiModelV1.Capabilities#isCanNotUseMemoryManagementFunctions <em>Can Not Use Memory Management Functions</em>}' attribute is set.
+	 * Returns whether the value of the '{@link FmiModelV1.CapabilitiesType#isCanNotUseMemoryManagementFunctions <em>Can Not Use Memory Management Functions</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return whether the value of the '<em>Can Not Use Memory Management Functions</em>' attribute is set.
@@ -545,7 +545,7 @@ public interface Capabilities extends EObject {
 	 * @see #isSetCanGetAndSetFMUstate()
 	 * @see #unsetCanGetAndSetFMUstate()
 	 * @see #setCanGetAndSetFMUstate(boolean)
-	 * @see FmiModelV1.FmiModelV1Package#getCapabilities_CanGetAndSetFMUstate()
+	 * @see FmiModelV1.FmiModelV1Package#getCapabilitiesType_CanGetAndSetFMUstate()
 	 * @model default="false" unsettable="true" dataType="org.eclipse.emf.ecore.xml.type.Boolean"
 	 *        extendedMetaData="kind='attribute' name='canGetAndSetFMUstate' namespace='##targetNamespace'"
 	 * @generated
@@ -553,7 +553,7 @@ public interface Capabilities extends EObject {
 	boolean isCanGetAndSetFMUstate();
 
 	/**
-	 * Sets the value of the '{@link FmiModelV1.Capabilities#isCanGetAndSetFMUstate <em>Can Get And Set FM Ustate</em>}' attribute.
+	 * Sets the value of the '{@link FmiModelV1.CapabilitiesType#isCanGetAndSetFMUstate <em>Can Get And Set FM Ustate</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Can Get And Set FM Ustate</em>' attribute.
@@ -565,7 +565,7 @@ public interface Capabilities extends EObject {
 	void setCanGetAndSetFMUstate(boolean value);
 
 	/**
-	 * Unsets the value of the '{@link FmiModelV1.Capabilities#isCanGetAndSetFMUstate <em>Can Get And Set FM Ustate</em>}' attribute.
+	 * Unsets the value of the '{@link FmiModelV1.CapabilitiesType#isCanGetAndSetFMUstate <em>Can Get And Set FM Ustate</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #isSetCanGetAndSetFMUstate()
@@ -576,7 +576,7 @@ public interface Capabilities extends EObject {
 	void unsetCanGetAndSetFMUstate();
 
 	/**
-	 * Returns whether the value of the '{@link FmiModelV1.Capabilities#isCanGetAndSetFMUstate <em>Can Get And Set FM Ustate</em>}' attribute is set.
+	 * Returns whether the value of the '{@link FmiModelV1.CapabilitiesType#isCanGetAndSetFMUstate <em>Can Get And Set FM Ustate</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return whether the value of the '<em>Can Get And Set FM Ustate</em>' attribute is set.
@@ -600,7 +600,7 @@ public interface Capabilities extends EObject {
 	 * @see #isSetCanSerializeFMUstate()
 	 * @see #unsetCanSerializeFMUstate()
 	 * @see #setCanSerializeFMUstate(boolean)
-	 * @see FmiModelV1.FmiModelV1Package#getCapabilities_CanSerializeFMUstate()
+	 * @see FmiModelV1.FmiModelV1Package#getCapabilitiesType_CanSerializeFMUstate()
 	 * @model default="false" unsettable="true" dataType="org.eclipse.emf.ecore.xml.type.Boolean"
 	 *        extendedMetaData="kind='attribute' name='canSerializeFMUstate' namespace='##targetNamespace'"
 	 * @generated
@@ -608,7 +608,7 @@ public interface Capabilities extends EObject {
 	boolean isCanSerializeFMUstate();
 
 	/**
-	 * Sets the value of the '{@link FmiModelV1.Capabilities#isCanSerializeFMUstate <em>Can Serialize FM Ustate</em>}' attribute.
+	 * Sets the value of the '{@link FmiModelV1.CapabilitiesType#isCanSerializeFMUstate <em>Can Serialize FM Ustate</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Can Serialize FM Ustate</em>' attribute.
@@ -620,7 +620,7 @@ public interface Capabilities extends EObject {
 	void setCanSerializeFMUstate(boolean value);
 
 	/**
-	 * Unsets the value of the '{@link FmiModelV1.Capabilities#isCanSerializeFMUstate <em>Can Serialize FM Ustate</em>}' attribute.
+	 * Unsets the value of the '{@link FmiModelV1.CapabilitiesType#isCanSerializeFMUstate <em>Can Serialize FM Ustate</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #isSetCanSerializeFMUstate()
@@ -631,7 +631,7 @@ public interface Capabilities extends EObject {
 	void unsetCanSerializeFMUstate();
 
 	/**
-	 * Returns whether the value of the '{@link FmiModelV1.Capabilities#isCanSerializeFMUstate <em>Can Serialize FM Ustate</em>}' attribute is set.
+	 * Returns whether the value of the '{@link FmiModelV1.CapabilitiesType#isCanSerializeFMUstate <em>Can Serialize FM Ustate</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return whether the value of the '<em>Can Serialize FM Ustate</em>' attribute is set.
@@ -651,7 +651,7 @@ public interface Capabilities extends EObject {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Model Identifier</em>' attribute.
 	 * @see #setModelIdentifier(String)
-	 * @see FmiModelV1.FmiModelV1Package#getCapabilities_ModelIdentifier()
+	 * @see FmiModelV1.FmiModelV1Package#getCapabilitiesType_ModelIdentifier()
 	 * @model dataType="org.eclipse.emf.ecore.xml.type.NormalizedString" required="true"
 	 *        extendedMetaData="kind='attribute' name='modelIdentifier' namespace='##targetNamespace'"
 	 * @generated
@@ -659,7 +659,7 @@ public interface Capabilities extends EObject {
 	String getModelIdentifier();
 
 	/**
-	 * Sets the value of the '{@link FmiModelV1.Capabilities#getModelIdentifier <em>Model Identifier</em>}' attribute.
+	 * Sets the value of the '{@link FmiModelV1.CapabilitiesType#getModelIdentifier <em>Model Identifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Model Identifier</em>' attribute.
@@ -680,7 +680,7 @@ public interface Capabilities extends EObject {
 	 * @see #isSetNeedsExecutionTool()
 	 * @see #unsetNeedsExecutionTool()
 	 * @see #setNeedsExecutionTool(boolean)
-	 * @see FmiModelV1.FmiModelV1Package#getCapabilities_NeedsExecutionTool()
+	 * @see FmiModelV1.FmiModelV1Package#getCapabilitiesType_NeedsExecutionTool()
 	 * @model default="false" unsettable="true" dataType="org.eclipse.emf.ecore.xml.type.Boolean"
 	 *        extendedMetaData="kind='attribute' name='needsExecutionTool' namespace='##targetNamespace'"
 	 * @generated
@@ -688,7 +688,7 @@ public interface Capabilities extends EObject {
 	boolean isNeedsExecutionTool();
 
 	/**
-	 * Sets the value of the '{@link FmiModelV1.Capabilities#isNeedsExecutionTool <em>Needs Execution Tool</em>}' attribute.
+	 * Sets the value of the '{@link FmiModelV1.CapabilitiesType#isNeedsExecutionTool <em>Needs Execution Tool</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Needs Execution Tool</em>' attribute.
@@ -700,7 +700,7 @@ public interface Capabilities extends EObject {
 	void setNeedsExecutionTool(boolean value);
 
 	/**
-	 * Unsets the value of the '{@link FmiModelV1.Capabilities#isNeedsExecutionTool <em>Needs Execution Tool</em>}' attribute.
+	 * Unsets the value of the '{@link FmiModelV1.CapabilitiesType#isNeedsExecutionTool <em>Needs Execution Tool</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #isSetNeedsExecutionTool()
@@ -711,7 +711,7 @@ public interface Capabilities extends EObject {
 	void unsetNeedsExecutionTool();
 
 	/**
-	 * Returns whether the value of the '{@link FmiModelV1.Capabilities#isNeedsExecutionTool <em>Needs Execution Tool</em>}' attribute is set.
+	 * Returns whether the value of the '{@link FmiModelV1.CapabilitiesType#isNeedsExecutionTool <em>Needs Execution Tool</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return whether the value of the '<em>Needs Execution Tool</em>' attribute is set.
@@ -722,4 +722,4 @@ public interface Capabilities extends EObject {
 	 */
 	boolean isSetNeedsExecutionTool();
 
-} // Capabilities
+} // CapabilitiesType

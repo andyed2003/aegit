@@ -79,9 +79,9 @@ public class FmiModelV1FactoryImpl extends EFactoryImpl implements FmiModelV1Fac
 			case FmiModelV1Package.TOOL_TYPE: return createToolType();
 			case FmiModelV1Package.TYPE_DEFINITIONS_TYPE: return createTypeDefinitionsType();
 			case FmiModelV1Package.UNIT_DEFINITIONS_TYPE: return createUnitDefinitionsType();
-			case FmiModelV1Package.CAPABILITIES: return createCapabilities();
-			case FmiModelV1Package.CO_SIMULATION_STAND_ALONE: return createCoSimulation_StandAlone();
-			case FmiModelV1Package.CO_SIMULATION_TOOL: return createCoSimulation_Tool();
+			case FmiModelV1Package.CAPABILITIES_TYPE: return createCapabilitiesType();
+			case FmiModelV1Package.IMPLEMENTATION_TYPE: return createImplementationType();
+			case FmiModelV1Package.CO_SIMULATION_STAND_ALONE_TYPE: return createCoSimulation_StandAloneType();
 			case FmiModelV1Package.VENDOR_ANNOTATIONS_TYPE: return createVendorAnnotationsType();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -371,9 +371,9 @@ public class FmiModelV1FactoryImpl extends EFactoryImpl implements FmiModelV1Fac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Capabilities createCapabilities() {
-		CapabilitiesImpl capabilities = new CapabilitiesImpl();
-		return capabilities;
+	public CapabilitiesType createCapabilitiesType() {
+		CapabilitiesTypeImpl capabilitiesType = new CapabilitiesTypeImpl();
+		return capabilitiesType;
 	}
 
 	/**
@@ -381,9 +381,9 @@ public class FmiModelV1FactoryImpl extends EFactoryImpl implements FmiModelV1Fac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CoSimulation_StandAlone createCoSimulation_StandAlone() {
-		CoSimulation_StandAloneImpl coSimulation_StandAlone = new CoSimulation_StandAloneImpl();
-		return coSimulation_StandAlone;
+	public ImplementationType createImplementationType() {
+		ImplementationTypeImpl implementationType = new ImplementationTypeImpl();
+		return implementationType;
 	}
 
 	/**
@@ -391,9 +391,9 @@ public class FmiModelV1FactoryImpl extends EFactoryImpl implements FmiModelV1Fac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CoSimulation_Tool createCoSimulation_Tool() {
-		CoSimulation_ToolImpl coSimulation_Tool = new CoSimulation_ToolImpl();
-		return coSimulation_Tool;
+	public CoSimulation_StandAloneType createCoSimulation_StandAloneType() {
+		CoSimulation_StandAloneTypeImpl coSimulation_StandAloneType = new CoSimulation_StandAloneTypeImpl();
+		return coSimulation_StandAloneType;
 	}
 
 	/**

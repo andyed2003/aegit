@@ -6,23 +6,29 @@ import FmiModelV1.DefaultExperimentType;
 import FmiModelV1.FmiModelDescriptionType;
 import FmiModelV1.FmiModelV1Package;
 import FmiModelV1.ImplementationType;
-import FmiModelV1.Implementation;
 import FmiModelV1.ModelVariablesType;
 import FmiModelV1.TypeDefinitionsType;
 import FmiModelV1.UnitDefinitionsType;
 import FmiModelV1.VariableNamingConventionType;
 import FmiModelV1.VendorAnnotationsType;
 
+import java.util.Collection;
+
 import javax.xml.datatype.XMLGregorianCalendar;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -106,14 +112,14 @@ public class FmiModelDescriptionTypeImpl extends EObjectImpl implements FmiModel
 	protected ModelVariablesType modelVariables;
 
 	/**
-	 * The cached value of the '{@link #getImplementation() <em>Implementation</em>}' containment reference.
+	 * The cached value of the '{@link #getImplementation() <em>Implementation</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getImplementation()
 	 * @generated
 	 * @ordered
 	 */
-	protected ImplementationType implementation;
+	protected EList<ImplementationType> implementation;
 
 	/**
 	 * The default value of the '{@link #getAuthor() <em>Author</em>}' attribute.
@@ -630,42 +636,11 @@ public class FmiModelDescriptionTypeImpl extends EObjectImpl implements FmiModel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ImplementationType getImplementation() {
+	public EList<ImplementationType> getImplementation() {
+		if (implementation == null) {
+			implementation = new EObjectContainmentEList<ImplementationType>(ImplementationType.class, this, FmiModelV1Package.FMI_MODEL_DESCRIPTION_TYPE__IMPLEMENTATION);
+		}
 		return implementation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetImplementation(ImplementationType newImplementation, NotificationChain msgs) {
-		ImplementationType oldImplementation = implementation;
-		implementation = newImplementation;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FmiModelV1Package.FMI_MODEL_DESCRIPTION_TYPE__IMPLEMENTATION, oldImplementation, newImplementation);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setImplementation(ImplementationType newImplementation) {
-		if (newImplementation != implementation) {
-			NotificationChain msgs = null;
-			if (implementation != null)
-				msgs = ((InternalEObject)implementation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FmiModelV1Package.FMI_MODEL_DESCRIPTION_TYPE__IMPLEMENTATION, null, msgs);
-			if (newImplementation != null)
-				msgs = ((InternalEObject)newImplementation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FmiModelV1Package.FMI_MODEL_DESCRIPTION_TYPE__IMPLEMENTATION, null, msgs);
-			msgs = basicSetImplementation(newImplementation, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FmiModelV1Package.FMI_MODEL_DESCRIPTION_TYPE__IMPLEMENTATION, newImplementation, newImplementation));
 	}
 
 	/**
@@ -1039,7 +1014,7 @@ public class FmiModelDescriptionTypeImpl extends EObjectImpl implements FmiModel
 			case FmiModelV1Package.FMI_MODEL_DESCRIPTION_TYPE__MODEL_VARIABLES:
 				return basicSetModelVariables(null, msgs);
 			case FmiModelV1Package.FMI_MODEL_DESCRIPTION_TYPE__IMPLEMENTATION:
-				return basicSetImplementation(null, msgs);
+				return ((InternalEList<?>)getImplementation()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -1097,6 +1072,7 @@ public class FmiModelDescriptionTypeImpl extends EObjectImpl implements FmiModel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -1116,7 +1092,8 @@ public class FmiModelDescriptionTypeImpl extends EObjectImpl implements FmiModel
 				setModelVariables((ModelVariablesType)newValue);
 				return;
 			case FmiModelV1Package.FMI_MODEL_DESCRIPTION_TYPE__IMPLEMENTATION:
-				setImplementation((ImplementationType)newValue);
+				getImplementation().clear();
+				getImplementation().addAll((Collection<? extends ImplementationType>)newValue);
 				return;
 			case FmiModelV1Package.FMI_MODEL_DESCRIPTION_TYPE__AUTHOR:
 				setAuthor((String)newValue);
@@ -1182,7 +1159,7 @@ public class FmiModelDescriptionTypeImpl extends EObjectImpl implements FmiModel
 				setModelVariables((ModelVariablesType)null);
 				return;
 			case FmiModelV1Package.FMI_MODEL_DESCRIPTION_TYPE__IMPLEMENTATION:
-				setImplementation((ImplementationType)null);
+				getImplementation().clear();
 				return;
 			case FmiModelV1Package.FMI_MODEL_DESCRIPTION_TYPE__AUTHOR:
 				setAuthor(AUTHOR_EDEFAULT);
@@ -1243,7 +1220,7 @@ public class FmiModelDescriptionTypeImpl extends EObjectImpl implements FmiModel
 			case FmiModelV1Package.FMI_MODEL_DESCRIPTION_TYPE__MODEL_VARIABLES:
 				return modelVariables != null;
 			case FmiModelV1Package.FMI_MODEL_DESCRIPTION_TYPE__IMPLEMENTATION:
-				return implementation != null;
+				return implementation != null && !implementation.isEmpty();
 			case FmiModelV1Package.FMI_MODEL_DESCRIPTION_TYPE__AUTHOR:
 				return AUTHOR_EDEFAULT == null ? author != null : !AUTHOR_EDEFAULT.equals(author);
 			case FmiModelV1Package.FMI_MODEL_DESCRIPTION_TYPE__DESCRIPTION:

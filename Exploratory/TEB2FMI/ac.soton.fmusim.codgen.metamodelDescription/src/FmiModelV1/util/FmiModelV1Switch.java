@@ -198,9 +198,9 @@ public class FmiModelV1Switch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case FmiModelV1Package.CAPABILITIES: {
-				Capabilities capabilities = (Capabilities)theEObject;
-				T result = caseCapabilities(capabilities);
+			case FmiModelV1Package.CAPABILITIES_TYPE: {
+				CapabilitiesType capabilitiesType = (CapabilitiesType)theEObject;
+				T result = caseCapabilitiesType(capabilitiesType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -210,17 +210,9 @@ public class FmiModelV1Switch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case FmiModelV1Package.CO_SIMULATION_STAND_ALONE: {
-				CoSimulation_StandAlone coSimulation_StandAlone = (CoSimulation_StandAlone)theEObject;
-				T result = caseCoSimulation_StandAlone(coSimulation_StandAlone);
-				if (result == null) result = caseImplementationType(coSimulation_StandAlone);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case FmiModelV1Package.CO_SIMULATION_TOOL: {
-				CoSimulation_Tool coSimulation_Tool = (CoSimulation_Tool)theEObject;
-				T result = caseCoSimulation_Tool(coSimulation_Tool);
-				if (result == null) result = caseImplementationType(coSimulation_Tool);
+			case FmiModelV1Package.CO_SIMULATION_STAND_ALONE_TYPE: {
+				CoSimulation_StandAloneType coSimulation_StandAloneType = (CoSimulation_StandAloneType)theEObject;
+				T result = caseCoSimulation_StandAloneType(coSimulation_StandAloneType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -565,17 +557,17 @@ public class FmiModelV1Switch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Capabilities</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Capabilities Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Capabilities</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Capabilities Type</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseCapabilities(Capabilities object) {
+	public T caseCapabilitiesType(CapabilitiesType object) {
 		return null;
 	}
 
@@ -595,32 +587,17 @@ public class FmiModelV1Switch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Co Simulation Stand Alone</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Co Simulation Stand Alone Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Co Simulation Stand Alone</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Co Simulation Stand Alone Type</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseCoSimulation_StandAlone(CoSimulation_StandAlone object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Co Simulation Tool</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Co Simulation Tool</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseCoSimulation_Tool(CoSimulation_Tool object) {
+	public T caseCoSimulation_StandAloneType(CoSimulation_StandAloneType object) {
 		return null;
 	}
 

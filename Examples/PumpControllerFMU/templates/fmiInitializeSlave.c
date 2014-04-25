@@ -1,6 +1,6 @@
 //## <addToHeader>
-fmiStatus initialize(ModelInstance* c,
-		fmiEventInfo* eventInfo) {
+fmiStatus fmiInitializeSlave(fmiComponent c, fmiReal tStart,
+		fmiBoolean StopTimeDefined, fmiReal tStop) {
 
 	ModelInstance* mc = c;
 		//## <initialisationsList>

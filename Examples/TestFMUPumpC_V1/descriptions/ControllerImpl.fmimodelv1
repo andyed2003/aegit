@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<FmiModelV1:DocumentRoot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:FmiModelV1="http://ac.soton.fmusim.codegen.fmimetamodelV1">
-  <fmiModelDescription author="University of Southampton" fmiVersion="1.0" generationDateAndTime="2014-04-25T09:24:53.371+01:00" generationTool="EB2FMU" guid="GUID_ControllerImpl_2014-04-25T09:24:53.371+01:00" modelIdentifier="ControllerImpl" modelName="ControllerImpl" numberOfContinuousStates="0" numberOfEventIndicators="0">
+<FmiModelV1:DocumentRoot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:FmiModelV1="http://ac.soton.fmusim.codegen.fmimetamodelV1">
+  <fmiModelDescription author="University of Southampton" fmiVersion="1.0" generationDateAndTime="2014-04-25T17:22:19.483+01:00" generationTool="EB2FMU" guid="GUID_ControllerImpl_2014-04-25T17:22:19.483+01:00" modelIdentifier="ControllerImpl" modelName="ControllerImpl" numberOfContinuousStates="0" numberOfEventIndicators="0">
     <ModelVariables>
       <ScalarVariable causality="input" name="c_level" valueReference="0" variability="discrete">
         <Integer start="100"/>
@@ -30,6 +30,10 @@
         <Boolean/>
       </ScalarVariable>
     </ModelVariables>
-    <Implementation xsi:type="FmiModelV1:CoSimulation_StandAlone"/>
+    <Implementation>
+      <CoSimulation_StandAlone>
+        <Capabilities/>
+      </CoSimulation_StandAlone>
+    </Implementation>
   </fmiModelDescription>
 </FmiModelV1:DocumentRoot>

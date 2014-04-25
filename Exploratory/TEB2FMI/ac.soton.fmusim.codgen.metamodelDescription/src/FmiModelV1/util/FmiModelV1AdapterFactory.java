@@ -156,20 +156,16 @@ public class FmiModelV1AdapterFactory extends AdapterFactoryImpl {
 				return createUnitDefinitionsTypeAdapter();
 			}
 			@Override
-			public Adapter caseCapabilities(Capabilities object) {
-				return createCapabilitiesAdapter();
+			public Adapter caseCapabilitiesType(CapabilitiesType object) {
+				return createCapabilitiesTypeAdapter();
 			}
 			@Override
 			public Adapter caseImplementationType(ImplementationType object) {
 				return createImplementationTypeAdapter();
 			}
 			@Override
-			public Adapter caseCoSimulation_StandAlone(CoSimulation_StandAlone object) {
-				return createCoSimulation_StandAloneAdapter();
-			}
-			@Override
-			public Adapter caseCoSimulation_Tool(CoSimulation_Tool object) {
-				return createCoSimulation_ToolAdapter();
+			public Adapter caseCoSimulation_StandAloneType(CoSimulation_StandAloneType object) {
+				return createCoSimulation_StandAloneTypeAdapter();
 			}
 			@Override
 			public Adapter caseVendorAnnotationsType(VendorAnnotationsType object) {
@@ -504,16 +500,16 @@ public class FmiModelV1AdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link FmiModelV1.Capabilities <em>Capabilities</em>}'.
+	 * Creates a new adapter for an object of class '{@link FmiModelV1.CapabilitiesType <em>Capabilities Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see FmiModelV1.Capabilities
+	 * @see FmiModelV1.CapabilitiesType
 	 * @generated
 	 */
-	public Adapter createCapabilitiesAdapter() {
+	public Adapter createCapabilitiesTypeAdapter() {
 		return null;
 	}
 
@@ -532,30 +528,16 @@ public class FmiModelV1AdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link FmiModelV1.CoSimulation_StandAlone <em>Co Simulation Stand Alone</em>}'.
+	 * Creates a new adapter for an object of class '{@link FmiModelV1.CoSimulation_StandAloneType <em>Co Simulation Stand Alone Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see FmiModelV1.CoSimulation_StandAlone
+	 * @see FmiModelV1.CoSimulation_StandAloneType
 	 * @generated
 	 */
-	public Adapter createCoSimulation_StandAloneAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link FmiModelV1.CoSimulation_Tool <em>Co Simulation Tool</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see FmiModelV1.CoSimulation_Tool
-	 * @generated
-	 */
-	public Adapter createCoSimulation_ToolAdapter() {
+	public Adapter createCoSimulation_StandAloneTypeAdapter() {
 		return null;
 	}
 

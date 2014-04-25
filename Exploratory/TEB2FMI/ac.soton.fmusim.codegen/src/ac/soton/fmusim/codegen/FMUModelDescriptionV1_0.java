@@ -46,11 +46,13 @@ import org.rodinp.core.IRodinProject;
 import org.rodinp.core.RodinCore;
 
 import FmiModelV1.BooleanType;
+import FmiModelV1.CapabilitiesType;
 import FmiModelV1.CausalityType;
-import FmiModelV1.CoSimulation_StandAlone;
+import FmiModelV1.CoSimulation_StandAloneType;
 import FmiModelV1.DocumentRoot;
 import FmiModelV1.FmiModelDescriptionType;
 import FmiModelV1.FmiModelV1Factory;
+import FmiModelV1.ImplementationType;
 import FmiModelV1.IntegerType;
 import FmiModelV1.ModelVariablesType;
 import FmiModelV1.RealType;
@@ -147,11 +149,12 @@ public class FMUModelDescriptionV1_0 {
 
 		// the FMI V1 requires an implementation : fmiImplementation
 		// with co-simulation stand-alone type
-//		ImplementationType implementationType = FmiModelV1Factory.eINSTANCE.createImplementationType();
-		CoSimulation_StandAlone standAloneType = FmiModelV1Factory.eINSTANCE.createCoSimulation_StandAlone();
-//		implementationType.setFmiImplementation(standAloneType);
-		descriptionType.setImplementation(standAloneType);
-		
+		ImplementationType implementationType = FmiModelV1Factory.eINSTANCE.createImplementationType();
+		CapabilitiesType capabilities = FmiModelV1Factory.eINSTANCE.createCapabilitiesType();
+		CoSimulation_StandAloneType standAloneType = FmiModelV1Factory.eINSTANCE.createCoSimulation_StandAloneType();
+		descriptionType.getImplementation().add(implementationType);
+		implementationType.setCoSimulation_StandAlone(standAloneType);
+		standAloneType.setCapabilities(capabilities);
 		
 		// Get the info to obtain the type environment
 		IRodinFile mchFile = sourceRodinProject.getRodinFile(machine.getName()

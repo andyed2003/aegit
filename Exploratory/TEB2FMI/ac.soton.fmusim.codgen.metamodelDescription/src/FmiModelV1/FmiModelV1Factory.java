@@ -220,31 +220,31 @@ public interface FmiModelV1Factory extends EFactory {
 	UnitDefinitionsType createUnitDefinitionsType();
 
 	/**
-	 * Returns a new object of class '<em>Capabilities</em>'.
+	 * Returns a new object of class '<em>Capabilities Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Capabilities</em>'.
+	 * @return a new object of class '<em>Capabilities Type</em>'.
 	 * @generated
 	 */
-	Capabilities createCapabilities();
+	CapabilitiesType createCapabilitiesType();
 
 	/**
-	 * Returns a new object of class '<em>Co Simulation Stand Alone</em>'.
+	 * Returns a new object of class '<em>Implementation Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Co Simulation Stand Alone</em>'.
+	 * @return a new object of class '<em>Implementation Type</em>'.
 	 * @generated
 	 */
-	CoSimulation_StandAlone createCoSimulation_StandAlone();
+	ImplementationType createImplementationType();
 
 	/**
-	 * Returns a new object of class '<em>Co Simulation Tool</em>'.
+	 * Returns a new object of class '<em>Co Simulation Stand Alone Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Co Simulation Tool</em>'.
+	 * @return a new object of class '<em>Co Simulation Stand Alone Type</em>'.
 	 * @generated
 	 */
-	CoSimulation_Tool createCoSimulation_Tool();
+	CoSimulation_StandAloneType createCoSimulation_StandAloneType();
 
 	/**
 	 * Returns a new object of class '<em>Vendor Annotations Type</em>'.

@@ -2,7 +2,7 @@
  */
 package FmiModelV1.impl;
 
-import FmiModelV1.Capabilities;
+import FmiModelV1.CapabilitiesType;
 import FmiModelV1.FmiModelV1Package;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -14,30 +14,30 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Capabilities</b></em>'.
+ * An implementation of the model object '<em><b>Capabilities Type</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link FmiModelV1.impl.CapabilitiesImpl#isCanHandleVariableCommunicationStepSize <em>Can Handle Variable Communication Step Size</em>}</li>
- *   <li>{@link FmiModelV1.impl.CapabilitiesImpl#isCanHandleEvents <em>Can Handle Events</em>}</li>
- *   <li>{@link FmiModelV1.impl.CapabilitiesImpl#isCanRejectSteps <em>Can Reject Steps</em>}</li>
- *   <li>{@link FmiModelV1.impl.CapabilitiesImpl#isCanInterpolateInputs <em>Can Interpolate Inputs</em>}</li>
- *   <li>{@link FmiModelV1.impl.CapabilitiesImpl#getMaxOutputDerivativeOrder <em>Max Output Derivative Order</em>}</li>
- *   <li>{@link FmiModelV1.impl.CapabilitiesImpl#isCanRunAsynchronuously <em>Can Run Asynchronuously</em>}</li>
- *   <li>{@link FmiModelV1.impl.CapabilitiesImpl#isCanSignalEvents <em>Can Signal Events</em>}</li>
- *   <li>{@link FmiModelV1.impl.CapabilitiesImpl#isCanBeInstantiatedOnlyOncePerProcess <em>Can Be Instantiated Only Once Per Process</em>}</li>
- *   <li>{@link FmiModelV1.impl.CapabilitiesImpl#isCanNotUseMemoryManagementFunctions <em>Can Not Use Memory Management Functions</em>}</li>
- *   <li>{@link FmiModelV1.impl.CapabilitiesImpl#isCanGetAndSetFMUstate <em>Can Get And Set FM Ustate</em>}</li>
- *   <li>{@link FmiModelV1.impl.CapabilitiesImpl#isCanSerializeFMUstate <em>Can Serialize FM Ustate</em>}</li>
- *   <li>{@link FmiModelV1.impl.CapabilitiesImpl#getModelIdentifier <em>Model Identifier</em>}</li>
- *   <li>{@link FmiModelV1.impl.CapabilitiesImpl#isNeedsExecutionTool <em>Needs Execution Tool</em>}</li>
+ *   <li>{@link FmiModelV1.impl.CapabilitiesTypeImpl#isCanHandleVariableCommunicationStepSize <em>Can Handle Variable Communication Step Size</em>}</li>
+ *   <li>{@link FmiModelV1.impl.CapabilitiesTypeImpl#isCanHandleEvents <em>Can Handle Events</em>}</li>
+ *   <li>{@link FmiModelV1.impl.CapabilitiesTypeImpl#isCanRejectSteps <em>Can Reject Steps</em>}</li>
+ *   <li>{@link FmiModelV1.impl.CapabilitiesTypeImpl#isCanInterpolateInputs <em>Can Interpolate Inputs</em>}</li>
+ *   <li>{@link FmiModelV1.impl.CapabilitiesTypeImpl#getMaxOutputDerivativeOrder <em>Max Output Derivative Order</em>}</li>
+ *   <li>{@link FmiModelV1.impl.CapabilitiesTypeImpl#isCanRunAsynchronuously <em>Can Run Asynchronuously</em>}</li>
+ *   <li>{@link FmiModelV1.impl.CapabilitiesTypeImpl#isCanSignalEvents <em>Can Signal Events</em>}</li>
+ *   <li>{@link FmiModelV1.impl.CapabilitiesTypeImpl#isCanBeInstantiatedOnlyOncePerProcess <em>Can Be Instantiated Only Once Per Process</em>}</li>
+ *   <li>{@link FmiModelV1.impl.CapabilitiesTypeImpl#isCanNotUseMemoryManagementFunctions <em>Can Not Use Memory Management Functions</em>}</li>
+ *   <li>{@link FmiModelV1.impl.CapabilitiesTypeImpl#isCanGetAndSetFMUstate <em>Can Get And Set FM Ustate</em>}</li>
+ *   <li>{@link FmiModelV1.impl.CapabilitiesTypeImpl#isCanSerializeFMUstate <em>Can Serialize FM Ustate</em>}</li>
+ *   <li>{@link FmiModelV1.impl.CapabilitiesTypeImpl#getModelIdentifier <em>Model Identifier</em>}</li>
+ *   <li>{@link FmiModelV1.impl.CapabilitiesTypeImpl#isNeedsExecutionTool <em>Needs Execution Tool</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class CapabilitiesImpl extends EObjectImpl implements Capabilities {
+public class CapabilitiesTypeImpl extends EObjectImpl implements CapabilitiesType {
 	/**
 	 * The default value of the '{@link #isCanHandleVariableCommunicationStepSize() <em>Can Handle Variable Communication Step Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -411,7 +411,7 @@ public class CapabilitiesImpl extends EObjectImpl implements Capabilities {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CapabilitiesImpl() {
+	protected CapabilitiesTypeImpl() {
 		super();
 	}
 
@@ -422,7 +422,7 @@ public class CapabilitiesImpl extends EObjectImpl implements Capabilities {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return FmiModelV1Package.Literals.CAPABILITIES;
+		return FmiModelV1Package.Literals.CAPABILITIES_TYPE;
 	}
 
 	/**
@@ -445,7 +445,7 @@ public class CapabilitiesImpl extends EObjectImpl implements Capabilities {
 		boolean oldCanHandleVariableCommunicationStepSizeESet = canHandleVariableCommunicationStepSizeESet;
 		canHandleVariableCommunicationStepSizeESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FmiModelV1Package.CAPABILITIES__CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE, oldCanHandleVariableCommunicationStepSize, canHandleVariableCommunicationStepSize, !oldCanHandleVariableCommunicationStepSizeESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, FmiModelV1Package.CAPABILITIES_TYPE__CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE, oldCanHandleVariableCommunicationStepSize, canHandleVariableCommunicationStepSize, !oldCanHandleVariableCommunicationStepSizeESet));
 	}
 
 	/**
@@ -459,7 +459,7 @@ public class CapabilitiesImpl extends EObjectImpl implements Capabilities {
 		canHandleVariableCommunicationStepSize = CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE_EDEFAULT;
 		canHandleVariableCommunicationStepSizeESet = false;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, FmiModelV1Package.CAPABILITIES__CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE, oldCanHandleVariableCommunicationStepSize, CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE_EDEFAULT, oldCanHandleVariableCommunicationStepSizeESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, FmiModelV1Package.CAPABILITIES_TYPE__CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE, oldCanHandleVariableCommunicationStepSize, CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE_EDEFAULT, oldCanHandleVariableCommunicationStepSizeESet));
 	}
 
 	/**
@@ -491,7 +491,7 @@ public class CapabilitiesImpl extends EObjectImpl implements Capabilities {
 		boolean oldCanHandleEventsESet = canHandleEventsESet;
 		canHandleEventsESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FmiModelV1Package.CAPABILITIES__CAN_HANDLE_EVENTS, oldCanHandleEvents, canHandleEvents, !oldCanHandleEventsESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, FmiModelV1Package.CAPABILITIES_TYPE__CAN_HANDLE_EVENTS, oldCanHandleEvents, canHandleEvents, !oldCanHandleEventsESet));
 	}
 
 	/**
@@ -505,7 +505,7 @@ public class CapabilitiesImpl extends EObjectImpl implements Capabilities {
 		canHandleEvents = CAN_HANDLE_EVENTS_EDEFAULT;
 		canHandleEventsESet = false;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, FmiModelV1Package.CAPABILITIES__CAN_HANDLE_EVENTS, oldCanHandleEvents, CAN_HANDLE_EVENTS_EDEFAULT, oldCanHandleEventsESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, FmiModelV1Package.CAPABILITIES_TYPE__CAN_HANDLE_EVENTS, oldCanHandleEvents, CAN_HANDLE_EVENTS_EDEFAULT, oldCanHandleEventsESet));
 	}
 
 	/**
@@ -537,7 +537,7 @@ public class CapabilitiesImpl extends EObjectImpl implements Capabilities {
 		boolean oldCanRejectStepsESet = canRejectStepsESet;
 		canRejectStepsESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FmiModelV1Package.CAPABILITIES__CAN_REJECT_STEPS, oldCanRejectSteps, canRejectSteps, !oldCanRejectStepsESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, FmiModelV1Package.CAPABILITIES_TYPE__CAN_REJECT_STEPS, oldCanRejectSteps, canRejectSteps, !oldCanRejectStepsESet));
 	}
 
 	/**
@@ -551,7 +551,7 @@ public class CapabilitiesImpl extends EObjectImpl implements Capabilities {
 		canRejectSteps = CAN_REJECT_STEPS_EDEFAULT;
 		canRejectStepsESet = false;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, FmiModelV1Package.CAPABILITIES__CAN_REJECT_STEPS, oldCanRejectSteps, CAN_REJECT_STEPS_EDEFAULT, oldCanRejectStepsESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, FmiModelV1Package.CAPABILITIES_TYPE__CAN_REJECT_STEPS, oldCanRejectSteps, CAN_REJECT_STEPS_EDEFAULT, oldCanRejectStepsESet));
 	}
 
 	/**
@@ -583,7 +583,7 @@ public class CapabilitiesImpl extends EObjectImpl implements Capabilities {
 		boolean oldCanInterpolateInputsESet = canInterpolateInputsESet;
 		canInterpolateInputsESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FmiModelV1Package.CAPABILITIES__CAN_INTERPOLATE_INPUTS, oldCanInterpolateInputs, canInterpolateInputs, !oldCanInterpolateInputsESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, FmiModelV1Package.CAPABILITIES_TYPE__CAN_INTERPOLATE_INPUTS, oldCanInterpolateInputs, canInterpolateInputs, !oldCanInterpolateInputsESet));
 	}
 
 	/**
@@ -597,7 +597,7 @@ public class CapabilitiesImpl extends EObjectImpl implements Capabilities {
 		canInterpolateInputs = CAN_INTERPOLATE_INPUTS_EDEFAULT;
 		canInterpolateInputsESet = false;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, FmiModelV1Package.CAPABILITIES__CAN_INTERPOLATE_INPUTS, oldCanInterpolateInputs, CAN_INTERPOLATE_INPUTS_EDEFAULT, oldCanInterpolateInputsESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, FmiModelV1Package.CAPABILITIES_TYPE__CAN_INTERPOLATE_INPUTS, oldCanInterpolateInputs, CAN_INTERPOLATE_INPUTS_EDEFAULT, oldCanInterpolateInputsESet));
 	}
 
 	/**
@@ -629,7 +629,7 @@ public class CapabilitiesImpl extends EObjectImpl implements Capabilities {
 		boolean oldMaxOutputDerivativeOrderESet = maxOutputDerivativeOrderESet;
 		maxOutputDerivativeOrderESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FmiModelV1Package.CAPABILITIES__MAX_OUTPUT_DERIVATIVE_ORDER, oldMaxOutputDerivativeOrder, maxOutputDerivativeOrder, !oldMaxOutputDerivativeOrderESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, FmiModelV1Package.CAPABILITIES_TYPE__MAX_OUTPUT_DERIVATIVE_ORDER, oldMaxOutputDerivativeOrder, maxOutputDerivativeOrder, !oldMaxOutputDerivativeOrderESet));
 	}
 
 	/**
@@ -643,7 +643,7 @@ public class CapabilitiesImpl extends EObjectImpl implements Capabilities {
 		maxOutputDerivativeOrder = MAX_OUTPUT_DERIVATIVE_ORDER_EDEFAULT;
 		maxOutputDerivativeOrderESet = false;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, FmiModelV1Package.CAPABILITIES__MAX_OUTPUT_DERIVATIVE_ORDER, oldMaxOutputDerivativeOrder, MAX_OUTPUT_DERIVATIVE_ORDER_EDEFAULT, oldMaxOutputDerivativeOrderESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, FmiModelV1Package.CAPABILITIES_TYPE__MAX_OUTPUT_DERIVATIVE_ORDER, oldMaxOutputDerivativeOrder, MAX_OUTPUT_DERIVATIVE_ORDER_EDEFAULT, oldMaxOutputDerivativeOrderESet));
 	}
 
 	/**
@@ -675,7 +675,7 @@ public class CapabilitiesImpl extends EObjectImpl implements Capabilities {
 		boolean oldCanRunAsynchronuouslyESet = canRunAsynchronuouslyESet;
 		canRunAsynchronuouslyESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FmiModelV1Package.CAPABILITIES__CAN_RUN_ASYNCHRONUOUSLY, oldCanRunAsynchronuously, canRunAsynchronuously, !oldCanRunAsynchronuouslyESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, FmiModelV1Package.CAPABILITIES_TYPE__CAN_RUN_ASYNCHRONUOUSLY, oldCanRunAsynchronuously, canRunAsynchronuously, !oldCanRunAsynchronuouslyESet));
 	}
 
 	/**
@@ -689,7 +689,7 @@ public class CapabilitiesImpl extends EObjectImpl implements Capabilities {
 		canRunAsynchronuously = CAN_RUN_ASYNCHRONUOUSLY_EDEFAULT;
 		canRunAsynchronuouslyESet = false;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, FmiModelV1Package.CAPABILITIES__CAN_RUN_ASYNCHRONUOUSLY, oldCanRunAsynchronuously, CAN_RUN_ASYNCHRONUOUSLY_EDEFAULT, oldCanRunAsynchronuouslyESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, FmiModelV1Package.CAPABILITIES_TYPE__CAN_RUN_ASYNCHRONUOUSLY, oldCanRunAsynchronuously, CAN_RUN_ASYNCHRONUOUSLY_EDEFAULT, oldCanRunAsynchronuouslyESet));
 	}
 
 	/**
@@ -721,7 +721,7 @@ public class CapabilitiesImpl extends EObjectImpl implements Capabilities {
 		boolean oldCanSignalEventsESet = canSignalEventsESet;
 		canSignalEventsESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FmiModelV1Package.CAPABILITIES__CAN_SIGNAL_EVENTS, oldCanSignalEvents, canSignalEvents, !oldCanSignalEventsESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, FmiModelV1Package.CAPABILITIES_TYPE__CAN_SIGNAL_EVENTS, oldCanSignalEvents, canSignalEvents, !oldCanSignalEventsESet));
 	}
 
 	/**
@@ -735,7 +735,7 @@ public class CapabilitiesImpl extends EObjectImpl implements Capabilities {
 		canSignalEvents = CAN_SIGNAL_EVENTS_EDEFAULT;
 		canSignalEventsESet = false;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, FmiModelV1Package.CAPABILITIES__CAN_SIGNAL_EVENTS, oldCanSignalEvents, CAN_SIGNAL_EVENTS_EDEFAULT, oldCanSignalEventsESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, FmiModelV1Package.CAPABILITIES_TYPE__CAN_SIGNAL_EVENTS, oldCanSignalEvents, CAN_SIGNAL_EVENTS_EDEFAULT, oldCanSignalEventsESet));
 	}
 
 	/**
@@ -767,7 +767,7 @@ public class CapabilitiesImpl extends EObjectImpl implements Capabilities {
 		boolean oldCanBeInstantiatedOnlyOncePerProcessESet = canBeInstantiatedOnlyOncePerProcessESet;
 		canBeInstantiatedOnlyOncePerProcessESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FmiModelV1Package.CAPABILITIES__CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS, oldCanBeInstantiatedOnlyOncePerProcess, canBeInstantiatedOnlyOncePerProcess, !oldCanBeInstantiatedOnlyOncePerProcessESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, FmiModelV1Package.CAPABILITIES_TYPE__CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS, oldCanBeInstantiatedOnlyOncePerProcess, canBeInstantiatedOnlyOncePerProcess, !oldCanBeInstantiatedOnlyOncePerProcessESet));
 	}
 
 	/**
@@ -781,7 +781,7 @@ public class CapabilitiesImpl extends EObjectImpl implements Capabilities {
 		canBeInstantiatedOnlyOncePerProcess = CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS_EDEFAULT;
 		canBeInstantiatedOnlyOncePerProcessESet = false;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, FmiModelV1Package.CAPABILITIES__CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS, oldCanBeInstantiatedOnlyOncePerProcess, CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS_EDEFAULT, oldCanBeInstantiatedOnlyOncePerProcessESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, FmiModelV1Package.CAPABILITIES_TYPE__CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS, oldCanBeInstantiatedOnlyOncePerProcess, CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS_EDEFAULT, oldCanBeInstantiatedOnlyOncePerProcessESet));
 	}
 
 	/**
@@ -813,7 +813,7 @@ public class CapabilitiesImpl extends EObjectImpl implements Capabilities {
 		boolean oldCanNotUseMemoryManagementFunctionsESet = canNotUseMemoryManagementFunctionsESet;
 		canNotUseMemoryManagementFunctionsESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FmiModelV1Package.CAPABILITIES__CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS, oldCanNotUseMemoryManagementFunctions, canNotUseMemoryManagementFunctions, !oldCanNotUseMemoryManagementFunctionsESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, FmiModelV1Package.CAPABILITIES_TYPE__CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS, oldCanNotUseMemoryManagementFunctions, canNotUseMemoryManagementFunctions, !oldCanNotUseMemoryManagementFunctionsESet));
 	}
 
 	/**
@@ -827,7 +827,7 @@ public class CapabilitiesImpl extends EObjectImpl implements Capabilities {
 		canNotUseMemoryManagementFunctions = CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS_EDEFAULT;
 		canNotUseMemoryManagementFunctionsESet = false;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, FmiModelV1Package.CAPABILITIES__CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS, oldCanNotUseMemoryManagementFunctions, CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS_EDEFAULT, oldCanNotUseMemoryManagementFunctionsESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, FmiModelV1Package.CAPABILITIES_TYPE__CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS, oldCanNotUseMemoryManagementFunctions, CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS_EDEFAULT, oldCanNotUseMemoryManagementFunctionsESet));
 	}
 
 	/**
@@ -859,7 +859,7 @@ public class CapabilitiesImpl extends EObjectImpl implements Capabilities {
 		boolean oldCanGetAndSetFMUstateESet = canGetAndSetFMUstateESet;
 		canGetAndSetFMUstateESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FmiModelV1Package.CAPABILITIES__CAN_GET_AND_SET_FM_USTATE, oldCanGetAndSetFMUstate, canGetAndSetFMUstate, !oldCanGetAndSetFMUstateESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, FmiModelV1Package.CAPABILITIES_TYPE__CAN_GET_AND_SET_FM_USTATE, oldCanGetAndSetFMUstate, canGetAndSetFMUstate, !oldCanGetAndSetFMUstateESet));
 	}
 
 	/**
@@ -873,7 +873,7 @@ public class CapabilitiesImpl extends EObjectImpl implements Capabilities {
 		canGetAndSetFMUstate = CAN_GET_AND_SET_FM_USTATE_EDEFAULT;
 		canGetAndSetFMUstateESet = false;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, FmiModelV1Package.CAPABILITIES__CAN_GET_AND_SET_FM_USTATE, oldCanGetAndSetFMUstate, CAN_GET_AND_SET_FM_USTATE_EDEFAULT, oldCanGetAndSetFMUstateESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, FmiModelV1Package.CAPABILITIES_TYPE__CAN_GET_AND_SET_FM_USTATE, oldCanGetAndSetFMUstate, CAN_GET_AND_SET_FM_USTATE_EDEFAULT, oldCanGetAndSetFMUstateESet));
 	}
 
 	/**
@@ -905,7 +905,7 @@ public class CapabilitiesImpl extends EObjectImpl implements Capabilities {
 		boolean oldCanSerializeFMUstateESet = canSerializeFMUstateESet;
 		canSerializeFMUstateESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FmiModelV1Package.CAPABILITIES__CAN_SERIALIZE_FM_USTATE, oldCanSerializeFMUstate, canSerializeFMUstate, !oldCanSerializeFMUstateESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, FmiModelV1Package.CAPABILITIES_TYPE__CAN_SERIALIZE_FM_USTATE, oldCanSerializeFMUstate, canSerializeFMUstate, !oldCanSerializeFMUstateESet));
 	}
 
 	/**
@@ -919,7 +919,7 @@ public class CapabilitiesImpl extends EObjectImpl implements Capabilities {
 		canSerializeFMUstate = CAN_SERIALIZE_FM_USTATE_EDEFAULT;
 		canSerializeFMUstateESet = false;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, FmiModelV1Package.CAPABILITIES__CAN_SERIALIZE_FM_USTATE, oldCanSerializeFMUstate, CAN_SERIALIZE_FM_USTATE_EDEFAULT, oldCanSerializeFMUstateESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, FmiModelV1Package.CAPABILITIES_TYPE__CAN_SERIALIZE_FM_USTATE, oldCanSerializeFMUstate, CAN_SERIALIZE_FM_USTATE_EDEFAULT, oldCanSerializeFMUstateESet));
 	}
 
 	/**
@@ -949,7 +949,7 @@ public class CapabilitiesImpl extends EObjectImpl implements Capabilities {
 		String oldModelIdentifier = modelIdentifier;
 		modelIdentifier = newModelIdentifier;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FmiModelV1Package.CAPABILITIES__MODEL_IDENTIFIER, oldModelIdentifier, modelIdentifier));
+			eNotify(new ENotificationImpl(this, Notification.SET, FmiModelV1Package.CAPABILITIES_TYPE__MODEL_IDENTIFIER, oldModelIdentifier, modelIdentifier));
 	}
 
 	/**
@@ -972,7 +972,7 @@ public class CapabilitiesImpl extends EObjectImpl implements Capabilities {
 		boolean oldNeedsExecutionToolESet = needsExecutionToolESet;
 		needsExecutionToolESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FmiModelV1Package.CAPABILITIES__NEEDS_EXECUTION_TOOL, oldNeedsExecutionTool, needsExecutionTool, !oldNeedsExecutionToolESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, FmiModelV1Package.CAPABILITIES_TYPE__NEEDS_EXECUTION_TOOL, oldNeedsExecutionTool, needsExecutionTool, !oldNeedsExecutionToolESet));
 	}
 
 	/**
@@ -986,7 +986,7 @@ public class CapabilitiesImpl extends EObjectImpl implements Capabilities {
 		needsExecutionTool = NEEDS_EXECUTION_TOOL_EDEFAULT;
 		needsExecutionToolESet = false;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, FmiModelV1Package.CAPABILITIES__NEEDS_EXECUTION_TOOL, oldNeedsExecutionTool, NEEDS_EXECUTION_TOOL_EDEFAULT, oldNeedsExecutionToolESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, FmiModelV1Package.CAPABILITIES_TYPE__NEEDS_EXECUTION_TOOL, oldNeedsExecutionTool, NEEDS_EXECUTION_TOOL_EDEFAULT, oldNeedsExecutionToolESet));
 	}
 
 	/**
@@ -1006,31 +1006,31 @@ public class CapabilitiesImpl extends EObjectImpl implements Capabilities {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FmiModelV1Package.CAPABILITIES__CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE:
+			case FmiModelV1Package.CAPABILITIES_TYPE__CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE:
 				return isCanHandleVariableCommunicationStepSize();
-			case FmiModelV1Package.CAPABILITIES__CAN_HANDLE_EVENTS:
+			case FmiModelV1Package.CAPABILITIES_TYPE__CAN_HANDLE_EVENTS:
 				return isCanHandleEvents();
-			case FmiModelV1Package.CAPABILITIES__CAN_REJECT_STEPS:
+			case FmiModelV1Package.CAPABILITIES_TYPE__CAN_REJECT_STEPS:
 				return isCanRejectSteps();
-			case FmiModelV1Package.CAPABILITIES__CAN_INTERPOLATE_INPUTS:
+			case FmiModelV1Package.CAPABILITIES_TYPE__CAN_INTERPOLATE_INPUTS:
 				return isCanInterpolateInputs();
-			case FmiModelV1Package.CAPABILITIES__MAX_OUTPUT_DERIVATIVE_ORDER:
+			case FmiModelV1Package.CAPABILITIES_TYPE__MAX_OUTPUT_DERIVATIVE_ORDER:
 				return getMaxOutputDerivativeOrder();
-			case FmiModelV1Package.CAPABILITIES__CAN_RUN_ASYNCHRONUOUSLY:
+			case FmiModelV1Package.CAPABILITIES_TYPE__CAN_RUN_ASYNCHRONUOUSLY:
 				return isCanRunAsynchronuously();
-			case FmiModelV1Package.CAPABILITIES__CAN_SIGNAL_EVENTS:
+			case FmiModelV1Package.CAPABILITIES_TYPE__CAN_SIGNAL_EVENTS:
 				return isCanSignalEvents();
-			case FmiModelV1Package.CAPABILITIES__CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS:
+			case FmiModelV1Package.CAPABILITIES_TYPE__CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS:
 				return isCanBeInstantiatedOnlyOncePerProcess();
-			case FmiModelV1Package.CAPABILITIES__CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS:
+			case FmiModelV1Package.CAPABILITIES_TYPE__CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS:
 				return isCanNotUseMemoryManagementFunctions();
-			case FmiModelV1Package.CAPABILITIES__CAN_GET_AND_SET_FM_USTATE:
+			case FmiModelV1Package.CAPABILITIES_TYPE__CAN_GET_AND_SET_FM_USTATE:
 				return isCanGetAndSetFMUstate();
-			case FmiModelV1Package.CAPABILITIES__CAN_SERIALIZE_FM_USTATE:
+			case FmiModelV1Package.CAPABILITIES_TYPE__CAN_SERIALIZE_FM_USTATE:
 				return isCanSerializeFMUstate();
-			case FmiModelV1Package.CAPABILITIES__MODEL_IDENTIFIER:
+			case FmiModelV1Package.CAPABILITIES_TYPE__MODEL_IDENTIFIER:
 				return getModelIdentifier();
-			case FmiModelV1Package.CAPABILITIES__NEEDS_EXECUTION_TOOL:
+			case FmiModelV1Package.CAPABILITIES_TYPE__NEEDS_EXECUTION_TOOL:
 				return isNeedsExecutionTool();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -1044,43 +1044,43 @@ public class CapabilitiesImpl extends EObjectImpl implements Capabilities {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FmiModelV1Package.CAPABILITIES__CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE:
+			case FmiModelV1Package.CAPABILITIES_TYPE__CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE:
 				setCanHandleVariableCommunicationStepSize((Boolean)newValue);
 				return;
-			case FmiModelV1Package.CAPABILITIES__CAN_HANDLE_EVENTS:
+			case FmiModelV1Package.CAPABILITIES_TYPE__CAN_HANDLE_EVENTS:
 				setCanHandleEvents((Boolean)newValue);
 				return;
-			case FmiModelV1Package.CAPABILITIES__CAN_REJECT_STEPS:
+			case FmiModelV1Package.CAPABILITIES_TYPE__CAN_REJECT_STEPS:
 				setCanRejectSteps((Boolean)newValue);
 				return;
-			case FmiModelV1Package.CAPABILITIES__CAN_INTERPOLATE_INPUTS:
+			case FmiModelV1Package.CAPABILITIES_TYPE__CAN_INTERPOLATE_INPUTS:
 				setCanInterpolateInputs((Boolean)newValue);
 				return;
-			case FmiModelV1Package.CAPABILITIES__MAX_OUTPUT_DERIVATIVE_ORDER:
+			case FmiModelV1Package.CAPABILITIES_TYPE__MAX_OUTPUT_DERIVATIVE_ORDER:
 				setMaxOutputDerivativeOrder((Long)newValue);
 				return;
-			case FmiModelV1Package.CAPABILITIES__CAN_RUN_ASYNCHRONUOUSLY:
+			case FmiModelV1Package.CAPABILITIES_TYPE__CAN_RUN_ASYNCHRONUOUSLY:
 				setCanRunAsynchronuously((Boolean)newValue);
 				return;
-			case FmiModelV1Package.CAPABILITIES__CAN_SIGNAL_EVENTS:
+			case FmiModelV1Package.CAPABILITIES_TYPE__CAN_SIGNAL_EVENTS:
 				setCanSignalEvents((Boolean)newValue);
 				return;
-			case FmiModelV1Package.CAPABILITIES__CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS:
+			case FmiModelV1Package.CAPABILITIES_TYPE__CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS:
 				setCanBeInstantiatedOnlyOncePerProcess((Boolean)newValue);
 				return;
-			case FmiModelV1Package.CAPABILITIES__CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS:
+			case FmiModelV1Package.CAPABILITIES_TYPE__CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS:
 				setCanNotUseMemoryManagementFunctions((Boolean)newValue);
 				return;
-			case FmiModelV1Package.CAPABILITIES__CAN_GET_AND_SET_FM_USTATE:
+			case FmiModelV1Package.CAPABILITIES_TYPE__CAN_GET_AND_SET_FM_USTATE:
 				setCanGetAndSetFMUstate((Boolean)newValue);
 				return;
-			case FmiModelV1Package.CAPABILITIES__CAN_SERIALIZE_FM_USTATE:
+			case FmiModelV1Package.CAPABILITIES_TYPE__CAN_SERIALIZE_FM_USTATE:
 				setCanSerializeFMUstate((Boolean)newValue);
 				return;
-			case FmiModelV1Package.CAPABILITIES__MODEL_IDENTIFIER:
+			case FmiModelV1Package.CAPABILITIES_TYPE__MODEL_IDENTIFIER:
 				setModelIdentifier((String)newValue);
 				return;
-			case FmiModelV1Package.CAPABILITIES__NEEDS_EXECUTION_TOOL:
+			case FmiModelV1Package.CAPABILITIES_TYPE__NEEDS_EXECUTION_TOOL:
 				setNeedsExecutionTool((Boolean)newValue);
 				return;
 		}
@@ -1095,43 +1095,43 @@ public class CapabilitiesImpl extends EObjectImpl implements Capabilities {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FmiModelV1Package.CAPABILITIES__CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE:
+			case FmiModelV1Package.CAPABILITIES_TYPE__CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE:
 				unsetCanHandleVariableCommunicationStepSize();
 				return;
-			case FmiModelV1Package.CAPABILITIES__CAN_HANDLE_EVENTS:
+			case FmiModelV1Package.CAPABILITIES_TYPE__CAN_HANDLE_EVENTS:
 				unsetCanHandleEvents();
 				return;
-			case FmiModelV1Package.CAPABILITIES__CAN_REJECT_STEPS:
+			case FmiModelV1Package.CAPABILITIES_TYPE__CAN_REJECT_STEPS:
 				unsetCanRejectSteps();
 				return;
-			case FmiModelV1Package.CAPABILITIES__CAN_INTERPOLATE_INPUTS:
+			case FmiModelV1Package.CAPABILITIES_TYPE__CAN_INTERPOLATE_INPUTS:
 				unsetCanInterpolateInputs();
 				return;
-			case FmiModelV1Package.CAPABILITIES__MAX_OUTPUT_DERIVATIVE_ORDER:
+			case FmiModelV1Package.CAPABILITIES_TYPE__MAX_OUTPUT_DERIVATIVE_ORDER:
 				unsetMaxOutputDerivativeOrder();
 				return;
-			case FmiModelV1Package.CAPABILITIES__CAN_RUN_ASYNCHRONUOUSLY:
+			case FmiModelV1Package.CAPABILITIES_TYPE__CAN_RUN_ASYNCHRONUOUSLY:
 				unsetCanRunAsynchronuously();
 				return;
-			case FmiModelV1Package.CAPABILITIES__CAN_SIGNAL_EVENTS:
+			case FmiModelV1Package.CAPABILITIES_TYPE__CAN_SIGNAL_EVENTS:
 				unsetCanSignalEvents();
 				return;
-			case FmiModelV1Package.CAPABILITIES__CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS:
+			case FmiModelV1Package.CAPABILITIES_TYPE__CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS:
 				unsetCanBeInstantiatedOnlyOncePerProcess();
 				return;
-			case FmiModelV1Package.CAPABILITIES__CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS:
+			case FmiModelV1Package.CAPABILITIES_TYPE__CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS:
 				unsetCanNotUseMemoryManagementFunctions();
 				return;
-			case FmiModelV1Package.CAPABILITIES__CAN_GET_AND_SET_FM_USTATE:
+			case FmiModelV1Package.CAPABILITIES_TYPE__CAN_GET_AND_SET_FM_USTATE:
 				unsetCanGetAndSetFMUstate();
 				return;
-			case FmiModelV1Package.CAPABILITIES__CAN_SERIALIZE_FM_USTATE:
+			case FmiModelV1Package.CAPABILITIES_TYPE__CAN_SERIALIZE_FM_USTATE:
 				unsetCanSerializeFMUstate();
 				return;
-			case FmiModelV1Package.CAPABILITIES__MODEL_IDENTIFIER:
+			case FmiModelV1Package.CAPABILITIES_TYPE__MODEL_IDENTIFIER:
 				setModelIdentifier(MODEL_IDENTIFIER_EDEFAULT);
 				return;
-			case FmiModelV1Package.CAPABILITIES__NEEDS_EXECUTION_TOOL:
+			case FmiModelV1Package.CAPABILITIES_TYPE__NEEDS_EXECUTION_TOOL:
 				unsetNeedsExecutionTool();
 				return;
 		}
@@ -1146,31 +1146,31 @@ public class CapabilitiesImpl extends EObjectImpl implements Capabilities {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FmiModelV1Package.CAPABILITIES__CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE:
+			case FmiModelV1Package.CAPABILITIES_TYPE__CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE:
 				return isSetCanHandleVariableCommunicationStepSize();
-			case FmiModelV1Package.CAPABILITIES__CAN_HANDLE_EVENTS:
+			case FmiModelV1Package.CAPABILITIES_TYPE__CAN_HANDLE_EVENTS:
 				return isSetCanHandleEvents();
-			case FmiModelV1Package.CAPABILITIES__CAN_REJECT_STEPS:
+			case FmiModelV1Package.CAPABILITIES_TYPE__CAN_REJECT_STEPS:
 				return isSetCanRejectSteps();
-			case FmiModelV1Package.CAPABILITIES__CAN_INTERPOLATE_INPUTS:
+			case FmiModelV1Package.CAPABILITIES_TYPE__CAN_INTERPOLATE_INPUTS:
 				return isSetCanInterpolateInputs();
-			case FmiModelV1Package.CAPABILITIES__MAX_OUTPUT_DERIVATIVE_ORDER:
+			case FmiModelV1Package.CAPABILITIES_TYPE__MAX_OUTPUT_DERIVATIVE_ORDER:
 				return isSetMaxOutputDerivativeOrder();
-			case FmiModelV1Package.CAPABILITIES__CAN_RUN_ASYNCHRONUOUSLY:
+			case FmiModelV1Package.CAPABILITIES_TYPE__CAN_RUN_ASYNCHRONUOUSLY:
 				return isSetCanRunAsynchronuously();
-			case FmiModelV1Package.CAPABILITIES__CAN_SIGNAL_EVENTS:
+			case FmiModelV1Package.CAPABILITIES_TYPE__CAN_SIGNAL_EVENTS:
 				return isSetCanSignalEvents();
-			case FmiModelV1Package.CAPABILITIES__CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS:
+			case FmiModelV1Package.CAPABILITIES_TYPE__CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS:
 				return isSetCanBeInstantiatedOnlyOncePerProcess();
-			case FmiModelV1Package.CAPABILITIES__CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS:
+			case FmiModelV1Package.CAPABILITIES_TYPE__CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS:
 				return isSetCanNotUseMemoryManagementFunctions();
-			case FmiModelV1Package.CAPABILITIES__CAN_GET_AND_SET_FM_USTATE:
+			case FmiModelV1Package.CAPABILITIES_TYPE__CAN_GET_AND_SET_FM_USTATE:
 				return isSetCanGetAndSetFMUstate();
-			case FmiModelV1Package.CAPABILITIES__CAN_SERIALIZE_FM_USTATE:
+			case FmiModelV1Package.CAPABILITIES_TYPE__CAN_SERIALIZE_FM_USTATE:
 				return isSetCanSerializeFMUstate();
-			case FmiModelV1Package.CAPABILITIES__MODEL_IDENTIFIER:
+			case FmiModelV1Package.CAPABILITIES_TYPE__MODEL_IDENTIFIER:
 				return MODEL_IDENTIFIER_EDEFAULT == null ? modelIdentifier != null : !MODEL_IDENTIFIER_EDEFAULT.equals(modelIdentifier);
-			case FmiModelV1Package.CAPABILITIES__NEEDS_EXECUTION_TOOL:
+			case FmiModelV1Package.CAPABILITIES_TYPE__NEEDS_EXECUTION_TOOL:
 				return isSetNeedsExecutionTool();
 		}
 		return super.eIsSet(featureID);
@@ -1216,4 +1216,4 @@ public class CapabilitiesImpl extends EObjectImpl implements Capabilities {
 		return result.toString();
 	}
 
-} //CapabilitiesImpl
+} //CapabilitiesTypeImpl

@@ -12,7 +12,7 @@
 // Private helpers used below to validate function arguments
 // ---------------------------------------------------------------------------
 
-static fmiBoolean invalidNumber(ModelInstance* comp, const char* f, const char* arg, int n, int nExpected){
+static fmiBoolean invalidNumber(fmiComponent* comp, const char* f, const char* arg, int n, int nExpected){
     if (n != nExpected) {
         comp->state = modelError;
         comp->functions.logger(comp, comp->instanceName, fmiError, "error",
@@ -22,7 +22,7 @@ static fmiBoolean invalidNumber(ModelInstance* comp, const char* f, const char* 
     return fmiFalse;
 }
 
-static fmiBoolean invalidState(ModelInstance* comp, const char* f, int statesExpected){
+static fmiBoolean invalidState(fmiComponent* comp, const char* f, int statesExpected){
     if (!comp)
         return fmiTrue;
     if (!(comp->state & statesExpected)) {
@@ -34,17 +34,17 @@ static fmiBoolean invalidState(ModelInstance* comp, const char* f, int statesExp
     return fmiFalse;
 }
 
-static fmiBoolean nullPointer(ModelInstance* comp, const char* f, const char* arg, const void* p){
+static fmiBoolean nullPointer(fmiComponent* comp, const char* f, const char* arg, const void* p){
     if (!p) {
         comp->state = modelError;
-        comp->functions.logger(comp, comp->instanceName, fmiError, "error", 
+        comp->functions.logger(comp, comp->instanceName, fmiError, "error",
                 "%s: Invalid argument %s = NULL.", f, arg);
         return fmiTrue;
     }
     return fmiFalse;
 }
 
-static fmiBoolean vrOutOfRange(ModelInstance* comp, const char* f, fmiValueReference vr, int end) {
+static fmiBoolean vrOutOfRange(fmiComponent* comp, const char* f, fmiValueReference vr, int end) {
     if (vr >= end) {
         comp->functions.logger(comp, comp->instanceName, fmiError, "error",
                 "%s: Illegal value reference %u.", f, vr);
@@ -52,7 +52,7 @@ static fmiBoolean vrOutOfRange(ModelInstance* comp, const char* f, fmiValueRefer
         return fmiTrue;
     }
     return fmiFalse;
-}  
+}
 
 // ---------------------------------------------------------------------------
 // FMI functions: class methods not depending of a specific model instance
@@ -70,46 +70,22 @@ const char* fmiGetVersion() {
 // FMI functions: creation and destruction of a model instance
 // ---------------------------------------------------------------------------
 
-fmiComponent fmiInstantiateModel(fmiString instanceName, fmiString GUID,
-        fmiCallbackFunctions functions, fmiBoolean loggingOn) {
-    ModelInstance* comp;
-    if (!functions.logger)
-        return NULL;
-    if (!functions.allocateMemory || !functions.freeMemory){
-        functions.logger(NULL, instanceName, fmiError, "error",
-                "fmiInstantiateModel: Missing callback function.");
-        return NULL;
-    }
-    if (!instanceName || strlen(instanceName)==0) {
-        functions.logger(NULL, instanceName, fmiError, "error",
-                "fmiInstantiateModel: Missing instance name.");
-        return NULL;
-    }
-    comp->instanceName = instanceName;
-    comp->GUID = GUID;
-    comp->functions = functions;
-    comp->loggingOn = loggingOn;
-    comp->state = modelInstantiated;
-    // not used here
-    // setStartValues(comp); // to be implemented by the includer of this file
-    return comp;
-}
 
 fmiStatus fmiSetDebugLogging(fmiComponent c, fmiBoolean loggingOn) {
-    ModelInstance* comp = (ModelInstance *)c;
+    ModelInstance* comp = (ModelInstance*)c;
     if (invalidState(comp, "fmiSetDebugLogging", not_modelError))
          return fmiError;
-    if (comp->loggingOn) comp->functions.logger(c, comp->instanceName, fmiOK, "log", 
+    if (comp->loggingOn) comp->functions.logger(c, comp->instanceName, fmiOK, "log",
             "fmiSetDebugLogging: loggingOn=%d", loggingOn);
     comp->loggingOn = loggingOn;
     return fmiOK;
 }
 
-void fmiFreeModelInstance(fmiComponent c) {
-    ModelInstance* comp = (ModelInstance *)c;
+void fmiFreeSlaveInstance(fmiComponent c) {
+	ModelInstance* comp = (ModelInstance*)c;
     if (!comp) return;
     if (comp->loggingOn) comp->functions.logger(c, comp->instanceName, fmiOK, "log",
-            "fmiFreeModelInstance");
+            "fmiFreeSlaveInstance");
     if (comp->r) comp->functions.freeMemory(comp->r);
     if (comp->i) comp->functions.freeMemory(comp->i);
     if (comp->b) comp->functions.freeMemory(comp->b);
@@ -123,7 +99,7 @@ void fmiFreeModelInstance(fmiComponent c) {
 
 fmiStatus fmiSetReal(fmiComponent c, const fmiValueReference vr[], size_t nvr, const fmiReal value[]){
     int i;
-    ModelInstance* comp = (ModelInstance *)c;
+    ModelInstance* comp = (ModelInstance*)c;
     if (invalidState(comp, "fmiSetReal", modelInstantiated|modelInitialized))
          return fmiError;
     if (nvr>0 && nullPointer(comp, "fmiSetReal", "vr[]", vr))
@@ -145,7 +121,7 @@ fmiStatus fmiSetReal(fmiComponent c, const fmiValueReference vr[], size_t nvr, c
 
 fmiStatus fmiSetInteger(fmiComponent c, const fmiValueReference vr[], size_t nvr, const fmiInteger value[]){
     int i;
-    ModelInstance* comp = (ModelInstance *)c;
+    ModelInstance* comp = (ModelInstance*)c;
     if (invalidState(comp, "fmiSetInteger", modelInstantiated|modelInitialized))
          return fmiError;
     if (nvr>0 && nullPointer(comp, "fmiSetInteger", "vr[]", vr))
@@ -166,7 +142,7 @@ fmiStatus fmiSetInteger(fmiComponent c, const fmiValueReference vr[], size_t nvr
 
 fmiStatus fmiSetBoolean(fmiComponent c, const fmiValueReference vr[], size_t nvr, const fmiBoolean value[]){
     int i;
-    ModelInstance* comp = (ModelInstance *)c;
+    ModelInstance* comp = (ModelInstance*)c;
     if (invalidState(comp, "fmiSetBoolean", modelInstantiated|modelInitialized))
          return fmiError;
     if (nvr>0 && nullPointer(comp, "fmiSetBoolean", "vr[]", vr))
@@ -187,7 +163,7 @@ fmiStatus fmiSetBoolean(fmiComponent c, const fmiValueReference vr[], size_t nvr
 
 fmiStatus fmiSetString(fmiComponent c, const fmiValueReference vr[], size_t nvr, const fmiString value[]){
     int i;
-    ModelInstance* comp = (ModelInstance *)c;
+    ModelInstance* comp = (ModelInstance*)c;
     if (invalidState(comp, "fmiSetString", modelInstantiated|modelInitialized))
          return fmiError;
     if (nvr>0 && nullPointer(comp, "fmiSetString", "vr[]", vr))
@@ -206,19 +182,19 @@ fmiStatus fmiSetString(fmiComponent c, const fmiValueReference vr[], size_t nvr,
     return fmiOK;
 }
 
-fmiStatus fmiSetTime(fmiComponent c, fmiReal time) {
-    ModelInstance* comp = (ModelInstance *)c;
-    if (invalidState(comp, "fmiSetTime", modelInstantiated|modelInitialized))
-         return fmiError;
-    if (comp->loggingOn) comp->functions.logger(c, comp->instanceName, fmiOK, "log",
-            "fmiSetTime: time=%.16g", time);
-    comp->time = time;
-    return fmiOK;
-}
+//fmiStatus fmiSetTime(fmiComponent c, fmiReal time) {
+//	ModelInstance* comp = (ModelInstance*)c;
+//    if (invalidState(comp, "fmiSetTime", modelInstantiated|modelInitialized))
+//         return fmiError;
+//    if (comp->loggingOn) comp->functions.logger(c, comp->instanceName, fmiOK, "log",
+//            "fmiSetTime: time=%.16g", time);
+//    comp->time = time;
+//    return fmiOK;
+//}
 
-fmiStatus fmiSetContinuousStates(fmiComponent c, const fmiReal x[], size_t nx){
-    return fmiOK;
-}
+//fmiStatus fmiSetContinuousStates(fmiComponent c, const fmiReal x[], size_t nx){
+//    return fmiOK;
+//}
 
 // ---------------------------------------------------------------------------
 // FMI functions: get variable values from the FMU
@@ -226,12 +202,12 @@ fmiStatus fmiSetContinuousStates(fmiComponent c, const fmiReal x[], size_t nx){
 
 // called by fmiGetReal, fmiGetContinuousStates and fmiGetDerivatives
 // This should not be called in current implementations
-fmiReal getReal(ModelInstance* comp, fmiValueReference vr){
+fmiReal getReal(fmiComponent* comp, fmiValueReference vr){
    return 0;
  }
 
 fmiStatus fmiGetReal(fmiComponent c, const fmiValueReference vr[], size_t nvr, fmiReal value[]) {
-    ModelInstance* comp = (ModelInstance *)c;
+	ModelInstance* comp = (ModelInstance*)c;
     if (invalidState(comp, "fmiGetReal", not_modelError))
         return fmiError;
     if (nvr>0 && nullPointer(comp, "fmiGetReal", "vr[]", vr))
@@ -253,7 +229,7 @@ fmiStatus fmiGetReal(fmiComponent c, const fmiValueReference vr[], size_t nvr, f
 
 fmiStatus fmiGetInteger(fmiComponent c, const fmiValueReference vr[], size_t nvr, fmiInteger value[]) {
     int i;
-    ModelInstance* comp = (ModelInstance *)c;
+    ModelInstance* comp = (ModelInstance*)c;
     if (invalidState(comp, "fmiGetInteger", not_modelError))
         return fmiError;
     if (nvr>0 && nullPointer(comp, "fmiGetInteger", "vr[]", vr))
@@ -272,7 +248,7 @@ fmiStatus fmiGetInteger(fmiComponent c, const fmiValueReference vr[], size_t nvr
 
 fmiStatus fmiGetBoolean(fmiComponent c, const fmiValueReference vr[], size_t nvr, fmiBoolean value[]) {
     int i;
-    ModelInstance* comp = (ModelInstance *)c;
+    ModelInstance* comp = (ModelInstance*)c;
     if (invalidState(comp, "fmiGetBoolean", not_modelError))
         return fmiError;
     if (nvr>0 && nullPointer(comp, "fmiGetBoolean", "vr[]", vr))
@@ -291,7 +267,7 @@ fmiStatus fmiGetBoolean(fmiComponent c, const fmiValueReference vr[], size_t nvr
 
 fmiStatus fmiGetString(fmiComponent c, const fmiValueReference vr[], size_t nvr, fmiString  value[]) {
     int i;
-    ModelInstance* comp = (ModelInstance *)c;
+    ModelInstance* comp = (ModelInstance*)c;
     if (invalidState(comp, "fmiGetString", not_modelError))
         return fmiError;
     if (nvr>0 && nullPointer(comp, "fmiGetString", "vr[]", vr))
@@ -308,95 +284,95 @@ fmiStatus fmiGetString(fmiComponent c, const fmiValueReference vr[], size_t nvr,
     return fmiOK;
 }
 
-fmiStatus fmiGetStateValueReferences(fmiComponent c, fmiValueReference vrx[], size_t nx){
-    return fmiOK;
-}
+//fmiStatus fmiGetStateValueReferences(fmiComponent c, fmiValueReference vrx[], size_t nx){
+//    return fmiOK;
+//}
 
-fmiStatus fmiGetContinuousStates(fmiComponent c, fmiReal states[], size_t nx){
-    return fmiOK;
-}
+//fmiStatus fmiGetContinuousStates(fmiComponent c, fmiReal states[], size_t nx){
+//    return fmiOK;
+//}
 
-fmiStatus fmiGetNominalContinuousStates(fmiComponent c, fmiReal x_nominal[], size_t nx){
-    return fmiOK;
-}
+//fmiStatus fmiGetNominalContinuousStates(fmiComponent c, fmiReal x_nominal[], size_t nx){
+//    return fmiOK;
+//}
 
-fmiStatus fmiGetDerivatives(fmiComponent c, fmiReal derivatives[], size_t nx) {
-    return fmiOK;
-}
+//fmiStatus fmiGetDerivatives(fmiComponent c, fmiReal derivatives[], size_t nx) {
+//    return fmiOK;
+//}
 
-fmiStatus fmiGetEventIndicators(fmiComponent c, fmiReal eventIndicators[], size_t ni) {
-    ModelInstance* comp = (ModelInstance *)c;
-    if (invalidState(comp, "fmiGetEventIndicators", not_modelError))
-        return fmiError;
-    if (invalidNumber(comp, "fmiGetEventIndicators", "ni", ni, NUMBER_OF_EVENT_INDICATORS))
-        return fmiError;
-#if NUMBER_OF_EVENT_INDICATORS>0
-    int i;
-    for (i=0; i<ni; i++) {
-        eventIndicators[i] = getEventIndicator(comp, i); // to be implemented by the includer of this file
-        if (comp->loggingOn) comp->functions.logger(c, comp->instanceName, fmiOK, "log",
-            "fmiGetEventIndicators: z%d = %.16g", i, eventIndicators[i]);
-    }
-#endif
-    return fmiOK;
-}
+//fmiStatus fmiGetEventIndicators(fmiComponent c, fmiReal eventIndicators[], size_t ni) {
+//    ModelInstance* comp = (ModelInstance*)c;
+//    if (invalidState(comp, "fmiGetEventIndicators", not_modelError))
+//        return fmiError;
+//    if (invalidNumber(comp, "fmiGetEventIndicators", "ni", ni, NUMBER_OF_EVENT_INDICATORS))
+//        return fmiError;
+//#if NUMBER_OF_EVENT_INDICATORS>0
+//    int i;
+//    for (i=0; i<ni; i++) {
+//        eventIndicators[i] = getEventIndicator(comp, i); // to be implemented by the includer of this file
+//        if (comp->loggingOn) comp->functions.logger(c, comp->instanceName, fmiOK, "log",
+//            "fmiGetEventIndicators: z%d = %.16g", i, eventIndicators[i]);
+//    }
+//#endif
+//    return fmiOK;
+//}
 
 // ---------------------------------------------------------------------------
 // FMI functions: initialization, event handling, stepping and termination
 // ---------------------------------------------------------------------------
 
-fmiStatus fmiInitialize(fmiComponent c, fmiBoolean toleranceControlled, fmiReal relativeTolerance,
-    fmiEventInfo* eventInfo) {
-    ModelInstance* comp = (ModelInstance *)c;
-    if (invalidState(comp, "fmiInitialize", modelInstantiated))
-         return fmiError;
-    if (nullPointer(comp, "fmiInitialize", "eventInfo", eventInfo))
-         return fmiError;
-    if (comp->loggingOn) comp->functions.logger(c, comp->instanceName, fmiOK, "log",
-        "fmiInitialize: toleranceControlled=%d relativeTolerance=%g",
-        toleranceControlled, relativeTolerance);
-    eventInfo->iterationConverged  = fmiTrue;
-    eventInfo->stateValueReferencesChanged = fmiFalse;
-    eventInfo->stateValuesChanged  = fmiFalse;
-    eventInfo->terminateSimulation = fmiFalse;
-    eventInfo->upcomingTimeEvent   = fmiFalse;
-    initialize(comp, eventInfo); // to be implemented by the includer of this file
-    comp->state = modelInitialized;
-    return fmiOK;
-}
+//fmiStatus fmiInitialize(fmiComponent c, fmiBoolean toleranceControlled, fmiReal relativeTolerance,
+//    fmiEventInfo* eventInfo) {
+//    ModelInstance* comp = (ModelInstance*)c;
+//    if (invalidState(comp, "fmiInitialize", modelInstantiated))
+//         return fmiError;
+//    if (nullPointer(comp, "fmiInitialize", "eventInfo", eventInfo))
+//         return fmiError;
+//    if (comp->loggingOn) comp->functions.logger(c, comp->instanceName, fmiOK, "log",
+//        "fmiInitialize: toleranceControlled=%d relativeTolerance=%g",
+//        toleranceControlled, relativeTolerance);
+//    eventInfo->iterationConverged  = fmiTrue;
+//    eventInfo->stateValueReferencesChanged = fmiFalse;
+//    eventInfo->stateValuesChanged  = fmiFalse;
+//    eventInfo->terminateSimulation = fmiFalse;
+//    eventInfo->upcomingTimeEvent   = fmiFalse;
+//    initialize(comp, eventInfo); // to be implemented by the includer of this file
+//    comp->state = modelInitialized;
+//    return fmiOK;
+//}
 
-fmiStatus fmiEventUpdate(fmiComponent c, fmiBoolean intermediateResults, fmiEventInfo* eventInfo) {
-    ModelInstance* comp = (ModelInstance *)c;
-    if (invalidState(comp, "fmiEventUpdate", modelInitialized))
-        return fmiError;
-    if (nullPointer(comp, "fmiEventUpdate", "eventInfo", eventInfo))
-         return fmiError;
-    if (comp->loggingOn) comp->functions.logger(c, comp->instanceName, fmiOK, "log",
-        "fmiEventUpdate: intermediateResults = %d", intermediateResults);
-    eventInfo->iterationConverged  = fmiTrue;
-    eventInfo->stateValueReferencesChanged = fmiFalse;
-    eventInfo->stateValuesChanged  = fmiFalse;
-    eventInfo->terminateSimulation = fmiFalse;
-    eventInfo->upcomingTimeEvent   = fmiFalse;
-    // Not used in here.
-    // eventUpdate(comp, eventInfo); // to be implemented by the includer of this file
-    return fmiOK;
-}
+//fmiStatus fmiEventUpdate(fmiComponent c, fmiBoolean intermediateResults, fmiEventInfo* eventInfo) {
+//    ModelInstance* comp = (ModelInstance*)c;
+//    if (invalidState(comp, "fmiEventUpdate", modelInitialized))
+//        return fmiError;
+//    if (nullPointer(comp, "fmiEventUpdate", "eventInfo", eventInfo))
+//         return fmiError;
+//    if (comp->loggingOn) comp->functions.logger(c, comp->instanceName, fmiOK, "log",
+//        "fmiEventUpdate: intermediateResults = %d", intermediateResults);
+//    eventInfo->iterationConverged  = fmiTrue;
+//    eventInfo->stateValueReferencesChanged = fmiFalse;
+//    eventInfo->stateValuesChanged  = fmiFalse;
+//    eventInfo->terminateSimulation = fmiFalse;
+//    eventInfo->upcomingTimeEvent   = fmiFalse;
+//    // Not used in here.
+//    // eventUpdate(comp, eventInfo); // to be implemented by the includer of this file
+//    return fmiOK;
+//}
 
-fmiStatus fmiCompletedIntegratorStep(fmiComponent c, fmiBoolean* callEventUpdate){
-    ModelInstance* comp = (ModelInstance *)c;
-    if (invalidState(comp, "fmiCompletedIntegratorStep", modelInitialized))
-         return fmiError;
-    if (nullPointer(comp, "fmiCompletedIntegratorStep", "callEventUpdate", callEventUpdate))
-         return fmiError;
-    if (comp->loggingOn) comp->functions.logger(c, comp->instanceName, fmiOK, "log",
-            "fmiCompletedIntegratorStep");
-    *callEventUpdate = fmiFalse;
-    return fmiOK;
-}
+//fmiStatus fmiCompletedIntegratorStep(fmiComponent c, fmiBoolean* callEventUpdate){
+//    ModelInstance* comp = (ModelInstance*)c;
+//    if (invalidState(comp, "fmiCompletedIntegratorStep", modelInitialized))
+//         return fmiError;
+//    if (nullPointer(comp, "fmiCompletedIntegratorStep", "callEventUpdate", callEventUpdate))
+//         return fmiError;
+//    if (comp->loggingOn) comp->functions.logger(c, comp->instanceName, fmiOK, "log",
+//            "fmiCompletedIntegratorStep");
+//    *callEventUpdate = fmiFalse;
+//    return fmiOK;
+//}
 
-fmiStatus fmiTerminate(fmiComponent c){
-    ModelInstance* comp = (ModelInstance *)c;
+fmiStatus fmiTerminateSlave(fmiComponent c){
+    ModelInstance* comp = (ModelInstance*)c;
     if (invalidState(comp, "fmiTerminate", modelInitialized))
          return fmiError;
     if (comp->loggingOn) comp->functions.logger(c, comp->instanceName, fmiOK, "log",

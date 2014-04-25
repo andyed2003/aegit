@@ -5,10 +5,9 @@ package FmiModelV1.impl;
 import FmiModelV1.AliasType;
 import FmiModelV1.AnnotationType;
 import FmiModelV1.BooleanType;
-import FmiModelV1.Capabilities;
+import FmiModelV1.CapabilitiesType;
 import FmiModelV1.CausalityType;
-import FmiModelV1.CoSimulation_StandAlone;
-import FmiModelV1.CoSimulation_Tool;
+import FmiModelV1.CoSimulation_StandAloneType;
 import FmiModelV1.DefaultExperimentType;
 import FmiModelV1.DirectDependencyType;
 import FmiModelV1.DisplayUnitDefinitionType;
@@ -22,7 +21,6 @@ import FmiModelV1.FmiModelV1Package;
 import FmiModelV1.FmiScalarVariable;
 import FmiModelV1.FmiType;
 import FmiModelV1.ImplementationType;
-import FmiModelV1.Implementation;
 import FmiModelV1.IntegerType;
 import FmiModelV1.IntegerTypeType;
 import FmiModelV1.ItemType;
@@ -214,7 +212,7 @@ public class FmiModelV1PackageImpl extends EPackageImpl implements FmiModelV1Pac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass capabilitiesEClass = null;
+	private EClass capabilitiesTypeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -228,14 +226,7 @@ public class FmiModelV1PackageImpl extends EPackageImpl implements FmiModelV1Pac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass coSimulation_StandAloneEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass coSimulation_ToolEClass = null;
+	private EClass coSimulation_StandAloneTypeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1539,8 +1530,8 @@ public class FmiModelV1PackageImpl extends EPackageImpl implements FmiModelV1Pac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getCapabilities() {
-		return capabilitiesEClass;
+	public EClass getCapabilitiesType() {
+		return capabilitiesTypeEClass;
 	}
 
 	/**
@@ -1548,8 +1539,8 @@ public class FmiModelV1PackageImpl extends EPackageImpl implements FmiModelV1Pac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCapabilities_CanHandleVariableCommunicationStepSize() {
-		return (EAttribute)capabilitiesEClass.getEStructuralFeatures().get(0);
+	public EAttribute getCapabilitiesType_CanHandleVariableCommunicationStepSize() {
+		return (EAttribute)capabilitiesTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1557,8 +1548,8 @@ public class FmiModelV1PackageImpl extends EPackageImpl implements FmiModelV1Pac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCapabilities_CanHandleEvents() {
-		return (EAttribute)capabilitiesEClass.getEStructuralFeatures().get(1);
+	public EAttribute getCapabilitiesType_CanHandleEvents() {
+		return (EAttribute)capabilitiesTypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1566,8 +1557,8 @@ public class FmiModelV1PackageImpl extends EPackageImpl implements FmiModelV1Pac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCapabilities_CanRejectSteps() {
-		return (EAttribute)capabilitiesEClass.getEStructuralFeatures().get(2);
+	public EAttribute getCapabilitiesType_CanRejectSteps() {
+		return (EAttribute)capabilitiesTypeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1575,8 +1566,8 @@ public class FmiModelV1PackageImpl extends EPackageImpl implements FmiModelV1Pac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCapabilities_CanInterpolateInputs() {
-		return (EAttribute)capabilitiesEClass.getEStructuralFeatures().get(3);
+	public EAttribute getCapabilitiesType_CanInterpolateInputs() {
+		return (EAttribute)capabilitiesTypeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1584,8 +1575,8 @@ public class FmiModelV1PackageImpl extends EPackageImpl implements FmiModelV1Pac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCapabilities_MaxOutputDerivativeOrder() {
-		return (EAttribute)capabilitiesEClass.getEStructuralFeatures().get(4);
+	public EAttribute getCapabilitiesType_MaxOutputDerivativeOrder() {
+		return (EAttribute)capabilitiesTypeEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1593,8 +1584,8 @@ public class FmiModelV1PackageImpl extends EPackageImpl implements FmiModelV1Pac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCapabilities_CanRunAsynchronuously() {
-		return (EAttribute)capabilitiesEClass.getEStructuralFeatures().get(5);
+	public EAttribute getCapabilitiesType_CanRunAsynchronuously() {
+		return (EAttribute)capabilitiesTypeEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1602,8 +1593,8 @@ public class FmiModelV1PackageImpl extends EPackageImpl implements FmiModelV1Pac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCapabilities_CanSignalEvents() {
-		return (EAttribute)capabilitiesEClass.getEStructuralFeatures().get(6);
+	public EAttribute getCapabilitiesType_CanSignalEvents() {
+		return (EAttribute)capabilitiesTypeEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1611,8 +1602,8 @@ public class FmiModelV1PackageImpl extends EPackageImpl implements FmiModelV1Pac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCapabilities_CanBeInstantiatedOnlyOncePerProcess() {
-		return (EAttribute)capabilitiesEClass.getEStructuralFeatures().get(7);
+	public EAttribute getCapabilitiesType_CanBeInstantiatedOnlyOncePerProcess() {
+		return (EAttribute)capabilitiesTypeEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1620,8 +1611,8 @@ public class FmiModelV1PackageImpl extends EPackageImpl implements FmiModelV1Pac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCapabilities_CanNotUseMemoryManagementFunctions() {
-		return (EAttribute)capabilitiesEClass.getEStructuralFeatures().get(8);
+	public EAttribute getCapabilitiesType_CanNotUseMemoryManagementFunctions() {
+		return (EAttribute)capabilitiesTypeEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -1629,8 +1620,8 @@ public class FmiModelV1PackageImpl extends EPackageImpl implements FmiModelV1Pac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCapabilities_CanGetAndSetFMUstate() {
-		return (EAttribute)capabilitiesEClass.getEStructuralFeatures().get(9);
+	public EAttribute getCapabilitiesType_CanGetAndSetFMUstate() {
+		return (EAttribute)capabilitiesTypeEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -1638,8 +1629,8 @@ public class FmiModelV1PackageImpl extends EPackageImpl implements FmiModelV1Pac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCapabilities_CanSerializeFMUstate() {
-		return (EAttribute)capabilitiesEClass.getEStructuralFeatures().get(10);
+	public EAttribute getCapabilitiesType_CanSerializeFMUstate() {
+		return (EAttribute)capabilitiesTypeEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -1647,8 +1638,8 @@ public class FmiModelV1PackageImpl extends EPackageImpl implements FmiModelV1Pac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCapabilities_ModelIdentifier() {
-		return (EAttribute)capabilitiesEClass.getEStructuralFeatures().get(11);
+	public EAttribute getCapabilitiesType_ModelIdentifier() {
+		return (EAttribute)capabilitiesTypeEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -1656,8 +1647,8 @@ public class FmiModelV1PackageImpl extends EPackageImpl implements FmiModelV1Pac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCapabilities_NeedsExecutionTool() {
-		return (EAttribute)capabilitiesEClass.getEStructuralFeatures().get(12);
+	public EAttribute getCapabilitiesType_NeedsExecutionTool() {
+		return (EAttribute)capabilitiesTypeEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -1674,7 +1665,7 @@ public class FmiModelV1PackageImpl extends EPackageImpl implements FmiModelV1Pac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getImplementationType_Capabilities() {
+	public EReference getImplementationType_CoSimulation_StandAlone() {
 		return (EReference)implementationTypeEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -1683,8 +1674,8 @@ public class FmiModelV1PackageImpl extends EPackageImpl implements FmiModelV1Pac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getCoSimulation_StandAlone() {
-		return coSimulation_StandAloneEClass;
+	public EClass getCoSimulation_StandAloneType() {
+		return coSimulation_StandAloneTypeEClass;
 	}
 
 	/**
@@ -1692,8 +1683,8 @@ public class FmiModelV1PackageImpl extends EPackageImpl implements FmiModelV1Pac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getCoSimulation_Tool() {
-		return coSimulation_ToolEClass;
+	public EReference getCoSimulation_StandAloneType_Capabilities() {
+		return (EReference)coSimulation_StandAloneTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1975,27 +1966,26 @@ public class FmiModelV1PackageImpl extends EPackageImpl implements FmiModelV1Pac
 		createEAttribute(unitDefinitionsTypeEClass, UNIT_DEFINITIONS_TYPE__GROUP);
 		createEReference(unitDefinitionsTypeEClass, UNIT_DEFINITIONS_TYPE__BASE_UNIT);
 
-		capabilitiesEClass = createEClass(CAPABILITIES);
-		createEAttribute(capabilitiesEClass, CAPABILITIES__CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE);
-		createEAttribute(capabilitiesEClass, CAPABILITIES__CAN_HANDLE_EVENTS);
-		createEAttribute(capabilitiesEClass, CAPABILITIES__CAN_REJECT_STEPS);
-		createEAttribute(capabilitiesEClass, CAPABILITIES__CAN_INTERPOLATE_INPUTS);
-		createEAttribute(capabilitiesEClass, CAPABILITIES__MAX_OUTPUT_DERIVATIVE_ORDER);
-		createEAttribute(capabilitiesEClass, CAPABILITIES__CAN_RUN_ASYNCHRONUOUSLY);
-		createEAttribute(capabilitiesEClass, CAPABILITIES__CAN_SIGNAL_EVENTS);
-		createEAttribute(capabilitiesEClass, CAPABILITIES__CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS);
-		createEAttribute(capabilitiesEClass, CAPABILITIES__CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS);
-		createEAttribute(capabilitiesEClass, CAPABILITIES__CAN_GET_AND_SET_FM_USTATE);
-		createEAttribute(capabilitiesEClass, CAPABILITIES__CAN_SERIALIZE_FM_USTATE);
-		createEAttribute(capabilitiesEClass, CAPABILITIES__MODEL_IDENTIFIER);
-		createEAttribute(capabilitiesEClass, CAPABILITIES__NEEDS_EXECUTION_TOOL);
+		capabilitiesTypeEClass = createEClass(CAPABILITIES_TYPE);
+		createEAttribute(capabilitiesTypeEClass, CAPABILITIES_TYPE__CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE);
+		createEAttribute(capabilitiesTypeEClass, CAPABILITIES_TYPE__CAN_HANDLE_EVENTS);
+		createEAttribute(capabilitiesTypeEClass, CAPABILITIES_TYPE__CAN_REJECT_STEPS);
+		createEAttribute(capabilitiesTypeEClass, CAPABILITIES_TYPE__CAN_INTERPOLATE_INPUTS);
+		createEAttribute(capabilitiesTypeEClass, CAPABILITIES_TYPE__MAX_OUTPUT_DERIVATIVE_ORDER);
+		createEAttribute(capabilitiesTypeEClass, CAPABILITIES_TYPE__CAN_RUN_ASYNCHRONUOUSLY);
+		createEAttribute(capabilitiesTypeEClass, CAPABILITIES_TYPE__CAN_SIGNAL_EVENTS);
+		createEAttribute(capabilitiesTypeEClass, CAPABILITIES_TYPE__CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS);
+		createEAttribute(capabilitiesTypeEClass, CAPABILITIES_TYPE__CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS);
+		createEAttribute(capabilitiesTypeEClass, CAPABILITIES_TYPE__CAN_GET_AND_SET_FM_USTATE);
+		createEAttribute(capabilitiesTypeEClass, CAPABILITIES_TYPE__CAN_SERIALIZE_FM_USTATE);
+		createEAttribute(capabilitiesTypeEClass, CAPABILITIES_TYPE__MODEL_IDENTIFIER);
+		createEAttribute(capabilitiesTypeEClass, CAPABILITIES_TYPE__NEEDS_EXECUTION_TOOL);
 
 		implementationTypeEClass = createEClass(IMPLEMENTATION_TYPE);
-		createEReference(implementationTypeEClass, IMPLEMENTATION_TYPE__CAPABILITIES);
+		createEReference(implementationTypeEClass, IMPLEMENTATION_TYPE__CO_SIMULATION_STAND_ALONE);
 
-		coSimulation_StandAloneEClass = createEClass(CO_SIMULATION_STAND_ALONE);
-
-		coSimulation_ToolEClass = createEClass(CO_SIMULATION_TOOL);
+		coSimulation_StandAloneTypeEClass = createEClass(CO_SIMULATION_STAND_ALONE_TYPE);
+		createEReference(coSimulation_StandAloneTypeEClass, CO_SIMULATION_STAND_ALONE_TYPE__CAPABILITIES);
 
 		vendorAnnotationsTypeEClass = createEClass(VENDOR_ANNOTATIONS_TYPE);
 		createEAttribute(vendorAnnotationsTypeEClass, VENDOR_ANNOTATIONS_TYPE__GROUP);
@@ -2045,8 +2035,6 @@ public class FmiModelV1PackageImpl extends EPackageImpl implements FmiModelV1Pac
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		coSimulation_StandAloneEClass.getESuperTypes().add(this.getImplementationType());
-		coSimulation_ToolEClass.getESuperTypes().add(this.getImplementationType());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(annotationTypeEClass, AnnotationType.class, "AnnotationType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2104,7 +2092,7 @@ public class FmiModelV1PackageImpl extends EPackageImpl implements FmiModelV1Pac
 		initEReference(getFmiModelDescriptionType_DefaultExperiment(), this.getDefaultExperimentType(), null, "defaultExperiment", null, 0, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFmiModelDescriptionType_VendorAnnotations(), this.getVendorAnnotationsType(), null, "vendorAnnotations", null, 0, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFmiModelDescriptionType_ModelVariables(), this.getModelVariablesType(), null, "ModelVariables", null, 0, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFmiModelDescriptionType_Implementation(), this.getImplementationType(), null, "Implementation", null, 0, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getFmiModelDescriptionType_Implementation(), this.getImplementationType(), null, "Implementation", null, 0, -1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFmiModelDescriptionType_Author(), theXMLTypePackage.getString(), "author", null, 0, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFmiModelDescriptionType_Description(), theXMLTypePackage.getString(), "description", null, 0, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFmiModelDescriptionType_FmiVersion(), theXMLTypePackage.getNormalizedString(), "fmiVersion", "1.0", 1, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2201,27 +2189,26 @@ public class FmiModelV1PackageImpl extends EPackageImpl implements FmiModelV1Pac
 		initEAttribute(getUnitDefinitionsType_Group(), ecorePackage.getEFeatureMapEntry(), "group", null, 0, -1, UnitDefinitionsType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getUnitDefinitionsType_BaseUnit(), this.getFmiBaseUnit(), null, "baseUnit", null, 0, -1, UnitDefinitionsType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
-		initEClass(capabilitiesEClass, Capabilities.class, "Capabilities", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCapabilities_CanHandleVariableCommunicationStepSize(), theXMLTypePackage.getBoolean(), "canHandleVariableCommunicationStepSize", "false", 0, 1, Capabilities.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCapabilities_CanHandleEvents(), theXMLTypePackage.getBoolean(), "canHandleEvents", "false", 0, 1, Capabilities.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCapabilities_CanRejectSteps(), theXMLTypePackage.getBoolean(), "canRejectSteps", "false", 0, 1, Capabilities.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCapabilities_CanInterpolateInputs(), theXMLTypePackage.getBoolean(), "canInterpolateInputs", "false", 0, 1, Capabilities.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCapabilities_MaxOutputDerivativeOrder(), theXMLTypePackage.getUnsignedInt(), "maxOutputDerivativeOrder", "0", 0, 1, Capabilities.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCapabilities_CanRunAsynchronuously(), theXMLTypePackage.getBoolean(), "canRunAsynchronuously", "false", 0, 1, Capabilities.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCapabilities_CanSignalEvents(), theXMLTypePackage.getBoolean(), "canSignalEvents", "false", 0, 1, Capabilities.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCapabilities_CanBeInstantiatedOnlyOncePerProcess(), theXMLTypePackage.getBoolean(), "canBeInstantiatedOnlyOncePerProcess", "false", 0, 1, Capabilities.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCapabilities_CanNotUseMemoryManagementFunctions(), theXMLTypePackage.getBoolean(), "canNotUseMemoryManagementFunctions", "false", 0, 1, Capabilities.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCapabilities_CanGetAndSetFMUstate(), theXMLTypePackage.getBoolean(), "canGetAndSetFMUstate", "false", 0, 1, Capabilities.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCapabilities_CanSerializeFMUstate(), theXMLTypePackage.getBoolean(), "canSerializeFMUstate", "false", 0, 1, Capabilities.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCapabilities_ModelIdentifier(), theXMLTypePackage.getNormalizedString(), "modelIdentifier", null, 1, 1, Capabilities.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCapabilities_NeedsExecutionTool(), theXMLTypePackage.getBoolean(), "needsExecutionTool", "false", 0, 1, Capabilities.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(capabilitiesTypeEClass, CapabilitiesType.class, "CapabilitiesType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCapabilitiesType_CanHandleVariableCommunicationStepSize(), theXMLTypePackage.getBoolean(), "canHandleVariableCommunicationStepSize", "false", 0, 1, CapabilitiesType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCapabilitiesType_CanHandleEvents(), theXMLTypePackage.getBoolean(), "canHandleEvents", "false", 0, 1, CapabilitiesType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCapabilitiesType_CanRejectSteps(), theXMLTypePackage.getBoolean(), "canRejectSteps", "false", 0, 1, CapabilitiesType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCapabilitiesType_CanInterpolateInputs(), theXMLTypePackage.getBoolean(), "canInterpolateInputs", "false", 0, 1, CapabilitiesType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCapabilitiesType_MaxOutputDerivativeOrder(), theXMLTypePackage.getUnsignedInt(), "maxOutputDerivativeOrder", "0", 0, 1, CapabilitiesType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCapabilitiesType_CanRunAsynchronuously(), theXMLTypePackage.getBoolean(), "canRunAsynchronuously", "false", 0, 1, CapabilitiesType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCapabilitiesType_CanSignalEvents(), theXMLTypePackage.getBoolean(), "canSignalEvents", "false", 0, 1, CapabilitiesType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCapabilitiesType_CanBeInstantiatedOnlyOncePerProcess(), theXMLTypePackage.getBoolean(), "canBeInstantiatedOnlyOncePerProcess", "false", 0, 1, CapabilitiesType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCapabilitiesType_CanNotUseMemoryManagementFunctions(), theXMLTypePackage.getBoolean(), "canNotUseMemoryManagementFunctions", "false", 0, 1, CapabilitiesType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCapabilitiesType_CanGetAndSetFMUstate(), theXMLTypePackage.getBoolean(), "canGetAndSetFMUstate", "false", 0, 1, CapabilitiesType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCapabilitiesType_CanSerializeFMUstate(), theXMLTypePackage.getBoolean(), "canSerializeFMUstate", "false", 0, 1, CapabilitiesType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCapabilitiesType_ModelIdentifier(), theXMLTypePackage.getNormalizedString(), "modelIdentifier", null, 1, 1, CapabilitiesType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCapabilitiesType_NeedsExecutionTool(), theXMLTypePackage.getBoolean(), "needsExecutionTool", "false", 0, 1, CapabilitiesType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(implementationTypeEClass, ImplementationType.class, "ImplementationType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getImplementationType_Capabilities(), this.getCapabilities(), null, "capabilities", null, 0, 1, ImplementationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(implementationTypeEClass, ImplementationType.class, "ImplementationType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getImplementationType_CoSimulation_StandAlone(), this.getCoSimulation_StandAloneType(), null, "CoSimulation_StandAlone", null, 0, 1, ImplementationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
-		initEClass(coSimulation_StandAloneEClass, CoSimulation_StandAlone.class, "CoSimulation_StandAlone", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(coSimulation_ToolEClass, CoSimulation_Tool.class, "CoSimulation_Tool", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(coSimulation_StandAloneTypeEClass, CoSimulation_StandAloneType.class, "CoSimulation_StandAloneType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getCoSimulation_StandAloneType_Capabilities(), this.getCapabilitiesType(), null, "Capabilities", null, 0, 1, CoSimulation_StandAloneType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(vendorAnnotationsTypeEClass, VendorAnnotationsType.class, "VendorAnnotationsType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getVendorAnnotationsType_Group(), ecorePackage.getEFeatureMapEntry(), "group", null, 0, -1, VendorAnnotationsType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3319,14 +3306,14 @@ public class FmiModelV1PackageImpl extends EPackageImpl implements FmiModelV1Pac
 			 "group", "group:0"
 		   });			
 		addAnnotation
-		  (capabilitiesEClass, 
+		  (capabilitiesTypeEClass, 
 		   source, 
 		   new String[] {
-			 "name", "fmiCapabilities",
+			 "name", "Capabilities_._type",
 			 "kind", "elementOnly"
 		   });		
 		addAnnotation
-		  (getCapabilities_CanHandleVariableCommunicationStepSize(), 
+		  (getCapabilitiesType_CanHandleVariableCommunicationStepSize(), 
 		   source, 
 		   new String[] {
 			 "kind", "attribute",
@@ -3334,7 +3321,7 @@ public class FmiModelV1PackageImpl extends EPackageImpl implements FmiModelV1Pac
 			 "namespace", "##targetNamespace"
 		   });		
 		addAnnotation
-		  (getCapabilities_CanHandleEvents(), 
+		  (getCapabilitiesType_CanHandleEvents(), 
 		   source, 
 		   new String[] {
 			 "kind", "attribute",
@@ -3342,7 +3329,7 @@ public class FmiModelV1PackageImpl extends EPackageImpl implements FmiModelV1Pac
 			 "namespace", "##targetNamespace"
 		   });		
 		addAnnotation
-		  (getCapabilities_CanRejectSteps(), 
+		  (getCapabilitiesType_CanRejectSteps(), 
 		   source, 
 		   new String[] {
 			 "kind", "attribute",
@@ -3350,7 +3337,7 @@ public class FmiModelV1PackageImpl extends EPackageImpl implements FmiModelV1Pac
 			 "namespace", "##targetNamespace"
 		   });		
 		addAnnotation
-		  (getCapabilities_CanInterpolateInputs(), 
+		  (getCapabilitiesType_CanInterpolateInputs(), 
 		   source, 
 		   new String[] {
 			 "kind", "attribute",
@@ -3358,7 +3345,7 @@ public class FmiModelV1PackageImpl extends EPackageImpl implements FmiModelV1Pac
 			 "namespace", "##targetNamespace"
 		   });		
 		addAnnotation
-		  (getCapabilities_MaxOutputDerivativeOrder(), 
+		  (getCapabilitiesType_MaxOutputDerivativeOrder(), 
 		   source, 
 		   new String[] {
 			 "kind", "attribute",
@@ -3366,7 +3353,7 @@ public class FmiModelV1PackageImpl extends EPackageImpl implements FmiModelV1Pac
 			 "namespace", "##targetNamespace"
 		   });		
 		addAnnotation
-		  (getCapabilities_CanRunAsynchronuously(), 
+		  (getCapabilitiesType_CanRunAsynchronuously(), 
 		   source, 
 		   new String[] {
 			 "kind", "attribute",
@@ -3374,7 +3361,7 @@ public class FmiModelV1PackageImpl extends EPackageImpl implements FmiModelV1Pac
 			 "namespace", "##targetNamespace"
 		   });		
 		addAnnotation
-		  (getCapabilities_CanSignalEvents(), 
+		  (getCapabilitiesType_CanSignalEvents(), 
 		   source, 
 		   new String[] {
 			 "kind", "attribute",
@@ -3382,7 +3369,7 @@ public class FmiModelV1PackageImpl extends EPackageImpl implements FmiModelV1Pac
 			 "namespace", "##targetNamespace"
 		   });		
 		addAnnotation
-		  (getCapabilities_CanBeInstantiatedOnlyOncePerProcess(), 
+		  (getCapabilitiesType_CanBeInstantiatedOnlyOncePerProcess(), 
 		   source, 
 		   new String[] {
 			 "kind", "attribute",
@@ -3390,7 +3377,7 @@ public class FmiModelV1PackageImpl extends EPackageImpl implements FmiModelV1Pac
 			 "namespace", "##targetNamespace"
 		   });		
 		addAnnotation
-		  (getCapabilities_CanNotUseMemoryManagementFunctions(), 
+		  (getCapabilitiesType_CanNotUseMemoryManagementFunctions(), 
 		   source, 
 		   new String[] {
 			 "kind", "attribute",
@@ -3398,7 +3385,7 @@ public class FmiModelV1PackageImpl extends EPackageImpl implements FmiModelV1Pac
 			 "namespace", "##targetNamespace"
 		   });		
 		addAnnotation
-		  (getCapabilities_CanGetAndSetFMUstate(), 
+		  (getCapabilitiesType_CanGetAndSetFMUstate(), 
 		   source, 
 		   new String[] {
 			 "kind", "attribute",
@@ -3406,7 +3393,7 @@ public class FmiModelV1PackageImpl extends EPackageImpl implements FmiModelV1Pac
 			 "namespace", "##targetNamespace"
 		   });		
 		addAnnotation
-		  (getCapabilities_CanSerializeFMUstate(), 
+		  (getCapabilitiesType_CanSerializeFMUstate(), 
 		   source, 
 		   new String[] {
 			 "kind", "attribute",
@@ -3414,7 +3401,7 @@ public class FmiModelV1PackageImpl extends EPackageImpl implements FmiModelV1Pac
 			 "namespace", "##targetNamespace"
 		   });			
 		addAnnotation
-		  (getCapabilities_ModelIdentifier(), 
+		  (getCapabilitiesType_ModelIdentifier(), 
 		   source, 
 		   new String[] {
 			 "kind", "attribute",
@@ -3422,7 +3409,7 @@ public class FmiModelV1PackageImpl extends EPackageImpl implements FmiModelV1Pac
 			 "namespace", "##targetNamespace"
 		   });			
 		addAnnotation
-		  (getCapabilities_NeedsExecutionTool(), 
+		  (getCapabilitiesType_NeedsExecutionTool(), 
 		   source, 
 		   new String[] {
 			 "kind", "attribute",
@@ -3430,20 +3417,18 @@ public class FmiModelV1PackageImpl extends EPackageImpl implements FmiModelV1Pac
 			 "namespace", "##targetNamespace"
 		   });		
 		addAnnotation
-		  (coSimulation_StandAloneEClass, 
+		  (implementationTypeEClass, 
 		   source, 
 		   new String[] {
-			 "kind", "element",
-			 "name", "CoSimulation_StandAlone",
-			 "namespace", "##targetNamespace"
+			 "name", "Implementation_._type",
+			 "kind", "elementOnly"
 		   });		
 		addAnnotation
-		  (coSimulation_ToolEClass, 
+		  (coSimulation_StandAloneTypeEClass, 
 		   source, 
 		   new String[] {
-			 "kind", "element",
-			 "name", "CoSimulation_Tool",
-			 "namespace", "##targetNamespace"
+			 "name", "CoSimulation_StandAloneType",
+			 "kind", "elementOnly"
 		   });		
 		addAnnotation
 		  (variabilityTypeEEnum, 

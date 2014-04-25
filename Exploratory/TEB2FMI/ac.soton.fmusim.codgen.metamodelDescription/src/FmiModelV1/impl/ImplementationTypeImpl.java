@@ -2,7 +2,7 @@
  */
 package FmiModelV1.impl;
 
-import FmiModelV1.Capabilities;
+import FmiModelV1.CoSimulation_StandAloneType;
 import FmiModelV1.FmiModelV1Package;
 import FmiModelV1.ImplementationType;
 
@@ -22,22 +22,22 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link FmiModelV1.impl.ImplementationTypeImpl#getCapabilities <em>Capabilities</em>}</li>
+ *   <li>{@link FmiModelV1.impl.ImplementationTypeImpl#getCoSimulation_StandAlone <em>Co Simulation Stand Alone</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public abstract class ImplementationTypeImpl extends EObjectImpl implements ImplementationType {
+public class ImplementationTypeImpl extends EObjectImpl implements ImplementationType {
 	/**
-	 * The cached value of the '{@link #getCapabilities() <em>Capabilities</em>}' containment reference.
+	 * The cached value of the '{@link #getCoSimulation_StandAlone() <em>Co Simulation Stand Alone</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCapabilities()
+	 * @see #getCoSimulation_StandAlone()
 	 * @generated
 	 * @ordered
 	 */
-	protected Capabilities capabilities;
+	protected CoSimulation_StandAloneType coSimulation_StandAlone;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -63,8 +63,8 @@ public abstract class ImplementationTypeImpl extends EObjectImpl implements Impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Capabilities getCapabilities() {
-		return capabilities;
+	public CoSimulation_StandAloneType getCoSimulation_StandAlone() {
+		return coSimulation_StandAlone;
 	}
 
 	/**
@@ -72,11 +72,11 @@ public abstract class ImplementationTypeImpl extends EObjectImpl implements Impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetCapabilities(Capabilities newCapabilities, NotificationChain msgs) {
-		Capabilities oldCapabilities = capabilities;
-		capabilities = newCapabilities;
+	public NotificationChain basicSetCoSimulation_StandAlone(CoSimulation_StandAloneType newCoSimulation_StandAlone, NotificationChain msgs) {
+		CoSimulation_StandAloneType oldCoSimulation_StandAlone = coSimulation_StandAlone;
+		coSimulation_StandAlone = newCoSimulation_StandAlone;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FmiModelV1Package.IMPLEMENTATION_TYPE__CAPABILITIES, oldCapabilities, newCapabilities);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FmiModelV1Package.IMPLEMENTATION_TYPE__CO_SIMULATION_STAND_ALONE, oldCoSimulation_StandAlone, newCoSimulation_StandAlone);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -87,18 +87,18 @@ public abstract class ImplementationTypeImpl extends EObjectImpl implements Impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCapabilities(Capabilities newCapabilities) {
-		if (newCapabilities != capabilities) {
+	public void setCoSimulation_StandAlone(CoSimulation_StandAloneType newCoSimulation_StandAlone) {
+		if (newCoSimulation_StandAlone != coSimulation_StandAlone) {
 			NotificationChain msgs = null;
-			if (capabilities != null)
-				msgs = ((InternalEObject)capabilities).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FmiModelV1Package.IMPLEMENTATION_TYPE__CAPABILITIES, null, msgs);
-			if (newCapabilities != null)
-				msgs = ((InternalEObject)newCapabilities).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FmiModelV1Package.IMPLEMENTATION_TYPE__CAPABILITIES, null, msgs);
-			msgs = basicSetCapabilities(newCapabilities, msgs);
+			if (coSimulation_StandAlone != null)
+				msgs = ((InternalEObject)coSimulation_StandAlone).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FmiModelV1Package.IMPLEMENTATION_TYPE__CO_SIMULATION_STAND_ALONE, null, msgs);
+			if (newCoSimulation_StandAlone != null)
+				msgs = ((InternalEObject)newCoSimulation_StandAlone).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FmiModelV1Package.IMPLEMENTATION_TYPE__CO_SIMULATION_STAND_ALONE, null, msgs);
+			msgs = basicSetCoSimulation_StandAlone(newCoSimulation_StandAlone, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FmiModelV1Package.IMPLEMENTATION_TYPE__CAPABILITIES, newCapabilities, newCapabilities));
+			eNotify(new ENotificationImpl(this, Notification.SET, FmiModelV1Package.IMPLEMENTATION_TYPE__CO_SIMULATION_STAND_ALONE, newCoSimulation_StandAlone, newCoSimulation_StandAlone));
 	}
 
 	/**
@@ -109,8 +109,8 @@ public abstract class ImplementationTypeImpl extends EObjectImpl implements Impl
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case FmiModelV1Package.IMPLEMENTATION_TYPE__CAPABILITIES:
-				return basicSetCapabilities(null, msgs);
+			case FmiModelV1Package.IMPLEMENTATION_TYPE__CO_SIMULATION_STAND_ALONE:
+				return basicSetCoSimulation_StandAlone(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -123,8 +123,8 @@ public abstract class ImplementationTypeImpl extends EObjectImpl implements Impl
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FmiModelV1Package.IMPLEMENTATION_TYPE__CAPABILITIES:
-				return getCapabilities();
+			case FmiModelV1Package.IMPLEMENTATION_TYPE__CO_SIMULATION_STAND_ALONE:
+				return getCoSimulation_StandAlone();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -137,8 +137,8 @@ public abstract class ImplementationTypeImpl extends EObjectImpl implements Impl
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FmiModelV1Package.IMPLEMENTATION_TYPE__CAPABILITIES:
-				setCapabilities((Capabilities)newValue);
+			case FmiModelV1Package.IMPLEMENTATION_TYPE__CO_SIMULATION_STAND_ALONE:
+				setCoSimulation_StandAlone((CoSimulation_StandAloneType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -152,8 +152,8 @@ public abstract class ImplementationTypeImpl extends EObjectImpl implements Impl
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FmiModelV1Package.IMPLEMENTATION_TYPE__CAPABILITIES:
-				setCapabilities((Capabilities)null);
+			case FmiModelV1Package.IMPLEMENTATION_TYPE__CO_SIMULATION_STAND_ALONE:
+				setCoSimulation_StandAlone((CoSimulation_StandAloneType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -167,8 +167,8 @@ public abstract class ImplementationTypeImpl extends EObjectImpl implements Impl
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FmiModelV1Package.IMPLEMENTATION_TYPE__CAPABILITIES:
-				return capabilities != null;
+			case FmiModelV1Package.IMPLEMENTATION_TYPE__CO_SIMULATION_STAND_ALONE:
+				return coSimulation_StandAlone != null;
 		}
 		return super.eIsSet(featureID);
 	}

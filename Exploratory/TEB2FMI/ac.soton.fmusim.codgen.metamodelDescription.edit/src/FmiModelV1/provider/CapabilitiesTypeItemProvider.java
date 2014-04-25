@@ -3,7 +3,7 @@
 package FmiModelV1.provider;
 
 
-import FmiModelV1.Capabilities;
+import FmiModelV1.CapabilitiesType;
 import FmiModelV1.FmiModelV1Package;
 
 import java.util.Collection;
@@ -26,12 +26,12 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link FmiModelV1.Capabilities} object.
+ * This is the item provider adapter for a {@link FmiModelV1.CapabilitiesType} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class CapabilitiesItemProvider
+public class CapabilitiesTypeItemProvider
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -45,7 +45,7 @@ public class CapabilitiesItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CapabilitiesItemProvider(AdapterFactory adapterFactory) {
+	public CapabilitiesTypeItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -88,9 +88,9 @@ public class CapabilitiesItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Capabilities_canHandleVariableCommunicationStepSize_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Capabilities_canHandleVariableCommunicationStepSize_feature", "_UI_Capabilities_type"),
-				 FmiModelV1Package.Literals.CAPABILITIES__CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE,
+				 getString("_UI_CapabilitiesType_canHandleVariableCommunicationStepSize_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CapabilitiesType_canHandleVariableCommunicationStepSize_feature", "_UI_CapabilitiesType_type"),
+				 FmiModelV1Package.Literals.CAPABILITIES_TYPE__CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE,
 				 true,
 				 false,
 				 false,
@@ -110,9 +110,9 @@ public class CapabilitiesItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Capabilities_canHandleEvents_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Capabilities_canHandleEvents_feature", "_UI_Capabilities_type"),
-				 FmiModelV1Package.Literals.CAPABILITIES__CAN_HANDLE_EVENTS,
+				 getString("_UI_CapabilitiesType_canHandleEvents_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CapabilitiesType_canHandleEvents_feature", "_UI_CapabilitiesType_type"),
+				 FmiModelV1Package.Literals.CAPABILITIES_TYPE__CAN_HANDLE_EVENTS,
 				 true,
 				 false,
 				 false,
@@ -132,9 +132,9 @@ public class CapabilitiesItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Capabilities_canRejectSteps_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Capabilities_canRejectSteps_feature", "_UI_Capabilities_type"),
-				 FmiModelV1Package.Literals.CAPABILITIES__CAN_REJECT_STEPS,
+				 getString("_UI_CapabilitiesType_canRejectSteps_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CapabilitiesType_canRejectSteps_feature", "_UI_CapabilitiesType_type"),
+				 FmiModelV1Package.Literals.CAPABILITIES_TYPE__CAN_REJECT_STEPS,
 				 true,
 				 false,
 				 false,
@@ -154,9 +154,9 @@ public class CapabilitiesItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Capabilities_canInterpolateInputs_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Capabilities_canInterpolateInputs_feature", "_UI_Capabilities_type"),
-				 FmiModelV1Package.Literals.CAPABILITIES__CAN_INTERPOLATE_INPUTS,
+				 getString("_UI_CapabilitiesType_canInterpolateInputs_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CapabilitiesType_canInterpolateInputs_feature", "_UI_CapabilitiesType_type"),
+				 FmiModelV1Package.Literals.CAPABILITIES_TYPE__CAN_INTERPOLATE_INPUTS,
 				 true,
 				 false,
 				 false,
@@ -176,9 +176,9 @@ public class CapabilitiesItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Capabilities_maxOutputDerivativeOrder_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Capabilities_maxOutputDerivativeOrder_feature", "_UI_Capabilities_type"),
-				 FmiModelV1Package.Literals.CAPABILITIES__MAX_OUTPUT_DERIVATIVE_ORDER,
+				 getString("_UI_CapabilitiesType_maxOutputDerivativeOrder_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CapabilitiesType_maxOutputDerivativeOrder_feature", "_UI_CapabilitiesType_type"),
+				 FmiModelV1Package.Literals.CAPABILITIES_TYPE__MAX_OUTPUT_DERIVATIVE_ORDER,
 				 true,
 				 false,
 				 false,
@@ -198,9 +198,9 @@ public class CapabilitiesItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Capabilities_canRunAsynchronuously_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Capabilities_canRunAsynchronuously_feature", "_UI_Capabilities_type"),
-				 FmiModelV1Package.Literals.CAPABILITIES__CAN_RUN_ASYNCHRONUOUSLY,
+				 getString("_UI_CapabilitiesType_canRunAsynchronuously_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CapabilitiesType_canRunAsynchronuously_feature", "_UI_CapabilitiesType_type"),
+				 FmiModelV1Package.Literals.CAPABILITIES_TYPE__CAN_RUN_ASYNCHRONUOUSLY,
 				 true,
 				 false,
 				 false,
@@ -220,9 +220,9 @@ public class CapabilitiesItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Capabilities_canSignalEvents_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Capabilities_canSignalEvents_feature", "_UI_Capabilities_type"),
-				 FmiModelV1Package.Literals.CAPABILITIES__CAN_SIGNAL_EVENTS,
+				 getString("_UI_CapabilitiesType_canSignalEvents_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CapabilitiesType_canSignalEvents_feature", "_UI_CapabilitiesType_type"),
+				 FmiModelV1Package.Literals.CAPABILITIES_TYPE__CAN_SIGNAL_EVENTS,
 				 true,
 				 false,
 				 false,
@@ -242,9 +242,9 @@ public class CapabilitiesItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Capabilities_canBeInstantiatedOnlyOncePerProcess_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Capabilities_canBeInstantiatedOnlyOncePerProcess_feature", "_UI_Capabilities_type"),
-				 FmiModelV1Package.Literals.CAPABILITIES__CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS,
+				 getString("_UI_CapabilitiesType_canBeInstantiatedOnlyOncePerProcess_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CapabilitiesType_canBeInstantiatedOnlyOncePerProcess_feature", "_UI_CapabilitiesType_type"),
+				 FmiModelV1Package.Literals.CAPABILITIES_TYPE__CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS,
 				 true,
 				 false,
 				 false,
@@ -264,9 +264,9 @@ public class CapabilitiesItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Capabilities_canNotUseMemoryManagementFunctions_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Capabilities_canNotUseMemoryManagementFunctions_feature", "_UI_Capabilities_type"),
-				 FmiModelV1Package.Literals.CAPABILITIES__CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS,
+				 getString("_UI_CapabilitiesType_canNotUseMemoryManagementFunctions_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CapabilitiesType_canNotUseMemoryManagementFunctions_feature", "_UI_CapabilitiesType_type"),
+				 FmiModelV1Package.Literals.CAPABILITIES_TYPE__CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS,
 				 true,
 				 false,
 				 false,
@@ -286,9 +286,9 @@ public class CapabilitiesItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Capabilities_canGetAndSetFMUstate_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Capabilities_canGetAndSetFMUstate_feature", "_UI_Capabilities_type"),
-				 FmiModelV1Package.Literals.CAPABILITIES__CAN_GET_AND_SET_FM_USTATE,
+				 getString("_UI_CapabilitiesType_canGetAndSetFMUstate_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CapabilitiesType_canGetAndSetFMUstate_feature", "_UI_CapabilitiesType_type"),
+				 FmiModelV1Package.Literals.CAPABILITIES_TYPE__CAN_GET_AND_SET_FM_USTATE,
 				 true,
 				 false,
 				 false,
@@ -308,9 +308,9 @@ public class CapabilitiesItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Capabilities_canSerializeFMUstate_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Capabilities_canSerializeFMUstate_feature", "_UI_Capabilities_type"),
-				 FmiModelV1Package.Literals.CAPABILITIES__CAN_SERIALIZE_FM_USTATE,
+				 getString("_UI_CapabilitiesType_canSerializeFMUstate_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CapabilitiesType_canSerializeFMUstate_feature", "_UI_CapabilitiesType_type"),
+				 FmiModelV1Package.Literals.CAPABILITIES_TYPE__CAN_SERIALIZE_FM_USTATE,
 				 true,
 				 false,
 				 false,
@@ -330,9 +330,9 @@ public class CapabilitiesItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Capabilities_modelIdentifier_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Capabilities_modelIdentifier_feature", "_UI_Capabilities_type"),
-				 FmiModelV1Package.Literals.CAPABILITIES__MODEL_IDENTIFIER,
+				 getString("_UI_CapabilitiesType_modelIdentifier_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CapabilitiesType_modelIdentifier_feature", "_UI_CapabilitiesType_type"),
+				 FmiModelV1Package.Literals.CAPABILITIES_TYPE__MODEL_IDENTIFIER,
 				 true,
 				 false,
 				 false,
@@ -352,9 +352,9 @@ public class CapabilitiesItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Capabilities_needsExecutionTool_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Capabilities_needsExecutionTool_feature", "_UI_Capabilities_type"),
-				 FmiModelV1Package.Literals.CAPABILITIES__NEEDS_EXECUTION_TOOL,
+				 getString("_UI_CapabilitiesType_needsExecutionTool_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CapabilitiesType_needsExecutionTool_feature", "_UI_CapabilitiesType_type"),
+				 FmiModelV1Package.Literals.CAPABILITIES_TYPE__NEEDS_EXECUTION_TOOL,
 				 true,
 				 false,
 				 false,
@@ -364,14 +364,14 @@ public class CapabilitiesItemProvider
 	}
 
 	/**
-	 * This returns Capabilities.gif.
+	 * This returns CapabilitiesType.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Capabilities"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/CapabilitiesType"));
 	}
 
 	/**
@@ -382,8 +382,8 @@ public class CapabilitiesItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		Capabilities capabilities = (Capabilities)object;
-		return getString("_UI_Capabilities_type") + " " + capabilities.isCanHandleVariableCommunicationStepSize();
+		CapabilitiesType capabilitiesType = (CapabilitiesType)object;
+		return getString("_UI_CapabilitiesType_type") + " " + capabilitiesType.isCanHandleVariableCommunicationStepSize();
 	}
 
 	/**
@@ -397,20 +397,20 @@ public class CapabilitiesItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Capabilities.class)) {
-			case FmiModelV1Package.CAPABILITIES__CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE:
-			case FmiModelV1Package.CAPABILITIES__CAN_HANDLE_EVENTS:
-			case FmiModelV1Package.CAPABILITIES__CAN_REJECT_STEPS:
-			case FmiModelV1Package.CAPABILITIES__CAN_INTERPOLATE_INPUTS:
-			case FmiModelV1Package.CAPABILITIES__MAX_OUTPUT_DERIVATIVE_ORDER:
-			case FmiModelV1Package.CAPABILITIES__CAN_RUN_ASYNCHRONUOUSLY:
-			case FmiModelV1Package.CAPABILITIES__CAN_SIGNAL_EVENTS:
-			case FmiModelV1Package.CAPABILITIES__CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS:
-			case FmiModelV1Package.CAPABILITIES__CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS:
-			case FmiModelV1Package.CAPABILITIES__CAN_GET_AND_SET_FM_USTATE:
-			case FmiModelV1Package.CAPABILITIES__CAN_SERIALIZE_FM_USTATE:
-			case FmiModelV1Package.CAPABILITIES__MODEL_IDENTIFIER:
-			case FmiModelV1Package.CAPABILITIES__NEEDS_EXECUTION_TOOL:
+		switch (notification.getFeatureID(CapabilitiesType.class)) {
+			case FmiModelV1Package.CAPABILITIES_TYPE__CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE:
+			case FmiModelV1Package.CAPABILITIES_TYPE__CAN_HANDLE_EVENTS:
+			case FmiModelV1Package.CAPABILITIES_TYPE__CAN_REJECT_STEPS:
+			case FmiModelV1Package.CAPABILITIES_TYPE__CAN_INTERPOLATE_INPUTS:
+			case FmiModelV1Package.CAPABILITIES_TYPE__MAX_OUTPUT_DERIVATIVE_ORDER:
+			case FmiModelV1Package.CAPABILITIES_TYPE__CAN_RUN_ASYNCHRONUOUSLY:
+			case FmiModelV1Package.CAPABILITIES_TYPE__CAN_SIGNAL_EVENTS:
+			case FmiModelV1Package.CAPABILITIES_TYPE__CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS:
+			case FmiModelV1Package.CAPABILITIES_TYPE__CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS:
+			case FmiModelV1Package.CAPABILITIES_TYPE__CAN_GET_AND_SET_FM_USTATE:
+			case FmiModelV1Package.CAPABILITIES_TYPE__CAN_SERIALIZE_FM_USTATE:
+			case FmiModelV1Package.CAPABILITIES_TYPE__MODEL_IDENTIFIER:
+			case FmiModelV1Package.CAPABILITIES_TYPE__NEEDS_EXECUTION_TOOL:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
