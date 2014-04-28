@@ -16,18 +16,16 @@ int conInstanceCount = 0;
 // Private helpers used below to validate function arguments
 // ---------------------------------------------------------------------------
 
-static fmiBoolean invalidNumber(fmiComponent c, const char* f,
-		const char* arg, int n, int nExpected) {
-	ModelInstance* comp = (ModelInstance*) c;
-	if (n != nExpected) {
-		comp->state = modelError;
-		comp->functions.logger(comp, comp->instanceName, fmiError, "error",
-				"%s: Invalid argument %s = %d. Expected %d.", f, arg, n,
-				nExpected);
-		return fmiTrue;
-	}
-	return fmiFalse;
-}
+//static fmiBoolean invalidNumber(fmiComponent c, const char* f, const char* arg, int n, int nExpected){
+//	ModelInstance* comp = (ModelInstance*) c;
+//    if (n != nExpected) {
+//        comp->state = modelError;
+//        comp->functions.logger(comp, comp->instanceName, fmiError, "error",
+//                "%s: Invalid argument %s = %d. Expected %d.", f, arg, n, nExpected);
+//        return fmiTrue;
+//    }
+//    return fmiFalse;
+//}
 
 static fmiBoolean invalidState(fmiComponent c, const char* f,
 		int statesExpected) {
@@ -43,8 +41,8 @@ static fmiBoolean invalidState(fmiComponent c, const char* f,
 	return fmiFalse;
 }
 
-static fmiBoolean nullPointer(fmiComponent c, const char* f,
-		const char* arg, const void* p) {
+static fmiBoolean nullPointer(fmiComponent c, const char* f, const char* arg,
+		const void* p) {
 	ModelInstance* comp = (ModelInstance*) c;
 	if (!p) {
 		comp->state = modelError;
@@ -71,7 +69,7 @@ static fmiBoolean vrOutOfRange(fmiComponent c, const char* f,
 // FMI functions: class methods not depending of a specific model instance
 // ---------------------------------------------------------------------------
 
-const char* fmiGetModelTypesPlatform() {
+const char* fmiGetTypesPlatform() {
 	return fmiModelTypesPlatform;
 }
 
@@ -82,6 +80,60 @@ const char* fmiGetVersion() {
 // ---------------------------------------------------------------------------
 // FMI functions: creation and destruction of a model instance
 // ---------------------------------------------------------------------------
+
+// TODO complete the body
+fmiStatus fmiResetSlave(fmiComponent c) {
+	return fmiOK;
+}
+
+// TODO complete the body if required
+fmiStatus fmiSetRealInputDerivatives(fmiComponent c,
+		const fmiValueReference vr[], size_t nvr, const fmiInteger order[],
+		const fmiReal value[]) {
+	return fmiOK;
+}
+
+// TODO complete the body if required
+fmiStatus fmiGetRealOutputDerivatives(fmiComponent c,
+		const fmiValueReference vr[], size_t nvr, const fmiInteger order[],
+		fmiReal value[]) {
+	return fmiOK;
+}
+
+// TODO complete the body if required
+fmiStatus fmiCancelStep(fmiComponent c) {
+	return fmiOK;
+}
+
+// TODO complete the body if required
+fmiStatus fmiGetStatus(fmiComponent c, const fmiStatusKind s,
+		fmiStatus* value) {
+	return fmiOK;
+}
+
+// TODO complete the body if required
+fmiStatus fmiGetRealStatus(fmiComponent c, const fmiStatusKind s,
+		fmiReal* value) {
+	return fmiOK;
+}
+
+// TODO complete the body if required
+fmiStatus fmiGetIntegerStatus(fmiComponent c, const fmiStatusKind s,
+		fmiInteger* value) {
+	return fmiOK;
+}
+
+// TODO complete the body if required
+fmiStatus fmiGetBooleanStatus(fmiComponent c, const fmiStatusKind s,
+		fmiBoolean* value) {
+	return fmiOK;
+}
+
+// TODO complete the body if required
+fmiStatus fmiGetStringStatus(fmiComponent c, const fmiStatusKind s,
+		fmiString* value) {
+	return fmiOK;
+}
 
 fmiStatus fmiSetDebugLogging(fmiComponent c, fmiBoolean loggingOn) {
 	ModelInstance* comp = (ModelInstance*) c;
@@ -237,7 +289,7 @@ fmiStatus fmiSetString(fmiComponent c, const fmiValueReference vr[], size_t nvr,
 
 // called by fmiGetReal, fmiGetContinuousStates and fmiGetDerivatives
 // This should not be called in current implementations
-fmiReal getReal(fmiComponent* comp, fmiValueReference vr) {
+fmiReal getReal(fmiComponent comp, fmiValueReference vr) {
 	return 0;
 }
 

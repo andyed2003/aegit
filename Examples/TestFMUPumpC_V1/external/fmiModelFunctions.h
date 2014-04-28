@@ -125,6 +125,21 @@
 #define fmiGetStateValueReferences    fmiFullName(_fmiGetStateValueReferences)
 #define fmiTerminate                  fmiFullName(_fmiTerminate)
 
+#define fmiGetTypesPlatform           	fmiFullName(_fmiGetTypesPlatform)
+#define fmiInstantiateSlave          	fmiFullName(_fmiInstantiateSlave)
+#define fmiInitializeSlave              fmiFullName(_fmiInitializeSlave)
+#define fmiTerminateSlave               fmiFullName(_fmiTerminateSlave)
+#define fmiResetSlave                   fmiFullName(_fmiResetSlave)
+#define fmiFreeSlaveInstance            fmiFullName(_fmiFreeSlaveInstance)
+#define fmiSetRealInputDerivatives      fmiFullName(_fmiSetRealInputDerivatives)
+#define fmiGetRealOutputDerivatives     fmiFullName(_fmiGetRealOutputDerivatives)
+#define fmiCancelStep                   fmiFullName(_fmiCancelStep)
+#define fmiGetStatus                    fmiFullName(_fmiGetStatus)
+#define fmiGetRealStatus                fmiFullName(_fmiGetRealStatus)
+#define fmiGetIntegerStatus             fmiFullName(_fmiGetIntegerStatus)
+#define fmiGetBooleanStatus             fmiFullName(_fmiGetBooleanStatus)
+#define fmiGetStringStatus              fmiFullName(_fmiGetStringStatus)
+
 
 /* Version number */
 #define fmiVersion "1.0"

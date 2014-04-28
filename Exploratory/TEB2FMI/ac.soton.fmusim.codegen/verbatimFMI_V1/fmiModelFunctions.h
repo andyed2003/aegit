@@ -47,7 +47,7 @@
    - Dec. 3 , 2008: First version by Martin Otter (DLR) and Hans Olsson (Dynasim).
 
 
-   Copyright © 2008-2009, MODELISAR consortium. All rights reserved.
+   Copyright ï¿½ 2008-2009, MODELISAR consortium. All rights reserved.
    This file is licensed by the copyright holders under the BSD License
    (http://www.opensource.org/licenses/bsd-license.html):
 
@@ -124,6 +124,21 @@
 #define fmiGetNominalContinuousStates fmiFullName(_fmiGetNominalContinuousStates)
 #define fmiGetStateValueReferences    fmiFullName(_fmiGetStateValueReferences)
 #define fmiTerminate                  fmiFullName(_fmiTerminate)
+
+#define fmiGetTypesPlatform           	fmiFullName(_fmiGetTypesPlatform)
+#define fmiInstantiateSlave          	fmiFullName(_fmiInstantiateSlave)
+#define fmiInitializeSlave              fmiFullName(_fmiInitializeSlave)
+#define fmiTerminateSlave               fmiFullName(_fmiTerminateSlave)
+#define fmiResetSlave                   fmiFullName(_fmiResetSlave)
+#define fmiFreeSlaveInstance            fmiFullName(_fmiFreeSlaveInstance)
+#define fmiSetRealInputDerivatives      fmiFullName(_fmiSetRealInputDerivatives)
+#define fmiGetRealOutputDerivatives     fmiFullName(_fmiGetRealOutputDerivatives)
+#define fmiCancelStep                   fmiFullName(_fmiCancelStep)
+#define fmiGetStatus                    fmiFullName(_fmiGetStatus)
+#define fmiGetRealStatus                fmiFullName(_fmiGetRealStatus)
+#define fmiGetIntegerStatus             fmiFullName(_fmiGetIntegerStatus)
+#define fmiGetBooleanStatus             fmiFullName(_fmiGetBooleanStatus)
+#define fmiGetStringStatus              fmiFullName(_fmiGetStringStatus)
 
 
 /* Version number */

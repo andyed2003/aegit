@@ -18,6 +18,11 @@ typedef enum {
     modelError        = 1<<3
 } ModelState;
 
+typedef enum {fmiDoStepStatus,
+	fmiPendingStatus,
+	fmiLastSuccessfulTime,
+} fmiStatusKind;
+
 //// fmiComponent
 typedef struct{
 	fmiBoolean validInstance;
@@ -34,7 +39,7 @@ typedef struct{
 #ifdef FMI_COSIMULATION
     fmiEventInfo eventInfo;
 #endif
-} fmiComponent;
+} ModelInstance;
 
 
 #endif /* myFMIDECLS_H_ */

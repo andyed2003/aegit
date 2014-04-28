@@ -18,6 +18,11 @@ typedef enum {
     modelError        = 1<<3
 } ModelState;
 
+typedef enum {fmiDoStepStatus,
+	fmiPendingStatus,
+	fmiLastSuccessfulTime,
+} fmiStatusKind;
+
 //// fmiComponent
 typedef struct{
 	fmiBoolean validInstance;
