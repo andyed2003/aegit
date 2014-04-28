@@ -35,8 +35,8 @@
     <variables xsi:type="components:FMUVariable" name="c_warn_internal" type="Boolean" causality="Internal" description=""/>
     <variables xsi:type="components:FMUVariable" name="commit" type="Boolean" causality="Internal" description=""/>
   </components>
-  <connectors ports="//@components.1/@inputs.0 //@components.0/@outputs.0"/>
-  <connectors ports="//@components.1/@inputs.1 //@components.0/@outputs.1"/>
-  <connectors ports="//@components.1/@outputs.0 //@components.0/@inputs.0"/>
-  <connectors ports="//@components.1/@outputs.1 //@components.0/@inputs.1"/>
+  <connectors ports="//@components.0/@outputs.0 //@components.1/@inputs.0"/>
+  <connectors ports="//@components.0/@outputs.1 //@components.1/@inputs.1"/>
+  <connectors ports="//@components.0/@inputs.0 //@components.1/@outputs.0"/>
+  <connectors ports="//@components.0/@inputs.1 //@components.1/@outputs.1"/>
 </components:ComponentDiagram>
