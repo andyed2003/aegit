@@ -93,6 +93,7 @@
     </autoTasks>
   </entryPoint>
   <environMachines name="EnvironmentImpl" projectName="PumpControllerJava" machineName="EnvironmentImpl">
+    <body xsi:type="il1:Action" ParentEventName="read_ePorts" action="e_level &#x2254; e_level"/>
     <taskType xsi:type="il1:PeriodicTaskType"/>
     <decls xsi:type="il1:VariableDecl" identifier="e_level" type="&#x2124;" initialValue="90" ProjectName="PumpControllerJava" ComponentName="EnvironmentImpl"/>
     <decls xsi:type="il1:VariableDecl" identifier="e_pumpOnReq" type="BOOL" initialValue="FALSE" ProjectName="PumpControllerJava" ComponentName="EnvironmentImpl"/>

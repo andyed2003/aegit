@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <org.eventb.core.psFile>
 <org.eventb.core.psStatus name="raiseT/E_LM75_tempAmbient/EQL" org.eventb.core.confidence="0" org.eventb.core.poStamp="0" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="raiseT/E_LM75_tempPSU/EQL" org.eventb.core.confidence="0" org.eventb.core.poStamp="0" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="raiseT/E_LM75_tempPSU/EQL" org.eventb.core.confidence="0" org.eventb.core.poStamp="0" org.eventb.core.psBroken="true" org.eventb.core.psManual="false"/>
 <org.eventb.core.psStatus name="raiseT/E_MAX6650_fanSpeed/EQL" org.eventb.core.confidence="0" org.eventb.core.poStamp="0" org.eventb.core.psManual="false"/>
 <org.eventb.core.psStatus name="lowerT/E_LM75_tempAmbient/EQL" org.eventb.core.confidence="0" org.eventb.core.poStamp="0" org.eventb.core.psManual="false"/>
 <org.eventb.core.psStatus name="lowerT/E_LM75_tempPSU/EQL" org.eventb.core.confidence="0" org.eventb.core.poStamp="0" org.eventb.core.psManual="false"/>

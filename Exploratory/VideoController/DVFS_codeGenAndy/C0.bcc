@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.scContextFile org.eventb.core.accurate="true" org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase;org.eventb.codegen.ui.cgConfig">
+<org.eventb.core.scAxiom name="'" org.eventb.core.label="axm13" org.eventb.core.predicate="f1∈FRAMES" org.eventb.core.source="/DVFS_codeGenAndy/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#I" org.eventb.core.theorem="false"/>
+<org.eventb.core.scAxiom name="(" org.eventb.core.label="axm14" org.eventb.core.predicate="f2∈FRAMES" org.eventb.core.source="/DVFS_codeGenAndy/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#J" org.eventb.core.theorem="false"/>
+<org.eventb.core.scAxiom name=")" org.eventb.core.label="axm1" org.eventb.core.predicate="OPP1G∈VF" org.eventb.core.source="/DVFS_codeGenAndy/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#?" org.eventb.core.theorem="false"/>
+<org.eventb.core.scAxiom name="*" org.eventb.core.label="axm2" org.eventb.core.predicate="OPP50∈VF" org.eventb.core.source="/DVFS_codeGenAndy/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#B" org.eventb.core.theorem="false"/>
+<org.eventb.core.scAxiom name="+" org.eventb.core.label="axm3" org.eventb.core.predicate="OPP130∈VF" org.eventb.core.source="/DVFS_codeGenAndy/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#@" org.eventb.core.theorem="false"/>
+<org.eventb.core.scAxiom name="," org.eventb.core.label="axm4" org.eventb.core.predicate="OPP100∈VF" org.eventb.core.source="/DVFS_codeGenAndy/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#A" org.eventb.core.theorem="false"/>
+<org.eventb.core.scAxiom name="-" org.eventb.core.label="axm11" org.eventb.core.predicate="partition(VF,{OPP1G},{OPP130},{OPP100},{OPP50})" org.eventb.core.source="/DVFS_codeGenAndy/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#D" org.eventb.core.theorem="false"/>
+<org.eventb.core.scAxiom name="." org.eventb.core.label="axm12" org.eventb.core.predicate="partition(FRAMES,{f1},{f2})" org.eventb.core.source="/DVFS_codeGenAndy/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#F" org.eventb.core.theorem="false"/>
+<org.eventb.core.scCarrierSet name="FRAMES" org.eventb.core.source="/DVFS_codeGenAndy/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.carrierSet#3" org.eventb.core.type="ℙ(FRAMES)"/>
+<org.eventb.core.scConstant name="OPP100" org.eventb.core.source="/DVFS_codeGenAndy/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.constant#0" org.eventb.core.type="VF"/>
+<org.eventb.core.scConstant name="OPP130" org.eventb.core.source="/DVFS_codeGenAndy/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.constant#\/" org.eventb.core.type="VF"/>
+<org.eventb.core.scConstant name="OPP1G" org.eventb.core.source="/DVFS_codeGenAndy/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.constant#." org.eventb.core.type="VF"/>
+<org.eventb.core.scConstant name="OPP50" org.eventb.core.source="/DVFS_codeGenAndy/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.constant#1" org.eventb.core.type="VF"/>
+<org.eventb.core.scCarrierSet name="VF" org.eventb.core.source="/DVFS_codeGenAndy/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.carrierSet#E" org.eventb.core.type="ℙ(VF)"/>
+<org.eventb.core.scConstant name="f1" org.eventb.core.source="/DVFS_codeGenAndy/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.constant#G" org.eventb.core.type="FRAMES"/>
+<org.eventb.core.scConstant name="f2" org.eventb.core.source="/DVFS_codeGenAndy/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.constant#H" org.eventb.core.type="FRAMES"/>
+</org.eventb.core.scContextFile>

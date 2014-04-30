@@ -70,7 +70,7 @@ public class FMUCSubroutineTranslator extends AbstractSubroutineIL1Translator {
 					+ "fmiInteger value[]";
 
 			// pass the code out
-			outCode.add("fmiStatus fmi" + communicationDirection + fmiTypeName + "("
+			outCode.add("fmiStatus modelID_fmi" + communicationDirection + fmiTypeName + "("
 					+ fmiAPIparameters + ")");
 		}
 		// >>>>> // else it must be an fmiDOStep subroutine

@@ -5,23 +5,32 @@
    <extension
          point="org.eclipse.ui.popupMenus">
       <objectContribution
-            objectClass="org.eventb.core.IEventBRoot"
-            id="ac.soton.fmusim.codegen.contribution1">
+            id="ac.soton.fmusim.codegen.contribution2"
+            objectClass="ac.soton.fmusim.components.diagram.edit.parts.EventBComponentEditPart">
          <menu
+               id="ac.soton.fmusim.codegen.menu2"
                label="FMI"
-               path="additions"
-               id="ac.soton.fmusim.codegen.menu1">
+               path="additions">
             <separator
                   name="group1">
             </separator>
          </menu>
          <action
-               label="Generate FMU C Project"
-               class="ac.soton.fmusim.codegen.popup.actions.CodeGen"
-               menubarPath="ac.soton.fmusim.codegen.menu1/group1"
+               class="ac.soton.fmusim.codegen.popup.actions.CodeGenV1_0"
                enablesFor="1"
-               id="ac.soton.fmusim.codegen.newAction">
+               id="ac.soton.fmusim.codegen.newAction3"
+               label="Generate FMU 1.0 C Project"
+               menubarPath="ac.soton.fmusim.codegen.menu2/group2">
          </action>
+<!--
+         <action
+               class="ac.soton.fmusim.codegen.popup.actions.CodeGenV2_0"
+               enablesFor="1"
+               id="ac.soton.fmusim.codegen.newAction2"
+               label="Generate FMU 2.0 C Project"
+               menubarPath="ac.soton.fmusim.codegen.menu2/group2">
+         </action>
+ -->
       </objectContribution>
    </extension>
    <extension

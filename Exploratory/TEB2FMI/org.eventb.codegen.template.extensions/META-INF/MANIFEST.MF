@@ -11,6 +11,7 @@ Require-Bundle: org.eclipse.ui,
  ac.soton.fmusim.codegen;bundle-version="0.0.1",
  ac.soton.fmusim.codegen.metamodelDescription;bundle-version="1.0.0",
  org.eventb.codegen.IL1.translator;bundle-version="0.0.4",
- org.eventb.core;bundle-version="2.5.1"
+ org.eventb.core;bundle-version="2.5.1",
+ ac.soton.fmusim.components.diagram;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7

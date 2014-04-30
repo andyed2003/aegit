@@ -13,6 +13,7 @@ import org.eventb.codegen.il1.Command;
 import org.eventb.codegen.il1.IL1Element;
 import org.eventb.codegen.il1.Il1Factory;
 import org.eventb.codegen.il1.LocalRemote;
+import org.eventb.codegen.il1.Parameter;
 import org.eventb.codegen.il1.Protected;
 import org.eventb.codegen.il1.Subroutine;
 import org.eventb.codegen.tasking.AbstractTaskingTranslator;
@@ -31,6 +32,10 @@ import compositeControl.CompositeControl;
 
 public class FMUMachineTaskingTranslator extends AbstractTaskingTranslator {
 
+	
+
+	public static List<Subroutine> communicatingSubroutines;
+
 	@Override
 	public IL1Element translate(EventBElement source, IL1Element target,
 			TaskingTranslationManager translationManager)
@@ -46,10 +51,11 @@ public class FMUMachineTaskingTranslator extends AbstractTaskingTranslator {
 		Map<String, IL1Element> storedElements = translationManager
 				.getStoredElements();
 
-		// This is where we stash the previously translated subroutines
-		// they will have been created during processing of the event wrappers
-		List<Subroutine> subRoutineList = new ArrayList<Subroutine>();
-
+		// This is where we stash the translated subroutines
+		// for translation to the FMIDoStep
+		List<Subroutine> fmiDoStepSubroutineList = new ArrayList<Subroutine>();
+		communicatingSubroutines = new ArrayList<Subroutine>();
+		
 		Iterator<String> keysIterator = storedElements.keySet().iterator();
 		while (keysIterator.hasNext()) {
 			String nxt = keysIterator.next();
@@ -63,16 +69,34 @@ public class FMUMachineTaskingTranslator extends AbstractTaskingTranslator {
 					IL1Element value = storedElements.get(nxt);
 					// make sure we have a subroutine
 					if (value instanceof Subroutine) {
-						Subroutine subRoutine = (Subroutine) value;
+						Subroutine subroutine = (Subroutine) value;
 						// Now check that the value is a subroutine with the
 						// correct name and machine name.
-						if (subRoutine.getMachineName().equalsIgnoreCase(
+						if (subroutine.getMachineName().equalsIgnoreCase(
 								containingMachine.getName())
-								&& subRoutine.getName().equals(evt.getName())) {
-							// if a corresponding translation then add it to the
-							// list
-							// of subroutines to be added to the protected
-							subRoutineList.add(subRoutine);
+								&& subroutine.getName().equals(evt.getName())) {
+							// if a corresponding translation exists then add it to the
+							// list of subroutines to be added to the protected, that is
+							// unless it has parameters. In FMU translation parameters
+							// only exist in communication events (between components),
+							// this is handled by the master during simulation.
+							// Any subroutines added are necessarily temporary,
+							// since they are in-lined in the do-step
+							EList<Parameter> formalParameters = subroutine.getFormalParameters();
+							// partition into communicating and doStep subroutines
+							if( formalParameters == null || formalParameters.size() == 0){
+								// non-communicating subroutines are temporary, since events
+								// can be in-lined. 
+								subroutine.setTemporary(true);
+								fmiDoStepSubroutineList.add(subroutine);
+							} else{
+								// Communicating subroutines are required for
+								// getters and setter info
+								subroutine.setTemporary(false);
+								communicatingSubroutines.add(subroutine);
+								translationManager.getCommunicatingSubroutines().add(subroutine);
+								protectedObj.getSubroutines().add(subroutine);
+							}
 						}
 					}
 				}
@@ -80,21 +104,19 @@ public class FMUMachineTaskingTranslator extends AbstractTaskingTranslator {
 		}
 
 		// now add data to the protected object
-		if (subRoutineList.size() > 0) {
+		if (fmiDoStepSubroutineList.size() > 0) {
 			protectedObj.setMachineName(containingMachine.getName());
 			protectedObj.setName(containingMachine.getName());
 			protectedObj.setProjectName(TaskingTranslationManager.getProject()
 					.getName());
-			protectedObj.getSubroutines().addAll(subRoutineList);
+			protectedObj.getSubroutines().addAll(fmiDoStepSubroutineList);
 		}
 		// An FMU with no subroutines is useless
 		else {
 			throw new TaskingTranslationUnhandledTypeException(source);
 		}
 
-		// Get, what is at the moment, the task body. Hopefully we can rename it
-		// to
-		// FMI DO STEP BODY or some such name, for FMUs.
+		// Get the task body.
 		EList<AbstractExtension> extensionList = containingMachine
 				.getExtensions();
 		for (AbstractExtension ext : extensionList) {

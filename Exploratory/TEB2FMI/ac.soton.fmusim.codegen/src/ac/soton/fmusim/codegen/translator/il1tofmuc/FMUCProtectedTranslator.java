@@ -80,16 +80,17 @@ public class FMUCProtectedTranslator extends AbstractProtectedIL1Translator {
 			StatusManager.getManager().handle(status, StatusManager.SHOW);
 		}
 		ArrayList<String> outCode = new ArrayList<String>();
+		
 		// If any subroutines have been generated during the template
-		// instantiation
-		// we can add the subroutine signatures to the header here.
+		// instantiation we can add the subroutine signatures 
+		// to the header here.
 		outCode.add("");
 		if (subList.size() > 0) {
 			ClassHeaderInformation headerInfo = new ClassHeaderInformation();
 			headerInfo.setClassName(actualSource.getName());
 			for (ArrayList<String> sub : subList) {
 				// The first line will contain the information to be placed in
-				// the header file for this environ machine object
+				// the header file for this machine
 				for (String s : sub) {
 					headerInfo.getHeaderEntries().add(s + ";");
 					outCode.add("");

@@ -5,15 +5,19 @@ import java.util.List;
 
 import org.eclipse.emf.common.util.EList;
 
-import FmiModel.DocumentRoot;
-import FmiModel.FmiScalarVariable;
-import FmiModel.ModelVariablesType;
+import FmiModelV1.DocumentRoot;
+import FmiModelV1.FmiScalarVariable;
+import FmiModelV1.ModelVariablesType;
 
 public class ModelDescriptionManager {
 
 	private List<DocumentRoot> docRootList = new ArrayList<DocumentRoot>();
 	private static ModelDescriptionManager manager;
 
+	private ModelDescriptionManager(){
+		// This forces the use of getDefault - which sets up the singleton manager
+	}
+	
 	public static ModelDescriptionManager getDefault() {
 		if (manager == null) {
 			manager = new ModelDescriptionManager();
@@ -21,11 +25,11 @@ public class ModelDescriptionManager {
 		return manager;
 	}
 
-	public List<DocumentRoot> getDocumentRoot() {
+	public List<DocumentRoot> getDocumentRootList() {
 		return docRootList;
 	}
-
-	public void setDocumentRoot(List<DocumentRoot> docRoot) {
+	
+	public void setDocumentRootList(List<DocumentRoot> docRoot) {
 		this.docRootList = docRoot;
 	}
 

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.comment="Environment: User + Core, Controller: Runtime Management" org.eventb.core.configuration="org.eventb.core.fwd;org.eventb.codegen.ui.cgConfig" version="5">
+<org.eventb.core.seesContext name="2" org.eventb.core.target="C0"/>
+<org.eventb.core.variable name=")" org.eventb.core.comment="fps set by user (environment)" org.eventb.core.identifier="e_fps"/>
+<org.eventb.core.event name="8" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="internal1" org.eventb.core.assignment="e_fps ≔ 24" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="internal3" org.eventb.core.assignment="c_fps ≔ 0" org.eventb.core.label="act8"/>
+<org.eventb.core.action name="internal2" org.eventb.core.assignment="e_cpu_cycle ≔ 0" org.eventb.core.label="act7"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="c_cpu_cycle ≔ 0" org.eventb.core.label="act4"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="c_frm_vf ≔ ∅" org.eventb.core.label="act2"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="c_frm_cpu_cycle ≔ ∅" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="internal6" org.eventb.core.assignment="c_frame ≔ f1" org.eventb.core.label="act11"/>
+<org.eventb.core.action name="internal4" org.eventb.core.assignment="c_vf ≔ OPP1G" org.eventb.core.label="act9"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="c_cur_frm :∈ FRAMES" org.eventb.core.label="act5"/>
+</org.eventb.core.event>
+<org.eventb.core.invariant name="?" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="inv1" org.eventb.core.predicate="e_fps ∈ ℤ "/>
+<org.eventb.core.variable name="I" org.eventb.core.comment="fps in the runtime mangement (controller) " org.eventb.core.identifier="c_fps"/>
+<org.eventb.core.invariant name="J" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="inv8" org.eventb.core.predicate="c_fps ∈ ℤ"/>
+<org.eventb.core.variable name="G" org.eventb.core.comment="current cpu cycle in the core (environment)" org.eventb.core.identifier="e_cpu_cycle"/>
+<org.eventb.core.variable name="4" org.eventb.core.comment="current cpu cycle in the runtime management(controller)" org.eventb.core.identifier="c_cpu_cycle"/>
+<org.eventb.core.variable name="/" org.eventb.core.identifier="c_frm_vf"/>
+<org.eventb.core.variable name="0" org.eventb.core.identifier="c_frm_cpu_cycle"/>
+<org.eventb.core.variable name="P" org.eventb.core.identifier="c_frame"/>
+<org.eventb.core.variable name="K" org.eventb.core.identifier="c_vf"/>
+<org.eventb.core.variable name="7" org.eventb.core.identifier="c_cur_frm"/>
+<org.eventb.core.invariant name="B" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="inv4" org.eventb.core.predicate="c_cpu_cycle ∈ ℤ"/>
+<org.eventb.core.invariant name="H" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="inv7" org.eventb.core.predicate="e_cpu_cycle ∈ ℤ"/>
+<org.eventb.core.invariant name="@" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="inv2" org.eventb.core.predicate="c_frm_vf ∈ FRAMES ⇸ VF"/>
+<org.eventb.core.invariant name="A" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="inv3" org.eventb.core.predicate="c_frm_cpu_cycle ∈ FRAMES ⇸ ℤ"/>
+<org.eventb.core.invariant name="L" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="inv9" org.eventb.core.predicate="c_vf ∈ VF"/>
+<org.eventb.core.invariant name="Q" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="inv10" org.eventb.core.predicate="c_frame ∈ FRAMES"/>
+<org.eventb.core.invariant name="C" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="inv5" org.eventb.core.predicate="c_cur_frm ∈ FRAMES"/>
+<org.eventb.core.event name="F" org.eventb.core.comment="The controller gets the data from the environment" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="c_get_fps">
+<org.eventb.core.parameter name="*" org.eventb.codegen.ui.parameterTypeAttribute="--unset--" org.eventb.core.identifier="p1"/>
+<org.eventb.core.guard name="+" org.eventb.codegen.ui.typingAttribute="NonTyping" org.eventb.core.label="grd2" org.eventb.core.predicate="p1 = e_fps"/>
+<org.eventb.core.action name="," org.eventb.core.assignment="c_fps ≔ p1" org.eventb.core.label="act2"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="O" org.eventb.core.comment="The optimal value of VF is calculated here" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="c_calculate_vf">
+<org.eventb.core.action name="'" org.eventb.core.assignment="c_vf ≔ OPP1G" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name=":" org.eventb.core.comment="Controller stores the current frame  voltage and frequency " org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="c_store_vf">
+<org.eventb.core.action name="+" org.eventb.core.assignment="c_frm_vf(c_frame) ≔ c_vf" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name=";" org.eventb.core.comment="The core executes the frame with the cancules/stored vf value and calculate the cpu-cycle num to execute the frame" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="e_execute_frm">
+<org.eventb.core.parameter name="-" org.eventb.codegen.ui.parameterTypeAttribute="--unset--" org.eventb.core.identifier="p2"/>
+<org.eventb.core.guard name="." org.eventb.codegen.ui.typingAttribute="NonTyping" org.eventb.core.label="grd1" org.eventb.core.predicate="p2 = e_cpu_cycle"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="c_cpu_cycle ≔ p2" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="," org.eventb.core.assignment="c_cur_frm ≔ c_frame" org.eventb.core.label="act2"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="=" org.eventb.core.comment="Store the current frame and cpu_cycle_number" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="c_monitor_cpu_cycle">
+<org.eventb.core.action name=")" org.eventb.core.assignment="c_frm_cpu_cycle(c_cur_frm) ≔ c_cpu_cycle" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+</org.eventb.core.machineFile>

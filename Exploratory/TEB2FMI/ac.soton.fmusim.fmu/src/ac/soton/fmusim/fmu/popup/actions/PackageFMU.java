@@ -1,5 +1,7 @@
 package ac.soton.fmusim.fmu.popup.actions;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -12,8 +14,8 @@ import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
-import org.eclipse.core.internal.resources.Resource;
-import org.eclipse.core.internal.runtime.ResourceTranslator;
+import javax.xml.bind.annotation.XmlList;
+
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
@@ -33,6 +35,7 @@ import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.statushandlers.StatusManager;
 
+import ac.soton.fmusim.codegen.FMUTranslatorException;
 import ac.soton.fmusim.fmu.FMUPackagerPlugin;
 
 public class PackageFMU implements IObjectActionDelegate {
@@ -43,6 +46,8 @@ public class PackageFMU implements IObjectActionDelegate {
 	private String projectName;
 	private IProject sourceProject;
 	private String modelIdentifier;
+	private String osBits;
+	private String osName;
 
 	/**
 	 * Constructor for Action1.
@@ -80,47 +85,25 @@ public class PackageFMU implements IObjectActionDelegate {
 							+ ":\n", e);
 			StatusManager.getManager().handle(status, StatusManager.SHOW);
 			e.printStackTrace();
+		} catch (FMUTranslatorException e) {
+			Status status = new Status(IStatus.ERROR,
+					FMUPackagerPlugin.PLUGIN_ID,
+					"Packaging FMU Failed:" + e.getMessage()
+							+ ":\n", e);
+			StatusManager.getManager().handle(status, StatusManager.SHOW);
+			e.printStackTrace();
 		}
 
 	}
 
 	private void packageFMU(IFile srcDescriptionFile) throws CoreException,
-			FileNotFoundException, IOException {
+			FileNotFoundException, IOException, FMUTranslatorException {
 		IFile binaryFile = null;
 		projectName = sourceProject.getName();
-		// This is where the Debug Binary is stored
-		IFolder debugBinariesFolder = sourceProject.getFolder("Debug");
-		IFolder releaseBinariesFolder = sourceProject.getFolder("Release");
 		IFolder fmuCodeFolder = sourceProject.getFolder("src");
 		IFolder fmuExternalsFolder = sourceProject.getFolder("external");
 
-		// Construct the libraryName - this may need to change - for the FMU
-		// standard
-		String OSName = System.getProperty("os.name");
-		String fileExt = "unknown";
-		if (OSName.equalsIgnoreCase("linux"))
-			fileExt = ".so";
-		if (OSName.equalsIgnoreCase("windows"))
-			fileExt = ".dll";
-		String sourceBinaryFileName = "lib" + projectName + fileExt;
-		// Get the binary.so
-		IFile debugBinaryFile = debugBinariesFolder
-				.getFile(sourceBinaryFileName);
-		IFile releaseBinaryFile = releaseBinariesFolder
-				.getFile(sourceBinaryFileName);
-		// if we have both release and binary files throw an exception
-		if (!debugBinaryFile.exists() && !releaseBinaryFile.exists()) {
-			throw new FileNotFoundException(
-					"cannot find 'debug' or 'release' library file");
-		} else if (debugBinaryFile.exists() && releaseBinaryFile.exists()) {
-			throw new IOException(
-					"cannot process both 'debug' and 'release' libraries \n + "
-							+ "please delete one - TODO - add a dialog to allow the user to select a file.");
-		} else if (debugBinaryFile.exists()) {
-			binaryFile = debugBinaryFile;
-		} else
-			binaryFile = releaseBinaryFile;
-
+		// set up the zip output
 		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
 		IProject targetProject = root.getProject(projectName + "FMU");
 		// create a new project
@@ -131,19 +114,79 @@ public class PackageFMU implements IObjectActionDelegate {
 		// this will be the new zip file
 		IPath path = srcDescriptionFile.getRawLocation();
 		modelIdentifier = path.removeFileExtension().lastSegment();
-		IFile targetZipFile = targetProject.getFile(modelIdentifier + ".zip");
+		IFile targetZipFile = targetProject.getFile(modelIdentifier + ".fmu");
 		String targetZipName = targetZipFile.getRawLocation().toString();
 		// get output streams to write to the zip
 		FileOutputStream fOut = new FileOutputStream(targetZipName);
 		ZipOutputStream zipOut = new ZipOutputStream(fOut);
-		// package the binary file
-		packageBinaryFile(binaryFile, zipOut);
+
+		// Find where the binaries are stored
+		List<IResource> projectMembersList = Arrays.asList(sourceProject
+				.members());
+		List<IResource> releaseFolderList = new ArrayList<IResource>();
+
+		// find release folders
+		for (IResource resource : projectMembersList) {
+			if (IResource.FOLDER == resource.getType()) {
+				if (resource.getName().startsWith("Release")) {
+					releaseFolderList.add(resource);
+				}
+			}
+		}
+
+		if (releaseFolderList.size() == 0) {
+			zipOut.close();
+			throw new FMUTranslatorException(
+					"There are no files to package \n "
+							+ "Ensure the following format for the target folder \n"
+							+ "Release_<archictecture><bits>_<osname><bits> \n"
+							+ "e.g Release_X86_64_Linux64 \n"
+							+ "Release_X86_64_Win64");
+		}
+
+		// process release folders
+		for (IResource resource : releaseFolderList) {
+			IFolder releaseBinariesFolder = (IFolder) resource;
+			String folderName = resource.getName();
+			String[] folderSplit = folderName.split("_");
+			osName = folderSplit[folderSplit.length - 1].toLowerCase();
+
+			// Construct the libraryName -
+			// this will need to change - for other targets
+			String fileExt = "unknown";
+			String filePre = "unKnown";
+			if (osName.startsWith("linux")) {
+				filePre = "lib";
+				fileExt = ".so";
+				osBits = osName.replace("linux", "");
+			}
+			if (osName.startsWith("win")) {
+				filePre = "";
+				fileExt = ".dll";
+				osBits = osName.replace("win", "");
+			}
+			String sourceBinaryFileName = filePre + projectName + fileExt;
+			// Get the binary.so
+			IFile releaseBinaryFile = releaseBinariesFolder
+					.getFile(sourceBinaryFileName);
+			if (!releaseBinaryFile.exists()) {
+				throw new IOException("Error no suitable library discovered,\n"	+
+						"try a WORKSPACE REFRESH" +
+						" (since the compiler doesn't seem to do it)");
+			} else
+				binaryFile = releaseBinaryFile;
+
+			// package the binary file
+			packageBinaryFile(binaryFile, zipOut);
+
+		}
+
 		// package the model description
 		packageModelDescription(srcDescriptionFile, zipOut);
 		// package the source files
 		packageSources(fmuCodeFolder, fmuExternalsFolder, zipOut);
 		zipOut.close();
-		targetProject.refreshLocal(Resource.DEPTH_INFINITE, null);
+		targetProject.refreshLocal(IResource.DEPTH_INFINITE, null);
 	}
 
 	// We'll package the source code here
@@ -165,9 +208,8 @@ public class PackageFMU implements IObjectActionDelegate {
 			String resourceName = fullPath.lastSegment();
 			boolean ignore = false;
 			// ignore the file if it is one of these
-			if (resourceName.equalsIgnoreCase("fmiTypesPlatform.h")
-					|| resourceName.equalsIgnoreCase("fmFunctionTypes.h")
-					|| resourceName.equalsIgnoreCase("fmiFunctions.h")) {
+			if (resourceName.equalsIgnoreCase("fmiModelFunctions.h")
+					|| resourceName.equalsIgnoreCase("fmiModelTypes.h")) {
 				ignore = true;
 			}
 
@@ -181,9 +223,9 @@ public class PackageFMU implements IObjectActionDelegate {
 				ZipEntry ze = new ZipEntry("sources" + File.separatorChar
 						+ resourceName);
 				zipOut.putNextEntry(ze);
-				// write the source file content 
+				// write the source file content
 				int value = srcStreamReader.read();
-				while (value > 0) {
+				while (value >= 0) {
 					zipOut.write(value);
 					value = srcStreamReader.read();
 				}
@@ -201,21 +243,20 @@ public class PackageFMU implements IObjectActionDelegate {
 			throw new FileNotFoundException("Cannot Find "
 					+ sourceBinaryFileName);
 		InputStream binaryStream = binaryFile.getContents();
-		InputStreamReader binaryStreamReader = new InputStreamReader(
+		BufferedInputStream bufferedStreamReader = new BufferedInputStream(
 				binaryStream);
+
 		// create a zip entry
-		String OSName = System.getProperty("os.name");
-		String SunArch = System.getProperty("sun.arch.data.model");
 		String tgtDirectory = "";
-		if (OSName.equalsIgnoreCase("linux")) {
-			if (SunArch.equalsIgnoreCase("64"))
+		if (osName.startsWith("linux")) {
+			if (osBits.equals("64"))
 				tgtDirectory = "linux64";
-			if (SunArch.equalsIgnoreCase("32"))
+			else if (osBits.equals("32"))
 				tgtDirectory = "linux32";
-		} else if (OSName.equalsIgnoreCase("windows")) {
-			if (SunArch.equalsIgnoreCase("64"))
+		} else if (osName.startsWith("win")) {
+			if (osBits.equals("64"))
 				tgtDirectory = "win64";
-			if (SunArch.equalsIgnoreCase("32"))
+			else if (osBits.equals("32"))
 				tgtDirectory = "win32";
 		}
 
@@ -226,12 +267,13 @@ public class PackageFMU implements IObjectActionDelegate {
 		zipOut.putNextEntry(ze);
 
 		// write the file to the zip entry
-		int value = binaryStreamReader.read();
-		while (value > 0) {
+		// int value = binaryStreamReader.read();
+		int value = bufferedStreamReader.read();
+		while (value >= 0) {
 			zipOut.write(value);
-			value = binaryStreamReader.read();
+			value = bufferedStreamReader.read();
 		}
-		binaryStreamReader.close();
+		bufferedStreamReader.close();
 	}
 
 	private void packageModelDescription(IFile srcDescriptionFile,
@@ -239,20 +281,46 @@ public class PackageFMU implements IObjectActionDelegate {
 		InputStream srcDescriptionStream = srcDescriptionFile.getContents();
 		InputStreamReader descriptionStreamReader = new InputStreamReader(
 				srcDescriptionStream);
-
+		
+		
+		
 		// Create the target description path. It goes in the archive root
-		String tgtDescriptionFileName = "modelDescription.XML";
+		String tgtDescriptionFileName = "modelDescription.xml";
 
 		// create a zip entry
 		ZipEntry ze = new ZipEntry(tgtDescriptionFileName);
 		zipOut.putNextEntry(ze);
+		
+// Begin new approach to writing the XML
+// filtering out the documentRoot tag
+		BufferedReader bufferedReader = new BufferedReader(descriptionStreamReader);
 
-		// write the file to the zip entry
-		int value = descriptionStreamReader.read();
-		while (value > 0) {
-			zipOut.write(value);
-			value = descriptionStreamReader.read();
+		
+		String line = bufferedReader.readLine();
+		
+		while(line != null){
+			if(!line.contains("DocumentRoot")){
+				if(line.contains("xsi:")){
+					line = line.replace("xsi:", "");
+				}
+				
+				for(int index = 0; index < line.length(); index++){
+					char l = line.charAt(index);
+					zipOut.write(l);
+				}
+				zipOut.write('\n');
+			}
+			line = bufferedReader.readLine();
 		}
+// end new approach		
+		
+		
+		// write the file to the zip entry
+//		int value = descriptionStreamReader.read();
+//		while (value >= 0) {
+//			zipOut.write(value);
+//			value = descriptionStreamReader.read();
+//		}
 		descriptionStreamReader.close();
 	}
 

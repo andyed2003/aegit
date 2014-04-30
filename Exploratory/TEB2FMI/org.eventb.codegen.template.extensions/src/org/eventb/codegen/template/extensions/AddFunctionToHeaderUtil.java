@@ -46,6 +46,9 @@ public class AddFunctionToHeaderUtil implements IGenerator {
 					"No bufferedReader found in generator: " + this);
 
 		}
+		
+		
+		
 		// We need to get the last reader that was added, readers may be nested.
 		bufferedReader = brList.get(brList.size() - 1);
 

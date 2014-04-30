@@ -10,8 +10,8 @@ import org.eventb.codegen.il1.translator.IL1TranslationManager;
 import org.eventb.codegen.templates.IGenerator;
 import org.eventb.codegen.templates.IGeneratorData;
 
-import FmiModel.DocumentRoot;
-import FmiModel.FmiScalarVariable;
+import FmiModelV1.DocumentRoot;
+import FmiModelV1.FmiScalarVariable;
 import ac.soton.fmusim.codegen.FMUTranslatorHelper;
 import ac.soton.fmusim.codegen.ModelDescriptionManager;
 
@@ -42,7 +42,7 @@ public class VariableDeclarationsGenerator implements IGenerator {
 	private void processVariableDecls(List<String> outCode) {
 		String machineName = protectedSource.getMachineName();
 		List<DocumentRoot> docs = ModelDescriptionManager.getDefault()
-				.getDocumentRoot();
+				.getDocumentRootList();
 		// find the document root for this IL1 protected
 		for (DocumentRoot docRoot : docs) {
 			if (docRoot.getFmiModelDescription().getModelName()

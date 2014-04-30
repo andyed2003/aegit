@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.scMachineFile org.eventb.core.accurate="true" org.eventb.core.configuration="org.eventb.core.fwd;org.eventb.codegen.ui.cgConfig">
+<org.eventb.core.scSeesContext name="'" org.eventb.core.scTarget="/SetImpls/ctx.bcc" org.eventb.core.source="/SetImpls/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.seesContext#4"/>
+<org.eventb.core.scInternalContext name="ctx">
+<org.eventb.core.scAxiom name="'" org.eventb.core.label="axm1" org.eventb.core.predicate="alt_1∈AltType" org.eventb.core.source="/SetImpls/ctx.buc|org.eventb.core.contextFile#ctx|org.eventb.core.axiom#*" org.eventb.core.theorem="false"/>
+<org.eventb.core.scAxiom name="(" org.eventb.core.label="axm2" org.eventb.core.predicate="alt_2∈AltType" org.eventb.core.source="/SetImpls/ctx.buc|org.eventb.core.contextFile#ctx|org.eventb.core.axiom#+" org.eventb.core.theorem="false"/>
+<org.eventb.core.scAxiom name=")" org.eventb.core.label="axm3" org.eventb.core.predicate="partition(AltType,{alt_1},{alt_2})" org.eventb.core.source="/SetImpls/ctx.buc|org.eventb.core.contextFile#ctx|org.eventb.core.axiom#," org.eventb.core.theorem="false"/>
+<org.eventb.core.scCarrierSet name="AltType" org.eventb.core.source="/SetImpls/ctx.buc|org.eventb.core.contextFile#ctx|org.eventb.core.carrierSet#'" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.scConstant name="alt_1" org.eventb.core.source="/SetImpls/ctx.buc|org.eventb.core.contextFile#ctx|org.eventb.core.constant#(" org.eventb.core.type="AltType"/>
+<org.eventb.core.scConstant name="alt_2" org.eventb.core.source="/SetImpls/ctx.buc|org.eventb.core.contextFile#ctx|org.eventb.core.constant#)" org.eventb.core.type="AltType"/>
+</org.eventb.core.scInternalContext>
+<org.eventb.core.scInvariant name="cty" org.eventb.core.label="inv1" org.eventb.core.predicate="mySet∈ℙ(ℤ)" org.eventb.core.source="/SetImpls/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#*" org.eventb.core.theorem="false"/>
+<org.eventb.core.scInvariant name="ctz" org.eventb.core.label="inv2" org.eventb.core.predicate="otherSet∈ℙ(ℤ)" org.eventb.core.source="/SetImpls/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#-" org.eventb.core.theorem="false"/>
+<org.eventb.core.scInvariant name="ct{" org.eventb.core.label="inv3" org.eventb.core.predicate="element∈ℤ" org.eventb.core.source="/SetImpls/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#1" org.eventb.core.theorem="false"/>
+<org.eventb.core.scInvariant name="ct|" org.eventb.core.label="inv4" org.eventb.core.predicate="altTypeSet∈ℙ(AltType)" org.eventb.core.source="/SetImpls/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#6" org.eventb.core.theorem="false"/>
+<org.eventb.core.scInvariant name="ct}" org.eventb.core.label="inv5" org.eventb.core.predicate="alt1∈AltType" org.eventb.core.source="/SetImpls/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#8" org.eventb.core.theorem="false"/>
+<org.eventb.core.scInvariant name="ct~" org.eventb.core.label="inv6" org.eventb.core.predicate="func∈AltType ⇸ AltType" org.eventb.core.source="/SetImpls/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#:" org.eventb.core.theorem="false"/>
+<org.eventb.core.scVariable name="alt1" org.eventb.core.abstract="false" org.eventb.core.concrete="true" org.eventb.core.source="/SetImpls/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.variable#7" org.eventb.core.type="AltType"/>
+<org.eventb.core.scVariable name="altTypeSet" org.eventb.core.abstract="false" org.eventb.core.concrete="true" org.eventb.core.source="/SetImpls/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.variable#5" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.scVariable name="element" org.eventb.core.abstract="false" org.eventb.core.concrete="true" org.eventb.core.source="/SetImpls/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.variable#0" org.eventb.core.type="ℤ"/>
+<org.eventb.core.scVariable name="func" org.eventb.core.abstract="false" org.eventb.core.concrete="true" org.eventb.core.source="/SetImpls/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.variable#9" org.eventb.core.type="ℙ(AltType×AltType)"/>
+<org.eventb.core.scVariable name="mySet" org.eventb.core.abstract="false" org.eventb.core.concrete="true" org.eventb.core.source="/SetImpls/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.variable#)" org.eventb.core.type="ℙ(ℤ)"/>
+<org.eventb.core.scVariable name="otherSet" org.eventb.core.abstract="false" org.eventb.core.concrete="true" org.eventb.core.source="/SetImpls/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.variable#," org.eventb.core.type="ℙ(ℤ)"/>
+<org.eventb.core.scEvent name="altTypeSeu" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION" org.eventb.core.source="/SetImpls/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#'">
+<org.eventb.core.scAction name="'" org.eventb.core.assignment="mySet ≔ ∅ ⦂ ℙ(ℤ)" org.eventb.core.label="act1" org.eventb.core.source="/SetImpls/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#'|org.eventb.core.action#'"/>
+<org.eventb.core.scAction name="(" org.eventb.core.assignment="otherSet ≔ ∅ ⦂ ℙ(ℤ)" org.eventb.core.label="act2" org.eventb.core.source="/SetImpls/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#'|org.eventb.core.action#("/>
+<org.eventb.core.scAction name=")" org.eventb.core.assignment="element ≔ 1" org.eventb.core.label="act3" org.eventb.core.source="/SetImpls/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#'|org.eventb.core.action#)"/>
+<org.eventb.core.scAction name="*" org.eventb.core.assignment="altTypeSet ≔ ∅ ⦂ ℙ(AltType)" org.eventb.core.label="act4" org.eventb.core.source="/SetImpls/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#'|org.eventb.core.action#*"/>
+<org.eventb.core.scAction name="+" org.eventb.core.assignment="alt1 :∈ AltType" org.eventb.core.label="act5" org.eventb.core.source="/SetImpls/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#'|org.eventb.core.action#+"/>
+<org.eventb.core.scAction name="," org.eventb.core.assignment="func :∈ AltType ⇸ AltType" org.eventb.core.label="act6" org.eventb.core.source="/SetImpls/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#'|org.eventb.core.action#,"/>
+</org.eventb.core.scEvent>
+<org.eventb.core.scEvent name="altTypeSev" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="setUnion" org.eventb.core.source="/SetImpls/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#+">
+<org.eventb.core.scAction name="'" org.eventb.core.assignment="mySet ≔ mySet∪otherSet" org.eventb.core.label="act1" org.eventb.core.source="/SetImpls/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#+|org.eventb.core.action#'"/>
+</org.eventb.core.scEvent>
+<org.eventb.core.scEvent name="altTypeSew" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="setUnion2" org.eventb.core.source="/SetImpls/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#3">
+<org.eventb.core.scAction name="'" org.eventb.core.assignment="mySet ≔ mySet∪{element}" org.eventb.core.label="act1" org.eventb.core.source="/SetImpls/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#3|org.eventb.core.action#'"/>
+</org.eventb.core.scEvent>
+<org.eventb.core.scEvent name="altTypeSex" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="setSubtract" org.eventb.core.source="/SetImpls/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#\/">
+<org.eventb.core.scAction name="'" org.eventb.core.assignment="mySet ≔ mySet ∖ otherSet" org.eventb.core.label="act1" org.eventb.core.source="/SetImpls/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#\/|org.eventb.core.action#'"/>
+</org.eventb.core.scEvent>
+<org.eventb.core.scEvent name="altTypeSey" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="setIntersection" org.eventb.core.source="/SetImpls/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#.">
+<org.eventb.core.scAction name="'" org.eventb.core.assignment="mySet ≔ mySet∩otherSet" org.eventb.core.label="act1" org.eventb.core.source="/SetImpls/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#.|org.eventb.core.action#'"/>
+</org.eventb.core.scEvent>
+<org.eventb.core.scEvent name="altTypeSez" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="selectElement" org.eventb.core.source="/SetImpls/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#2">
+<org.eventb.core.scAction name="'" org.eventb.core.assignment="element :∈ ℤ" org.eventb.core.label="act1" org.eventb.core.source="/SetImpls/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#2|org.eventb.core.action#'"/>
+</org.eventb.core.scEvent>
+<org.eventb.core.scEvent name="altTypeSe{" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="funUpdate" org.eventb.core.source="/SetImpls/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#;">
+<org.eventb.core.scAction name="'" org.eventb.core.assignment="func ≔ func{alt_1 ↦ alt_2}" org.eventb.core.label="act1" org.eventb.core.source="/SetImpls/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#;|org.eventb.core.action#'"/>
+</org.eventb.core.scEvent>
+<org.eventb.core.scEvent name="altTypeSe|" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="funApplicn" org.eventb.core.source="/SetImpls/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#=">
+<org.eventb.core.scAction name="'" org.eventb.core.assignment="alt1 ≔ func(alt_1)" org.eventb.core.label="act1" org.eventb.core.source="/SetImpls/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#=|org.eventb.core.action#'"/>
+</org.eventb.core.scEvent>
+</org.eventb.core.scMachineFile>

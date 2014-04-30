@@ -8,8 +8,8 @@
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <factory
-            uri="file:/home/andy/Desktop/FMImodelXSDs/fmiAnnotation.xsd"
-            class="FmiModel.provider.FmiModelItemProviderAdapterFactory"
+            uri="http://ac.soton.fmusim.codegen.fmimetamodelV1"
+            class="FmiModelV1.provider.FmiModelV1ItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider

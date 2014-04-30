@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/ac.soton.fmusim.codegen.metamodelDescription/src"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="" modelDirectory="/ac.soton.fmusim.codegen.metamodelDescription/src"
     modelPluginID="ac.soton.fmusim.codegen.metamodelDescription" modelName="FmiMetamodelDescription"
-    importerID="org.eclipse.xsd.ecore.importer" complianceLevel="7.0" copyrightFields="false">
-  <foreignModel>file:/home/andy/Desktop/FMImodelXSDs/fmiAnnotation.xsd</foreignModel>
-  <foreignModel>file:/home/andy/Desktop/FMImodelXSDs/fmiAttributeGroups.xsd</foreignModel>
-  <foreignModel>file:/home/andy/Desktop/FMImodelXSDs/fmiModelDescription.xsd</foreignModel>
-  <foreignModel>file:/home/andy/Desktop/FMImodelXSDs/fmiScalarVariable.xsd</foreignModel>
-  <foreignModel>file:/home/andy/Desktop/FMImodelXSDs/fmiType.xsd</foreignModel>
-  <foreignModel>file:/home/andy/Desktop/FMImodelXSDs/fmiUnit.xsd</foreignModel>
-  <foreignModel>file:/home/andy/Desktop/FMImodelXSDs/fmiVariableDependency.xsd</foreignModel>
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false">
+  <foreignModel>FmiMetamodelDescription.ecore</foreignModel>
   <genPackages prefix="FmiModel" resource="XML" disposableProviderFactory="true" ecorePackage="FmiMetamodelDescription.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="FmiMetamodelDescription.ecore#//CausalityType">
       <genEnumLiterals ecoreEnumLiteral="FmiMetamodelDescription.ecore#//CausalityType/parameter"/>
@@ -67,16 +61,17 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FmiMetamodelDescription.ecore#//CategoryType/name"/>
     </genClasses>
     <genClasses ecoreClass="FmiMetamodelDescription.ecore#//CoSimulationType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FmiMetamodelDescription.ecore#//CoSimulationType/canBeInstantiatedOnlyOncePerProcess"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FmiMetamodelDescription.ecore#//CoSimulationType/canGetAndSetFMUstate"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FmiMetamodelDescription.ecore#//CoSimulationType/canHandleEvents"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FmiMetamodelDescription.ecore#//CoSimulationType/canHandleVariableCommunicationStepSize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FmiMetamodelDescription.ecore#//CoSimulationType/canHandleEvents"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FmiMetamodelDescription.ecore#//CoSimulationType/canRejectSteps"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FmiMetamodelDescription.ecore#//CoSimulationType/canInterpolateInputs"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FmiMetamodelDescription.ecore#//CoSimulationType/canNotUseMemoryManagementFunctions"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FmiMetamodelDescription.ecore#//CoSimulationType/canRunAsynchronuously"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FmiMetamodelDescription.ecore#//CoSimulationType/canSerializeFMUstate"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FmiMetamodelDescription.ecore#//CoSimulationType/canSignalEvents"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FmiMetamodelDescription.ecore#//CoSimulationType/maxOutputDerivativeOrder"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FmiMetamodelDescription.ecore#//CoSimulationType/canRunAsynchronuously"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FmiMetamodelDescription.ecore#//CoSimulationType/canSignalEvents"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FmiMetamodelDescription.ecore#//CoSimulationType/canBeInstantiatedOnlyOncePerProcess"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FmiMetamodelDescription.ecore#//CoSimulationType/canNotUseMemoryManagementFunctions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FmiMetamodelDescription.ecore#//CoSimulationType/canGetAndSetFMUstate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FmiMetamodelDescription.ecore#//CoSimulationType/canSerializeFMUstate"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FmiMetamodelDescription.ecore#//CoSimulationType/modelIdentifier"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FmiMetamodelDescription.ecore#//CoSimulationType/needsExecutionTool"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FmiMetamodelDescription.ecore#//CoSimulationType/providesPartialDerivativesOfDerivativeFunctionWrtInputs"/>
@@ -88,6 +83,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FmiMetamodelDescription.ecore#//DefaultExperimentType/startTime"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FmiMetamodelDescription.ecore#//DefaultExperimentType/stopTime"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FmiMetamodelDescription.ecore#//DefaultExperimentType/tolerance"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FmiMetamodelDescription.ecore#//DefaultExperimentType/stepSize"/>
     </genClasses>
     <genClasses ecoreClass="FmiMetamodelDescription.ecore#//DerivativesType">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute FmiMetamodelDescription.ecore#//DerivativesType/group"/>
@@ -129,6 +125,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FmiMetamodelDescription.ecore#//FmiModelDescriptionType/vendorAnnotations"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FmiMetamodelDescription.ecore#//FmiModelDescriptionType/modelVariables"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FmiMetamodelDescription.ecore#//FmiModelDescriptionType/modelStructure"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FmiMetamodelDescription.ecore#//FmiModelDescriptionType/implementation"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FmiMetamodelDescription.ecore#//FmiModelDescriptionType/author"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FmiMetamodelDescription.ecore#//FmiModelDescriptionType/copyright"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FmiMetamodelDescription.ecore#//FmiModelDescriptionType/description"/>
@@ -141,6 +138,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FmiMetamodelDescription.ecore#//FmiModelDescriptionType/numberOfEventIndicators"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FmiMetamodelDescription.ecore#//FmiModelDescriptionType/variableNamingConvention"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FmiMetamodelDescription.ecore#//FmiModelDescriptionType/version"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FmiMetamodelDescription.ecore#//FmiModelDescriptionType/modelIdentifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FmiMetamodelDescription.ecore#//FmiModelDescriptionType/numberOfContinuousStates"/>
     </genClasses>
     <genClasses ecoreClass="FmiMetamodelDescription.ecore#//FmiScalarVariable">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FmiMetamodelDescription.ecore#//FmiScalarVariable/real"/>
@@ -281,5 +280,13 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute FmiMetamodelDescription.ecore#//UnitDefinitionsType/group"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference FmiMetamodelDescription.ecore#//UnitDefinitionsType/unit"/>
     </genClasses>
+    <genClasses image="false" ecoreClass="FmiMetamodelDescription.ecore#//FmiImplementationType">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FmiMetamodelDescription.ecore#//FmiImplementationType/fmiCoSimulationCapabilities"/>
+    </genClasses>
+    <genClasses ecoreClass="FmiMetamodelDescription.ecore#//FmiCoSimulationCapabilitiesType">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FmiMetamodelDescription.ecore#//FmiCoSimulationCapabilitiesType/capabilities"/>
+    </genClasses>
+    <genClasses ecoreClass="FmiMetamodelDescription.ecore#//coSimulation_StandAlone"/>
+    <genClasses ecoreClass="FmiMetamodelDescription.ecore#//coSimulation_Tool"/>
   </genPackages>
 </genmodel:GenModel>

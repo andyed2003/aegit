@@ -16,7 +16,9 @@ Require-Bundle: org.eclipse.ui,
  org.eventb.codegen.ui;bundle-version="0.0.3",
  ac.soton.fmusim.codegen.metamodelDescription;bundle-version="1.0.0",
  org.eclipse.cdt.core;bundle-version="5.3.2",
- org.eventb.codegen.templates;bundle-version="0.0.1"
+ org.eventb.codegen.templates;bundle-version="0.0.1",
+ ac.soton.fmusim.components.diagram;bundle-version="1.0.0",
+ org.eventb.emf.persistence;bundle-version="2.5.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Import-Package: ac.soton.composition.core.basis,

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.prFile version="1">
+<org.eventb.core.prProof name="INITIALISATION/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p1" org.eventb.core.prHyps=""/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="⊤"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="0∈ℕ"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="set_fps/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p0">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p0"/>
+<org.eventb.core.prIdent name="f" org.eventb.core.type="ℤ"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="f∈ℕ"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.hyp"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="INITIALISATION/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5" org.eventb.core.prSets="FRAMES">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p3,p4,p5,p2">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="OPP100" org.eventb.core.type="ℤ"/>
+<org.eventb.core.prIdent name="OPP130" org.eventb.core.type="ℤ"/>
+<org.eventb.core.prIdent name="OPP1G" org.eventb.core.type="ℤ"/>
+<org.eventb.core.prIdent name="OPP50" org.eventb.core.type="ℤ"/>
+<org.eventb.core.prIdent name="VF" org.eventb.core.type="ℙ(ℤ)"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="OPP1G=1000"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="OPP130=800"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="VF={OPP1G,OPP130,OPP100,OPP50}"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="OPP100=600"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="(∅ ⦂ ℙ(FRAMES×ℤ))∈FRAMES ⇸ VF"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="OPP50=300"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="INITIALISATION/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5" org.eventb.core.prSets="FRAMES">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p3,p4,p5,p2">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="OPP100" org.eventb.core.type="ℤ"/>
+<org.eventb.core.prIdent name="OPP130" org.eventb.core.type="ℤ"/>
+<org.eventb.core.prIdent name="OPP1G" org.eventb.core.type="ℤ"/>
+<org.eventb.core.prIdent name="OPP50" org.eventb.core.type="ℤ"/>
+<org.eventb.core.prIdent name="VF" org.eventb.core.type="ℙ(ℤ)"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="(∅ ⦂ ℙ(FRAMES×ℤ))∈FRAMES ⇸ ℕ"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="OPP1G=1000"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="OPP130=800"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="VF={OPP1G,OPP130,OPP100,OPP50}"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="OPP100=600"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="OPP50=300"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="select_vf/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11" org.eventb.core.prSets="FRAMES">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p1" org.eventb.core.prInfHyps="p12"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p1"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p13"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p2,p6,p7,p11,p5,p8,p4,p3,p10,p9,p12">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="OPP100" org.eventb.core.type="ℤ"/>
+<org.eventb.core.prIdent name="OPP130" org.eventb.core.type="ℤ"/>
+<org.eventb.core.prIdent name="OPP1G" org.eventb.core.type="ℤ"/>
+<org.eventb.core.prIdent name="OPP50" org.eventb.core.type="ℤ"/>
+<org.eventb.core.prIdent name="VF" org.eventb.core.type="ℙ(ℤ)"/>
+<org.eventb.core.prIdent name="cur_cpu_cycle" org.eventb.core.type="ℤ"/>
+<org.eventb.core.prIdent name="f" org.eventb.core.type="FRAMES"/>
+<org.eventb.core.prIdent name="fps" org.eventb.core.type="ℤ"/>
+<org.eventb.core.prIdent name="frm_cpu_cycle" org.eventb.core.type="ℙ(FRAMES×ℤ)"/>
+<org.eventb.core.prIdent name="frm_vf" org.eventb.core.type="ℙ(FRAMES×ℤ)"/>
+<org.eventb.core.prIdent name="vf" org.eventb.core.type="ℤ"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="f∉dom(frm_vf)"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="cur_frm∈FRAMES">
+<org.eventb.core.prIdent name="cur_frm" org.eventb.core.type="FRAMES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="frm_vf∪{f ↦ vf}∈FRAMES ⇸ VF"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="frm_cpu_cycle∈FRAMES ⇸ ℕ"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="frm_vf∈FRAMES ⇸ VF"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="OPP130=800"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="vf∈VF"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="OPP50=300"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="OPP1G=1000"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="VF={OPP1G,OPP130,OPP100,OPP50}"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="OPP100=600"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="fps∈ℕ"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="¬f∈dom(frm_vf)"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="cur_cpu_cycle∈ℕ"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="INITIALISATION/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p1" org.eventb.core.prHyps=""/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="⊤"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="0∈ℕ"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="execute_frm/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11" org.eventb.core.prSets="FRAMES">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p12"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p2,p3,p7,p11,p4,p8,p5,p6,p10,p1,p9">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="OPP100" org.eventb.core.type="ℤ"/>
+<org.eventb.core.prIdent name="OPP130" org.eventb.core.type="ℤ"/>
+<org.eventb.core.prIdent name="OPP1G" org.eventb.core.type="ℤ"/>
+<org.eventb.core.prIdent name="OPP50" org.eventb.core.type="ℤ"/>
+<org.eventb.core.prIdent name="VF" org.eventb.core.type="ℙ(ℤ)"/>
+<org.eventb.core.prIdent name="cur_cpu_cycle" org.eventb.core.type="ℤ"/>
+<org.eventb.core.prIdent name="cycles_num" org.eventb.core.type="ℤ"/>
+<org.eventb.core.prIdent name="f" org.eventb.core.type="FRAMES"/>
+<org.eventb.core.prIdent name="fps" org.eventb.core.type="ℤ"/>
+<org.eventb.core.prIdent name="frm_cpu_cycle" org.eventb.core.type="ℙ(FRAMES×ℤ)"/>
+<org.eventb.core.prIdent name="frm_vf" org.eventb.core.type="ℙ(FRAMES×ℤ)"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="f∈dom(frm_vf)"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="cur_frm∈FRAMES">
+<org.eventb.core.prIdent name="cur_frm" org.eventb.core.type="FRAMES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="OPP130=800"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="frm_vf∈FRAMES ⇸ VF"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="frm_cpu_cycle∈FRAMES ⇸ ℕ"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="cycles_num∈ℕ"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="OPP50=300"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="OPP1G=1000"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="VF={OPP1G,OPP130,OPP100,OPP50}"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="OPP100=600"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="fps∈ℕ"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="cycles_num∈ℕ1"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="cur_cpu_cycle∈ℕ"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="monitor_cpu_cycle/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11" org.eventb.core.prSets="FRAMES">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p2" org.eventb.core.prInfHyps="p12"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p2"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p13"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with f=cur_frm" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p3">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p15">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p12" org.eventb.core.prInfHyps="p14"/>
+<org.eventb.core.prHypAction name="DESELECT1" org.eventb.core.prHyps="p12"/>
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p15" org.eventb.core.prHyps="p1,p4,p8,p11,p5,p9,p6,p7,p10,p3,p12,p14">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="OPP100" org.eventb.core.type="ℤ"/>
+<org.eventb.core.prIdent name="OPP130" org.eventb.core.type="ℤ"/>
+<org.eventb.core.prIdent name="OPP1G" org.eventb.core.type="ℤ"/>
+<org.eventb.core.prIdent name="OPP50" org.eventb.core.type="ℤ"/>
+<org.eventb.core.prIdent name="VF" org.eventb.core.type="ℙ(ℤ)"/>
+<org.eventb.core.prIdent name="cur_cpu_cycle" org.eventb.core.type="ℤ"/>
+<org.eventb.core.prIdent name="cur_frm" org.eventb.core.type="FRAMES"/>
+<org.eventb.core.prIdent name="f" org.eventb.core.type="FRAMES"/>
+<org.eventb.core.prIdent name="fps" org.eventb.core.type="ℤ"/>
+<org.eventb.core.prIdent name="frm_cpu_cycle" org.eventb.core.type="ℙ(FRAMES×ℤ)"/>
+<org.eventb.core.prIdent name="frm_vf" org.eventb.core.type="ℙ(FRAMES×ℤ)"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="cur_frm∈FRAMES"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="f=cur_frm"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="¬f∈dom(frm_cpu_cycle)"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="OPP130=800"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="frm_vf∈FRAMES ⇸ VF"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="frm_cpu_cycle∈FRAMES ⇸ ℕ"/>
+<org.eventb.core.prPred name="p15" org.eventb.core.predicate="frm_cpu_cycle∪{cur_frm ↦ cur_cpu_cycle}∈FRAMES ⇸ ℕ"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="OPP50=300"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="frm_cpu_cycle∪{f ↦ cur_cpu_cycle}∈FRAMES ⇸ ℕ"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="OPP1G=1000"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="f∉dom(frm_cpu_cycle)"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="VF={OPP1G,OPP130,OPP100,OPP50}"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="OPP100=600"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="fps∈ℕ"/>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="¬cur_frm∈dom(frm_cpu_cycle)"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="cur_cpu_cycle∈ℕ"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="INITIALISATION/act5/FIS" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="FRAMES">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prGoal="p1" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p2">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p2" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p3">
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p3" org.eventb.core.prHyps=""/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="⊤"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="¬⊥"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="FRAMES≠(∅ ⦂ ℙ(FRAMES))"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="¬FRAMES=(∅ ⦂ ℙ(FRAMES))"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="monitor_cpu_cycle/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p3">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p1" org.eventb.core.prInfHyps="p2"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p1"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p3" org.eventb.core.prHyps=""/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="⊤"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="f∉dom(frm_cpu_cycle)">
+<org.eventb.core.prIdent name="f" org.eventb.core.type="FRAMES"/>
+<org.eventb.core.prIdent name="frm_cpu_cycle" org.eventb.core.type="ℙ(FRAMES×ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="¬f∈dom(frm_cpu_cycle)">
+<org.eventb.core.prIdent name="f" org.eventb.core.type="FRAMES"/>
+<org.eventb.core.prIdent name="frm_cpu_cycle" org.eventb.core.type="ℙ(FRAMES×ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="0∈ℕ"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+</org.eventb.core.prProof>
+</org.eventb.core.prFile>

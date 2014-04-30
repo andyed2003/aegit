@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.codegen.ui.taskingContextAttribute="Tasking" org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase;org.eventb.codegen.ui.cgConfig" version="3">
+<org.eventb.core.constant name="." org.eventb.core.comment="Freq = 1GHz Vol = 1.35" org.eventb.core.identifier="OPP1G"/>
+<org.eventb.core.constant name="/" org.eventb.core.comment="Freq = 800MHz Vol = 1.26" org.eventb.core.identifier="OPP130"/>
+<org.eventb.core.constant name="0" org.eventb.core.comment="Freq = 600MHz Vol = 1.1" org.eventb.core.identifier="OPP100"/>
+<org.eventb.core.constant name="1" org.eventb.core.comment="Freq = 300MHz Vol = 0.93" org.eventb.core.identifier="OPP50"/>
+<org.eventb.core.carrierSet name="3" org.eventb.core.comment="set of frames" org.eventb.core.identifier="FRAMES"/>
+<org.eventb.core.carrierSet name="E" org.eventb.core.identifier="VF"/>
+<org.eventb.core.constant name="G" org.eventb.core.identifier="f1"/>
+<org.eventb.core.constant name="H" org.eventb.core.identifier="f2"/>
+<org.eventb.core.axiom name="I" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="axm13" org.eventb.core.predicate="f1 ∈ FRAMES"/>
+<org.eventb.core.axiom name="J" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="axm14" org.eventb.core.predicate="f2 ∈ FRAMES"/>
+<org.eventb.core.axiom name="?" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="axm1" org.eventb.core.predicate="OPP1G ∈ VF"/>
+<org.eventb.core.axiom name="B" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="axm2" org.eventb.core.predicate="OPP50 ∈ VF"/>
+<org.eventb.core.axiom name="@" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="axm3" org.eventb.core.predicate="OPP130 ∈ VF"/>
+<org.eventb.core.axiom name="A" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="axm4" org.eventb.core.predicate="OPP100 ∈ VF"/>
+<org.eventb.core.axiom name="D" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="axm11" org.eventb.core.predicate="partition(VF, {OPP1G}, {OPP130}, {OPP100}, {OPP50})"/>
+<org.eventb.core.axiom name="F" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="axm12" org.eventb.core.predicate="partition(FRAMES, {f1}, {f2} )"/>
+</org.eventb.core.contextFile>
