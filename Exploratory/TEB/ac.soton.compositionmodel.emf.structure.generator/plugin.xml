@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            id="ac.soton.compositionmodel.emf.structure.generator.contribution1"
+            objectClass="ac.soton.composition.core.IComposedMachineRoot">
+         <menu
+               id="ac.soton.compositionmodel.emf.structure.generator.menu1"
+               label="Generate Composition Model"
+               path="additions">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+         <action
+               class="ac.soton.compositionmodel.emf.structure.generator.popup.actions.CompositionModelActionHandler"
+               enablesFor="1"
+               id="ac.soton.compositionmodel.emf.structure.generator.newAction"
+               label="Generate!"
+               menubarPath="ac.soton.compositionmodel.emf.structure.generator.menu1/group1">
+         </action>
+      </objectContribution>
+   </extension>
+
+</plugin>
