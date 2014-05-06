@@ -14,8 +14,6 @@ import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
-import javax.xml.bind.annotation.XmlList;
-
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
@@ -25,10 +23,12 @@ import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IActionDelegate;
 import org.eclipse.ui.IObjectActionDelegate;
@@ -169,6 +169,17 @@ public class PackageFMU implements IObjectActionDelegate {
 			// Get the binary.so
 			IFile releaseBinaryFile = releaseBinariesFolder
 					.getFile(sourceBinaryFileName);
+			
+			
+			if (!releaseBinaryFile.exists()) {
+				FileDialog fd = new FileDialog(shell);
+				String fname = fd.open();
+				IPath p = new Path(fname);
+				String lastSegment = p.lastSegment();
+				
+				releaseBinaryFile = releaseBinariesFolder.getFile(lastSegment);
+			}
+			
 			if (!releaseBinaryFile.exists()) {
 				throw new IOException("Error no suitable library discovered,\n"	+
 						"try a WORKSPACE REFRESH" +
