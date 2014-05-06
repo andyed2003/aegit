@@ -170,16 +170,18 @@
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="funApplicn/act1/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="AltType">
-<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(AltType,{alt_1},{alt_2}))" org.eventb.core.prHyps="">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(AltType,{alt_1,alt_2},{alt_2}))" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p3" org.eventb.core.prInfHyps="p4,p5"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p3"/>
-<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p4,p5"/>
-<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="generalized MP" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2">
-<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p6">
-<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p6" org.eventb.core.prHyps="">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p1" org.eventb.core.prInfHyps="p3,p4"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p1"/>
+<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p3,p4"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="generalized MP" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p2">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p5">
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p5" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p7">
-<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p7" org.eventb.core.prHyps=""/>
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p4" org.eventb.core.prInfHyps="p6"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p4"/>
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊥ hyp" org.eventb.core.prHyps="p6"/>
 </org.eventb.core.prAnte>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
@@ -188,22 +190,17 @@
 <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
 </org.eventb.core.prRule>
 <org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
 <org.eventb.core.prIdent name="func" org.eventb.core.type="ℙ(AltType×AltType)"/>
-<org.eventb.core.prPred name="p7" org.eventb.core.predicate="⊤"/>
-<org.eventb.core.prPred name="p6" org.eventb.core.predicate="⊤∧⊤"/>
-<org.eventb.core.prPred name="p4" org.eventb.core.predicate="AltType={alt_1,alt_2}">
-<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p1" org.eventb.core.predicate="alt_1∈dom(func)"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="⊥"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="¬alt_2∈{alt_1,alt_2}"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="alt_1∈dom(func)∧⊤"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="alt_1∈dom(func)"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="AltType={alt_1,alt_2}"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="partition(AltType,{alt_1,alt_2},{alt_2})"/>
 <org.eventb.core.prPred name="p2" org.eventb.core.predicate="func∈AltType ⇸ AltType"/>
-<org.eventb.core.prPred name="p5" org.eventb.core.predicate="¬alt_1=alt_2">
-<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="partition(AltType,{alt_1},{alt_2})">
-<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
-</org.eventb.core.prPred>
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="alt_1∈dom(func)∧func∈AltType ⇸ AltType"/>
-<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
 <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>

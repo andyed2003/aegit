@@ -50,7 +50,7 @@
 <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="pfunLookup/Op-WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="f,d" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="D,R">
+<org.eventb.core.prProof name="pfunLookup/Op-WD" org.eventb.core.confidence="0" org.eventb.core.prFresh="f,d" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="D,R">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p1" org.eventb.core.prHyps="">
@@ -60,11 +60,9 @@
 <org.eventb.core.prIdent name="f" org.eventb.core.type="ℙ(D×R)"/>
 <org.eventb.core.prIdent name="d" org.eventb.core.type="D"/>
 <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p3" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p6" org.eventb.core.prHyps="p4,p5">
-<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p6" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p5">
-<org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p5" org.eventb.core.prHyps="p5"/>
-</org.eventb.core.prAnte>
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p5" org.eventb.core.prHyps="p4">
+<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p5" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p6"/>
 <org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p4">
 <org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p4" org.eventb.core.prHyps="p4"/>
 </org.eventb.core.prAnte>
@@ -77,18 +75,18 @@
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
 </org.eventb.core.prRule>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="f∈D ⇸ R∧d∈dom(f)⇒d∈dom(f)∧f∈D ⇸ R">
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="∀f⦂ℙ(D×R),d⦂D·f∈D ⇸ R⇒d∈dom(f)∧f∈D ⇸ R"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀f⦂ℙ(D×R),d⦂D·f∈ℙ(D × R)∧d∈D⇒(f∈D ⇸ R⇒d∈dom(f)∧f∈D ⇸ R)"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="∀f⦂ℙ(D×R),d⦂D·⊤∧⊤⇒(f∈D ⇸ R⇒d∈dom(f)∧f∈D ⇸ R)"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="f∈D ⇸ R⇒d∈dom(f)∧f∈D ⇸ R">
 <org.eventb.core.prIdent name="d" org.eventb.core.type="D"/>
 <org.eventb.core.prIdent name="f" org.eventb.core.type="ℙ(D×R)"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀f⦂ℙ(D×R),d⦂D·f∈ℙ(D × R)∧d∈D⇒(f∈D ⇸ R∧d∈dom(f)⇒d∈dom(f)∧f∈D ⇸ R)"/>
-<org.eventb.core.prPred name="p1" org.eventb.core.predicate="∀f⦂ℙ(D×R),d⦂D·⊤∧⊤⇒(f∈D ⇸ R∧d∈dom(f)⇒d∈dom(f)∧f∈D ⇸ R)"/>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="∀f⦂ℙ(D×R),d⦂D·f∈D ⇸ R∧d∈dom(f)⇒d∈dom(f)∧f∈D ⇸ R"/>
-<org.eventb.core.prPred name="p6" org.eventb.core.predicate="d∈dom(f)∧f∈D ⇸ R">
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="d∈dom(f)">
 <org.eventb.core.prIdent name="d" org.eventb.core.type="D"/>
 <org.eventb.core.prIdent name="f" org.eventb.core.type="ℙ(D×R)"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p5" org.eventb.core.predicate="d∈dom(f)">
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="d∈dom(f)∧f∈D ⇸ R">
 <org.eventb.core.prIdent name="d" org.eventb.core.type="D"/>
 <org.eventb.core.prIdent name="f" org.eventb.core.type="ℙ(D×R)"/>
 </org.eventb.core.prPred>
@@ -96,10 +94,10 @@
 <org.eventb.core.prIdent name="f" org.eventb.core.type="ℙ(D×R)"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
-<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
-<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.hyp"/>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.conj:0"/>
+<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.hyp"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
 </org.eventb.core.prFile>
