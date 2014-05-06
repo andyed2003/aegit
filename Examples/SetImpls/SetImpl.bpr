@@ -35,4 +35,5 @@
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
 </org.eventb.core.prProof>
+<org.eventb.core.prProof name="thm1/S-THM" org.eventb.core.psManual="true"/>
 </org.eventb.core.prFile>

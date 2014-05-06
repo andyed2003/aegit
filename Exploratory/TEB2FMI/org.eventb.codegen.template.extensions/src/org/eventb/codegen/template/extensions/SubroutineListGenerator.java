@@ -144,7 +144,7 @@ public class SubroutineListGenerator extends AbstractSubroutineIL1Translator
 			List<String> newBody = substituteVariableRefs(body, actualSource,
 					translationManager);
 			// Body code
-			outCode.add("ModelInstance* mc = c;");
+			outCode.add("ModelInstance* mc = (ModelInstance*) c;");
 			outCode.add("// Translated code");
 			outCode.addAll(newBody);
 

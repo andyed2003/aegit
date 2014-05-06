@@ -1,7 +1,5 @@
 #include <string.h>
 #include "common.h"
-#include <stdlib.h>
-#include <stdio.h>
 
 ModelInstance modelInstances[MaxFMUInstances]; // start of with an empty array of components
 int conInstanceCount = 0;
@@ -495,7 +493,6 @@ fmiComponent fmiInstantiateSlave(fmiString instanceName, fmiString fmuGUID,
 		//add instance to collection;
 		modelInstances[conInstanceCount] = *c;
 		conInstanceCount = conInstanceCount + 1;
-		// The program runs past here in windows
 		return (fmiComponent) c;
 	}
 }
@@ -515,7 +512,6 @@ fmiStatus fmiInitializeSlave(fmiComponent c, fmiReal tStart,
 	mc->b[c_warn_internal_ControllerImpl_] = fmiFalse;
 	mc->b[commit_ControllerImpl_] = fmiFalse;
 
-	// The program runs past here in windows
 	return fmiOK;
 
 }
@@ -525,10 +521,6 @@ fmiStatus fmiInitializeSlave(fmiComponent c, fmiReal tStart,
 fmiStatus ControllerImpl_fmiDoStep(fmiComponent c,
 		fmiReal currentCommunicationPoint, fmiReal communicationStepSize,
 		fmiBoolean noSetFMUStatePriorToCurrentPoint) {
-
-	// Windows code does not get here
-	printf("Debug Point 2 \n");
-
 	ModelInstance* mc = c;
 // Translated code
 	mc->i[c_level_internal_ControllerImpl_] = mc->i[c_level_ControllerImpl_];
