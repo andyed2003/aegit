@@ -121,7 +121,7 @@ public class SubroutineListGenerator extends AbstractSubroutineIL1Translator
 					+ " fmiReal communicationStepSize, fmiBoolean noSetFMUStatePriorToCurrentPoint";
 
 			// Uniquely identify each event name using the machine name
-			String doStepSignature = "fmiStatus modelID_fmiDoStep(" + fmiAPIparameters
+			String doStepSignature = "fmiStatus fmiDoStep(" + fmiAPIparameters
 					+ ")";
 			// This is where we store the function Declaration that goes into
 			// the header for the current C file.
@@ -197,7 +197,7 @@ public class SubroutineListGenerator extends AbstractSubroutineIL1Translator
 //		String variableArrayRef = FMUTranslator
 //				.getVariableRefArrayName(fmiTypeName);
 //		List<String> newCode = new ArrayList<String>();
-//		newCode.add(fmiStatus modelID_getReal(){);	
+//		newCode.add(fmiStatus getReal(){);	
 //		newCode.add("int idx = 0;");
 //		newCode.add("ModelInstance* mc = c;");
 //		newCode.add("for(; idx < nvr; idx = idx + 1){");
