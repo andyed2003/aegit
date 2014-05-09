@@ -24,7 +24,7 @@ typedef enum {fmiDoStepStatus,
 } fmiStatusKind;
 
 //// fmiComponent
-typedef struct ModelInstance{
+typedef struct{
 	fmiBoolean validInstance;
 	fmiString instanceName;
 	fmiString GUID;

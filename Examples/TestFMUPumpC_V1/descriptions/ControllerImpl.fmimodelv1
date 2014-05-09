@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FmiModelV1:DocumentRoot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:FmiModelV1="http://ac.soton.fmusim.codegen.fmimetamodelV1">
-  <fmiModelDescription author="University of Southampton" fmiVersion="1.0" generationDateAndTime="2014-04-28T11:10:16.849+01:00" generationTool="EB2FMU" guid="GUID_ControllerImpl_2014-04-28T11:10:16.849+01:00" modelIdentifier="ControllerImpl" modelName="ControllerImpl" numberOfContinuousStates="0" numberOfEventIndicators="0">
+  <fmiModelDescription author="University of Southampton" fmiVersion="1.0" generationDateAndTime="2014-05-09T08:26:47.026+01:00" generationTool="EB2FMU" guid="GUID_ControllerImpl_2014-05-09T08:26:47.026+01:00" modelIdentifier="ControllerImpl" modelName="ControllerImpl" numberOfContinuousStates="0" numberOfEventIndicators="0">
     <ModelVariables>
       <ScalarVariable causality="input" name="c_level" valueReference="0" variability="discrete">
         <Integer start="100"/>

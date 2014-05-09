@@ -139,6 +139,7 @@
 #define fmiGetIntegerStatus             fmiFullName(_fmiGetIntegerStatus)
 #define fmiGetBooleanStatus             fmiFullName(_fmiGetBooleanStatus)
 #define fmiGetStringStatus              fmiFullName(_fmiGetStringStatus)
+#define fmiDoStep              			fmiFullName(_fmiDoStep)
 
 
 /* Version number */

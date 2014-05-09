@@ -15,7 +15,7 @@ fmiComponent fmiInstantiateSlave(fmiString instanceName, fmiString fmuGUID,
 		fmiBoolean visible, fmiBoolean loggingOn);
 fmiStatus fmiInitializeSlave(fmiComponent c, fmiReal tStart,
 		fmiBoolean StopTimeDefined, fmiReal tStop);
-fmiStatus modelID_fmiDoStep(fmiComponent c, fmiReal currentCommunicationPoint,
+fmiStatus fmiDoStep(fmiComponent c, fmiReal currentCommunicationPoint,
 		fmiReal communicationStepSize,
 		fmiBoolean noSetFMUStatePriorToCurrentPoint);
 #endif
