@@ -4,5 +4,5 @@
 
 USER_OBJS :=
 
-LIBS := -lTestFMUPumpC -ldl
+LIBS := -lTestFMUPumpC_V1 -ldl
 

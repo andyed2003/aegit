@@ -28,19 +28,21 @@
 								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.exe.debug.option.optimization.level.1323377586" name="Optimization Level" superClass="gnu.c.compiler.exe.debug.option.optimization.level" valueType="enumerated"/>
 								<option id="gnu.c.compiler.exe.debug.option.debugging.level.510016135" name="Debug Level" superClass="gnu.c.compiler.exe.debug.option.debugging.level" value="gnu.c.debugging.level.max" valueType="enumerated"/>
 								<option id="gnu.c.compiler.option.include.paths.1437544873" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/TestFMUPumpC/Debug}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/TestFMUPumpC}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/TestFMUPumpC/external}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/TestFMUPumpC_V1/external}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/TestFMUPumpC_V1/Release_X86_64_LINUX64}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/TestFMUPumpC_V1/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/TestFMUPumpC_V1}&quot;"/>
 								</option>
 								<option id="gnu.c.compiler.option.misc.pic.1169975389" name="Position Independent Code (-fPIC)" superClass="gnu.c.compiler.option.misc.pic" value="true" valueType="boolean"/>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.882757671" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.c.linker.exe.debug.1112789361" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.exe.debug">
 								<option id="gnu.c.link.option.paths.986057690" name="Library search path (-L)" superClass="gnu.c.link.option.paths" valueType="libPaths">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/TestFMUPumpC/Debug}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/TestFMUPumpC_V1/Release_X86_64_LINUX64}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/TestFMUPumpC_V1/Release_i686_WIN32}&quot;"/>
 								</option>
 								<option id="gnu.c.link.option.libs.1097491554" name="Libraries (-l)" superClass="gnu.c.link.option.libs" valueType="libs">
-									<listOptionValue builtIn="false" value="TestFMUPumpC"/>
+									<listOptionValue builtIn="false" value="TestFMUPumpC_V1"/>
 									<listOptionValue builtIn="false" value="dl"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.linker.input.189304671" superClass="cdt.managedbuild.tool.gnu.c.linker.input">
@@ -50,6 +52,9 @@
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug.225878191" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug"/>
 							<tool id="cdt.managedbuild.tool.gnu.assembler.exe.debug.502421534" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.exe.debug">
+								<option id="gnu.both.asm.option.include.paths.501954034" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/TestFMUPumpC_V1/Release_X86_64_LINUX64}&quot;"/>
+								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.705260250" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
 						</toolChain>

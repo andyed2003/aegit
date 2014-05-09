@@ -28,7 +28,7 @@ all: UseFMU
 UseFMU: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C Linker'
-	gcc  -o "UseFMU" $(OBJS) $(USER_OBJS) $(LIBS)
+	gcc -L"/home/andy/git/aegit/Examples/TestFMUPumpC_V1/Release_X86_64_LINUX64" -L"/home/andy/git/aegit/Examples/TestFMUPumpC_V1/Release_i686_WIN32" -o "UseFMU" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 

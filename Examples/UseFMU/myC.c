@@ -1,16 +1,20 @@
 #include<stdio.h>
 #include<dlfcn.h>
-#include"fmiTypesPlatform.h"
-#include"fmiFunctionTypes.h"
-#include"fmiFunctions.h"
+
+#include"fmiModelTypes.h"
+#include"fmiModelFunctions.h"
+#include "fmiModelTypes.h"
 #include "myFMIDecls.h"
+#define MODEL_IDENTIFIER ControllerImpl
 
 int main(int argc, char **argv) {
 	printf("hello");
 
 	void* lib_handle;
 
-	lib_handle = dlopen("/home/andy/git/aegit/Examples/TestFMUPumpC/Debug/libTestFMUPumpC.so", 1 );
+
+    lib_handle = dlopen("/home/andy/git/aegit/Examples/TestFMUPumpC_V1/Release_X86_64_LINUX64/libTestFMUPumpC_V1.so", 1 );
+
 	if (!lib_handle) {
 	    fprintf(stderr, "Error during dlopen(): %s\n", dlerror());
 	    exit(1);
@@ -18,13 +22,13 @@ int main(int argc, char **argv) {
 
 	//>>>>>>> Get the types platform
 	// declare a pointer to the fmiGetTypesPlatform function
-	char* (*getfmiTypesPlatform)();
+	char* (*fmiGetTypesPlatform)();
 	// get the function pointer
-	*(void **)(&getfmiTypesPlatform) = dlsym(lib_handle, "fmiGetTypesPlatform");
+	*(void **)(&fmiGetTypesPlatform) = dlsym(lib_handle, "ControllerImpl_fmiGetTypesPlatform");
 	// declare a pointer to the return type
 	const char* ret;
 	// call the function and collect the return value
-	ret = (*getfmiTypesPlatform)();
+	ret = (*fmiGetTypesPlatform)();
 	//<<<<<<<< End of: Get the types platform
 
 
@@ -33,10 +37,10 @@ int main(int argc, char **argv) {
 //			fmiBoolean visible, fmiBoolean loggingOn)
 
 	// declare a pointer to the fmiInstantiateSlave function
-	fmi_Component* (*fmiInstantiateSlave)(fmiString, fmiString, fmiString, const fmiCallbackFunctions*, fmiBoolean, fmiBoolean );
+	fmiComponent* (*fmiInstantiateSlave)(fmiString, fmiString, fmiString, const fmiCallbackFunctions*, fmiBoolean, fmiBoolean );
 //	// get the function pointer
-	*(void **)(&fmiInstantiateSlave) = dlsym(lib_handle, "fmiInstantiateSlave");
-	fmi_Component * ret2;
+	*(void **)(&fmiInstantiateSlave) = dlsym(lib_handle, "ControllerImpl_fmiInstantiateSlave");
+	fmiComponent * ret2;
 	fmiString instanceName = "thisName";
 	fmiString fmuGUID = "thisGUID";
 	fmiString fmuResourceLocation = "somewhere";
