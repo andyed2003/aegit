@@ -197,36 +197,22 @@ fmiStatus fmiSetInteger(fmiComponent c, const fmiValueReference vr[],
 		size_t nvr, const fmiInteger value[]) {
 	int i;
 	ModelInstance* comp = (ModelInstance*) c;
-
-	printf("1");
-
-	if (invalidState(comp, "fmiSetInteger",
-			modelInstantiated | modelInitialized))
-		return fmiError;
-
-	printf("2");
-
-	if (nvr > 0 && nullPointer(comp, "fmiSetInteger", "vr[]", vr))
-		return fmiError;
-
-	printf("3");
-
-	if (nvr > 0 && nullPointer(comp, "fmiSetInteger", "value[]", value))
-		return fmiError;
-	if (comp->loggingOn)
-		comp->functions.logger(c, comp->instanceName, fmiOK, "log",
-				"fmiSetInteger: nvr = %d", nvr);
-
-	printf("4");
-	int check1 = vr[0];
-	int check2 = value[0];
-
+//	if (invalidState(comp, "fmiSetInteger",
+//			modelInstantiated | modelInitialized))
+//		return fmiError;
+//	if (nvr > 0 && nullPointer(comp, "fmiSetInteger", "vr[]", vr))
+//		return fmiError;
+//	if (nvr > 0 && nullPointer(comp, "fmiSetInteger", "value[]", value))
+//		return fmiError;
+//	if (comp->loggingOn)
+//		comp->functions.logger(c, comp->instanceName, fmiOK, "log",
+//				"fmiSetInteger: nvr = %d", nvr);
 	for (i = 0; i < nvr; i++) {
-		if (vrOutOfRange(comp, "fmiSetInteger", vr[i], NUMBER_OF_INTEGERS))
-			return fmiError;
-		if (comp->loggingOn)
-			comp->functions.logger(c, comp->instanceName, fmiOK, "log",
-					"fmiSetInteger: #i%d# = %d", vr[i], value[i]);
+//		if (vrOutOfRange(comp, "fmiSetInteger", vr[i], NUMBER_OF_INTEGERS))
+//			return fmiError;
+//		if (comp->loggingOn)
+//			comp->functions.logger(c, comp->instanceName, fmiOK, "log",
+//					"fmiSetInteger: #i%d# = %d", vr[i], value[i]);
 		comp->i[vr[i]] = value[i];
 	}
 	return fmiOK;
