@@ -198,18 +198,18 @@ fmiStatus fmiSetInteger(fmiComponent c, const fmiValueReference vr[],
 	int i;
 	ModelInstance* comp = (ModelInstance*) c;
 
-	int checkpoint = 1;
+	printf("1");
 
 	if (invalidState(comp, "fmiSetInteger",
 			modelInstantiated | modelInitialized))
 		return fmiError;
 
-	checkpoint = 2;
+	printf("2");
 
 	if (nvr > 0 && nullPointer(comp, "fmiSetInteger", "vr[]", vr))
 		return fmiError;
 
-	checkpoint = 3;
+	printf("3");
 
 	if (nvr > 0 && nullPointer(comp, "fmiSetInteger", "value[]", value))
 		return fmiError;
@@ -217,7 +217,7 @@ fmiStatus fmiSetInteger(fmiComponent c, const fmiValueReference vr[],
 		comp->functions.logger(c, comp->instanceName, fmiOK, "log",
 				"fmiSetInteger: nvr = %d", nvr);
 
-	checkpoint = 4;
+	printf("4");
 	int check1 = vr[0];
 	int check2 = value[0];
 
