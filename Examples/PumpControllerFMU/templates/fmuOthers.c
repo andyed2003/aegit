@@ -137,11 +137,11 @@ void fmiFreeSlaveInstance(fmiComponent c) {
     if (!comp) return;
 //    if (comp->loggingOn) comp->functions.logger(c, comp->instanceName, fmiOK, "log",
 //            "fmiFreeSlaveInstance");
-    if (comp->r) comp->functions.freeMemory(comp->r);
-    if (comp->i) comp->functions.freeMemory(comp->i);
-    if (comp->b) comp->functions.freeMemory(comp->b);
-    if (comp->s) comp->functions.freeMemory(comp->s);
-    comp->functions.freeMemory(comp);
+//    if (comp->r) comp->functions.freeMemory(comp->r);
+//    if (comp->i) comp->functions.freeMemory(comp->i);
+//    if (comp->b) comp->functions.freeMemory(comp->b);
+//    if (comp->s) comp->functions.freeMemory(comp->s);
+//    comp->functions.freeMemory(comp);
 }
 
 // ---------------------------------------------------------------------------
@@ -423,12 +423,12 @@ fmiStatus fmiGetString(fmiComponent c, const fmiValueReference vr[], size_t nvr,
 //}
 
 fmiStatus fmiTerminateSlave(fmiComponent c){
-    ModelInstance* comp = (ModelInstance*)c;
-    if (invalidState(comp, "fmiTerminate", modelInitialized))
-         return fmiError;
+//    ModelInstance* comp = (ModelInstance*)c;
+//    if (invalidState(comp, "fmiTerminate", modelInitialized))
+//         return fmiError;
 //    if (comp->loggingOn) comp->functions.logger(c, comp->instanceName, fmiOK, "log",
 //        "fmiTerminate");
-    comp->state = modelTerminated;
+//    comp->state = modelTerminated;
     return fmiOK;
 }
 
