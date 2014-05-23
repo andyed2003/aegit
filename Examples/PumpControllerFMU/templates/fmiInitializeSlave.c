@@ -2,7 +2,7 @@
 fmiStatus fmiInitializeSlave(fmiComponent c, fmiReal tStart,
 		fmiBoolean StopTimeDefined, fmiReal tStop) {
 
-	ModelInstance* mc = c;
+	ModelInstance* mc = (ModelInstance*) c;
 		//## <initialisationsList>
 
 		//## <stateMachineProgramCounterIni>
