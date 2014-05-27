@@ -30,5 +30,11 @@
 <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="D⇸R" org.eventb.core.identifier="f"/>
 <org.eventb.theory.core.directOperatorDefinition name="(" org.eventb.theory.core.formula="f(d)"/>
 <org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="D" org.eventb.core.identifier="d"/>
+<org.eventb.theory.core.operatorWDcondition name="*" org.eventb.core.predicate="d∈dom(f)"/>
 </org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.axiomaticDefinitionsBlock name="0" org.eventb.core.label="xdb1">
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="'" org.eventb.core.label="axm1" org.eventb.core.predicate="∀f,d· f∈D⇸R ∧ d∈dom(f) ⇒ pfunLookup(f,d) = f(d)"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="(" org.eventb.core.label="axm2" org.eventb.core.predicate="∀f,d,r· f∈D⇸R ∧ d∈D ∧ r∈R ⇒ pfunUpdate(f,d,r) = f  {d↦r}"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name=")" org.eventb.core.label="axm3" org.eventb.core.predicate="∀f,d,r· f∈D⇸R ∧ d∈D ∧ r∈R ⇒ pfunUpdate(f,d,r)∈D ⇸ R"/>
+</org.eventb.theory.core.axiomaticDefinitionsBlock>
 </org.eventb.theory.core.theoryRoot>

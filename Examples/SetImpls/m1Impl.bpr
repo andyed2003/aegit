@@ -112,58 +112,229 @@
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.theory.rbp.manualRewriteReasoner" org.eventb.core.prRSig="org.eventb.theory.rbp.manualRewriteReasoner"/>
 <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="setUnion2/m1_inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prHyps="p0" org.eventb.core.prSets="AltType">
+<org.eventb.core.prProof name="setUnion2/m1_inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.psManual="true">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(AltType,{alt_1,alt_2},{alt_2}))" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p0" org.eventb.core.prInfHyps="p1,p2"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p0"/>
-<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p1,p2"/>
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p2" org.eventb.core.prInfHyps="p3,p4"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p2"/>
+<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p3,p4"/>
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p2" org.eventb.core.prInfHyps="p3"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p2"/>
-<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊥ hyp" org.eventb.core.prHyps="p3"/>
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p4" org.eventb.core.prInfHyps="p5"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p4"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p6"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p7"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p8"/>
+<org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p9"/>
+<org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p10"/>
+<org.eventb.core.prHypAction name="HIDE5" org.eventb.core.prHyps="p11"/>
+<org.eventb.core.prHypAction name="HIDE6" org.eventb.core.prHyps="p12"/>
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="setImpl expansion on mySet∈setImpl(ℤ)" org.eventb.core.prHyps="p1">
+<org.eventb.core.prAnte name="'" org.eventb.core.prHyps="p8">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p1"/>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p8"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p8"/>
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="singleton expansion on goal" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p13">
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="setImpl expansion on goal" org.eventb.core.prGoal="p13" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p14">
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prGoal="p14" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p15">
+<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p15" org.eventb.core.prHyps=""/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".poContext" org.eventb.core.prSValue="/SetImpls/m1Impl.bpo|org.eventb.core.poFile#m1Impl"/>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
+<org.eventb.core.prString name=".theory" org.eventb.core.prSValue="SetImpl"/>
+<org.eventb.core.prString name=".rewRule" org.eventb.core.prSValue="SetImpl.setImpl"/>
+<org.eventb.core.prString name=".ruleDesc" org.eventb.core.prSValue="setImpl expansion"/>
+<org.eventb.core.prString name=".project" org.eventb.core.prSValue="SetImpls"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".poContext" org.eventb.core.prSValue="/SetImpls/m1Impl.bpo|org.eventb.core.poFile#m1Impl"/>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue="0.1"/>
+<org.eventb.core.prString name=".theory" org.eventb.core.prSValue="SetImpl"/>
+<org.eventb.core.prString name=".rewRule" org.eventb.core.prSValue="SetImpl.singleton"/>
+<org.eventb.core.prString name=".ruleDesc" org.eventb.core.prSValue="singleton expansion"/>
+<org.eventb.core.prString name=".project" org.eventb.core.prSValue="SetImpls"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".poContext" org.eventb.core.prSValue="/SetImpls/m1Impl.bpo|org.eventb.core.poFile#m1Impl"/>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
+<org.eventb.core.prString name=".theory" org.eventb.core.prSValue="SetImpl"/>
+<org.eventb.core.prString name=".rewRule" org.eventb.core.prSValue="SetImpl.setImpl"/>
+<org.eventb.core.prString name=".ruleDesc" org.eventb.core.prSValue="setImpl expansion"/>
+<org.eventb.core.prString name=".project" org.eventb.core.prSValue="SetImpls"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
 </org.eventb.core.prAnte>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
 <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
 </org.eventb.core.prRule>
+<org.eventb.core.prIdent name="element" org.eventb.core.type="ℤ"/>
+<org.eventb.core.prIdent name="mySet" org.eventb.core.type="ℙ(ℤ)"/>
+<org.eventb.core.prPred name="p15" org.eventb.core.predicate="⊤"/>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="mySet∪{element}∈ℙ(ℤ)"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="⊥"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="mySet∈setImpl(ℤ)"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="¬alt_2∈{alt_1,alt_2}">
 <org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
 <org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="⊥"/>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="¬alt_2∈{alt_1,alt_2}"/>
-<org.eventb.core.prPred name="p1" org.eventb.core.predicate="AltType={alt_1,alt_2}"/>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="partition(AltType,{alt_1,alt_2},{alt_2})"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="otherSet∈ℙ(ℤ)">
+<org.eventb.core.prIdent name="otherSet" org.eventb.core.type="ℙ(ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="alt1∈AltType">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt1" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="mySet∈ℙ(ℤ)"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="element∈ℤ"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="alt_2∈AltType">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="mySet∪singleton(element)∈setImpl(ℤ)"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="alt_1∈AltType">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="mySet∪{element}∈setImpl(ℤ)"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="partition(AltType,{alt_1,alt_2},{alt_2})">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="AltType={alt_1,alt_2}">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="altTypeSet∈ℙ(AltType)">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="altTypeSet" org.eventb.core.type="ℙ(AltType)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.theory.rbp.manualRewriteReasoner" org.eventb.core.prRSig="org.eventb.theory.rbp.manualRewriteReasoner"/>
+<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="INITIALISATION/act2/SIM"/>
-<org.eventb.core.prProof name="setSubtract/m1_inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prHyps="p0" org.eventb.core.prSets="AltType">
+<org.eventb.core.prProof name="setSubtract/m1_inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.psManual="true">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(AltType,{alt_1,alt_2},{alt_2}))" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p0" org.eventb.core.prInfHyps="p1,p2"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p0"/>
-<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p1,p2"/>
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p2" org.eventb.core.prInfHyps="p3,p4"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p2"/>
+<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p3,p4"/>
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p2" org.eventb.core.prInfHyps="p3"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p2"/>
-<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊥ hyp" org.eventb.core.prHyps="p3"/>
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p4" org.eventb.core.prInfHyps="p5"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p4"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p6"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p7"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p8"/>
+<org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p9"/>
+<org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p10"/>
+<org.eventb.core.prHypAction name="HIDE5" org.eventb.core.prHyps="p11"/>
+<org.eventb.core.prHypAction name="HIDE6" org.eventb.core.prHyps="p12"/>
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="setImpl expansion on mySet∈setImpl(ℤ)" org.eventb.core.prHyps="p1">
+<org.eventb.core.prAnte name="'" org.eventb.core.prHyps="p8">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p1"/>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p8"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p8"/>
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="setImpl expansion on goal" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p13">
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prGoal="p13" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p14">
+<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p14" org.eventb.core.prHyps=""/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".poContext" org.eventb.core.prSValue="/SetImpls/m1Impl.bpo|org.eventb.core.poFile#m1Impl"/>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
+<org.eventb.core.prString name=".theory" org.eventb.core.prSValue="SetImpl"/>
+<org.eventb.core.prString name=".rewRule" org.eventb.core.prSValue="SetImpl.setImpl"/>
+<org.eventb.core.prString name=".ruleDesc" org.eventb.core.prSValue="setImpl expansion"/>
+<org.eventb.core.prString name=".project" org.eventb.core.prSValue="SetImpls"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".poContext" org.eventb.core.prSValue="/SetImpls/m1Impl.bpo|org.eventb.core.poFile#m1Impl"/>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
+<org.eventb.core.prString name=".theory" org.eventb.core.prSValue="SetImpl"/>
+<org.eventb.core.prString name=".rewRule" org.eventb.core.prSValue="SetImpl.setImpl"/>
+<org.eventb.core.prString name=".ruleDesc" org.eventb.core.prSValue="setImpl expansion"/>
+<org.eventb.core.prString name=".project" org.eventb.core.prSValue="SetImpls"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
 </org.eventb.core.prAnte>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
 <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
 </org.eventb.core.prRule>
+<org.eventb.core.prIdent name="mySet" org.eventb.core.type="ℙ(ℤ)"/>
+<org.eventb.core.prIdent name="otherSet" org.eventb.core.type="ℙ(ℤ)"/>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="⊤"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="⊥"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="mySet∈setImpl(ℤ)"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="¬alt_2∈{alt_1,alt_2}">
 <org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
 <org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="⊥"/>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="¬alt_2∈{alt_1,alt_2}"/>
-<org.eventb.core.prPred name="p1" org.eventb.core.predicate="AltType={alt_1,alt_2}"/>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="partition(AltType,{alt_1,alt_2},{alt_2})"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="otherSet∈ℙ(ℤ)"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="alt1∈AltType">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt1" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="mySet∈ℙ(ℤ)"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="element∈ℤ">
+<org.eventb.core.prIdent name="element" org.eventb.core.type="ℤ"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="setSubtract(mySet,otherSet)∈setImpl(ℤ)"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="alt_2∈AltType">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="setSubtract(mySet,otherSet)∈ℙ(ℤ)"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="alt_1∈AltType">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="partition(AltType,{alt_1,alt_2},{alt_2})">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="AltType={alt_1,alt_2}">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="altTypeSet∈ℙ(AltType)">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="altTypeSet" org.eventb.core.type="ℙ(AltType)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.theory.rbp.manualRewriteReasoner" org.eventb.core.prRSig="org.eventb.theory.rbp.manualRewriteReasoner"/>
+<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="selectElement/m1_inv1/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
@@ -203,24 +374,41 @@
 </org.eventb.core.prPred>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="selectElement/act1/SIM" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="">
-<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prProof name="selectElement/act1/SIM" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(AltType,{alt_1},{alt_2}))" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p0"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p1"/>
-<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p2"/>
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p2" org.eventb.core.prInfHyps="p3,p4"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p2"/>
+<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p3,p4"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p1" org.eventb.core.prHyps="p1"/>
 </org.eventb.core.prAnte>
 </org.eventb.core.prRule>
-<org.eventb.core.prPred name="p1" org.eventb.core.predicate="otherSet∈ℙ(ℤ)">
-<org.eventb.core.prIdent name="otherSet" org.eventb.core.type="ℙ(ℤ)"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="mySet∈ℙ(ℤ)">
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="element'" org.eventb.core.type="ℤ"/>
 <org.eventb.core.prIdent name="mySet" org.eventb.core.type="ℙ(ℤ)"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="element'∈setReduce(mySet)"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="element'∈setReduce(mySet ∖ (∅ ⦂ ℙ(ℤ)))"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="AltType={alt_1,alt_2}">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="element∈ℤ">
-<org.eventb.core.prIdent name="element" org.eventb.core.type="ℤ"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="¬alt_1=alt_2">
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="partition(AltType,{alt_1},{alt_2})">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.hyp"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="selectElement/mySet/EQL" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
@@ -260,17 +448,63 @@
 </org.eventb.core.prPred>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="INITIALISATION/act4/SIM" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prHyps="p0" org.eventb.core.prSets="AltType">
-<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(AltType,{alt_1,alt_2},{alt_2}))" org.eventb.core.prHyps="">
+<org.eventb.core.prProof name="INITIALISATION/act4/SIM" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="p0" org.eventb.core.prSets="AltType" org.eventb.core.psManual="true">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(AltType,{alt_1},{alt_2}))" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
 <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p0" org.eventb.core.prInfHyps="p1,p2"/>
 <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p0"/>
 <org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p1,p2"/>
-<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p2" org.eventb.core.prInfHyps="p3"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p2"/>
-<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊥ hyp" org.eventb.core.prHyps="p3"/>
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p3"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p4"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="rewrites set equality in hyp (AltType={alt_1,alt_2})" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p1" org.eventb.core.prInfHyps="p5,p6"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p1"/>
+<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p5,p6"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p6"/>
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="remove ⊆ in AltType⊆{alt_1,alt_2}" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p5" org.eventb.core.prInfHyps="p7"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p5"/>
+<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p7"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p7" org.eventb.core.prInfHyps="p8"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p7"/>
+<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p8" org.eventb.core.prInfHyps="p9"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p8"/>
+<org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∀ hyp (inst alt_1)" org.eventb.core.prHyps="p9">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p10">
+<org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p10" org.eventb.core.prHyps=""/>
+</org.eventb.core.prAnte>
+<org.eventb.core.prAnte name="(" org.eventb.core.prHyps="p11">
+<org.eventb.core.prHypAction name="DESELECT0" org.eventb.core.prHyps="p9"/>
+<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p11"/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prExprRef name=".exprs" org.eventb.core.prRef="e0"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
 </org.eventb.core.prAnte>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
@@ -278,13 +512,26 @@
 </org.eventb.core.prRule>
 <org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
 <org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="⊥"/>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="¬alt_2∈{alt_1,alt_2}"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="⊤"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="∀x⦂AltType·x∈{alt_1,alt_2}"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="alt_1∈{alt_1,alt_2}"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="alt_1∈AltType"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="{alt_1,alt_2}⊆AltType"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="AltType⊆{alt_1,alt_2}"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="∀x⦂AltType·⊤⇒x∈{alt_1,alt_2}"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="alt_2∈AltType"/>
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="AltType={alt_1,alt_2}"/>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="partition(AltType,{alt_1,alt_2},{alt_2})"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="∀x⦂AltType·x∈AltType⇒x∈{alt_1,alt_2}"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="¬alt_1=alt_2"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="partition(AltType,{alt_1},{alt_2})"/>
+<org.eventb.core.prExpr name="e0" org.eventb.core.expression="alt_1"/>
+<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.allD"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.setEqlRewrites"/>
+<org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.ri"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="evt1/m1_inv1/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
@@ -348,58 +595,181 @@
 </org.eventb.core.prPred>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="INITIALISATION/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prHyps="p0" org.eventb.core.prSets="AltType">
+<org.eventb.core.prProof name="INITIALISATION/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="AltType" org.eventb.core.psManual="true">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(AltType,{alt_1,alt_2},{alt_2}))" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p0" org.eventb.core.prInfHyps="p1,p2"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p0"/>
-<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p1,p2"/>
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p1" org.eventb.core.prInfHyps="p2,p3"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p1"/>
+<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p2,p3"/>
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p2" org.eventb.core.prInfHyps="p3"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p2"/>
-<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊥ hyp" org.eventb.core.prHyps="p3"/>
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p3" org.eventb.core.prInfHyps="p4"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p3"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p5"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p6"/>
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="setImpl expansion on goal" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p7">
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prGoal="p7" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p8">
+<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p8" org.eventb.core.prHyps=""/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".poContext" org.eventb.core.prSValue="/SetImpls/m1Impl.bpo|org.eventb.core.poFile#m1Impl"/>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
+<org.eventb.core.prString name=".theory" org.eventb.core.prSValue="SetImpl"/>
+<org.eventb.core.prString name=".rewRule" org.eventb.core.prSValue="SetImpl.setImpl"/>
+<org.eventb.core.prString name=".ruleDesc" org.eventb.core.prSValue="setImpl expansion"/>
+<org.eventb.core.prString name=".project" org.eventb.core.prSValue="SetImpls"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
 </org.eventb.core.prAnte>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
 <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
 </org.eventb.core.prRule>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="⊤"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="⊥"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬alt_2∈{alt_1,alt_2}">
 <org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
 <org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="⊥"/>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="¬alt_2∈{alt_1,alt_2}"/>
-<org.eventb.core.prPred name="p1" org.eventb.core.predicate="AltType={alt_1,alt_2}"/>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="partition(AltType,{alt_1,alt_2},{alt_2})"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="alt_1∈AltType">
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="newSet(∅ ⦂ ℙ(AltType))∈setImpl(AltType)"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="newSet(∅ ⦂ ℙ(AltType))∈ℙ(AltType)"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="alt_2∈AltType">
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="AltType={alt_1,alt_2}">
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="partition(AltType,{alt_1,alt_2},{alt_2})">
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.theory.rbp.manualRewriteReasoner" org.eventb.core.prRSig="org.eventb.theory.rbp.manualRewriteReasoner"/>
+<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="INITIALISATION/inv5/INV"/>
-<org.eventb.core.prProof name="setUnion3/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prHyps="p0" org.eventb.core.prSets="AltType">
+<org.eventb.core.prProof name="setUnion3/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="AltType" org.eventb.core.psManual="true">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(AltType,{alt_1,alt_2},{alt_2}))" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p0" org.eventb.core.prInfHyps="p1,p2"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p0"/>
-<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p1,p2"/>
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p2" org.eventb.core.prInfHyps="p3,p4"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p2"/>
+<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p3,p4"/>
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p2" org.eventb.core.prInfHyps="p3"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p2"/>
-<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊥ hyp" org.eventb.core.prHyps="p3"/>
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p4" org.eventb.core.prInfHyps="p5"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p4"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p6"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p7"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p8"/>
+<org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p9"/>
+<org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p10"/>
+<org.eventb.core.prHypAction name="HIDE5" org.eventb.core.prHyps="p11"/>
+<org.eventb.core.prHypAction name="HIDE6" org.eventb.core.prHyps="p12"/>
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="setImpl expansion on altTypeSet∈setImpl(AltType)" org.eventb.core.prHyps="p1">
+<org.eventb.core.prAnte name="'" org.eventb.core.prHyps="p11">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p1"/>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p11"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p11"/>
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="singleton expansion on goal" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p13">
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="setImpl expansion on goal" org.eventb.core.prGoal="p13" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p14">
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prGoal="p14" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p15">
+<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p15" org.eventb.core.prHyps=""/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".poContext" org.eventb.core.prSValue="/SetImpls/m1Impl.bpo|org.eventb.core.poFile#m1Impl"/>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
+<org.eventb.core.prString name=".theory" org.eventb.core.prSValue="SetImpl"/>
+<org.eventb.core.prString name=".rewRule" org.eventb.core.prSValue="SetImpl.setImpl"/>
+<org.eventb.core.prString name=".ruleDesc" org.eventb.core.prSValue="setImpl expansion"/>
+<org.eventb.core.prString name=".project" org.eventb.core.prSValue="SetImpls"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".poContext" org.eventb.core.prSValue="/SetImpls/m1Impl.bpo|org.eventb.core.poFile#m1Impl"/>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue="0.1"/>
+<org.eventb.core.prString name=".theory" org.eventb.core.prSValue="SetImpl"/>
+<org.eventb.core.prString name=".rewRule" org.eventb.core.prSValue="SetImpl.singleton"/>
+<org.eventb.core.prString name=".ruleDesc" org.eventb.core.prSValue="singleton expansion"/>
+<org.eventb.core.prString name=".project" org.eventb.core.prSValue="SetImpls"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".poContext" org.eventb.core.prSValue="/SetImpls/m1Impl.bpo|org.eventb.core.poFile#m1Impl"/>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
+<org.eventb.core.prString name=".theory" org.eventb.core.prSValue="SetImpl"/>
+<org.eventb.core.prString name=".rewRule" org.eventb.core.prSValue="SetImpl.setImpl"/>
+<org.eventb.core.prString name=".ruleDesc" org.eventb.core.prSValue="setImpl expansion"/>
+<org.eventb.core.prString name=".project" org.eventb.core.prSValue="SetImpls"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
 </org.eventb.core.prAnte>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
 <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
 </org.eventb.core.prRule>
+<org.eventb.core.prIdent name="alt1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="altTypeSet" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prPred name="p15" org.eventb.core.predicate="⊤"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="⊥"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="altTypeSet∪{alt1}∈setImpl(AltType)"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="¬alt_2∈{alt_1,alt_2}">
 <org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
 <org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="⊥"/>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="¬alt_2∈{alt_1,alt_2}"/>
-<org.eventb.core.prPred name="p1" org.eventb.core.predicate="AltType={alt_1,alt_2}"/>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="partition(AltType,{alt_1,alt_2},{alt_2})"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="otherSet∈ℙ(ℤ)">
+<org.eventb.core.prIdent name="otherSet" org.eventb.core.type="ℙ(ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="alt1∈AltType"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="mySet∈ℙ(ℤ)">
+<org.eventb.core.prIdent name="mySet" org.eventb.core.type="ℙ(ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="element∈ℤ">
+<org.eventb.core.prIdent name="element" org.eventb.core.type="ℤ"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="altTypeSet∈setImpl(AltType)"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="alt_2∈AltType">
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="altTypeSet∪{alt1}∈ℙ(AltType)"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="alt_1∈AltType">
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="altTypeSet∪singleton(alt1)∈setImpl(AltType)"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="partition(AltType,{alt_1,alt_2},{alt_2})">
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="AltType={alt_1,alt_2}">
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="altTypeSet∈ℙ(AltType)"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.theory.rbp.manualRewriteReasoner" org.eventb.core.prRSig="org.eventb.theory.rbp.manualRewriteReasoner"/>
+<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="setUnion3/altTypeSet1/EQL" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
@@ -433,7 +803,7 @@
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="INITIALISATION/act7/FIS" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="AltType">
+<org.eventb.core.prProof name="INITIALISATION/act7/FIS" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="AltType" org.eventb.core.psManual="true">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(AltType,{alt_1,alt_2},{alt_2}))" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
 <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p1" org.eventb.core.prInfHyps="p2,p3"/>
@@ -443,80 +813,136 @@
 <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p5">
 <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p3" org.eventb.core.prInfHyps="p4"/>
 <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p3"/>
-<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊥ hyp" org.eventb.core.prHyps="p4"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p6"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p7"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p8"/>
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="newInst expansion on goal" org.eventb.core.prGoal="p5" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p9">
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prGoal="p9" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p10">
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p10" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p11">
+<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p11" org.eventb.core.prHyps=""/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".poContext" org.eventb.core.prSValue="/SetImpls/m1Impl.bpo|org.eventb.core.poFile#m1Impl"/>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue="0.0"/>
+<org.eventb.core.prString name=".theory" org.eventb.core.prSValue="SetImpl"/>
+<org.eventb.core.prString name=".rewRule" org.eventb.core.prSValue="SetImpl.newInst"/>
+<org.eventb.core.prString name=".ruleDesc" org.eventb.core.prSValue="newInst expansion"/>
+<org.eventb.core.prString name=".project" org.eventb.core.prSValue="SetImpls"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
 </org.eventb.core.prAnte>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
 <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
 </org.eventb.core.prRule>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="⊤"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="¬⊥"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="⊥"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬alt_2∈{alt_1,alt_2}">
 <org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
 <org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
-<org.eventb.core.prPred name="p4" org.eventb.core.predicate="⊥"/>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬alt_2∈{alt_1,alt_2}"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="alt_1∈AltType">
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
 <org.eventb.core.prPred name="p5" org.eventb.core.predicate="¬newInst(AltType)=(∅ ⦂ ℙ(AltType))"/>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="AltType={alt_1,alt_2}"/>
-<org.eventb.core.prPred name="p1" org.eventb.core.predicate="partition(AltType,{alt_1,alt_2},{alt_2})"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="¬AltType=(∅ ⦂ ℙ(AltType))"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="alt1'∈AltType">
+<org.eventb.core.prIdent name="alt1'" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="alt_2∈AltType">
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="newInst(AltType)≠(∅ ⦂ ℙ(AltType))"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="AltType={alt_1,alt_2}">
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="partition(AltType,{alt_1,alt_2},{alt_2})">
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.theory.rbp.manualRewriteReasoner" org.eventb.core.prRSig="org.eventb.theory.rbp.manualRewriteReasoner"/>
+<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="INITIALISATION/act5/SIM"/>
-<org.eventb.core.prProof name="setUnion3/altTypeSet/EQL" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="AltType">
+<org.eventb.core.prProof name="setUnion3/altTypeSet/EQL" org.eventb.core.psManual="true"/>
+<org.eventb.core.prProof name="INITIALISATION/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="AltType" org.eventb.core.psManual="true">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(AltType,{alt_1,alt_2},{alt_2}))" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
 <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p1" org.eventb.core.prInfHyps="p2,p3"/>
 <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p1"/>
 <org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p2,p3"/>
-<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p5">
-<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p3" org.eventb.core.prInfHyps="p4"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p3"/>
-<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊥ hyp" org.eventb.core.prHyps="p4"/>
-</org.eventb.core.prAnte>
-</org.eventb.core.prRule>
-</org.eventb.core.prAnte>
-<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
-</org.eventb.core.prRule>
-<org.eventb.core.prIdent name="alt1" org.eventb.core.type="AltType"/>
-<org.eventb.core.prIdent name="altTypeSet" org.eventb.core.type="ℙ(AltType)"/>
-<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
-<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
-<org.eventb.core.prPred name="p4" org.eventb.core.predicate="⊥"/>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="altTypeSet∪singleton(alt1)=altTypeSet"/>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬alt_2∈{alt_1,alt_2}"/>
-<org.eventb.core.prPred name="p5" org.eventb.core.predicate="singleton(alt1)⊆altTypeSet"/>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="AltType={alt_1,alt_2}"/>
-<org.eventb.core.prPred name="p1" org.eventb.core.predicate="partition(AltType,{alt_1,alt_2},{alt_2})"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
-</org.eventb.core.prProof>
-<org.eventb.core.prProof name="INITIALISATION/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prHyps="p0" org.eventb.core.prSets="AltType">
-<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(AltType,{alt_1,alt_2},{alt_2}))" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p0" org.eventb.core.prInfHyps="p1,p2"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p0"/>
-<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p1,p2"/>
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p2" org.eventb.core.prInfHyps="p3"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p2"/>
-<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊥ hyp" org.eventb.core.prHyps="p3"/>
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p3" org.eventb.core.prInfHyps="p4"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p3"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p5"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p6"/>
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="newType expansion on goal" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p7">
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prGoal="p7" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p8">
+<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p8" org.eventb.core.prHyps=""/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".poContext" org.eventb.core.prSValue="/SetImpls/m1Impl.bpo|org.eventb.core.poFile#m1Impl"/>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
+<org.eventb.core.prString name=".theory" org.eventb.core.prSValue="SetImpl"/>
+<org.eventb.core.prString name=".rewRule" org.eventb.core.prSValue="SetImpl.newType"/>
+<org.eventb.core.prString name=".ruleDesc" org.eventb.core.prSValue="newType expansion"/>
+<org.eventb.core.prString name=".project" org.eventb.core.prSValue="SetImpls"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
 </org.eventb.core.prAnte>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
 <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
 </org.eventb.core.prRule>
+<org.eventb.core.prIdent name="alt1'" org.eventb.core.type="AltType"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="⊤"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="⊥"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="alt1'∈newType(AltType)"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬alt_2∈{alt_1,alt_2}">
 <org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
 <org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="⊥"/>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="¬alt_2∈{alt_1,alt_2}"/>
-<org.eventb.core.prPred name="p1" org.eventb.core.predicate="AltType={alt_1,alt_2}"/>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="partition(AltType,{alt_1,alt_2},{alt_2})"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="alt_1∈AltType">
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="alt1'∈AltType"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="alt_2∈AltType">
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="AltType={alt_1,alt_2}">
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="partition(AltType,{alt_1,alt_2},{alt_2})">
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.theory.rbp.manualRewriteReasoner" org.eventb.core.prRSig="org.eventb.theory.rbp.manualRewriteReasoner"/>
+<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="INITIALISATION/act7/SIM" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
@@ -536,49 +962,80 @@
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="selectElement/act1/FIS" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
-<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
-<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(AltType,{alt_1},{alt_2}))" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p2"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p3"/>
-<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p4"/>
-<org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p5"/>
-<org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p6"/>
-<org.eventb.core.prHypAction name="HIDE5" org.eventb.core.prHyps="p7"/>
-<org.eventb.core.prHypAction name="HIDE6" org.eventb.core.prHyps="p8"/>
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p1" org.eventb.core.prInfHyps="p2,p3"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p1"/>
+<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p2,p3"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p6">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p4" org.eventb.core.prInfHyps="p5"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p4"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p7"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p8"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p9"/>
+<org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p10"/>
+<org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p11"/>
+<org.eventb.core.prHypAction name="HIDE5" org.eventb.core.prHyps="p12"/>
+<org.eventb.core.prHypAction name="HIDE6" org.eventb.core.prHyps="p13"/>
 </org.eventb.core.prAnte>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
 </org.eventb.core.prRule>
 <org.eventb.core.prIdent name="mySet" org.eventb.core.type="ℙ(ℤ)"/>
-<org.eventb.core.prPred name="p5" org.eventb.core.predicate="otherSet∈ℙ(ℤ)">
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="element'∈setReduce(mySet)">
+<org.eventb.core.prIdent name="element'" org.eventb.core.type="ℤ"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="otherSet∈ℙ(ℤ)">
 <org.eventb.core.prIdent name="otherSet" org.eventb.core.type="ℙ(ℤ)"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p8" org.eventb.core.predicate="alt1∈AltType">
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="alt1∈AltType">
 <org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
 <org.eventb.core.prIdent name="alt1" org.eventb.core.type="AltType"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="alt_1∈AltType">
-<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
-<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p4" org.eventb.core.predicate="mySet∈ℙ(ℤ)"/>
-<org.eventb.core.prPred name="p6" org.eventb.core.predicate="element∈ℤ">
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="mySet∈ℙ(ℤ)"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="element∈ℤ">
 <org.eventb.core.prIdent name="element" org.eventb.core.type="ℤ"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="setReduce(mySet)≠(∅ ⦂ ℙ(ℤ))"/>
-<org.eventb.core.prPred name="p1" org.eventb.core.predicate="¬setReduce(mySet)=(∅ ⦂ ℙ(ℤ))"/>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="alt_2∈AltType">
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="alt_2∈AltType">
 <org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
 <org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p7" org.eventb.core.predicate="altTypeSet∈ℙ(AltType)">
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬alt_1=alt_2">
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="element'∈setReduce(mySet ∖ (∅ ⦂ ℙ(ℤ)))">
+<org.eventb.core.prIdent name="element'" org.eventb.core.type="ℤ"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="alt_1∈AltType">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="¬setReduce(mySet)=(∅ ⦂ ℙ(ℤ))"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="AltType={alt_1,alt_2}">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="altTypeSet∈ℙ(AltType)">
 <org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
 <org.eventb.core.prIdent name="altTypeSet" org.eventb.core.type="ℙ(AltType)"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
-<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="partition(AltType,{alt_1},{alt_2})">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="selectElement/element/EQL" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
@@ -619,31 +1076,75 @@
 </org.eventb.core.prPred>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="INITIALISATION/inv7/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prHyps="p0" org.eventb.core.prSets="AltType">
+<org.eventb.core.prProof name="INITIALISATION/inv7/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="AltType" org.eventb.core.psManual="true">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(AltType,{alt_1,alt_2},{alt_2}))" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p0" org.eventb.core.prInfHyps="p1,p2"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p0"/>
-<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p1,p2"/>
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p2" org.eventb.core.prInfHyps="p3,p4"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p2"/>
+<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p3,p4"/>
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p2" org.eventb.core.prInfHyps="p3"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p2"/>
-<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊥ hyp" org.eventb.core.prHyps="p3"/>
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p4" org.eventb.core.prInfHyps="p5"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p4"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p6"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p7"/>
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="newpFunImpl expansion on goal" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p8">
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="pfunImpl expansion on goal" org.eventb.core.prGoal="p8" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
+<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p1" org.eventb.core.prHyps="p1"/>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".poContext" org.eventb.core.prSValue="/SetImpls/m1Impl.bpo|org.eventb.core.poFile#m1Impl"/>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
+<org.eventb.core.prString name=".theory" org.eventb.core.prSValue="FunctionImpl"/>
+<org.eventb.core.prString name=".rewRule" org.eventb.core.prSValue="FunctionImpl.pfunImpl"/>
+<org.eventb.core.prString name=".ruleDesc" org.eventb.core.prSValue="pfunImpl expansion"/>
+<org.eventb.core.prString name=".project" org.eventb.core.prSValue="SetImpls"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".poContext" org.eventb.core.prSValue="/SetImpls/m1Impl.bpo|org.eventb.core.poFile#m1Impl"/>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue="0"/>
+<org.eventb.core.prString name=".theory" org.eventb.core.prSValue="FunctionImpl"/>
+<org.eventb.core.prString name=".rewRule" org.eventb.core.prSValue="FunctionImpl.newpFunImpl"/>
+<org.eventb.core.prString name=".ruleDesc" org.eventb.core.prSValue="newpFunImpl expansion"/>
+<org.eventb.core.prString name=".project" org.eventb.core.prSValue="SetImpls"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
 </org.eventb.core.prAnte>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
 <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
 </org.eventb.core.prRule>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="⊥"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="¬alt_2∈{alt_1,alt_2}">
 <org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
 <org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="⊥"/>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="¬alt_2∈{alt_1,alt_2}"/>
-<org.eventb.core.prPred name="p1" org.eventb.core.predicate="AltType={alt_1,alt_2}"/>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="partition(AltType,{alt_1,alt_2},{alt_2})"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="alt_1∈AltType">
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="(∅ ⦂ ℙ(AltType×AltType))∈AltType ⇸ AltType"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="newpFunImpl(∅ ⦂ ℙ(AltType×AltType))∈pfunImpl(AltType,AltType)"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="alt_2∈AltType">
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="AltType={alt_1,alt_2}">
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="partition(AltType,{alt_1,alt_2},{alt_2})">
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="(∅ ⦂ ℙ(AltType×AltType))∈pfunImpl(AltType,AltType)"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.theory.rbp.manualRewriteReasoner" org.eventb.core.prRSig="org.eventb.theory.rbp.manualRewriteReasoner"/>
+<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.hyp"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="INITIALISATION/act8/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="AltType">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
@@ -669,63 +1170,256 @@
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="funApplicn/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prHyps="p0" org.eventb.core.prSets="AltType">
+<org.eventb.core.prProof name="funApplicn/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="AltType" org.eventb.core.psManual="true">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(AltType,{alt_1,alt_2},{alt_2}))" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p0" org.eventb.core.prInfHyps="p1,p2"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p0"/>
-<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p1,p2"/>
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p1" org.eventb.core.prInfHyps="p2,p3"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p1"/>
+<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p2,p3"/>
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p2" org.eventb.core.prInfHyps="p3"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p2"/>
-<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊥ hyp" org.eventb.core.prHyps="p3"/>
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p3" org.eventb.core.prInfHyps="p4"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p3"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p5"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p6"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p7"/>
+<org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p8"/>
+<org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p9"/>
+<org.eventb.core.prHypAction name="HIDE5" org.eventb.core.prHyps="p10"/>
+<org.eventb.core.prHypAction name="HIDE6" org.eventb.core.prHyps="p11"/>
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="newType expansion on goal" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p12">
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prGoal="p12" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p13">
+<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p13" org.eventb.core.prHyps=""/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".poContext" org.eventb.core.prSValue="/SetImpls/m1Impl.bpo|org.eventb.core.poFile#m1Impl"/>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
+<org.eventb.core.prString name=".theory" org.eventb.core.prSValue="SetImpl"/>
+<org.eventb.core.prString name=".rewRule" org.eventb.core.prSValue="SetImpl.newType"/>
+<org.eventb.core.prString name=".ruleDesc" org.eventb.core.prSValue="newType expansion"/>
+<org.eventb.core.prString name=".project" org.eventb.core.prSValue="SetImpls"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
 </org.eventb.core.prAnte>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
 <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
 </org.eventb.core.prRule>
-<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
-<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="⊥"/>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="¬alt_2∈{alt_1,alt_2}"/>
-<org.eventb.core.prPred name="p1" org.eventb.core.predicate="AltType={alt_1,alt_2}"/>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="partition(AltType,{alt_1,alt_2},{alt_2})"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
-</org.eventb.core.prProof>
-<org.eventb.core.prProof name="funUpdate/inv7/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p0" org.eventb.core.prSets="AltType">
-<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p0"/>
+<org.eventb.core.prIdent name="alt1" org.eventb.core.type="AltType"/>
 <org.eventb.core.prIdent name="func" org.eventb.core.type="ℙ(AltType×AltType)"/>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="func∈pfunImpl(AltType,AltType)"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.hyp"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="⊤"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="⊥"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬alt_2∈{alt_1,alt_2}">
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="otherSet∈ℙ(ℤ)">
+<org.eventb.core.prIdent name="otherSet" org.eventb.core.type="ℙ(ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="alt1∈AltType"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="mySet∈ℙ(ℤ)">
+<org.eventb.core.prIdent name="mySet" org.eventb.core.type="ℙ(ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="element∈ℤ">
+<org.eventb.core.prIdent name="element" org.eventb.core.type="ℤ"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="alt_2∈AltType">
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="pfunLookup(func,alt1)∈AltType"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="alt_1∈AltType">
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="pfunLookup(func,alt1)∈newType(AltType)"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="partition(AltType,{alt_1,alt_2},{alt_2})">
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="AltType={alt_1,alt_2}">
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="altTypeSet∈ℙ(AltType)">
+<org.eventb.core.prIdent name="altTypeSet" org.eventb.core.type="ℙ(AltType)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.theory.rbp.manualRewriteReasoner" org.eventb.core.prRSig="org.eventb.theory.rbp.manualRewriteReasoner"/>
+<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="funUpdate/act1/SIM" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prHyps="p0" org.eventb.core.prSets="AltType">
+<org.eventb.core.prProof name="funUpdate/inv7/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="AltType" org.eventb.core.psManual="true">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="pfunImpl expansion on goal" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p2"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p3"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p4"/>
+<org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p5"/>
+<org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p6"/>
+<org.eventb.core.prHypAction name="HIDE5" org.eventb.core.prHyps="p7"/>
+<org.eventb.core.prHypAction name="HIDE6" org.eventb.core.prHyps="p8"/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".poContext" org.eventb.core.prSValue="/SetImpls/m1Impl.bpo|org.eventb.core.poFile#m1Impl"/>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
+<org.eventb.core.prString name=".theory" org.eventb.core.prSValue="FunctionImpl"/>
+<org.eventb.core.prString name=".rewRule" org.eventb.core.prSValue="FunctionImpl.pfunImpl"/>
+<org.eventb.core.prString name=".ruleDesc" org.eventb.core.prSValue="pfunImpl expansion"/>
+<org.eventb.core.prString name=".project" org.eventb.core.prSValue="SetImpls"/>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="alt1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt2" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="func" org.eventb.core.type="ℙ(AltType×AltType)"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="otherSet∈ℙ(ℤ)">
+<org.eventb.core.prIdent name="otherSet" org.eventb.core.type="ℙ(ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="pfunUpdate(func,alt1,alt2)∈AltType ⇸ AltType"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="pfunUpdate(func,alt1,alt2)∈pfunImpl(AltType,AltType)"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="alt1∈AltType"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="alt_1∈AltType">
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="mySet∈ℙ(ℤ)">
+<org.eventb.core.prIdent name="mySet" org.eventb.core.type="ℙ(ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="element∈ℤ">
+<org.eventb.core.prIdent name="element" org.eventb.core.type="ℤ"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="alt_2∈AltType">
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="altTypeSet∈ℙ(AltType)">
+<org.eventb.core.prIdent name="altTypeSet" org.eventb.core.type="ℙ(AltType)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.theory.rbp.manualRewriteReasoner" org.eventb.core.prRSig="org.eventb.theory.rbp.manualRewriteReasoner"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="funUpdate/act1/SIM" org.eventb.core.confidence="0" org.eventb.core.prFresh="x0,x" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.psManual="true">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(AltType,{alt_1,alt_2},{alt_2}))" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p0" org.eventb.core.prInfHyps="p1,p2"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p0"/>
-<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p1,p2"/>
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p1" org.eventb.core.prInfHyps="p2,p3"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p1"/>
+<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p2,p3"/>
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p2" org.eventb.core.prInfHyps="p3"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p2"/>
-<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊥ hyp" org.eventb.core.prHyps="p3"/>
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p3" org.eventb.core.prInfHyps="p4"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p3"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p5"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p6"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p7"/>
+<org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p8"/>
+<org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p9"/>
+<org.eventb.core.prHypAction name="HIDE5" org.eventb.core.prHyps="p10"/>
+<org.eventb.core.prHypAction name="HIDE6" org.eventb.core.prHyps="p11"/>
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="rewrites set equality in goal" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p12">
+<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="remove ⊆ in goal" org.eventb.core.prGoal="p12" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p13">
+<org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∀ goal (frees x,x0)" org.eventb.core.prGoal="p13" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p14">
+<org.eventb.core.prIdent name="x" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="x0" org.eventb.core.type="AltType"/>
+<org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p14" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p16" org.eventb.core.prHyps="p15">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(AltType,{alt_1},{alt_2}))" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p17" org.eventb.core.prInfHyps="p2,p18"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p17"/>
+<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p2,p18"/>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
 </org.eventb.core.prAnte>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
 <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
 </org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p19"/>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="alt1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt2" org.eventb.core.type="AltType"/>
 <org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
 <org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="⊥"/>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="¬alt_2∈{alt_1,alt_2}"/>
-<org.eventb.core.prPred name="p1" org.eventb.core.predicate="AltType={alt_1,alt_2}"/>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="partition(AltType,{alt_1,alt_2},{alt_2})"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prIdent name="func" org.eventb.core.type="ℙ(AltType×AltType)"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="⊥"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬alt_2∈{alt_1,alt_2}"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="otherSet∈ℙ(ℤ)">
+<org.eventb.core.prIdent name="otherSet" org.eventb.core.type="ℙ(ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="∀x⦂AltType,x0⦂AltType·x ↦ x0∈pfunUpdate(func,alt1,alt2)⇒x ↦ x0∈pfunUpdate(func,alt_1,alt_2)"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="alt1∈AltType">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p19" org.eventb.core.predicate="pfunUpdate(func,alt_1,alt_2)⊆pfunUpdate(func,alt1,alt2)"/>
+<org.eventb.core.prPred name="p15" org.eventb.core.predicate="x ↦ x0∈pfunUpdate(func,alt1,alt2)">
+<org.eventb.core.prIdent name="x" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="x0" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="mySet∈ℙ(ℤ)">
+<org.eventb.core.prIdent name="mySet" org.eventb.core.type="ℙ(ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="element∈ℤ">
+<org.eventb.core.prIdent name="element" org.eventb.core.type="ℤ"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="alt_2∈AltType">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p18" org.eventb.core.predicate="¬alt_1=alt_2"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="pfunUpdate(func,alt1,alt2)=pfunUpdate(func,alt_1,alt_2)"/>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="x ↦ x0∈pfunUpdate(func,alt1,alt2)⇒x ↦ x0∈pfunUpdate(func,alt_1,alt_2)">
+<org.eventb.core.prIdent name="x" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="x0" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="alt_1∈AltType">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p16" org.eventb.core.predicate="x ↦ x0∈pfunUpdate(func,alt_1,alt_2)">
+<org.eventb.core.prIdent name="x" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="x0" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="partition(AltType,{alt_1,alt_2},{alt_2})">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="AltType={alt_1,alt_2}">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="pfunUpdate(func,alt1,alt2)⊆pfunUpdate(func,alt_1,alt_2)"/>
+<org.eventb.core.prPred name="p17" org.eventb.core.predicate="partition(AltType,{alt_1},{alt_2})">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="altTypeSet∈ℙ(AltType)">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="altTypeSet" org.eventb.core.type="ℙ(AltType)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.setEqlRewrites"/>
+<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.ri"/>
+<org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="funUpdate/act1/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p0" org.eventb.core.prSets="AltType">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p0"/>
@@ -779,17 +1473,82 @@
 </org.eventb.core.prPred>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="funApplicn/act1/SIM" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prHyps="p0" org.eventb.core.prSets="AltType">
+<org.eventb.core.prProof name="funApplicn/act1/SIM" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="p0" org.eventb.core.prSets="AltType" org.eventb.core.psManual="true">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(AltType,{alt_1,alt_2},{alt_2}))" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p0" org.eventb.core.prInfHyps="p1,p2"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p0"/>
-<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p1,p2"/>
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p1" org.eventb.core.prInfHyps="p2,p3"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p1"/>
+<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p2,p3"/>
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p2" org.eventb.core.prInfHyps="p3"/>
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p3" org.eventb.core.prInfHyps="p4"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p3"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p5"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p6"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p7"/>
+<org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p8"/>
+<org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p9"/>
+<org.eventb.core.prHypAction name="HIDE5" org.eventb.core.prHyps="p10"/>
+<org.eventb.core.prHypAction name="HIDE6" org.eventb.core.prHyps="p11"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(AltType,{alt_1},{alt_2}))" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p0" org.eventb.core.prInfHyps="p2,p12"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p0"/>
+<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p2,p12"/>
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="rewrites set equality in hyp (AltType={alt_1,alt_2})" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p2" org.eventb.core.prInfHyps="p13,p14"/>
 <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p2"/>
-<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊥ hyp" org.eventb.core.prHyps="p3"/>
+<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p13,p14"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p14"/>
+<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="remove ⊆ in AltType⊆{alt_1,alt_2}" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p13" org.eventb.core.prInfHyps="p15"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p13"/>
+<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p15"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p15" org.eventb.core.prInfHyps="p16"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p15"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p16" org.eventb.core.prInfHyps="p17"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p16"/>
+<org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∀ hyp (inst alt_1)" org.eventb.core.prHyps="p17">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p18">
+<org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p18" org.eventb.core.prHyps=""/>
+</org.eventb.core.prAnte>
+<org.eventb.core.prAnte name="(" org.eventb.core.prHyps="p19">
+<org.eventb.core.prHypAction name="DESELECT0" org.eventb.core.prHyps="p17"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p19"/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prExprRef name=".exprs" org.eventb.core.prRef="e0"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
 </org.eventb.core.prAnte>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
@@ -797,41 +1556,111 @@
 </org.eventb.core.prRule>
 <org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
 <org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="⊥"/>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="¬alt_2∈{alt_1,alt_2}"/>
-<org.eventb.core.prPred name="p1" org.eventb.core.predicate="AltType={alt_1,alt_2}"/>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="partition(AltType,{alt_1,alt_2},{alt_2})"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prPred name="p18" org.eventb.core.predicate="⊤"/>
+<org.eventb.core.prPred name="p17" org.eventb.core.predicate="∀x⦂AltType·x∈{alt_1,alt_2}"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="⊥"/>
+<org.eventb.core.prPred name="p19" org.eventb.core.predicate="alt_1∈{alt_1,alt_2}"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬alt_2∈{alt_1,alt_2}"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="otherSet∈ℙ(ℤ)">
+<org.eventb.core.prIdent name="otherSet" org.eventb.core.type="ℙ(ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="alt1∈AltType">
+<org.eventb.core.prIdent name="alt1" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="{alt_1,alt_2}⊆AltType"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="mySet∈ℙ(ℤ)">
+<org.eventb.core.prIdent name="mySet" org.eventb.core.type="ℙ(ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="element∈ℤ">
+<org.eventb.core.prIdent name="element" org.eventb.core.type="ℤ"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="AltType⊆{alt_1,alt_2}"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="alt_2∈AltType"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="¬alt_1=alt_2"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="alt_1∈AltType"/>
+<org.eventb.core.prPred name="p16" org.eventb.core.predicate="∀x⦂AltType·⊤⇒x∈{alt_1,alt_2}"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="partition(AltType,{alt_1,alt_2},{alt_2})"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="AltType={alt_1,alt_2}"/>
+<org.eventb.core.prPred name="p15" org.eventb.core.predicate="∀x⦂AltType·x∈AltType⇒x∈{alt_1,alt_2}"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="partition(AltType,{alt_1},{alt_2})"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="altTypeSet∈ℙ(AltType)">
+<org.eventb.core.prIdent name="altTypeSet" org.eventb.core.type="ℙ(AltType)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prExpr name="e0" org.eventb.core.expression="alt_1"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
+<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.allD"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.setEqlRewrites"/>
+<org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.ri"/>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="INITIALISATION/inv8/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prHyps="p0" org.eventb.core.prSets="AltType">
+<org.eventb.core.prProof name="INITIALISATION/inv8/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="AltType" org.eventb.core.psManual="true">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(AltType,{alt_1,alt_2},{alt_2}))" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p0" org.eventb.core.prInfHyps="p1,p2"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p0"/>
-<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p1,p2"/>
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p1" org.eventb.core.prInfHyps="p2,p3"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p1"/>
+<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p2,p3"/>
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p2" org.eventb.core.prInfHyps="p3"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p2"/>
-<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊥ hyp" org.eventb.core.prHyps="p3"/>
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p3" org.eventb.core.prInfHyps="p4"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p3"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p5"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p6"/>
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="newType expansion on goal" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p7">
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prGoal="p7" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p8">
+<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p8" org.eventb.core.prHyps=""/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".poContext" org.eventb.core.prSValue="/SetImpls/m1Impl.bpo|org.eventb.core.poFile#m1Impl"/>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
+<org.eventb.core.prString name=".theory" org.eventb.core.prSValue="SetImpl"/>
+<org.eventb.core.prString name=".rewRule" org.eventb.core.prSValue="SetImpl.newType"/>
+<org.eventb.core.prString name=".ruleDesc" org.eventb.core.prSValue="newType expansion"/>
+<org.eventb.core.prString name=".project" org.eventb.core.prSValue="SetImpls"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
 </org.eventb.core.prAnte>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
 <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
 </org.eventb.core.prRule>
+<org.eventb.core.prIdent name="alt2'" org.eventb.core.type="AltType"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="⊤"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="alt2'∈AltType"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="⊥"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="alt2'∈newType(AltType)"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬alt_2∈{alt_1,alt_2}">
 <org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
 <org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="⊥"/>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="¬alt_2∈{alt_1,alt_2}"/>
-<org.eventb.core.prPred name="p1" org.eventb.core.predicate="AltType={alt_1,alt_2}"/>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="partition(AltType,{alt_1,alt_2},{alt_2})"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="alt_1∈AltType">
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="alt_2∈AltType">
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="AltType={alt_1,alt_2}">
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="partition(AltType,{alt_1,alt_2},{alt_2})">
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.theory.rbp.manualRewriteReasoner" org.eventb.core.prRSig="org.eventb.theory.rbp.manualRewriteReasoner"/>
+<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="INITIALISATION/act9/FIS" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="AltType">
+<org.eventb.core.prProof name="INITIALISATION/act9/FIS" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="AltType" org.eventb.core.psManual="true">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(AltType,{alt_1,alt_2},{alt_2}))" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
 <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p1" org.eventb.core.prInfHyps="p2,p3"/>
@@ -841,35 +1670,219 @@
 <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p5">
 <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p3" org.eventb.core.prInfHyps="p4"/>
 <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p3"/>
-<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊥ hyp" org.eventb.core.prHyps="p4"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p6"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p7"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p8"/>
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="newInst expansion on goal" org.eventb.core.prGoal="p5" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p9">
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prGoal="p9" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p10">
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p10" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p11">
+<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p11" org.eventb.core.prHyps=""/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".poContext" org.eventb.core.prSValue="/SetImpls/m1Impl.bpo|org.eventb.core.poFile#m1Impl"/>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue="0.0"/>
+<org.eventb.core.prString name=".theory" org.eventb.core.prSValue="SetImpl"/>
+<org.eventb.core.prString name=".rewRule" org.eventb.core.prSValue="SetImpl.newInst"/>
+<org.eventb.core.prString name=".ruleDesc" org.eventb.core.prSValue="newInst expansion"/>
+<org.eventb.core.prString name=".project" org.eventb.core.prSValue="SetImpls"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
 </org.eventb.core.prAnte>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
 <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
 </org.eventb.core.prRule>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="⊤"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="¬⊥"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="⊥"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬alt_2∈{alt_1,alt_2}">
 <org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
 <org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
-<org.eventb.core.prPred name="p4" org.eventb.core.predicate="⊥"/>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬alt_2∈{alt_1,alt_2}"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="alt_1∈AltType">
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
 <org.eventb.core.prPred name="p5" org.eventb.core.predicate="¬newInst(AltType)=(∅ ⦂ ℙ(AltType))"/>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="AltType={alt_1,alt_2}"/>
-<org.eventb.core.prPred name="p1" org.eventb.core.predicate="partition(AltType,{alt_1,alt_2},{alt_2})"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="¬AltType=(∅ ⦂ ℙ(AltType))"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="alt1'∈AltType">
+<org.eventb.core.prIdent name="alt1'" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="alt_2∈AltType">
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="newInst(AltType)≠(∅ ⦂ ℙ(AltType))"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="AltType={alt_1,alt_2}">
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="partition(AltType,{alt_1,alt_2},{alt_2})">
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.theory.rbp.manualRewriteReasoner" org.eventb.core.prRSig="org.eventb.theory.rbp.manualRewriteReasoner"/>
+<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="INITIALISATION/act4/FIS" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="AltType">
-<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(AltType,{alt_1,alt_2},{alt_2}))" org.eventb.core.prHyps="">
+<org.eventb.core.prProof name="INITIALISATION/act4/FIS" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.psManual="true">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(AltType,{alt_1},{alt_2}))" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
 <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p1" org.eventb.core.prInfHyps="p2,p3"/>
 <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p1"/>
 <org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p2,p3"/>
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p5">
-<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p3" org.eventb.core.prInfHyps="p4"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p3"/>
-<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊥ hyp" org.eventb.core.prHyps="p4"/>
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p4">
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p5"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p6"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p7"/>
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="rewrites set equality in goal" org.eventb.core.prGoal="p4" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p8">
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p8" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p9">
+<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="remove ⊆ (universal) in goal" org.eventb.core.prGoal="p9" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p10">
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p10" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p11">
+<org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="remove ⊆ with ∖ in goal" org.eventb.core.prGoal="p11" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p12">
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p12" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p4">
+<org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="remove ¬ in goal" org.eventb.core.prGoal="p4" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p13"/>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue="0"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue="0"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue="0"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="¬(ℤ⊆ℤ∧ℤ∩newInst2(ℤ,0)=(∅ ⦂ ℙ(ℤ)))"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="¬ℤ⊆ℤ ∖ newInst2(ℤ,0)"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="¬ℤ ∖ (∅ ⦂ ℙ(ℤ))⊆ℤ ∖ newInst2(ℤ,0)"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="newInst2(ℤ,0)≠(∅ ⦂ ℙ(ℤ))"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="¬(newInst2(ℤ,0)⊆(∅ ⦂ ℙ(ℤ))∧(∅ ⦂ ℙ(ℤ))⊆newInst2(ℤ,0))"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="∃x⦂ℤ·x∈newInst2(ℤ,0)"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="alt_1∈AltType">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="¬newInst2(ℤ,0)⊆(∅ ⦂ ℙ(ℤ))"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="alt1'∈AltType">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt1'" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="alt_2∈AltType">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="AltType={alt_1,alt_2}">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="¬newInst2(ℤ,0)=(∅ ⦂ ℙ(ℤ))"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬alt_1=alt_2">
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="partition(AltType,{alt_1},{alt_2})">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.setEqlRewrites"/>
+<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.riUniversal"/>
+<org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.rn"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.inclusionSetMinusRightRewrites"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="INITIALISATION/inv9/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(AltType,{alt_1},{alt_2}))" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p0" org.eventb.core.prInfHyps="p1,p2"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p0"/>
+<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p1,p2"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p3"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p4"/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="alt_1∈AltType">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="alt_2∈AltType">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="AltType={alt_1,alt_2}">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="¬alt_1=alt_2">
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="partition(AltType,{alt_1},{alt_2})">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="INITIALISATION/inv10/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="p0" org.eventb.core.prSets="AltType">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(AltType,{alt_1},{alt_2}))" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p0" org.eventb.core.prInfHyps="p1,p2"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p0"/>
+<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p1,p2"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p3"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p4"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with AltType={alt_1,alt_2}" org.eventb.core.prHyps="p1">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p5" org.eventb.core.prInfHyps="p6"/>
+<org.eventb.core.prHypAction name="DESELECT1" org.eventb.core.prHyps="p5"/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
 </org.eventb.core.prAnte>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
@@ -877,14 +1890,572 @@
 </org.eventb.core.prRule>
 <org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
 <org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
-<org.eventb.core.prPred name="p4" org.eventb.core.predicate="⊥"/>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬alt_2∈{alt_1,alt_2}"/>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="newInst2(ℤ,0)≠(∅ ⦂ ℙ(ℤ))"/>
-<org.eventb.core.prPred name="p5" org.eventb.core.predicate="¬newInst2(ℤ,0)=(∅ ⦂ ℙ(ℤ))"/>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="AltType={alt_1,alt_2}"/>
-<org.eventb.core.prPred name="p1" org.eventb.core.predicate="partition(AltType,{alt_1,alt_2},{alt_2})"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="alt2'∈newInst({alt_1,alt_2})">
+<org.eventb.core.prIdent name="alt2'" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="alt_1∈AltType"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="alt2'∈newInst(AltType)">
+<org.eventb.core.prIdent name="alt2'" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="alt_2∈AltType"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="AltType={alt_1,alt_2}"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="¬alt_1=alt_2"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="partition(AltType,{alt_1},{alt_2})"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="funApplicn/inv9/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(AltType,{alt_1},{alt_2}))" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p2" org.eventb.core.prInfHyps="p3,p4"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p2"/>
+<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p3,p4"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p5"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p6"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p7"/>
+<org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p8"/>
+<org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p9"/>
+<org.eventb.core.prHypAction name="HIDE5" org.eventb.core.prHyps="p10"/>
+<org.eventb.core.prHypAction name="HIDE6" org.eventb.core.prHyps="p11"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with alt1=alt_1" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p12"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="alt1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="func" org.eventb.core.type="ℙ(AltType×AltType)"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="pfunLookup(func,alt_1)=alt_1"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="otherSet∈ℙ(ℤ)">
+<org.eventb.core.prIdent name="otherSet" org.eventb.core.type="ℙ(ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="alt1∈AltType">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="alt_1∈AltType">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="pfunLookup(func,alt1)=alt_1"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="mySet∈ℙ(ℤ)">
+<org.eventb.core.prIdent name="mySet" org.eventb.core.type="ℙ(ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="element∈ℤ">
+<org.eventb.core.prIdent name="element" org.eventb.core.type="ℤ"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="alt_2∈AltType">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="alt1=alt_1"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="AltType={alt_1,alt_2}">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="altTypeSet∈ℙ(AltType)">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="altTypeSet" org.eventb.core.type="ℙ(AltType)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="¬alt_1=alt_2">
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="partition(AltType,{alt_1},{alt_2})">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="funUpdate/inv9/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(AltType,{alt_1},{alt_2}))" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p0" org.eventb.core.prInfHyps="p1,p2"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p0"/>
+<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p1,p2"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p3"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p4"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p5"/>
+<org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p6"/>
+<org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p7"/>
+<org.eventb.core.prHypAction name="HIDE5" org.eventb.core.prHyps="p8"/>
+<org.eventb.core.prHypAction name="HIDE6" org.eventb.core.prHyps="p9"/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="otherSet∈ℙ(ℤ)">
+<org.eventb.core.prIdent name="otherSet" org.eventb.core.type="ℙ(ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="alt1∈AltType">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt1" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="alt_1∈AltType">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="mySet∈ℙ(ℤ)">
+<org.eventb.core.prIdent name="mySet" org.eventb.core.type="ℙ(ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="element∈ℤ">
+<org.eventb.core.prIdent name="element" org.eventb.core.type="ℤ"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="alt_2∈AltType">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="AltType={alt_1,alt_2}">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="altTypeSet∈ℙ(AltType)">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="altTypeSet" org.eventb.core.type="ℙ(AltType)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="¬alt_1=alt_2">
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="partition(AltType,{alt_1},{alt_2})">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="inv9/THM" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="p0" org.eventb.core.prSets="AltType">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(AltType,{alt_1},{alt_2}))" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p0" org.eventb.core.prInfHyps="p1,p2"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p0"/>
+<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p1,p2"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p3"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p4"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p5"/>
+<org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p6"/>
+<org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p7"/>
+<org.eventb.core.prHypAction name="HIDE5" org.eventb.core.prHyps="p8"/>
+<org.eventb.core.prHypAction name="HIDE6" org.eventb.core.prHyps="p9"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with AltType={alt_1,alt_2}" org.eventb.core.prHyps="p1">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p10" org.eventb.core.prInfHyps="p11"/>
+<org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p12" org.eventb.core.prInfHyps="p13"/>
+<org.eventb.core.prHypAction name="FORWARD_INF2" org.eventb.core.prHyps="p14" org.eventb.core.prInfHyps="p15"/>
+<org.eventb.core.prHypAction name="FORWARD_INF3" org.eventb.core.prHyps="p16" org.eventb.core.prInfHyps="p17"/>
+<org.eventb.core.prHypAction name="DESELECT4" org.eventb.core.prHyps="p10,p12,p14,p16"/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+<org.eventb.core.prPred name="p17" org.eventb.core.predicate="func∈pfunImpl({alt_1,alt_2},{alt_1,alt_2})">
+<org.eventb.core.prIdent name="func" org.eventb.core.type="ℙ(AltType×AltType)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p15" org.eventb.core.predicate="alt2∈newType({alt_1,alt_2})">
+<org.eventb.core.prIdent name="alt2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="otherSet∈ℙ(ℤ)">
+<org.eventb.core.prIdent name="otherSet" org.eventb.core.type="ℙ(ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="alt1∈AltType">
+<org.eventb.core.prIdent name="alt1" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="mySet∈ℙ(ℤ)">
+<org.eventb.core.prIdent name="mySet" org.eventb.core.type="ℙ(ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="element∈ℤ">
+<org.eventb.core.prIdent name="element" org.eventb.core.type="ℤ"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="altTypeSet∈setImpl(AltType)">
+<org.eventb.core.prIdent name="altTypeSet" org.eventb.core.type="ℙ(AltType)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="alt_2∈AltType"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="alt1∈newType(AltType)">
+<org.eventb.core.prIdent name="alt1" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="alt2∈newType(AltType)">
+<org.eventb.core.prIdent name="alt2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p16" org.eventb.core.predicate="func∈pfunImpl(AltType,AltType)">
+<org.eventb.core.prIdent name="func" org.eventb.core.type="ℙ(AltType×AltType)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="¬alt_1=alt_2"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="alt_1∈AltType"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="alt1∈newType({alt_1,alt_2})">
+<org.eventb.core.prIdent name="alt1" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="AltType={alt_1,alt_2}"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="altTypeSet∈setImpl({alt_1,alt_2})">
+<org.eventb.core.prIdent name="altTypeSet" org.eventb.core.type="ℙ(AltType)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="partition(AltType,{alt_1},{alt_2})"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="altTypeSet∈ℙ(AltType)">
+<org.eventb.core.prIdent name="altTypeSet" org.eventb.core.type="ℙ(AltType)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="selectElement/grd1/GRD" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(AltType,{alt_1},{alt_2}))" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p1" org.eventb.core.prInfHyps="p2,p3"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p1"/>
+<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p2,p3"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p4">
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p5"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p6"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p7"/>
+<org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p8"/>
+<org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p9"/>
+<org.eventb.core.prHypAction name="HIDE5" org.eventb.core.prHyps="p10"/>
+<org.eventb.core.prHypAction name="HIDE6" org.eventb.core.prHyps="p11"/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="mySet" org.eventb.core.type="ℙ(ℤ)"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="otherSet∈ℙ(ℤ)">
+<org.eventb.core.prIdent name="otherSet" org.eventb.core.type="ℙ(ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="alt1∈AltType">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt1" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="alt_1∈AltType">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="mySet∈ℙ(ℤ)"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="mySet≠(∅ ⦂ ℙ(ℤ))"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="element∈ℤ">
+<org.eventb.core.prIdent name="element" org.eventb.core.type="ℤ"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="¬mySet=(∅ ⦂ ℙ(ℤ))"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="alt_2∈AltType">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="AltType={alt_1,alt_2}">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="altTypeSet∈ℙ(AltType)">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="altTypeSet" org.eventb.core.type="ℙ(AltType)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬alt_1=alt_2">
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="partition(AltType,{alt_1},{alt_2})">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="funApplicn/grd1/GRD" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(AltType,{alt_1},{alt_2}))" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p0" org.eventb.core.prInfHyps="p1,p2"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p0"/>
+<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p1,p2"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p3"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p4"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p5"/>
+<org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p6"/>
+<org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p7"/>
+<org.eventb.core.prHypAction name="HIDE5" org.eventb.core.prHyps="p8"/>
+<org.eventb.core.prHypAction name="HIDE6" org.eventb.core.prHyps="p9"/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="otherSet∈ℙ(ℤ)">
+<org.eventb.core.prIdent name="otherSet" org.eventb.core.type="ℙ(ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="alt1∈AltType">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt1" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="alt_1∈AltType">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="mySet∈ℙ(ℤ)">
+<org.eventb.core.prIdent name="mySet" org.eventb.core.type="ℙ(ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="element∈ℤ">
+<org.eventb.core.prIdent name="element" org.eventb.core.type="ℤ"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="alt_2∈AltType">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="AltType={alt_1,alt_2}">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="altTypeSet∈ℙ(AltType)">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="altTypeSet" org.eventb.core.type="ℙ(AltType)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="¬alt_1=alt_2">
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="partition(AltType,{alt_1},{alt_2})">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="selectElement/grd2/GRD" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(AltType,{alt_1},{alt_2}))" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p1" org.eventb.core.prInfHyps="p2,p3"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p1"/>
+<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p2,p3"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p4">
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p5"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p6"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p7"/>
+<org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p8"/>
+<org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p9"/>
+<org.eventb.core.prHypAction name="HIDE5" org.eventb.core.prHyps="p10"/>
+<org.eventb.core.prHypAction name="HIDE6" org.eventb.core.prHyps="p11"/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="p" org.eventb.core.type="ℙ(ℤ)"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="∃x⦂ℤ·p={x}"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="card(p)=1"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="otherSet∈ℙ(ℤ)">
+<org.eventb.core.prIdent name="otherSet" org.eventb.core.type="ℙ(ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="alt1∈AltType">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt1" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="alt_1∈AltType">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="mySet∈ℙ(ℤ)">
+<org.eventb.core.prIdent name="mySet" org.eventb.core.type="ℙ(ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="element∈ℤ">
+<org.eventb.core.prIdent name="element" org.eventb.core.type="ℤ"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="alt_2∈AltType">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="AltType={alt_1,alt_2}">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="altTypeSet∈ℙ(AltType)">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="altTypeSet" org.eventb.core.type="ℙ(AltType)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬alt_1=alt_2">
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="partition(AltType,{alt_1},{alt_2})">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="selectElement/act1/WD" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(AltType,{alt_1},{alt_2}))" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p2" org.eventb.core.prInfHyps="p3,p4"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p2"/>
+<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p3,p4"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="generalized MP" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p5">
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p5" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p8">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p6" org.eventb.core.prInfHyps="p7"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p6"/>
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p9"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p10"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p11"/>
+<org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p12"/>
+<org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p13"/>
+<org.eventb.core.prHypAction name="HIDE5" org.eventb.core.prHyps="p14"/>
+<org.eventb.core.prHypAction name="HIDE6" org.eventb.core.prHyps="p15"/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="mySet" org.eventb.core.type="ℙ(ℤ)"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="card(p)=1">
+<org.eventb.core.prIdent name="p" org.eventb.core.type="ℙ(ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="otherSet∈ℙ(ℤ)">
+<org.eventb.core.prIdent name="otherSet" org.eventb.core.type="ℙ(ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p15" org.eventb.core.predicate="alt1∈AltType">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt1" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="mySet∈ℙ(ℤ)"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="element∈ℤ">
+<org.eventb.core.prIdent name="element" org.eventb.core.type="ℤ"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="alt_2∈AltType">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="¬alt_1=alt_2">
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="∃x⦂ℤ·mySet={x}"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="∃x⦂ℤ·p={x}">
+<org.eventb.core.prIdent name="p" org.eventb.core.type="ℙ(ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="finite(mySet)"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="alt_1∈AltType">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="finite(mySet)∧card(mySet)=1"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="AltType={alt_1,alt_2}">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="altTypeSet∈ℙ(AltType)">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="altTypeSet" org.eventb.core.type="ℙ(AltType)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="partition(AltType,{alt_1},{alt_2})">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="⊤∧card(mySet)=1"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="funUpdate/grd1/GRD" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(AltType,{alt_1},{alt_2}))" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p0" org.eventb.core.prInfHyps="p1,p2"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p0"/>
+<org.eventb.core.prHypAction name="SELECT2" org.eventb.core.prHyps="p1,p2"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p3"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p4"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p5"/>
+<org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p6"/>
+<org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p7"/>
+<org.eventb.core.prHypAction name="HIDE5" org.eventb.core.prHyps="p8"/>
+<org.eventb.core.prHypAction name="HIDE6" org.eventb.core.prHyps="p9"/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="otherSet∈ℙ(ℤ)">
+<org.eventb.core.prIdent name="otherSet" org.eventb.core.type="ℙ(ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="alt1∈AltType">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt1" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="alt_1∈AltType">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="mySet∈ℙ(ℤ)">
+<org.eventb.core.prIdent name="mySet" org.eventb.core.type="ℙ(ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="element∈ℤ">
+<org.eventb.core.prIdent name="element" org.eventb.core.type="ℤ"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="alt_2∈AltType">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="AltType={alt_1,alt_2}">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="altTypeSet∈ℙ(AltType)">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="altTypeSet" org.eventb.core.type="ℙ(AltType)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="¬alt_1=alt_2">
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="partition(AltType,{alt_1},{alt_2})">
+<org.eventb.core.prIdent name="AltType" org.eventb.core.type="ℙ(AltType)"/>
+<org.eventb.core.prIdent name="alt_1" org.eventb.core.type="AltType"/>
+<org.eventb.core.prIdent name="alt_2" org.eventb.core.type="AltType"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 </org.eventb.core.prProof>
 </org.eventb.core.prFile>
