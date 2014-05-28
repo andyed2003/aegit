@@ -50,6 +50,7 @@
 <org.eventb.core.event name="m1_invC" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="funApplicn">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="funApplicn"/>
 <org.eventb.core.action name="'" org.eventb.core.assignment="alt1 ≔ pfunLookup(func, alt1)" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="(" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="grd1" org.eventb.core.predicate="alt1 ∈ dom(func)"/>
 </org.eventb.core.event>
 <org.eventb.core.variable name="m1_invE" org.eventb.codegen.tasking.flattened="true" org.eventb.core.identifier="alt2"/>
 <org.eventb.core.variable name="m1_invA" org.eventb.codegen.tasking.flattened="true" org.eventb.core.identifier="func"/>
@@ -62,4 +63,6 @@
 <org.eventb.core.invariant name="m1_inv@" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="inv6" org.eventb.core.predicate="alt1 ∈ newType(AltType)"/>
 <org.eventb.core.invariant name="m1_invF" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="inv8" org.eventb.core.predicate="alt2 ∈ newType(AltType)"/>
 <org.eventb.core.invariant name="m1_invB" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="inv7" org.eventb.core.predicate="func ∈ pfunImpl(AltType, AltType)"/>
+<org.eventb.core.invariant name="m1_invG" org.eventb.codegen.ui.typingAttribute="NonTyping" org.eventb.core.label="inv9" org.eventb.core.predicate="alt1 = alt_1"/>
+<org.eventb.core.invariant name="m1_invH" org.eventb.codegen.ui.typingAttribute="NonTyping" org.eventb.core.label="inv10" org.eventb.core.predicate="alt2 = alt_2"/>
 </org.eventb.core.machineFile>

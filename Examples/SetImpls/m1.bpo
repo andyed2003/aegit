@@ -247,7 +247,7 @@
 </org.eventb.core.poPredicateSet>
 <org.eventb.core.poSequent name="funApplicn/act1/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of action" org.eventb.core.poStamp="0">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SetImpls/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTALLHYPaltTypeSe\|"/>
-<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="func∈AltType ⇸ AltType" org.eventb.core.source="/SetImpls/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#&gt;|org.eventb.core.action#'"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="func∈AltType ⇸ AltType∧alt_1∈dom(func)" org.eventb.core.source="/SetImpls/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#&gt;|org.eventb.core.action#'"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SetImpls/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#&gt;|org.eventb.core.action#'"/>
 <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/SetImpls/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SetImpls/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTALLHYPaltTypeSe\|"/>
 </org.eventb.core.poSequent>
