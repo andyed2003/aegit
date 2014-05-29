@@ -25,7 +25,7 @@
 <org.eventb.core.invariant name="typing_c_warn" org.eventb.codegen.tasking.flattened="true" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="typing_c_warn" org.eventb.core.predicate="c_warn ∈ BOOL" org.eventb.core.theorem="true"/>
 <org.eventb.core.invariant name="typing_c_pumpOnReq" org.eventb.codegen.tasking.flattened="true" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="typing_c_pumpOnReq" org.eventb.core.predicate="c_pumpOnReq ∈ BOOL" org.eventb.core.theorem="true"/>
 <org.eventb.core.event name="D" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
-<org.eventb.core.action name="'" org.eventb.core.assignment="c_level ≔ 100" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="'" org.eventb.core.assignment="c_level ≔ 35" org.eventb.core.label="act1"/>
 <org.eventb.core.action name="(" org.eventb.core.assignment="c_pumpOnReq ≔ FALSE" org.eventb.core.label="act5"/>
 <org.eventb.core.action name=")" org.eventb.core.assignment="c_pumpOnCmd ≔ FALSE" org.eventb.core.label="act7"/>
 <org.eventb.core.action name="*" org.eventb.core.assignment="c_warn ≔ FALSE" org.eventb.core.label="act11"/>

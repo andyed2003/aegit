@@ -16,8 +16,8 @@
 <org.eventb.core.variable name="b" org.eventb.core.identifier="c_warn_internal"/>
 <org.eventb.core.variable name="d" org.eventb.core.identifier="commit"/>
 <org.eventb.core.event name="e" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
-<org.eventb.core.action name="'" org.eventb.core.assignment="c_level ≔ 100" org.eventb.core.label="act1"/>
-<org.eventb.core.action name="(" org.eventb.core.assignment="e_level ≔ 90" org.eventb.core.label="act6"/>
+<org.eventb.core.action name="'" org.eventb.core.assignment="c_level ≔ 35" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="e_level ≔ 30" org.eventb.core.label="act6"/>
 <org.eventb.core.action name=")" org.eventb.core.assignment="c_pumpOnReq ≔ FALSE" org.eventb.core.label="act5"/>
 <org.eventb.core.action name="*" org.eventb.core.assignment="e_pumpOnReq ≔ FALSE" org.eventb.core.label="act4"/>
 <org.eventb.core.action name="+" org.eventb.core.assignment="c_pumpOnCmd ≔ FALSE" org.eventb.core.label="act7"/>

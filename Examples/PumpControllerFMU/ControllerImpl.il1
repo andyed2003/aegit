@@ -69,7 +69,7 @@
         </rightBranch>
       </body>
       <taskType xsi:type="il1:PeriodicTaskType"/>
-      <decls xsi:type="il1:VariableDecl" identifier="c_level" type="&#x2124;" initialValue="100" ProjectName="PumpControllerFMU" ComponentName="ControllerImpl"/>
+      <decls xsi:type="il1:VariableDecl" identifier="c_level" type="&#x2124;" initialValue="35" ProjectName="PumpControllerFMU" ComponentName="ControllerImpl"/>
       <decls xsi:type="il1:VariableDecl" identifier="c_pumpOnReq" type="BOOL" initialValue="FALSE" ProjectName="PumpControllerFMU" ComponentName="ControllerImpl"/>
       <decls xsi:type="il1:VariableDecl" identifier="c_pumpOnCmd" type="BOOL" initialValue="FALSE" ProjectName="PumpControllerFMU" ComponentName="ControllerImpl"/>
       <decls xsi:type="il1:VariableDecl" identifier="c_warn" type="BOOL" initialValue="FALSE" ProjectName="PumpControllerFMU" ComponentName="ControllerImpl"/>
@@ -81,9 +81,27 @@
     </autoTasks>
   </entryPoint>
   <environMachines name="EnvironmentImpl" projectName="PumpControllerFMU" machineName="EnvironmentImpl">
-    <body xsi:type="il1:Action" ParentEventName="read_ePorts" action="e_level &#x2254; e_level"/>
+    <body xsi:type="il1:Seq">
+      <leftBranch xsi:type="il1:If">
+        <body xsi:type="il1:Seq">
+          <leftBranch xsi:type="il1:Seq">
+            <leftBranch xsi:type="il1:Action" ParentEventName="set_ePortValsMin" action="e_level  &#x2254; e_level &#x2212; 1"/>
+            <rightBranch xsi:type="il1:Action" ParentEventName="set_ePortValsMin" action="e_pumpOnReq  &#x2254; TRUE"/>
+          </leftBranch>
+        </body>
+        <condition>e_level &lt; 20</condition>
+        <else xsi:type="il1:Seq">
+          <leftBranch xsi:type="il1:Seq">
+            <leftBranch xsi:type="il1:Action" ParentEventName="set_ePortValsNormal" action="e_level  &#x2254; e_level &#x2212; 7"/>
+            <rightBranch xsi:type="il1:Action" ParentEventName="set_ePortValsNormal" action="e_pumpOnReq  &#x2254; FALSE"/>
+          </leftBranch>
+        </else>
+        <relatedEvent href="platform:/resource/PumpControllerFMU/EnvironmentImpl.bum#org.eventb.emf.core.machine.Event.set_ePortValsMin"/>
+      </leftBranch>
+      <rightBranch xsi:type="il1:Action" ParentEventName="read_ePorts" action="e_level &#x2254; e_level"/>
+    </body>
     <taskType xsi:type="il1:PeriodicTaskType"/>
-    <decls xsi:type="il1:VariableDecl" identifier="e_level" type="&#x2124;" initialValue="90" ProjectName="PumpControllerFMU" ComponentName="EnvironmentImpl"/>
+    <decls xsi:type="il1:VariableDecl" identifier="e_level" type="&#x2124;" initialValue="30" ProjectName="PumpControllerFMU" ComponentName="EnvironmentImpl"/>
     <decls xsi:type="il1:VariableDecl" identifier="e_pumpOnReq" type="BOOL" initialValue="FALSE" ProjectName="PumpControllerFMU" ComponentName="EnvironmentImpl"/>
     <decls xsi:type="il1:VariableDecl" identifier="e_pumpOnCmd" type="BOOL" initialValue="FALSE" ProjectName="PumpControllerFMU" ComponentName="EnvironmentImpl"/>
     <decls xsi:type="il1:VariableDecl" identifier="e_warn" type="BOOL" initialValue="FALSE" ProjectName="PumpControllerFMU" ComponentName="EnvironmentImpl"/>

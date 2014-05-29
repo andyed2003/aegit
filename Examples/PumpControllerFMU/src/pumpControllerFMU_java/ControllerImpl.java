@@ -7,7 +7,7 @@ import static pumpControllerFMU_java.MainEntry.*;
 public class ControllerImpl implements Runnable {
 
 	// Instance variables and constants
-	protected int c_level = 100;
+	protected int c_level = 35;
 	protected boolean c_pumpOnReq = false;
 	protected boolean c_pumpOnCmd = false;
 	protected boolean c_warn = false;

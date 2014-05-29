@@ -4,10 +4,10 @@ import static pumpControllerFMU_java.MainEntry.*;
 
 // EnvironTask: EnvironmentImpl
 
-public class EnvironmentImpl implements Runnable {
+public class EnvironmentImpl implements Runnable, IEnvironmentImpl {
 
 	// Instance variables and constants
-	protected int e_level = 90;
+	protected int e_level = 30;
 	protected boolean e_pumpOnReq = false;
 	protected boolean e_pumpOnCmd = false;
 	protected boolean e_warn = false;
@@ -25,7 +25,14 @@ public class EnvironmentImpl implements Runnable {
 			long THREAD_START_TIME = System.currentTimeMillis();
 			synchronized (lock) {
 				// Translated code
-				e_level = e_level-7;
+				if ((e_level < 20)) {
+					e_level = ((e_level) - 1);
+					e_pumpOnReq = true;
+				} else {
+					e_level = ((e_level) - 7);
+					e_pumpOnReq = false;
+				}
+				e_level = e_level;
 			}
 			// [Internal] Code to monitor time between periodic tasks
 			long THREAD_END_TIME = System.currentTimeMillis();
