@@ -1,7 +1,7 @@
 package fanCtrl_java;
 
-import static fanCtrl_java.MainEntry.Controller_STATES.*;
-import fanCtrl_java.MainEntry.Controller_STATES;
+import static fanCtrl_java.MainEntry.Controller_STATESEnum.*;
+import fanCtrl_java.MainEntry.Controller_STATESEnum;
 import static fanCtrl_java.MainEntry.*;
 
 // Task: ControllerNewImpl
@@ -9,7 +9,7 @@ import static fanCtrl_java.MainEntry.*;
 public class ControllerNewImpl implements Runnable {
 
 	// Instance variables and constants
-	protected Controller_STATES Controller = Step;
+	protected Controller_STATESEnum Controller = Step;
 	protected int C_tempPSU = 0;
 	protected int C_tempAmbient = 0;
 	protected int C_fanSpeed = 3000;

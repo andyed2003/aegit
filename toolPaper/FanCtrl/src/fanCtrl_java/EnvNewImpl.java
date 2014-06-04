@@ -1,12 +1,12 @@
 package fanCtrl_java;
 
-import static fanCtrl_java.MainEntry.Controller_STATES.*;
-import fanCtrl_java.MainEntry.Controller_STATES;
+import static fanCtrl_java.MainEntry.Controller_STATESEnum.*;
+import fanCtrl_java.MainEntry.Controller_STATESEnum;
 import static fanCtrl_java.MainEntry.*;
 
 // EnvironTask: EnvNewImpl
 
-public class EnvNewImpl implements Runnable {
+public class EnvNewImpl implements Runnable, IEnvNewImpl {
 
 	// Instance variables and constants
 	protected int E_LM75_tempPSU = 0;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.poFile org.eventb.core.poStamp="0">
+<org.eventb.core.poFile org.eventb.core.poStamp="1">
 <org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="FAILURES_TOLARABLE" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poIdentifier name="FAN_SPEED_FAULT" org.eventb.core.type="ℤ"/>
@@ -42,7 +42,7 @@
 <org.eventb.core.poPredicate name="FAILURES_TOLARABL]" org.eventb.core.predicate="BrokenSpeedCheck∈Controller_STATES" org.eventb.core.source="/FanCtrl/FanCtrlMachine_implicitContext.buc|org.eventb.core.contextFile#FanCtrlMachine_implicitContext|org.eventb.core.axiom#_WQb2QMHrEeK84uchtpZ3cg"/>
 <org.eventb.core.poPredicate name="FAILURES_TOLARABL^" org.eventb.core.predicate="partition(Controller_STATES,{Step},{Control},{Normal},{SpeedCheck},{FailureCount},{Broken},{BrokenSpeedCheck})" org.eventb.core.source="/FanCtrl/FanCtrlMachine_implicitContext.buc|org.eventb.core.contextFile#FanCtrlMachine_implicitContext|org.eventb.core.axiom#_WQdEYMHrEeK84uchtpZ3cg"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC2_CMP.bpo|org.eventb.core.poFile#FanCtrlMachineGC2_CMP|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC2_CMP.bpo|org.eventb.core.poFile#FanCtrlMachineGC2_CMP|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="1">
 <org.eventb.core.poIdentifier name="C_fanOn" org.eventb.core.type="BOOL"/>
 <org.eventb.core.poIdentifier name="C_fanSpeed" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poIdentifier name="C_tempAmbient" org.eventb.core.type="ℤ"/>
@@ -89,16 +89,14 @@
 <org.eventb.core.poPredicate name="E_MAX6650_fanSpef." org.eventb.core.predicate="failureCount∈ℤ" org.eventb.core.source="/FanCtrl/ControllerNew.bum|org.eventb.core.machineFile#ControllerNew|org.eventb.core.invariant#0"/>
 <org.eventb.core.poPredicate name="E_MAX6650_fanSpef/" org.eventb.core.predicate="C_tempAmbient∈ℤ" org.eventb.core.source="/FanCtrl/ControllerNew.bum|org.eventb.core.machineFile#ControllerNew|org.eventb.core.invariant#1"/>
 <org.eventb.core.poPredicate name="E_MAX6650_fanSpef0" org.eventb.core.predicate="C_fanOn∈BOOL" org.eventb.core.source="/FanCtrl/ControllerNew.bum|org.eventb.core.machineFile#ControllerNew|org.eventb.core.invariant#2"/>
-<org.eventb.core.poPredicate name="E_MAX6650_fanSpef1" org.eventb.core.predicate="Controller=Normal⇒(C_tempPSU≥HWM_PSU∨C_tempAmbient≥HWM_AMBIENT⇒C_fanOn=TRUE)" org.eventb.core.source="/FanCtrl/ControllerNew.bum|org.eventb.core.machineFile#ControllerNew|org.eventb.core.invariant#3"/>
-<org.eventb.core.poPredicate name="E_MAX6650_fanSpef2" org.eventb.core.predicate="Controller=Normal⇒(C_tempPSU≤LWM_PSU∧C_tempAmbient≤LWM_AMBIENT⇒C_fanOn=FALSE)" org.eventb.core.source="/FanCtrl/ControllerNew.bum|org.eventb.core.machineFile#ControllerNew|org.eventb.core.invariant#4"/>
-<org.eventb.core.poPredicate name="E_MAX6650_fanSpef3" org.eventb.core.predicate="Controller∈Controller_STATES" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.invariant#typing_Controller"/>
-<org.eventb.core.poPredicate name="E_MAX6650_fanSpef4" org.eventb.core.predicate="C_fanSpeed∈ℤ" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.invariant#typing_C_fanSpeed"/>
-<org.eventb.core.poPredicate name="E_MAX6650_fanSpef5" org.eventb.core.predicate="C_tempPSU∈ℤ" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.invariant#typing_C_tempPSU"/>
-<org.eventb.core.poPredicate name="E_MAX6650_fanSpef6" org.eventb.core.predicate="failureCount∈ℤ" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.invariant#typing_failureCount"/>
-<org.eventb.core.poPredicate name="E_MAX6650_fanSpef7" org.eventb.core.predicate="C_tempAmbient∈ℤ" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.invariant#typing_C_tempAmbient"/>
-<org.eventb.core.poPredicate name="E_MAX6650_fanSpef8" org.eventb.core.predicate="C_fanOn∈BOOL" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.invariant#typing_C_fanOn"/>
+<org.eventb.core.poPredicate name="E_MAX6650_fanSpef1" org.eventb.core.predicate="Controller∈Controller_STATES" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.invariant#typing_Controller"/>
+<org.eventb.core.poPredicate name="E_MAX6650_fanSpef2" org.eventb.core.predicate="C_fanSpeed∈ℤ" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.invariant#typing_C_fanSpeed"/>
+<org.eventb.core.poPredicate name="E_MAX6650_fanSpef3" org.eventb.core.predicate="C_tempPSU∈ℤ" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.invariant#typing_C_tempPSU"/>
+<org.eventb.core.poPredicate name="E_MAX6650_fanSpef4" org.eventb.core.predicate="failureCount∈ℤ" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.invariant#typing_failureCount"/>
+<org.eventb.core.poPredicate name="E_MAX6650_fanSpef5" org.eventb.core.predicate="C_tempAmbient∈ℤ" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.invariant#typing_C_tempAmbient"/>
+<org.eventb.core.poPredicate name="E_MAX6650_fanSpef6" org.eventb.core.predicate="C_fanOn∈BOOL" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.invariant#typing_C_fanOn"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="CMPEVTIDENTControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey+" org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC2_CMP.bpo|org.eventb.core.poFile#FanCtrlMachineGC2_CMP|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="CMPEVTIDENTControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey)" org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC2_CMP.bpo|org.eventb.core.poFile#FanCtrlMachineGC2_CMP|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="Controller'" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.poIdentifier name="E_MAX6650_fanSpeed'" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poIdentifier name="E_MAX6650_fanOn'" org.eventb.core.type="BOOL"/>
@@ -110,97 +108,97 @@
 <org.eventb.core.poIdentifier name="C_tempAmbient'" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poIdentifier name="C_fanOn'" org.eventb.core.type="BOOL"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="CMPEVTALLHYPControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey+" org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC2_CMP.bpo|org.eventb.core.poFile#FanCtrlMachineGC2_CMP|org.eventb.core.poPredicateSet#CMPEVTIDENTControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey+" org.eventb.core.poStamp="0"/>
-<org.eventb.core.poPredicateSet name="CMPEVTIDENTControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey," org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC2_CMP.bpo|org.eventb.core.poFile#FanCtrlMachineGC2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="CMPEVTALLHYPControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey)" org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC2_CMP.bpo|org.eventb.core.poFile#FanCtrlMachineGC2_CMP|org.eventb.core.poPredicateSet#CMPEVTIDENTControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey)" org.eventb.core.poStamp="0"/>
+<org.eventb.core.poPredicateSet name="CMPEVTIDENTControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey*" org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC2_CMP.bpo|org.eventb.core.poFile#FanCtrlMachineGC2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="Controller'" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="CMPEVTALLHYPControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey," org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC2_CMP.bpo|org.eventb.core.poFile#FanCtrlMachineGC2_CMP|org.eventb.core.poPredicateSet#CMPEVTIDENTControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey," org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="CMPEVTALLHYPControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey*" org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC2_CMP.bpo|org.eventb.core.poFile#FanCtrlMachineGC2_CMP|org.eventb.core.poPredicateSet#CMPEVTIDENTControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey*" org.eventb.core.poStamp="0">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Controller=Step" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.event#_sArbQMOzEeKrdOk53hhEZi|org.eventb.core.guard#'"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="CMPEVTIDENTControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey-" org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC2_CMP.bpo|org.eventb.core.poFile#FanCtrlMachineGC2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="CMPEVTIDENTControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey+" org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC2_CMP.bpo|org.eventb.core.poFile#FanCtrlMachineGC2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="Controller'" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="CMPEVTALLHYPControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey-" org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC2_CMP.bpo|org.eventb.core.poFile#FanCtrlMachineGC2_CMP|org.eventb.core.poPredicateSet#CMPEVTIDENTControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey-" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="CMPEVTALLHYPControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey+" org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC2_CMP.bpo|org.eventb.core.poFile#FanCtrlMachineGC2_CMP|org.eventb.core.poPredicateSet#CMPEVTIDENTControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey+" org.eventb.core.poStamp="0">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="¬(C_tempPSU≥HWM_PSU∨C_tempAmbient≥HWM_AMBIENT)" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.event#_sArbQMOzEeKrdOk53hhEZj|org.eventb.core.guard#'"/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="Controller=Control" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.event#_sArbQMOzEeKrdOk53hhEZj|org.eventb.core.guard#("/>
 <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="¬(C_tempPSU≤LWM_PSU∧C_tempAmbient≤LWM_AMBIENT)" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.event#_sArbQMOzEeKrdOk53hhEZj|org.eventb.core.guard#)"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="CMPEVTIDENTControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey." org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC2_CMP.bpo|org.eventb.core.poFile#FanCtrlMachineGC2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="CMPEVTIDENTControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey," org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC2_CMP.bpo|org.eventb.core.poFile#FanCtrlMachineGC2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="Controller'" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.poIdentifier name="C_fanOn'" org.eventb.core.type="BOOL"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="CMPEVTALLHYPControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey." org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC2_CMP.bpo|org.eventb.core.poFile#FanCtrlMachineGC2_CMP|org.eventb.core.poPredicateSet#CMPEVTIDENTControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey." org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="CMPEVTALLHYPControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey," org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC2_CMP.bpo|org.eventb.core.poFile#FanCtrlMachineGC2_CMP|org.eventb.core.poPredicateSet#CMPEVTIDENTControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey," org.eventb.core.poStamp="0">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="C_tempPSU≥HWM_PSU∨C_tempAmbient≥HWM_AMBIENT" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.event#_sArbQMOzEeKrdOk53hhEZk|org.eventb.core.guard#'"/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="Controller=Control" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.event#_sArbQMOzEeKrdOk53hhEZk|org.eventb.core.guard#("/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="CMPEVTIDENTControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey/" org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC2_CMP.bpo|org.eventb.core.poFile#FanCtrlMachineGC2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="CMPEVTIDENTControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey-" org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC2_CMP.bpo|org.eventb.core.poFile#FanCtrlMachineGC2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="Controller'" org.eventb.core.type="Controller_STATES"/>
 <org.eventb.core.poIdentifier name="C_fanOn'" org.eventb.core.type="BOOL"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="CMPEVTALLHYPControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey/" org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC2_CMP.bpo|org.eventb.core.poFile#FanCtrlMachineGC2_CMP|org.eventb.core.poPredicateSet#CMPEVTIDENTControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey\/" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="CMPEVTALLHYPControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey-" org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC2_CMP.bpo|org.eventb.core.poFile#FanCtrlMachineGC2_CMP|org.eventb.core.poPredicateSet#CMPEVTIDENTControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey-" org.eventb.core.poStamp="0">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Controller=Control" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.event#_sArbQMOzEeKrdOk53hhEZl|org.eventb.core.guard#'"/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="C_tempPSU≤LWM_PSU∧C_tempAmbient≤LWM_AMBIENT" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.event#_sArbQMOzEeKrdOk53hhEZl|org.eventb.core.guard#("/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="CMPEVTIDENTControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey0" org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC2_CMP.bpo|org.eventb.core.poFile#FanCtrlMachineGC2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="CMPEVTIDENTControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey." org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC2_CMP.bpo|org.eventb.core.poFile#FanCtrlMachineGC2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="Controller'" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="CMPEVTALLHYPControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey0" org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC2_CMP.bpo|org.eventb.core.poFile#FanCtrlMachineGC2_CMP|org.eventb.core.poPredicateSet#CMPEVTIDENTControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey0" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="CMPEVTALLHYPControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey." org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC2_CMP.bpo|org.eventb.core.poFile#FanCtrlMachineGC2_CMP|org.eventb.core.poPredicateSet#CMPEVTIDENTControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey." org.eventb.core.poStamp="0">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Controller=Normal" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.event#_sArbQMOzEeKrdOk53hhEZm|org.eventb.core.guard#'"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="CMPEVTIDENTControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey/" org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC2_CMP.bpo|org.eventb.core.poFile#FanCtrlMachineGC2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="Controller'" org.eventb.core.type="Controller_STATES"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="CMPEVTALLHYPControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey/" org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC2_CMP.bpo|org.eventb.core.poFile#FanCtrlMachineGC2_CMP|org.eventb.core.poPredicateSet#CMPEVTIDENTControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey\/" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Controller=SpeedCheck" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.event#_sArbQMOzEeKrdOk53hhEZn|org.eventb.core.guard#'"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="C_fanOn=FALSE∨C_fanSpeed&lt;FAN_SPEED_FAULT" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.event#_sArbQMOzEeKrdOk53hhEZn|org.eventb.core.guard#("/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="C_fanOn=TRUE∨C_fanSpeed&gt;FAN_SPEED_OFF" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.event#_sArbQMOzEeKrdOk53hhEZn|org.eventb.core.guard#)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="CMPEVTIDENTControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey0" org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC2_CMP.bpo|org.eventb.core.poFile#FanCtrlMachineGC2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="Controller'" org.eventb.core.type="Controller_STATES"/>
+<org.eventb.core.poIdentifier name="failureCount'" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="CMPEVTALLHYPControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey0" org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC2_CMP.bpo|org.eventb.core.poFile#FanCtrlMachineGC2_CMP|org.eventb.core.poPredicateSet#CMPEVTIDENTControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey0" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="C_fanOn=FALSE∨C_fanSpeed≥FAN_SPEED_FAULT" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.event#_sArbQMOzEeKrdOk53hhEZo|org.eventb.core.guard#'"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="Controller=SpeedCheck" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.event#_sArbQMOzEeKrdOk53hhEZo|org.eventb.core.guard#("/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="C_fanOn=TRUE∨C_fanSpeed≤FAN_SPEED_OFF" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.event#_sArbQMOzEeKrdOk53hhEZo|org.eventb.core.guard#)"/>
 </org.eventb.core.poPredicateSet>
 <org.eventb.core.poPredicateSet name="CMPEVTIDENTControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey1" org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC2_CMP.bpo|org.eventb.core.poFile#FanCtrlMachineGC2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="Controller'" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.poPredicateSet>
 <org.eventb.core.poPredicateSet name="CMPEVTALLHYPControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey1" org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC2_CMP.bpo|org.eventb.core.poFile#FanCtrlMachineGC2_CMP|org.eventb.core.poPredicateSet#CMPEVTIDENTControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey1" org.eventb.core.poStamp="0">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Controller=SpeedCheck" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.event#_sArbQMOzEeKrdOk53hhEZn|org.eventb.core.guard#'"/>
-<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="C_fanOn=FALSE∨C_fanSpeed&lt;FAN_SPEED_FAULT" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.event#_sArbQMOzEeKrdOk53hhEZn|org.eventb.core.guard#("/>
-<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="C_fanOn=TRUE∨C_fanSpeed&gt;FAN_SPEED_OFF" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.event#_sArbQMOzEeKrdOk53hhEZn|org.eventb.core.guard#)"/>
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="failureCount≤FAILURES_TOLARABLE" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.event#_sArbQMOzEeKrdOk53hhEZp|org.eventb.core.guard#'"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="Controller=FailureCount" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.event#_sArbQMOzEeKrdOk53hhEZp|org.eventb.core.guard#("/>
 </org.eventb.core.poPredicateSet>
 <org.eventb.core.poPredicateSet name="CMPEVTIDENTControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey2" org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC2_CMP.bpo|org.eventb.core.poFile#FanCtrlMachineGC2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="Controller'" org.eventb.core.type="Controller_STATES"/>
-<org.eventb.core.poIdentifier name="failureCount'" org.eventb.core.type="ℤ"/>
 </org.eventb.core.poPredicateSet>
 <org.eventb.core.poPredicateSet name="CMPEVTALLHYPControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey2" org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC2_CMP.bpo|org.eventb.core.poFile#FanCtrlMachineGC2_CMP|org.eventb.core.poPredicateSet#CMPEVTIDENTControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey2" org.eventb.core.poStamp="0">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="C_fanOn=FALSE∨C_fanSpeed≥FAN_SPEED_FAULT" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.event#_sArbQMOzEeKrdOk53hhEZo|org.eventb.core.guard#'"/>
-<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="Controller=SpeedCheck" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.event#_sArbQMOzEeKrdOk53hhEZo|org.eventb.core.guard#("/>
-<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="C_fanOn=TRUE∨C_fanSpeed≤FAN_SPEED_OFF" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.event#_sArbQMOzEeKrdOk53hhEZo|org.eventb.core.guard#)"/>
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="failureCount&gt;FAILURES_TOLARABLE" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.event#_sArbQMOzEeKrdOk53hhEZq|org.eventb.core.guard#'"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="Controller=FailureCount" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.event#_sArbQMOzEeKrdOk53hhEZq|org.eventb.core.guard#("/>
 </org.eventb.core.poPredicateSet>
 <org.eventb.core.poPredicateSet name="CMPEVTIDENTControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey3" org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC2_CMP.bpo|org.eventb.core.poFile#FanCtrlMachineGC2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="Controller'" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.poPredicateSet>
 <org.eventb.core.poPredicateSet name="CMPEVTALLHYPControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey3" org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC2_CMP.bpo|org.eventb.core.poFile#FanCtrlMachineGC2_CMP|org.eventb.core.poPredicateSet#CMPEVTIDENTControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey3" org.eventb.core.poStamp="0">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="failureCount≤FAILURES_TOLARABLE" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.event#_sArbQMOzEeKrdOk53hhEZp|org.eventb.core.guard#'"/>
-<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="Controller=FailureCount" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.event#_sArbQMOzEeKrdOk53hhEZp|org.eventb.core.guard#("/>
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Controller=Broken" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.event#_sArbQMOzEeKrdOk53hhEZr|org.eventb.core.guard#'"/>
 </org.eventb.core.poPredicateSet>
 <org.eventb.core.poPredicateSet name="CMPEVTIDENTControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey4" org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC2_CMP.bpo|org.eventb.core.poFile#FanCtrlMachineGC2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="Controller'" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.poPredicateSet>
 <org.eventb.core.poPredicateSet name="CMPEVTALLHYPControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey4" org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC2_CMP.bpo|org.eventb.core.poFile#FanCtrlMachineGC2_CMP|org.eventb.core.poPredicateSet#CMPEVTIDENTControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey4" org.eventb.core.poStamp="0">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="failureCount&gt;FAILURES_TOLARABLE" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.event#_sArbQMOzEeKrdOk53hhEZq|org.eventb.core.guard#'"/>
-<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="Controller=FailureCount" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.event#_sArbQMOzEeKrdOk53hhEZq|org.eventb.core.guard#("/>
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Controller=BrokenSpeedCheck" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.event#_sArbQMOzEeKrdOk53hhEZs|org.eventb.core.guard#'"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="C_fanOn=TRUE∨C_fanSpeed&gt;FAN_SPEED_OFF" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.event#_sArbQMOzEeKrdOk53hhEZs|org.eventb.core.guard#("/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="C_fanOn=FALSE∨C_fanSpeed&lt;FAN_SPEED_FAULT" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.event#_sArbQMOzEeKrdOk53hhEZs|org.eventb.core.guard#)"/>
 </org.eventb.core.poPredicateSet>
 <org.eventb.core.poPredicateSet name="CMPEVTIDENTControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey5" org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC2_CMP.bpo|org.eventb.core.poFile#FanCtrlMachineGC2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="Controller'" org.eventb.core.type="Controller_STATES"/>
 </org.eventb.core.poPredicateSet>
 <org.eventb.core.poPredicateSet name="CMPEVTALLHYPControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey5" org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC2_CMP.bpo|org.eventb.core.poFile#FanCtrlMachineGC2_CMP|org.eventb.core.poPredicateSet#CMPEVTIDENTControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey5" org.eventb.core.poStamp="0">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Controller=Broken" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.event#_sArbQMOzEeKrdOk53hhEZr|org.eventb.core.guard#'"/>
-</org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="CMPEVTIDENTControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey6" org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC2_CMP.bpo|org.eventb.core.poFile#FanCtrlMachineGC2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
-<org.eventb.core.poIdentifier name="Controller'" org.eventb.core.type="Controller_STATES"/>
-</org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="CMPEVTALLHYPControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey6" org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC2_CMP.bpo|org.eventb.core.poFile#FanCtrlMachineGC2_CMP|org.eventb.core.poPredicateSet#CMPEVTIDENTControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey6" org.eventb.core.poStamp="0">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Controller=BrokenSpeedCheck" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.event#_sArbQMOzEeKrdOk53hhEZs|org.eventb.core.guard#'"/>
-<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="C_fanOn=TRUE∨C_fanSpeed&gt;FAN_SPEED_OFF" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.event#_sArbQMOzEeKrdOk53hhEZs|org.eventb.core.guard#("/>
-<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="C_fanOn=FALSE∨C_fanSpeed&lt;FAN_SPEED_FAULT" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.event#_sArbQMOzEeKrdOk53hhEZs|org.eventb.core.guard#)"/>
-</org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="CMPEVTIDENTControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey7" org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC2_CMP.bpo|org.eventb.core.poFile#FanCtrlMachineGC2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
-<org.eventb.core.poIdentifier name="Controller'" org.eventb.core.type="Controller_STATES"/>
-</org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="CMPEVTALLHYPControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey7" org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC2_CMP.bpo|org.eventb.core.poFile#FanCtrlMachineGC2_CMP|org.eventb.core.poPredicateSet#CMPEVTIDENTControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey7" org.eventb.core.poStamp="0">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="C_fanOn=TRUE∨C_fanSpeed≤FAN_SPEED_OFF" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.event#_sArbQMOzEeKrdOk53hhEZt|org.eventb.core.guard#'"/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="C_fanOn=FALSE∨C_fanSpeed≥FAN_SPEED_FAULT" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.event#_sArbQMOzEeKrdOk53hhEZt|org.eventb.core.guard#("/>
 <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="Controller=BrokenSpeedCheck" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.event#_sArbQMOzEeKrdOk53hhEZt|org.eventb.core.guard#)"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="CMPEVTIDENTControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey8" org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC2_CMP.bpo|org.eventb.core.poFile#FanCtrlMachineGC2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="CMPEVTIDENTControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey6" org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC2_CMP.bpo|org.eventb.core.poFile#FanCtrlMachineGC2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="p1" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poIdentifier name="p2" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poIdentifier name="C_fanSpeed'" org.eventb.core.type="ℤ"/>
@@ -208,7 +206,7 @@
 <org.eventb.core.poIdentifier name="C_tempAmbient'" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poIdentifier name="p3" org.eventb.core.type="ℤ"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="CMPEVTALLHYPControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey8" org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC2_CMP.bpo|org.eventb.core.poFile#FanCtrlMachineGC2_CMP|org.eventb.core.poPredicateSet#CMPEVTIDENTControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey8" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="CMPEVTALLHYPControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey6" org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC2_CMP.bpo|org.eventb.core.poFile#FanCtrlMachineGC2_CMP|org.eventb.core.poPredicateSet#CMPEVTIDENTControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey6" org.eventb.core.poStamp="0">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="p3∈ℤ" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.event#_sArbQMOzEeKrdOk53hhEZu|org.eventb.core.guard#0"/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="p2∈ℤ" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.event#_sArbQMOzEeKrdOk53hhEZu|org.eventb.core.guard#1"/>
 <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="p1∈ℤ" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.event#_sArbQMOzEeKrdOk53hhEZu|org.eventb.core.guard#2"/>
@@ -220,14 +218,14 @@
 <org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="p2=E_LM75_tempAmbient" org.eventb.core.source="/FanCtrl/EnvNewImpl.bum|org.eventb.core.machineFile#EnvNewImpl|org.eventb.core.event#5|org.eventb.core.guard#+"/>
 <org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="p3=E_LM75_tempPSU" org.eventb.core.source="/FanCtrl/EnvNewImpl.bum|org.eventb.core.machineFile#EnvNewImpl|org.eventb.core.event#5|org.eventb.core.guard#,"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="CMPEVTIDENTControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey9" org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC2_CMP.bpo|org.eventb.core.poFile#FanCtrlMachineGC2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="CMPEVTIDENTControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey7" org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC2_CMP.bpo|org.eventb.core.poFile#FanCtrlMachineGC2_CMP|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="p1" org.eventb.core.type="BOOL"/>
 <org.eventb.core.poIdentifier name="E_MAX6650_fanOn'" org.eventb.core.type="BOOL"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="CMPEVTALLHYPControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey9" org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC2_CMP.bpo|org.eventb.core.poFile#FanCtrlMachineGC2_CMP|org.eventb.core.poPredicateSet#CMPEVTIDENTControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey9" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="CMPEVTALLHYPControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey7" org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC2_CMP.bpo|org.eventb.core.poFile#FanCtrlMachineGC2_CMP|org.eventb.core.poPredicateSet#CMPEVTIDENTControllerNewImpl_internal_includes1_FanCtrlMachineGC_implicitContey7" org.eventb.core.poStamp="0">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="p1∈BOOL" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.event#_sArbQMOzEeKrdOk53hhEZv|org.eventb.core.guard#)"/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="p1=C_fanOn" org.eventb.core.source="/FanCtrl/ControllerNewImpl.bum|org.eventb.core.machineFile#ControllerNewImpl|org.eventb.core.event#_sArbQMOzEeKrdOk53hhEZv|org.eventb.core.guard#("/>
 <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="p1∈BOOL" org.eventb.core.source="/FanCtrl/EnvNewImpl.bum|org.eventb.core.machineFile#EnvNewImpl|org.eventb.core.event#6|org.eventb.core.guard#*"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC2_CMP.bpo|org.eventb.core.poFile#FanCtrlMachineGC2_CMP|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0"/>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/FanCtrl/FanCtrlMachineGC2_CMP.bpo|org.eventb.core.poFile#FanCtrlMachineGC2_CMP|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="1"/>
 </org.eventb.core.poFile>

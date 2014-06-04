@@ -18,7 +18,7 @@ public class MainEntry {
 
 	protected static final int FAN_SPEED_OFF = 0;
 
-	public enum Controller_STATES {
+	public enum Controller_STATESEnum {
 		Step, Control, Normal, SpeedCheck, FailureCount, Broken, BrokenSpeedCheck,
 	}
 
