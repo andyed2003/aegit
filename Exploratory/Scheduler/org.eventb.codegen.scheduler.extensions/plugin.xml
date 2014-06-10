@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eventb.codegen.templates.generator">
+      <templateGenerator
+            GeneratorClass="org.eventb.codegen.scheduler.extensions.SchedulerGenerator"
+            tag="org.eventb.codegen.scheduler.extensions.templateGenerator1">
+      </templateGenerator>
+   </extension>
+   <extension
+         point="org.eventb.codegen.templates.tag">
+      <tagCommentCharacters
+            tagCommentCharacters="//##"></tagCommentCharacters>
+   </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="false"
+            id="SchedulerSelection"
+            objectClass="org.eventb.core.IEventBRoot">
+         <action
+               class="org.eventb.codegen.il1.translator.TranslateFromEventBToJava"
+               id="org.eventb.codegen.translation.menu1.action.TranslateEventBToJava"
+               label="Translate to Scheduled EventB"
+               menubarPath="org.eventb.codegen.translation.menu1/groupA">
+         </action>
+         <visibility>
+            <or>
+               <objectClass
+                     name="org.eventb.core.IMachineRoot">
+               </objectClass>
+            </or>
+         </visibility>
+      </objectContribution>
+   </extension>
+
+</plugin>

@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SchedulerExtensions
+Bundle-SymbolicName: org.eventb.codegen.scheduler.extensions;singleton:=true
+Bundle-Version: 0.0.1.qualifier
+Bundle-Activator: org.eventb.codegen.scheduler.extensions.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eventb.codegen.templates;bundle-version="0.0.1",
+ org.eventb.codegen.IL1.translator;bundle-version="0.0.4",
+ org.eventb.codegen.IL1.core;bundle-version="0.0.3"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
