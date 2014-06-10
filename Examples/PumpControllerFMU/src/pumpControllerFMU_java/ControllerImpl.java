@@ -1,13 +1,13 @@
-package pumpControllerJava_java;
+package pumpControllerFMU_java;
 
-import static pumpControllerJava_java.MainEntry.*;
+import static pumpControllerFMU_java.MainEntry.*;
 
 // Task: ControllerImpl
 
 public class ControllerImpl implements Runnable {
 
 	// Instance variables and constants
-	protected int c_level = 100;
+	protected int c_level = 35;
 	protected boolean c_pumpOnReq = false;
 	protected boolean c_pumpOnCmd = false;
 	protected boolean c_warn = false;
@@ -28,12 +28,10 @@ public class ControllerImpl implements Runnable {
 
 			// Translated code
 			Pointer<Integer> c_levelPointer = new Pointer<Integer>();
-			((EnvironmentImpl) MainEntry.getTask("EnvironmentImpl"))
-					.getLevel_eAPI(c_levelPointer);
-			c_level = c_levelPointer.value;
 			Pointer<Boolean> c_pumpOnReqPointer = new Pointer<Boolean>();
-			((EnvironmentImpl) MainEntry.getTask("EnvironmentImpl"))
-					.getPumpOnReq_eAPI(c_pumpOnReqPointer);
+			((EnvironmentImpl) MainEntry.getTask("EnvironmentImpl")).c_read(
+					c_levelPointer, c_pumpOnReqPointer);
+			c_level = c_levelPointer.value;
 			c_pumpOnReq = c_pumpOnReqPointer.value;
 			c_level_internal = c_level;
 			c_pumpOnReq_internal = c_pumpOnReq;
@@ -46,10 +44,8 @@ public class ControllerImpl implements Runnable {
 			}
 			c_warn = c_warn_internal;
 			c_pumpOnCmd = c_pumpOnCmd_internal;
-			((EnvironmentImpl) MainEntry.getTask("EnvironmentImpl"))
-					.setPumpOnCmd_eAPI(c_pumpOnCmd);
-			((EnvironmentImpl) MainEntry.getTask("EnvironmentImpl"))
-					.setWarn_eAPI(c_warn);
+			((EnvironmentImpl) MainEntry.getTask("EnvironmentImpl")).c_write(
+					c_pumpOnCmd, c_warn);
 
 			// [Internal] Code to monitor time between periodic tasks
 			long THREAD_END_TIME = System.currentTimeMillis();

@@ -30,5 +30,6 @@
 <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="D⇸R" org.eventb.core.identifier="f"/>
 <org.eventb.theory.core.directOperatorDefinition name="(" org.eventb.theory.core.formula="f(d)"/>
 <org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="D" org.eventb.core.identifier="d"/>
+<org.eventb.theory.core.operatorWDcondition name="*" org.eventb.core.predicate="d∈dom(f)"/>
 </org.eventb.theory.core.newOperatorDefinition>
 </org.eventb.theory.core.theoryRoot>

@@ -1,8 +1,8 @@
 package setImpls_java;
 
-import java.util.HashMap;
+import java.util.concurrent.ConcurrentHashMap;
 
-public class HashMapImpl<T1, T2> extends HashMap<T1, T2> {
+public class HashMapImpl<T1, T2> extends ConcurrentHashMap<T1, T2> {
 
 	/**
 	 * 

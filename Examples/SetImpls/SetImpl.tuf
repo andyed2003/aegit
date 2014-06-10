@@ -2,7 +2,7 @@
 <org.eventb.theory.core.theoryRoot org.eventb.core.configuration="org.eventb.codegen.theory.translator.core.thyTranslator">
 <org.eventb.theory.core.typeParameter name="'" org.eventb.core.identifier="T"/>
 <org.eventb.theory.core.newOperatorDefinition name="(" org.eventb.core.comment="The type definition of the implementable&#10;set of elements of type T." org.eventb.core.label="setImpl" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
-<org.eventb.theory.core.directOperatorDefinition name="(" org.eventb.theory.core.formula="ℙ(T)"/>
+<org.eventb.theory.core.directOperatorDefinition name="(" org.eventb.theory.core.formula="T"/>
 <org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="T" org.eventb.core.identifier="t"/>
 </org.eventb.theory.core.newOperatorDefinition>
 <org.eventb.theory.core.newOperatorDefinition name=")" org.eventb.core.comment="a constructor for  an empty setImpl:&#10;a collection of elements of type T.&#10;The code generator gets the type info from here." org.eventb.core.label="newSet" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
@@ -55,6 +55,7 @@
 <org.eventb.theory.core.newOperatorDefinition name="/" org.eventb.core.comment="this is refined in the implementatation&#10;to extract a single element from a set" org.eventb.core.label="setReduce" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
 <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(T)" org.eventb.core.identifier="t"/>
 <org.eventb.theory.core.directOperatorDefinition name="(" org.eventb.theory.core.formula="T"/>
+<org.eventb.theory.core.operatorWDcondition name=")" org.eventb.core.predicate="t≠∅"/>
 </org.eventb.theory.core.newOperatorDefinition>
 <org.eventb.theory.core.newOperatorDefinition name="1" org.eventb.core.comment="The type definition of an element &#10;of type T." org.eventb.core.label="newType" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
 <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="T" org.eventb.core.identifier="t"/>

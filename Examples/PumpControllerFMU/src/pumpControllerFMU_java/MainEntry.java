@@ -1,5 +1,5 @@
 // MainEntry: MainEntry
-package pumpControllerJava_java;
+package pumpControllerFMU_java;
 
 import java.util.HashMap;
 
