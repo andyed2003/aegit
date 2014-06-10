@@ -34,5 +34,20 @@
          </visibility>
       </objectContribution>
    </extension>
+   <extension
+         name="IL1"
+         point="org.eventb.codegen.tasking.translator">
+      <emfPackage
+            TargetOutput="IL1"
+            name="EventBCore Machine"
+            nsURISource="http://emf.eventb.org/models/core/machine">
+         <taskingTranslator
+               name="Machine"
+               sourceClass="Machine"
+               taskingTranslatorClass="org.eventb.codegen.scheduler.extensions.TranslateEventBToIL1">
+         </taskingTranslator>
+      </emfPackage>
+   </extension>
+  
 
 </plugin>

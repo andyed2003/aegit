@@ -8,6 +8,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eventb.codegen.templates;bundle-version="0.0.1",
  org.eventb.codegen.IL1.translator;bundle-version="0.0.4",
- org.eventb.codegen.IL1.core;bundle-version="0.0.3"
+ org.eventb.codegen.IL1.core;bundle-version="0.0.3",
+ org.eventb.codegen.tasking;bundle-version="0.0.4"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
