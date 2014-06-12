@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ac.soton.composition.core.composedMachineFile org.eventb.core.configuration="ac.soton.composition.core.cmp" version="7">
+<ac.soton.composition.core.refinesMachine ac.soton.composition.core.target="GRIDCR5" name="internal_refines1"/>
+<ac.soton.composition.core.seesContext ac.soton.composition.core.target="GRIDCC" name="internal_sees1"/>
+<ac.soton.composition.core.includeMachine ac.soton.composition.core.includedInvariant="false" ac.soton.composition.core.project="GRIDC" ac.soton.composition.core.target="Controller" name="internal_includes1"/>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events1" org.eventb.core.convergence="0" org.eventb.core.label="INITIALISATION">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]Controller" name="internal_combines events1" org.eventb.core.target="INITIALISATION"/>
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]Predictor" name="internal_combines events2" org.eventb.core.target="INITIALISATION"/>
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]TapChanger" name="internal_combines events3" org.eventb.core.target="INITIALISATION"/>
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]GridComms" name="internal_combines events4" org.eventb.core.target="INITIALISATION"/>
+</ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events2" org.eventb.core.convergence="0" org.eventb.core.label="ControllerEvaluate">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]Controller" name="internal_combines events1" org.eventb.core.target="ControllerEvaluate"/>
+<ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="ControllerEvaluate"/>
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]GridComms" name="internal_combines events2" org.eventb.core.target="ControllerEvaluate"/>
+</ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events3" org.eventb.core.convergence="0" org.eventb.core.label="ControllerInitiateTapChangerComms">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]Controller" name="internal_combines events1" org.eventb.core.target="ControllerInitiateTapChangerComms"/>
+<ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="ControllerInitiateTapChangerComms"/>
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]TapChanger" name="internal_combines events2" org.eventb.core.target="ControllerInitiateTapChangerComms"/>
+</ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events4" org.eventb.core.convergence="0" org.eventb.core.label="ControllerRetryTapChangerComms">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]Controller" name="internal_combines events1" org.eventb.core.target="ControllerRetryTapChangerComms"/>
+<ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="ControllerRetryTapChangerComms"/>
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]TapChanger" name="internal_combines events2" org.eventb.core.target="ControllerRetryTapChangerComms"/>
+</ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events5" org.eventb.core.convergence="0" org.eventb.core.label="ControllerCompleteTapChangerComms">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]Controller" name="internal_combines events1" org.eventb.core.target="ControllerCompleteTapChangerComms"/>
+<ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="ControllerCompleteTapChangerComms"/>
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]TapChanger" name="internal_combines events2" org.eventb.core.target="ControllerCompleteTapChangerComms"/>
+</ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events6" org.eventb.core.convergence="0" org.eventb.core.label="ControllerCompleteTapChangerCommsFail">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]Controller" name="internal_combines events1" org.eventb.core.target="ControllerCompleteTapChangerCommsFail"/>
+<ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="ControllerCompleteTapChangerCommsFail"/>
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]TapChanger" name="internal_combines events2" org.eventb.core.target="ControllerCompleteTapChangerCommsFail"/>
+</ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events7" org.eventb.core.convergence="0" org.eventb.core.label="ControllerReadVoltage">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]Controller" name="internal_combines events1" org.eventb.core.target="ControllerReadVoltage"/>
+<ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="ControllerReadVoltage"/>
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]Predictor" name="internal_combines events2" org.eventb.core.target="ControllerReadVoltage"/>
+</ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events8" org.eventb.core.convergence="0" org.eventb.core.label="ControllerAdjustTapPositionUp">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]Controller" name="internal_combines events1" org.eventb.core.target="ControllerAdjustTapPositionUp"/>
+<ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="ControllerAdjustTapPositionUp"/>
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]Predictor" name="internal_combines events2" org.eventb.core.target="ControllerAdjustTapPositionUp"/>
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]GridComms" name="internal_combines events3" org.eventb.core.target="ControllerAdjustTapPositionUp"/>
+</ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events9" org.eventb.core.convergence="0" org.eventb.core.label="ControllerAdjustTapPositionDown">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]Controller" name="internal_combines events1" org.eventb.core.target="ControllerAdjustTapPositionDown"/>
+<ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="ControllerAdjustTapPositionDown"/>
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]Predictor" name="internal_combines events2" org.eventb.core.target="ControllerAdjustTapPositionDown"/>
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]GridComms" name="internal_combines events3" org.eventb.core.target="ControllerAdjustTapPositionDown"/>
+</ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events10" org.eventb.core.convergence="0" org.eventb.core.label="ControllerDoNotAdjustTapPositionOnCount">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]Controller" name="internal_combines events1" org.eventb.core.target="ControllerDoNotAdjustTapPositionOnCount"/>
+<ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="ControllerDoNotAdjustTapPositionOnCount"/>
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]Predictor" name="internal_combines events2" org.eventb.core.target="ControllerDoNotAdjustTapPositionOnCount"/>
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]GridComms" name="internal_combines events3" org.eventb.core.target="ControllerDoNotAdjustTapPositionOnCount"/>
+</ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events11" org.eventb.core.convergence="0" org.eventb.core.label="ControllerDoNotAdjustTapPositionOnLowVoltage">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]Controller" name="internal_combines events1" org.eventb.core.target="ControllerDoNotAdjustTapPositionOnLowVoltage"/>
+<ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="ControllerDoNotAdjustTapPositionOnLowVoltage"/>
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]Predictor" name="internal_combines events2" org.eventb.core.target="ControllerDoNotAdjustTapPositionOnLowVoltage"/>
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]GridComms" name="internal_combines events3" org.eventb.core.target="ControllerDoNotAdjustTapPositionOnLowVoltage"/>
+</ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events12" org.eventb.core.convergence="0" org.eventb.core.label="ControllerDoNotAdjustTapPositionOnHighVoltage">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]Controller" name="internal_combines events1" org.eventb.core.target="ControllerDoNotAdjustTapPositionOnHighVoltage"/>
+<ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="ControllerDoNotAdjustTapPositionOnHighVoltage"/>
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]Predictor" name="internal_combines events2" org.eventb.core.target="ControllerDoNotAdjustTapPositionOnHighVoltage"/>
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]GridComms" name="internal_combines events3" org.eventb.core.target="ControllerDoNotAdjustTapPositionOnHighVoltage"/>
+</ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events13" org.eventb.core.convergence="0" org.eventb.core.label="ControllerMovetoSafeModeLowVoltage">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]Controller" name="internal_combines events1" org.eventb.core.target="ControllerMovetoSafeModeLowVoltage"/>
+<ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="ControllerMovetoSafeModeLowVoltage"/>
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]Predictor" name="internal_combines events2" org.eventb.core.target="ControllerMovetoSafeModeLowVoltage"/>
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]GridComms" name="internal_combines events3" org.eventb.core.target="ControllerMovetoSafeModeLowVoltage"/>
+</ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events14" org.eventb.core.convergence="0" org.eventb.core.label="ControllerMovetoSafeModeHighVoltage">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]Controller" name="internal_combines events1" org.eventb.core.target="ControllerMovetoSafeModeHighVoltage"/>
+<ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="ControllerMovetoSafeModeHighVoltage"/>
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]Predictor" name="internal_combines events2" org.eventb.core.target="ControllerMovetoSafeModeHighVoltage"/>
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]GridComms" name="internal_combines events3" org.eventb.core.target="ControllerMovetoSafeModeHighVoltage"/>
+</ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events15" org.eventb.core.convergence="0" org.eventb.core.label="ControllerWritePosition">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]Controller" name="internal_combines events1" org.eventb.core.target="ControllerWritePosition"/>
+<ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="ControllerWritePosition"/>
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]Predictor" name="internal_combines events2" org.eventb.core.target="ControllerWritePosition"/>
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]TapChanger" name="internal_combines events3" org.eventb.core.target="ControllerWritePosition"/>
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]GridComms" name="internal_combines events4" org.eventb.core.target="ControllerWritePosition"/>
+</ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events16" org.eventb.core.convergence="0" org.eventb.core.label="ControllerWriteVoltage">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]Controller" name="internal_combines events1" org.eventb.core.target="ControllerWriteVoltage"/>
+<ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="ControllerWriteVoltage"/>
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]GridComms" name="internal_combines events2" org.eventb.core.target="ControllerWriteVoltage"/>
+</ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events17" org.eventb.core.convergence="0" org.eventb.core.label="ControllerWait">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]Controller" name="internal_combines events1" org.eventb.core.target="ControllerWait"/>
+<ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="ControllerWait"/>
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]Predictor" name="internal_combines events2" org.eventb.core.target="ControllerWait"/>
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]GridComms" name="internal_combines events3" org.eventb.core.target="ControllerWait"/>
+</ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events18" org.eventb.core.convergence="0" org.eventb.core.label="PredictorReadVoltage">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]Controller" name="internal_combines events1" org.eventb.core.target="PredictorReadVoltage"/>
+<ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="PredictorReadVoltage"/>
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]Predictor" name="internal_combines events2" org.eventb.core.target="PredictorReadVoltage"/>
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]GridComms" name="internal_combines events3" org.eventb.core.target="PredictorReadVoltage"/>
+</ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events19" org.eventb.core.convergence="0" org.eventb.core.label="PredictorPredictVoltageChange">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]Controller" name="internal_combines events1" org.eventb.core.target="PredictorPredictVoltageChange"/>
+<ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="PredictorPredictVoltageChange"/>
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]Predictor" name="internal_combines events2" org.eventb.core.target="PredictorPredictVoltageChange"/>
+</ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events20" org.eventb.core.convergence="0" org.eventb.core.label="PredictorInactive">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]Controller" name="internal_combines events1" org.eventb.core.target="PredictorInactive"/>
+<ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="PredictorInactive"/>
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]Predictor" name="internal_combines events2" org.eventb.core.target="PredictorInactive"/>
+</ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events21" org.eventb.core.convergence="0" org.eventb.core.label="PredictorWriteVoltage">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]Controller" name="internal_combines events1" org.eventb.core.target="PredictorWriteVoltage"/>
+<ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="PredictorWriteVoltage"/>
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]Predictor" name="internal_combines events2" org.eventb.core.target="PredictorWriteVoltage"/>
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]GridComms" name="internal_combines events3" org.eventb.core.target="PredictorWriteVoltage"/>
+</ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.includeMachine ac.soton.composition.core.includedInvariant="false" ac.soton.composition.core.project="GRIDC" ac.soton.composition.core.target="Predictor" name="internal_includes2"/>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events22" org.eventb.core.convergence="0" org.eventb.core.label="PredictorEvaluate">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]Predictor" name="internal_combines events1" org.eventb.core.target="PredictorEvaluate"/>
+<ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="PredictorEvaluate"/>
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]GridComms" name="internal_combines events2" org.eventb.core.target="PredictorEvaluate"/>
+</ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events23" org.eventb.core.convergence="0" org.eventb.core.label="PredictorWait">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]Predictor" name="internal_combines events1" org.eventb.core.target="PredictorWait"/>
+<ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="PredictorWait"/>
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]GridComms" name="internal_combines events2" org.eventb.core.target="PredictorWait"/>
+</ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.includeMachine ac.soton.composition.core.includedInvariant="false" ac.soton.composition.core.project="GRIDC" ac.soton.composition.core.target="TapChanger" name="internal_includes3"/>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events24" org.eventb.core.convergence="0" org.eventb.core.label="TapChangerEvaluate">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]TapChanger" name="internal_combines events1" org.eventb.core.target="TapChangerEvaluate"/>
+<ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="TapChangerEvaluate"/>
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]GridComms" name="internal_combines events2" org.eventb.core.target="TapChangerEvaluate"/>
+</ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events25" org.eventb.core.convergence="0" org.eventb.core.label="TapChangerReadInitSignal">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]TapChanger" name="internal_combines events1" org.eventb.core.target="TapChangerReadInitSignal"/>
+<ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="TapChangerReadInitSignal"/>
+</ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events26" org.eventb.core.convergence="0" org.eventb.core.label="TapChangerInitTerminated">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]TapChanger" name="internal_combines events1" org.eventb.core.target="TapChangerInitTerminated"/>
+<ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="TapChangerInitTerminated"/>
+</ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events27" org.eventb.core.convergence="0" org.eventb.core.label="TapChangerAcknowledgeInit">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]TapChanger" name="internal_combines events1" org.eventb.core.target="TapChangerAcknowledgeInit"/>
+<ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="TapChangerAcknowledgeInit"/>
+</ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events28" org.eventb.core.convergence="0" org.eventb.core.label="TapChangerReset">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]TapChanger" name="internal_combines events1" org.eventb.core.target="TapChangerReset"/>
+<ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="TapChangerReset"/>
+</ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events29" org.eventb.core.convergence="0" org.eventb.core.label="TapChangerReadPosition">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]TapChanger" name="internal_combines events1" org.eventb.core.target="TapChangerReadPosition"/>
+<ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="TapChangerReadPosition"/>
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]GridComms" name="internal_combines events2" org.eventb.core.target="TapChangerReadPosition"/>
+</ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events30" org.eventb.core.convergence="0" org.eventb.core.label="TapChangerWait">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]TapChanger" name="internal_combines events1" org.eventb.core.target="TapChangerWait"/>
+<ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="TapChangerWait"/>
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]GridComms" name="internal_combines events2" org.eventb.core.target="TapChangerWait"/>
+</ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.includeMachine ac.soton.composition.core.includedInvariant="false" ac.soton.composition.core.project="GRIDC" ac.soton.composition.core.target="Decrementor" name="internal_includes4"/>
+<ac.soton.composition.core.includeMachine ac.soton.composition.core.includedInvariant="false" ac.soton.composition.core.project="GRIDC" ac.soton.composition.core.target="GridComms" name="internal_includes5"/>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events31" org.eventb.core.convergence="0" org.eventb.core.label="DecrementerEvaluate">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]GridComms" name="internal_combines events1" org.eventb.core.target="DecrementerEvaluate"/>
+<ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="DecrementerEvaluate"/>
+</ac.soton.composition.core.composesEvent>
+<ac.soton.composition.core.composesEvent ac.soton.composition.core.composesEventExtended="false" name="internal_composes events32" org.eventb.core.convergence="0" org.eventb.core.label="Update">
+<ac.soton.composition.core.combinedEventMachine ac.soton.composition.core.target="[GRIDC]GridComms" name="internal_combines events1" org.eventb.core.target="Update"/>
+<ac.soton.composition.core.refinesEvent name="internal_refines1" org.eventb.core.target="Update"/>
+</ac.soton.composition.core.composesEvent>
+</ac.soton.composition.core.composedMachineFile>
