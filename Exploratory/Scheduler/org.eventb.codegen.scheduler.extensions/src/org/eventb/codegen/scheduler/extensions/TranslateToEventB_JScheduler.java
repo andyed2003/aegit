@@ -10,7 +10,7 @@ import org.eventb.codegen.il1.translator.TargetLanguage;
 import org.eventb.codegen.il1.translator.utils.IL1CodeFiler;
 
 
-public class TranslateToEventBScheduler extends AbstractTranslateEventBToTarget
+public class TranslateToEventB_JScheduler extends AbstractTranslateEventBToTarget
 {
 
 	@Override
