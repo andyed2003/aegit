@@ -20,18 +20,11 @@
             id="SchedulerSelection"
             objectClass="org.eventb.core.IEventBRoot">
          <action
-               class="org.eventb.codegen.il1.translator.TranslateFromEventBToJava"
-               id="org.eventb.codegen.translation.menu1.action.TranslateEventBToJava"
+               class="org.eventb.codegen.scheduler.extensions.TranslateToEventB_JScheduler"
+               id="org.eventb.codegen.translation.menu1.action.TranslateToEventB_JScheduler"
                label="Translate to Scheduled EventB"
                menubarPath="org.eventb.codegen.translation.menu1/groupA">
          </action>
-         <visibility>
-            <or>
-               <objectClass
-                     name="org.eventb.core.IMachineRoot">
-               </objectClass>
-            </or>
-         </visibility>
       </objectContribution>
    </extension>
    <extension
