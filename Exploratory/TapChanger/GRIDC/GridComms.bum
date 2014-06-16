@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <org.eventb.core.machineFile ch.ethz.eventb.decomposition.decomposed="true" org.eventb.core.configuration="ch.ethz.eventb.decomposition.mchBase;org.eventb.codegen.ui.cgConfig" org.eventb.core.generated="true" version="5">
+<org.eventb.core.seesContext name="Y" org.eventb.core.target="GRIDCC"/>
 <org.eventb.core.variable name="'" org.eventb.core.identifier="CEvaluated"/>
 <org.eventb.core.variable name="(" org.eventb.core.identifier="TEvaluated"/>
 <org.eventb.core.variable name=")" org.eventb.core.identifier="position"/>
@@ -108,13 +109,13 @@
 </org.eventb.core.event>
 <org.eventb.core.event name="M" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="ControllerWritePosition">
 <org.eventb.core.parameter name="'" org.eventb.core.identifier="tappos_param"/>
-<org.eventb.core.action name="0" org.eventb.core.assignment="positionprime ≔ tappos_param" org.eventb.core.label="act3"/>
 <org.eventb.core.guard name="1" org.eventb.core.label="typing_tappos_param" org.eventb.core.predicate="tappos_param ∈ ℤ" org.eventb.core.theorem="true"/>
+<org.eventb.core.action name="0" org.eventb.core.assignment="positionprime ≔ tappos_param" org.eventb.core.label="act3"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="N" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="ControllerWriteVoltage">
 <org.eventb.core.parameter name="'" org.eventb.core.identifier="v_param"/>
-<org.eventb.core.action name="," org.eventb.core.assignment="currentvoltageprime ≔ v_param" org.eventb.core.label="act1"/>
 <org.eventb.core.guard name="-" org.eventb.core.label="typing_v_param" org.eventb.core.predicate="v_param ∈ ℤ" org.eventb.core.theorem="true"/>
+<org.eventb.core.action name="," org.eventb.core.assignment="currentvoltageprime ≔ v_param" org.eventb.core.label="act1"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="O" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="ControllerWait">
 <org.eventb.core.action name=")" org.eventb.core.assignment="CEvaluated ≔ TRUE" org.eventb.core.label="act1"/>
@@ -140,8 +141,8 @@
 </org.eventb.core.event>
 <org.eventb.core.event name="U" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="PredictorWriteVoltage">
 <org.eventb.core.parameter name="'" org.eventb.core.identifier="predictedv_param"/>
-<org.eventb.core.action name="+" org.eventb.core.assignment="predictedprime ≔ predictedv_param" org.eventb.core.label="act1"/>
 <org.eventb.core.guard name="," org.eventb.core.label="typing_predictedv_param" org.eventb.core.predicate="predictedv_param ∈ ℤ" org.eventb.core.theorem="true"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="predictedprime ≔ predictedv_param" org.eventb.core.label="act1"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="V" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="PredictorWait">
 <org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="PEvaluated = FALSE"/>
@@ -171,5 +172,4 @@
 <org.eventb.core.action name="2" org.eventb.core.assignment="predicted ≔ predictedprime" org.eventb.core.label="act8"/>
 <org.eventb.core.action name="3" org.eventb.core.assignment="reset ≔ resetprime" org.eventb.core.label="act9"/>
 </org.eventb.core.event>
-<org.eventb.core.seesContext name="Y" org.eventb.core.target="GRIDCC"/>
 </org.eventb.core.machineFile>

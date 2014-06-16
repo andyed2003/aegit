@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <org.eventb.core.machineFile ch.ethz.eventb.decomposition.decomposed="true" org.eventb.core.configuration="ch.ethz.eventb.decomposition.mchBase;org.eventb.codegen.ui.cgConfig" org.eventb.core.generated="true" version="5">
+<org.eventb.core.seesContext name="O" org.eventb.core.target="GRIDCC"/>
 <org.eventb.core.variable name="'" org.eventb.core.identifier="v"/>
 <org.eventb.core.variable name="(" org.eventb.core.identifier="tappos"/>
 <org.eventb.core.variable name=")" org.eventb.core.identifier="predictedv"/>
@@ -210,5 +211,4 @@
 <org.eventb.core.guard name="+" org.eventb.core.label="typing_predictedv_param" org.eventb.core.predicate="predictedv_param ∈ ℤ" org.eventb.core.theorem="true"/>
 <org.eventb.core.guard name="*" org.eventb.core.label="grd3" org.eventb.core.predicate="predictedv_param = predictedv"/>
 </org.eventb.core.event>
-<org.eventb.core.seesContext name="O" org.eventb.core.target="GRIDCC"/>
 </org.eventb.core.machineFile>

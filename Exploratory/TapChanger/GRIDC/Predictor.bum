@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <org.eventb.core.machineFile ch.ethz.eventb.decomposition.decomposed="true" org.eventb.core.configuration="ch.ethz.eventb.decomposition.mchBase;org.eventb.codegen.ui.cgConfig" org.eventb.core.generated="true" version="5">
+<org.eventb.core.seesContext name="A" org.eventb.core.target="GRIDCC"/>
 <org.eventb.core.variable name="'" org.eventb.core.identifier="Pstep"/>
 <org.eventb.core.variable name="(" org.eventb.core.identifier="PFstep"/>
 <org.eventb.core.variable name=")" org.eventb.core.identifier="PRstep"/>
@@ -120,5 +121,4 @@
 <org.eventb.core.action name="*" org.eventb.core.assignment="PRstep ≔ 0" org.eventb.core.label="act2"/>
 <org.eventb.core.action name="+" org.eventb.core.assignment="PFstep ≔ 0" org.eventb.core.label="act3"/>
 </org.eventb.core.event>
-<org.eventb.core.seesContext name="A" org.eventb.core.target="GRIDCC"/>
 </org.eventb.core.machineFile>
