@@ -23,12 +23,16 @@ import org.eventb.codegen.tasking.RodinToEMFConverter;
 import org.eventb.codegen.tasking.TaskingTranslationException;
 import org.eventb.codegen.tasking.TaskingTranslationManager;
 import org.eventb.codegen.tasking.TaskingTranslationUnhandledTypeException;
+import org.eventb.codegen.templates.util.TemplateProcessor;
 import org.eventb.core.IEvent;
 import org.eventb.core.basis.EventBElement;
 import org.eventb.core.basis.MachineRoot;
 import org.eventb.emf.core.machine.Event;
 import org.eventb.emf.core.machine.impl.MachineImpl;
 import org.rodinp.core.RodinDBException;
+
+import ac.soton.fmusim.codegen.FMUTranslator;
+import ac.soton.fmusim.codegen.translator.il1tofmuc.GeneratorData;
 
 public class JScheduleTranslator {
 	
@@ -91,5 +95,27 @@ public class JScheduleTranslator {
 		}
 		System.out.println();
 	}
+	
+	
+	private void useTemplates() throws Exception {
+		// Create the Template Processor
+		TemplateProcessor templateProcessor = TemplateProcessor.getDefault();
+		// Initialise the template processor with the TARGET and SOURCE information.
+		templateProcessor.initialiseTarget(JScheduleTranslator.targetProject,
+				JScheduleTranslator.GENERATED_SRC_FOLDER);
+		templateProcessor.initialiseSource(JScheduleTranslator.sourceRodinProject,
+				JScheduleTranslator.TEMPLATES_SRC_FOLDER);
+		// Get the processor to instantiate the 'Top-Level' template.
+		// Templates contained 'within' are handled by the processor
+		// and TemplateHelper. We can pass a data object to assist with the
+		// translation, so we pass the actual source object, we could make this
+		// more complex if necessary (and add constraints)
+		GeneratorData generatorData = new GeneratorData();
+		List<Object> generatorDataList = generatorData.getDataList();
+		generatorDataList.add(actualSource);
+		generatorDataList.add(translationManager);
+		templateProcessor.instantiateTemplate("Scheduler.java", generatorData);
+	}
+	
 
 }
