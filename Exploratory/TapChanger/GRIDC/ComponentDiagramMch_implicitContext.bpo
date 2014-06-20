@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="5">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="5">
+<org.eventb.core.poIdentifier name="csm_STATES" org.eventb.core.type="ℙ(csm_STATES)"/>
+<org.eventb.core.poIdentifier name="dsm_STATES" org.eventb.core.type="ℙ(dsm_STATES)"/>
+<org.eventb.core.poIdentifier name="ControllerEvaluated" org.eventb.core.type="csm_STATES"/>
+<org.eventb.core.poIdentifier name="ControllerInitial" org.eventb.core.type="csm_STATES"/>
+<org.eventb.core.poIdentifier name="ControllerInitiatedTapChangerComms" org.eventb.core.type="csm_STATES"/>
+<org.eventb.core.poIdentifier name="ControllerWaiting" org.eventb.core.type="csm_STATES"/>
+<org.eventb.core.poIdentifier name="Decremented" org.eventb.core.type="dsm_STATES"/>
+<org.eventb.core.poIdentifier name="DecrementerInitial" org.eventb.core.type="dsm_STATES"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/GRIDC/ComponentDiagramMch_implicitContext.bpo|org.eventb.core.poFile#ComponentDiagramMch_implicitContext|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="5">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="ControllerInitial∈csm_STATES" org.eventb.core.source="/GRIDC/ComponentDiagramMch_implicitContext.buc|org.eventb.core.contextFile#ComponentDiagramMch_implicitContext|org.eventb.core.axiom#_F3dMgPiFEeO4-YZ92XUX-w"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="ControllerEvaluated∈csm_STATES" org.eventb.core.source="/GRIDC/ComponentDiagramMch_implicitContext.buc|org.eventb.core.contextFile#ComponentDiagramMch_implicitContext|org.eventb.core.axiom#_F3dMgfiFEeO4-YZ92XUX-w"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="ControllerInitiatedTapChangerComms∈csm_STATES" org.eventb.core.source="/GRIDC/ComponentDiagramMch_implicitContext.buc|org.eventb.core.contextFile#ComponentDiagramMch_implicitContext|org.eventb.core.axiom#_F3dzkPiFEeO4-YZ92XUX-w"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="ControllerWaiting∈csm_STATES" org.eventb.core.source="/GRIDC/ComponentDiagramMch_implicitContext.buc|org.eventb.core.contextFile#ComponentDiagramMch_implicitContext|org.eventb.core.axiom#_F3dzkfiFEeO4-YZ92XUX-w"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="partition(csm_STATES,{ControllerInitial},{ControllerEvaluated},{ControllerInitiatedTapChangerComms},{ControllerWaiting})" org.eventb.core.source="/GRIDC/ComponentDiagramMch_implicitContext.buc|org.eventb.core.contextFile#ComponentDiagramMch_implicitContext|org.eventb.core.axiom#_F3eaoPiFEeO4-YZ92XUX-w"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="DecrementerInitial∈dsm_STATES" org.eventb.core.source="/GRIDC/ComponentDiagramMch_implicitContext.buc|org.eventb.core.contextFile#ComponentDiagramMch_implicitContext|org.eventb.core.axiom#_BaZLUPiFEeO4-YZ92XUX-w"/>
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="Decremented∈dsm_STATES" org.eventb.core.source="/GRIDC/ComponentDiagramMch_implicitContext.buc|org.eventb.core.contextFile#ComponentDiagramMch_implicitContext|org.eventb.core.axiom#_BaZyYPiFEeO4-YZ92XUX-w"/>
+<org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="partition(dsm_STATES,{DecrementerInitial},{Decremented})" org.eventb.core.source="/GRIDC/ComponentDiagramMch_implicitContext.buc|org.eventb.core.contextFile#ComponentDiagramMch_implicitContext|org.eventb.core.axiom#_BaZyYfiFEeO4-YZ92XUX-w"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>
