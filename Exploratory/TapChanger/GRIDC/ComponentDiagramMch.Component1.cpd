@@ -232,7 +232,7 @@
       </children>
       <styles xmi:type="notation:DescriptionStyle" xmi:id="_p_bIwfhPEeOUiK1RVsH65w"/>
       <styles xmi:type="notation:FontStyle" xmi:id="_p_bIwvhPEeOUiK1RVsH65w" fontName="Ubuntu"/>
-      <element xmi:type="statemachines:State" href="ComponentDiagramMch.bum#http://soton.ac.uk/models/eventb/statemachines/2014::State::ComponentDiagramMch.Component1.Controller.csm.Updated"/>
+      <element xmi:type="statemachines:State" href="ComponentDiagramMch.bum#http://soton.ac.uk/models/eventb/statemachines/2014::State::ComponentDiagramMch.Component1.Controller.csm.UpdatedController"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_p_bv0PhPEeOUiK1RVsH65w" x="435" y="265"/>
     </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_exGWgfhMEeOWPMVIXr20cg"/>
@@ -348,7 +348,7 @@
       </children>
       <styles xmi:type="notation:DescriptionStyle" xmi:id="__F7BYfhPEeOUiK1RVsH65w"/>
       <styles xmi:type="notation:FontStyle" xmi:id="__F7BYvhPEeOUiK1RVsH65w" fontName="Ubuntu"/>
-      <element xmi:type="statemachines:State" href="ComponentDiagramMch.bum#http://soton.ac.uk/models/eventb/statemachines/2014::State::ComponentDiagramMch.Component1.Decrementer.dsm.Updated"/>
+      <element xmi:type="statemachines:State" href="ComponentDiagramMch.bum#http://soton.ac.uk/models/eventb/statemachines/2014::State::ComponentDiagramMch.Component1.Decrementer.dsm.UpdatedDecrementer"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="__F7BY_hPEeOUiK1RVsH65w" x="375" y="260"/>
     </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_am7xQfhOEeOLH-p8UjjQfA"/>
