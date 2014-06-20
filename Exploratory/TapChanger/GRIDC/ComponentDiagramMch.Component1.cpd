@@ -13,6 +13,22 @@
         <styles xmi:type="notation:FilteringStyle" xmi:id="_8Op2IvhLEeOWPMVIXr20cg"/>
       </children>
       <children xmi:type="notation:BasicCompartment" xmi:id="_8Op2I_hLEeOWPMVIXr20cg" type="7005">
+        <children xmi:type="notation:Node" xmi:id="_DaVYsPhXEeOAQpeGT8v71Q" type="3010">
+          <element xmi:type="components:Method" href="ComponentDiagramMch.bum#http://soton.ac.uk/models/eventb/components/2014::Method::ComponentDiagramMch.Component1.Controller._Dai0EPhXEeOAQpeGT8v71Q"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_DaVYsfhXEeOAQpeGT8v71Q"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_N7MvYPhXEeOAQpeGT8v71Q" type="3010">
+          <element xmi:type="components:Method" href="ComponentDiagramMch.bum#http://soton.ac.uk/models/eventb/components/2014::Method::ComponentDiagramMch.Component1.Controller._N7N9gPhXEeOAQpeGT8v71Q"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_N7MvYfhXEeOAQpeGT8v71Q"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_PofXoPhXEeOAQpeGT8v71Q" type="3010">
+          <element xmi:type="components:Method" href="ComponentDiagramMch.bum#http://soton.ac.uk/models/eventb/components/2014::Method::ComponentDiagramMch.Component1.Controller._Pohz4PhXEeOAQpeGT8v71Q"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_PofXofhXEeOAQpeGT8v71Q"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_Qvol4PhXEeOAQpeGT8v71Q" type="3010">
+          <element xmi:type="components:Method" href="ComponentDiagramMch.bum#http://soton.ac.uk/models/eventb/components/2014::Method::ComponentDiagramMch.Component1.Controller._Qvp0APhXEeOAQpeGT8v71Q"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_Qvol4fhXEeOAQpeGT8v71Q"/>
+        </children>
         <styles xmi:type="notation:SortingStyle" xmi:id="_8Op2JPhLEeOWPMVIXr20cg"/>
         <styles xmi:type="notation:FilteringStyle" xmi:id="_8Op2JfhLEeOWPMVIXr20cg"/>
       </children>
@@ -26,7 +42,7 @@
       </children>
       <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_8OlksfhLEeOWPMVIXr20cg" hint="Components"/>
       <element xmi:type="components:Component" href="ComponentDiagramMch.bum#http://soton.ac.uk/models/eventb/components/2014::Component::ComponentDiagramMch.Component1.Controller"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8OlksvhLEeOWPMVIXr20cg" x="640" y="135"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8OlksvhLEeOWPMVIXr20cg" x="580" y="155"/>
     </children>
     <children xmi:type="notation:Shape" xmi:id="_-BJHcPhLEeOWPMVIXr20cg" type="2005" fontName="Ubuntu" fillColor="7563521">
       <children xmi:type="notation:DecorationNode" xmi:id="_-BJugPhLEeOWPMVIXr20cg" type="5010"/>
@@ -40,6 +56,14 @@
         <styles xmi:type="notation:FilteringStyle" xmi:id="_-BJug_hLEeOWPMVIXr20cg"/>
       </children>
       <children xmi:type="notation:BasicCompartment" xmi:id="_-BJuhPhLEeOWPMVIXr20cg" type="7005">
+        <children xmi:type="notation:Node" xmi:id="_Gp7hMPhXEeOAQpeGT8v71Q" type="3010">
+          <element xmi:type="components:Method" href="ComponentDiagramMch.bum#http://soton.ac.uk/models/eventb/components/2014::Method::ComponentDiagramMch.Component1.Decrementer._Gp9WYPhXEeOAQpeGT8v71Q"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_Gp8IQPhXEeOAQpeGT8v71Q"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_L8SLoPhXEeOAQpeGT8v71Q" type="3010">
+          <element xmi:type="components:Method" href="ComponentDiagramMch.bum#http://soton.ac.uk/models/eventb/components/2014::Method::ComponentDiagramMch.Component1.Decrementer._L8UA0PhXEeOAQpeGT8v71Q"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_L8SLofhXEeOAQpeGT8v71Q"/>
+        </children>
         <styles xmi:type="notation:SortingStyle" xmi:id="_-BJuhfhLEeOWPMVIXr20cg"/>
         <styles xmi:type="notation:FilteringStyle" xmi:id="_-BJuhvhLEeOWPMVIXr20cg"/>
       </children>
@@ -53,7 +77,7 @@
       </children>
       <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_-BJHcfhLEeOWPMVIXr20cg" hint="Components"/>
       <element xmi:type="components:Component" href="ComponentDiagramMch.bum#http://soton.ac.uk/models/eventb/components/2014::Component::ComponentDiagramMch.Component1.Decrementer"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-BJHcvhLEeOWPMVIXr20cg" x="182" y="118"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-BJHcvhLEeOWPMVIXr20cg" x="150" y="50"/>
     </children>
     <children xmi:type="notation:Shape" xmi:id="__OZkwPhLEeOWPMVIXr20cg" type="2005" fontName="Ubuntu" fillColor="7563521">
       <children xmi:type="notation:DecorationNode" xmi:id="__OZkw_hLEeOWPMVIXr20cg" type="5010"/>
@@ -75,7 +99,7 @@
       </children>
       <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="__OZkwfhLEeOWPMVIXr20cg" hint="Components"/>
       <element xmi:type="components:Component" href="ComponentDiagramMch.bum#http://soton.ac.uk/models/eventb/components/2014::Component::ComponentDiagramMch.Component1.External"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="__OZkwvhLEeOWPMVIXr20cg" x="180" y="295"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="__OZkwvhLEeOWPMVIXr20cg" x="195" y="262"/>
     </children>
     <children xmi:type="notation:Shape" xmi:id="_AN22oPhMEeOWPMVIXr20cg" type="2006" fontName="Ubuntu" fillColor="7563521">
       <children xmi:type="notation:DecorationNode" xmi:id="_AN4r0PhMEeOWPMVIXr20cg" type="5011"/>
@@ -93,13 +117,13 @@
       <children xmi:type="notation:DecorationNode" xmi:id="_D5h3IPhMEeOWPMVIXr20cg" type="5011"/>
       <children xmi:type="notation:DecorationNode" xmi:id="_D5h3IfhMEeOWPMVIXr20cg" type="5012"/>
       <element xmi:type="components:Connector" href="ComponentDiagramMch.bum#http://soton.ac.uk/models/eventb/components/2014::Connector::ComponentDiagramMch.Component1.voltageConn"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_D5gpAfhMEeOWPMVIXr20cg" x="405" y="260"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_D5gpAfhMEeOWPMVIXr20cg" x="400" y="280"/>
     </children>
     <children xmi:type="notation:Shape" xmi:id="_KW0DoPhMEeOWPMVIXr20cg" type="2006" fontName="Ubuntu" fillColor="7563521">
       <children xmi:type="notation:DecorationNode" xmi:id="_KW0qsPhMEeOWPMVIXr20cg" type="5011"/>
       <children xmi:type="notation:DecorationNode" xmi:id="_KW0qsfhMEeOWPMVIXr20cg" type="5012"/>
       <element xmi:type="components:Connector" href="ComponentDiagramMch.bum#http://soton.ac.uk/models/eventb/components/2014::Connector::ComponentDiagramMch.Component1.predictedVoltage"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KW0DofhMEeOWPMVIXr20cg" x="405" y="340"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KW0DofhMEeOWPMVIXr20cg" x="380" y="400"/>
     </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_44aTEfhLEeOWPMVIXr20cg"/>
     <element xmi:type="components:Component" href="ComponentDiagramMch.bum#http://soton.ac.uk/models/eventb/components/2014::Component::ComponentDiagramMch.Component1"/>
@@ -112,8 +136,8 @@
     <edges xmi:type="notation:Connector" xmi:id="_UAQDEPhMEeOWPMVIXr20cg" type="4004" source="_AN22oPhMEeOWPMVIXr20cg" target="__OZkwPhLEeOWPMVIXr20cg">
       <styles xmi:type="notation:FontStyle" xmi:id="_UAQDEfhMEeOWPMVIXr20cg" fontName="Ubuntu"/>
       <element xsi:nil="true"/>
-      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_UAQDEvhMEeOWPMVIXr20cg" points="[-33, 18, 183, -97]$[-207, 107, 9, -8]"/>
-      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_UAVioPhMEeOWPMVIXr20cg" id="(0.8392857142857143,0.2753623188405797)"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_UAQDEvhMEeOWPMVIXr20cg" points="[-33, 1, 183, -66]$[-223, 0, -7, -67]$[-223, 63, -7, -4]"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_UAVioPhMEeOWPMVIXr20cg" id="(0.5714285714285714,0.057971014492753624)"/>
     </edges>
     <edges xmi:type="notation:Connector" xmi:id="_Ue7jIPhMEeOWPMVIXr20cg" type="4004" source="_D5gpAPhMEeOWPMVIXr20cg" target="__OZkwPhLEeOWPMVIXr20cg">
       <styles xmi:type="notation:FontStyle" xmi:id="_Ue7jIfhMEeOWPMVIXr20cg" fontName="Ubuntu"/>
@@ -123,31 +147,32 @@
     <edges xmi:type="notation:Connector" xmi:id="_U9qGgPhMEeOWPMVIXr20cg" type="4004" source="_KW0DoPhMEeOWPMVIXr20cg" target="__OZkwPhLEeOWPMVIXr20cg">
       <styles xmi:type="notation:FontStyle" xmi:id="_U9qGgfhMEeOWPMVIXr20cg" fontName="Ubuntu"/>
       <element xsi:nil="true"/>
-      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_U9qGgvhMEeOWPMVIXr20cg" points="[-25, -4, 197, 41]$[-226, -10, -4, 35]"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_U9qGgvhMEeOWPMVIXr20cg" points="[-58, 1, 157, 129]$[-215, 0, 0, 128]$[-215, -93, 0, 35]"/>
       <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_U9tJ0PhMEeOWPMVIXr20cg" id="(0.21551724137931033,0.6938775510204082)"/>
     </edges>
     <edges xmi:type="notation:Connector" xmi:id="_WKcCsPhMEeOWPMVIXr20cg" type="4005" source="_COIsUPhMEeOWPMVIXr20cg" target="_8OlksPhLEeOWPMVIXr20cg">
       <styles xmi:type="notation:FontStyle" xmi:id="_WKcCsfhMEeOWPMVIXr20cg" fontName="Ubuntu"/>
       <element xsi:nil="true"/>
-      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_WKcpwPhMEeOWPMVIXr20cg" points="[41, 10, -166, -43]$[198, 47, -9, -6]"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_WKcpwPhMEeOWPMVIXr20cg" points="[41, 1, -128, -89]$[178, 0, 9, -90]$[178, 54, 9, -36]"/>
       <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_WKnB0PhMEeOWPMVIXr20cg" id="(0.13636363636363635,0.2753623188405797)"/>
     </edges>
     <edges xmi:type="notation:Connector" xmi:id="_WjI2kPhMEeOWPMVIXr20cg" type="4005" source="_AN22oPhMEeOWPMVIXr20cg" target="_8OlksPhLEeOWPMVIXr20cg">
       <styles xmi:type="notation:FontStyle" xmi:id="_WjI2kfhMEeOWPMVIXr20cg" fontName="Ubuntu"/>
       <element xsi:nil="true"/>
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_WjI2kvhMEeOWPMVIXr20cg" points="[34, -2, -196, 28]$[232, 5, 2, 35]"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_flfm4PhXEeOAQpeGT8v71Q" id="(0.017543859649122806,0.3282442748091603)"/>
     </edges>
     <edges xmi:type="notation:Connector" xmi:id="_XDi08PhMEeOWPMVIXr20cg" type="4005" source="_D5gpAPhMEeOWPMVIXr20cg" target="_8OlksPhLEeOWPMVIXr20cg">
       <styles xmi:type="notation:FontStyle" xmi:id="_XDi08fhMEeOWPMVIXr20cg" fontName="Ubuntu"/>
       <element xsi:nil="true"/>
-      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_XDi08vhMEeOWPMVIXr20cg" points="[15, -9, -151, 83]$[161, -89, -5, 3]"/>
-      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_XDlRMPhMEeOWPMVIXr20cg" id="(0.8314606741573034,0.40816326530612246)"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_XDi08vhMEeOWPMVIXr20cg" points="[45, 1, -108, 50]$[101, 0, -52, 49]$[101, -49, -52, 0]$[136, -49, -17, 0]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_XDlRMPhMEeOWPMVIXr20cg" id="(0.8202247191011236,0.42857142857142855)"/>
       <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_XDlRMfhMEeOWPMVIXr20cg" id="(0.07575757575757576,0.7681159420289855)"/>
     </edges>
     <edges xmi:type="notation:Connector" xmi:id="_XgeBgPhMEeOWPMVIXr20cg" type="4005" source="_KW0DoPhMEeOWPMVIXr20cg" target="_8OlksPhLEeOWPMVIXr20cg">
       <styles xmi:type="notation:FontStyle" xmi:id="_XgeBgfhMEeOWPMVIXr20cg" fontName="Ubuntu"/>
       <element xsi:nil="true"/>
-      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_XgeBgvhMEeOWPMVIXr20cg" points="[25, -25, -146, 144]$[170, -166, -1, 3]"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_XgeBgvhMEeOWPMVIXr20cg" points="[58, 1, -177, 145]$[227, 0, -8, 144]$[227, -138, -8, 6]"/>
       <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Xgf2sPhMEeOWPMVIXr20cg" id="(0.7844827586206896,0.6122448979591837)"/>
       <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_XggdwPhMEeOWPMVIXr20cg" id="(0.4090909090909091,0.9565217391304348)"/>
     </edges>
