@@ -1,24 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <org.eventb.core.psFile>
 <org.eventb.core.psStatus name="ControllerInitiateTapChangerComms/isin_ControllerHasReadVoltage/GRD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="0" org.eventb.core.psBroken="true" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="ControllerInitiateTapChangerComms/isin_ControllerEvaluated/GRD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="0" org.eventb.core.psBroken="true" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="ControllerWait/isin_ControllerHasReadVoltage/GRD" org.eventb.core.confidence="0" org.eventb.core.poStamp="0" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="ControllerWait/isin_ControllerRetriedTapChangerComms/GRD" org.eventb.core.confidence="0" org.eventb.core.poStamp="0" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="ControllerWait/isin_ControllerInitiatedTapChangerComms/GRD" org.eventb.core.confidence="0" org.eventb.core.poStamp="0" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="ControllerWait/isin_ControllerWrotePos/GRD" org.eventb.core.confidence="0" org.eventb.core.poStamp="0" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="ControllerWait/isin_ControllerCompletedTapChangerCommsFail/GRD" org.eventb.core.confidence="0" org.eventb.core.poStamp="0" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="Update/isin_Decremented/GRD" org.eventb.core.confidence="0" org.eventb.core.poStamp="2" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="ControllerRetryTapChangerComms/isin_ControllerEvaluated/GRD" org.eventb.core.confidence="0" org.eventb.core.poStamp="2" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="ControllerRetryTapChangerComms/isin_ControllerHasReadVoltage/GRD" org.eventb.core.confidence="0" org.eventb.core.poStamp="2" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="ControllerReadVoltage/isin_ControllerInitiatedTapChangerComms/GRD" org.eventb.core.confidence="0" org.eventb.core.poStamp="3" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="ControllerReadVoltage/isin_ControllerEvaluated/GRD" org.eventb.core.confidence="0" org.eventb.core.poStamp="3" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="ControllerReadVoltage/isin_ControllerCompletedTapChangerComms/GRD" org.eventb.core.confidence="0" org.eventb.core.poStamp="3" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="ControllerReadVoltage/isin_ControllerRetriedTapChangerComms/GRD" org.eventb.core.confidence="0" org.eventb.core.poStamp="3" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="ControllerWriteVoltage/isin_ControllerNotAdjustedOnCount/GRD" org.eventb.core.confidence="0" org.eventb.core.poStamp="4" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="ControllerWriteVoltage/isin_ControllerNotAdjustedTPOnHighV/GRD" org.eventb.core.confidence="0" org.eventb.core.poStamp="4" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="ControllerWriteVoltage/isin_ControllerAdjustedTaPosDown/GRD" org.eventb.core.confidence="0" org.eventb.core.poStamp="4" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="ControllerWriteVoltage/isin_ControllerInSafeModeLowV/GRD" org.eventb.core.confidence="0" org.eventb.core.poStamp="4" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="ControllerWriteVoltage/isin_ControllerInSafeModeHighV/GRD" org.eventb.core.confidence="0" org.eventb.core.poStamp="4" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="ControllerWriteVoltage/isin_ControllerNotAdjustedTPOnLowV/GRD" org.eventb.core.confidence="0" org.eventb.core.poStamp="4" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="ControllerWriteVoltage/isin_ControllerAdjustedTapPosUp/GRD" org.eventb.core.confidence="0" org.eventb.core.poStamp="4" org.eventb.core.psManual="false"/>
 </org.eventb.core.psFile>
