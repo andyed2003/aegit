@@ -30,6 +30,7 @@
 <org.eventb.core.guard name="_lj2K0fxsEeOaBIjCZeua6C" org.eventb.core.label="grd1" org.eventb.core.predicate="Istep = 0"/>
 <org.eventb.core.guard name="_lj2K0fxsEeOaBIjCZeua6D" org.eventb.core.label="grd2" org.eventb.core.predicate="Cstep = 1"/>
 <org.eventb.core.action name="_lj2K0fxsEeOaBIjCZeua6E" org.eventb.core.assignment="Istep ≔ 1" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="_lj2K0fxsEeOaBIjCZeua6F" org.eventb.core.assignment="csm ≔ ControllerInitiatedTapChangerComms" org.eventb.core.label="act3"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="_lj3Y8vxsEeOaBIjCZeua6E" org.eventb.core.comment="" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="ControllerWait">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="ControllerWait"/>
@@ -61,6 +62,7 @@
 <org.eventb.core.guard name="_lj4AAPxsEeOaBIjCZeua6D" org.eventb.core.label="grd3" org.eventb.core.predicate="Cstep = 1"/>
 <org.eventb.core.action name="_lj4AAPxsEeOaBIjCZeua6E" org.eventb.core.assignment="Istep ≔ 1" org.eventb.core.label="act1"/>
 <org.eventb.core.action name="_lj4AAPxsEeOaBIjCZeua6F" org.eventb.core.assignment="CRetrycount ≔  CRetrycount − 1" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="_lj4AAPxsEeOaBIjCZeua6G" org.eventb.core.assignment="csm ≔ ControllerRetriedTapChangerComms" org.eventb.core.label="act3"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="_lj3Y8vxsEeOaBIjCZeua6I" org.eventb.core.comment="" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="ControllerCompleteTapChangerCommsFail">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="ControllerCompleteTapChangerCommsFail"/>
@@ -95,6 +97,7 @@
 <org.eventb.core.guard name="_lj4nEfxsEeOaBIjCZeua6I" org.eventb.core.label="grd6" org.eventb.core.predicate="ControllerActive = TRUE"/>
 <org.eventb.core.guard name="_lj4nEfxsEeOaBIjCZeua6J" org.eventb.core.label="grd7" org.eventb.core.predicate="Cstep = 1"/>
 <org.eventb.core.guard name="_lj4nEfxsEeOaBIjCZeua6K" org.eventb.core.label="grd8" org.eventb.core.predicate="CFstep = 0"/>
+<org.eventb.core.action name="_lj4nEfxsEeOaBIjCZeua6L" org.eventb.core.assignment="csm ≔ ControllerHasReadVoltage" org.eventb.core.label="act1"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="_lj3Y8vxsEeOaBIjCZeua6L" org.eventb.core.comment="" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="ControllerNoAdjustOnCount">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="ControllerNoAdjustOnCount"/>

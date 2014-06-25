@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.poFile org.eventb.core.poStamp="1">
-<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="1">
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="csm_STATES" org.eventb.core.type="ℙ(csm_STATES)"/>
 <org.eventb.core.poIdentifier name="dsm_STATES" org.eventb.core.type="ℙ(dsm_STATES)"/>
 <org.eventb.core.poIdentifier name="ControllerAdjustedTaPosDown" org.eventb.core.type="csm_STATES"/>
@@ -44,5 +44,5 @@
 <org.eventb.core.poPredicate name="ControllerCompletedTapChangerCommsFaj(" org.eventb.core.predicate="Decremented∈dsm_STATES" org.eventb.core.source="/GRIDC/ComponentDiagramMch_implicitContext.buc|org.eventb.core.contextFile#ComponentDiagramMch_implicitContext|org.eventb.core.axiom#_BaZyYPiFEeO4-YZ92XUX-w"/>
 <org.eventb.core.poPredicate name="ControllerCompletedTapChangerCommsFaj)" org.eventb.core.predicate="partition(dsm_STATES,{DecrementerInitial},{Decremented})" org.eventb.core.source="/GRIDC/ComponentDiagramMch_implicitContext.buc|org.eventb.core.contextFile#ComponentDiagramMch_implicitContext|org.eventb.core.axiom#_BaZyYfiFEeO4-YZ92XUX-w"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/GRIDC/ComponentDiagramMchR1_implicitContext.bpo|org.eventb.core.poFile#ComponentDiagramMchR1_implicitContext|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="1"/>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/GRIDC/ComponentDiagramMchR1_implicitContext.bpo|org.eventb.core.poFile#ComponentDiagramMchR1_implicitContext|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0"/>
 </org.eventb.core.poFile>
