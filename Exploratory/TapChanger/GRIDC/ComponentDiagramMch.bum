@@ -12,6 +12,7 @@
 </org.eventb.core.event>
 <org.eventb.core.event name="_ED2l4PhOEeOLH-p8UjjQfA" org.eventb.core.comment="" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="ControllerInitiateTapChangerComms">
 <org.eventb.core.guard name="_lj2K0fxsEeOaBIjCZeua6A" org.eventb.core.generated="true" org.eventb.core.label="isin_ControllerHasReadVoltage" org.eventb.core.predicate="csm = ControllerEvaluated ∨ csm = ControllerHasReadVoltage" org.eventb.emf.persistence.generator_ID="ac.soton.eventb.statemachines._at8DEPhMEeOWPMVIXr20cg"/>
+<org.eventb.core.action name="_lj2K0fxsEeOaBIjCZeua6B" org.eventb.core.assignment="csm ≔ ControllerInitiatedTapChangerComms" org.eventb.core.label="act1"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="_ED3M8PhOEeOLH-p8UjjQfA" org.eventb.core.comment="" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="ControllerWait">
 <org.eventb.core.guard name="_lj2K0_xsEeOaBIjCZeua6A" org.eventb.core.generated="true" org.eventb.core.label="isin_ControllerHasReadVoltage" org.eventb.core.predicate="csm = ControllerCompletedTapChangerCommsFail ∨ csm = ControllerWrotePos ∨ csm = ControllerInitiatedTapChangerComms ∨ csm = ControllerRetriedTapChangerComms ∨ csm = ControllerHasReadVoltage" org.eventb.emf.persistence.generator_ID="ac.soton.eventb.statemachines._at8DEPhMEeOWPMVIXr20cg"/>
@@ -32,6 +33,7 @@
 <org.eventb.core.invariant name="_BaU54PiFEeO4-YZ92XUX-w" org.eventb.core.generated="true" org.eventb.core.label="typeof_dsm" org.eventb.core.predicate="dsm ∈ dsm_STATES" org.eventb.emf.persistence.generator_ID="ac.soton.eventb.statemachines._V0wbsPhOEeOLH-p8UjjQfA"/>
 <org.eventb.core.event name="_zA9-oPxpEeOaBIjCZeua6A" org.eventb.core.comment="" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="ControllerRetryTapChangerComms">
 <org.eventb.core.guard name="_lj4AAPxsEeOaBIjCZeua6A" org.eventb.core.generated="true" org.eventb.core.label="isin_ControllerEvaluated" org.eventb.core.predicate="csm = ControllerHasReadVoltage ∨ csm = ControllerEvaluated" org.eventb.emf.persistence.generator_ID="ac.soton.eventb.statemachines._at8DEPhMEeOWPMVIXr20cg"/>
+<org.eventb.core.action name="_lj4AAPxsEeOaBIjCZeua6B" org.eventb.core.assignment="csm ≔ ControllerRetriedTapChangerComms" org.eventb.core.label="act1"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="_zA9-ofxpEeOaBIjCZeua6A" org.eventb.core.comment="" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="ControllerCompleteTapChangerCommsFail">
 <org.eventb.core.guard name="_lj4AAvxsEeOaBIjCZeua6A" org.eventb.core.generated="true" org.eventb.core.label="isin_ControllerEvaluated" org.eventb.core.predicate="csm = ControllerEvaluated" org.eventb.emf.persistence.generator_ID="ac.soton.eventb.statemachines._at8DEPhMEeOWPMVIXr20cg"/>
@@ -43,6 +45,7 @@
 </org.eventb.core.event>
 <org.eventb.core.event name="_9lVVQPxpEeOaBIjCZeua6A" org.eventb.core.comment="" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="ControllerReadVoltage">
 <org.eventb.core.guard name="_lj4nEfxsEeOaBIjCZeua6A" org.eventb.core.generated="true" org.eventb.core.label="isin_ControllerInitiatedTapChangerComms" org.eventb.core.predicate="csm = ControllerRetriedTapChangerComms ∨ csm = ControllerCompletedTapChangerComms ∨ csm = ControllerEvaluated ∨ csm = ControllerInitiatedTapChangerComms" org.eventb.emf.persistence.generator_ID="ac.soton.eventb.statemachines._at8DEPhMEeOWPMVIXr20cg"/>
+<org.eventb.core.action name="_lj4nEfxsEeOaBIjCZeua6B" org.eventb.core.assignment="csm ≔ ControllerHasReadVoltage" org.eventb.core.label="act1"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="_QJO40PxrEeOaBIjCZeua6A" org.eventb.core.comment="" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="ControllerNoAdjustOnCount">
 <org.eventb.core.guard name="_lj4nFfxsEeOaBIjCZeua6A" org.eventb.core.generated="true" org.eventb.core.label="isin_ControllerHasReadVoltage" org.eventb.core.predicate="csm = ControllerHasReadVoltage" org.eventb.emf.persistence.generator_ID="ac.soton.eventb.statemachines._at8DEPhMEeOWPMVIXr20cg"/>
