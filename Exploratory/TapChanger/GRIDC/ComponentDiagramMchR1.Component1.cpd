@@ -506,7 +506,7 @@
       <styles xmi:type="notation:RoutingStyle" xmi:id="_nuGjQfxpEeOaBIjCZeua6A" routing="Rectilinear"/>
       <styles xmi:type="notation:FontStyle" xmi:id="_nuGjQvxpEeOaBIjCZeua6A" fontName="Ubuntu"/>
       <element xmi:type="statemachines:Transition" href="ComponentDiagramMchR1.bum#http://soton.ac.uk/models/eventb/statemachines/2014::Transition::ComponentDiagramMchR1.Component1.Controller.csm._nuI_gPxpEeOaBIjCZeua6A"/>
-      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_nuGjQ_xpEeOaBIjCZeua6A" points="[13, 3, -599, -150]$[613, 151, 1, -2]"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_nuGjQ_xpEeOaBIjCZeua6A" points="[13, -4, -599, -157]$[604, -4, -8, -157]$[604, 151, -8, -2]"/>
       <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_nuK0sPxpEeOaBIjCZeua6A" id="(0.8907563025210085,0.35)"/>
       <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_nuK0sfxpEeOaBIjCZeua6A" id="(0.5384615384615384,0.05)"/>
     </edges>
