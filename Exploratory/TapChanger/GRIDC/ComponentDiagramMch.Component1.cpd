@@ -13,10 +13,6 @@
         <styles xmi:type="notation:FilteringStyle" xmi:id="_8Op2IvhLEeOWPMVIXr20cg"/>
       </children>
       <children xmi:type="notation:BasicCompartment" xmi:id="_8Op2I_hLEeOWPMVIXr20cg" type="7005">
-        <children xmi:type="notation:Node" xmi:id="_DaVYsPhXEeOAQpeGT8v71Q" type="3010">
-          <element xmi:type="components:Method" href="ComponentDiagramMch.bum#http://soton.ac.uk/models/eventb/components/2014::Method::ComponentDiagramMch.Component1.Controller._Dai0EPhXEeOAQpeGT8v71Q"/>
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_DaVYsfhXEeOAQpeGT8v71Q"/>
-        </children>
         <children xmi:type="notation:Node" xmi:id="_N7MvYPhXEeOAQpeGT8v71Q" type="3010">
           <element xmi:type="components:Method" href="ComponentDiagramMch.bum#http://soton.ac.uk/models/eventb/components/2014::Method::ComponentDiagramMch.Component1.Controller._N7N9gPhXEeOAQpeGT8v71Q"/>
           <layoutConstraint xmi:type="notation:Location" xmi:id="_N7MvYfhXEeOAQpeGT8v71Q"/>
@@ -56,10 +52,6 @@
         <styles xmi:type="notation:FilteringStyle" xmi:id="_-BJug_hLEeOWPMVIXr20cg"/>
       </children>
       <children xmi:type="notation:BasicCompartment" xmi:id="_-BJuhPhLEeOWPMVIXr20cg" type="7005">
-        <children xmi:type="notation:Node" xmi:id="_Gp7hMPhXEeOAQpeGT8v71Q" type="3010">
-          <element xmi:type="components:Method" href="ComponentDiagramMch.bum#http://soton.ac.uk/models/eventb/components/2014::Method::ComponentDiagramMch.Component1.Decrementer._Gp9WYPhXEeOAQpeGT8v71Q"/>
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_Gp8IQPhXEeOAQpeGT8v71Q"/>
-        </children>
         <children xmi:type="notation:Node" xmi:id="_L8SLoPhXEeOAQpeGT8v71Q" type="3010">
           <element xmi:type="components:Method" href="ComponentDiagramMch.bum#http://soton.ac.uk/models/eventb/components/2014::Method::ComponentDiagramMch.Component1.Decrementer._L8UA0PhXEeOAQpeGT8v71Q"/>
           <layoutConstraint xmi:type="notation:Location" xmi:id="_L8SLofhXEeOAQpeGT8v71Q"/>
@@ -104,26 +96,44 @@
     <children xmi:type="notation:Shape" xmi:id="_AN22oPhMEeOWPMVIXr20cg" type="2006" fontName="Ubuntu" fillColor="7563521">
       <children xmi:type="notation:DecorationNode" xmi:id="_AN4r0PhMEeOWPMVIXr20cg" type="5011"/>
       <children xmi:type="notation:DecorationNode" xmi:id="_AN4r0fhMEeOWPMVIXr20cg" type="5012"/>
-      <element xmi:type="components:Connector" href="ComponentDiagramMch.bum#http://soton.ac.uk/models/eventb/components/2014::Connector::ComponentDiagramMch.Component1.posConn"/>
+      <element xmi:type="components:Connector" href="ComponentDiagramMch.bum#http://soton.ac.uk/models/eventb/components/2014::Connector::ComponentDiagramMch.Component1.position"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AN22ofhMEeOWPMVIXr20cg" x="410" y="175"/>
     </children>
     <children xmi:type="notation:Shape" xmi:id="_COIsUPhMEeOWPMVIXr20cg" type="2006" fontName="Ubuntu" fillColor="7563521">
       <children xmi:type="notation:DecorationNode" xmi:id="_COJ6cPhMEeOWPMVIXr20cg" type="5011"/>
       <children xmi:type="notation:DecorationNode" xmi:id="_COKhgPhMEeOWPMVIXr20cg" type="5012"/>
-      <element xmi:type="components:Connector" href="ComponentDiagramMch.bum#http://soton.ac.uk/models/eventb/components/2014::Connector::ComponentDiagramMch.Component1.retryCount"/>
+      <element xmi:type="components:Connector" href="ComponentDiagramMch.bum#http://soton.ac.uk/models/eventb/components/2014::Connector::ComponentDiagramMch.Component1.count"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_COIsUfhMEeOWPMVIXr20cg" x="402" y="77"/>
     </children>
     <children xmi:type="notation:Shape" xmi:id="_D5gpAPhMEeOWPMVIXr20cg" type="2006" fontName="Ubuntu" fillColor="7563521">
       <children xmi:type="notation:DecorationNode" xmi:id="_D5h3IPhMEeOWPMVIXr20cg" type="5011"/>
       <children xmi:type="notation:DecorationNode" xmi:id="_D5h3IfhMEeOWPMVIXr20cg" type="5012"/>
-      <element xmi:type="components:Connector" href="ComponentDiagramMch.bum#http://soton.ac.uk/models/eventb/components/2014::Connector::ComponentDiagramMch.Component1.voltageConn"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_D5gpAfhMEeOWPMVIXr20cg" x="400" y="280"/>
+      <element xmi:type="components:Connector" href="ComponentDiagramMch.bum#http://soton.ac.uk/models/eventb/components/2014::Connector::ComponentDiagramMch.Component1.currentvoltage"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_D5gpAfhMEeOWPMVIXr20cg" x="390" y="235"/>
     </children>
     <children xmi:type="notation:Shape" xmi:id="_KW0DoPhMEeOWPMVIXr20cg" type="2006" fontName="Ubuntu" fillColor="7563521">
       <children xmi:type="notation:DecorationNode" xmi:id="_KW0qsPhMEeOWPMVIXr20cg" type="5011"/>
       <children xmi:type="notation:DecorationNode" xmi:id="_KW0qsfhMEeOWPMVIXr20cg" type="5012"/>
-      <element xmi:type="components:Connector" href="ComponentDiagramMch.bum#http://soton.ac.uk/models/eventb/components/2014::Connector::ComponentDiagramMch.Component1.predictedVoltage"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KW0DofhMEeOWPMVIXr20cg" x="380" y="400"/>
+      <element xmi:type="components:Connector" href="ComponentDiagramMch.bum#http://soton.ac.uk/models/eventb/components/2014::Connector::ComponentDiagramMch.Component1.predicted"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KW0DofhMEeOWPMVIXr20cg" x="405" y="310"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_SfA-wAAsEeSoT9HvvKrsfg" type="2006" fontName="Ubuntu" fillColor="7563521">
+      <children xmi:type="notation:DecorationNode" xmi:id="_SfCM4AAsEeSoT9HvvKrsfg" type="5011"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_SfCM4QAsEeSoT9HvvKrsfg" type="5012"/>
+      <element xmi:type="components:Connector" href="ComponentDiagramMch.bum#http://soton.ac.uk/models/eventb/components/2014::Connector::ComponentDiagramMch.Component1.reset"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SfA-wQAsEeSoT9HvvKrsfg" x="405" y="5"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_UEERAAAsEeSoT9HvvKrsfg" type="2006" fontName="Ubuntu" fillColor="7563521">
+      <children xmi:type="notation:DecorationNode" xmi:id="_UEE4EAAsEeSoT9HvvKrsfg" type="5011"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_UEE4EQAsEeSoT9HvvKrsfg" type="5012"/>
+      <element xmi:type="components:Connector" href="ComponentDiagramMch.bum#http://soton.ac.uk/models/eventb/components/2014::Connector::ComponentDiagramMch.Component1.TCInit"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UEERAQAsEeSoT9HvvKrsfg" x="420" y="390"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_Yj7HgAAsEeSoT9HvvKrsfg" type="2006" fontName="Ubuntu" fillColor="7563521">
+      <children xmi:type="notation:DecorationNode" xmi:id="_Yj7ukAAsEeSoT9HvvKrsfg" type="5011"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_Yj7ukQAsEeSoT9HvvKrsfg" type="5012"/>
+      <element xmi:type="components:Connector" href="ComponentDiagramMch.bum#http://soton.ac.uk/models/eventb/components/2014::Connector::ComponentDiagramMch.Component1.TCAcknowledge"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Yj7HgQAsEeSoT9HvvKrsfg" x="390" y="470"/>
     </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_44aTEfhLEeOWPMVIXr20cg"/>
     <element xmi:type="components:Component" href="ComponentDiagramMch.bum#http://soton.ac.uk/models/eventb/components/2014::Component::ComponentDiagramMch.Component1"/>

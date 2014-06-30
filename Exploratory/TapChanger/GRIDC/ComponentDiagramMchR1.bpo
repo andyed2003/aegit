@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.poFile org.eventb.core.poStamp="28">
+<org.eventb.core.poFile org.eventb.core.poStamp="29">
 <org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="csm_STATES" org.eventb.core.type="ℙ(csm_STATES)"/>
 <org.eventb.core.poIdentifier name="dsm_STATES" org.eventb.core.type="ℙ(dsm_STATES)"/>
@@ -112,9 +112,9 @@
 <org.eventb.core.poIdentifier name="dsm'" org.eventb.core.type="dsm_STATES"/>
 <org.eventb.core.poIdentifier name="csm'" org.eventb.core.type="csm_STATES"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPComponentDiagramMch_implicitContey-" org.eventb.core.parentSet="/GRIDC/ComponentDiagramMchR1.bpo|org.eventb.core.poFile#ComponentDiagramMchR1|org.eventb.core.poPredicateSet#EVTIDENTComponentDiagramMch_implicitContey-" org.eventb.core.poStamp="4">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="csm=ControllerWaiting" org.eventb.core.source="/GRIDC/ComponentDiagramMch.bum|org.eventb.core.machineFile#ComponentDiagramMch|org.eventb.core.event#_1JWqkPhPEeOUiK1RVsH65w|org.eventb.core.guard#_8PC7sf0BEeOmNcYCEUWh1Q"/>
-<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="csm=ControllerWaiting∨dsm=Decremented" org.eventb.core.source="/GRIDC/ComponentDiagramMch.bum|org.eventb.core.machineFile#ComponentDiagramMch|org.eventb.core.event#_1JWqkPhPEeOUiK1RVsH65w|org.eventb.core.guard#_BaTrwPiFEeO4-YZ92XUX-w"/>
+<org.eventb.core.poPredicateSet name="EVTALLHYPComponentDiagramMch_implicitContey-" org.eventb.core.parentSet="/GRIDC/ComponentDiagramMchR1.bpo|org.eventb.core.poFile#ComponentDiagramMchR1|org.eventb.core.poPredicateSet#EVTIDENTComponentDiagramMch_implicitContey-" org.eventb.core.poStamp="29">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="csm=ControllerWaiting" org.eventb.core.source="/GRIDC/ComponentDiagramMchR1.bum|org.eventb.core.machineFile#ComponentDiagramMchR1|org.eventb.core.event#_SSMWQPiCEeO4-YZ92XUX-}|org.eventb.core.guard#_8PC7sf0BEeOmNcYCEUWh1Q"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="csm=ControllerWaiting∨dsm=Decremented" org.eventb.core.source="/GRIDC/ComponentDiagramMchR1.bum|org.eventb.core.machineFile#ComponentDiagramMchR1|org.eventb.core.event#_SSMWQPiCEeO4-YZ92XUX-}|org.eventb.core.guard#_BaTrwPiFEeO4-YZ92XUX-w"/>
 </org.eventb.core.poPredicateSet>
 <org.eventb.core.poPredicateSet name="EVTIDENTComponentDiagramMch_implicitContey." org.eventb.core.parentSet="/GRIDC/ComponentDiagramMchR1.bpo|org.eventb.core.poFile#ComponentDiagramMchR1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="9">
 <org.eventb.core.poIdentifier name="CRetrycount'" org.eventb.core.type="ℤ"/>
