@@ -1,2 +1,37 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<org.eventb.core.psFile/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.psFile>
+<org.eventb.core.psStatus name="INITIALISATION/current_time__type/INV" org.eventb.core.confidence="-99" org.eventb.core.poStamp="11" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/TCAcknowledge__type/INV" org.eventb.core.confidence="-99" org.eventb.core.poStamp="11" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/TCInit__type/INV" org.eventb.core.confidence="-99" org.eventb.core.poStamp="11" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/reset__type/INV" org.eventb.core.confidence="-99" org.eventb.core.poStamp="11" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/predicted__type/INV" org.eventb.core.confidence="-99" org.eventb.core.poStamp="11" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/currentvoltage__type/INV" org.eventb.core.confidence="-99" org.eventb.core.poStamp="11" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/count__type/INV" org.eventb.core.confidence="-99" org.eventb.core.poStamp="11" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/position__type/INV" org.eventb.core.confidence="-99" org.eventb.core.poStamp="11" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/TCAcknowledge__helperInv/INV" org.eventb.core.confidence="-99" org.eventb.core.poStamp="11" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/TCInit__helperInv/INV" org.eventb.core.confidence="-99" org.eventb.core.poStamp="11" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/reset__helperInv/INV" org.eventb.core.confidence="-99" org.eventb.core.poStamp="11" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/predicted__helperInv/INV" org.eventb.core.confidence="-99" org.eventb.core.poStamp="11" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/currentvoltage__helperInv/INV" org.eventb.core.confidence="-99" org.eventb.core.poStamp="11" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/count__helperInv/INV" org.eventb.core.confidence="-99" org.eventb.core.poStamp="11" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/position__helperInv/INV" org.eventb.core.confidence="-99" org.eventb.core.poStamp="11" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="ControllerInitiateTapChangerComms/TCInit__type/INV" org.eventb.core.confidence="-99" org.eventb.core.poStamp="11" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="ControllerInitiateTapChangerComms/TCInit__helperInv/INV" org.eventb.core.confidence="-99" org.eventb.core.poStamp="11" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="ControllerCompleteTapChangerCommsFail/TCInit__type/INV" org.eventb.core.confidence="-99" org.eventb.core.poStamp="11" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="ControllerCompleteTapChangerCommsFail/TCInit__helperInv/INV" org.eventb.core.confidence="-99" org.eventb.core.poStamp="11" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="ControllerNoAdjustOnCount/reset__type/INV" org.eventb.core.confidence="-99" org.eventb.core.poStamp="11" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="ControllerNoAdjustOnCount/reset__helperInv/INV" org.eventb.core.confidence="-99" org.eventb.core.poStamp="11" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="ControllerNoAdjustTPOnLowV/reset__type/INV" org.eventb.core.confidence="-99" org.eventb.core.poStamp="11" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="ControllerNoAdjustTPOnLowV/reset__helperInv/INV" org.eventb.core.confidence="-99" org.eventb.core.poStamp="11" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="ControllerNoAdjustTPOnHighV/reset__type/INV" org.eventb.core.confidence="-99" org.eventb.core.poStamp="11" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="ControllerNoAdjustTPOnHighV/reset__helperInv/INV" org.eventb.core.confidence="-99" org.eventb.core.poStamp="11" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="ControllerAdjustTapPosUp/reset__type/INV" org.eventb.core.confidence="-99" org.eventb.core.poStamp="11" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="ControllerAdjustTapPosUp/reset__helperInv/INV" org.eventb.core.confidence="-99" org.eventb.core.poStamp="11" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="ControllerAdjustTapPosDown/reset__type/INV" org.eventb.core.confidence="-99" org.eventb.core.poStamp="11" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="ControllerAdjustTapPosDown/reset__helperInv/INV" org.eventb.core.confidence="-99" org.eventb.core.poStamp="11" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="ControllerToSafeModeLowV/reset__type/INV" org.eventb.core.confidence="-99" org.eventb.core.poStamp="11" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="ControllerToSafeModeLowV/reset__helperInv/INV" org.eventb.core.confidence="-99" org.eventb.core.poStamp="11" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="ControllerToSafeModeHighV/reset__type/INV" org.eventb.core.confidence="-99" org.eventb.core.poStamp="11" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="ControllerToSafeModeHighV/reset__helperInv/INV" org.eventb.core.confidence="-99" org.eventb.core.poStamp="11" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="Timer/current_time__type/INV" org.eventb.core.confidence="-99" org.eventb.core.poStamp="11" org.eventb.core.psManual="false"/>
+</org.eventb.core.psFile>

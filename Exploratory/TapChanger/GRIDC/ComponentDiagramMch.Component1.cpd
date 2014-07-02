@@ -47,10 +47,6 @@
           <element xmi:type="components:Transition" href="ComponentDiagramMch.bum#http://soton.ac.uk/models/eventb/components/2014::Transition::ComponentDiagramMch.Component1.Controller._FpHXUAHBEeSnMp996DaeuA"/>
           <layoutConstraint xmi:type="notation:Location" xmi:id="_FpGwQQHBEeSnMp996DaeuA"/>
         </children>
-        <children xmi:type="notation:Node" xmi:id="_HjLQQAHBEeSnMp996DaeuA" type="3014">
-          <element xmi:type="components:Transition" href="ComponentDiagramMch.bum#http://soton.ac.uk/models/eventb/components/2014::Transition::ComponentDiagramMch.Component1.Controller._HjL3UAHBEeSnMp996DaeuA"/>
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_HjLQQQHBEeSnMp996DaeuA"/>
-        </children>
         <children xmi:type="notation:Node" xmi:id="_JCsiQAHBEeSnMp996DaeuA" type="3014">
           <element xmi:type="components:Transition" href="ComponentDiagramMch.bum#http://soton.ac.uk/models/eventb/components/2014::Transition::ComponentDiagramMch.Component1.Controller._JCtJUAHBEeSnMp996DaeuA"/>
           <layoutConstraint xmi:type="notation:Location" xmi:id="_JCsiQQHBEeSnMp996DaeuA"/>
