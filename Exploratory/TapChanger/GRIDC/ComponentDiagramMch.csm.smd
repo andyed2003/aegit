@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:statemachines="http://soton.ac.uk/models/eventb/statemachines/2014" xmi:id="_XKrbgAG_EeSnMp996DaeuA" type="Statemachines" measurementUnit="Pixel">
-  <styles xmi:type="notation:DiagramStyle" xmi:id="_XKrbgQG_EeSnMp996DaeuA"/>
-  <element xmi:type="statemachines:Statemachine" href="ComponentDiagramMch.bum#http://soton.ac.uk/models/eventb/statemachines/2014::Statemachine::ComponentDiagramMch.Component1.Controller.csm"/>
-</notation:Diagram>
