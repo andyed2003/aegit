@@ -70,4 +70,24 @@
 <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="T" org.eventb.core.identifier="v"/>
 <org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="t"/>
 </org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.codegen.theory.translator.core.translatorElement name="4" org.eventb.codegen.theory.translator.core.targetLanguage="C">
+<org.eventb.theory.core.metaVariable name="'" org.eventb.core.identifier="a" org.eventb.theory.core.type="ℙ(T)"/>
+<org.eventb.theory.core.metaVariable name="(" org.eventb.core.identifier="b" org.eventb.theory.core.type="ℙ(T)"/>
+<org.eventb.theory.core.metaVariable name=")" org.eventb.core.identifier="s" org.eventb.theory.core.type="T"/>
+<org.eventb.theory.core.metaVariable name="*" org.eventb.core.identifier="t" org.eventb.theory.core.type="ℙ(T)"/>
+<org.eventb.codegen.theory.translator.core.translatorRuleElement name="+" org.eventb.codegen.theory.translator.core.formula="ℤ" org.eventb.codegen.theory.translator.core.translationElement="int" org.eventb.core.label="IntegerType"/>
+<org.eventb.codegen.theory.translator.core.translatorRuleElement name="," org.eventb.codegen.theory.translator.core.formula="setUnion(a,b)" org.eventb.codegen.theory.translator.core.translationElement="union(a,b)" org.eventb.core.label="unionRule"/>
+<org.eventb.codegen.theory.translator.core.translatorRuleElement name="-" org.eventb.codegen.theory.translator.core.formula="setIntersection(a,b)" org.eventb.codegen.theory.translator.core.translationElement="intersect(a, b)" org.eventb.core.label="intersectRule"/>
+<org.eventb.codegen.theory.translator.core.translatorRuleElement name="." org.eventb.codegen.theory.translator.core.formula="setSubtract(a,b)" org.eventb.codegen.theory.translator.core.translationElement="subtract(a, b)" org.eventb.core.comment="subtract b from a !!!" org.eventb.core.label="subtractRule"/>
+<org.eventb.codegen.theory.translator.core.translatorRuleElement name="/" org.eventb.codegen.theory.translator.core.formula="newSet(∅⦂ℙ(t))" org.eventb.codegen.theory.translator.core.translationElement="create(t)" org.eventb.core.comment="create empty set of Type t" org.eventb.core.label="newSetRule"/>
+<org.eventb.codegen.theory.translator.core.translatorRuleElement name="0" org.eventb.codegen.theory.translator.core.formula="setReduce(a)" org.eventb.codegen.theory.translator.core.translationElement="getFirst(a)" org.eventb.core.label="setReduceRule"/>
+<org.eventb.codegen.theory.translator.core.translatorRuleElement name="1" org.eventb.codegen.theory.translator.core.formula="singleton(s) ∪ a" org.eventb.codegen.theory.translator.core.translationElement="setUnion(a, s)" org.eventb.core.label="singletonRule"/>
+<org.eventb.codegen.theory.translator.core.translatorRuleElement name="2" org.eventb.codegen.theory.translator.core.formula="newInst(T)" org.eventb.codegen.theory.translator.core.translationElement="create(T)" org.eventb.core.comment="create a new instance of type T" org.eventb.core.label="newInstanceRule1"/>
+<org.eventb.codegen.theory.translator.core.translatorRuleElement name="3" org.eventb.codegen.theory.translator.core.formula="newInst2(t,s)" org.eventb.codegen.theory.translator.core.translationElement="create(t, s)" org.eventb.core.comment="create a new set of T with a ne w instance t" org.eventb.core.label="newInstanceRule2"/>
+<org.eventb.codegen.theory.translator.core.translatorRuleElement name="4" org.eventb.codegen.theory.translator.core.formula="newEnum(s)" org.eventb.codegen.theory.translator.core.translationElement="s" org.eventb.core.comment="a new enum of s" org.eventb.core.label="newEnumRule"/>
+<org.eventb.codegen.theory.translator.core.translatorTypeRuleElement name="5" org.eventb.codegen.theory.translator.core.translationElement="int" org.eventb.codegen.theory.translator.core.typeFormula="ℤ" org.eventb.core.label="typeTrns1"/>
+<org.eventb.codegen.theory.translator.core.translatorTypeRuleElement name="6" org.eventb.codegen.theory.translator.core.translationElement="setOf'T" org.eventb.codegen.theory.translator.core.typeFormula="setImpl(T)" org.eventb.core.label="typeTrns2"/>
+<org.eventb.codegen.theory.translator.core.translatorTypeRuleElement name="7" org.eventb.codegen.theory.translator.core.translationElement="T" org.eventb.codegen.theory.translator.core.typeFormula="newType(T)" org.eventb.core.label="typeTrns3"/>
+<org.eventb.codegen.theory.translator.core.translatorTypeRuleElement name="8" org.eventb.codegen.theory.translator.core.translationElement="EnumOf'T" org.eventb.codegen.theory.translator.core.typeFormula="newEnum(T)" org.eventb.core.label="typeTrns4"/>
+</org.eventb.codegen.theory.translator.core.translatorElement>
 </org.eventb.theory.core.theoryRoot>

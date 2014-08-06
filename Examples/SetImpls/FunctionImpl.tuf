@@ -32,4 +32,13 @@
 <org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="D" org.eventb.core.identifier="d"/>
 <org.eventb.theory.core.operatorWDcondition name="*" org.eventb.core.predicate="d∈dom(f)"/>
 </org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.codegen.theory.translator.core.translatorElement name="0" org.eventb.codegen.theory.translator.core.targetLanguage="C">
+<org.eventb.theory.core.metaVariable name="'" org.eventb.core.identifier="f" org.eventb.theory.core.type="ℙ(D×R)"/>
+<org.eventb.theory.core.metaVariable name="(" org.eventb.core.identifier="d" org.eventb.theory.core.type="D"/>
+<org.eventb.theory.core.metaVariable name=")" org.eventb.core.identifier="r" org.eventb.theory.core.type="R"/>
+<org.eventb.codegen.theory.translator.core.translatorRuleElement name="*" org.eventb.codegen.theory.translator.core.formula="newpFunImpl(∅⦂ℙ(D×R))" org.eventb.codegen.theory.translator.core.translationElement="createHashMapImpl(D,R)" org.eventb.core.label="newpFunImplRule"/>
+<org.eventb.codegen.theory.translator.core.translatorRuleElement name="+" org.eventb.codegen.theory.translator.core.formula="pfunUpdate(f,d,r)" org.eventb.codegen.theory.translator.core.translationElement="put2(f,d,r)" org.eventb.core.label="pfunUpdateRule"/>
+<org.eventb.codegen.theory.translator.core.translatorRuleElement name="," org.eventb.codegen.theory.translator.core.formula="pfunLookup(f,d)" org.eventb.codegen.theory.translator.core.translationElement="get(f,d)" org.eventb.core.label="pfunLookupRule"/>
+<org.eventb.codegen.theory.translator.core.translatorTypeRuleElement name="-" org.eventb.codegen.theory.translator.core.translationElement="HashMapImpl(D, R)" org.eventb.codegen.theory.translator.core.typeFormula="pfunImpl(D,R)" org.eventb.core.label="pfunImplRule"/>
+</org.eventb.codegen.theory.translator.core.translatorElement>
 </org.eventb.theory.core.theoryRoot>
