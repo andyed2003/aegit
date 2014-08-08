@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.theory.core.theoryRoot org.eventb.core.comment="  " org.eventb.core.configuration="org.eventb.codegen.theory.translator.core.thyTranslator">
+<org.eventb.theory.core.typeParameter name="'" org.eventb.core.identifier="T"/>
+<org.eventb.theory.core.newOperatorDefinition name="(" org.eventb.core.label="array" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(T)" org.eventb.core.identifier="s"/>
+<org.eventb.theory.core.directOperatorDefinition name="+" org.eventb.theory.core.formula="{ n, f · n ∈ ℕ ∧ f ∈ 0‥(n−1) → s ∣ f }"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="," org.eventb.core.label="arrayN" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="ℤ" org.eventb.core.identifier="n"/>
+<org.eventb.theory.core.operatorWDcondition name=")" org.eventb.core.predicate="n ∈ ℕ"/>
+<org.eventb.theory.core.directOperatorDefinition name="*" org.eventb.theory.core.formula="{ a ∣ a∈array(s) ∧ card(s) = n }"/>
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(T)" org.eventb.core.identifier="s"/>
+<org.eventb.theory.core.operatorWDcondition name="+" org.eventb.core.predicate="finite(s)"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="*" org.eventb.core.label="lookup" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℤ↔T" org.eventb.core.identifier="a"/>
+<org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="ℤ" org.eventb.core.identifier="i"/>
+<org.eventb.theory.core.operatorWDcondition name=")" org.eventb.core.predicate="a ∈ array(T)"/>
+<org.eventb.theory.core.operatorWDcondition name="*" org.eventb.core.predicate="i ∈ 0‥(card(a)−1)"/>
+<org.eventb.theory.core.directOperatorDefinition name="+" org.eventb.theory.core.formula="a(i)"/>
+<org.eventb.theory.core.operatorWDcondition name="," org.eventb.core.predicate="finite(a)"/>
+<org.eventb.theory.core.operatorWDcondition name="-" org.eventb.core.predicate="i∈dom(a)"/>
+<org.eventb.theory.core.operatorWDcondition name="." org.eventb.core.predicate="a∈ℤ ⇸ T"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name=")" org.eventb.core.label="update" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℤ↔T" org.eventb.core.identifier="a"/>
+<org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="ℤ" org.eventb.core.identifier="i"/>
+<org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="T" org.eventb.core.identifier="x"/>
+<org.eventb.theory.core.operatorWDcondition name="*" org.eventb.core.predicate="a ∈ array(T)"/>
+<org.eventb.theory.core.operatorWDcondition name="+" org.eventb.core.predicate="i ∈ 0‥(card(a)−1)"/>
+<org.eventb.theory.core.directOperatorDefinition name="," org.eventb.theory.core.formula="a{i↦x}"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="+" org.eventb.core.label="newArray" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="ℤ" org.eventb.core.identifier="n"/>
+<org.eventb.theory.core.operatorWDcondition name=")" org.eventb.core.predicate="n ∈ ℕ"/>
+<org.eventb.theory.core.directOperatorDefinition name="*" org.eventb.theory.core.formula="(0‥(n−1)) × {x}"/>
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="T" org.eventb.core.identifier="x"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.codegen.theory.translator.core.translatorElement name="-" org.eventb.codegen.theory.translator.core.targetLanguage="C">
+<org.eventb.codegen.theory.translator.core.translatorTypeRuleElement name="'" org.eventb.codegen.theory.translator.core.translationElement="s[n]" org.eventb.codegen.theory.translator.core.typeFormula="arrayN(n,s)" org.eventb.core.label="typeTrns1"/>
+<org.eventb.theory.core.metaVariable name="(" org.eventb.core.identifier="s" org.eventb.theory.core.type="ℙ(T)"/>
+<org.eventb.theory.core.metaVariable name=")" org.eventb.core.identifier="n" org.eventb.theory.core.type="ℤ"/>
+<org.eventb.codegen.theory.translator.core.translatorRuleElement name="*" org.eventb.codegen.theory.translator.core.formula="lookup(a,i)" org.eventb.codegen.theory.translator.core.translationElement="a[i]" org.eventb.core.label="trns1"/>
+<org.eventb.theory.core.metaVariable name="+" org.eventb.core.identifier="a" org.eventb.theory.core.type="ℤ↔T"/>
+<org.eventb.theory.core.metaVariable name="," org.eventb.core.identifier="i" org.eventb.theory.core.type="ℤ"/>
+<org.eventb.codegen.theory.translator.core.translatorRuleElement name="-" org.eventb.codegen.theory.translator.core.formula="a ≔ update(a,i,x)" org.eventb.codegen.theory.translator.core.translationElement="a[i] = x" org.eventb.core.label="trns2"/>
+<org.eventb.theory.core.metaVariable name="." org.eventb.core.identifier="x" org.eventb.theory.core.type="T"/>
+<org.eventb.codegen.theory.translator.core.translatorRuleElement name="/" org.eventb.codegen.theory.translator.core.formula="a ≔ newArray(n,x)" org.eventb.codegen.theory.translator.core.translationElement="for (int j=0; j&lt;n; j++){&#10;    a[j] = x ;&#10;}" org.eventb.core.label="trns3"/>
+</org.eventb.codegen.theory.translator.core.translatorElement>
+<org.eventb.codegen.theory.translator.core.translatorElement name="-1" org.eventb.codegen.theory.translator.core.targetLanguage="Ada">
+<org.eventb.codegen.theory.translator.core.translatorTypeRuleElement name="'" org.eventb.codegen.theory.translator.core.translationElement="array (0..n-1) of s" org.eventb.codegen.theory.translator.core.typeFormula="arrayN(n,s)" org.eventb.core.label="typeTrns1"/>
+<org.eventb.theory.core.metaVariable name="(" org.eventb.core.identifier="s" org.eventb.theory.core.type="ℙ(T)"/>
+<org.eventb.theory.core.metaVariable name=")" org.eventb.core.identifier="n" org.eventb.theory.core.type="ℤ"/>
+<org.eventb.codegen.theory.translator.core.translatorRuleElement name="*" org.eventb.codegen.theory.translator.core.formula="lookup(a,i)" org.eventb.codegen.theory.translator.core.translationElement="a(i)" org.eventb.core.label="trns1"/>
+<org.eventb.theory.core.metaVariable name="+" org.eventb.core.identifier="a" org.eventb.theory.core.type="ℤ↔T"/>
+<org.eventb.theory.core.metaVariable name="," org.eventb.core.identifier="i" org.eventb.theory.core.type="ℤ"/>
+<org.eventb.codegen.theory.translator.core.translatorRuleElement name="-" org.eventb.codegen.theory.translator.core.formula="a ≔ update(a,i,x)" org.eventb.codegen.theory.translator.core.translationElement="a(i) := x" org.eventb.core.label="trns2"/>
+<org.eventb.theory.core.metaVariable name="." org.eventb.core.identifier="x" org.eventb.theory.core.type="T"/>
+<org.eventb.codegen.theory.translator.core.translatorRuleElement name="/" org.eventb.codegen.theory.translator.core.formula="newArray(n,x)" org.eventb.codegen.theory.translator.core.translationElement="(others =&gt; x)" org.eventb.core.label="trns3"/>
+</org.eventb.codegen.theory.translator.core.translatorElement>
+</org.eventb.theory.core.theoryRoot>
