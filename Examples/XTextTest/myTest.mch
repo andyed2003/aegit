@@ -1,39 +1,28 @@
-Machine mach
-{
-	variables{
-		Variable a{}, Variable b{}
-	}
+Machine m1
+Variables
+ Variable a, Variable b
+Invariants	
+ Invariant inv1 notTheorem Predicate "a::INT" &  
+ Invariant inv2 notTheorem Predicate "b: BOOL"
+Events
+ Event evt1 
+ Guards 
+  Guard grd1 notTheorem Predicate "a > 0" & 
+  Guard grd2 notTheorem Predicate "b = FALSE"
+ Actions
+  Action act1 Action "a := a + 1"
+ 
+ Event evt2
+ Guards 
+  Guard grd3 notTheorem Predicate "b=True" 
+  Actions
+  Action act3 Action "b:=FALSE" 
+				
+			
+		
 	
-	invariants{
-		theorem Invariant inv1{
-			predicate "a::INT"
-		}
-		,
-		theorem Invariant inv2{
-			predicate "b: BOOL"
-		}
-	}
 	
-	events{
-		Event evt1 {
-			guards{
-				theorem Guard grd1{
-					predicate "a > 0"
-				}
-				,
-				theorem Guard grd2{
-					predicate "b = FALSE"
-				}
-			}
-			actions{
-				Action act1{
-					action "a := a + 1"
-				}
-			}
-		}
-	}
-	
-}
+
 	
  
 		

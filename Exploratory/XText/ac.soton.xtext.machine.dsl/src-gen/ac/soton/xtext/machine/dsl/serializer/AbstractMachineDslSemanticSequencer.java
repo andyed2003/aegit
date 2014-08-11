@@ -211,9 +211,9 @@ public abstract class AbstractMachineDslSemanticSequencer extends AbstractDelega
 	/**
 	 * Constraint:
 	 *     (
-	 *         localGenerated?='localGenerated'? 
-	 *         theorem?='theorem' 
 	 *         name=EString 
+	 *         localGenerated?='localGenerated'? 
+	 *         theorem?='theorem'? 
 	 *         internalId=EString? 
 	 *         comment=EString? 
 	 *         predicate=EString 
@@ -294,9 +294,9 @@ public abstract class AbstractMachineDslSemanticSequencer extends AbstractDelega
 	/**
 	 * Constraint:
 	 *     (
+	 *         name=EString 
 	 *         localGenerated?='localGenerated'? 
 	 *         extended?='extended'? 
-	 *         name=EString 
 	 *         internalId=EString? 
 	 *         comment=EString? 
 	 *         convergence=Convergence? 
@@ -334,9 +334,9 @@ public abstract class AbstractMachineDslSemanticSequencer extends AbstractDelega
 	/**
 	 * Constraint:
 	 *     (
-	 *         localGenerated?='localGenerated'? 
-	 *         theorem?='theorem' 
 	 *         name=EString 
+	 *         localGenerated?='localGenerated'? 
+	 *         theorem?='theorem'? 
 	 *         internalId=EString? 
 	 *         comment=EString? 
 	 *         predicate=EString 
@@ -353,9 +353,9 @@ public abstract class AbstractMachineDslSemanticSequencer extends AbstractDelega
 	/**
 	 * Constraint:
 	 *     (
-	 *         localGenerated?='localGenerated'? 
-	 *         theorem?='theorem' 
 	 *         name=EString 
+	 *         localGenerated?='localGenerated'? 
+	 *         theorem?='theorem'? 
 	 *         internalId=EString? 
 	 *         comment=EString? 
 	 *         predicate=EString 

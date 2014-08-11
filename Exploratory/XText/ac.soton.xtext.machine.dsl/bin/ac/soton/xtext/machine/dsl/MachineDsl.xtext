@@ -11,19 +11,19 @@ Machine returns Machine:
 	(localGenerated?='localGenerated')?
 	'Machine'
 	name=EString
-	'{'
+	
 		('internalId' internalId=EString)?
-		('comment' comment=EString)?
-		('refines' '(' refines+=[Machine|EString] ( "," refines+=[Machine|EString])* ')' )?
-		('sees' '(' sees+=[context::Context|EString] ( "," sees+=[context::Context|EString])* ')' )?
+		('Comment' comment=EString)?
+		('Refines' '(' refines+=[Machine|EString] ( "," refines+=[Machine|EString])* ')' )?
+		('Sees' '(' sees+=[context::Context|EString] ( "," sees+=[context::Context|EString])* ')' )?
 		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
 		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
 		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
-		('variables' '{' variables+=Variable ( "," variables+=Variable)* '}' )?
-		('invariants' '{' invariants+=Invariant ( "," invariants+=Invariant)* '}' )?
-		('variant' variant=Variant)?
-		('events' '{' events+=Event ( "," events+=Event)* '}' )?
-	'}';
+		('Variables'  variables+=Variable ( "," variables+=Variable)*  )?
+		('Invariants' invariants+=Invariant ( "&" invariants+=Invariant)*  )?
+		('Variant' variant=Variant)?
+		('Events' events+=Event ( events+=Event)* )?
+	;
 
 
 AbstractExtension returns core::AbstractExtension:
@@ -77,59 +77,60 @@ Variable returns Variable:
 	(localGenerated?='localGenerated')?
 	'Variable'
 	name=EString
-	'{'
+	
 		('internalId' internalId=EString)?
 		('comment' comment=EString)?
 		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
 		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
 		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
-	'}';
+	;
 
 Invariant returns Invariant:
-	(localGenerated?='localGenerated')?
-	theorem?='theorem'
 	'Invariant'
 	name=EString
-	'{'
+
+	(localGenerated?='localGenerated')?
+	theorem?='theorem'?'notTheorem'
+	
 		('internalId' internalId=EString)?
 		('comment' comment=EString)?
-		'predicate' predicate=EString
+		'Predicate' predicate=EString
 		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
 		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
 		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
-	'}';
+	;
 
 Variant returns Variant:
 	(localGenerated?='localGenerated')?
 	'Variant'
-	'{'
+	
 		('internalId' internalId=EString)?
 		('comment' comment=EString)?
-		'expression' expression=EString
+		'Expression' expression=EString
 		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
 		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
 		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
-	'}';
+	;
 
 Event returns Event:
 	{Event}
-	(localGenerated?='localGenerated')?
-	(extended?='extended')?
 	'Event'
 	name=EString
-	'{'
+	(localGenerated?='localGenerated')?
+	(extended?='extended')?
+	
 		('internalId' internalId=EString)?
-		('comment' comment=EString)?
-		('convergence' convergence=Convergence)?
-		('refines' '(' refines+=[Event|EString] ( "," refines+=[Event|EString])* ')' )?
+		('Comment' comment=EString)?
+		('Convergence' convergence=Convergence)?
+		('Refines' '(' refines+=[Event|EString] ( "," refines+=[Event|EString])* ')' )?
 		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
 		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
 		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
-		('parameters' '{' parameters+=Parameter ( "," parameters+=Parameter)* '}' )?
-		('guards' '{' guards+=Guard ( "," guards+=Guard)* '}' )?
-		('witnesses' '{' witnesses+=Witness ( "," witnesses+=Witness)* '}' )?
-		('actions' '{' actions+=Action ( "," actions+=Action)* '}' )?
-	'}';
+		('Parameters'  parameters+=Parameter ( "," parameters+=Parameter)*  )?
+		('Guards'  guards+=Guard ( "&" guards+=Guard)*  )?
+		('Witnesses'  witnesses+=Witness ( "," witnesses+=Witness)*  )?
+		('Actions'  actions+=Action ( " || " actions+=Action)*  )?
+	;
 
 StringToStringMapEntry returns core::StringToStringMapEntry:
 	{core::StringToStringMapEntry}
@@ -174,40 +175,40 @@ CarrierSet returns context::CarrierSet:
 	(localGenerated?='localGenerated')?
 	'CarrierSet'
 	name=EString
-	'{'
+	
 		('internalId' internalId=EString)?
 		('comment' comment=EString)?
 		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
 		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
 		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
-	'}';
+	;
 
 Constant returns context::Constant:
 	{context::Constant}
 	(localGenerated?='localGenerated')?
 	'Constant'
 	name=EString
-	'{'
+	
 		('internalId' internalId=EString)?
 		('comment' comment=EString)?
 		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
 		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
 		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
-	'}';
+	;
 
 Axiom returns context::Axiom:
-	(localGenerated?='localGenerated')?
-	theorem?='theorem'
 	'Axiom'
 	name=EString
-	'{'
+	(localGenerated?='localGenerated')?
+	theorem?='theorem'?'notTheorem'
+	
 		('internalId' internalId=EString)?
 		('comment' comment=EString)?
-		'predicate' predicate=EString
+		'Predicate' predicate=EString
 		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
 		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
 		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
-	'}';
+	;
 
 enum Convergence returns Convergence:
 				ordinary = 'ordinary' | convergent = 'convergent' | anticipated = 'anticipated';
@@ -217,50 +218,51 @@ Parameter returns Parameter:
 	(localGenerated?='localGenerated')?
 	'Parameter'
 	name=EString
-	'{'
+	
 		('internalId' internalId=EString)?
 		('comment' comment=EString)?
 		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
 		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
 		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
-	'}';
+	;
 
 Guard returns Guard:
-	(localGenerated?='localGenerated')?
-	theorem?='theorem'
 	'Guard'
 	name=EString
-	'{'
+
+	(localGenerated?='localGenerated')?
+	theorem?='theorem'?'notTheorem'
+	
 		('internalId' internalId=EString)?
 		('comment' comment=EString)?
-		'predicate' predicate=EString
+		'Predicate' predicate=EString
 		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
 		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
 		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
-	'}';
+	;
 
 Witness returns Witness:
 	(localGenerated?='localGenerated')?
 	'Witness'
 	name=EString
-	'{'
+	
 		('internalId' internalId=EString)?
 		('comment' comment=EString)?
 		'predicate' predicate=EString
 		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
 		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
 		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
-	'}';
+	;
 
 Action returns Action:
 	(localGenerated?='localGenerated')?
 	'Action'
 	name=EString
-	'{'
+	
 		('internalId' internalId=EString)?
 		('comment' comment=EString)?
-		'action' action=EString
+		'Action' action=EString
 		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
 		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
 		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
-	'}';
+	;
