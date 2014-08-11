@@ -5,7 +5,7 @@ import org.eclipse.xtext.generator.*
 import org.eclipse.xtext.ui.generator.*
 
 var grammarURI = "classpath:/ac/soton/xtext/context/dsl/ContextDsl.xtext"
-var fileExtensions = "mydsl"
+var fileExtensions = "ctx"
 var projectName = "ac.soton.xtext.context.dsl"
 var runtimeProject = "../${projectName}"
 var generateXtendStub = true
