@@ -13,7 +13,19 @@ Require-Bundle: org.eclipse.xtext;visibility:=reexport,
  org.eclipse.emf.mwe.utils;resolution:=optional,
  org.eclipse.emf.mwe2.launch;resolution:=optional,
  org.eventb.emf.core,
- org.eventb.emf.core,
- org.eventb.emf.core
-Import-Package: org.apache.log4j
+ org.eclipse.xtext.util,
+ org.antlr.runtime,
+ org.eclipse.xtext.common.types,
+ org.objectweb.asm;bundle-version="[5.0.1,6.0.0)";resolution:=optional
+Import-Package: org.apache.log4j,
+ org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: ac.soton.xtext.machine.dsl,
+ ac.soton.xtext.machine.dsl.services,
+ ac.soton.xtext.machine.dsl.serializer,
+ ac.soton.xtext.machine.dsl.parser.antlr,
+ ac.soton.xtext.machine.dsl.parser.antlr.internal,
+ ac.soton.xtext.machine.dsl.validation,
+ ac.soton.xtext.machine.dsl.scoping,
+ ac.soton.xtext.machine.dsl.generator,
+ ac.soton.xtext.machine.dsl.formatting
