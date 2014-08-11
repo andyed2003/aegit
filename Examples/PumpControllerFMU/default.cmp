@@ -22,7 +22,7 @@
     </outputs>
     <machine href="EnvironmentImpl.bum#org.eventb.emf.core.machine.Machine.EnvironmentImpl"/>
     <readInputEvents href="EnvironmentImpl.bum#org.eventb.emf.core.machine.Event.read_ePorts"/>
-    <waitEvents href="EnvironmentImpl.bum#org.eventb.emf.core.machine.Event.write_ePorts"/>
+    <waitEvents href="EnvironmentImpl.bum#org.eventb.emf.core.machine.Event.read_ePorts"/>
   </components>
   <components xsi:type="components:FMUComponent" name="ControllerImpl" path="/home/andy/git/aegit/Examples/TestFMUPumpC_V1FMU/ControllerImpl.fmu">
     <inputs xsi:type="components:FMUPort" name="c_level" type="Integer" description="" connector="//@connectors.0"/>

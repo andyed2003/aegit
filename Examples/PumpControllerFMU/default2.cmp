@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<components:ComponentDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:components="http://soton.ac.uk/models/fmusim/components/1.0" name="newControllerDiagram">
+<components:ComponentDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:components="http://soton.ac.uk/models/fmusim/components/1.0" name="newControllerDiagram" stopTime="10.0" stepSize="0.1">
   <components xsi:type="components:EventBComponent" reference="ac.soton.fmusim.components.eventb._jX7uoOb8EeOO4J6iJDeRyA" extensionId="ac.soton.fmusim.components.eventb" name="ControllerImpl" stepPeriod="0.1">
     <inputs xsi:type="components:EventBPort" name="c_level" type="Integer" connector="//@connectors.0">
       <parameter href="ControllerImpl.bum#org.eventb.emf.core.machine.Parameter.p1"/>

@@ -5,7 +5,7 @@
     <styles xmi:type="notation:FontStyle" xmi:id="_jgvagsOzEeKrdOk53hhEZg" fontName="Ubuntu"/>
     <styles xmi:type="notation:LineStyle" xmi:id="_jgvag8OzEeKrdOk53hhEZg"/>
     <element xmi:type="statemachines:Initial" href="ControllerNewImpl.bum#ac.soton.eventb.statemachines.Initial._gCmtsMCoEeK9NfIQJVUaBg"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jgvahMOzEeKrdOk53hhEZg" x="55" y="510"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jgvahMOzEeKrdOk53hhEZg" x="45" y="545"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_jgwBkMOzEeKrdOk53hhEZg" type="2008">
     <children xmi:type="notation:DecorationNode" xmi:id="_jgx2wMOzEeKrdOk53hhEZg" type="5009"/>
@@ -121,7 +121,7 @@
     <styles xmi:type="notation:RoutingStyle" xmi:id="_jlfXocOzEeKrdOk53hhEZg" routing="Rectilinear"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_jlfXosOzEeKrdOk53hhEZg" fontName="Ubuntu"/>
     <element xmi:type="statemachines:Transition" href="ControllerNewImpl.bum#ac.soton.eventb.statemachines.Transition._gCmtscCoEeK9NfIQJVUaBg"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_jlfXo8OzEeKrdOk53hhEZg" points="[0, 0, -72, -80]$[0, 50, -72, -30]$[72, 50, 0, -30]$[72, 80, 0, 0]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_jlfXo8OzEeKrdOk53hhEZg" points="[1, 0, -75, 50]$[1, 25, -75, 75]$[90, 25, 14, 75]$[90, -10, 14, 40]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_joWeYMOzEeKrdOk53hhEZg" id="(0.5,1.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_joWeYcOzEeKrdOk53hhEZg" id="(0.15,0.0)"/>
   </edges>
@@ -132,7 +132,7 @@
     <styles xmi:type="notation:RoutingStyle" xmi:id="_jmW6UcOzEeKrdOk53hhEZg" routing="Rectilinear"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_jmW6UsOzEeKrdOk53hhEZg" fontName="Ubuntu"/>
     <element xmi:type="statemachines:Transition" href="ControllerNewImpl.bum#ac.soton.eventb.statemachines.Transition._E5_FIMCpEeK9NfIQJVUaBg"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_jmW6U8OzEeKrdOk53hhEZg" points="[0, 0, -34, 360]$[0, -30, -34, 330]$[-24, -30, -58, 330]$[-24, -330, -58, 30]$[34, -330, 0, 30]$[34, -360, 0, 0]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_jmW6U8OzEeKrdOk53hhEZg" points="[-13, 20, 8, 420]$[-58, 20, -37, 420]$[-58, -363, -37, 37]$[-11, -363, 10, 37]$[-11, -400, 10, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_joaIwcOzEeKrdOk53hhEZg" id="(0.325,0.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_joaIwsOzEeKrdOk53hhEZg" id="(0.23529411764705882,1.0)"/>
   </edges>
@@ -154,7 +154,7 @@
     <styles xmi:type="notation:RoutingStyle" xmi:id="_jmiggcOzEeKrdOk53hhEZg" routing="Rectilinear"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_jmiggsOzEeKrdOk53hhEZg" fontName="Ubuntu"/>
     <element xmi:type="statemachines:Transition" href="ControllerNewImpl.bum#ac.soton.eventb.statemachines.Transition._TrntcMCpEeK9NfIQJVUaBg"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_jmigg8OzEeKrdOk53hhEZg" points="[0, 0, 0, -60]$[0, 60, 0, 0]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_jmigg8OzEeKrdOk53hhEZg" points="[26, -25, -124, 5]$[125, -25, -25, 5]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_joZhscOzEeKrdOk53hhEZg" id="(0.49019607843137253,1.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_joZhssOzEeKrdOk53hhEZg" id="(0.5,0.0)"/>
   </edges>
@@ -165,7 +165,7 @@
     <styles xmi:type="notation:RoutingStyle" xmi:id="_jmrDYcOzEeKrdOk53hhEZg" routing="Rectilinear"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_jmrDYsOzEeKrdOk53hhEZg" fontName="Ubuntu"/>
     <element xmi:type="statemachines:Transition" href="ControllerNewImpl.bum#ac.soton.eventb.statemachines.Transition._TrntccCpEeK9NfIQJVUaBg"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_jmrDY8OzEeKrdOk53hhEZg" points="[0, 0, 0, -60]$[0, 60, 0, 0]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_jmrDY8OzEeKrdOk53hhEZg" points="[0, -40, -150, -10]$[0, -50, -150, -20]$[75, -50, -75, -20]$[75, -25, -75, 5]$[125, -25, -25, 5]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_joY6osOzEeKrdOk53hhEZg" id="(0.49019607843137253,1.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_joZhsMOzEeKrdOk53hhEZg" id="(0.5,0.0)"/>
   </edges>
@@ -198,7 +198,7 @@
     <styles xmi:type="notation:RoutingStyle" xmi:id="_jm6T8cOzEeKrdOk53hhEZg" routing="Rectilinear"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_jm67AMOzEeKrdOk53hhEZg" fontName="Ubuntu"/>
     <element xmi:type="statemachines:Transition" href="ControllerNewImpl.bum#ac.soton.eventb.statemachines.Transition._M6AaQsCqEeK9NfIQJVUaBg"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_jm67AcOzEeKrdOk53hhEZg" points="[0, 0, 34, -160]$[0, 30, 34, -130]$[-34, 30, 0, -130]$[-34, 160, 0, 0]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_jm67AcOzEeKrdOk53hhEZg" points="[10, 0, -15, -240]$[10, 240, -15, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_joav0MOzEeKrdOk53hhEZg" id="(0.24675324675324675,1.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_joav0cOzEeKrdOk53hhEZg" id="(0.5,0.0)"/>
   </edges>
@@ -209,7 +209,7 @@
     <styles xmi:type="notation:RoutingStyle" xmi:id="_jm9XQcOzEeKrdOk53hhEZg" routing="Rectilinear"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_jm9XQsOzEeKrdOk53hhEZg" fontName="Ubuntu"/>
     <element xmi:type="statemachines:Transition" href="ControllerNewImpl.bum#ac.soton.eventb.statemachines.Transition._M6AaQ8CqEeK9NfIQJVUaBg"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_jm9XQ8OzEeKrdOk53hhEZg" points="[0, 0, 66, -60]$[0, 30, 66, -30]$[-66, 30, 0, -30]$[-66, 60, 0, 0]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_jm9XQ8OzEeKrdOk53hhEZg" points="[0, 0, 395, -330]$[0, 120, 395, -210]$[-110, 120, 285, -210]$[-110, 210, 285, -120]$[-401, 210, -6, -120]$[-401, 330, -6, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_joXsgcOzEeKrdOk53hhEZg" id="(0.3291139240506329,1.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_joXsgsOzEeKrdOk53hhEZg" id="(0.65,0.0)"/>
   </edges>
@@ -220,7 +220,7 @@
     <styles xmi:type="notation:RoutingStyle" xmi:id="_jnAakcOzEeKrdOk53hhEZg" routing="Rectilinear"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_jnAaksOzEeKrdOk53hhEZg" fontName="Ubuntu"/>
     <element xmi:type="statemachines:Transition" href="ControllerNewImpl.bum#ac.soton.eventb.statemachines.Transition._M6BBUMCqEeK9NfIQJVUaBg"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_jnAak8OzEeKrdOk53hhEZg" points="[0, 0, -132, -60]$[0, 30, -132, -30]$[132, 30, 0, -30]$[132, 60, 0, 0]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_jnAak8OzEeKrdOk53hhEZg" points="[27, -22, -213, 73]$[36, -22, -204, 73]$[36, -130, -204, -35]$[253, -130, 13, -35]$[253, -95, 13, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_joXFc8OzEeKrdOk53hhEZg" id="(0.6582278481012658,1.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_joXsgMOzEeKrdOk53hhEZg" id="(0.24,0.0)"/>
   </edges>

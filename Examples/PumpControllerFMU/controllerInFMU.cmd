@@ -10,30 +10,30 @@
       <styles xmi:type="notation:DescriptionStyle" xmi:id="_KhAf4b_BEeOPPJCZZo20GQ"/>
       <styles xmi:type="notation:FontStyle" xmi:id="_KhAf4r_BEeOPPJCZZo20GQ" fontName="Ubuntu"/>
       <element xmi:type="components:EventBPort" href="default.cmp#//@components.0/@inputs.0"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KhAf47_BEeOPPJCZZo20GQ" x="135" y="-9"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KhAf47_BEeOPPJCZZo20GQ" x="130" y="-9"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_KhAf5L_BEeOPPJCZZo20GQ" type="3003">
       <styles xmi:type="notation:DescriptionStyle" xmi:id="_KhAf5b_BEeOPPJCZZo20GQ"/>
       <styles xmi:type="notation:FontStyle" xmi:id="_KhAf5r_BEeOPPJCZZo20GQ" fontName="Ubuntu"/>
       <element xmi:type="components:EventBPort" href="default.cmp#//@components.0/@inputs.1"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KhAf57_BEeOPPJCZZo20GQ" x="170" y="-9"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KhAf57_BEeOPPJCZZo20GQ" x="165" y="-9"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_KhBG8L_BEeOPPJCZZo20GQ" type="3004">
       <styles xmi:type="notation:DescriptionStyle" xmi:id="_KhBG8b_BEeOPPJCZZo20GQ"/>
       <styles xmi:type="notation:FontStyle" xmi:id="_KhBG8r_BEeOPPJCZZo20GQ" fontName="Ubuntu"/>
       <element xmi:type="components:EventBPort" href="default.cmp#//@components.0/@outputs.0"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KhBG87_BEeOPPJCZZo20GQ" x="15" y="-9"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KhBG87_BEeOPPJCZZo20GQ" x="20" y="-9"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_KhBG9L_BEeOPPJCZZo20GQ" type="3004">
       <styles xmi:type="notation:DescriptionStyle" xmi:id="_KhBG9b_BEeOPPJCZZo20GQ"/>
       <styles xmi:type="notation:FontStyle" xmi:id="_KhBG9r_BEeOPPJCZZo20GQ" fontName="Ubuntu"/>
       <element xmi:type="components:EventBPort" href="default.cmp#//@components.0/@outputs.1"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KhBG97_BEeOPPJCZZo20GQ" x="60" y="-9"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KhBG97_BEeOPPJCZZo20GQ" x="70" y="-9"/>
     </children>
     <styles xmi:type="notation:DescriptionStyle" xmi:id="_Kg-qsb_BEeOPPJCZZo20GQ"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_Kg-qsr_BEeOPPJCZZo20GQ" fontName="Ubuntu"/>
     <element xmi:type="components:EventBComponent" href="default.cmp#ac.soton.fmusim.components.eventb._EQUk8L_BEeOPPJCZZo20GQ"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Kg-qs7_BEeOPPJCZZo20GQ" x="500" y="315" width="201"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Kg-qs7_BEeOPPJCZZo20GQ" x="465" y="355" width="201"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_piHngL_BEeOPPJCZZo20GQ" type="2003">
     <children xmi:type="notation:DecorationNode" xmi:id="_piIOkL_BEeOPPJCZZo20GQ" type="5003">
@@ -43,7 +43,7 @@
     <styles xmi:type="notation:FontStyle" xmi:id="_piHngr_BEeOPPJCZZo20GQ" fontName="Ubuntu"/>
     <styles xmi:type="notation:LineStyle" xmi:id="_piHng7_BEeOPPJCZZo20GQ"/>
     <element xmi:type="components:Connector" href="default.cmp#//@connectors.0"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_piHnhL_BEeOPPJCZZo20GQ" x="517" y="245"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_piHnhL_BEeOPPJCZZo20GQ" x="490" y="250"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_p-1YsL_BEeOPPJCZZo20GQ" type="2003">
     <children xmi:type="notation:DecorationNode" xmi:id="_p-1_wL_BEeOPPJCZZo20GQ" type="5003">
@@ -53,7 +53,7 @@
     <styles xmi:type="notation:FontStyle" xmi:id="_p-1Ysr_BEeOPPJCZZo20GQ" fontName="Ubuntu"/>
     <styles xmi:type="notation:LineStyle" xmi:id="_p-1Ys7_BEeOPPJCZZo20GQ"/>
     <element xmi:type="components:Connector" href="default.cmp#//@connectors.1"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_p-1YtL_BEeOPPJCZZo20GQ" x="563" y="245"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_p-1YtL_BEeOPPJCZZo20GQ" x="535" y="245"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_qW3eML_BEeOPPJCZZo20GQ" type="2003">
     <children xmi:type="notation:DecorationNode" xmi:id="_qW4sUL_BEeOPPJCZZo20GQ" type="5003">
@@ -63,7 +63,7 @@
     <styles xmi:type="notation:FontStyle" xmi:id="_qW3eMr_BEeOPPJCZZo20GQ" fontName="Ubuntu"/>
     <styles xmi:type="notation:LineStyle" xmi:id="_qW3eM7_BEeOPPJCZZo20GQ"/>
     <element xmi:type="components:Connector" href="default.cmp#//@connectors.2"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qW3eNL_BEeOPPJCZZo20GQ" x="634" y="248"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qW3eNL_BEeOPPJCZZo20GQ" x="595" y="248"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_q6koML_BEeOPPJCZZo20GQ" type="2003">
     <children xmi:type="notation:DecorationNode" xmi:id="_q6lPQL_BEeOPPJCZZo20GQ" type="5003">
@@ -73,7 +73,7 @@
     <styles xmi:type="notation:FontStyle" xmi:id="_q6koMr_BEeOPPJCZZo20GQ" fontName="Ubuntu"/>
     <styles xmi:type="notation:LineStyle" xmi:id="_q6koM7_BEeOPPJCZZo20GQ"/>
     <element xmi:type="components:Connector" href="default.cmp#//@connectors.3"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_q6koNL_BEeOPPJCZZo20GQ" x="676" y="247"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_q6koNL_BEeOPPJCZZo20GQ" x="630" y="247"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_z0xmoM61EeOSmfRHvdImeg" type="2001">
     <children xmi:type="notation:DecorationNode" xmi:id="_z0yNsM61EeOSmfRHvdImeg" type="5001"/>
@@ -85,30 +85,30 @@
       <styles xmi:type="notation:DescriptionStyle" xmi:id="_z047Yc61EeOSmfRHvdImeg"/>
       <styles xmi:type="notation:FontStyle" xmi:id="_z047Ys61EeOSmfRHvdImeg" fontName="Ubuntu"/>
       <element xmi:type="components:FMUPort" href="default.cmp#//@components.1/@inputs.0"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_z047Y861EeOSmfRHvdImeg" x="30" y="98"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_z047Y861EeOSmfRHvdImeg" x="5" y="98"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_z05icM61EeOSmfRHvdImeg" type="3001">
       <styles xmi:type="notation:DescriptionStyle" xmi:id="_z05icc61EeOSmfRHvdImeg"/>
       <styles xmi:type="notation:FontStyle" xmi:id="_z05ics61EeOSmfRHvdImeg" fontName="Ubuntu"/>
       <element xmi:type="components:FMUPort" href="default.cmp#//@components.1/@inputs.1"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_z05ic861EeOSmfRHvdImeg" x="75" y="98"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_z05ic861EeOSmfRHvdImeg" x="50" y="98"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_z05idM61EeOSmfRHvdImeg" type="3002">
       <styles xmi:type="notation:DescriptionStyle" xmi:id="_z05idc61EeOSmfRHvdImeg"/>
       <styles xmi:type="notation:FontStyle" xmi:id="_z05ids61EeOSmfRHvdImeg" fontName="Ubuntu"/>
       <element xmi:type="components:FMUPort" href="default.cmp#//@components.1/@outputs.0"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_z05id861EeOSmfRHvdImeg" x="145" y="98"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_z05id861EeOSmfRHvdImeg" x="110" y="98"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_z06JgM61EeOSmfRHvdImeg" type="3002">
       <styles xmi:type="notation:DescriptionStyle" xmi:id="_z06Jgc61EeOSmfRHvdImeg"/>
       <styles xmi:type="notation:FontStyle" xmi:id="_z06Jgs61EeOSmfRHvdImeg" fontName="Ubuntu"/>
       <element xmi:type="components:FMUPort" href="default.cmp#//@components.1/@outputs.1"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_z06Jg861EeOSmfRHvdImeg" x="185" y="98"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_z06Jg861EeOSmfRHvdImeg" x="145" y="98"/>
     </children>
     <styles xmi:type="notation:DescriptionStyle" xmi:id="_z0xmoc61EeOSmfRHvdImeg"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_z0xmos61EeOSmfRHvdImeg" fontName="Ubuntu"/>
     <element xmi:type="components:FMUComponent" href="default.cmp#//@components.1"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_z0xmo861EeOSmfRHvdImeg" x="485" y="80"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_z0xmo861EeOSmfRHvdImeg" x="480" y="90"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="__FgF4b_AEeOPPJCZZo20GQ"/>
   <element xmi:type="components:ComponentDiagram" href="default.cmp#/"/>
@@ -150,6 +150,6 @@
   <edges xmi:type="notation:Connector" xmi:id="_DVp6kM62EeOSmfRHvdImeg" type="4001" source="_z047YM61EeOSmfRHvdImeg" target="_piHngL_BEeOPPJCZZo20GQ">
     <styles xmi:type="notation:FontStyle" xmi:id="_DVp6kc62EeOSmfRHvdImeg" fontName="Ubuntu"/>
     <element xsi:nil="true"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_DVp6ks62EeOSmfRHvdImeg" points="[1, 5, 0, -61]$[3, 62, 2, -4]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_DVp6ks62EeOSmfRHvdImeg" points="[1, 5, -25, -61]$[24, 62, -2, -4]"/>
   </edges>
 </notation:Diagram>
