@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.scContextFile org.eventb.core.accurate="true" org.eventb.core.configuration="org.eventb.core.fwd;org.eventb.codegen.ui.cgConfig">
-<org.eventb.core.scAxiom name="'" org.eventb.core.label="WakeKinds_enum" org.eventb.core.predicate="partition(WakeKind,{NullEvent},{AddEvent})" org.eventb.core.source="/GRIDC/ComponentCtx_ComponentDiagramMch.buc|org.eventb.core.contextFile#ComponentCtx_ComponentDiagramMch|org.eventb.core.axiom#_aeosQQd1EeSmu-VJKEp8yA" org.eventb.core.theorem="false"/>
-<org.eventb.core.scConstant name="AddEvent" org.eventb.core.source="/GRIDC/ComponentCtx_ComponentDiagramMch.buc|org.eventb.core.contextFile#ComponentCtx_ComponentDiagramMch|org.eventb.core.constant#_aeoFMQd1EeSmu-VJKEp8yA" org.eventb.core.type="WakeKind"/>
-<org.eventb.core.scConstant name="NullEvent" org.eventb.core.source="/GRIDC/ComponentCtx_ComponentDiagramMch.buc|org.eventb.core.contextFile#ComponentCtx_ComponentDiagramMch|org.eventb.core.constant#_aeosQAd1EeSmu-VJKEp8yA" org.eventb.core.type="WakeKind"/>
-<org.eventb.core.scCarrierSet name="WakeKind" org.eventb.core.source="/GRIDC/ComponentCtx_ComponentDiagramMch.buc|org.eventb.core.contextFile#ComponentCtx_ComponentDiagramMch|org.eventb.core.carrierSet#_aeoFMAd1EeSmu-VJKEp8yA" org.eventb.core.type="ℙ(WakeKind)"/>
-</org.eventb.core.scContextFile>
