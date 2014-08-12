@@ -1331,7 +1331,7 @@ public class MachineDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cCommentKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
 		private final Assignment cCommentAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
 		private final RuleCall cCommentEStringParserRuleCall_6_1_0 = (RuleCall)cCommentAssignment_6_1.eContents().get(0);
-		private final Keyword cPredicateKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Keyword cIsKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		private final Assignment cPredicateAssignment_8 = (Assignment)cGroup.eContents().get(8);
 		private final RuleCall cPredicateEStringParserRuleCall_8_0 = (RuleCall)cPredicateAssignment_8.eContents().get(0);
 		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
@@ -1367,15 +1367,15 @@ public class MachineDslGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Invariant:
 		//	"Invariant" name=EString localGenerated?="localGenerated"? theorem?="theorem"? "notTheorem" ("internalId"
-		//	internalId=EString)? ("comment" comment=EString)? "Predicate" predicate=EString ("annotations" "{"
-		//	annotations+=Annotation ("," annotations+=Annotation)* "}")? ("extensions" "{" extensions+=AbstractExtension (","
+		//	internalId=EString)? ("comment" comment=EString)? "is" predicate=EString ("annotations" "{" annotations+=Annotation
+		//	("," annotations+=Annotation)* "}")? ("extensions" "{" extensions+=AbstractExtension (","
 		//	extensions+=AbstractExtension)* "}")? ("attributes" "{" attributes+=StringToAttributeMapEntry (","
 		//	attributes+=StringToAttributeMapEntry)* "}")?;
 		public ParserRule getRule() { return rule; }
 
 		//"Invariant" name=EString localGenerated?="localGenerated"? theorem?="theorem"? "notTheorem" ("internalId"
-		//internalId=EString)? ("comment" comment=EString)? "Predicate" predicate=EString ("annotations" "{"
-		//annotations+=Annotation ("," annotations+=Annotation)* "}")? ("extensions" "{" extensions+=AbstractExtension (","
+		//internalId=EString)? ("comment" comment=EString)? "is" predicate=EString ("annotations" "{" annotations+=Annotation
+		//("," annotations+=Annotation)* "}")? ("extensions" "{" extensions+=AbstractExtension (","
 		//extensions+=AbstractExtension)* "}")? ("attributes" "{" attributes+=StringToAttributeMapEntry (","
 		//attributes+=StringToAttributeMapEntry)* "}")?
 		public Group getGroup() { return cGroup; }
@@ -1428,8 +1428,8 @@ public class MachineDslGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getCommentEStringParserRuleCall_6_1_0() { return cCommentEStringParserRuleCall_6_1_0; }
 
-		//"Predicate"
-		public Keyword getPredicateKeyword_7() { return cPredicateKeyword_7; }
+		//"is"
+		public Keyword getIsKeyword_7() { return cIsKeyword_7; }
 
 		//predicate=EString
 		public Assignment getPredicateAssignment_8() { return cPredicateAssignment_8; }
@@ -3307,7 +3307,7 @@ public class MachineDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cCommentKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
 		private final Assignment cCommentAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
 		private final RuleCall cCommentEStringParserRuleCall_6_1_0 = (RuleCall)cCommentAssignment_6_1.eContents().get(0);
-		private final Keyword cPredicateKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Keyword cWhenKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		private final Assignment cPredicateAssignment_8 = (Assignment)cGroup.eContents().get(8);
 		private final RuleCall cPredicateEStringParserRuleCall_8_0 = (RuleCall)cPredicateAssignment_8.eContents().get(0);
 		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
@@ -3343,15 +3343,15 @@ public class MachineDslGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Guard:
 		//	"Guard" name=EString localGenerated?="localGenerated"? theorem?="theorem"? "notTheorem" ("internalId"
-		//	internalId=EString)? ("comment" comment=EString)? "Predicate" predicate=EString ("annotations" "{"
-		//	annotations+=Annotation ("," annotations+=Annotation)* "}")? ("extensions" "{" extensions+=AbstractExtension (","
+		//	internalId=EString)? ("comment" comment=EString)? "when" predicate=EString ("annotations" "{" annotations+=Annotation
+		//	("," annotations+=Annotation)* "}")? ("extensions" "{" extensions+=AbstractExtension (","
 		//	extensions+=AbstractExtension)* "}")? ("attributes" "{" attributes+=StringToAttributeMapEntry (","
 		//	attributes+=StringToAttributeMapEntry)* "}")?;
 		public ParserRule getRule() { return rule; }
 
 		//"Guard" name=EString localGenerated?="localGenerated"? theorem?="theorem"? "notTheorem" ("internalId"
-		//internalId=EString)? ("comment" comment=EString)? "Predicate" predicate=EString ("annotations" "{"
-		//annotations+=Annotation ("," annotations+=Annotation)* "}")? ("extensions" "{" extensions+=AbstractExtension (","
+		//internalId=EString)? ("comment" comment=EString)? "when" predicate=EString ("annotations" "{" annotations+=Annotation
+		//("," annotations+=Annotation)* "}")? ("extensions" "{" extensions+=AbstractExtension (","
 		//extensions+=AbstractExtension)* "}")? ("attributes" "{" attributes+=StringToAttributeMapEntry (","
 		//attributes+=StringToAttributeMapEntry)* "}")?
 		public Group getGroup() { return cGroup; }
@@ -3404,8 +3404,8 @@ public class MachineDslGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getCommentEStringParserRuleCall_6_1_0() { return cCommentEStringParserRuleCall_6_1_0; }
 
-		//"Predicate"
-		public Keyword getPredicateKeyword_7() { return cPredicateKeyword_7; }
+		//"when"
+		public Keyword getWhenKeyword_7() { return cWhenKeyword_7; }
 
 		//predicate=EString
 		public Assignment getPredicateAssignment_8() { return cPredicateAssignment_8; }
@@ -3722,7 +3722,7 @@ public class MachineDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cCommentKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
 		private final Assignment cCommentAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
 		private final RuleCall cCommentEStringParserRuleCall_4_1_0 = (RuleCall)cCommentAssignment_4_1.eContents().get(0);
-		private final Keyword cActionKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cThenKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Assignment cActionAssignment_6 = (Assignment)cGroup.eContents().get(6);
 		private final RuleCall cActionEStringParserRuleCall_6_0 = (RuleCall)cActionAssignment_6.eContents().get(0);
 		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
@@ -3758,14 +3758,14 @@ public class MachineDslGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Action:
 		//	localGenerated?="localGenerated"? "Action" name=EString ("internalId" internalId=EString)? ("comment"
-		//	comment=EString)? "Action" action=EString ("annotations" "{" annotations+=Annotation ("," annotations+=Annotation)*
+		//	comment=EString)? "then" action=EString ("annotations" "{" annotations+=Annotation ("," annotations+=Annotation)*
 		//	"}")? ("extensions" "{" extensions+=AbstractExtension ("," extensions+=AbstractExtension)* "}")? ("attributes" "{"
 		//	attributes+=StringToAttributeMapEntry ("," attributes+=StringToAttributeMapEntry)* "}")?;
 		public ParserRule getRule() { return rule; }
 
 		//localGenerated?="localGenerated"? "Action" name=EString ("internalId" internalId=EString)? ("comment" comment=EString)?
-		//"Action" action=EString ("annotations" "{" annotations+=Annotation ("," annotations+=Annotation)* "}")? ("extensions"
-		//"{" extensions+=AbstractExtension ("," extensions+=AbstractExtension)* "}")? ("attributes" "{"
+		//"then" action=EString ("annotations" "{" annotations+=Annotation ("," annotations+=Annotation)* "}")? ("extensions" "{"
+		//extensions+=AbstractExtension ("," extensions+=AbstractExtension)* "}")? ("attributes" "{"
 		//attributes+=StringToAttributeMapEntry ("," attributes+=StringToAttributeMapEntry)* "}")?
 		public Group getGroup() { return cGroup; }
 
@@ -3808,8 +3808,8 @@ public class MachineDslGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getCommentEStringParserRuleCall_4_1_0() { return cCommentEStringParserRuleCall_4_1_0; }
 
-		//"Action"
-		public Keyword getActionKeyword_5() { return cActionKeyword_5; }
+		//"then"
+		public Keyword getThenKeyword_5() { return cThenKeyword_5; }
 
 		//action=EString
 		public Assignment getActionAssignment_6() { return cActionAssignment_6; }
@@ -4162,8 +4162,8 @@ public class MachineDslGrammarAccess extends AbstractGrammarElementFinder {
 
 	//Invariant:
 	//	"Invariant" name=EString localGenerated?="localGenerated"? theorem?="theorem"? "notTheorem" ("internalId"
-	//	internalId=EString)? ("comment" comment=EString)? "Predicate" predicate=EString ("annotations" "{"
-	//	annotations+=Annotation ("," annotations+=Annotation)* "}")? ("extensions" "{" extensions+=AbstractExtension (","
+	//	internalId=EString)? ("comment" comment=EString)? "is" predicate=EString ("annotations" "{" annotations+=Annotation
+	//	("," annotations+=Annotation)* "}")? ("extensions" "{" extensions+=AbstractExtension (","
 	//	extensions+=AbstractExtension)* "}")? ("attributes" "{" attributes+=StringToAttributeMapEntry (","
 	//	attributes+=StringToAttributeMapEntry)* "}")?;
 	public InvariantElements getInvariantAccess() {
@@ -4332,8 +4332,8 @@ public class MachineDslGrammarAccess extends AbstractGrammarElementFinder {
 
 	//Guard:
 	//	"Guard" name=EString localGenerated?="localGenerated"? theorem?="theorem"? "notTheorem" ("internalId"
-	//	internalId=EString)? ("comment" comment=EString)? "Predicate" predicate=EString ("annotations" "{"
-	//	annotations+=Annotation ("," annotations+=Annotation)* "}")? ("extensions" "{" extensions+=AbstractExtension (","
+	//	internalId=EString)? ("comment" comment=EString)? "when" predicate=EString ("annotations" "{" annotations+=Annotation
+	//	("," annotations+=Annotation)* "}")? ("extensions" "{" extensions+=AbstractExtension (","
 	//	extensions+=AbstractExtension)* "}")? ("attributes" "{" attributes+=StringToAttributeMapEntry (","
 	//	attributes+=StringToAttributeMapEntry)* "}")?;
 	public GuardElements getGuardAccess() {
@@ -4359,7 +4359,7 @@ public class MachineDslGrammarAccess extends AbstractGrammarElementFinder {
 
 	//Action:
 	//	localGenerated?="localGenerated"? "Action" name=EString ("internalId" internalId=EString)? ("comment"
-	//	comment=EString)? "Action" action=EString ("annotations" "{" annotations+=Annotation ("," annotations+=Annotation)*
+	//	comment=EString)? "then" action=EString ("annotations" "{" annotations+=Annotation ("," annotations+=Annotation)*
 	//	"}")? ("extensions" "{" extensions+=AbstractExtension ("," extensions+=AbstractExtension)* "}")? ("attributes" "{"
 	//	attributes+=StringToAttributeMapEntry ("," attributes+=StringToAttributeMapEntry)* "}")?;
 	public ActionElements getActionAccess() {

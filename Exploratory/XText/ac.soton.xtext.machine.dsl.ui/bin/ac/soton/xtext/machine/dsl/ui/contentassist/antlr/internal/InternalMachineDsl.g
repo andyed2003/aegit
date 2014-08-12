@@ -5786,11 +5786,11 @@ rule__Invariant__Group__7__Impl
     }
 :
 (
-{ before(grammarAccess.getInvariantAccess().getPredicateKeyword_7()); }
+{ before(grammarAccess.getInvariantAccess().getIsKeyword_7()); }
 
-	'Predicate' 
+	'is' 
 
-{ after(grammarAccess.getInvariantAccess().getPredicateKeyword_7()); }
+{ after(grammarAccess.getInvariantAccess().getIsKeyword_7()); }
 )
 
 ;
@@ -16559,11 +16559,11 @@ rule__Guard__Group__7__Impl
     }
 :
 (
-{ before(grammarAccess.getGuardAccess().getPredicateKeyword_7()); }
+{ before(grammarAccess.getGuardAccess().getWhenKeyword_7()); }
 
-	'Predicate' 
+	'when' 
 
-{ after(grammarAccess.getGuardAccess().getPredicateKeyword_7()); }
+{ after(grammarAccess.getGuardAccess().getWhenKeyword_7()); }
 )
 
 ;
@@ -18779,11 +18779,11 @@ rule__Action__Group__5__Impl
     }
 :
 (
-{ before(grammarAccess.getActionAccess().getActionKeyword_5()); }
+{ before(grammarAccess.getActionAccess().getThenKeyword_5()); }
 
-	'Action' 
+	'then' 
 
-{ after(grammarAccess.getActionAccess().getActionKeyword_5()); }
+{ after(grammarAccess.getActionAccess().getThenKeyword_5()); }
 )
 
 ;

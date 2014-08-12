@@ -94,7 +94,7 @@ Invariant returns Invariant:
 	
 		('internalId' internalId=EString)?
 		('comment' comment=EString)?
-		'Predicate' predicate=EString
+		'is' predicate=EString
 		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
 		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
 		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
@@ -235,7 +235,7 @@ Guard returns Guard:
 	
 		('internalId' internalId=EString)?
 		('comment' comment=EString)?
-		'Predicate' predicate=EString
+		'when' predicate=EString
 		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
 		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
 		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
@@ -261,7 +261,7 @@ Action returns Action:
 	
 		('internalId' internalId=EString)?
 		('comment' comment=EString)?
-		'Action' action=EString
+		'then' action=EString
 		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
 		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
 		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?

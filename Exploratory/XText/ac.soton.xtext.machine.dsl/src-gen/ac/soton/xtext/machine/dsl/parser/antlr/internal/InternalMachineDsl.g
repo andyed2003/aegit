@@ -1358,9 +1358,9 @@ ruleInvariant returns [EObject current=null]
 	    }
 
 )
-))?	otherlv_9='Predicate' 
+))?	otherlv_9='is' 
     {
-    	newLeafNode(otherlv_9, grammarAccess.getInvariantAccess().getPredicateKeyword_7());
+    	newLeafNode(otherlv_9, grammarAccess.getInvariantAccess().getIsKeyword_7());
     }
 (
 (
@@ -4051,9 +4051,9 @@ ruleGuard returns [EObject current=null]
 	    }
 
 )
-))?	otherlv_9='Predicate' 
+))?	otherlv_9='when' 
     {
-    	newLeafNode(otherlv_9, grammarAccess.getGuardAccess().getPredicateKeyword_7());
+    	newLeafNode(otherlv_9, grammarAccess.getGuardAccess().getWhenKeyword_7());
     }
 (
 (
@@ -4611,9 +4611,9 @@ ruleAction returns [EObject current=null]
 	    }
 
 )
-))?	otherlv_7='Action' 
+))?	otherlv_7='then' 
     {
-    	newLeafNode(otherlv_7, grammarAccess.getActionAccess().getActionKeyword_5());
+    	newLeafNode(otherlv_7, grammarAccess.getActionAccess().getThenKeyword_5());
     }
 (
 (
