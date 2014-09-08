@@ -1146,9 +1146,9 @@ ruleEvent returns [EObject current=null]
 	    }
 
 )
-))*)?(	otherlv_11='parameters' 
+))*)?(	otherlv_11='any' 
     {
-    	newLeafNode(otherlv_11, grammarAccess.getEventAccess().getParametersKeyword_7_0());
+    	newLeafNode(otherlv_11, grammarAccess.getEventAccess().getAnyKeyword_7_0());
     }
 (
 (

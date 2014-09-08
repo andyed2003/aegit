@@ -128,7 +128,7 @@ Event returns Event:
 //		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
 //		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
 //		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
-		('parameters' /*'{'*/ parameters+=Parameter ( "," parameters+=Parameter)* /*'}'*/ )?
+		('any' /*'{'*/ parameters+=Parameter ( "," parameters+=Parameter)* /*'}'*/ )?
 		(/*'Guards'*/ /*'{'*/ guards+=Guard ( /*","*/ guards+=Guard)* /*'}'*/ )?
 		('witnesses' /*'{'*/ witnesses+=Witness ( /*","*/ witnesses+=Witness)* /*'}'*/ )?
 		(/*'Actions'*/ /*'{'*/ actions+=Action ( /*","*/ actions+=Action)* /*'}'*/ )?

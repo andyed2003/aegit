@@ -4552,11 +4552,11 @@ rule__Event__Group_7__0__Impl
     }
 :
 (
-{ before(grammarAccess.getEventAccess().getParametersKeyword_7_0()); }
+{ before(grammarAccess.getEventAccess().getAnyKeyword_7_0()); }
 
-	'parameters' 
+	'any' 
 
-{ after(grammarAccess.getEventAccess().getParametersKeyword_7_0()); }
+{ after(grammarAccess.getEventAccess().getAnyKeyword_7_0()); }
 )
 
 ;

@@ -815,7 +815,7 @@ public class MachineDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final CrossReference cRefinesEventCrossReference_6_2_1_0 = (CrossReference)cRefinesAssignment_6_2_1.eContents().get(0);
 		private final RuleCall cRefinesEventEStringParserRuleCall_6_2_1_0_1 = (RuleCall)cRefinesEventCrossReference_6_2_1_0.eContents().get(1);
 		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Keyword cParametersKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Keyword cAnyKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
 		private final Assignment cParametersAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
 		private final RuleCall cParametersParameterParserRuleCall_7_1_0 = (RuleCall)cParametersAssignment_7_1.eContents().get(0);
 		private final Group cGroup_7_2 = (Group)cGroup_7.eContents().get(2);
@@ -848,9 +848,9 @@ public class MachineDslGrammarAccess extends AbstractGrammarElementFinder {
 		//	("," refines+=[Event|EString])*)? / *')'* / //		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
 		//	//		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
 		//	//		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
-		//	("parameters" / *'{'* / parameters+=Parameter ("," parameters+=Parameter)*)? / *'}'* / / *'Guards'* / / *'{'* / (guards+=Guard
-		//	/ *","* / guards+=Guard*)? / *'}'* / ("witnesses" / *'{'* / witnesses+=Witness / *","* / witnesses+=Witness*)? / *'}'* /
-		//	/ *'Actions'* / / *'{'* / (actions+=Action / *","* / actions+=Action*)? / *'}'* /;
+		//	("any" / *'{'* / parameters+=Parameter ("," parameters+=Parameter)*)? / *'}'* / / *'Guards'* / / *'{'* / (guards+=Guard / *","* /
+		//	guards+=Guard*)? / *'}'* / ("witnesses" / *'{'* / witnesses+=Witness / *","* / witnesses+=Witness*)? / *'}'* / / *'Actions'* /
+		//	/ *'{'* / (actions+=Action / *","* / actions+=Action*)? / *'}'* /;
 		public ParserRule getRule() { return rule; }
 
 		//{Event} //	(localGenerated?='localGenerated')?
@@ -860,9 +860,9 @@ public class MachineDslGrammarAccess extends AbstractGrammarElementFinder {
 		//refines+=[Event|EString])*)? / *')'* / //		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
 		////		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
 		////		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
-		//("parameters" / *'{'* / parameters+=Parameter ("," parameters+=Parameter)*)? / *'}'* / / *'Guards'* / / *'{'* / (guards+=Guard
-		/// *","* / guards+=Guard*)? / *'}'* / ("witnesses" / *'{'* / witnesses+=Witness / *","* / witnesses+=Witness*)? / *'}'* /
-		/// *'Actions'* / / *'{'* / (actions+=Action / *","* / actions+=Action*)? / *'}'* /
+		//("any" / *'{'* / parameters+=Parameter ("," parameters+=Parameter)*)? / *'}'* / / *'Guards'* / / *'{'* / (guards+=Guard / *","* /
+		//guards+=Guard*)? / *'}'* / ("witnesses" / *'{'* / witnesses+=Witness / *","* / witnesses+=Witness*)? / *'}'* / / *'Actions'* /
+		/// *'{'* / (actions+=Action / *","* / actions+=Action*)? / *'}'* /
 		public Group getGroup() { return cGroup; }
 
 		//{Event}
@@ -932,11 +932,11 @@ public class MachineDslGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getRefinesEventEStringParserRuleCall_6_2_1_0_1() { return cRefinesEventEStringParserRuleCall_6_2_1_0_1; }
 
-		//("parameters" / *'{'* / parameters+=Parameter ("," parameters+=Parameter)*)?
+		//("any" / *'{'* / parameters+=Parameter ("," parameters+=Parameter)*)?
 		public Group getGroup_7() { return cGroup_7; }
 
-		//"parameters"
-		public Keyword getParametersKeyword_7_0() { return cParametersKeyword_7_0; }
+		//"any"
+		public Keyword getAnyKeyword_7_0() { return cAnyKeyword_7_0; }
 
 		/// *'{'* / parameters+=Parameter
 		public Assignment getParametersAssignment_7_1() { return cParametersAssignment_7_1; }
@@ -2269,9 +2269,9 @@ public class MachineDslGrammarAccess extends AbstractGrammarElementFinder {
 	//	("," refines+=[Event|EString])*)? / *')'* / //		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
 	//	//		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
 	//	//		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
-	//	("parameters" / *'{'* / parameters+=Parameter ("," parameters+=Parameter)*)? / *'}'* / / *'Guards'* / / *'{'* / (guards+=Guard
-	//	/ *","* / guards+=Guard*)? / *'}'* / ("witnesses" / *'{'* / witnesses+=Witness / *","* / witnesses+=Witness*)? / *'}'* /
-	//	/ *'Actions'* / / *'{'* / (actions+=Action / *","* / actions+=Action*)? / *'}'* /;
+	//	("any" / *'{'* / parameters+=Parameter ("," parameters+=Parameter)*)? / *'}'* / / *'Guards'* / / *'{'* / (guards+=Guard / *","* /
+	//	guards+=Guard*)? / *'}'* / ("witnesses" / *'{'* / witnesses+=Witness / *","* / witnesses+=Witness*)? / *'}'* / / *'Actions'* /
+	//	/ *'{'* / (actions+=Action / *","* / actions+=Action*)? / *'}'* /;
 	public EventElements getEventAccess() {
 		return (pEvent != null) ? pEvent : (pEvent = new EventElements());
 	}

@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalMachineDslParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'EJavaObject'", "'Boolean'", "'Handle'", "'Integer'", "'Long'", "'String'", "'ordinary'", "'convergent'", "'anticipated'", "'Machine'", "'Comment'", "'Refines'", "','", "'Sees'", "'('", "')'", "'Variables'", "'Invariants'", "'Variant'", "'Events'", "'Annotation'", "'{'", "'}'", "'source'", "'references'", "'annotations'", "'details'", "'contents'", "'StringToAttributeMapEntry'", "'key'", "'value'", "'comment'", "'@'", "'is'", "'expression'", "'Event'", "'refines'", "'parameters'", "'witnesses'", "'StringToStringMapEntry'", "'EObject'", "'Extension'", "'extensionId'", "'internalId'", "'extensions'", "'attributes'", "'Attribute'", "'type'", "'when'", "'Witness'", "'predicate'", "'then'", "'theorem'", "'extended'", "'localGenerated'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'EJavaObject'", "'Boolean'", "'Handle'", "'Integer'", "'Long'", "'String'", "'ordinary'", "'convergent'", "'anticipated'", "'Machine'", "'Comment'", "'Refines'", "','", "'Sees'", "'('", "')'", "'Variables'", "'Invariants'", "'Variant'", "'Events'", "'Annotation'", "'{'", "'}'", "'source'", "'references'", "'annotations'", "'details'", "'contents'", "'StringToAttributeMapEntry'", "'key'", "'value'", "'comment'", "'@'", "'is'", "'expression'", "'Event'", "'refines'", "'any'", "'witnesses'", "'StringToStringMapEntry'", "'EObject'", "'Extension'", "'extensionId'", "'internalId'", "'extensions'", "'attributes'", "'Attribute'", "'type'", "'when'", "'Witness'", "'predicate'", "'then'", "'theorem'", "'extended'", "'localGenerated'"
     };
     public static final int RULE_ID=5;
     public static final int T__64=64;
@@ -12048,21 +12048,21 @@ public class InternalMachineDslParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Event__Group_7__0__Impl"
-    // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4549:1: rule__Event__Group_7__0__Impl : ( 'parameters' ) ;
+    // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4549:1: rule__Event__Group_7__0__Impl : ( 'any' ) ;
     public final void rule__Event__Group_7__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4553:1: ( ( 'parameters' ) )
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4554:1: ( 'parameters' )
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4553:1: ( ( 'any' ) )
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4554:1: ( 'any' )
             {
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4554:1: ( 'parameters' )
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4555:1: 'parameters'
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4554:1: ( 'any' )
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4555:1: 'any'
             {
-             before(grammarAccess.getEventAccess().getParametersKeyword_7_0()); 
+             before(grammarAccess.getEventAccess().getAnyKeyword_7_0()); 
             match(input,48,FollowSets000.FOLLOW_48_in_rule__Event__Group_7__0__Impl9049); 
-             after(grammarAccess.getEventAccess().getParametersKeyword_7_0()); 
+             after(grammarAccess.getEventAccess().getAnyKeyword_7_0()); 
 
             }
 
