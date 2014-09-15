@@ -22,28 +22,28 @@ public class Testing {
 
 		IWorkspaceRoot wsr = ResourcesPlugin.getWorkspace().getRoot();
 
-		IProject pp = wsr.getProject("pp");
+		IProject prj = wsr.getProject("pp");
 		try {
-			if (pp.exists()) {
-				if (!pp.isOpen()) {
-					pp.open(null);
+			if (prj.exists()) {
+				if (!prj.isOpen()) {
+					prj.open(null);
 				}
 			} else {
-				pp.create(null);
-				pp.open(null);
+				prj.create(null);
+				prj.open(null);
 			}
 
-			IFolder fo = pp.getFolder("fo");
-			if (!fo.exists()) {
-				fo.create(false, true, null);
+			IFolder folder = prj.getFolder("fo");
+			if (!folder.exists()) {
+				folder.create(false, true, null);
 			}
 
-			IFile fi = fo.getFile("abc.txt");
-			if (!fi.exists()) {
-				fi.create(null, false, null);
+			IFile file = folder.getFile("abc.txt");
+			if (!file.exists()) {
+				file.create(null, false, null);
 			}
-			String fullName = fi.getLocation().toString();
-			BufferedWriter out = new BufferedWriter(new FileWriter(fullName));
+			String fileLocation = file.getLocation().toString();
+			BufferedWriter out = new BufferedWriter(new FileWriter(fileLocation));
 			out.write("Testing123");
 			out.close();
 		} catch (CoreException | FileNotFoundException
