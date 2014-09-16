@@ -244,8 +244,8 @@ public abstract class AbstractMachineDslSemanticSequencer extends AbstractDelega
 	 *         convergence=Convergence? 
 	 *         comment=EString? 
 	 *         (refines+=[Event|EString] refines+=[Event|EString]*)? 
-	 *         (parameters+=Parameter parameters+=Parameter*)? 
 	 *         (guards+=Guard guards+=Guard*)? 
+	 *         (parameters+=Parameter parameters+=Parameter* guards+=Guard guards+=Guard*)? 
 	 *         (witnesses+=Witness witnesses+=Witness*)? 
 	 *         (actions+=Action actions+=Action*)?
 	 *     )

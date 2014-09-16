@@ -48,7 +48,6 @@ public class MachineDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMachineAccess().getGroup_5(), "rule__Machine__Group_5__0");
 					put(grammarAccess.getMachineAccess().getGroup_5_3(), "rule__Machine__Group_5_3__0");
 					put(grammarAccess.getMachineAccess().getGroup_6(), "rule__Machine__Group_6__0");
-					put(grammarAccess.getMachineAccess().getGroup_6_2(), "rule__Machine__Group_6_2__0");
 					put(grammarAccess.getMachineAccess().getGroup_7(), "rule__Machine__Group_7__0");
 					put(grammarAccess.getMachineAccess().getGroup_8(), "rule__Machine__Group_8__0");
 					put(grammarAccess.getMachineAccess().getGroup_9(), "rule__Machine__Group_9__0");
@@ -67,7 +66,7 @@ public class MachineDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getVariableAccess().getGroup(), "rule__Variable__Group__0");
 					put(grammarAccess.getVariableAccess().getGroup_2(), "rule__Variable__Group_2__0");
 					put(grammarAccess.getInvariantAccess().getGroup(), "rule__Invariant__Group__0");
-					put(grammarAccess.getInvariantAccess().getGroup_5(), "rule__Invariant__Group_5__0");
+					put(grammarAccess.getInvariantAccess().getGroup_4(), "rule__Invariant__Group_4__0");
 					put(grammarAccess.getVariantAccess().getGroup(), "rule__Variant__Group__0");
 					put(grammarAccess.getVariantAccess().getGroup_3(), "rule__Variant__Group_3__0");
 					put(grammarAccess.getEventAccess().getGroup(), "rule__Event__Group__0");
@@ -75,7 +74,6 @@ public class MachineDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEventAccess().getGroup_6(), "rule__Event__Group_6__0");
 					put(grammarAccess.getEventAccess().getGroup_6_2(), "rule__Event__Group_6_2__0");
 					put(grammarAccess.getEventAccess().getGroup_7(), "rule__Event__Group_7__0");
-					put(grammarAccess.getEventAccess().getGroup_7_2(), "rule__Event__Group_7_2__0");
 					put(grammarAccess.getEventAccess().getGroup_8(), "rule__Event__Group_8__0");
 					put(grammarAccess.getEventAccess().getGroup_9(), "rule__Event__Group_9__0");
 					put(grammarAccess.getEventAccess().getGroup_10(), "rule__Event__Group_10__0");
@@ -110,11 +108,11 @@ public class MachineDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getParameterAccess().getGroup(), "rule__Parameter__Group__0");
 					put(grammarAccess.getParameterAccess().getGroup_2(), "rule__Parameter__Group_2__0");
 					put(grammarAccess.getGuardAccess().getGroup(), "rule__Guard__Group__0");
-					put(grammarAccess.getGuardAccess().getGroup_5(), "rule__Guard__Group_5__0");
+					put(grammarAccess.getGuardAccess().getGroup_4(), "rule__Guard__Group_4__0");
 					put(grammarAccess.getWitnessAccess().getGroup(), "rule__Witness__Group__0");
 					put(grammarAccess.getWitnessAccess().getGroup_6(), "rule__Witness__Group_6__0");
 					put(grammarAccess.getActionAccess().getGroup(), "rule__Action__Group__0");
-					put(grammarAccess.getActionAccess().getGroup_4(), "rule__Action__Group_4__0");
+					put(grammarAccess.getActionAccess().getGroup_3(), "rule__Action__Group_3__0");
 					put(grammarAccess.getMachineAccess().getNameAssignment_2(), "rule__Machine__NameAssignment_2");
 					put(grammarAccess.getMachineAccess().getCommentAssignment_3_1(), "rule__Machine__CommentAssignment_3_1");
 					put(grammarAccess.getMachineAccess().getRefinesAssignment_4_1(), "rule__Machine__RefinesAssignment_4_1");
@@ -122,7 +120,7 @@ public class MachineDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMachineAccess().getSeesAssignment_5_2(), "rule__Machine__SeesAssignment_5_2");
 					put(grammarAccess.getMachineAccess().getSeesAssignment_5_3_1(), "rule__Machine__SeesAssignment_5_3_1");
 					put(grammarAccess.getMachineAccess().getVariablesAssignment_6_1(), "rule__Machine__VariablesAssignment_6_1");
-					put(grammarAccess.getMachineAccess().getVariablesAssignment_6_2_1(), "rule__Machine__VariablesAssignment_6_2_1");
+					put(grammarAccess.getMachineAccess().getVariablesAssignment_6_2(), "rule__Machine__VariablesAssignment_6_2");
 					put(grammarAccess.getMachineAccess().getInvariantsAssignment_7_1(), "rule__Machine__InvariantsAssignment_7_1");
 					put(grammarAccess.getMachineAccess().getInvariantsAssignment_7_2(), "rule__Machine__InvariantsAssignment_7_2");
 					put(grammarAccess.getMachineAccess().getVariantAssignment_8_1(), "rule__Machine__VariantAssignment_8_1");
@@ -143,8 +141,8 @@ public class MachineDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getVariableAccess().getCommentAssignment_2_1(), "rule__Variable__CommentAssignment_2_1");
 					put(grammarAccess.getInvariantAccess().getNameAssignment_1(), "rule__Invariant__NameAssignment_1");
 					put(grammarAccess.getInvariantAccess().getTheoremAssignment_2(), "rule__Invariant__TheoremAssignment_2");
-					put(grammarAccess.getInvariantAccess().getPredicateAssignment_4(), "rule__Invariant__PredicateAssignment_4");
-					put(grammarAccess.getInvariantAccess().getCommentAssignment_5_1(), "rule__Invariant__CommentAssignment_5_1");
+					put(grammarAccess.getInvariantAccess().getPredicateAssignment_3(), "rule__Invariant__PredicateAssignment_3");
+					put(grammarAccess.getInvariantAccess().getCommentAssignment_4_1(), "rule__Invariant__CommentAssignment_4_1");
 					put(grammarAccess.getVariantAccess().getExpressionAssignment_2(), "rule__Variant__ExpressionAssignment_2");
 					put(grammarAccess.getVariantAccess().getCommentAssignment_3_1(), "rule__Variant__CommentAssignment_3_1");
 					put(grammarAccess.getEventAccess().getNameAssignment_2(), "rule__Event__NameAssignment_2");
@@ -153,14 +151,16 @@ public class MachineDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEventAccess().getCommentAssignment_5_1(), "rule__Event__CommentAssignment_5_1");
 					put(grammarAccess.getEventAccess().getRefinesAssignment_6_1(), "rule__Event__RefinesAssignment_6_1");
 					put(grammarAccess.getEventAccess().getRefinesAssignment_6_2_1(), "rule__Event__RefinesAssignment_6_2_1");
-					put(grammarAccess.getEventAccess().getParametersAssignment_7_1(), "rule__Event__ParametersAssignment_7_1");
-					put(grammarAccess.getEventAccess().getParametersAssignment_7_2_1(), "rule__Event__ParametersAssignment_7_2_1");
-					put(grammarAccess.getEventAccess().getGuardsAssignment_8_0(), "rule__Event__GuardsAssignment_8_0");
-					put(grammarAccess.getEventAccess().getGuardsAssignment_8_1(), "rule__Event__GuardsAssignment_8_1");
+					put(grammarAccess.getEventAccess().getGuardsAssignment_7_1(), "rule__Event__GuardsAssignment_7_1");
+					put(grammarAccess.getEventAccess().getGuardsAssignment_7_2(), "rule__Event__GuardsAssignment_7_2");
+					put(grammarAccess.getEventAccess().getParametersAssignment_8_1(), "rule__Event__ParametersAssignment_8_1");
+					put(grammarAccess.getEventAccess().getParametersAssignment_8_2(), "rule__Event__ParametersAssignment_8_2");
+					put(grammarAccess.getEventAccess().getGuardsAssignment_8_4(), "rule__Event__GuardsAssignment_8_4");
+					put(grammarAccess.getEventAccess().getGuardsAssignment_8_5(), "rule__Event__GuardsAssignment_8_5");
 					put(grammarAccess.getEventAccess().getWitnessesAssignment_9_1(), "rule__Event__WitnessesAssignment_9_1");
 					put(grammarAccess.getEventAccess().getWitnessesAssignment_9_2(), "rule__Event__WitnessesAssignment_9_2");
-					put(grammarAccess.getEventAccess().getActionsAssignment_10_0(), "rule__Event__ActionsAssignment_10_0");
 					put(grammarAccess.getEventAccess().getActionsAssignment_10_1(), "rule__Event__ActionsAssignment_10_1");
+					put(grammarAccess.getEventAccess().getActionsAssignment_10_2(), "rule__Event__ActionsAssignment_10_2");
 					put(grammarAccess.getStringToStringMapEntryAccess().getKeyAssignment_3_1(), "rule__StringToStringMapEntry__KeyAssignment_3_1");
 					put(grammarAccess.getStringToStringMapEntryAccess().getValueAssignment_4_1(), "rule__StringToStringMapEntry__ValueAssignment_4_1");
 					put(grammarAccess.getExtensionAccess().getLocalGeneratedAssignment_0(), "rule__Extension__LocalGeneratedAssignment_0");
@@ -197,15 +197,15 @@ public class MachineDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getParameterAccess().getCommentAssignment_2_1(), "rule__Parameter__CommentAssignment_2_1");
 					put(grammarAccess.getGuardAccess().getNameAssignment_1(), "rule__Guard__NameAssignment_1");
 					put(grammarAccess.getGuardAccess().getTheoremAssignment_2(), "rule__Guard__TheoremAssignment_2");
-					put(grammarAccess.getGuardAccess().getPredicateAssignment_4(), "rule__Guard__PredicateAssignment_4");
-					put(grammarAccess.getGuardAccess().getCommentAssignment_5_1(), "rule__Guard__CommentAssignment_5_1");
+					put(grammarAccess.getGuardAccess().getPredicateAssignment_3(), "rule__Guard__PredicateAssignment_3");
+					put(grammarAccess.getGuardAccess().getCommentAssignment_4_1(), "rule__Guard__CommentAssignment_4_1");
 					put(grammarAccess.getWitnessAccess().getLocalGeneratedAssignment_0(), "rule__Witness__LocalGeneratedAssignment_0");
 					put(grammarAccess.getWitnessAccess().getNameAssignment_3(), "rule__Witness__NameAssignment_3");
 					put(grammarAccess.getWitnessAccess().getPredicateAssignment_5(), "rule__Witness__PredicateAssignment_5");
 					put(grammarAccess.getWitnessAccess().getCommentAssignment_6_1(), "rule__Witness__CommentAssignment_6_1");
 					put(grammarAccess.getActionAccess().getNameAssignment_1(), "rule__Action__NameAssignment_1");
-					put(grammarAccess.getActionAccess().getActionAssignment_3(), "rule__Action__ActionAssignment_3");
-					put(grammarAccess.getActionAccess().getCommentAssignment_4_1(), "rule__Action__CommentAssignment_4_1");
+					put(grammarAccess.getActionAccess().getActionAssignment_2(), "rule__Action__ActionAssignment_2");
+					put(grammarAccess.getActionAccess().getCommentAssignment_3_1(), "rule__Action__CommentAssignment_3_1");
 				}
 			};
 		}

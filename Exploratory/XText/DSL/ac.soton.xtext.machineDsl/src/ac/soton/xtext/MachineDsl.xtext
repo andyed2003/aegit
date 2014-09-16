@@ -13,17 +13,18 @@ Machine returns Machine:
 	name=EString
 //	'{'
 //		('internalId' internalId=EString)?
-		('Comment' comment=EString)?
+		('//' comment=EString)?
 		('Refines' /*'('*/ refines+=[Machine|EString] ( "," refines+=[Machine|EString])* /*')'*/ )?
 		('Sees' '(' sees+=[context::Context|EString] ( "," sees+=[context::Context|EString])* ')' )?
 //		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
 //		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
 //		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
-		('Variables' /*'{'*/ variables+=Variable ( "," variables+=Variable)* /*'}'*/ )?
+		('Variables' /*'{'*/ variables+=Variable ( /*","*/ variables+=Variable)* /*'}'*/ )?
 		('Invariants' /*'{'*/ invariants+=Invariant ( invariants+=Invariant)* /*'}'*/ )?
 		('Variant' variant=Variant)?
 		('Events' /*'{'*/ events+=Event ( /*","*/ events+=Event)* /*'}'*/ )?
 //	'}'
+	'End'
 ;
 
 
@@ -62,7 +63,7 @@ EString returns ecore::EString:
 //	name=EString
 //	'{'
 //		('internalId' internalId=EString)?
-//		('comment' comment=EString)?
+//		('//' comment=EString)?
 //		('extends' '(' extends+=[context::Context|EString] ( "," extends+=[context::Context|EString])* ')' )?
 //		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
 //		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
@@ -79,7 +80,7 @@ Variable returns Variable:
 	name=EString
 //	'{'
 //		('internalId' internalId=EString)?
-		('comment' comment=EString)?
+		('//' comment=EString)?
 //		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
 //		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
 //		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
@@ -93,8 +94,9 @@ Invariant returns Invariant:
 	(theorem?='theorem')?
 //	'{'
 //		('internalId' internalId=EString)?
-		'is' predicate=EString?
-		('comment' comment=EString)?
+//		'is' 
+		predicate=EString?
+		('//' comment=EString)?
 //		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
 //		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
 //		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
@@ -107,7 +109,7 @@ Variant returns Variant:
 //	'{'
 //		('internalId' internalId=EString)?
 		'expression' expression=EString?
-		('comment' comment=EString)
+		('//' comment=EString)
 //		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
 //		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
 //		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
@@ -123,16 +125,22 @@ Event returns Event:
 //	'{'
 //		('internalId' internalId=EString)?
 		(/*'convergence'*/ convergence=Convergence)?
-		('comment' comment=EString)?		
+		('//' comment=EString)?		
 		('refines' /*'('*/ refines+=[Event|EString] ( "," refines+=[Event|EString])* /*')'*/ )?
 //		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
 //		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
 //		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
-		('any' /*'{'*/ parameters+=Parameter ( "," parameters+=Parameter)* /*'}'*/ )?
-		(/*'Guards'*/ /*'{'*/ guards+=Guard ( /*","*/ guards+=Guard)* /*'}'*/ )?
+		
+		('when' /*'{'*/ guards+=Guard ( /*","*/ guards+=Guard)* /*'}'*/ )?
+
+		('any' /*'{'*/ parameters+=Parameter ( /*","*/ parameters+=Parameter)* /*'}'*/ 
+		 'where' /*'{'*/ guards+=Guard ( /*","*/ guards+=Guard)* /*'}'*/ )?
+		
+		
 		('witnesses' /*'{'*/ witnesses+=Witness ( /*","*/ witnesses+=Witness)* /*'}'*/ )?
-		(/*'Actions'*/ /*'{'*/ actions+=Action ( /*","*/ actions+=Action)* /*'}'*/ )?
+		('then' /*'{'*/ actions+=Action ( /*","*/ actions+=Action)* /*'}'*/ )?
 //	'}'
+	'end'
 	;
 
 StringToStringMapEntry returns core::StringToStringMapEntry:
@@ -182,7 +190,7 @@ CarrierSet returns context::CarrierSet:
 	name=EString
 //	'{'
 //		('internalId' internalId=EString)?
-		('comment' comment=EString)?
+		('//' comment=EString)?
 //		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
 //		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
 //		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
@@ -196,7 +204,7 @@ Constant returns context::Constant:
 	name=EString
 	'{'
 		('internalId' internalId=EString)?
-		('comment' comment=EString)?
+		('//' comment=EString)?
 		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
 		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
 		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
@@ -209,7 +217,7 @@ Axiom returns context::Axiom:
 	'@'name=EString
 //	'{'
 //		('internalId' internalId=EString)?
-		('comment' comment=EString)?
+		('//' comment=EString)?
 		'predicate' predicate=EString
 //		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
 //		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
@@ -227,7 +235,7 @@ Parameter returns Parameter:
 	name=EString
 //	'{'
 //		('internalId' internalId=EString)?
-		('comment' comment=EString)?
+		('//' comment=EString)?
 //		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
 //		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
 //		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
@@ -241,8 +249,8 @@ Guard returns Guard:
 	(theorem?='theorem')?
 //	'{'
 //		('internalId' internalId=EString)?
-		'when' predicate=EString
-		('comment' comment=EString)?
+		predicate=EString
+		('//' comment=EString)?
 //		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
 //		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
 //		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
@@ -256,7 +264,7 @@ Witness returns Witness:
 //	'{'
 //		('internalId' internalId=EString)?
 		'predicate' predicate=EString?
-		('comment' comment=EString)?
+		('//' comment=EString)?
 //		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
 //		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
 //		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
@@ -269,8 +277,9 @@ Action returns Action:
 	'@'name=EString
 //	'{'
 //		('internalId' internalId=EString)?
-		'then' action=EString?
-		('comment' comment=EString)?
+//		'then' 
+		action=EString?
+		('//' comment=EString)?
 //		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
 //		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
 //		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
