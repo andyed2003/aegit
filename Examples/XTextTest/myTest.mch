@@ -7,8 +7,8 @@ Invariants
  @inv2 "b: BOOL"
 
 Events
-
-Event evt1 ordinary 
+ 
+event evt1 ordinary 
 any p q
 where 
 @qgrd "q : NAT"
@@ -19,7 +19,7 @@ then
 @act1 "a := a + q"
 end
  
-Event evt2 ordinary // comment
+event evt2 ordinary // comment
 when
 @grd3 "b=True" // comment 2
 @act3 "b:=FALSE"

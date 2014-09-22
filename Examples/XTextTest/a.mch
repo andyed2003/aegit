@@ -1,25 +1,28 @@
 Machine aa
-Variables a, b, c
+Variables a b c
 Invariants
- @aa is "a : NAT"
- @bb is "b : BOOL"
- @cc theorem  is "a >= 0"
- @dd is "c : 0..10"
+ @aa "a : NAT"
+ @bb "b : BOOL"
+ @cc theorem "a >= 0"
+ @dd "c : 0..10"
  
-Events
-Event gg ordinary
-any l
-@ll when "l : NAT"
- 
+Events 
+event evt 
+when
+@hhh "a /= 0" 
+@jjj "a := 0"
+then 
+@opui "b := false" 
+end
 
-Event evt anticipated 
-@hhh when "a /= 0" 
-@jjj then "a := 0" 
-@kkk then "b := false" 
-
-Event evt2
+event evt2 
 any x 
-@lll when "x: INT"
-@mmm when "a = 0"
-@nnn when "b = TRUE"
-@ppp then "a:=x"
+where
+@lll "x: INT"
+@mmm "a = 0"
+then
+@nnn "b = TRUE"
+@ppp "a:=x"
+end
+
+End
