@@ -323,7 +323,7 @@ ruleMachine returns [EObject current=null]
 		{ 
 	        newCompositeNode(grammarAccess.getMachineAccess().getEventsEventParserRuleCall_9_1_0()); 
 	    }
-		lv_events_24_0=ruleEvent		{
+		lv_events_24_0=ruleevent		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getMachineRule());
 	        }
@@ -331,7 +331,7 @@ ruleMachine returns [EObject current=null]
        			$current, 
        			"events",
         		lv_events_24_0, 
-        		"Event");
+        		"event");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -341,7 +341,7 @@ ruleMachine returns [EObject current=null]
 		{ 
 	        newCompositeNode(grammarAccess.getMachineAccess().getEventsEventParserRuleCall_9_2_0()); 
 	    }
-		lv_events_25_0=ruleEvent		{
+		lv_events_25_0=ruleevent		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getMachineRule());
 	        }
@@ -349,7 +349,7 @@ ruleMachine returns [EObject current=null]
        			$current, 
        			"events",
         		lv_events_25_0, 
-        		"Event");
+        		"event");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1007,17 +1007,17 @@ ruleVariant returns [EObject current=null]
 
 
 
-// Entry rule entryRuleEvent
-entryRuleEvent returns [EObject current=null] 
+// Entry rule entryRuleevent
+entryRuleevent returns [EObject current=null] 
 	:
 	{ newCompositeNode(grammarAccess.getEventRule()); }
-	 iv_ruleEvent=ruleEvent 
-	 { $current=$iv_ruleEvent.current; } 
+	 iv_ruleevent=ruleevent 
+	 { $current=$iv_ruleevent.current; } 
 	 EOF 
 ;
 
-// Rule Event
-ruleEvent returns [EObject current=null] 
+// Rule event
+ruleevent returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
@@ -1027,7 +1027,7 @@ ruleEvent returns [EObject current=null]
             grammarAccess.getEventAccess().getEventAction_0(),
             $current);
     }
-)	otherlv_1='Event' 
+)	otherlv_1='event' 
     {
     	newLeafNode(otherlv_1, grammarAccess.getEventAccess().getEventKeyword_1());
     }

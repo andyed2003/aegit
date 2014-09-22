@@ -22,7 +22,7 @@ Machine returns Machine:
 		('Variables' /*'{'*/ variables+=Variable ( /*","*/ variables+=Variable)* /*'}'*/ )?
 		('Invariants' /*'{'*/ invariants+=Invariant ( invariants+=Invariant)* /*'}'*/ )?
 		('Variant' variant=Variant)?
-		('Events' /*'{'*/ events+=Event ( /*","*/ events+=Event)* /*'}'*/ )?
+		('Events' /*'{'*/ events+=event ( /*","*/ events+=event)* /*'}'*/ )?
 //	'}'
 	'End'
 ;
@@ -116,10 +116,10 @@ Variant returns Variant:
 //	'}'
 	;
 
-Event returns Event:
+event returns Event:
 	{Event}
 //	(localGenerated?='localGenerated')?
-	'Event'
+	'event'
 	name=EString
 	(extended?='extended')?
 //	'{'

@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalMachineDslParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'EJavaObject'", "'Boolean'", "'Handle'", "'Integer'", "'Long'", "'String'", "'ordinary'", "'convergent'", "'anticipated'", "'Machine'", "'End'", "'//'", "'Refines'", "','", "'Sees'", "'('", "')'", "'Variables'", "'Invariants'", "'Variant'", "'Events'", "'Annotation'", "'{'", "'}'", "'source'", "'references'", "'annotations'", "'details'", "'contents'", "'StringToAttributeMapEntry'", "'key'", "'value'", "'@'", "'expression'", "'Event'", "'end'", "'refines'", "'when'", "'any'", "'where'", "'witnesses'", "'then'", "'StringToStringMapEntry'", "'EObject'", "'Extension'", "'extensionId'", "'internalId'", "'extensions'", "'attributes'", "'Attribute'", "'type'", "'Witness'", "'predicate'", "'theorem'", "'extended'", "'localGenerated'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'EJavaObject'", "'Boolean'", "'Handle'", "'Integer'", "'Long'", "'String'", "'ordinary'", "'convergent'", "'anticipated'", "'Machine'", "'End'", "'//'", "'Refines'", "','", "'Sees'", "'('", "')'", "'Variables'", "'Invariants'", "'Variant'", "'Events'", "'Annotation'", "'{'", "'}'", "'source'", "'references'", "'annotations'", "'details'", "'contents'", "'StringToAttributeMapEntry'", "'key'", "'value'", "'@'", "'expression'", "'event'", "'end'", "'refines'", "'when'", "'any'", "'where'", "'witnesses'", "'then'", "'StringToStringMapEntry'", "'EObject'", "'Extension'", "'extensionId'", "'internalId'", "'extensions'", "'attributes'", "'Attribute'", "'type'", "'Witness'", "'predicate'", "'theorem'", "'extended'", "'localGenerated'"
     };
     public static final int RULE_ID=5;
     public static final int T__66=66;
@@ -736,21 +736,21 @@ public class InternalMachineDslParser extends AbstractInternalContentAssistParse
     // $ANTLR end "ruleVariant"
 
 
-    // $ANTLR start "entryRuleEvent"
-    // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:286:1: entryRuleEvent : ruleEvent EOF ;
-    public final void entryRuleEvent() throws RecognitionException {
+    // $ANTLR start "entryRuleevent"
+    // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:286:1: entryRuleevent : ruleevent EOF ;
+    public final void entryRuleevent() throws RecognitionException {
         try {
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:287:1: ( ruleEvent EOF )
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:288:1: ruleEvent EOF
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:287:1: ( ruleevent EOF )
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:288:1: ruleevent EOF
             {
              before(grammarAccess.getEventRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleEvent_in_entryRuleEvent542);
-            ruleEvent();
+            pushFollow(FollowSets000.FOLLOW_ruleevent_in_entryRuleevent542);
+            ruleevent();
 
             state._fsp--;
 
              after(grammarAccess.getEventRule()); 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleEvent549); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleevent549); 
 
             }
 
@@ -763,12 +763,12 @@ public class InternalMachineDslParser extends AbstractInternalContentAssistParse
         }
         return ;
     }
-    // $ANTLR end "entryRuleEvent"
+    // $ANTLR end "entryRuleevent"
 
 
-    // $ANTLR start "ruleEvent"
-    // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:295:1: ruleEvent : ( ( rule__Event__Group__0 ) ) ;
-    public final void ruleEvent() throws RecognitionException {
+    // $ANTLR start "ruleevent"
+    // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:295:1: ruleevent : ( ( rule__Event__Group__0 ) ) ;
+    public final void ruleevent() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -783,7 +783,7 @@ public class InternalMachineDslParser extends AbstractInternalContentAssistParse
             // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:302:1: ( rule__Event__Group__0 )
             // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:302:2: rule__Event__Group__0
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Event__Group__0_in_ruleEvent575);
+            pushFollow(FollowSets000.FOLLOW_rule__Event__Group__0_in_ruleevent575);
             rule__Event__Group__0();
 
             state._fsp--;
@@ -810,7 +810,7 @@ public class InternalMachineDslParser extends AbstractInternalContentAssistParse
         }
         return ;
     }
-    // $ANTLR end "ruleEvent"
+    // $ANTLR end "ruleevent"
 
 
     // $ANTLR start "entryRuleStringToStringMapEntry"
@@ -10388,17 +10388,17 @@ public class InternalMachineDslParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Event__Group__1__Impl"
-    // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:3953:1: rule__Event__Group__1__Impl : ( 'Event' ) ;
+    // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:3953:1: rule__Event__Group__1__Impl : ( 'event' ) ;
     public final void rule__Event__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:3957:1: ( ( 'Event' ) )
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:3958:1: ( 'Event' )
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:3957:1: ( ( 'event' ) )
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:3958:1: ( 'event' )
             {
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:3958:1: ( 'Event' )
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:3959:1: 'Event'
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:3958:1: ( 'event' )
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:3959:1: 'event'
             {
              before(grammarAccess.getEventAccess().getEventKeyword_1()); 
             match(input,45,FollowSets000.FOLLOW_45_in_rule__Event__Group__1__Impl7865); 
@@ -20482,21 +20482,21 @@ public class InternalMachineDslParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Machine__EventsAssignment_9_1"
-    // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:7803:1: rule__Machine__EventsAssignment_9_1 : ( ruleEvent ) ;
+    // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:7803:1: rule__Machine__EventsAssignment_9_1 : ( ruleevent ) ;
     public final void rule__Machine__EventsAssignment_9_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:7807:1: ( ( ruleEvent ) )
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:7808:1: ( ruleEvent )
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:7807:1: ( ( ruleevent ) )
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:7808:1: ( ruleevent )
             {
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:7808:1: ( ruleEvent )
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:7809:1: ruleEvent
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:7808:1: ( ruleevent )
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:7809:1: ruleevent
             {
              before(grammarAccess.getMachineAccess().getEventsEventParserRuleCall_9_1_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleEvent_in_rule__Machine__EventsAssignment_9_115457);
-            ruleEvent();
+            pushFollow(FollowSets000.FOLLOW_ruleevent_in_rule__Machine__EventsAssignment_9_115457);
+            ruleevent();
 
             state._fsp--;
 
@@ -20523,21 +20523,21 @@ public class InternalMachineDslParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Machine__EventsAssignment_9_2"
-    // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:7818:1: rule__Machine__EventsAssignment_9_2 : ( ruleEvent ) ;
+    // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:7818:1: rule__Machine__EventsAssignment_9_2 : ( ruleevent ) ;
     public final void rule__Machine__EventsAssignment_9_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:7822:1: ( ( ruleEvent ) )
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:7823:1: ( ruleEvent )
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:7822:1: ( ( ruleevent ) )
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:7823:1: ( ruleevent )
             {
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:7823:1: ( ruleEvent )
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:7824:1: ruleEvent
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:7823:1: ( ruleevent )
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:7824:1: ruleevent
             {
              before(grammarAccess.getMachineAccess().getEventsEventParserRuleCall_9_2_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleEvent_in_rule__Machine__EventsAssignment_9_215488);
-            ruleEvent();
+            pushFollow(FollowSets000.FOLLOW_ruleevent_in_rule__Machine__EventsAssignment_9_215488);
+            ruleevent();
 
             state._fsp--;
 
@@ -23228,9 +23228,9 @@ public class InternalMachineDslParser extends AbstractInternalContentAssistParse
         public static final BitSet FOLLOW_ruleVariant_in_entryRuleVariant482 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleVariant489 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__Variant__Group__0_in_ruleVariant515 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleEvent_in_entryRuleEvent542 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleEvent549 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Event__Group__0_in_ruleEvent575 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleevent_in_entryRuleevent542 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleevent549 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Event__Group__0_in_ruleevent575 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleStringToStringMapEntry_in_entryRuleStringToStringMapEntry602 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleStringToStringMapEntry609 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__StringToStringMapEntry__Group__0_in_ruleStringToStringMapEntry635 = new BitSet(new long[]{0x0000000000000002L});
@@ -23869,8 +23869,8 @@ public class InternalMachineDslParser extends AbstractInternalContentAssistParse
         public static final BitSet FOLLOW_ruleInvariant_in_rule__Machine__InvariantsAssignment_7_115364 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleInvariant_in_rule__Machine__InvariantsAssignment_7_215395 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleVariant_in_rule__Machine__VariantAssignment_8_115426 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleEvent_in_rule__Machine__EventsAssignment_9_115457 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleEvent_in_rule__Machine__EventsAssignment_9_215488 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleevent_in_rule__Machine__EventsAssignment_9_115457 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleevent_in_rule__Machine__EventsAssignment_9_215488 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleEString_in_rule__Annotation__SourceAssignment_3_115519 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleEString_in_rule__Annotation__ReferencesAssignment_4_215554 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleEString_in_rule__Annotation__ReferencesAssignment_4_3_115593 = new BitSet(new long[]{0x0000000000000002L});

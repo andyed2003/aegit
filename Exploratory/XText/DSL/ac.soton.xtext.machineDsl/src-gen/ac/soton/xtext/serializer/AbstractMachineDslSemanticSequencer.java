@@ -109,7 +109,7 @@ public abstract class AbstractMachineDslSemanticSequencer extends AbstractDelega
 				else break;
 			case MachinePackage.EVENT:
 				if(context == grammarAccess.getEventRule()) {
-					sequence_Event(context, (Event) semanticObject); 
+					sequence_event(context, (Event) semanticObject); 
 					return; 
 				}
 				else break;
@@ -239,25 +239,6 @@ public abstract class AbstractMachineDslSemanticSequencer extends AbstractDelega
 	/**
 	 * Constraint:
 	 *     (
-	 *         name=EString 
-	 *         extended?='extended'? 
-	 *         convergence=Convergence? 
-	 *         comment=EString? 
-	 *         (refines+=[Event|EString] refines+=[Event|EString]*)? 
-	 *         (guards+=Guard guards+=Guard*)? 
-	 *         (parameters+=Parameter parameters+=Parameter* guards+=Guard guards+=Guard*)? 
-	 *         (witnesses+=Witness witnesses+=Witness*)? 
-	 *         (actions+=Action actions+=Action*)?
-	 *     )
-	 */
-	protected void sequence_Event(EObject context, Event semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (
 	 *         localGenerated?='localGenerated'? 
 	 *         internalId=EString? 
 	 *         extensionId=EString 
@@ -299,7 +280,7 @@ public abstract class AbstractMachineDslSemanticSequencer extends AbstractDelega
 	 *         (variables+=Variable variables+=Variable*)? 
 	 *         (invariants+=Invariant invariants+=Invariant*)? 
 	 *         variant=Variant? 
-	 *         (events+=Event events+=Event*)?
+	 *         (events+=event events+=event*)?
 	 *     )
 	 */
 	protected void sequence_Machine(EObject context, Machine semanticObject) {
@@ -357,6 +338,25 @@ public abstract class AbstractMachineDslSemanticSequencer extends AbstractDelega
 	 *     (localGenerated?='localGenerated'? name=EString predicate=EString? comment=EString?)
 	 */
 	protected void sequence_Witness(EObject context, Witness semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (
+	 *         name=EString 
+	 *         extended?='extended'? 
+	 *         convergence=Convergence? 
+	 *         comment=EString? 
+	 *         (refines+=[Event|EString] refines+=[Event|EString]*)? 
+	 *         (guards+=Guard guards+=Guard*)? 
+	 *         (parameters+=Parameter parameters+=Parameter* guards+=Guard guards+=Guard*)? 
+	 *         (witnesses+=Witness witnesses+=Witness*)? 
+	 *         (actions+=Action actions+=Action*)?
+	 *     )
+	 */
+	protected void sequence_event(EObject context, Event semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 }

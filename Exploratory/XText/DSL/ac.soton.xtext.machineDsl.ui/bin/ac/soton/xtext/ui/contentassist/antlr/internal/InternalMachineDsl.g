@@ -282,17 +282,17 @@ finally {
 
 
 
-// Entry rule entryRuleEvent
-entryRuleEvent 
+// Entry rule entryRuleevent
+entryRuleevent 
 :
 { before(grammarAccess.getEventRule()); }
-	 ruleEvent
+	 ruleevent
 { after(grammarAccess.getEventRule()); } 
 	 EOF 
 ;
 
-// Rule Event
-ruleEvent
+// Rule event
+ruleevent
     @init {
 		int stackSize = keepStackSize();
     }
@@ -3958,7 +3958,7 @@ rule__Event__Group__1__Impl
 (
 { before(grammarAccess.getEventAccess().getEventKeyword_1()); }
 
-	'Event' 
+	'event' 
 
 { after(grammarAccess.getEventAccess().getEventKeyword_1()); }
 )
@@ -7807,7 +7807,7 @@ rule__Machine__EventsAssignment_9_1
 :
 (
 { before(grammarAccess.getMachineAccess().getEventsEventParserRuleCall_9_1_0()); }
-	ruleEvent{ after(grammarAccess.getMachineAccess().getEventsEventParserRuleCall_9_1_0()); }
+	ruleevent{ after(grammarAccess.getMachineAccess().getEventsEventParserRuleCall_9_1_0()); }
 )
 
 ;
@@ -7822,7 +7822,7 @@ rule__Machine__EventsAssignment_9_2
 :
 (
 { before(grammarAccess.getMachineAccess().getEventsEventParserRuleCall_9_2_0()); }
-	ruleEvent{ after(grammarAccess.getMachineAccess().getEventsEventParserRuleCall_9_2_0()); }
+	ruleevent{ after(grammarAccess.getMachineAccess().getEventsEventParserRuleCall_9_2_0()); }
 )
 
 ;
