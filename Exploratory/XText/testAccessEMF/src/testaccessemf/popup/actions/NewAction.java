@@ -60,6 +60,7 @@ public class NewAction implements IObjectActionDelegate {
 			Class<? extends EObject> clazz = eo.getClass();
 			if(clazz.equals(MachineImpl.class) ){
 				Machine m = (Machine) eo;
+				
 				System.out.println("We found the EMF model of Machine: "+ m.getName());
 			}
 		}

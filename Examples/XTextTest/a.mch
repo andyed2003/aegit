@@ -7,6 +7,13 @@ Invariants
  @dd "c : 0..10"
  
 Events 
+event kjh //nnnnn
+any p q
+where @lkjh "p : NAT" @jhhgjgh "q: INT" 
+then @kjhk "a := 0"
+@jjj "c := 0"
+end
+
 event evt 
 when
 @hhh "a /= 0" 
