@@ -5,22 +5,22 @@
    <extension
          point="org.eclipse.ui.popupMenus">
       <objectContribution
-            objectClass="org.eclipse.core.resources.IFile"
-            id="testAccessEMF.contribution1">
+            id="test2.contribution1"
+            objectClass="org.eventb.core.IMachineRoot">
          <menu
+               id="test2.menu1"
                label="New Submenu"
-               path="additions"
-               id="testAccessEMF.menu1">
+               path="additions">
             <separator
                   name="group1">
             </separator>
          </menu>
          <action
-               label="New Action"
                class="testaccessemf.popup.actions.NewAction"
-               menubarPath="testAccessEMF.menu1/group1"
                enablesFor="1"
-               id="testAccessEMF.newAction">
+               id="test2.newAction"
+               label="New Action"
+               menubarPath="test2.menu1/group1">
          </action>
       </objectContribution>
    </extension>

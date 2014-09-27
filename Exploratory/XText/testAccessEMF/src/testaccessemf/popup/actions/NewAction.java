@@ -3,9 +3,10 @@ package testaccessemf.popup.actions;
 import java.util.List;
 
 import org.eclipse.core.resources.IFile;
-import org.eclipse.core.runtime.IConfigurationElement;
+import org.eclipse.core.runtime.IPath;
+import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -18,16 +19,13 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IActionDelegate;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
-import org.eclipse.xtext.internal.ResourceServiceProviderDescriptor;
-import org.eclipse.xtext.resource.IResourceServiceProvider;
-import org.eclipse.xtext.resource.IResourceServiceProvider.Registry;
-import org.eventb.emf.core.CorePackage;
+import org.eclipse.ui.statushandlers.StatusManager;
+import org.eventb.core.IMachineRoot;
+import org.eventb.core.basis.MachineRoot;
 import org.eventb.emf.core.machine.Event;
 import org.eventb.emf.core.machine.Invariant;
 import org.eventb.emf.core.machine.Machine;
-import org.eventb.emf.core.machine.MachinePackage;
 import org.eventb.emf.core.machine.impl.MachineImpl;
-
 
 public class NewAction implements IObjectActionDelegate {
 	@SuppressWarnings("unused")
@@ -52,13 +50,26 @@ public class NewAction implements IObjectActionDelegate {
 	 * @see IActionDelegate#run(IAction)
 	 */
 	public void run(IAction action) {
-		
-		IFile file = (IFile) selection.getFirstElement();
+		Resource r = null;
+		IFile file = null;
+		Object firstElement = selection.getFirstElement();
+		if(firstElement instanceof IFile){
+		file = (IFile) firstElement;
 		String path = file.getFullPath().toOSString();
 		
 		ResourceSet rs = new ResourceSetImpl();
 		URI uri = URI.createPlatformResourceURI(path, true);
-		Resource r = rs.getResource(uri, true);
+		 r = rs.getResource(uri, true);
+		}
+		else if(firstElement instanceof MachineRoot){
+			MachineRoot mr = (MachineRoot) firstElement;
+			 file = mr.getResource();
+			 
+			 URI uri = URI.createPlatformResourceURI(file.getFullPath().toOSString(), true);
+			 ResourceSet rs = new ResourceSetImpl();
+			 r = rs.getResource(uri, true);
+		}
+		
 		
 		List<EObject> contentOfYourFile = r.getContents();
 		for(EObject eo: contentOfYourFile){
@@ -69,12 +80,25 @@ public class NewAction implements IObjectActionDelegate {
 				EList<Event> events = m.getEvents();
 				 EList<EObject> iter = m.eContents();
 				
-				
+
+					try {
+						Work command = new Work(m.getURI());
+						if (command.canExecute())
+							command.execute(new NullProgressMonitor(), null);
+					} catch (Exception e) {
+						Status status =  new Status(Status.ERROR,"Failed to work", e.getLocalizedMessage());
+						StatusManager.getManager().handle(status,
+								StatusManager.SHOW);
+
+					}
+
+				 
+				 
 				System.out.println("We found the EMF model of Machine: "+ m.getName());
 			}
 		}
 		
-		
+
 		
 	}
 
