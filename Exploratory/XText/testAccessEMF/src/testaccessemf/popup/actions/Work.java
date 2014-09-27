@@ -14,13 +14,14 @@ import org.eclipse.emf.workspace.AbstractEMFOperation;
 import org.eventb.emf.core.machine.Machine;
 import org.eventb.emf.persistence.EMFRodinDB;
 
-
 public class Work extends AbstractEMFOperation {
 
 	private URI machineURI;
 
 	public Work(URI machineURI) {
-		super(TransactionalEditingDomain.Factory.INSTANCE.createEditingDomain(EMFRodinDB.INSTANCE.getResourceSet()), "Add Statemachine");
+		super(TransactionalEditingDomain.Factory.INSTANCE
+				.createEditingDomain(EMFRodinDB.INSTANCE.getResourceSet()),
+				"Do Work");
 		this.machineURI = machineURI;
 	}
 
@@ -28,22 +29,24 @@ public class Work extends AbstractEMFOperation {
 	protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		monitor.beginTask("Creating statemachine", IProgressMonitor.UNKNOWN);
-		
+
 		TransactionalEditingDomain editingDomain = getEditingDomain();
-		
+
 		try {
-			Resource resource = editingDomain.getResourceSet().getResource(machineURI, true);
-			
+			Resource resource = editingDomain.getResourceSet().getResource(
+					machineURI, true);
+
 			if (resource != null && resource.isLoaded()) {
 				Machine machine = (Machine) resource.getContents().get(0);
 				// Do Something Here !!!
-				
-				
+				System.out.println("We found the EMF model of Machine: "+ machine.getName());
+
 				// End Do something !!!
 				resource.save(Collections.emptyMap());
 			}
 		} catch (Exception e) {
-			return new Status(Status.ERROR,"Failed to work", e.getLocalizedMessage());
+			return new Status(Status.ERROR, "Failed to work",
+					e.getLocalizedMessage());
 		} finally {
 			monitor.done();
 		}

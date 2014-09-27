@@ -3,7 +3,6 @@ package testaccessemf.popup.actions;
 import java.util.List;
 
 import org.eclipse.core.resources.IFile;
-import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.EList;
@@ -20,7 +19,6 @@ import org.eclipse.ui.IActionDelegate;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.statushandlers.StatusManager;
-import org.eventb.core.IMachineRoot;
 import org.eventb.core.basis.MachineRoot;
 import org.eventb.emf.core.machine.Event;
 import org.eventb.emf.core.machine.Invariant;
@@ -53,53 +51,44 @@ public class NewAction implements IObjectActionDelegate {
 		Resource r = null;
 		IFile file = null;
 		Object firstElement = selection.getFirstElement();
-		if(firstElement instanceof IFile){
-		file = (IFile) firstElement;
-		String path = file.getFullPath().toOSString();
-		
-		ResourceSet rs = new ResourceSetImpl();
-		URI uri = URI.createPlatformResourceURI(path, true);
-		 r = rs.getResource(uri, true);
-		}
-		else if(firstElement instanceof MachineRoot){
+		if (firstElement instanceof IFile) {
+			file = (IFile) firstElement;
+			String path = file.getFullPath().toOSString();
+
+			ResourceSet rs = new ResourceSetImpl();
+			URI uri = URI.createPlatformResourceURI(path, true);
+			r = rs.getResource(uri, true);
+		} else if (firstElement instanceof MachineRoot) {
 			MachineRoot mr = (MachineRoot) firstElement;
-			 file = mr.getResource();
-			 
-			 URI uri = URI.createPlatformResourceURI(file.getFullPath().toOSString(), true);
-			 ResourceSet rs = new ResourceSetImpl();
-			 r = rs.getResource(uri, true);
+			file = mr.getResource();
+
+			URI uri = URI.createPlatformResourceURI(file.getFullPath()
+					.toOSString(), true);
+			ResourceSet rs = new ResourceSetImpl();
+			r = rs.getResource(uri, true);
 		}
-		
-		
+
 		List<EObject> contentOfYourFile = r.getContents();
-		for(EObject eo: contentOfYourFile){
+		for (EObject eo : contentOfYourFile) {
 			Class<? extends EObject> clazz = eo.getClass();
-			if(clazz.equals(MachineImpl.class) ){
+			if (clazz.equals(MachineImpl.class)) {
 				Machine m = (Machine) eo;
 				EList<Invariant> invariants = m.getInvariants();
 				EList<Event> events = m.getEvents();
-				 EList<EObject> iter = m.eContents();
-				
+				EList<EObject> iter = m.eContents();
 
-					try {
-						Work command = new Work(m.getURI());
-						if (command.canExecute())
-							command.execute(new NullProgressMonitor(), null);
-					} catch (Exception e) {
-						Status status =  new Status(Status.ERROR,"Failed to work", e.getLocalizedMessage());
-						StatusManager.getManager().handle(status,
-								StatusManager.SHOW);
-
-					}
-
-				 
-				 
-				System.out.println("We found the EMF model of Machine: "+ m.getName());
+				try {
+					Work command = new Work(m.getURI());
+					if (command.canExecute())
+						command.execute(new NullProgressMonitor(), null);
+				} catch (Exception e) {
+					Status status = new Status(Status.ERROR, "Failed to work",
+							e.getLocalizedMessage());
+					StatusManager.getManager().handle(status,
+							StatusManager.SHOW);
+				}
 			}
 		}
-		
-
-		
 	}
 
 	/**
