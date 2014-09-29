@@ -84,7 +84,7 @@ ruleMachine returns [EObject current=null]
             grammarAccess.getMachineAccess().getMachineAction_0(),
             $current);
     }
-)	otherlv_1='Machine' 
+)	otherlv_1='machine' 
     {
     	newLeafNode(otherlv_1, grammarAccess.getMachineAccess().getMachineKeyword_1());
     }
@@ -128,7 +128,7 @@ ruleMachine returns [EObject current=null]
 	    }
 
 )
-))?(	otherlv_5='Refines' 
+))?(	otherlv_5='refines' 
     {
     	newLeafNode(otherlv_5, grammarAccess.getMachineAccess().getRefinesKeyword_4_0());
     }
@@ -166,7 +166,7 @@ ruleMachine returns [EObject current=null]
 	    }
 
 )
-))*)?(	otherlv_9='Sees' 
+))*)?(	otherlv_9='sees' 
     {
     	newLeafNode(otherlv_9, grammarAccess.getMachineAccess().getSeesKeyword_5_0());
     }
@@ -212,7 +212,7 @@ ruleMachine returns [EObject current=null]
     {
     	newLeafNode(otherlv_14, grammarAccess.getMachineAccess().getRightParenthesisKeyword_5_4());
     }
-)?(	otherlv_15='Variables' 
+)?(	otherlv_15='variables' 
     {
     	newLeafNode(otherlv_15, grammarAccess.getMachineAccess().getVariablesKeyword_6_0());
     }
@@ -252,7 +252,7 @@ ruleMachine returns [EObject current=null]
 	    }
 
 )
-)*)?(	otherlv_18='Invariants' 
+)*)?(	otherlv_18='invariants' 
     {
     	newLeafNode(otherlv_18, grammarAccess.getMachineAccess().getInvariantsKeyword_7_0());
     }
@@ -292,7 +292,7 @@ ruleMachine returns [EObject current=null]
 	    }
 
 )
-)*)?(	otherlv_21='Variant' 
+)*)?(	otherlv_21='variant' 
     {
     	newLeafNode(otherlv_21, grammarAccess.getMachineAccess().getVariantKeyword_8_0());
     }
@@ -314,7 +314,7 @@ ruleMachine returns [EObject current=null]
 	    }
 
 )
-))?(	otherlv_23='Events' 
+))?(	otherlv_23='events' 
     {
     	newLeafNode(otherlv_23, grammarAccess.getMachineAccess().getEventsKeyword_9_0());
     }
@@ -354,7 +354,7 @@ ruleMachine returns [EObject current=null]
 	    }
 
 )
-)*)?	otherlv_26='End' 
+)*)?	otherlv_26='end' 
     {
     	newLeafNode(otherlv_26, grammarAccess.getMachineAccess().getEndKeyword_10());
     }
@@ -2055,7 +2055,7 @@ ruleWitness returns [EObject current=null]
 	    }
 
 )
-)?	otherlv_1='Witness' 
+)?	otherlv_1='witness' 
     {
     	newLeafNode(otherlv_1, grammarAccess.getWitnessAccess().getWitnessKeyword_1());
     }

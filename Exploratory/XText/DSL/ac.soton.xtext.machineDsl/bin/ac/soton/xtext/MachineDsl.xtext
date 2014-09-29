@@ -9,22 +9,22 @@ import "http://emf.eventb.org/models/core/machine/2014"
 Machine returns Machine:
 	{Machine}
 //	(localGenerated?='localGenerated')?
-	'Machine'
+	'machine'
 	name=EString
 //	'{'
 //		('internalId' internalId=EString)?
 		('//' comment=EString)?
-		('Refines' /*'('*/ refines+=[Machine|EString] ( "," refines+=[Machine|EString])* /*')'*/ )?
-		('Sees' '(' sees+=[context::Context|EString] ( "," sees+=[context::Context|EString])* ')' )?
+		('refines' /*'('*/ refines+=[Machine|EString] ( "," refines+=[Machine|EString])* /*')'*/ )?
+		('sees' '(' sees+=[context::Context|EString] ( "," sees+=[context::Context|EString])* ')' )?
 //		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
 //		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
 //		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
-		('Variables' /*'{'*/ variables+=Variable ( /*","*/ variables+=Variable)* /*'}'*/ )?
-		('Invariants' /*'{'*/ invariants+=Invariant ( invariants+=Invariant)* /*'}'*/ )?
-		('Variant' variant=Variant)?
-		('Events' /*'{'*/ events+=event ( /*","*/ events+=event)* /*'}'*/ )?
+		('variables' /*'{'*/ variables+=Variable ( /*","*/ variables+=Variable)* /*'}'*/ )?
+		('invariants' /*'{'*/ invariants+=Invariant ( invariants+=Invariant)* /*'}'*/ )?
+		('variant' variant=Variant)?
+		('events' /*'{'*/ events+=event ( /*","*/ events+=event)* /*'}'*/ )?
 //	'}'
-	'End'
+	'end'
 ;
 
 
@@ -186,7 +186,7 @@ EJavaObject returns ecore::EJavaObject:
 CarrierSet returns context::CarrierSet:
 	{context::CarrierSet}
 	(localGenerated?='localGenerated')?
-	'CarrierSet'
+	'carrierSet'
 	name=EString
 //	'{'
 //		('internalId' internalId=EString)?
@@ -200,7 +200,7 @@ CarrierSet returns context::CarrierSet:
 Constant returns context::Constant:
 	{context::Constant}
 	(localGenerated?='localGenerated')?
-	'Constant'
+	'constant'
 	name=EString
 	'{'
 		('internalId' internalId=EString)?
@@ -213,7 +213,7 @@ Constant returns context::Constant:
 Axiom returns context::Axiom:
 //	(localGenerated?='localGenerated')?
 	(theorem?='theorem')?
-	'Axiom'
+	'axiom'
 	'@'name=EString
 //	'{'
 //		('internalId' internalId=EString)?
@@ -259,7 +259,7 @@ Guard returns Guard:
 
 Witness returns Witness:
 	(localGenerated?='localGenerated')?
-	'Witness'
+	'witness'
 	'@'name=EString
 //	'{'
 //		('internalId' internalId=EString)?

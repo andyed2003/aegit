@@ -1,12 +1,18 @@
-Machine aa
-Variables a b c
-Invariants
+machine aa
+variables a b c
+invariants
  @aa "a : NAT"
  @bb "b : BOOL"
  @cc theorem "a >= 0"
  @dd "c : 0..10"
  
-Events 
+events 
+event INITIALISATION
+then @ll "a := 0"
+@jh "b:= TRUE"
+@kjc "c :=  10"
+end
+
 event kjh //nnnnn
 any p q
 where @lkjh "p : NAT" @jhhgjgh "q: INT" 
@@ -17,9 +23,9 @@ end
 event evt 
 when
 @hhh "a /= 0" 
-@jjj "a := 0"
+@jjj "a = 0"
 then 
-@opui "b := false" 
+@opui "b := FALSE" 
 end
 
 event evt2 
@@ -28,8 +34,8 @@ where
 @lll "x: INT"
 @mmm "a = 0"
 then
-@nnn "b = TRUE"
-@ppp "a:=x"
+@nnn "b := TRUE"
+@ppp "a :=x "
 end
 
-End
+end

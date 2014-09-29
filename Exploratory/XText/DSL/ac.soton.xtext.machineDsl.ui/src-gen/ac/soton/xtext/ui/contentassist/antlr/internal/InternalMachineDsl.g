@@ -761,7 +761,7 @@ rule__Machine__Group__1__Impl
 (
 { before(grammarAccess.getMachineAccess().getMachineKeyword_1()); }
 
-	'Machine' 
+	'machine' 
 
 { after(grammarAccess.getMachineAccess().getMachineKeyword_1()); }
 )
@@ -1023,7 +1023,7 @@ rule__Machine__Group__10__Impl
 (
 { before(grammarAccess.getMachineAccess().getEndKeyword_10()); }
 
-	'End' 
+	'end' 
 
 { after(grammarAccess.getMachineAccess().getEndKeyword_10()); }
 )
@@ -1139,7 +1139,7 @@ rule__Machine__Group_4__0__Impl
 (
 { before(grammarAccess.getMachineAccess().getRefinesKeyword_4_0()); }
 
-	'Refines' 
+	'refines' 
 
 { after(grammarAccess.getMachineAccess().getRefinesKeyword_4_0()); }
 )
@@ -1296,7 +1296,7 @@ rule__Machine__Group_5__0__Impl
 (
 { before(grammarAccess.getMachineAccess().getSeesKeyword_5_0()); }
 
-	'Sees' 
+	'sees' 
 
 { after(grammarAccess.getMachineAccess().getSeesKeyword_5_0()); }
 )
@@ -1519,7 +1519,7 @@ rule__Machine__Group_6__0__Impl
 (
 { before(grammarAccess.getMachineAccess().getVariablesKeyword_6_0()); }
 
-	'Variables' 
+	'variables' 
 
 { after(grammarAccess.getMachineAccess().getVariablesKeyword_6_0()); }
 )
@@ -1613,7 +1613,7 @@ rule__Machine__Group_7__0__Impl
 (
 { before(grammarAccess.getMachineAccess().getInvariantsKeyword_7_0()); }
 
-	'Invariants' 
+	'invariants' 
 
 { after(grammarAccess.getMachineAccess().getInvariantsKeyword_7_0()); }
 )
@@ -1707,7 +1707,7 @@ rule__Machine__Group_8__0__Impl
 (
 { before(grammarAccess.getMachineAccess().getVariantKeyword_8_0()); }
 
-	'Variant' 
+	'variant' 
 
 { after(grammarAccess.getMachineAccess().getVariantKeyword_8_0()); }
 )
@@ -1770,7 +1770,7 @@ rule__Machine__Group_9__0__Impl
 (
 { before(grammarAccess.getMachineAccess().getEventsKeyword_9_0()); }
 
-	'Events' 
+	'events' 
 
 { after(grammarAccess.getMachineAccess().getEventsKeyword_9_0()); }
 )
@@ -7194,7 +7194,7 @@ rule__Witness__Group__1__Impl
 (
 { before(grammarAccess.getWitnessAccess().getWitnessKeyword_1()); }
 
-	'Witness' 
+	'witness' 
 
 { after(grammarAccess.getWitnessAccess().getWitnessKeyword_1()); }
 )

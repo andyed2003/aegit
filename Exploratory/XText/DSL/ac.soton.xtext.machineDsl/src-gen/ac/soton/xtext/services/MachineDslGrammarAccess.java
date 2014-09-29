@@ -77,36 +77,36 @@ public class MachineDslGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Machine:
 		//	{Machine} //	(localGenerated?='localGenerated')?
-		//	"Machine" name=EString //	'{'
+		//	"machine" name=EString //	'{'
 		//	//		('internalId' internalId=EString)?
-		//	("//" comment=EString)? ("Refines" / *'('* / refines+=[Machine|EString] ("," refines+=[Machine|EString])*)? / *')'* /
-		//	("Sees" "(" sees+=[context::Context|EString] ("," sees+=[context::Context|EString])* ")")? //		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
+		//	("//" comment=EString)? ("refines" / *'('* / refines+=[Machine|EString] ("," refines+=[Machine|EString])*)? / *')'* /
+		//	("sees" "(" sees+=[context::Context|EString] ("," sees+=[context::Context|EString])* ")")? //		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
 		//	//		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
 		//	//		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
-		//	("Variables" / *'{'* / variables+=Variable / *","* / variables+=Variable*)? / *'}'* / ("Invariants" / *'{'* /
-		//	invariants+=Invariant invariants+=Invariant*)? / *'}'* / ("Variant" variant=Variant)? ("Events" / *'{'* / events+=event
+		//	("variables" / *'{'* / variables+=Variable / *","* / variables+=Variable*)? / *'}'* / ("invariants" / *'{'* /
+		//	invariants+=Invariant invariants+=Invariant*)? / *'}'* / ("variant" variant=Variant)? ("events" / *'{'* / events+=event
 		//	/ *","* / events+=event*)? / *'}'* / //	'}'
-		//	"End";
+		//	"end";
 		public ParserRule getRule() { return rule; }
 
 		//{Machine} //	(localGenerated?='localGenerated')?
-		//"Machine" name=EString //	'{'
+		//"machine" name=EString //	'{'
 		////		('internalId' internalId=EString)?
-		//("//" comment=EString)? ("Refines" / *'('* / refines+=[Machine|EString] ("," refines+=[Machine|EString])*)? / *')'* /
-		//("Sees" "(" sees+=[context::Context|EString] ("," sees+=[context::Context|EString])* ")")? //		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
+		//("//" comment=EString)? ("refines" / *'('* / refines+=[Machine|EString] ("," refines+=[Machine|EString])*)? / *')'* /
+		//("sees" "(" sees+=[context::Context|EString] ("," sees+=[context::Context|EString])* ")")? //		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
 		////		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
 		////		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
-		//("Variables" / *'{'* / variables+=Variable / *","* / variables+=Variable*)? / *'}'* / ("Invariants" / *'{'* /
-		//invariants+=Invariant invariants+=Invariant*)? / *'}'* / ("Variant" variant=Variant)? ("Events" / *'{'* / events+=event
+		//("variables" / *'{'* / variables+=Variable / *","* / variables+=Variable*)? / *'}'* / ("invariants" / *'{'* /
+		//invariants+=Invariant invariants+=Invariant*)? / *'}'* / ("variant" variant=Variant)? ("events" / *'{'* / events+=event
 		/// *","* / events+=event*)? / *'}'* / //	'}'
-		//"End"
+		//"end"
 		public Group getGroup() { return cGroup; }
 
 		//{Machine}
 		public Action getMachineAction_0() { return cMachineAction_0; }
 
 		////	(localGenerated?='localGenerated')?
-		//"Machine"
+		//"machine"
 		public Keyword getMachineKeyword_1() { return cMachineKeyword_1; }
 
 		//name=EString
@@ -127,10 +127,10 @@ public class MachineDslGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getCommentEStringParserRuleCall_3_1_0() { return cCommentEStringParserRuleCall_3_1_0; }
 
-		//("Refines" / *'('* / refines+=[Machine|EString] ("," refines+=[Machine|EString])*)?
+		//("refines" / *'('* / refines+=[Machine|EString] ("," refines+=[Machine|EString])*)?
 		public Group getGroup_4() { return cGroup_4; }
 
-		//"Refines"
+		//"refines"
 		public Keyword getRefinesKeyword_4_0() { return cRefinesKeyword_4_0; }
 
 		/// *'('* / refines+=[Machine|EString]
@@ -157,10 +157,10 @@ public class MachineDslGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getRefinesMachineEStringParserRuleCall_4_2_1_0_1() { return cRefinesMachineEStringParserRuleCall_4_2_1_0_1; }
 
-		//("Sees" "(" sees+=[context::Context|EString] ("," sees+=[context::Context|EString])* ")")?
+		//("sees" "(" sees+=[context::Context|EString] ("," sees+=[context::Context|EString])* ")")?
 		public Group getGroup_5() { return cGroup_5; }
 
-		//"Sees"
+		//"sees"
 		public Keyword getSeesKeyword_5_0() { return cSeesKeyword_5_0; }
 
 		//"("
@@ -193,10 +193,10 @@ public class MachineDslGrammarAccess extends AbstractGrammarElementFinder {
 		//")"
 		public Keyword getRightParenthesisKeyword_5_4() { return cRightParenthesisKeyword_5_4; }
 
-		//("Variables" / *'{'* / variables+=Variable / *","* / variables+=Variable*)?
+		//("variables" / *'{'* / variables+=Variable / *","* / variables+=Variable*)?
 		public Group getGroup_6() { return cGroup_6; }
 
-		//"Variables"
+		//"variables"
 		public Keyword getVariablesKeyword_6_0() { return cVariablesKeyword_6_0; }
 
 		/// *'{'* / variables+=Variable
@@ -211,10 +211,10 @@ public class MachineDslGrammarAccess extends AbstractGrammarElementFinder {
 		//Variable
 		public RuleCall getVariablesVariableParserRuleCall_6_2_0() { return cVariablesVariableParserRuleCall_6_2_0; }
 
-		//("Invariants" / *'{'* / invariants+=Invariant invariants+=Invariant*)?
+		//("invariants" / *'{'* / invariants+=Invariant invariants+=Invariant*)?
 		public Group getGroup_7() { return cGroup_7; }
 
-		//"Invariants"
+		//"invariants"
 		public Keyword getInvariantsKeyword_7_0() { return cInvariantsKeyword_7_0; }
 
 		/// *'{'* / invariants+=Invariant
@@ -229,10 +229,10 @@ public class MachineDslGrammarAccess extends AbstractGrammarElementFinder {
 		//Invariant
 		public RuleCall getInvariantsInvariantParserRuleCall_7_2_0() { return cInvariantsInvariantParserRuleCall_7_2_0; }
 
-		//("Variant" variant=Variant)?
+		//("variant" variant=Variant)?
 		public Group getGroup_8() { return cGroup_8; }
 
-		//"Variant"
+		//"variant"
 		public Keyword getVariantKeyword_8_0() { return cVariantKeyword_8_0; }
 
 		//variant=Variant
@@ -241,10 +241,10 @@ public class MachineDslGrammarAccess extends AbstractGrammarElementFinder {
 		//Variant
 		public RuleCall getVariantVariantParserRuleCall_8_1_0() { return cVariantVariantParserRuleCall_8_1_0; }
 
-		//("Events" / *'{'* / events+=event / *","* / events+=event*)?
+		//("events" / *'{'* / events+=event / *","* / events+=event*)?
 		public Group getGroup_9() { return cGroup_9; }
 
-		//"Events"
+		//"events"
 		public Keyword getEventsKeyword_9_0() { return cEventsKeyword_9_0; }
 
 		/// *'{'* / events+=event
@@ -260,7 +260,7 @@ public class MachineDslGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getEventsEventParserRuleCall_9_2_0() { return cEventsEventParserRuleCall_9_2_0; }
 
 		////	'}'
-		//"End"
+		//"end"
 		public Keyword getEndKeyword_10() { return cEndKeyword_10; }
 	}
 
@@ -1407,12 +1407,12 @@ public class MachineDslGrammarAccess extends AbstractGrammarElementFinder {
 		////		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
 		////	'}'
 		//CarrierSet returns context::CarrierSet:
-		//	{context::CarrierSet} localGenerated?="localGenerated"? "CarrierSet" name=EString //	'{'
+		//	{context::CarrierSet} localGenerated?="localGenerated"? "carrierSet" name=EString //	'{'
 		//	//		('internalId' internalId=EString)?
 		//	("//" comment=EString)?;
 		public ParserRule getRule() { return rule; }
 
-		//{context::CarrierSet} localGenerated?="localGenerated"? "CarrierSet" name=EString //	'{'
+		//{context::CarrierSet} localGenerated?="localGenerated"? "carrierSet" name=EString //	'{'
 		////		('internalId' internalId=EString)?
 		//("//" comment=EString)?
 		public Group getGroup() { return cGroup; }
@@ -1426,7 +1426,7 @@ public class MachineDslGrammarAccess extends AbstractGrammarElementFinder {
 		//"localGenerated"
 		public Keyword getLocalGeneratedLocalGeneratedKeyword_1_0() { return cLocalGeneratedLocalGeneratedKeyword_1_0; }
 
-		//"CarrierSet"
+		//"carrierSet"
 		public Keyword getCarrierSetKeyword_2() { return cCarrierSetKeyword_2; }
 
 		//name=EString
@@ -1499,13 +1499,13 @@ public class MachineDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		
 		//Constant returns context::Constant:
-		//	{context::Constant} localGenerated?="localGenerated"? "Constant" name=EString "{" ("internalId" internalId=EString)?
+		//	{context::Constant} localGenerated?="localGenerated"? "constant" name=EString "{" ("internalId" internalId=EString)?
 		//	("//" comment=EString)? ("annotations" "{" annotations+=Annotation ("," annotations+=Annotation)* "}")? ("extensions"
 		//	"{" extensions+=AbstractExtension ("," extensions+=AbstractExtension)* "}")? ("attributes" "{"
 		//	attributes+=StringToAttributeMapEntry ("," attributes+=StringToAttributeMapEntry)* "}")? "}";
 		public ParserRule getRule() { return rule; }
 
-		//{context::Constant} localGenerated?="localGenerated"? "Constant" name=EString "{" ("internalId" internalId=EString)?
+		//{context::Constant} localGenerated?="localGenerated"? "constant" name=EString "{" ("internalId" internalId=EString)?
 		//("//" comment=EString)? ("annotations" "{" annotations+=Annotation ("," annotations+=Annotation)* "}")? ("extensions"
 		//"{" extensions+=AbstractExtension ("," extensions+=AbstractExtension)* "}")? ("attributes" "{"
 		//attributes+=StringToAttributeMapEntry ("," attributes+=StringToAttributeMapEntry)* "}")? "}"
@@ -1520,7 +1520,7 @@ public class MachineDslGrammarAccess extends AbstractGrammarElementFinder {
 		//"localGenerated"
 		public Keyword getLocalGeneratedLocalGeneratedKeyword_1_0() { return cLocalGeneratedLocalGeneratedKeyword_1_0; }
 
-		//"Constant"
+		//"constant"
 		public Keyword getConstantKeyword_2() { return cConstantKeyword_2; }
 
 		//name=EString
@@ -1673,13 +1673,13 @@ public class MachineDslGrammarAccess extends AbstractGrammarElementFinder {
 		////	'}'
 		//Axiom returns context::Axiom:
 		//	theorem?="theorem"? //	(localGenerated?='localGenerated')?
-		//	"Axiom" "@" name=EString //	'{'
+		//	"axiom" "@" name=EString //	'{'
 		//	//		('internalId' internalId=EString)?
 		//	("//" comment=EString)? "predicate" predicate=EString;
 		public ParserRule getRule() { return rule; }
 
 		//theorem?="theorem"? //	(localGenerated?='localGenerated')?
-		//"Axiom" "@" name=EString //	'{'
+		//"axiom" "@" name=EString //	'{'
 		////		('internalId' internalId=EString)?
 		//("//" comment=EString)? "predicate" predicate=EString
 		public Group getGroup() { return cGroup; }
@@ -1690,7 +1690,7 @@ public class MachineDslGrammarAccess extends AbstractGrammarElementFinder {
 		//"theorem"
 		public Keyword getTheoremTheoremKeyword_0_0() { return cTheoremTheoremKeyword_0_0; }
 
-		//"Axiom"
+		//"axiom"
 		public Keyword getAxiomKeyword_1() { return cAxiomKeyword_1; }
 
 		//"@"
@@ -1871,12 +1871,12 @@ public class MachineDslGrammarAccess extends AbstractGrammarElementFinder {
 		////		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
 		////	'}'
 		//Witness:
-		//	localGenerated?="localGenerated"? "Witness" "@" name=EString //	'{'
+		//	localGenerated?="localGenerated"? "witness" "@" name=EString //	'{'
 		//	//		('internalId' internalId=EString)?
 		//	"predicate" predicate=EString? ("//" comment=EString)?;
 		public ParserRule getRule() { return rule; }
 
-		//localGenerated?="localGenerated"? "Witness" "@" name=EString //	'{'
+		//localGenerated?="localGenerated"? "witness" "@" name=EString //	'{'
 		////		('internalId' internalId=EString)?
 		//"predicate" predicate=EString? ("//" comment=EString)?
 		public Group getGroup() { return cGroup; }
@@ -1887,7 +1887,7 @@ public class MachineDslGrammarAccess extends AbstractGrammarElementFinder {
 		//"localGenerated"
 		public Keyword getLocalGeneratedLocalGeneratedKeyword_0_0() { return cLocalGeneratedLocalGeneratedKeyword_0_0; }
 
-		//"Witness"
+		//"witness"
 		public Keyword getWitnessKeyword_1() { return cWitnessKeyword_1; }
 
 		//"@"
@@ -2143,16 +2143,16 @@ public class MachineDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Machine:
 	//	{Machine} //	(localGenerated?='localGenerated')?
-	//	"Machine" name=EString //	'{'
+	//	"machine" name=EString //	'{'
 	//	//		('internalId' internalId=EString)?
-	//	("//" comment=EString)? ("Refines" / *'('* / refines+=[Machine|EString] ("," refines+=[Machine|EString])*)? / *')'* /
-	//	("Sees" "(" sees+=[context::Context|EString] ("," sees+=[context::Context|EString])* ")")? //		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
+	//	("//" comment=EString)? ("refines" / *'('* / refines+=[Machine|EString] ("," refines+=[Machine|EString])*)? / *')'* /
+	//	("sees" "(" sees+=[context::Context|EString] ("," sees+=[context::Context|EString])* ")")? //		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
 	//	//		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
 	//	//		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
-	//	("Variables" / *'{'* / variables+=Variable / *","* / variables+=Variable*)? / *'}'* / ("Invariants" / *'{'* /
-	//	invariants+=Invariant invariants+=Invariant*)? / *'}'* / ("Variant" variant=Variant)? ("Events" / *'{'* / events+=event
+	//	("variables" / *'{'* / variables+=Variable / *","* / variables+=Variable*)? / *'}'* / ("invariants" / *'{'* /
+	//	invariants+=Invariant invariants+=Invariant*)? / *'}'* / ("variant" variant=Variant)? ("events" / *'{'* / events+=event
 	//	/ *","* / events+=event*)? / *'}'* / //	'}'
-	//	"End";
+	//	"end";
 	public MachineElements getMachineAccess() {
 		return (pMachine != null) ? pMachine : (pMachine = new MachineElements());
 	}
@@ -2375,7 +2375,7 @@ public class MachineDslGrammarAccess extends AbstractGrammarElementFinder {
 	////		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
 	////	'}'
 	//CarrierSet returns context::CarrierSet:
-	//	{context::CarrierSet} localGenerated?="localGenerated"? "CarrierSet" name=EString //	'{'
+	//	{context::CarrierSet} localGenerated?="localGenerated"? "carrierSet" name=EString //	'{'
 	//	//		('internalId' internalId=EString)?
 	//	("//" comment=EString)?;
 	public CarrierSetElements getCarrierSetAccess() {
@@ -2387,7 +2387,7 @@ public class MachineDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Constant returns context::Constant:
-	//	{context::Constant} localGenerated?="localGenerated"? "Constant" name=EString "{" ("internalId" internalId=EString)?
+	//	{context::Constant} localGenerated?="localGenerated"? "constant" name=EString "{" ("internalId" internalId=EString)?
 	//	("//" comment=EString)? ("annotations" "{" annotations+=Annotation ("," annotations+=Annotation)* "}")? ("extensions"
 	//	"{" extensions+=AbstractExtension ("," extensions+=AbstractExtension)* "}")? ("attributes" "{"
 	//	attributes+=StringToAttributeMapEntry ("," attributes+=StringToAttributeMapEntry)* "}")? "}";
@@ -2405,7 +2405,7 @@ public class MachineDslGrammarAccess extends AbstractGrammarElementFinder {
 	////	'}'
 	//Axiom returns context::Axiom:
 	//	theorem?="theorem"? //	(localGenerated?='localGenerated')?
-	//	"Axiom" "@" name=EString //	'{'
+	//	"axiom" "@" name=EString //	'{'
 	//	//		('internalId' internalId=EString)?
 	//	("//" comment=EString)? "predicate" predicate=EString;
 	public AxiomElements getAxiomAccess() {
@@ -2466,7 +2466,7 @@ public class MachineDslGrammarAccess extends AbstractGrammarElementFinder {
 	////		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
 	////	'}'
 	//Witness:
-	//	localGenerated?="localGenerated"? "Witness" "@" name=EString //	'{'
+	//	localGenerated?="localGenerated"? "witness" "@" name=EString //	'{'
 	//	//		('internalId' internalId=EString)?
 	//	"predicate" predicate=EString? ("//" comment=EString)?;
 	public WitnessElements getWitnessAccess() {
