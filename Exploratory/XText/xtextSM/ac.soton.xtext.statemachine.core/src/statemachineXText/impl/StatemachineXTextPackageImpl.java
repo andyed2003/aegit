@@ -172,8 +172,8 @@ public class StatemachineXTextPackageImpl extends EPackageImpl implements Statem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getStateMachine_Nodes() {
-		return (EReference)stateMachineEClass.getEStructuralFeatures().get(0);
+	public EAttribute getStateMachine_Name() {
+		return (EAttribute)stateMachineEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -181,7 +181,7 @@ public class StatemachineXTextPackageImpl extends EPackageImpl implements Statem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getStateMachine_Transitions() {
+	public EReference getStateMachine_Nodes() {
 		return (EReference)stateMachineEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -190,8 +190,17 @@ public class StatemachineXTextPackageImpl extends EPackageImpl implements Statem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getStateMachine_StateMachines() {
+	public EReference getStateMachine_Transitions() {
 		return (EReference)stateMachineEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getStateMachine_StateMachines() {
+		return (EReference)stateMachineEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -349,6 +358,7 @@ public class StatemachineXTextPackageImpl extends EPackageImpl implements Statem
 
 		// Create classes and their features
 		stateMachineEClass = createEClass(STATE_MACHINE);
+		createEAttribute(stateMachineEClass, STATE_MACHINE__NAME);
 		createEReference(stateMachineEClass, STATE_MACHINE__NODES);
 		createEReference(stateMachineEClass, STATE_MACHINE__TRANSITIONS);
 		createEReference(stateMachineEClass, STATE_MACHINE__STATE_MACHINES);
@@ -415,6 +425,7 @@ public class StatemachineXTextPackageImpl extends EPackageImpl implements Statem
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(stateMachineEClass, StateMachine.class, "StateMachine", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getStateMachine_Name(), ecorePackage.getEString(), "name", "\"\"", 1, 1, StateMachine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStateMachine_Nodes(), this.getAbstractNode(), null, "Nodes", null, 0, -1, StateMachine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStateMachine_Transitions(), this.getTransition(), null, "Transitions", null, 0, -1, StateMachine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStateMachine_StateMachines(), this.getStateMachine(), null, "StateMachines", null, 0, -1, StateMachine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -425,7 +436,7 @@ public class StatemachineXTextPackageImpl extends EPackageImpl implements Statem
 		initEAttribute(getTransition_Target(), ecorePackage.getEString(), "target", "target_1", 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(abstractNodeEClass, AbstractNode.class, "AbstractNode", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAbstractNode_Name(), ecorePackage.getEString(), "name", "state_name", 1, 1, AbstractNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAbstractNode_Name(), ecorePackage.getEString(), "name", "\"\"", 1, 1, AbstractNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(stateEClass, State.class, "State", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getState_Nested(), this.getStateMachine(), null, "nested", null, 0, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

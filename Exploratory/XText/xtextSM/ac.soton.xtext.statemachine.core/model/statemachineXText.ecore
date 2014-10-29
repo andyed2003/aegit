@@ -3,6 +3,8 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="statemachineXText" nsURI="http://statemachinesXText.soton.ac"
     nsPrefix="statemachineXText">
   <eClassifiers xsi:type="ecore:EClass" name="StateMachine">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="&quot;&quot;"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Nodes" upperBound="-1"
         eType="#//AbstractNode" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Transitions" upperBound="-1"
@@ -20,7 +22,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AbstractNode" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        defaultValueLiteral="state_name"/>
+        defaultValueLiteral="&quot;&quot;"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="State" eSuperTypes="#//AbstractNode">
     <eStructuralFeatures xsi:type="ecore:EReference" name="nested" eType="#//StateMachine"

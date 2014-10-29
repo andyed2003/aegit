@@ -197,6 +197,7 @@ public abstract class AbstractDslSemanticSequencer extends AbstractDelegatingSem
 	/**
 	 * Constraint:
 	 *     (
+	 *         name=EString 
 	 *         (Nodes+=AbstractNode Nodes+=AbstractNode*)? 
 	 *         (Transitions+=Transition Transitions+=Transition*)? 
 	 *         (StateMachines+=StateMachine StateMachines+=StateMachine*)?

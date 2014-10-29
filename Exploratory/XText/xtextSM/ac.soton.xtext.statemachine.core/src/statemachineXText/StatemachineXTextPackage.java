@@ -67,13 +67,22 @@ public interface StatemachineXTextPackage extends EPackage {
 	int STATE_MACHINE = 0;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE_MACHINE__NAME = 0;
+
+	/**
 	 * The feature id for the '<em><b>Nodes</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_MACHINE__NODES = 0;
+	int STATE_MACHINE__NODES = 1;
 
 	/**
 	 * The feature id for the '<em><b>Transitions</b></em>' containment reference list.
@@ -82,7 +91,7 @@ public interface StatemachineXTextPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_MACHINE__TRANSITIONS = 1;
+	int STATE_MACHINE__TRANSITIONS = 2;
 
 	/**
 	 * The feature id for the '<em><b>State Machines</b></em>' containment reference list.
@@ -91,7 +100,7 @@ public interface StatemachineXTextPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_MACHINE__STATE_MACHINES = 2;
+	int STATE_MACHINE__STATE_MACHINES = 3;
 
 	/**
 	 * The number of structural features of the '<em>State Machine</em>' class.
@@ -100,7 +109,7 @@ public interface StatemachineXTextPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_MACHINE_FEATURE_COUNT = 3;
+	int STATE_MACHINE_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>State Machine</em>' class.
@@ -483,6 +492,17 @@ public interface StatemachineXTextPackage extends EPackage {
 	EClass getStateMachine();
 
 	/**
+	 * Returns the meta object for the attribute '{@link statemachineXText.StateMachine#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see statemachineXText.StateMachine#getName()
+	 * @see #getStateMachine()
+	 * @generated
+	 */
+	EAttribute getStateMachine_Name();
+
+	/**
 	 * Returns the meta object for the containment reference list '{@link statemachineXText.StateMachine#getNodes <em>Nodes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -692,6 +712,14 @@ public interface StatemachineXTextPackage extends EPackage {
 		 * @generated
 		 */
 		EClass STATE_MACHINE = eINSTANCE.getStateMachine();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STATE_MACHINE__NAME = eINSTANCE.getStateMachine_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Nodes</b></em>' containment reference list feature.

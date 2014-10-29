@@ -34,7 +34,7 @@ public abstract class AbstractNodeImpl extends MinimalEObjectImpl.Container impl
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = "state_name";
+	protected static final String NAME_EDEFAULT = "\"\"";
 
 	/**
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.

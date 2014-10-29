@@ -3,10 +3,12 @@
 package statemachineXText.impl;
 
 import java.util.Collection;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -22,6 +24,7 @@ import statemachineXText.Transition;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link statemachineXText.impl.StateMachineImpl#getName <em>Name</em>}</li>
  *   <li>{@link statemachineXText.impl.StateMachineImpl#getNodes <em>Nodes</em>}</li>
  *   <li>{@link statemachineXText.impl.StateMachineImpl#getTransitions <em>Transitions</em>}</li>
  *   <li>{@link statemachineXText.impl.StateMachineImpl#getStateMachines <em>State Machines</em>}</li>
@@ -31,6 +34,26 @@ import statemachineXText.Transition;
  * @generated
  */
 public class StateMachineImpl extends MinimalEObjectImpl.Container implements StateMachine {
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = "\"\"";
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
+
 	/**
 	 * The cached value of the '{@link #getNodes() <em>Nodes</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -78,6 +101,27 @@ public class StateMachineImpl extends MinimalEObjectImpl.Container implements St
 	@Override
 	protected EClass eStaticClass() {
 		return StatemachineXTextPackage.Literals.STATE_MACHINE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StatemachineXTextPackage.STATE_MACHINE__NAME, oldName, name));
 	}
 
 	/**
@@ -142,6 +186,8 @@ public class StateMachineImpl extends MinimalEObjectImpl.Container implements St
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case StatemachineXTextPackage.STATE_MACHINE__NAME:
+				return getName();
 			case StatemachineXTextPackage.STATE_MACHINE__NODES:
 				return getNodes();
 			case StatemachineXTextPackage.STATE_MACHINE__TRANSITIONS:
@@ -161,6 +207,9 @@ public class StateMachineImpl extends MinimalEObjectImpl.Container implements St
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case StatemachineXTextPackage.STATE_MACHINE__NAME:
+				setName((String)newValue);
+				return;
 			case StatemachineXTextPackage.STATE_MACHINE__NODES:
 				getNodes().clear();
 				getNodes().addAll((Collection<? extends AbstractNode>)newValue);
@@ -185,6 +234,9 @@ public class StateMachineImpl extends MinimalEObjectImpl.Container implements St
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case StatemachineXTextPackage.STATE_MACHINE__NAME:
+				setName(NAME_EDEFAULT);
+				return;
 			case StatemachineXTextPackage.STATE_MACHINE__NODES:
 				getNodes().clear();
 				return;
@@ -206,6 +258,8 @@ public class StateMachineImpl extends MinimalEObjectImpl.Container implements St
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case StatemachineXTextPackage.STATE_MACHINE__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case StatemachineXTextPackage.STATE_MACHINE__NODES:
 				return nodes != null && !nodes.isEmpty();
 			case StatemachineXTextPackage.STATE_MACHINE__TRANSITIONS:
@@ -214,6 +268,22 @@ public class StateMachineImpl extends MinimalEObjectImpl.Container implements St
 				return stateMachines != null && !stateMachines.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(')');
+		return result.toString();
 	}
 
 } //StateMachineImpl
