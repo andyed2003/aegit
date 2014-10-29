@@ -1,0 +1,40 @@
+StateMachine{
+	Nodes{Initial "I",
+		Junction "J",
+		State "A"{},
+		State "B"{},
+		State "C"{},
+		Final "F"
+	}
+	Transitions{
+		Transition{
+			event "e1"
+			source "I"
+			target "J"
+		}
+		,
+		Transition{
+			event "e2"
+			source "J"
+			target "A"
+		}
+		,
+		Transition{
+			event "e3"
+			source "J"
+			target "B"
+		}
+		,
+		Transition{
+			event "e4"
+			source "A"
+			target "F"
+		}
+		,
+		Transition{
+			event "e5"
+			source "B"
+			target "F"
+		}
+	}
+}
