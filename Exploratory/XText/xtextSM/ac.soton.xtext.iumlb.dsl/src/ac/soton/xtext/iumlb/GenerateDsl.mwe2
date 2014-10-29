@@ -1,12 +1,12 @@
-module ac.soton.xtext.MachineDsl
+module ac.soton.xtext.iumlb.Dsl
 
 import org.eclipse.emf.mwe.utils.*
 import org.eclipse.xtext.generator.*
 import org.eclipse.xtext.ui.generator.*
 
-var grammarURI = "classpath:/ac/soton/xtext/MachineDsl.xtext"
-var fileExtensions = "mch"
-var projectName = "ac.soton.xtext.machineDsl"
+var grammarURI = "classpath:/ac/soton/xtext/iumlb/Dsl.xtext"
+var fileExtensions = "smtxt2"
+var projectName = "ac.soton.xtext.iumlb.dsl"
 var runtimeProject = "../${projectName}"
 var generateXtendStub = true
 
@@ -14,17 +14,23 @@ Workflow {
 	bean = StandaloneSetup {
 		scanClassPath  = true
 		platformUri = "${runtimeProject}/.."
+
 registerGeneratedEPackage = "org.eventb.emf.core.context.ContextPackage"
 registerGeneratedEPackage = "org.eventb.emf.core.machine.MachinePackage"
 
 registerGeneratedEPackage = "org.eventb.emf.core.CorePackage"
 registerGenModelFile = "platform:/resource/org.eventb.emf.core/model/eventbcore.genmodel"
-		
+
+
+registerGeneratedEPackage = "ac.soton.eventb.statemachines.StatemachinesPackage"
+registerGenModelFile = "platform:/resource/ac.soton.eventb.statemachines/model/statemachines.genmodel"
+
 registerGeneratedEPackage = "org.eclipse.emf.ecore.EcorePackage"
 registerGeneratedEPackage = "org.eclipse.emf.codegen.ecore.genmodel.GenModelPackage"
 registerGenModelFile = "platform:/resource/org.eclipse.emf.ecore/model/Ecore.genmodel"
-registerGenModelFile = "platform:/resource/org.eclipse.emf.codegen.ecore/model/GenModel.genmodel"
-	}
+registerGenModelFile = "platform:/resource/org.eclipse.emf.codegen.ecore/model/GenModel.genmodel"	
+
+}
 
 	component = DirectoryCleaner {
 		directory = "${runtimeProject}/src-gen"
@@ -128,9 +134,6 @@ registerGenModelFile = "platform:/resource/org.eclipse.emf.codegen.ecore/model/G
 			
 			// generates the required bindings only if the grammar inherits from Xbase
 			fragment = xbase.XbaseGeneratorFragment auto-inject {}
-			
-			// generates the required bindings only if the grammar inherits from Xtype
-			fragment = xbase.XtypeGeneratorFragment auto-inject {}
 
 			// provides a preference page for template proposals
 			fragment = templates.CodetemplatesGeneratorFragment auto-inject {}

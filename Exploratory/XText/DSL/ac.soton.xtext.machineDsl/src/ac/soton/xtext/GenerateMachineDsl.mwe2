@@ -14,15 +14,16 @@ Workflow {
 	bean = StandaloneSetup {
 		scanClassPath  = true
 		platformUri = "${runtimeProject}/.."
-		registerGeneratedEPackage = "org.eventb.emf.core.context.ContextPackage"
-		registerGeneratedEPackage = "org.eventb.emf.core.machine.MachinePackage"
-		registerGeneratedEPackage = "org.eventb.emf.core.CorePackage"
-		registerGenModelFile = "platform:/resource/org.eventb.emf.core/model/eventbcore.genmodel"
+registerGeneratedEPackage = "org.eventb.emf.core.context.ContextPackage"
+registerGeneratedEPackage = "org.eventb.emf.core.machine.MachinePackage"
+
+registerGeneratedEPackage = "org.eventb.emf.core.CorePackage"
+registerGenModelFile = "platform:/resource/org.eventb.emf.core/model/eventbcore.genmodel"
 		
-		registerGeneratedEPackage = "org.eclipse.emf.ecore.EcorePackage"
-    registerGeneratedEPackage = "org.eclipse.emf.codegen.ecore.genmodel.GenModelPackage"
-    registerGenModelFile = "platform:/resource/org.eclipse.emf.ecore/model/Ecore.genmodel"
-            registerGenModelFile = "platform:/resource/org.eclipse.emf.codegen.ecore/model/GenModel.genmodel"
+registerGeneratedEPackage = "org.eclipse.emf.ecore.EcorePackage"
+registerGeneratedEPackage = "org.eclipse.emf.codegen.ecore.genmodel.GenModelPackage"
+registerGenModelFile = "platform:/resource/org.eclipse.emf.ecore/model/Ecore.genmodel"
+registerGenModelFile = "platform:/resource/org.eclipse.emf.codegen.ecore/model/GenModel.genmodel"
 	}
 
 	component = DirectoryCleaner {

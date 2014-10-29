@@ -1,0 +1,25 @@
+
+State "top"
+{
+	statemachines{
+		Statemachine "sm1"{
+			transitions{
+				extended Transition {
+					elaborates( 
+						"evt1"
+					)
+				}
+			} 
+			nodes{
+				Initial {internalId "I" },
+				State "A" {},
+				State "B" {}
+			}
+		}
+	}				
+}
+					
+				
+			
+	
+	
