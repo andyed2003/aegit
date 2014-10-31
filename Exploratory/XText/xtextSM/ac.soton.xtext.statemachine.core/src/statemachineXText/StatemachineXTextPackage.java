@@ -140,7 +140,7 @@ public interface StatemachineXTextPackage extends EPackage {
 	int TRANSITION__EVENT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Source</b></em>' attribute.
+	 * The feature id for the '<em><b>Source</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -149,7 +149,7 @@ public interface StatemachineXTextPackage extends EPackage {
 	int TRANSITION__SOURCE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Target</b></em>' attribute.
+	 * The feature id for the '<em><b>Target</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -557,26 +557,26 @@ public interface StatemachineXTextPackage extends EPackage {
 	EAttribute getTransition_Event();
 
 	/**
-	 * Returns the meta object for the attribute '{@link statemachineXText.Transition#getSource <em>Source</em>}'.
+	 * Returns the meta object for the reference '{@link statemachineXText.Transition#getSource <em>Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Source</em>'.
+	 * @return the meta object for the reference '<em>Source</em>'.
 	 * @see statemachineXText.Transition#getSource()
 	 * @see #getTransition()
 	 * @generated
 	 */
-	EAttribute getTransition_Source();
+	EReference getTransition_Source();
 
 	/**
-	 * Returns the meta object for the attribute '{@link statemachineXText.Transition#getTarget <em>Target</em>}'.
+	 * Returns the meta object for the reference '{@link statemachineXText.Transition#getTarget <em>Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Target</em>'.
+	 * @return the meta object for the reference '<em>Target</em>'.
 	 * @see statemachineXText.Transition#getTarget()
 	 * @see #getTransition()
 	 * @generated
 	 */
-	EAttribute getTransition_Target();
+	EReference getTransition_Target();
 
 	/**
 	 * Returns the meta object for class '{@link statemachineXText.AbstractNode <em>Abstract Node</em>}'.
@@ -764,20 +764,20 @@ public interface StatemachineXTextPackage extends EPackage {
 		EAttribute TRANSITION__EVENT = eINSTANCE.getTransition_Event();
 
 		/**
-		 * The meta object literal for the '<em><b>Source</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TRANSITION__SOURCE = eINSTANCE.getTransition_Source();
+		EReference TRANSITION__SOURCE = eINSTANCE.getTransition_Source();
 
 		/**
-		 * The meta object literal for the '<em><b>Target</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TRANSITION__TARGET = eINSTANCE.getTransition_Target();
+		EReference TRANSITION__TARGET = eINSTANCE.getTransition_Target();
 
 		/**
 		 * The meta object literal for the '{@link statemachineXText.impl.AbstractNodeImpl <em>Abstract Node</em>}' class.

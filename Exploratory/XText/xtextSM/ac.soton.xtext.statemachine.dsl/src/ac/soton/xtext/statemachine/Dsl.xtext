@@ -27,8 +27,8 @@ Transition returns Transition:
 	'Transition'
 	/*'{'*/
 		('event' event=EString)?
-		('source' source=EString)?
-		('target' target=EString)?
+		('source' source=[AbstractNode|EString])?
+		('target' target=[AbstractNode|EString])?
 	/*'}'*/;
 
 State returns State:

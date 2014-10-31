@@ -51,57 +51,55 @@ public interface Transition extends EObject {
 	void setEvent(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Source</b></em>' attribute.
-	 * The default value is <code>"state_1"</code>.
+	 * Returns the value of the '<em><b>Source</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Source</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Source</em>' attribute.
-	 * @see #setSource(String)
+	 * @return the value of the '<em>Source</em>' reference.
+	 * @see #setSource(AbstractNode)
 	 * @see statemachineXText.StatemachineXTextPackage#getTransition_Source()
-	 * @model default="state_1"
+	 * @model
 	 * @generated
 	 */
-	String getSource();
+	AbstractNode getSource();
 
 	/**
-	 * Sets the value of the '{@link statemachineXText.Transition#getSource <em>Source</em>}' attribute.
+	 * Sets the value of the '{@link statemachineXText.Transition#getSource <em>Source</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Source</em>' attribute.
+	 * @param value the new value of the '<em>Source</em>' reference.
 	 * @see #getSource()
 	 * @generated
 	 */
-	void setSource(String value);
+	void setSource(AbstractNode value);
 
 	/**
-	 * Returns the value of the '<em><b>Target</b></em>' attribute.
-	 * The default value is <code>"target_1"</code>.
+	 * Returns the value of the '<em><b>Target</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Target</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Target</em>' attribute.
-	 * @see #setTarget(String)
+	 * @return the value of the '<em>Target</em>' reference.
+	 * @see #setTarget(AbstractNode)
 	 * @see statemachineXText.StatemachineXTextPackage#getTransition_Target()
-	 * @model default="target_1"
+	 * @model
 	 * @generated
 	 */
-	String getTarget();
+	AbstractNode getTarget();
 
 	/**
-	 * Sets the value of the '{@link statemachineXText.Transition#getTarget <em>Target</em>}' attribute.
+	 * Sets the value of the '{@link statemachineXText.Transition#getTarget <em>Target</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Target</em>' attribute.
+	 * @param value the new value of the '<em>Target</em>' reference.
 	 * @see #getTarget()
 	 * @generated
 	 */
-	void setTarget(String value);
+	void setTarget(AbstractNode value);
 
 } // Transition

@@ -219,7 +219,7 @@ public abstract class AbstractDslSemanticSequencer extends AbstractDelegatingSem
 	
 	/**
 	 * Constraint:
-	 *     (event=EString? source=EString? target=EString?)
+	 *     (event=EString? source=[AbstractNode|EString]? target=[AbstractNode|EString]?)
 	 */
 	protected void sequence_Transition(EObject context, Transition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

@@ -3,18 +3,18 @@ State "top"
 {
 	statemachines{
 		Statemachine "sm1"{
-			transitions{
-				extended Transition {
-					elaborates( 
-						"evt1"
-					)
-				}
-			} 
 			nodes{
 				Initial {internalId "I" },
 				State "A" {},
 				State "B" {}
-			}
+			}			
+			transitions{
+				extended Transition {
+					comment "no comment"
+					target A
+					source B
+				}
+			} 
 		}
 	}				
 }

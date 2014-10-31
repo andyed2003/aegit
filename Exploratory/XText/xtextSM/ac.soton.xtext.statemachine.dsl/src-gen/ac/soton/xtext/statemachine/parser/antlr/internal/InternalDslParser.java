@@ -968,7 +968,7 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTransition"
-    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:387:1: ruleTransition returns [EObject current=null] : ( () otherlv_1= 'Transition' (otherlv_2= 'event' ( (lv_event_3_0= ruleEString ) ) )? (otherlv_4= 'source' ( (lv_source_5_0= ruleEString ) ) )? (otherlv_6= 'target' ( (lv_target_7_0= ruleEString ) ) )? ) ;
+    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:387:1: ruleTransition returns [EObject current=null] : ( () otherlv_1= 'Transition' (otherlv_2= 'event' ( (lv_event_3_0= ruleEString ) ) )? (otherlv_4= 'source' ( ( ruleEString ) ) )? (otherlv_6= 'target' ( ( ruleEString ) ) )? ) ;
     public final EObject ruleTransition() throws RecognitionException {
         EObject current = null;
 
@@ -978,19 +978,15 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
         Token otherlv_6=null;
         AntlrDatatypeRuleToken lv_event_3_0 = null;
 
-        AntlrDatatypeRuleToken lv_source_5_0 = null;
-
-        AntlrDatatypeRuleToken lv_target_7_0 = null;
-
 
          enterRule(); 
             
         try {
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:390:28: ( ( () otherlv_1= 'Transition' (otherlv_2= 'event' ( (lv_event_3_0= ruleEString ) ) )? (otherlv_4= 'source' ( (lv_source_5_0= ruleEString ) ) )? (otherlv_6= 'target' ( (lv_target_7_0= ruleEString ) ) )? ) )
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:391:1: ( () otherlv_1= 'Transition' (otherlv_2= 'event' ( (lv_event_3_0= ruleEString ) ) )? (otherlv_4= 'source' ( (lv_source_5_0= ruleEString ) ) )? (otherlv_6= 'target' ( (lv_target_7_0= ruleEString ) ) )? )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:390:28: ( ( () otherlv_1= 'Transition' (otherlv_2= 'event' ( (lv_event_3_0= ruleEString ) ) )? (otherlv_4= 'source' ( ( ruleEString ) ) )? (otherlv_6= 'target' ( ( ruleEString ) ) )? ) )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:391:1: ( () otherlv_1= 'Transition' (otherlv_2= 'event' ( (lv_event_3_0= ruleEString ) ) )? (otherlv_4= 'source' ( ( ruleEString ) ) )? (otherlv_6= 'target' ( ( ruleEString ) ) )? )
             {
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:391:1: ( () otherlv_1= 'Transition' (otherlv_2= 'event' ( (lv_event_3_0= ruleEString ) ) )? (otherlv_4= 'source' ( (lv_source_5_0= ruleEString ) ) )? (otherlv_6= 'target' ( (lv_target_7_0= ruleEString ) ) )? )
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:391:2: () otherlv_1= 'Transition' (otherlv_2= 'event' ( (lv_event_3_0= ruleEString ) ) )? (otherlv_4= 'source' ( (lv_source_5_0= ruleEString ) ) )? (otherlv_6= 'target' ( (lv_target_7_0= ruleEString ) ) )?
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:391:1: ( () otherlv_1= 'Transition' (otherlv_2= 'event' ( (lv_event_3_0= ruleEString ) ) )? (otherlv_4= 'source' ( ( ruleEString ) ) )? (otherlv_6= 'target' ( ( ruleEString ) ) )? )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:391:2: () otherlv_1= 'Transition' (otherlv_2= 'event' ( (lv_event_3_0= ruleEString ) ) )? (otherlv_4= 'source' ( ( ruleEString ) ) )? (otherlv_6= 'target' ( ( ruleEString ) ) )?
             {
             // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:391:2: ()
             // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:392:5: 
@@ -1059,7 +1055,7 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:423:4: (otherlv_4= 'source' ( (lv_source_5_0= ruleEString ) ) )?
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:423:4: (otherlv_4= 'source' ( ( ruleEString ) ) )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -1068,35 +1064,32 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
             }
             switch (alt10) {
                 case 1 :
-                    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:423:6: otherlv_4= 'source' ( (lv_source_5_0= ruleEString ) )
+                    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:423:6: otherlv_4= 'source' ( ( ruleEString ) )
                     {
                     otherlv_4=(Token)match(input,19,FollowSets000.FOLLOW_19_in_ruleTransition898); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getTransitionAccess().getSourceKeyword_3_0());
                         
-                    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:427:1: ( (lv_source_5_0= ruleEString ) )
-                    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:428:1: (lv_source_5_0= ruleEString )
+                    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:427:1: ( ( ruleEString ) )
+                    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:428:1: ( ruleEString )
                     {
-                    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:428:1: (lv_source_5_0= ruleEString )
-                    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:429:3: lv_source_5_0= ruleEString
+                    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:428:1: ( ruleEString )
+                    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:429:3: ruleEString
                     {
+
+                    			if (current==null) {
+                    	            current = createModelElement(grammarAccess.getTransitionRule());
+                    	        }
+                            
                      
-                    	        newCompositeNode(grammarAccess.getTransitionAccess().getSourceEStringParserRuleCall_3_1_0()); 
+                    	        newCompositeNode(grammarAccess.getTransitionAccess().getSourceAbstractNodeCrossReference_3_1_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleTransition919);
-                    lv_source_5_0=ruleEString();
+                    pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleTransition921);
+                    ruleEString();
 
                     state._fsp--;
 
-
-                    	        if (current==null) {
-                    	            current = createModelElementForParent(grammarAccess.getTransitionRule());
-                    	        }
-                           		set(
-                           			current, 
-                           			"source",
-                            		lv_source_5_0, 
-                            		"EString");
+                     
                     	        afterParserOrEnumRuleCall();
                     	    
 
@@ -1111,7 +1104,7 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:445:4: (otherlv_6= 'target' ( (lv_target_7_0= ruleEString ) ) )?
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:442:4: (otherlv_6= 'target' ( ( ruleEString ) ) )?
             int alt11=2;
             int LA11_0 = input.LA(1);
 
@@ -1120,35 +1113,32 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
             }
             switch (alt11) {
                 case 1 :
-                    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:445:6: otherlv_6= 'target' ( (lv_target_7_0= ruleEString ) )
+                    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:442:6: otherlv_6= 'target' ( ( ruleEString ) )
                     {
-                    otherlv_6=(Token)match(input,20,FollowSets000.FOLLOW_20_in_ruleTransition934); 
+                    otherlv_6=(Token)match(input,20,FollowSets000.FOLLOW_20_in_ruleTransition936); 
 
                         	newLeafNode(otherlv_6, grammarAccess.getTransitionAccess().getTargetKeyword_4_0());
                         
-                    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:449:1: ( (lv_target_7_0= ruleEString ) )
-                    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:450:1: (lv_target_7_0= ruleEString )
+                    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:446:1: ( ( ruleEString ) )
+                    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:447:1: ( ruleEString )
                     {
-                    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:450:1: (lv_target_7_0= ruleEString )
-                    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:451:3: lv_target_7_0= ruleEString
+                    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:447:1: ( ruleEString )
+                    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:448:3: ruleEString
                     {
+
+                    			if (current==null) {
+                    	            current = createModelElement(grammarAccess.getTransitionRule());
+                    	        }
+                            
                      
-                    	        newCompositeNode(grammarAccess.getTransitionAccess().getTargetEStringParserRuleCall_4_1_0()); 
+                    	        newCompositeNode(grammarAccess.getTransitionAccess().getTargetAbstractNodeCrossReference_4_1_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleTransition955);
-                    lv_target_7_0=ruleEString();
+                    pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleTransition959);
+                    ruleEString();
 
                     state._fsp--;
 
-
-                    	        if (current==null) {
-                    	            current = createModelElementForParent(grammarAccess.getTransitionRule());
-                    	        }
-                           		set(
-                           			current, 
-                           			"target",
-                            		lv_target_7_0, 
-                            		"EString");
+                     
                     	        afterParserOrEnumRuleCall();
                     	    
 
@@ -1184,7 +1174,7 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleState"
-    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:475:1: entryRuleState returns [EObject current=null] : iv_ruleState= ruleState EOF ;
+    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:469:1: entryRuleState returns [EObject current=null] : iv_ruleState= ruleState EOF ;
     public final EObject entryRuleState() throws RecognitionException {
         EObject current = null;
 
@@ -1192,17 +1182,17 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:476:2: (iv_ruleState= ruleState EOF )
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:477:2: iv_ruleState= ruleState EOF
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:470:2: (iv_ruleState= ruleState EOF )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:471:2: iv_ruleState= ruleState EOF
             {
              newCompositeNode(grammarAccess.getStateRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleState_in_entryRuleState993);
+            pushFollow(FollowSets000.FOLLOW_ruleState_in_entryRuleState997);
             iv_ruleState=ruleState();
 
             state._fsp--;
 
              current =iv_ruleState; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleState1003); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleState1007); 
 
             }
 
@@ -1220,7 +1210,7 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleState"
-    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:484:1: ruleState returns [EObject current=null] : ( () otherlv_1= 'State' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'nested' ( (lv_nested_4_0= ruleStateMachine ) ) )? ) ;
+    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:478:1: ruleState returns [EObject current=null] : ( () otherlv_1= 'State' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'nested' ( (lv_nested_4_0= ruleStateMachine ) ) )? ) ;
     public final EObject ruleState() throws RecognitionException {
         EObject current = null;
 
@@ -1234,14 +1224,14 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:487:28: ( ( () otherlv_1= 'State' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'nested' ( (lv_nested_4_0= ruleStateMachine ) ) )? ) )
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:488:1: ( () otherlv_1= 'State' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'nested' ( (lv_nested_4_0= ruleStateMachine ) ) )? )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:481:28: ( ( () otherlv_1= 'State' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'nested' ( (lv_nested_4_0= ruleStateMachine ) ) )? ) )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:482:1: ( () otherlv_1= 'State' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'nested' ( (lv_nested_4_0= ruleStateMachine ) ) )? )
             {
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:488:1: ( () otherlv_1= 'State' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'nested' ( (lv_nested_4_0= ruleStateMachine ) ) )? )
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:488:2: () otherlv_1= 'State' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'nested' ( (lv_nested_4_0= ruleStateMachine ) ) )?
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:482:1: ( () otherlv_1= 'State' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'nested' ( (lv_nested_4_0= ruleStateMachine ) ) )? )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:482:2: () otherlv_1= 'State' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'nested' ( (lv_nested_4_0= ruleStateMachine ) ) )?
             {
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:488:2: ()
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:489:5: 
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:482:2: ()
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:483:5: 
             {
 
                     current = forceCreateModelElement(
@@ -1251,20 +1241,20 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,21,FollowSets000.FOLLOW_21_in_ruleState1049); 
+            otherlv_1=(Token)match(input,21,FollowSets000.FOLLOW_21_in_ruleState1053); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getStateAccess().getStateKeyword_1());
                 
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:498:1: ( (lv_name_2_0= ruleEString ) )
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:499:1: (lv_name_2_0= ruleEString )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:492:1: ( (lv_name_2_0= ruleEString ) )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:493:1: (lv_name_2_0= ruleEString )
             {
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:499:1: (lv_name_2_0= ruleEString )
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:500:3: lv_name_2_0= ruleEString
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:493:1: (lv_name_2_0= ruleEString )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:494:3: lv_name_2_0= ruleEString
             {
              
             	        newCompositeNode(grammarAccess.getStateAccess().getNameEStringParserRuleCall_2_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleState1070);
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleState1074);
             lv_name_2_0=ruleEString();
 
             state._fsp--;
@@ -1286,7 +1276,7 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:516:2: (otherlv_3= 'nested' ( (lv_nested_4_0= ruleStateMachine ) ) )?
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:510:2: (otherlv_3= 'nested' ( (lv_nested_4_0= ruleStateMachine ) ) )?
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -1295,22 +1285,22 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
             }
             switch (alt12) {
                 case 1 :
-                    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:516:4: otherlv_3= 'nested' ( (lv_nested_4_0= ruleStateMachine ) )
+                    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:510:4: otherlv_3= 'nested' ( (lv_nested_4_0= ruleStateMachine ) )
                     {
-                    otherlv_3=(Token)match(input,22,FollowSets000.FOLLOW_22_in_ruleState1083); 
+                    otherlv_3=(Token)match(input,22,FollowSets000.FOLLOW_22_in_ruleState1087); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getStateAccess().getNestedKeyword_3_0());
                         
-                    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:520:1: ( (lv_nested_4_0= ruleStateMachine ) )
-                    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:521:1: (lv_nested_4_0= ruleStateMachine )
+                    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:514:1: ( (lv_nested_4_0= ruleStateMachine ) )
+                    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:515:1: (lv_nested_4_0= ruleStateMachine )
                     {
-                    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:521:1: (lv_nested_4_0= ruleStateMachine )
-                    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:522:3: lv_nested_4_0= ruleStateMachine
+                    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:515:1: (lv_nested_4_0= ruleStateMachine )
+                    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:516:3: lv_nested_4_0= ruleStateMachine
                     {
                      
                     	        newCompositeNode(grammarAccess.getStateAccess().getNestedStateMachineParserRuleCall_3_1_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleStateMachine_in_ruleState1104);
+                    pushFollow(FollowSets000.FOLLOW_ruleStateMachine_in_ruleState1108);
                     lv_nested_4_0=ruleStateMachine();
 
                     state._fsp--;
@@ -1359,7 +1349,7 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleInitial"
-    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:546:1: entryRuleInitial returns [EObject current=null] : iv_ruleInitial= ruleInitial EOF ;
+    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:540:1: entryRuleInitial returns [EObject current=null] : iv_ruleInitial= ruleInitial EOF ;
     public final EObject entryRuleInitial() throws RecognitionException {
         EObject current = null;
 
@@ -1367,17 +1357,17 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:547:2: (iv_ruleInitial= ruleInitial EOF )
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:548:2: iv_ruleInitial= ruleInitial EOF
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:541:2: (iv_ruleInitial= ruleInitial EOF )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:542:2: iv_ruleInitial= ruleInitial EOF
             {
              newCompositeNode(grammarAccess.getInitialRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleInitial_in_entryRuleInitial1142);
+            pushFollow(FollowSets000.FOLLOW_ruleInitial_in_entryRuleInitial1146);
             iv_ruleInitial=ruleInitial();
 
             state._fsp--;
 
              current =iv_ruleInitial; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleInitial1152); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleInitial1156); 
 
             }
 
@@ -1395,7 +1385,7 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleInitial"
-    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:555:1: ruleInitial returns [EObject current=null] : ( () otherlv_1= 'Initial' ( (lv_name_2_0= ruleEString ) ) ) ;
+    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:549:1: ruleInitial returns [EObject current=null] : ( () otherlv_1= 'Initial' ( (lv_name_2_0= ruleEString ) ) ) ;
     public final EObject ruleInitial() throws RecognitionException {
         EObject current = null;
 
@@ -1406,14 +1396,14 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:558:28: ( ( () otherlv_1= 'Initial' ( (lv_name_2_0= ruleEString ) ) ) )
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:559:1: ( () otherlv_1= 'Initial' ( (lv_name_2_0= ruleEString ) ) )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:552:28: ( ( () otherlv_1= 'Initial' ( (lv_name_2_0= ruleEString ) ) ) )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:553:1: ( () otherlv_1= 'Initial' ( (lv_name_2_0= ruleEString ) ) )
             {
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:559:1: ( () otherlv_1= 'Initial' ( (lv_name_2_0= ruleEString ) ) )
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:559:2: () otherlv_1= 'Initial' ( (lv_name_2_0= ruleEString ) )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:553:1: ( () otherlv_1= 'Initial' ( (lv_name_2_0= ruleEString ) ) )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:553:2: () otherlv_1= 'Initial' ( (lv_name_2_0= ruleEString ) )
             {
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:559:2: ()
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:560:5: 
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:553:2: ()
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:554:5: 
             {
 
                     current = forceCreateModelElement(
@@ -1423,20 +1413,20 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,23,FollowSets000.FOLLOW_23_in_ruleInitial1198); 
+            otherlv_1=(Token)match(input,23,FollowSets000.FOLLOW_23_in_ruleInitial1202); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getInitialAccess().getInitialKeyword_1());
                 
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:569:1: ( (lv_name_2_0= ruleEString ) )
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:570:1: (lv_name_2_0= ruleEString )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:563:1: ( (lv_name_2_0= ruleEString ) )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:564:1: (lv_name_2_0= ruleEString )
             {
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:570:1: (lv_name_2_0= ruleEString )
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:571:3: lv_name_2_0= ruleEString
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:564:1: (lv_name_2_0= ruleEString )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:565:3: lv_name_2_0= ruleEString
             {
              
             	        newCompositeNode(grammarAccess.getInitialAccess().getNameEStringParserRuleCall_2_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleInitial1219);
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleInitial1223);
             lv_name_2_0=ruleEString();
 
             state._fsp--;
@@ -1479,7 +1469,7 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleJunction"
-    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:595:1: entryRuleJunction returns [EObject current=null] : iv_ruleJunction= ruleJunction EOF ;
+    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:589:1: entryRuleJunction returns [EObject current=null] : iv_ruleJunction= ruleJunction EOF ;
     public final EObject entryRuleJunction() throws RecognitionException {
         EObject current = null;
 
@@ -1487,17 +1477,17 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:596:2: (iv_ruleJunction= ruleJunction EOF )
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:597:2: iv_ruleJunction= ruleJunction EOF
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:590:2: (iv_ruleJunction= ruleJunction EOF )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:591:2: iv_ruleJunction= ruleJunction EOF
             {
              newCompositeNode(grammarAccess.getJunctionRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleJunction_in_entryRuleJunction1255);
+            pushFollow(FollowSets000.FOLLOW_ruleJunction_in_entryRuleJunction1259);
             iv_ruleJunction=ruleJunction();
 
             state._fsp--;
 
              current =iv_ruleJunction; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleJunction1265); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleJunction1269); 
 
             }
 
@@ -1515,7 +1505,7 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleJunction"
-    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:604:1: ruleJunction returns [EObject current=null] : ( () otherlv_1= 'Junction' ( (lv_name_2_0= ruleEString ) ) ) ;
+    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:598:1: ruleJunction returns [EObject current=null] : ( () otherlv_1= 'Junction' ( (lv_name_2_0= ruleEString ) ) ) ;
     public final EObject ruleJunction() throws RecognitionException {
         EObject current = null;
 
@@ -1526,14 +1516,14 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:607:28: ( ( () otherlv_1= 'Junction' ( (lv_name_2_0= ruleEString ) ) ) )
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:608:1: ( () otherlv_1= 'Junction' ( (lv_name_2_0= ruleEString ) ) )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:601:28: ( ( () otherlv_1= 'Junction' ( (lv_name_2_0= ruleEString ) ) ) )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:602:1: ( () otherlv_1= 'Junction' ( (lv_name_2_0= ruleEString ) ) )
             {
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:608:1: ( () otherlv_1= 'Junction' ( (lv_name_2_0= ruleEString ) ) )
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:608:2: () otherlv_1= 'Junction' ( (lv_name_2_0= ruleEString ) )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:602:1: ( () otherlv_1= 'Junction' ( (lv_name_2_0= ruleEString ) ) )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:602:2: () otherlv_1= 'Junction' ( (lv_name_2_0= ruleEString ) )
             {
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:608:2: ()
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:609:5: 
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:602:2: ()
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:603:5: 
             {
 
                     current = forceCreateModelElement(
@@ -1543,20 +1533,20 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,24,FollowSets000.FOLLOW_24_in_ruleJunction1311); 
+            otherlv_1=(Token)match(input,24,FollowSets000.FOLLOW_24_in_ruleJunction1315); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getJunctionAccess().getJunctionKeyword_1());
                 
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:618:1: ( (lv_name_2_0= ruleEString ) )
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:619:1: (lv_name_2_0= ruleEString )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:612:1: ( (lv_name_2_0= ruleEString ) )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:613:1: (lv_name_2_0= ruleEString )
             {
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:619:1: (lv_name_2_0= ruleEString )
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:620:3: lv_name_2_0= ruleEString
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:613:1: (lv_name_2_0= ruleEString )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:614:3: lv_name_2_0= ruleEString
             {
              
             	        newCompositeNode(grammarAccess.getJunctionAccess().getNameEStringParserRuleCall_2_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleJunction1332);
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleJunction1336);
             lv_name_2_0=ruleEString();
 
             state._fsp--;
@@ -1599,7 +1589,7 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFork"
-    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:644:1: entryRuleFork returns [EObject current=null] : iv_ruleFork= ruleFork EOF ;
+    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:638:1: entryRuleFork returns [EObject current=null] : iv_ruleFork= ruleFork EOF ;
     public final EObject entryRuleFork() throws RecognitionException {
         EObject current = null;
 
@@ -1607,17 +1597,17 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:645:2: (iv_ruleFork= ruleFork EOF )
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:646:2: iv_ruleFork= ruleFork EOF
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:639:2: (iv_ruleFork= ruleFork EOF )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:640:2: iv_ruleFork= ruleFork EOF
             {
              newCompositeNode(grammarAccess.getForkRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleFork_in_entryRuleFork1368);
+            pushFollow(FollowSets000.FOLLOW_ruleFork_in_entryRuleFork1372);
             iv_ruleFork=ruleFork();
 
             state._fsp--;
 
              current =iv_ruleFork; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleFork1378); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleFork1382); 
 
             }
 
@@ -1635,7 +1625,7 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFork"
-    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:653:1: ruleFork returns [EObject current=null] : ( () otherlv_1= 'Fork' ( (lv_name_2_0= ruleEString ) ) ) ;
+    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:647:1: ruleFork returns [EObject current=null] : ( () otherlv_1= 'Fork' ( (lv_name_2_0= ruleEString ) ) ) ;
     public final EObject ruleFork() throws RecognitionException {
         EObject current = null;
 
@@ -1646,14 +1636,14 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:656:28: ( ( () otherlv_1= 'Fork' ( (lv_name_2_0= ruleEString ) ) ) )
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:657:1: ( () otherlv_1= 'Fork' ( (lv_name_2_0= ruleEString ) ) )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:650:28: ( ( () otherlv_1= 'Fork' ( (lv_name_2_0= ruleEString ) ) ) )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:651:1: ( () otherlv_1= 'Fork' ( (lv_name_2_0= ruleEString ) ) )
             {
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:657:1: ( () otherlv_1= 'Fork' ( (lv_name_2_0= ruleEString ) ) )
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:657:2: () otherlv_1= 'Fork' ( (lv_name_2_0= ruleEString ) )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:651:1: ( () otherlv_1= 'Fork' ( (lv_name_2_0= ruleEString ) ) )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:651:2: () otherlv_1= 'Fork' ( (lv_name_2_0= ruleEString ) )
             {
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:657:2: ()
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:658:5: 
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:651:2: ()
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:652:5: 
             {
 
                     current = forceCreateModelElement(
@@ -1663,20 +1653,20 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,25,FollowSets000.FOLLOW_25_in_ruleFork1424); 
+            otherlv_1=(Token)match(input,25,FollowSets000.FOLLOW_25_in_ruleFork1428); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getForkAccess().getForkKeyword_1());
                 
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:667:1: ( (lv_name_2_0= ruleEString ) )
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:668:1: (lv_name_2_0= ruleEString )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:661:1: ( (lv_name_2_0= ruleEString ) )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:662:1: (lv_name_2_0= ruleEString )
             {
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:668:1: (lv_name_2_0= ruleEString )
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:669:3: lv_name_2_0= ruleEString
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:662:1: (lv_name_2_0= ruleEString )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:663:3: lv_name_2_0= ruleEString
             {
              
             	        newCompositeNode(grammarAccess.getForkAccess().getNameEStringParserRuleCall_2_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleFork1445);
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleFork1449);
             lv_name_2_0=ruleEString();
 
             state._fsp--;
@@ -1719,7 +1709,7 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleJoin"
-    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:693:1: entryRuleJoin returns [EObject current=null] : iv_ruleJoin= ruleJoin EOF ;
+    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:687:1: entryRuleJoin returns [EObject current=null] : iv_ruleJoin= ruleJoin EOF ;
     public final EObject entryRuleJoin() throws RecognitionException {
         EObject current = null;
 
@@ -1727,17 +1717,17 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:694:2: (iv_ruleJoin= ruleJoin EOF )
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:695:2: iv_ruleJoin= ruleJoin EOF
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:688:2: (iv_ruleJoin= ruleJoin EOF )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:689:2: iv_ruleJoin= ruleJoin EOF
             {
              newCompositeNode(grammarAccess.getJoinRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleJoin_in_entryRuleJoin1481);
+            pushFollow(FollowSets000.FOLLOW_ruleJoin_in_entryRuleJoin1485);
             iv_ruleJoin=ruleJoin();
 
             state._fsp--;
 
              current =iv_ruleJoin; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleJoin1491); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleJoin1495); 
 
             }
 
@@ -1755,7 +1745,7 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleJoin"
-    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:702:1: ruleJoin returns [EObject current=null] : ( () otherlv_1= 'Join' ( (lv_name_2_0= ruleEString ) ) ) ;
+    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:696:1: ruleJoin returns [EObject current=null] : ( () otherlv_1= 'Join' ( (lv_name_2_0= ruleEString ) ) ) ;
     public final EObject ruleJoin() throws RecognitionException {
         EObject current = null;
 
@@ -1766,14 +1756,14 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:705:28: ( ( () otherlv_1= 'Join' ( (lv_name_2_0= ruleEString ) ) ) )
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:706:1: ( () otherlv_1= 'Join' ( (lv_name_2_0= ruleEString ) ) )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:699:28: ( ( () otherlv_1= 'Join' ( (lv_name_2_0= ruleEString ) ) ) )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:700:1: ( () otherlv_1= 'Join' ( (lv_name_2_0= ruleEString ) ) )
             {
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:706:1: ( () otherlv_1= 'Join' ( (lv_name_2_0= ruleEString ) ) )
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:706:2: () otherlv_1= 'Join' ( (lv_name_2_0= ruleEString ) )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:700:1: ( () otherlv_1= 'Join' ( (lv_name_2_0= ruleEString ) ) )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:700:2: () otherlv_1= 'Join' ( (lv_name_2_0= ruleEString ) )
             {
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:706:2: ()
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:707:5: 
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:700:2: ()
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:701:5: 
             {
 
                     current = forceCreateModelElement(
@@ -1783,20 +1773,20 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,26,FollowSets000.FOLLOW_26_in_ruleJoin1537); 
+            otherlv_1=(Token)match(input,26,FollowSets000.FOLLOW_26_in_ruleJoin1541); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getJoinAccess().getJoinKeyword_1());
                 
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:716:1: ( (lv_name_2_0= ruleEString ) )
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:717:1: (lv_name_2_0= ruleEString )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:710:1: ( (lv_name_2_0= ruleEString ) )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:711:1: (lv_name_2_0= ruleEString )
             {
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:717:1: (lv_name_2_0= ruleEString )
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:718:3: lv_name_2_0= ruleEString
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:711:1: (lv_name_2_0= ruleEString )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:712:3: lv_name_2_0= ruleEString
             {
              
             	        newCompositeNode(grammarAccess.getJoinAccess().getNameEStringParserRuleCall_2_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleJoin1558);
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleJoin1562);
             lv_name_2_0=ruleEString();
 
             state._fsp--;
@@ -1839,7 +1829,7 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAny"
-    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:742:1: entryRuleAny returns [EObject current=null] : iv_ruleAny= ruleAny EOF ;
+    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:736:1: entryRuleAny returns [EObject current=null] : iv_ruleAny= ruleAny EOF ;
     public final EObject entryRuleAny() throws RecognitionException {
         EObject current = null;
 
@@ -1847,17 +1837,17 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:743:2: (iv_ruleAny= ruleAny EOF )
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:744:2: iv_ruleAny= ruleAny EOF
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:737:2: (iv_ruleAny= ruleAny EOF )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:738:2: iv_ruleAny= ruleAny EOF
             {
              newCompositeNode(grammarAccess.getAnyRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleAny_in_entryRuleAny1594);
+            pushFollow(FollowSets000.FOLLOW_ruleAny_in_entryRuleAny1598);
             iv_ruleAny=ruleAny();
 
             state._fsp--;
 
              current =iv_ruleAny; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleAny1604); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleAny1608); 
 
             }
 
@@ -1875,7 +1865,7 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAny"
-    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:751:1: ruleAny returns [EObject current=null] : ( () otherlv_1= 'Any' ( (lv_name_2_0= ruleEString ) ) ) ;
+    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:745:1: ruleAny returns [EObject current=null] : ( () otherlv_1= 'Any' ( (lv_name_2_0= ruleEString ) ) ) ;
     public final EObject ruleAny() throws RecognitionException {
         EObject current = null;
 
@@ -1886,14 +1876,14 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:754:28: ( ( () otherlv_1= 'Any' ( (lv_name_2_0= ruleEString ) ) ) )
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:755:1: ( () otherlv_1= 'Any' ( (lv_name_2_0= ruleEString ) ) )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:748:28: ( ( () otherlv_1= 'Any' ( (lv_name_2_0= ruleEString ) ) ) )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:749:1: ( () otherlv_1= 'Any' ( (lv_name_2_0= ruleEString ) ) )
             {
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:755:1: ( () otherlv_1= 'Any' ( (lv_name_2_0= ruleEString ) ) )
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:755:2: () otherlv_1= 'Any' ( (lv_name_2_0= ruleEString ) )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:749:1: ( () otherlv_1= 'Any' ( (lv_name_2_0= ruleEString ) ) )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:749:2: () otherlv_1= 'Any' ( (lv_name_2_0= ruleEString ) )
             {
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:755:2: ()
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:756:5: 
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:749:2: ()
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:750:5: 
             {
 
                     current = forceCreateModelElement(
@@ -1903,20 +1893,20 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,27,FollowSets000.FOLLOW_27_in_ruleAny1650); 
+            otherlv_1=(Token)match(input,27,FollowSets000.FOLLOW_27_in_ruleAny1654); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getAnyAccess().getAnyKeyword_1());
                 
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:765:1: ( (lv_name_2_0= ruleEString ) )
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:766:1: (lv_name_2_0= ruleEString )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:759:1: ( (lv_name_2_0= ruleEString ) )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:760:1: (lv_name_2_0= ruleEString )
             {
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:766:1: (lv_name_2_0= ruleEString )
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:767:3: lv_name_2_0= ruleEString
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:760:1: (lv_name_2_0= ruleEString )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:761:3: lv_name_2_0= ruleEString
             {
              
             	        newCompositeNode(grammarAccess.getAnyAccess().getNameEStringParserRuleCall_2_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleAny1671);
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleAny1675);
             lv_name_2_0=ruleEString();
 
             state._fsp--;
@@ -1959,7 +1949,7 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFinal"
-    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:791:1: entryRuleFinal returns [EObject current=null] : iv_ruleFinal= ruleFinal EOF ;
+    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:785:1: entryRuleFinal returns [EObject current=null] : iv_ruleFinal= ruleFinal EOF ;
     public final EObject entryRuleFinal() throws RecognitionException {
         EObject current = null;
 
@@ -1967,17 +1957,17 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:792:2: (iv_ruleFinal= ruleFinal EOF )
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:793:2: iv_ruleFinal= ruleFinal EOF
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:786:2: (iv_ruleFinal= ruleFinal EOF )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:787:2: iv_ruleFinal= ruleFinal EOF
             {
              newCompositeNode(grammarAccess.getFinalRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleFinal_in_entryRuleFinal1707);
+            pushFollow(FollowSets000.FOLLOW_ruleFinal_in_entryRuleFinal1711);
             iv_ruleFinal=ruleFinal();
 
             state._fsp--;
 
              current =iv_ruleFinal; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleFinal1717); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleFinal1721); 
 
             }
 
@@ -1995,7 +1985,7 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFinal"
-    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:800:1: ruleFinal returns [EObject current=null] : ( () otherlv_1= 'Final' ( (lv_name_2_0= ruleEString ) ) ) ;
+    // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:794:1: ruleFinal returns [EObject current=null] : ( () otherlv_1= 'Final' ( (lv_name_2_0= ruleEString ) ) ) ;
     public final EObject ruleFinal() throws RecognitionException {
         EObject current = null;
 
@@ -2006,14 +1996,14 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:803:28: ( ( () otherlv_1= 'Final' ( (lv_name_2_0= ruleEString ) ) ) )
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:804:1: ( () otherlv_1= 'Final' ( (lv_name_2_0= ruleEString ) ) )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:797:28: ( ( () otherlv_1= 'Final' ( (lv_name_2_0= ruleEString ) ) ) )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:798:1: ( () otherlv_1= 'Final' ( (lv_name_2_0= ruleEString ) ) )
             {
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:804:1: ( () otherlv_1= 'Final' ( (lv_name_2_0= ruleEString ) ) )
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:804:2: () otherlv_1= 'Final' ( (lv_name_2_0= ruleEString ) )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:798:1: ( () otherlv_1= 'Final' ( (lv_name_2_0= ruleEString ) ) )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:798:2: () otherlv_1= 'Final' ( (lv_name_2_0= ruleEString ) )
             {
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:804:2: ()
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:805:5: 
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:798:2: ()
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:799:5: 
             {
 
                     current = forceCreateModelElement(
@@ -2023,20 +2013,20 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,28,FollowSets000.FOLLOW_28_in_ruleFinal1763); 
+            otherlv_1=(Token)match(input,28,FollowSets000.FOLLOW_28_in_ruleFinal1767); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getFinalAccess().getFinalKeyword_1());
                 
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:814:1: ( (lv_name_2_0= ruleEString ) )
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:815:1: (lv_name_2_0= ruleEString )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:808:1: ( (lv_name_2_0= ruleEString ) )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:809:1: (lv_name_2_0= ruleEString )
             {
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:815:1: (lv_name_2_0= ruleEString )
-            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:816:3: lv_name_2_0= ruleEString
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:809:1: (lv_name_2_0= ruleEString )
+            // ../ac.soton.xtext.statemachine.dsl/src-gen/ac/soton/xtext/statemachine/parser/antlr/internal/InternalDsl.g:810:3: lv_name_2_0= ruleEString
             {
              
             	        newCompositeNode(grammarAccess.getFinalAccess().getNameEStringParserRuleCall_2_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleFinal1784);
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleFinal1788);
             lv_name_2_0=ruleEString();
 
             state._fsp--;
@@ -2120,39 +2110,39 @@ public class InternalDslParser extends AbstractInternalAntlrParser {
         public static final BitSet FOLLOW_18_in_ruleTransition862 = new BitSet(new long[]{0x0000000000000030L});
         public static final BitSet FOLLOW_ruleEString_in_ruleTransition883 = new BitSet(new long[]{0x0000000000180002L});
         public static final BitSet FOLLOW_19_in_ruleTransition898 = new BitSet(new long[]{0x0000000000000030L});
-        public static final BitSet FOLLOW_ruleEString_in_ruleTransition919 = new BitSet(new long[]{0x0000000000100002L});
-        public static final BitSet FOLLOW_20_in_ruleTransition934 = new BitSet(new long[]{0x0000000000000030L});
-        public static final BitSet FOLLOW_ruleEString_in_ruleTransition955 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleState_in_entryRuleState993 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleState1003 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_21_in_ruleState1049 = new BitSet(new long[]{0x0000000000000030L});
-        public static final BitSet FOLLOW_ruleEString_in_ruleState1070 = new BitSet(new long[]{0x0000000000400002L});
-        public static final BitSet FOLLOW_22_in_ruleState1083 = new BitSet(new long[]{0x0000000000000800L});
-        public static final BitSet FOLLOW_ruleStateMachine_in_ruleState1104 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleInitial_in_entryRuleInitial1142 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleInitial1152 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_23_in_ruleInitial1198 = new BitSet(new long[]{0x0000000000000030L});
-        public static final BitSet FOLLOW_ruleEString_in_ruleInitial1219 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleJunction_in_entryRuleJunction1255 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleJunction1265 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_24_in_ruleJunction1311 = new BitSet(new long[]{0x0000000000000030L});
-        public static final BitSet FOLLOW_ruleEString_in_ruleJunction1332 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleFork_in_entryRuleFork1368 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleFork1378 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_25_in_ruleFork1424 = new BitSet(new long[]{0x0000000000000030L});
-        public static final BitSet FOLLOW_ruleEString_in_ruleFork1445 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleJoin_in_entryRuleJoin1481 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleJoin1491 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_26_in_ruleJoin1537 = new BitSet(new long[]{0x0000000000000030L});
-        public static final BitSet FOLLOW_ruleEString_in_ruleJoin1558 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleAny_in_entryRuleAny1594 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleAny1604 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_27_in_ruleAny1650 = new BitSet(new long[]{0x0000000000000030L});
-        public static final BitSet FOLLOW_ruleEString_in_ruleAny1671 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleFinal_in_entryRuleFinal1707 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleFinal1717 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_28_in_ruleFinal1763 = new BitSet(new long[]{0x0000000000000030L});
-        public static final BitSet FOLLOW_ruleEString_in_ruleFinal1784 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleEString_in_ruleTransition921 = new BitSet(new long[]{0x0000000000100002L});
+        public static final BitSet FOLLOW_20_in_ruleTransition936 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_ruleEString_in_ruleTransition959 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleState_in_entryRuleState997 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleState1007 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_21_in_ruleState1053 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_ruleEString_in_ruleState1074 = new BitSet(new long[]{0x0000000000400002L});
+        public static final BitSet FOLLOW_22_in_ruleState1087 = new BitSet(new long[]{0x0000000000000800L});
+        public static final BitSet FOLLOW_ruleStateMachine_in_ruleState1108 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleInitial_in_entryRuleInitial1146 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleInitial1156 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_23_in_ruleInitial1202 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_ruleEString_in_ruleInitial1223 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleJunction_in_entryRuleJunction1259 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleJunction1269 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_24_in_ruleJunction1315 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_ruleEString_in_ruleJunction1336 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleFork_in_entryRuleFork1372 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleFork1382 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_25_in_ruleFork1428 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_ruleEString_in_ruleFork1449 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleJoin_in_entryRuleJoin1485 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleJoin1495 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_26_in_ruleJoin1541 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_ruleEString_in_ruleJoin1562 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleAny_in_entryRuleAny1598 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleAny1608 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_27_in_ruleAny1654 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_ruleEString_in_ruleAny1675 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleFinal_in_entryRuleFinal1711 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleFinal1721 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_28_in_ruleFinal1767 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_ruleEString_in_ruleFinal1788 = new BitSet(new long[]{0x0000000000000002L});
     }
 
 

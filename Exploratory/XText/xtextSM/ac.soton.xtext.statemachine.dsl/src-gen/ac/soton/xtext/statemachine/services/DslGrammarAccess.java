@@ -222,17 +222,21 @@ public class DslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
 		private final Keyword cSourceKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
 		private final Assignment cSourceAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cSourceEStringParserRuleCall_3_1_0 = (RuleCall)cSourceAssignment_3_1.eContents().get(0);
+		private final CrossReference cSourceAbstractNodeCrossReference_3_1_0 = (CrossReference)cSourceAssignment_3_1.eContents().get(0);
+		private final RuleCall cSourceAbstractNodeEStringParserRuleCall_3_1_0_1 = (RuleCall)cSourceAbstractNodeCrossReference_3_1_0.eContents().get(1);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
 		private final Keyword cTargetKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
 		private final Assignment cTargetAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cTargetEStringParserRuleCall_4_1_0 = (RuleCall)cTargetAssignment_4_1.eContents().get(0);
+		private final CrossReference cTargetAbstractNodeCrossReference_4_1_0 = (CrossReference)cTargetAssignment_4_1.eContents().get(0);
+		private final RuleCall cTargetAbstractNodeEStringParserRuleCall_4_1_0_1 = (RuleCall)cTargetAbstractNodeCrossReference_4_1_0.eContents().get(1);
 		
 		/// *'}'* / Transition:
-		//	{Transition} "Transition" / *'{'* / ("event" event=EString)? ("source" source=EString)? ("target" target=EString)?;
+		//	{Transition} "Transition" / *'{'* / ("event" event=EString)? ("source" source=[AbstractNode|EString])? ("target"
+		//	target=[AbstractNode|EString])?;
 		public ParserRule getRule() { return rule; }
 
-		//{Transition} "Transition" / *'{'* / ("event" event=EString)? ("source" source=EString)? ("target" target=EString)?
+		//{Transition} "Transition" / *'{'* / ("event" event=EString)? ("source" source=[AbstractNode|EString])? ("target"
+		//target=[AbstractNode|EString])?
 		public Group getGroup() { return cGroup; }
 
 		//{Transition}
@@ -253,29 +257,35 @@ public class DslGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getEventEStringParserRuleCall_2_1_0() { return cEventEStringParserRuleCall_2_1_0; }
 
-		//("source" source=EString)?
+		//("source" source=[AbstractNode|EString])?
 		public Group getGroup_3() { return cGroup_3; }
 
 		//"source"
 		public Keyword getSourceKeyword_3_0() { return cSourceKeyword_3_0; }
 
-		//source=EString
+		//source=[AbstractNode|EString]
 		public Assignment getSourceAssignment_3_1() { return cSourceAssignment_3_1; }
 
-		//EString
-		public RuleCall getSourceEStringParserRuleCall_3_1_0() { return cSourceEStringParserRuleCall_3_1_0; }
+		//[AbstractNode|EString]
+		public CrossReference getSourceAbstractNodeCrossReference_3_1_0() { return cSourceAbstractNodeCrossReference_3_1_0; }
 
-		//("target" target=EString)?
+		//EString
+		public RuleCall getSourceAbstractNodeEStringParserRuleCall_3_1_0_1() { return cSourceAbstractNodeEStringParserRuleCall_3_1_0_1; }
+
+		//("target" target=[AbstractNode|EString])?
 		public Group getGroup_4() { return cGroup_4; }
 
 		//"target"
 		public Keyword getTargetKeyword_4_0() { return cTargetKeyword_4_0; }
 
-		//target=EString
+		//target=[AbstractNode|EString]
 		public Assignment getTargetAssignment_4_1() { return cTargetAssignment_4_1; }
 
+		//[AbstractNode|EString]
+		public CrossReference getTargetAbstractNodeCrossReference_4_1_0() { return cTargetAbstractNodeCrossReference_4_1_0; }
+
 		//EString
-		public RuleCall getTargetEStringParserRuleCall_4_1_0() { return cTargetEStringParserRuleCall_4_1_0; }
+		public RuleCall getTargetAbstractNodeEStringParserRuleCall_4_1_0_1() { return cTargetAbstractNodeEStringParserRuleCall_4_1_0_1; }
 	}
 
 	public class StateElements extends AbstractParserRuleElementFinder {
@@ -574,7 +584,8 @@ public class DslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	/// *'}'* / Transition:
-	//	{Transition} "Transition" / *'{'* / ("event" event=EString)? ("source" source=EString)? ("target" target=EString)?;
+	//	{Transition} "Transition" / *'{'* / ("event" event=EString)? ("source" source=[AbstractNode|EString])? ("target"
+	//	target=[AbstractNode|EString])?;
 	public TransitionElements getTransitionAccess() {
 		return (pTransition != null) ? pTransition : (pTransition = new TransitionElements());
 	}

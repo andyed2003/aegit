@@ -426,18 +426,15 @@ ruleTransition returns [EObject current=null]
     }
 (
 (
-		{ 
-	        newCompositeNode(grammarAccess.getTransitionAccess().getSourceEStringParserRuleCall_3_1_0()); 
-	    }
-		lv_source_5_0=ruleEString		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getTransitionRule());
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getTransitionRule());
 	        }
-       		set(
-       			$current, 
-       			"source",
-        		lv_source_5_0, 
-        		"EString");
+        }
+		{ 
+	        newCompositeNode(grammarAccess.getTransitionAccess().getSourceAbstractNodeCrossReference_3_1_0()); 
+	    }
+		ruleEString		{ 
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -448,18 +445,15 @@ ruleTransition returns [EObject current=null]
     }
 (
 (
-		{ 
-	        newCompositeNode(grammarAccess.getTransitionAccess().getTargetEStringParserRuleCall_4_1_0()); 
-	    }
-		lv_target_7_0=ruleEString		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getTransitionRule());
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getTransitionRule());
 	        }
-       		set(
-       			$current, 
-       			"target",
-        		lv_target_7_0, 
-        		"EString");
+        }
+		{ 
+	        newCompositeNode(grammarAccess.getTransitionAccess().getTargetAbstractNodeCrossReference_4_1_0()); 
+	    }
+		ruleEString		{ 
 	        afterParserOrEnumRuleCall();
 	    }
 

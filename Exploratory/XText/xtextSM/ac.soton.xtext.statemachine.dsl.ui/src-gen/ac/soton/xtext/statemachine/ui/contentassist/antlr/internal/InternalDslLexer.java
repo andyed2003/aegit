@@ -434,10 +434,10 @@ public class InternalDslLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2522:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2522:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2530:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2530:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2522:11: ( '^' )?
+            // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2530:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -446,7 +446,7 @@ public class InternalDslLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2522:11: '^'
+                    // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2530:11: '^'
                     {
                     match('^'); 
 
@@ -464,7 +464,7 @@ public class InternalDslLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2522:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2530:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -513,10 +513,10 @@ public class InternalDslLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2524:10: ( ( '0' .. '9' )+ )
-            // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2524:12: ( '0' .. '9' )+
+            // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2532:10: ( ( '0' .. '9' )+ )
+            // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2532:12: ( '0' .. '9' )+
             {
-            // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2524:12: ( '0' .. '9' )+
+            // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2532:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -530,7 +530,7 @@ public class InternalDslLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2524:13: '0' .. '9'
+            	    // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2532:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -562,10 +562,10 @@ public class InternalDslLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2526:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2526:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2534:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2534:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2526:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2534:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -583,10 +583,10 @@ public class InternalDslLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2526:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2534:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2526:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2534:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -602,7 +602,7 @@ public class InternalDslLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2526:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2534:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -618,7 +618,7 @@ public class InternalDslLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2526:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2534:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -643,10 +643,10 @@ public class InternalDslLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2526:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2534:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2526:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2534:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -662,7 +662,7 @@ public class InternalDslLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2526:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2534:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -678,7 +678,7 @@ public class InternalDslLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2526:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2534:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -721,12 +721,12 @@ public class InternalDslLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2528:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2528:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2536:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2536:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2528:24: ( options {greedy=false; } : . )*
+            // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2536:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -751,7 +751,7 @@ public class InternalDslLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2528:52: .
+            	    // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2536:52: .
             	    {
             	    matchAny(); 
 
@@ -781,12 +781,12 @@ public class InternalDslLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2530:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2530:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2538:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2538:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2530:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2538:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -799,7 +799,7 @@ public class InternalDslLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2530:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2538:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -819,7 +819,7 @@ public class InternalDslLexer extends Lexer {
                 }
             } while (true);
 
-            // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2530:40: ( ( '\\r' )? '\\n' )?
+            // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2538:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -828,9 +828,9 @@ public class InternalDslLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2530:41: ( '\\r' )? '\\n'
+                    // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2538:41: ( '\\r' )? '\\n'
                     {
-                    // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2530:41: ( '\\r' )?
+                    // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2538:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -839,7 +839,7 @@ public class InternalDslLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2530:41: '\\r'
+                            // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2538:41: '\\r'
                             {
                             match('\r'); 
 
@@ -871,10 +871,10 @@ public class InternalDslLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2532:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2532:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2540:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2540:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2532:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2540:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -928,8 +928,8 @@ public class InternalDslLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2534:16: ( . )
-            // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2534:18: .
+            // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2542:16: ( . )
+            // ../ac.soton.xtext.statemachine.dsl.ui/src-gen/ac/soton/xtext/statemachine/ui/contentassist/antlr/internal/InternalDsl.g:2542:18: .
             {
             matchAny(); 
 

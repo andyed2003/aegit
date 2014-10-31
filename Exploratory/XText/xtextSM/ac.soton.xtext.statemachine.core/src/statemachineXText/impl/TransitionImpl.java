@@ -6,9 +6,11 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import statemachineXText.AbstractNode;
 import statemachineXText.StatemachineXTextPackage;
 import statemachineXText.Transition;
 
@@ -49,44 +51,24 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	protected String event = EVENT_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getSource() <em>Source</em>}' attribute.
+	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSource()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String SOURCE_EDEFAULT = "state_1";
+	protected AbstractNode source;
 
 	/**
-	 * The cached value of the '{@link #getSource() <em>Source</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSource()
-	 * @generated
-	 * @ordered
-	 */
-	protected String source = SOURCE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getTarget() <em>Target</em>}' attribute.
+	 * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getTarget()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String TARGET_EDEFAULT = "target_1";
-
-	/**
-	 * The cached value of the '{@link #getTarget() <em>Target</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTarget()
-	 * @generated
-	 * @ordered
-	 */
-	protected String target = TARGET_EDEFAULT;
+	protected AbstractNode target;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -133,7 +115,15 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getSource() {
+	public AbstractNode getSource() {
+		if (source != null && source.eIsProxy()) {
+			InternalEObject oldSource = (InternalEObject)source;
+			source = (AbstractNode)eResolveProxy(oldSource);
+			if (source != oldSource) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StatemachineXTextPackage.TRANSITION__SOURCE, oldSource, source));
+			}
+		}
 		return source;
 	}
 
@@ -142,8 +132,17 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSource(String newSource) {
-		String oldSource = source;
+	public AbstractNode basicGetSource() {
+		return source;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSource(AbstractNode newSource) {
+		AbstractNode oldSource = source;
 		source = newSource;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, StatemachineXTextPackage.TRANSITION__SOURCE, oldSource, source));
@@ -154,7 +153,15 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getTarget() {
+	public AbstractNode getTarget() {
+		if (target != null && target.eIsProxy()) {
+			InternalEObject oldTarget = (InternalEObject)target;
+			target = (AbstractNode)eResolveProxy(oldTarget);
+			if (target != oldTarget) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StatemachineXTextPackage.TRANSITION__TARGET, oldTarget, target));
+			}
+		}
 		return target;
 	}
 
@@ -163,8 +170,17 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTarget(String newTarget) {
-		String oldTarget = target;
+	public AbstractNode basicGetTarget() {
+		return target;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTarget(AbstractNode newTarget) {
+		AbstractNode oldTarget = target;
 		target = newTarget;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, StatemachineXTextPackage.TRANSITION__TARGET, oldTarget, target));
@@ -181,9 +197,11 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 			case StatemachineXTextPackage.TRANSITION__EVENT:
 				return getEvent();
 			case StatemachineXTextPackage.TRANSITION__SOURCE:
-				return getSource();
+				if (resolve) return getSource();
+				return basicGetSource();
 			case StatemachineXTextPackage.TRANSITION__TARGET:
-				return getTarget();
+				if (resolve) return getTarget();
+				return basicGetTarget();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -200,10 +218,10 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 				setEvent((String)newValue);
 				return;
 			case StatemachineXTextPackage.TRANSITION__SOURCE:
-				setSource((String)newValue);
+				setSource((AbstractNode)newValue);
 				return;
 			case StatemachineXTextPackage.TRANSITION__TARGET:
-				setTarget((String)newValue);
+				setTarget((AbstractNode)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -221,10 +239,10 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 				setEvent(EVENT_EDEFAULT);
 				return;
 			case StatemachineXTextPackage.TRANSITION__SOURCE:
-				setSource(SOURCE_EDEFAULT);
+				setSource((AbstractNode)null);
 				return;
 			case StatemachineXTextPackage.TRANSITION__TARGET:
-				setTarget(TARGET_EDEFAULT);
+				setTarget((AbstractNode)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -241,9 +259,9 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 			case StatemachineXTextPackage.TRANSITION__EVENT:
 				return EVENT_EDEFAULT == null ? event != null : !EVENT_EDEFAULT.equals(event);
 			case StatemachineXTextPackage.TRANSITION__SOURCE:
-				return SOURCE_EDEFAULT == null ? source != null : !SOURCE_EDEFAULT.equals(source);
+				return source != null;
 			case StatemachineXTextPackage.TRANSITION__TARGET:
-				return TARGET_EDEFAULT == null ? target != null : !TARGET_EDEFAULT.equals(target);
+				return target != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -260,10 +278,6 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (event: ");
 		result.append(event);
-		result.append(", source: ");
-		result.append(source);
-		result.append(", target: ");
-		result.append(target);
 		result.append(')');
 		return result.toString();
 	}

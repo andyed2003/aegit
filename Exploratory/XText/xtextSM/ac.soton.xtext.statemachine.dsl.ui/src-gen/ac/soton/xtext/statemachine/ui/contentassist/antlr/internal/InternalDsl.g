@@ -2374,8 +2374,12 @@ rule__Transition__SourceAssignment_3_1
     }
 :
 (
-{ before(grammarAccess.getTransitionAccess().getSourceEStringParserRuleCall_3_1_0()); }
-	ruleEString{ after(grammarAccess.getTransitionAccess().getSourceEStringParserRuleCall_3_1_0()); }
+{ before(grammarAccess.getTransitionAccess().getSourceAbstractNodeCrossReference_3_1_0()); }
+(
+{ before(grammarAccess.getTransitionAccess().getSourceAbstractNodeEStringParserRuleCall_3_1_0_1()); }
+	ruleEString{ after(grammarAccess.getTransitionAccess().getSourceAbstractNodeEStringParserRuleCall_3_1_0_1()); }
+)
+{ after(grammarAccess.getTransitionAccess().getSourceAbstractNodeCrossReference_3_1_0()); }
 )
 
 ;
@@ -2389,8 +2393,12 @@ rule__Transition__TargetAssignment_4_1
     }
 :
 (
-{ before(grammarAccess.getTransitionAccess().getTargetEStringParserRuleCall_4_1_0()); }
-	ruleEString{ after(grammarAccess.getTransitionAccess().getTargetEStringParserRuleCall_4_1_0()); }
+{ before(grammarAccess.getTransitionAccess().getTargetAbstractNodeCrossReference_4_1_0()); }
+(
+{ before(grammarAccess.getTransitionAccess().getTargetAbstractNodeEStringParserRuleCall_4_1_0_1()); }
+	ruleEString{ after(grammarAccess.getTransitionAccess().getTargetAbstractNodeEStringParserRuleCall_4_1_0_1()); }
+)
+{ after(grammarAccess.getTransitionAccess().getTargetAbstractNodeCrossReference_4_1_0()); }
 )
 
 ;
