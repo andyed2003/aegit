@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/org.eventb.codegen.feature_0.2.6.201410091245.jar" id="org.eventb.codegen.feature" version="0.2.6.201410091245">
+   <feature url="features/org.eventb.codegen.feature_0.2.7.201411100843.jar" id="org.eventb.codegen.feature" version="0.2.7.201411100843">
       <category name="new_category_1"/>
    </feature>
    <category-def name="new_category_1" label="New Category 1"/>
