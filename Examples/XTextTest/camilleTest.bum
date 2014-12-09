@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" org.eventb.texttools.text_lastmodified="1411977665328" org.eventb.texttools.text_representation="machine aa&#10;variables a b c&#10;invariants&#10; @aa a ∈ ℕ&#10; @bb b ∈ BOOL&#10; @cc  a ≥ 0&#10; @dd c ∈ 0‥10&#10;&#10;events&#10;event INITIALISATION&#10;then @ll a ≔ 0&#10;@jh b≔ TRUE&#10;@kjc c ≔  10&#10;end&#10;&#10;event kjh //nnnnn&#10;any p q&#10;where @lkjh p ∈ ℕ   @jhhgjgh q∈ ℤ&#10;then @kjhk a ≔ 0&#10;@jjj c ≔ 0&#10;end&#10;&#10;event evt&#10;when&#10;@hhh a ≠ 0&#10;@jjj a = 0&#10;then&#10;@opui b ≔ FALSE&#10;end&#10;&#10;event evt2&#10;any x&#10;where&#10;@lll x∈ ℤ&#10;@mmm a = 0&#10;then&#10;@nnn b ≔ TRUE&#10;@ppp a ≔x&#10;end&#10;&#10;end&#10;" version="5">
-<org.eventb.core.variable name="_4-__kEelEeSD0dsEqWTJug" org.eventb.core.identifier="a"/>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd;org.eventb.codegen.ui.cgConfig" org.eventb.texttools.text_lastmodified="1411977665328" org.eventb.texttools.text_representation="machine aa&#10;variables a b c&#10;invariants&#10; @aa a ∈ ℕ&#10; @bb b ∈ BOOL&#10; @cc  a ≥ 0&#10; @dd c ∈ 0‥10&#10;&#10;events&#10;event INITIALISATION&#10;then @ll a ≔ 0&#10;@jh b≔ TRUE&#10;@kjc c ≔  10&#10;end&#10;&#10;event kjh //nnnnn&#10;any p q&#10;where @lkjh p ∈ ℕ   @jhhgjgh q∈ ℤ&#10;then @kjhk a ≔ 0&#10;@jjj c ≔ 0&#10;end&#10;&#10;event evt&#10;when&#10;@hhh a ≠ 0&#10;@jjj a = 0&#10;then&#10;@opui b ≔ FALSE&#10;end&#10;&#10;event evt2&#10;any x&#10;where&#10;@lll x∈ ℤ&#10;@mmm a = 0&#10;then&#10;@nnn b ≔ TRUE&#10;@ppp a ≔x&#10;end&#10;&#10;end&#10;" version="5">
+<org.eventb.core.variable name="_4-__kEelEeSD0dsEqWTJug" org.eventb.core.comment="a variable comment" org.eventb.core.identifier="a"/>
 <org.eventb.core.variable name="_4_AmoEelEeSD0dsEqWTJug" org.eventb.core.identifier="b"/>
 <org.eventb.core.variable name="_4_AmoUelEeSD0dsEqWTJug" org.eventb.core.identifier="c"/>
 <org.eventb.core.invariant name="_4_AmokelEeSD0dsEqWTJug" org.eventb.core.label="aa" org.eventb.core.predicate="a ∈ ℕ"/>
@@ -13,7 +13,7 @@
 <org.eventb.core.action name="_U17qMkemEeSD0dsEqWTJug" org.eventb.core.assignment="c ≔  10" org.eventb.core.label="kjc"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="_4_B0wkelEeSD0dsEqWTJug" org.eventb.core.comment="nnnnn" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="kjh">
-<org.eventb.core.parameter name="_4_Cb0EelEeSD0dsEqWTJug" org.eventb.core.identifier="p"/>
+<org.eventb.core.parameter name="_4_Cb0EelEeSD0dsEqWTJug" org.eventb.core.comment="a comment" org.eventb.core.identifier="p"/>
 <org.eventb.core.parameter name="_4_DC4EelEeSD0dsEqWTJug" org.eventb.core.identifier="q"/>
 <org.eventb.core.guard name="_4_DC4UelEeSD0dsEqWTJug" org.eventb.core.label="lkjh" org.eventb.core.predicate="p ∈ ℕ"/>
 <org.eventb.core.guard name="_4_DC4kelEeSD0dsEqWTJug" org.eventb.core.label="jhhgjgh" org.eventb.core.predicate="q∈ ℤ"/>
@@ -32,4 +32,8 @@
 <org.eventb.core.action name="_4_GGMUelEeSD0dsEqWTJug" org.eventb.core.assignment="b ≔ TRUE" org.eventb.core.label="nnn"/>
 <org.eventb.core.action name="_4_GGMkelEeSD0dsEqWTJug" org.eventb.core.assignment="a ≔x" org.eventb.core.label="ppp"/>
 </org.eventb.core.event>
+<org.eventb.tasking.persistence.MachineType name="_U17DIEemEeSD0dsEqWTJuh" org.eventb.tasking.persistence.machineTypeAttribute="AutoTask" org.eventb.tasking.persistence.priority="5">
+<org.eventb.tasking.persistence.TaskType name="'" org.eventb.tasking.persistence.periodicTaskTypeAttribute="0" org.eventb.tasking.persistence.simpleTaskTypeAttribute="NotRequired" org.eventb.tasking.persistence.taskTypeAttribute="Periodic"/>
+<org.eventb.tasking.persistence.TaskBody name="(" org.eventb.tasking.persistence.taskBodyAttribute="kjh;&#10;evt;&#10;evt2"/>
+</org.eventb.tasking.persistence.MachineType>
 </org.eventb.core.machineFile>
