@@ -1,12 +1,12 @@
-Machine m1 // a machine comment
+machine m1 // a machine comment
 
-Variables a  b
+variables a  b
 
-Invariants	
+invariants	
  @inv1 "a:INT" 
  @inv2 "b: BOOL"
 
-Events
+events
  
 event evt1 ordinary 
 any p q
@@ -27,7 +27,7 @@ then
 @act4 "a := 0"
 end		
 		
-End			
+end			
 		
 	
 	

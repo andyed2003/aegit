@@ -1,12 +1,12 @@
-Machine changeMe 			// My comment
+machine changeMe 			// My comment
 
-Variables var1 var2 		// Some variables
+variables var1 var2 		// Some variables
 
-Invariants
+invariants
 @inv1 "var1 ∈ ℕ"
 @lkmj "var2 ∈ ℕ"
 
-Events
+events
 event INITIALISATION
 then
 @act1 "var1 ≔ 0"
@@ -20,4 +20,4 @@ then
 @act1 "var1 ≔ q + 1" @jyu "var2 :∈ ℕ"
 end
 
-End
+end
