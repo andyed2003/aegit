@@ -1,10 +1,11 @@
 machine changeMe 			// My comment
 
-variables var1 var2 		// Some variables
+variables var1 var2 var3 		// Some variables
 
 invariants
 @inv1 "var1 ∈ ℕ"
 @lkmj "var2 ∈ ℕ"
+@kuhf "var3 ∈ INT" 
 
 events
 event INITIALISATION

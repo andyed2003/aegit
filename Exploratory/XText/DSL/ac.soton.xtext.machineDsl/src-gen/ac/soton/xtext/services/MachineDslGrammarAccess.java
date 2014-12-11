@@ -264,314 +264,32 @@ public class MachineDslGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getEndKeyword_10() { return cEndKeyword_10; }
 	}
 
-	public class AbstractExtensionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AbstractExtension");
-		private final RuleCall cExtensionParserRuleCall = (RuleCall)rule.eContents().get(1);
-		
-		//AbstractExtension returns core::AbstractExtension:
-		//	Extension;
-		public ParserRule getRule() { return rule; }
-
-		//Extension
-		public RuleCall getExtensionParserRuleCall() { return cExtensionParserRuleCall; }
-	}
-
-	public class AnnotationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Annotation");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cAnnotationAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cAnnotationKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cSourceKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cSourceAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cSourceEStringParserRuleCall_3_1_0 = (RuleCall)cSourceAssignment_3_1.eContents().get(0);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cReferencesKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
-		private final Assignment cReferencesAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
-		private final CrossReference cReferencesEObjectCrossReference_4_2_0 = (CrossReference)cReferencesAssignment_4_2.eContents().get(0);
-		private final RuleCall cReferencesEObjectEStringParserRuleCall_4_2_0_1 = (RuleCall)cReferencesEObjectCrossReference_4_2_0.eContents().get(1);
-		private final Group cGroup_4_3 = (Group)cGroup_4.eContents().get(3);
-		private final Keyword cCommaKeyword_4_3_0 = (Keyword)cGroup_4_3.eContents().get(0);
-		private final Assignment cReferencesAssignment_4_3_1 = (Assignment)cGroup_4_3.eContents().get(1);
-		private final CrossReference cReferencesEObjectCrossReference_4_3_1_0 = (CrossReference)cReferencesAssignment_4_3_1.eContents().get(0);
-		private final RuleCall cReferencesEObjectEStringParserRuleCall_4_3_1_0_1 = (RuleCall)cReferencesEObjectCrossReference_4_3_1_0.eContents().get(1);
-		private final Keyword cRightParenthesisKeyword_4_4 = (Keyword)cGroup_4.eContents().get(4);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cAnnotationsKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
-		private final Assignment cAnnotationsAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
-		private final RuleCall cAnnotationsAnnotationParserRuleCall_5_2_0 = (RuleCall)cAnnotationsAssignment_5_2.eContents().get(0);
-		private final Group cGroup_5_3 = (Group)cGroup_5.eContents().get(3);
-		private final Keyword cCommaKeyword_5_3_0 = (Keyword)cGroup_5_3.eContents().get(0);
-		private final Assignment cAnnotationsAssignment_5_3_1 = (Assignment)cGroup_5_3.eContents().get(1);
-		private final RuleCall cAnnotationsAnnotationParserRuleCall_5_3_1_0 = (RuleCall)cAnnotationsAssignment_5_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5_4 = (Keyword)cGroup_5.eContents().get(4);
-		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cDetailsKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
-		private final Assignment cDetailsAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
-		private final RuleCall cDetailsStringToStringMapEntryParserRuleCall_6_2_0 = (RuleCall)cDetailsAssignment_6_2.eContents().get(0);
-		private final Group cGroup_6_3 = (Group)cGroup_6.eContents().get(3);
-		private final Keyword cCommaKeyword_6_3_0 = (Keyword)cGroup_6_3.eContents().get(0);
-		private final Assignment cDetailsAssignment_6_3_1 = (Assignment)cGroup_6_3.eContents().get(1);
-		private final RuleCall cDetailsStringToStringMapEntryParserRuleCall_6_3_1_0 = (RuleCall)cDetailsAssignment_6_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_6_4 = (Keyword)cGroup_6.eContents().get(4);
-		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Keyword cContentsKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
-		private final Assignment cContentsAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
-		private final RuleCall cContentsEObjectParserRuleCall_7_2_0 = (RuleCall)cContentsAssignment_7_2.eContents().get(0);
-		private final Group cGroup_7_3 = (Group)cGroup_7.eContents().get(3);
-		private final Keyword cCommaKeyword_7_3_0 = (Keyword)cGroup_7_3.eContents().get(0);
-		private final Assignment cContentsAssignment_7_3_1 = (Assignment)cGroup_7_3.eContents().get(1);
-		private final RuleCall cContentsEObjectParserRuleCall_7_3_1_0 = (RuleCall)cContentsAssignment_7_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_7_4 = (Keyword)cGroup_7.eContents().get(4);
-		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
-		
-		//Annotation returns core::Annotation:
-		//	{core::Annotation} "Annotation" "{" ("source" source=EString)? ("references" "(" references+=[ecore::EObject|EString]
-		//	("," references+=[ecore::EObject|EString])* ")")? ("annotations" "{" annotations+=Annotation (","
-		//	annotations+=Annotation)* "}")? ("details" "{" details+=StringToStringMapEntry ("," details+=StringToStringMapEntry)*
-		//	"}")? ("contents" "{" contents+=EObject ("," contents+=EObject)* "}")? "}";
-		public ParserRule getRule() { return rule; }
-
-		//{core::Annotation} "Annotation" "{" ("source" source=EString)? ("references" "(" references+=[ecore::EObject|EString]
-		//("," references+=[ecore::EObject|EString])* ")")? ("annotations" "{" annotations+=Annotation (","
-		//annotations+=Annotation)* "}")? ("details" "{" details+=StringToStringMapEntry ("," details+=StringToStringMapEntry)*
-		//"}")? ("contents" "{" contents+=EObject ("," contents+=EObject)* "}")? "}"
-		public Group getGroup() { return cGroup; }
-
-		//{core::Annotation}
-		public Action getAnnotationAction_0() { return cAnnotationAction_0; }
-
-		//"Annotation"
-		public Keyword getAnnotationKeyword_1() { return cAnnotationKeyword_1; }
-
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
-
-		//("source" source=EString)?
-		public Group getGroup_3() { return cGroup_3; }
-
-		//"source"
-		public Keyword getSourceKeyword_3_0() { return cSourceKeyword_3_0; }
-
-		//source=EString
-		public Assignment getSourceAssignment_3_1() { return cSourceAssignment_3_1; }
-
-		//EString
-		public RuleCall getSourceEStringParserRuleCall_3_1_0() { return cSourceEStringParserRuleCall_3_1_0; }
-
-		//("references" "(" references+=[ecore::EObject|EString] ("," references+=[ecore::EObject|EString])* ")")?
-		public Group getGroup_4() { return cGroup_4; }
-
-		//"references"
-		public Keyword getReferencesKeyword_4_0() { return cReferencesKeyword_4_0; }
-
-		//"("
-		public Keyword getLeftParenthesisKeyword_4_1() { return cLeftParenthesisKeyword_4_1; }
-
-		//references+=[ecore::EObject|EString]
-		public Assignment getReferencesAssignment_4_2() { return cReferencesAssignment_4_2; }
-
-		//[ecore::EObject|EString]
-		public CrossReference getReferencesEObjectCrossReference_4_2_0() { return cReferencesEObjectCrossReference_4_2_0; }
-
-		//EString
-		public RuleCall getReferencesEObjectEStringParserRuleCall_4_2_0_1() { return cReferencesEObjectEStringParserRuleCall_4_2_0_1; }
-
-		//("," references+=[ecore::EObject|EString])*
-		public Group getGroup_4_3() { return cGroup_4_3; }
-
-		//","
-		public Keyword getCommaKeyword_4_3_0() { return cCommaKeyword_4_3_0; }
-
-		//references+=[ecore::EObject|EString]
-		public Assignment getReferencesAssignment_4_3_1() { return cReferencesAssignment_4_3_1; }
-
-		//[ecore::EObject|EString]
-		public CrossReference getReferencesEObjectCrossReference_4_3_1_0() { return cReferencesEObjectCrossReference_4_3_1_0; }
-
-		//EString
-		public RuleCall getReferencesEObjectEStringParserRuleCall_4_3_1_0_1() { return cReferencesEObjectEStringParserRuleCall_4_3_1_0_1; }
-
-		//")"
-		public Keyword getRightParenthesisKeyword_4_4() { return cRightParenthesisKeyword_4_4; }
-
-		//("annotations" "{" annotations+=Annotation ("," annotations+=Annotation)* "}")?
-		public Group getGroup_5() { return cGroup_5; }
-
-		//"annotations"
-		public Keyword getAnnotationsKeyword_5_0() { return cAnnotationsKeyword_5_0; }
-
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_5_1() { return cLeftCurlyBracketKeyword_5_1; }
-
-		//annotations+=Annotation
-		public Assignment getAnnotationsAssignment_5_2() { return cAnnotationsAssignment_5_2; }
-
-		//Annotation
-		public RuleCall getAnnotationsAnnotationParserRuleCall_5_2_0() { return cAnnotationsAnnotationParserRuleCall_5_2_0; }
-
-		//("," annotations+=Annotation)*
-		public Group getGroup_5_3() { return cGroup_5_3; }
-
-		//","
-		public Keyword getCommaKeyword_5_3_0() { return cCommaKeyword_5_3_0; }
-
-		//annotations+=Annotation
-		public Assignment getAnnotationsAssignment_5_3_1() { return cAnnotationsAssignment_5_3_1; }
-
-		//Annotation
-		public RuleCall getAnnotationsAnnotationParserRuleCall_5_3_1_0() { return cAnnotationsAnnotationParserRuleCall_5_3_1_0; }
-
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_5_4() { return cRightCurlyBracketKeyword_5_4; }
-
-		//("details" "{" details+=StringToStringMapEntry ("," details+=StringToStringMapEntry)* "}")?
-		public Group getGroup_6() { return cGroup_6; }
-
-		//"details"
-		public Keyword getDetailsKeyword_6_0() { return cDetailsKeyword_6_0; }
-
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_6_1() { return cLeftCurlyBracketKeyword_6_1; }
-
-		//details+=StringToStringMapEntry
-		public Assignment getDetailsAssignment_6_2() { return cDetailsAssignment_6_2; }
-
-		//StringToStringMapEntry
-		public RuleCall getDetailsStringToStringMapEntryParserRuleCall_6_2_0() { return cDetailsStringToStringMapEntryParserRuleCall_6_2_0; }
-
-		//("," details+=StringToStringMapEntry)*
-		public Group getGroup_6_3() { return cGroup_6_3; }
-
-		//","
-		public Keyword getCommaKeyword_6_3_0() { return cCommaKeyword_6_3_0; }
-
-		//details+=StringToStringMapEntry
-		public Assignment getDetailsAssignment_6_3_1() { return cDetailsAssignment_6_3_1; }
-
-		//StringToStringMapEntry
-		public RuleCall getDetailsStringToStringMapEntryParserRuleCall_6_3_1_0() { return cDetailsStringToStringMapEntryParserRuleCall_6_3_1_0; }
-
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_6_4() { return cRightCurlyBracketKeyword_6_4; }
-
-		//("contents" "{" contents+=EObject ("," contents+=EObject)* "}")?
-		public Group getGroup_7() { return cGroup_7; }
-
-		//"contents"
-		public Keyword getContentsKeyword_7_0() { return cContentsKeyword_7_0; }
-
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_7_1() { return cLeftCurlyBracketKeyword_7_1; }
-
-		//contents+=EObject
-		public Assignment getContentsAssignment_7_2() { return cContentsAssignment_7_2; }
-
-		//EObject
-		public RuleCall getContentsEObjectParserRuleCall_7_2_0() { return cContentsEObjectParserRuleCall_7_2_0; }
-
-		//("," contents+=EObject)*
-		public Group getGroup_7_3() { return cGroup_7_3; }
-
-		//","
-		public Keyword getCommaKeyword_7_3_0() { return cCommaKeyword_7_3_0; }
-
-		//contents+=EObject
-		public Assignment getContentsAssignment_7_3_1() { return cContentsAssignment_7_3_1; }
-
-		//EObject
-		public RuleCall getContentsEObjectParserRuleCall_7_3_1_0() { return cContentsEObjectParserRuleCall_7_3_1_0; }
-
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_7_4() { return cRightCurlyBracketKeyword_7_4; }
-
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
-	}
-
-	public class StringToAttributeMapEntryElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "StringToAttributeMapEntry");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cStringToAttributeMapEntryKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cKeyKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cKeyAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cKeyEStringParserRuleCall_3_0 = (RuleCall)cKeyAssignment_3.eContents().get(0);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cValueKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cValueAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cValueAttributeParserRuleCall_4_1_0 = (RuleCall)cValueAssignment_4_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		
-		//StringToAttributeMapEntry returns core::StringToAttributeMapEntry:
-		//	"StringToAttributeMapEntry" "{" "key" key=EString ("value" value=Attribute)? "}";
-		public ParserRule getRule() { return rule; }
-
-		//"StringToAttributeMapEntry" "{" "key" key=EString ("value" value=Attribute)? "}"
-		public Group getGroup() { return cGroup; }
-
-		//"StringToAttributeMapEntry"
-		public Keyword getStringToAttributeMapEntryKeyword_0() { return cStringToAttributeMapEntryKeyword_0; }
-
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
-
-		//"key"
-		public Keyword getKeyKeyword_2() { return cKeyKeyword_2; }
-
-		//key=EString
-		public Assignment getKeyAssignment_3() { return cKeyAssignment_3; }
-
-		//EString
-		public RuleCall getKeyEStringParserRuleCall_3_0() { return cKeyEStringParserRuleCall_3_0; }
-
-		//("value" value=Attribute)?
-		public Group getGroup_4() { return cGroup_4; }
-
-		//"value"
-		public Keyword getValueKeyword_4_0() { return cValueKeyword_4_0; }
-
-		//value=Attribute
-		public Assignment getValueAssignment_4_1() { return cValueAssignment_4_1; }
-
-		//Attribute
-		public RuleCall getValueAttributeParserRuleCall_4_1_0() { return cValueAttributeParserRuleCall_4_1_0; }
-
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
-	}
-
-	public class EBooleanElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "EBoolean");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Keyword cTrueKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
-		private final Keyword cFalseKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
-		
-		//EBoolean returns ecore::EBoolean:
-		//	"true" | "false";
-		public ParserRule getRule() { return rule; }
-
-		//"true" | "false"
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//"true"
-		public Keyword getTrueKeyword_0() { return cTrueKeyword_0; }
-
-		//"false"
-		public Keyword getFalseKeyword_1() { return cFalseKeyword_1; }
-	}
-
 	public class EStringElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "EString");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cSTRINGTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cIDTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
+		////AbstractExtension returns core::AbstractExtension:
+		////	Extension;
+		////Annotation returns core::Annotation:
+		////	{core::Annotation}
+		////	'Annotation'
+		////	'{'
+		////		('source' source=EString)?
+		////		('references' '(' references+=[ecore::EObject|EString] ( "," references+=[ecore::EObject|EString])* ')' )?
+		////		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
+		////		('details' '{' details+=StringToStringMapEntry ( "," details+=StringToStringMapEntry)* '}' )?
+		////		('contents' '{' contents+=EObject ( "," contents+=EObject)* '}' )?
+		////	'}';
+		////StringToAttributeMapEntry returns core::StringToAttributeMapEntry:
+		////	'StringToAttributeMapEntry'
+		////	'{'
+		////		'key' key=EString
+		////		('value' value=Attribute)?
+		////	'}';
+		////EBoolean returns ecore::EBoolean:
+		////	'true' | 'false';
 		//EString returns ecore::EString:
 		//	STRING | ID;
 		public ParserRule getRule() { return rule; }
@@ -1031,697 +749,48 @@ public class MachineDslGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getEndKeyword_11() { return cEndKeyword_11; }
 	}
 
-	public class StringToStringMapEntryElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "StringToStringMapEntry");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cStringToStringMapEntryAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cStringToStringMapEntryKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cKeyKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cKeyAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cKeyEStringParserRuleCall_3_1_0 = (RuleCall)cKeyAssignment_3_1.eContents().get(0);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cValueKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cValueAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cValueEStringParserRuleCall_4_1_0 = (RuleCall)cValueAssignment_4_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		
-		//StringToStringMapEntry returns core::StringToStringMapEntry:
-		//	{core::StringToStringMapEntry} "StringToStringMapEntry" "{" ("key" key=EString)? ("value" value=EString)? "}";
-		public ParserRule getRule() { return rule; }
-
-		//{core::StringToStringMapEntry} "StringToStringMapEntry" "{" ("key" key=EString)? ("value" value=EString)? "}"
-		public Group getGroup() { return cGroup; }
-
-		//{core::StringToStringMapEntry}
-		public Action getStringToStringMapEntryAction_0() { return cStringToStringMapEntryAction_0; }
-
-		//"StringToStringMapEntry"
-		public Keyword getStringToStringMapEntryKeyword_1() { return cStringToStringMapEntryKeyword_1; }
-
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
-
-		//("key" key=EString)?
-		public Group getGroup_3() { return cGroup_3; }
-
-		//"key"
-		public Keyword getKeyKeyword_3_0() { return cKeyKeyword_3_0; }
-
-		//key=EString
-		public Assignment getKeyAssignment_3_1() { return cKeyAssignment_3_1; }
-
-		//EString
-		public RuleCall getKeyEStringParserRuleCall_3_1_0() { return cKeyEStringParserRuleCall_3_1_0; }
-
-		//("value" value=EString)?
-		public Group getGroup_4() { return cGroup_4; }
-
-		//"value"
-		public Keyword getValueKeyword_4_0() { return cValueKeyword_4_0; }
-
-		//value=EString
-		public Assignment getValueAssignment_4_1() { return cValueAssignment_4_1; }
-
-		//EString
-		public RuleCall getValueEStringParserRuleCall_4_1_0() { return cValueEStringParserRuleCall_4_1_0; }
-
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
-	}
-
-	public class EObjectElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "EObject");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cEObjectAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cEObjectKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		
-		//EObject returns ecore::EObject:
-		//	{ecore::EObject} "EObject";
-		public ParserRule getRule() { return rule; }
-
-		//{ecore::EObject} "EObject"
-		public Group getGroup() { return cGroup; }
-
-		//{ecore::EObject}
-		public Action getEObjectAction_0() { return cEObjectAction_0; }
-
-		//"EObject"
-		public Keyword getEObjectKeyword_1() { return cEObjectKeyword_1; }
-	}
-
-	public class ExtensionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Extension");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cLocalGeneratedAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final Keyword cLocalGeneratedLocalGeneratedKeyword_0_0 = (Keyword)cLocalGeneratedAssignment_0.eContents().get(0);
-		private final Keyword cExtensionKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cInternalIdKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cInternalIdAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cInternalIdEStringParserRuleCall_2_1_0 = (RuleCall)cInternalIdAssignment_2_1.eContents().get(0);
-		private final Keyword cExtensionIdKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cExtensionIdAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cExtensionIdEStringParserRuleCall_4_0 = (RuleCall)cExtensionIdAssignment_4.eContents().get(0);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cAnnotationsKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
-		private final Assignment cAnnotationsAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
-		private final RuleCall cAnnotationsAnnotationParserRuleCall_5_2_0 = (RuleCall)cAnnotationsAssignment_5_2.eContents().get(0);
-		private final Group cGroup_5_3 = (Group)cGroup_5.eContents().get(3);
-		private final Keyword cCommaKeyword_5_3_0 = (Keyword)cGroup_5_3.eContents().get(0);
-		private final Assignment cAnnotationsAssignment_5_3_1 = (Assignment)cGroup_5_3.eContents().get(1);
-		private final RuleCall cAnnotationsAnnotationParserRuleCall_5_3_1_0 = (RuleCall)cAnnotationsAssignment_5_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5_4 = (Keyword)cGroup_5.eContents().get(4);
-		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cExtensionsKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
-		private final Assignment cExtensionsAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
-		private final RuleCall cExtensionsAbstractExtensionParserRuleCall_6_2_0 = (RuleCall)cExtensionsAssignment_6_2.eContents().get(0);
-		private final Group cGroup_6_3 = (Group)cGroup_6.eContents().get(3);
-		private final Keyword cCommaKeyword_6_3_0 = (Keyword)cGroup_6_3.eContents().get(0);
-		private final Assignment cExtensionsAssignment_6_3_1 = (Assignment)cGroup_6_3.eContents().get(1);
-		private final RuleCall cExtensionsAbstractExtensionParserRuleCall_6_3_1_0 = (RuleCall)cExtensionsAssignment_6_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_6_4 = (Keyword)cGroup_6.eContents().get(4);
-		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Keyword cAttributesKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
-		private final Assignment cAttributesAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
-		private final RuleCall cAttributesStringToAttributeMapEntryParserRuleCall_7_2_0 = (RuleCall)cAttributesAssignment_7_2.eContents().get(0);
-		private final Group cGroup_7_3 = (Group)cGroup_7.eContents().get(3);
-		private final Keyword cCommaKeyword_7_3_0 = (Keyword)cGroup_7_3.eContents().get(0);
-		private final Assignment cAttributesAssignment_7_3_1 = (Assignment)cGroup_7_3.eContents().get(1);
-		private final RuleCall cAttributesStringToAttributeMapEntryParserRuleCall_7_3_1_0 = (RuleCall)cAttributesAssignment_7_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_7_4 = (Keyword)cGroup_7.eContents().get(4);
-		
-		////	'}'
-		//Extension returns core::Extension:
-		//	localGenerated?="localGenerated"? "Extension" //	'{'
-		//	("internalId" internalId=EString)? "extensionId" extensionId=EString ("annotations" "{" annotations+=Annotation (","
-		//	annotations+=Annotation)* "}")? ("extensions" "{" extensions+=AbstractExtension ("," extensions+=AbstractExtension)*
-		//	"}")? ("attributes" "{" attributes+=StringToAttributeMapEntry ("," attributes+=StringToAttributeMapEntry)* "}")?;
-		public ParserRule getRule() { return rule; }
-
-		//localGenerated?="localGenerated"? "Extension" //	'{'
-		//("internalId" internalId=EString)? "extensionId" extensionId=EString ("annotations" "{" annotations+=Annotation (","
-		//annotations+=Annotation)* "}")? ("extensions" "{" extensions+=AbstractExtension ("," extensions+=AbstractExtension)*
-		//"}")? ("attributes" "{" attributes+=StringToAttributeMapEntry ("," attributes+=StringToAttributeMapEntry)* "}")?
-		public Group getGroup() { return cGroup; }
-
-		//localGenerated?="localGenerated"?
-		public Assignment getLocalGeneratedAssignment_0() { return cLocalGeneratedAssignment_0; }
-
-		//"localGenerated"
-		public Keyword getLocalGeneratedLocalGeneratedKeyword_0_0() { return cLocalGeneratedLocalGeneratedKeyword_0_0; }
-
-		//"Extension"
-		public Keyword getExtensionKeyword_1() { return cExtensionKeyword_1; }
-
-		//("internalId" internalId=EString)?
-		public Group getGroup_2() { return cGroup_2; }
-
-		//"internalId"
-		public Keyword getInternalIdKeyword_2_0() { return cInternalIdKeyword_2_0; }
-
-		//internalId=EString
-		public Assignment getInternalIdAssignment_2_1() { return cInternalIdAssignment_2_1; }
-
-		//EString
-		public RuleCall getInternalIdEStringParserRuleCall_2_1_0() { return cInternalIdEStringParserRuleCall_2_1_0; }
-
-		//"extensionId"
-		public Keyword getExtensionIdKeyword_3() { return cExtensionIdKeyword_3; }
-
-		//extensionId=EString
-		public Assignment getExtensionIdAssignment_4() { return cExtensionIdAssignment_4; }
-
-		//EString
-		public RuleCall getExtensionIdEStringParserRuleCall_4_0() { return cExtensionIdEStringParserRuleCall_4_0; }
-
-		//("annotations" "{" annotations+=Annotation ("," annotations+=Annotation)* "}")?
-		public Group getGroup_5() { return cGroup_5; }
-
-		//"annotations"
-		public Keyword getAnnotationsKeyword_5_0() { return cAnnotationsKeyword_5_0; }
-
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_5_1() { return cLeftCurlyBracketKeyword_5_1; }
-
-		//annotations+=Annotation
-		public Assignment getAnnotationsAssignment_5_2() { return cAnnotationsAssignment_5_2; }
-
-		//Annotation
-		public RuleCall getAnnotationsAnnotationParserRuleCall_5_2_0() { return cAnnotationsAnnotationParserRuleCall_5_2_0; }
-
-		//("," annotations+=Annotation)*
-		public Group getGroup_5_3() { return cGroup_5_3; }
-
-		//","
-		public Keyword getCommaKeyword_5_3_0() { return cCommaKeyword_5_3_0; }
-
-		//annotations+=Annotation
-		public Assignment getAnnotationsAssignment_5_3_1() { return cAnnotationsAssignment_5_3_1; }
-
-		//Annotation
-		public RuleCall getAnnotationsAnnotationParserRuleCall_5_3_1_0() { return cAnnotationsAnnotationParserRuleCall_5_3_1_0; }
-
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_5_4() { return cRightCurlyBracketKeyword_5_4; }
-
-		//("extensions" "{" extensions+=AbstractExtension ("," extensions+=AbstractExtension)* "}")?
-		public Group getGroup_6() { return cGroup_6; }
-
-		//"extensions"
-		public Keyword getExtensionsKeyword_6_0() { return cExtensionsKeyword_6_0; }
-
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_6_1() { return cLeftCurlyBracketKeyword_6_1; }
-
-		//extensions+=AbstractExtension
-		public Assignment getExtensionsAssignment_6_2() { return cExtensionsAssignment_6_2; }
-
-		//AbstractExtension
-		public RuleCall getExtensionsAbstractExtensionParserRuleCall_6_2_0() { return cExtensionsAbstractExtensionParserRuleCall_6_2_0; }
-
-		//("," extensions+=AbstractExtension)*
-		public Group getGroup_6_3() { return cGroup_6_3; }
-
-		//","
-		public Keyword getCommaKeyword_6_3_0() { return cCommaKeyword_6_3_0; }
-
-		//extensions+=AbstractExtension
-		public Assignment getExtensionsAssignment_6_3_1() { return cExtensionsAssignment_6_3_1; }
-
-		//AbstractExtension
-		public RuleCall getExtensionsAbstractExtensionParserRuleCall_6_3_1_0() { return cExtensionsAbstractExtensionParserRuleCall_6_3_1_0; }
-
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_6_4() { return cRightCurlyBracketKeyword_6_4; }
-
-		//("attributes" "{" attributes+=StringToAttributeMapEntry ("," attributes+=StringToAttributeMapEntry)* "}")?
-		public Group getGroup_7() { return cGroup_7; }
-
-		//"attributes"
-		public Keyword getAttributesKeyword_7_0() { return cAttributesKeyword_7_0; }
-
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_7_1() { return cLeftCurlyBracketKeyword_7_1; }
-
-		//attributes+=StringToAttributeMapEntry
-		public Assignment getAttributesAssignment_7_2() { return cAttributesAssignment_7_2; }
-
-		//StringToAttributeMapEntry
-		public RuleCall getAttributesStringToAttributeMapEntryParserRuleCall_7_2_0() { return cAttributesStringToAttributeMapEntryParserRuleCall_7_2_0; }
-
-		//("," attributes+=StringToAttributeMapEntry)*
-		public Group getGroup_7_3() { return cGroup_7_3; }
-
-		//","
-		public Keyword getCommaKeyword_7_3_0() { return cCommaKeyword_7_3_0; }
-
-		//attributes+=StringToAttributeMapEntry
-		public Assignment getAttributesAssignment_7_3_1() { return cAttributesAssignment_7_3_1; }
-
-		//StringToAttributeMapEntry
-		public RuleCall getAttributesStringToAttributeMapEntryParserRuleCall_7_3_1_0() { return cAttributesStringToAttributeMapEntryParserRuleCall_7_3_1_0; }
-
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_7_4() { return cRightCurlyBracketKeyword_7_4; }
-	}
-
-	public class AttributeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Attribute");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cAttributeKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cTypeKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cTypeAttributeTypeEnumRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
-		private final Keyword cValueKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cValueAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cValueEJavaObjectParserRuleCall_4_0 = (RuleCall)cValueAssignment_4.eContents().get(0);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cAnnotationsKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
-		private final Assignment cAnnotationsAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
-		private final RuleCall cAnnotationsAnnotationParserRuleCall_5_2_0 = (RuleCall)cAnnotationsAssignment_5_2.eContents().get(0);
-		private final Group cGroup_5_3 = (Group)cGroup_5.eContents().get(3);
-		private final Keyword cCommaKeyword_5_3_0 = (Keyword)cGroup_5_3.eContents().get(0);
-		private final Assignment cAnnotationsAssignment_5_3_1 = (Assignment)cGroup_5_3.eContents().get(1);
-		private final RuleCall cAnnotationsAnnotationParserRuleCall_5_3_1_0 = (RuleCall)cAnnotationsAssignment_5_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5_4 = (Keyword)cGroup_5.eContents().get(4);
-		
-		////	'}'
-		//Attribute returns core::Attribute:
-		//	"Attribute" //	'{'
-		//	"type" type=AttributeType "value" value=EJavaObject ("annotations" "{" annotations+=Annotation (","
-		//	annotations+=Annotation)* "}")?;
-		public ParserRule getRule() { return rule; }
-
-		//"Attribute" //	'{'
-		//"type" type=AttributeType "value" value=EJavaObject ("annotations" "{" annotations+=Annotation (","
-		//annotations+=Annotation)* "}")?
-		public Group getGroup() { return cGroup; }
-
-		//"Attribute"
-		public Keyword getAttributeKeyword_0() { return cAttributeKeyword_0; }
-
-		////	'{'
-		//"type"
-		public Keyword getTypeKeyword_1() { return cTypeKeyword_1; }
-
-		//type=AttributeType
-		public Assignment getTypeAssignment_2() { return cTypeAssignment_2; }
-
-		//AttributeType
-		public RuleCall getTypeAttributeTypeEnumRuleCall_2_0() { return cTypeAttributeTypeEnumRuleCall_2_0; }
-
-		//"value"
-		public Keyword getValueKeyword_3() { return cValueKeyword_3; }
-
-		//value=EJavaObject
-		public Assignment getValueAssignment_4() { return cValueAssignment_4; }
-
-		//EJavaObject
-		public RuleCall getValueEJavaObjectParserRuleCall_4_0() { return cValueEJavaObjectParserRuleCall_4_0; }
-
-		//("annotations" "{" annotations+=Annotation ("," annotations+=Annotation)* "}")?
-		public Group getGroup_5() { return cGroup_5; }
-
-		//"annotations"
-		public Keyword getAnnotationsKeyword_5_0() { return cAnnotationsKeyword_5_0; }
-
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_5_1() { return cLeftCurlyBracketKeyword_5_1; }
-
-		//annotations+=Annotation
-		public Assignment getAnnotationsAssignment_5_2() { return cAnnotationsAssignment_5_2; }
-
-		//Annotation
-		public RuleCall getAnnotationsAnnotationParserRuleCall_5_2_0() { return cAnnotationsAnnotationParserRuleCall_5_2_0; }
-
-		//("," annotations+=Annotation)*
-		public Group getGroup_5_3() { return cGroup_5_3; }
-
-		//","
-		public Keyword getCommaKeyword_5_3_0() { return cCommaKeyword_5_3_0; }
-
-		//annotations+=Annotation
-		public Assignment getAnnotationsAssignment_5_3_1() { return cAnnotationsAssignment_5_3_1; }
-
-		//Annotation
-		public RuleCall getAnnotationsAnnotationParserRuleCall_5_3_1_0() { return cAnnotationsAnnotationParserRuleCall_5_3_1_0; }
-
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_5_4() { return cRightCurlyBracketKeyword_5_4; }
-	}
-
 	public class EJavaObjectElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "EJavaObject");
 		private final Keyword cEJavaObjectKeyword = (Keyword)rule.eContents().get(1);
 		
+		////StringToStringMapEntry returns core::StringToStringMapEntry:
+		////	{core::StringToStringMapEntry}
+		////	'StringToStringMapEntry'
+		////	'{'
+		////		('key' key=EString)?
+		////		('value' value=EString)?
+		////	'}';
+		////EObject returns ecore::EObject:
+		////	{ecore::EObject}
+		////	'EObject'
+		////	;
+		////Extension returns core::Extension:
+		////	(localGenerated?='localGenerated')?
+		////	'Extension'
+		////	'{'
+		////		('internalId' internalId=EString)?
+		////		'extensionId' extensionId=EString
+		////		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
+		////		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
+		////		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
+		////	'}'
+		////	;
+		////Attribute returns core::Attribute:
+		////	'Attribute'
+		////	'{'
+		////		'type' type=AttributeType
+		////		'value' value=EJavaObject
+		////		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
+		////	'}'
+		////	;
+		////enum AttributeType returns core::AttributeType:
+		////				Boolean = 'Boolean' | Handle = 'Handle' | Integer = 'Integer' | Long = 'Long' | String = 'String';
 		/// * TODO: implement this rule and an appropriate IValueConverter * / EJavaObject returns ecore::EJavaObject:
 		//	"EJavaObject";
 		public ParserRule getRule() { return rule; }
 
 		//"EJavaObject"
 		public Keyword getEJavaObjectKeyword() { return cEJavaObjectKeyword; }
-	}
-
-	public class CarrierSetElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "CarrierSet");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cCarrierSetAction_0 = (Action)cGroup.eContents().get(0);
-		private final Assignment cLocalGeneratedAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final Keyword cLocalGeneratedLocalGeneratedKeyword_1_0 = (Keyword)cLocalGeneratedAssignment_1.eContents().get(0);
-		private final Keyword cCarrierSetKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cNameEStringParserRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cSolidusSolidusKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cCommentAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cCommentEStringParserRuleCall_4_1_0 = (RuleCall)cCommentAssignment_4_1.eContents().get(0);
-		
-		////		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
-		////		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
-		////		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
-		////	'}'
-		//CarrierSet returns context::CarrierSet:
-		//	{context::CarrierSet} localGenerated?="localGenerated"? "carrierSet" name=EString //	'{'
-		//	//		('internalId' internalId=EString)?
-		//	("//" comment=EString)?;
-		public ParserRule getRule() { return rule; }
-
-		//{context::CarrierSet} localGenerated?="localGenerated"? "carrierSet" name=EString //	'{'
-		////		('internalId' internalId=EString)?
-		//("//" comment=EString)?
-		public Group getGroup() { return cGroup; }
-
-		//{context::CarrierSet}
-		public Action getCarrierSetAction_0() { return cCarrierSetAction_0; }
-
-		//localGenerated?="localGenerated"?
-		public Assignment getLocalGeneratedAssignment_1() { return cLocalGeneratedAssignment_1; }
-
-		//"localGenerated"
-		public Keyword getLocalGeneratedLocalGeneratedKeyword_1_0() { return cLocalGeneratedLocalGeneratedKeyword_1_0; }
-
-		//"carrierSet"
-		public Keyword getCarrierSetKeyword_2() { return cCarrierSetKeyword_2; }
-
-		//name=EString
-		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
-
-		//EString
-		public RuleCall getNameEStringParserRuleCall_3_0() { return cNameEStringParserRuleCall_3_0; }
-
-		//("//" comment=EString)?
-		public Group getGroup_4() { return cGroup_4; }
-
-		//"//"
-		public Keyword getSolidusSolidusKeyword_4_0() { return cSolidusSolidusKeyword_4_0; }
-
-		//comment=EString
-		public Assignment getCommentAssignment_4_1() { return cCommentAssignment_4_1; }
-
-		//EString
-		public RuleCall getCommentEStringParserRuleCall_4_1_0() { return cCommentEStringParserRuleCall_4_1_0; }
-	}
-
-	public class ConstantElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Constant");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cConstantAction_0 = (Action)cGroup.eContents().get(0);
-		private final Assignment cLocalGeneratedAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final Keyword cLocalGeneratedLocalGeneratedKeyword_1_0 = (Keyword)cLocalGeneratedAssignment_1.eContents().get(0);
-		private final Keyword cConstantKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cNameEStringParserRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cInternalIdKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cInternalIdAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cInternalIdEStringParserRuleCall_5_1_0 = (RuleCall)cInternalIdAssignment_5_1.eContents().get(0);
-		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cSolidusSolidusKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Assignment cCommentAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
-		private final RuleCall cCommentEStringParserRuleCall_6_1_0 = (RuleCall)cCommentAssignment_6_1.eContents().get(0);
-		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Keyword cAnnotationsKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
-		private final Assignment cAnnotationsAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
-		private final RuleCall cAnnotationsAnnotationParserRuleCall_7_2_0 = (RuleCall)cAnnotationsAssignment_7_2.eContents().get(0);
-		private final Group cGroup_7_3 = (Group)cGroup_7.eContents().get(3);
-		private final Keyword cCommaKeyword_7_3_0 = (Keyword)cGroup_7_3.eContents().get(0);
-		private final Assignment cAnnotationsAssignment_7_3_1 = (Assignment)cGroup_7_3.eContents().get(1);
-		private final RuleCall cAnnotationsAnnotationParserRuleCall_7_3_1_0 = (RuleCall)cAnnotationsAssignment_7_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_7_4 = (Keyword)cGroup_7.eContents().get(4);
-		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
-		private final Keyword cExtensionsKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
-		private final Assignment cExtensionsAssignment_8_2 = (Assignment)cGroup_8.eContents().get(2);
-		private final RuleCall cExtensionsAbstractExtensionParserRuleCall_8_2_0 = (RuleCall)cExtensionsAssignment_8_2.eContents().get(0);
-		private final Group cGroup_8_3 = (Group)cGroup_8.eContents().get(3);
-		private final Keyword cCommaKeyword_8_3_0 = (Keyword)cGroup_8_3.eContents().get(0);
-		private final Assignment cExtensionsAssignment_8_3_1 = (Assignment)cGroup_8_3.eContents().get(1);
-		private final RuleCall cExtensionsAbstractExtensionParserRuleCall_8_3_1_0 = (RuleCall)cExtensionsAssignment_8_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_8_4 = (Keyword)cGroup_8.eContents().get(4);
-		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
-		private final Keyword cAttributesKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_9_1 = (Keyword)cGroup_9.eContents().get(1);
-		private final Assignment cAttributesAssignment_9_2 = (Assignment)cGroup_9.eContents().get(2);
-		private final RuleCall cAttributesStringToAttributeMapEntryParserRuleCall_9_2_0 = (RuleCall)cAttributesAssignment_9_2.eContents().get(0);
-		private final Group cGroup_9_3 = (Group)cGroup_9.eContents().get(3);
-		private final Keyword cCommaKeyword_9_3_0 = (Keyword)cGroup_9_3.eContents().get(0);
-		private final Assignment cAttributesAssignment_9_3_1 = (Assignment)cGroup_9_3.eContents().get(1);
-		private final RuleCall cAttributesStringToAttributeMapEntryParserRuleCall_9_3_1_0 = (RuleCall)cAttributesAssignment_9_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_9_4 = (Keyword)cGroup_9.eContents().get(4);
-		private final Keyword cRightCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
-		
-		//Constant returns context::Constant:
-		//	{context::Constant} localGenerated?="localGenerated"? "constant" name=EString "{" ("internalId" internalId=EString)?
-		//	("//" comment=EString)? ("annotations" "{" annotations+=Annotation ("," annotations+=Annotation)* "}")? ("extensions"
-		//	"{" extensions+=AbstractExtension ("," extensions+=AbstractExtension)* "}")? ("attributes" "{"
-		//	attributes+=StringToAttributeMapEntry ("," attributes+=StringToAttributeMapEntry)* "}")? "}";
-		public ParserRule getRule() { return rule; }
-
-		//{context::Constant} localGenerated?="localGenerated"? "constant" name=EString "{" ("internalId" internalId=EString)?
-		//("//" comment=EString)? ("annotations" "{" annotations+=Annotation ("," annotations+=Annotation)* "}")? ("extensions"
-		//"{" extensions+=AbstractExtension ("," extensions+=AbstractExtension)* "}")? ("attributes" "{"
-		//attributes+=StringToAttributeMapEntry ("," attributes+=StringToAttributeMapEntry)* "}")? "}"
-		public Group getGroup() { return cGroup; }
-
-		//{context::Constant}
-		public Action getConstantAction_0() { return cConstantAction_0; }
-
-		//localGenerated?="localGenerated"?
-		public Assignment getLocalGeneratedAssignment_1() { return cLocalGeneratedAssignment_1; }
-
-		//"localGenerated"
-		public Keyword getLocalGeneratedLocalGeneratedKeyword_1_0() { return cLocalGeneratedLocalGeneratedKeyword_1_0; }
-
-		//"constant"
-		public Keyword getConstantKeyword_2() { return cConstantKeyword_2; }
-
-		//name=EString
-		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
-
-		//EString
-		public RuleCall getNameEStringParserRuleCall_3_0() { return cNameEStringParserRuleCall_3_0; }
-
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
-
-		//("internalId" internalId=EString)?
-		public Group getGroup_5() { return cGroup_5; }
-
-		//"internalId"
-		public Keyword getInternalIdKeyword_5_0() { return cInternalIdKeyword_5_0; }
-
-		//internalId=EString
-		public Assignment getInternalIdAssignment_5_1() { return cInternalIdAssignment_5_1; }
-
-		//EString
-		public RuleCall getInternalIdEStringParserRuleCall_5_1_0() { return cInternalIdEStringParserRuleCall_5_1_0; }
-
-		//("//" comment=EString)?
-		public Group getGroup_6() { return cGroup_6; }
-
-		//"//"
-		public Keyword getSolidusSolidusKeyword_6_0() { return cSolidusSolidusKeyword_6_0; }
-
-		//comment=EString
-		public Assignment getCommentAssignment_6_1() { return cCommentAssignment_6_1; }
-
-		//EString
-		public RuleCall getCommentEStringParserRuleCall_6_1_0() { return cCommentEStringParserRuleCall_6_1_0; }
-
-		//("annotations" "{" annotations+=Annotation ("," annotations+=Annotation)* "}")?
-		public Group getGroup_7() { return cGroup_7; }
-
-		//"annotations"
-		public Keyword getAnnotationsKeyword_7_0() { return cAnnotationsKeyword_7_0; }
-
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_7_1() { return cLeftCurlyBracketKeyword_7_1; }
-
-		//annotations+=Annotation
-		public Assignment getAnnotationsAssignment_7_2() { return cAnnotationsAssignment_7_2; }
-
-		//Annotation
-		public RuleCall getAnnotationsAnnotationParserRuleCall_7_2_0() { return cAnnotationsAnnotationParserRuleCall_7_2_0; }
-
-		//("," annotations+=Annotation)*
-		public Group getGroup_7_3() { return cGroup_7_3; }
-
-		//","
-		public Keyword getCommaKeyword_7_3_0() { return cCommaKeyword_7_3_0; }
-
-		//annotations+=Annotation
-		public Assignment getAnnotationsAssignment_7_3_1() { return cAnnotationsAssignment_7_3_1; }
-
-		//Annotation
-		public RuleCall getAnnotationsAnnotationParserRuleCall_7_3_1_0() { return cAnnotationsAnnotationParserRuleCall_7_3_1_0; }
-
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_7_4() { return cRightCurlyBracketKeyword_7_4; }
-
-		//("extensions" "{" extensions+=AbstractExtension ("," extensions+=AbstractExtension)* "}")?
-		public Group getGroup_8() { return cGroup_8; }
-
-		//"extensions"
-		public Keyword getExtensionsKeyword_8_0() { return cExtensionsKeyword_8_0; }
-
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_8_1() { return cLeftCurlyBracketKeyword_8_1; }
-
-		//extensions+=AbstractExtension
-		public Assignment getExtensionsAssignment_8_2() { return cExtensionsAssignment_8_2; }
-
-		//AbstractExtension
-		public RuleCall getExtensionsAbstractExtensionParserRuleCall_8_2_0() { return cExtensionsAbstractExtensionParserRuleCall_8_2_0; }
-
-		//("," extensions+=AbstractExtension)*
-		public Group getGroup_8_3() { return cGroup_8_3; }
-
-		//","
-		public Keyword getCommaKeyword_8_3_0() { return cCommaKeyword_8_3_0; }
-
-		//extensions+=AbstractExtension
-		public Assignment getExtensionsAssignment_8_3_1() { return cExtensionsAssignment_8_3_1; }
-
-		//AbstractExtension
-		public RuleCall getExtensionsAbstractExtensionParserRuleCall_8_3_1_0() { return cExtensionsAbstractExtensionParserRuleCall_8_3_1_0; }
-
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_8_4() { return cRightCurlyBracketKeyword_8_4; }
-
-		//("attributes" "{" attributes+=StringToAttributeMapEntry ("," attributes+=StringToAttributeMapEntry)* "}")?
-		public Group getGroup_9() { return cGroup_9; }
-
-		//"attributes"
-		public Keyword getAttributesKeyword_9_0() { return cAttributesKeyword_9_0; }
-
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_9_1() { return cLeftCurlyBracketKeyword_9_1; }
-
-		//attributes+=StringToAttributeMapEntry
-		public Assignment getAttributesAssignment_9_2() { return cAttributesAssignment_9_2; }
-
-		//StringToAttributeMapEntry
-		public RuleCall getAttributesStringToAttributeMapEntryParserRuleCall_9_2_0() { return cAttributesStringToAttributeMapEntryParserRuleCall_9_2_0; }
-
-		//("," attributes+=StringToAttributeMapEntry)*
-		public Group getGroup_9_3() { return cGroup_9_3; }
-
-		//","
-		public Keyword getCommaKeyword_9_3_0() { return cCommaKeyword_9_3_0; }
-
-		//attributes+=StringToAttributeMapEntry
-		public Assignment getAttributesAssignment_9_3_1() { return cAttributesAssignment_9_3_1; }
-
-		//StringToAttributeMapEntry
-		public RuleCall getAttributesStringToAttributeMapEntryParserRuleCall_9_3_1_0() { return cAttributesStringToAttributeMapEntryParserRuleCall_9_3_1_0; }
-
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_9_4() { return cRightCurlyBracketKeyword_9_4; }
-
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_10() { return cRightCurlyBracketKeyword_10; }
-	}
-
-	public class AxiomElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Axiom");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cTheoremAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final Keyword cTheoremTheoremKeyword_0_0 = (Keyword)cTheoremAssignment_0.eContents().get(0);
-		private final Keyword cAxiomKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cCommercialAtKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cNameEStringParserRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cSolidusSolidusKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cCommentAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cCommentEStringParserRuleCall_4_1_0 = (RuleCall)cCommentAssignment_4_1.eContents().get(0);
-		private final Keyword cPredicateKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cPredicateAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cPredicateEStringParserRuleCall_6_0 = (RuleCall)cPredicateAssignment_6.eContents().get(0);
-		
-		////		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
-		////		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
-		////		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
-		////	'}'
-		//Axiom returns context::Axiom:
-		//	theorem?="theorem"? //	(localGenerated?='localGenerated')?
-		//	"axiom" "@" name=EString //	'{'
-		//	//		('internalId' internalId=EString)?
-		//	("//" comment=EString)? "predicate" predicate=EString;
-		public ParserRule getRule() { return rule; }
-
-		//theorem?="theorem"? //	(localGenerated?='localGenerated')?
-		//"axiom" "@" name=EString //	'{'
-		////		('internalId' internalId=EString)?
-		//("//" comment=EString)? "predicate" predicate=EString
-		public Group getGroup() { return cGroup; }
-
-		//theorem?="theorem"?
-		public Assignment getTheoremAssignment_0() { return cTheoremAssignment_0; }
-
-		//"theorem"
-		public Keyword getTheoremTheoremKeyword_0_0() { return cTheoremTheoremKeyword_0_0; }
-
-		//"axiom"
-		public Keyword getAxiomKeyword_1() { return cAxiomKeyword_1; }
-
-		//"@"
-		public Keyword getCommercialAtKeyword_2() { return cCommercialAtKeyword_2; }
-
-		//name=EString
-		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
-
-		//EString
-		public RuleCall getNameEStringParserRuleCall_3_0() { return cNameEStringParserRuleCall_3_0; }
-
-		//("//" comment=EString)?
-		public Group getGroup_4() { return cGroup_4; }
-
-		//"//"
-		public Keyword getSolidusSolidusKeyword_4_0() { return cSolidusSolidusKeyword_4_0; }
-
-		//comment=EString
-		public Assignment getCommentAssignment_4_1() { return cCommentAssignment_4_1; }
-
-		//EString
-		public RuleCall getCommentEStringParserRuleCall_4_1_0() { return cCommentEStringParserRuleCall_4_1_0; }
-
-		//"predicate"
-		public Keyword getPredicateKeyword_5() { return cPredicateKeyword_5; }
-
-		//predicate=EString
-		public Assignment getPredicateAssignment_6() { return cPredicateAssignment_6; }
-
-		//EString
-		public RuleCall getPredicateEStringParserRuleCall_6_0() { return cPredicateEStringParserRuleCall_6_0; }
 	}
 
 	public class ParameterElements extends AbstractParserRuleElementFinder {
@@ -1990,58 +1059,6 @@ public class MachineDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	
-	public class AttributeTypeElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "AttributeType");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final EnumLiteralDeclaration cBooleanEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
-		private final Keyword cBooleanBooleanKeyword_0_0 = (Keyword)cBooleanEnumLiteralDeclaration_0.eContents().get(0);
-		private final EnumLiteralDeclaration cHandleEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
-		private final Keyword cHandleHandleKeyword_1_0 = (Keyword)cHandleEnumLiteralDeclaration_1.eContents().get(0);
-		private final EnumLiteralDeclaration cIntegerEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
-		private final Keyword cIntegerIntegerKeyword_2_0 = (Keyword)cIntegerEnumLiteralDeclaration_2.eContents().get(0);
-		private final EnumLiteralDeclaration cLongEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
-		private final Keyword cLongLongKeyword_3_0 = (Keyword)cLongEnumLiteralDeclaration_3.eContents().get(0);
-		private final EnumLiteralDeclaration cStringEnumLiteralDeclaration_4 = (EnumLiteralDeclaration)cAlternatives.eContents().get(4);
-		private final Keyword cStringStringKeyword_4_0 = (Keyword)cStringEnumLiteralDeclaration_4.eContents().get(0);
-		
-		//enum AttributeType returns core::AttributeType:
-		//	Boolean | Handle | Integer | Long | String;
-		public EnumRule getRule() { return rule; }
-
-		//Boolean | Handle | Integer | Long | String
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//Boolean
-		public EnumLiteralDeclaration getBooleanEnumLiteralDeclaration_0() { return cBooleanEnumLiteralDeclaration_0; }
-
-		//"Boolean"
-		public Keyword getBooleanBooleanKeyword_0_0() { return cBooleanBooleanKeyword_0_0; }
-
-		//Handle
-		public EnumLiteralDeclaration getHandleEnumLiteralDeclaration_1() { return cHandleEnumLiteralDeclaration_1; }
-
-		//"Handle"
-		public Keyword getHandleHandleKeyword_1_0() { return cHandleHandleKeyword_1_0; }
-
-		//Integer
-		public EnumLiteralDeclaration getIntegerEnumLiteralDeclaration_2() { return cIntegerEnumLiteralDeclaration_2; }
-
-		//"Integer"
-		public Keyword getIntegerIntegerKeyword_2_0() { return cIntegerIntegerKeyword_2_0; }
-
-		//Long
-		public EnumLiteralDeclaration getLongEnumLiteralDeclaration_3() { return cLongEnumLiteralDeclaration_3; }
-
-		//"Long"
-		public Keyword getLongLongKeyword_3_0() { return cLongLongKeyword_3_0; }
-
-		//String
-		public EnumLiteralDeclaration getStringEnumLiteralDeclaration_4() { return cStringEnumLiteralDeclaration_4; }
-
-		//"String"
-		public Keyword getStringStringKeyword_4_0() { return cStringStringKeyword_4_0; }
-	}
-
 	public class ConvergenceElements extends AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "Convergence");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -2052,6 +1069,45 @@ public class MachineDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final EnumLiteralDeclaration cAnticipatedEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
 		private final Keyword cAnticipatedAnticipatedKeyword_2_0 = (Keyword)cAnticipatedEnumLiteralDeclaration_2.eContents().get(0);
 		
+		////CarrierSet returns context::CarrierSet:
+		////	{context::CarrierSet}
+		////	(localGenerated?='localGenerated')?
+		////	'carrierSet'
+		////	name=EString
+		////	'{'
+		////		('internalId' internalId=EString)?
+		////		('//' comment=EString)?
+		////		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
+		////		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
+		////		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
+		////	'}'
+		////	;
+		////Constant returns context::Constant:
+		////	{context::Constant}
+		////	(localGenerated?='localGenerated')?
+		////	'constant'
+		////	name=EString
+		////	'{'
+		////		('internalId' internalId=EString)?
+		////		('//' comment=EString)?
+		////		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
+		////		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
+		////		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
+		////	'}';
+		////Axiom returns context::Axiom:
+		////	(localGenerated?='localGenerated')?
+		////	(theorem?='theorem')?
+		////	'axiom'
+		////	'@'name=EString
+		////	'{'
+		////		('internalId' internalId=EString)?
+		////		('//' comment=EString)?
+		////		'predicate' predicate=EString
+		////		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
+		////		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
+		////		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
+		////	'}'
+		////	;
 		//enum Convergence:
 		//	ordinary | convergent | anticipated;
 		public EnumRule getRule() { return rule; }
@@ -2079,24 +1135,12 @@ public class MachineDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	private MachineElements pMachine;
-	private AbstractExtensionElements pAbstractExtension;
-	private AnnotationElements pAnnotation;
-	private StringToAttributeMapEntryElements pStringToAttributeMapEntry;
-	private EBooleanElements pEBoolean;
 	private EStringElements pEString;
 	private VariableElements pVariable;
 	private InvariantElements pInvariant;
 	private VariantElements pVariant;
 	private EventElements pEvent;
-	private StringToStringMapEntryElements pStringToStringMapEntry;
-	private EObjectElements pEObject;
-	private ExtensionElements pExtension;
-	private AttributeElements pAttribute;
-	private AttributeTypeElements unknownRuleAttributeType;
 	private EJavaObjectElements pEJavaObject;
-	private CarrierSetElements pCarrierSet;
-	private ConstantElements pConstant;
-	private AxiomElements pAxiom;
 	private ConvergenceElements unknownRuleConvergence;
 	private ParameterElements pParameter;
 	private GuardElements pGuard;
@@ -2161,49 +1205,26 @@ public class MachineDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getMachineAccess().getRule();
 	}
 
-	//AbstractExtension returns core::AbstractExtension:
-	//	Extension;
-	public AbstractExtensionElements getAbstractExtensionAccess() {
-		return (pAbstractExtension != null) ? pAbstractExtension : (pAbstractExtension = new AbstractExtensionElements());
-	}
-	
-	public ParserRule getAbstractExtensionRule() {
-		return getAbstractExtensionAccess().getRule();
-	}
-
-	//Annotation returns core::Annotation:
-	//	{core::Annotation} "Annotation" "{" ("source" source=EString)? ("references" "(" references+=[ecore::EObject|EString]
-	//	("," references+=[ecore::EObject|EString])* ")")? ("annotations" "{" annotations+=Annotation (","
-	//	annotations+=Annotation)* "}")? ("details" "{" details+=StringToStringMapEntry ("," details+=StringToStringMapEntry)*
-	//	"}")? ("contents" "{" contents+=EObject ("," contents+=EObject)* "}")? "}";
-	public AnnotationElements getAnnotationAccess() {
-		return (pAnnotation != null) ? pAnnotation : (pAnnotation = new AnnotationElements());
-	}
-	
-	public ParserRule getAnnotationRule() {
-		return getAnnotationAccess().getRule();
-	}
-
-	//StringToAttributeMapEntry returns core::StringToAttributeMapEntry:
-	//	"StringToAttributeMapEntry" "{" "key" key=EString ("value" value=Attribute)? "}";
-	public StringToAttributeMapEntryElements getStringToAttributeMapEntryAccess() {
-		return (pStringToAttributeMapEntry != null) ? pStringToAttributeMapEntry : (pStringToAttributeMapEntry = new StringToAttributeMapEntryElements());
-	}
-	
-	public ParserRule getStringToAttributeMapEntryRule() {
-		return getStringToAttributeMapEntryAccess().getRule();
-	}
-
-	//EBoolean returns ecore::EBoolean:
-	//	"true" | "false";
-	public EBooleanElements getEBooleanAccess() {
-		return (pEBoolean != null) ? pEBoolean : (pEBoolean = new EBooleanElements());
-	}
-	
-	public ParserRule getEBooleanRule() {
-		return getEBooleanAccess().getRule();
-	}
-
+	////AbstractExtension returns core::AbstractExtension:
+	////	Extension;
+	////Annotation returns core::Annotation:
+	////	{core::Annotation}
+	////	'Annotation'
+	////	'{'
+	////		('source' source=EString)?
+	////		('references' '(' references+=[ecore::EObject|EString] ( "," references+=[ecore::EObject|EString])* ')' )?
+	////		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
+	////		('details' '{' details+=StringToStringMapEntry ( "," details+=StringToStringMapEntry)* '}' )?
+	////		('contents' '{' contents+=EObject ( "," contents+=EObject)* '}' )?
+	////	'}';
+	////StringToAttributeMapEntry returns core::StringToAttributeMapEntry:
+	////	'StringToAttributeMapEntry'
+	////	'{'
+	////		'key' key=EString
+	////		('value' value=Attribute)?
+	////	'}';
+	////EBoolean returns ecore::EBoolean:
+	////	'true' | 'false';
 	//EString returns ecore::EString:
 	//	STRING | ID;
 	public EStringElements getEStringAccess() {
@@ -2303,63 +1324,38 @@ public class MachineDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getEventAccess().getRule();
 	}
 
-	//StringToStringMapEntry returns core::StringToStringMapEntry:
-	//	{core::StringToStringMapEntry} "StringToStringMapEntry" "{" ("key" key=EString)? ("value" value=EString)? "}";
-	public StringToStringMapEntryElements getStringToStringMapEntryAccess() {
-		return (pStringToStringMapEntry != null) ? pStringToStringMapEntry : (pStringToStringMapEntry = new StringToStringMapEntryElements());
-	}
-	
-	public ParserRule getStringToStringMapEntryRule() {
-		return getStringToStringMapEntryAccess().getRule();
-	}
-
-	//EObject returns ecore::EObject:
-	//	{ecore::EObject} "EObject";
-	public EObjectElements getEObjectAccess() {
-		return (pEObject != null) ? pEObject : (pEObject = new EObjectElements());
-	}
-	
-	public ParserRule getEObjectRule() {
-		return getEObjectAccess().getRule();
-	}
-
+	////StringToStringMapEntry returns core::StringToStringMapEntry:
+	////	{core::StringToStringMapEntry}
+	////	'StringToStringMapEntry'
+	////	'{'
+	////		('key' key=EString)?
+	////		('value' value=EString)?
+	////	'}';
+	////EObject returns ecore::EObject:
+	////	{ecore::EObject}
+	////	'EObject'
+	////	;
+	////Extension returns core::Extension:
+	////	(localGenerated?='localGenerated')?
+	////	'Extension'
+	////	'{'
+	////		('internalId' internalId=EString)?
+	////		'extensionId' extensionId=EString
+	////		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
+	////		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
+	////		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
 	////	'}'
-	//Extension returns core::Extension:
-	//	localGenerated?="localGenerated"? "Extension" //	'{'
-	//	("internalId" internalId=EString)? "extensionId" extensionId=EString ("annotations" "{" annotations+=Annotation (","
-	//	annotations+=Annotation)* "}")? ("extensions" "{" extensions+=AbstractExtension ("," extensions+=AbstractExtension)*
-	//	"}")? ("attributes" "{" attributes+=StringToAttributeMapEntry ("," attributes+=StringToAttributeMapEntry)* "}")?;
-	public ExtensionElements getExtensionAccess() {
-		return (pExtension != null) ? pExtension : (pExtension = new ExtensionElements());
-	}
-	
-	public ParserRule getExtensionRule() {
-		return getExtensionAccess().getRule();
-	}
-
+	////	;
+	////Attribute returns core::Attribute:
+	////	'Attribute'
+	////	'{'
+	////		'type' type=AttributeType
+	////		'value' value=EJavaObject
+	////		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
 	////	'}'
-	//Attribute returns core::Attribute:
-	//	"Attribute" //	'{'
-	//	"type" type=AttributeType "value" value=EJavaObject ("annotations" "{" annotations+=Annotation (","
-	//	annotations+=Annotation)* "}")?;
-	public AttributeElements getAttributeAccess() {
-		return (pAttribute != null) ? pAttribute : (pAttribute = new AttributeElements());
-	}
-	
-	public ParserRule getAttributeRule() {
-		return getAttributeAccess().getRule();
-	}
-
-	//enum AttributeType returns core::AttributeType:
-	//	Boolean | Handle | Integer | Long | String;
-	public AttributeTypeElements getAttributeTypeAccess() {
-		return (unknownRuleAttributeType != null) ? unknownRuleAttributeType : (unknownRuleAttributeType = new AttributeTypeElements());
-	}
-	
-	public EnumRule getAttributeTypeRule() {
-		return getAttributeTypeAccess().getRule();
-	}
-
+	////	;
+	////enum AttributeType returns core::AttributeType:
+	////				Boolean = 'Boolean' | Handle = 'Handle' | Integer = 'Integer' | Long = 'Long' | String = 'String';
 	/// * TODO: implement this rule and an appropriate IValueConverter * / EJavaObject returns ecore::EJavaObject:
 	//	"EJavaObject";
 	public EJavaObjectElements getEJavaObjectAccess() {
@@ -2370,52 +1366,45 @@ public class MachineDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getEJavaObjectAccess().getRule();
 	}
 
+	////CarrierSet returns context::CarrierSet:
+	////	{context::CarrierSet}
+	////	(localGenerated?='localGenerated')?
+	////	'carrierSet'
+	////	name=EString
+	////	'{'
+	////		('internalId' internalId=EString)?
+	////		('//' comment=EString)?
 	////		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
 	////		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
 	////		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
 	////	'}'
-	//CarrierSet returns context::CarrierSet:
-	//	{context::CarrierSet} localGenerated?="localGenerated"? "carrierSet" name=EString //	'{'
-	//	//		('internalId' internalId=EString)?
-	//	("//" comment=EString)?;
-	public CarrierSetElements getCarrierSetAccess() {
-		return (pCarrierSet != null) ? pCarrierSet : (pCarrierSet = new CarrierSetElements());
-	}
-	
-	public ParserRule getCarrierSetRule() {
-		return getCarrierSetAccess().getRule();
-	}
-
-	//Constant returns context::Constant:
-	//	{context::Constant} localGenerated?="localGenerated"? "constant" name=EString "{" ("internalId" internalId=EString)?
-	//	("//" comment=EString)? ("annotations" "{" annotations+=Annotation ("," annotations+=Annotation)* "}")? ("extensions"
-	//	"{" extensions+=AbstractExtension ("," extensions+=AbstractExtension)* "}")? ("attributes" "{"
-	//	attributes+=StringToAttributeMapEntry ("," attributes+=StringToAttributeMapEntry)* "}")? "}";
-	public ConstantElements getConstantAccess() {
-		return (pConstant != null) ? pConstant : (pConstant = new ConstantElements());
-	}
-	
-	public ParserRule getConstantRule() {
-		return getConstantAccess().getRule();
-	}
-
+	////	;
+	////Constant returns context::Constant:
+	////	{context::Constant}
+	////	(localGenerated?='localGenerated')?
+	////	'constant'
+	////	name=EString
+	////	'{'
+	////		('internalId' internalId=EString)?
+	////		('//' comment=EString)?
+	////		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
+	////		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
+	////		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
+	////	'}';
+	////Axiom returns context::Axiom:
+	////	(localGenerated?='localGenerated')?
+	////	(theorem?='theorem')?
+	////	'axiom'
+	////	'@'name=EString
+	////	'{'
+	////		('internalId' internalId=EString)?
+	////		('//' comment=EString)?
+	////		'predicate' predicate=EString
 	////		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
 	////		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
 	////		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
 	////	'}'
-	//Axiom returns context::Axiom:
-	//	theorem?="theorem"? //	(localGenerated?='localGenerated')?
-	//	"axiom" "@" name=EString //	'{'
-	//	//		('internalId' internalId=EString)?
-	//	("//" comment=EString)? "predicate" predicate=EString;
-	public AxiomElements getAxiomAccess() {
-		return (pAxiom != null) ? pAxiom : (pAxiom = new AxiomElements());
-	}
-	
-	public ParserRule getAxiomRule() {
-		return getAxiomAccess().getRule();
-	}
-
+	////	;
 	//enum Convergence:
 	//	ordinary | convergent | anticipated;
 	public ConvergenceElements getConvergenceAccess() {

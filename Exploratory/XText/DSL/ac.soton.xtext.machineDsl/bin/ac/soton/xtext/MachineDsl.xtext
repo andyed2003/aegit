@@ -28,30 +28,30 @@ Machine returns Machine:
 ;
 
 
-AbstractExtension returns core::AbstractExtension:
-	Extension;
+//AbstractExtension returns core::AbstractExtension:
+//	Extension;
 
 
-Annotation returns core::Annotation:
-	{core::Annotation}
-	'Annotation'
-	'{'
-		('source' source=EString)?
-		('references' '(' references+=[ecore::EObject|EString] ( "," references+=[ecore::EObject|EString])* ')' )?
-		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
-		('details' '{' details+=StringToStringMapEntry ( "," details+=StringToStringMapEntry)* '}' )?
-		('contents' '{' contents+=EObject ( "," contents+=EObject)* '}' )?
-	'}';
+//Annotation returns core::Annotation:
+//	{core::Annotation}
+//	'Annotation'
+//	'{'
+//		('source' source=EString)?
+//		('references' '(' references+=[ecore::EObject|EString] ( "," references+=[ecore::EObject|EString])* ')' )?
+//		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
+//		('details' '{' details+=StringToStringMapEntry ( "," details+=StringToStringMapEntry)* '}' )?
+//		('contents' '{' contents+=EObject ( "," contents+=EObject)* '}' )?
+//	'}';
 
-StringToAttributeMapEntry returns core::StringToAttributeMapEntry:
-	'StringToAttributeMapEntry'
-	'{'
-		'key' key=EString
-		('value' value=Attribute)?
-	'}';
+//StringToAttributeMapEntry returns core::StringToAttributeMapEntry:
+//	'StringToAttributeMapEntry'
+//	'{'
+//		'key' key=EString
+//		('value' value=Attribute)?
+//	'}';
 
-EBoolean returns ecore::EBoolean:
-	'true' | 'false';
+//EBoolean returns ecore::EBoolean:
+//	'true' | 'false';
 
 EString returns ecore::EString:
 	STRING | ID;
@@ -143,87 +143,87 @@ event returns Event:
 	'end'
 	;
 
-StringToStringMapEntry returns core::StringToStringMapEntry:
-	{core::StringToStringMapEntry}
-	'StringToStringMapEntry'
-	'{'
-		('key' key=EString)?
-		('value' value=EString)?
-	'}';
-
-EObject returns ecore::EObject:
-	{ecore::EObject}
-	'EObject'
-	;
-
-Extension returns core::Extension:
-	(localGenerated?='localGenerated')?
-	'Extension'
+//StringToStringMapEntry returns core::StringToStringMapEntry:
+//	{core::StringToStringMapEntry}
+//	'StringToStringMapEntry'
 //	'{'
-		('internalId' internalId=EString)?
-		'extensionId' extensionId=EString
-		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
-		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
-		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
-//	'}'
-	;
+//		('key' key=EString)?
+//		('value' value=EString)?
+//	'}';
 
-Attribute returns core::Attribute:
-	'Attribute'
+//EObject returns ecore::EObject:
+//	{ecore::EObject}
+//	'EObject'
+//	;
+
+//Extension returns core::Extension:
+//	(localGenerated?='localGenerated')?
+//	'Extension'
 //	'{'
-		'type' type=AttributeType
-		'value' value=EJavaObject
-		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
+//		('internalId' internalId=EString)?
+//		'extensionId' extensionId=EString
+//		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
+//		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
+//		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
 //	'}'
-	;
+//	;
 
-enum AttributeType returns core::AttributeType:
-				Boolean = 'Boolean' | Handle = 'Handle' | Integer = 'Integer' | Long = 'Long' | String = 'String';
+//Attribute returns core::Attribute:
+//	'Attribute'
+//	'{'
+//		'type' type=AttributeType
+//		'value' value=EJavaObject
+//		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
+//	'}'
+//	;
+
+//enum AttributeType returns core::AttributeType:
+//				Boolean = 'Boolean' | Handle = 'Handle' | Integer = 'Integer' | Long = 'Long' | String = 'String';
 
 EJavaObject returns ecore::EJavaObject:
 	'EJavaObject' /* TODO: implement this rule and an appropriate IValueConverter */;
 
-CarrierSet returns context::CarrierSet:
-	{context::CarrierSet}
-	(localGenerated?='localGenerated')?
-	'carrierSet'
-	name=EString
-//	'{'
-//		('internalId' internalId=EString)?
-		('//' comment=EString)?
-//		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
-//		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
-//		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
-//	'}'
-	;
-
-Constant returns context::Constant:
-	{context::Constant}
-	(localGenerated?='localGenerated')?
-	'constant'
-	name=EString
-	'{'
-		('internalId' internalId=EString)?
-		('//' comment=EString)?
-		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
-		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
-		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
-	'}';
-
-Axiom returns context::Axiom:
+//CarrierSet returns context::CarrierSet:
+//	{context::CarrierSet}
 //	(localGenerated?='localGenerated')?
-	(theorem?='theorem')?
-	'axiom'
-	'@'name=EString
+//	'carrierSet'
+//	name=EString
 //	'{'
 //		('internalId' internalId=EString)?
-		('//' comment=EString)?
-		'predicate' predicate=EString
+//		('//' comment=EString)?
 //		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
 //		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
 //		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
 //	'}'
-	;
+//	;
+
+//Constant returns context::Constant:
+//	{context::Constant}
+//	(localGenerated?='localGenerated')?
+//	'constant'
+//	name=EString
+//	'{'
+//		('internalId' internalId=EString)?
+//		('//' comment=EString)?
+//		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
+//		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
+//		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
+//	'}';
+
+//Axiom returns context::Axiom:
+//	(localGenerated?='localGenerated')?
+//	(theorem?='theorem')?
+//	'axiom'
+//	'@'name=EString
+//	'{'
+//		('internalId' internalId=EString)?
+//		('//' comment=EString)?
+//		'predicate' predicate=EString
+//		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
+//		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
+//		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
+//	'}'
+//	;
 
 enum Convergence returns Convergence:
 				ordinary = 'ordinary' | convergent = 'convergent' | anticipated = 'anticipated';

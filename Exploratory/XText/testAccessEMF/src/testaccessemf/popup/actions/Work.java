@@ -28,7 +28,7 @@ public class Work extends AbstractEMFOperation {
 	@Override
 	protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
-		monitor.beginTask("Creating statemachine", IProgressMonitor.UNKNOWN);
+		monitor.beginTask("Saving Machine", IProgressMonitor.UNKNOWN);
 
 		TransactionalEditingDomain editingDomain = getEditingDomain();
 

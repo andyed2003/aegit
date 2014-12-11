@@ -6,7 +6,8 @@
          point="org.eclipse.ui.popupMenus">
       <objectContribution
             id="test2.contribution1"
-            objectClass="org.eventb.core.IMachineRoot">
+            objectClass="org.eclipse.core.resources.IFile"
+            nameFilter="*.mch">
          <menu
                id="test2.menu1"
                label="New Submenu"

@@ -13,9 +13,6 @@ public class AbstractMachineDslValidator extends org.eclipse.xtext.validation.Ab
 	protected List<EPackage> getEPackages() {
 	    List<EPackage> result = new ArrayList<EPackage>();
 	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://emf.eventb.org/models/core/machine/2014"));
-	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://emf.eventb.org/models/core/2014"));
-	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.eclipse.org/emf/2002/Ecore"));
-	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://emf.eventb.org/models/core/context/2014"));
 		return result;
 	}
 }

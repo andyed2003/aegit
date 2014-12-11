@@ -1,6 +1,8 @@
 package testaccessemf.popup.actions;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.NullProgressMonitor;
@@ -20,10 +22,15 @@ import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.statushandlers.StatusManager;
 import org.eventb.core.basis.MachineRoot;
+import org.eventb.emf.core.EventBElement;
+import org.eventb.emf.core.EventBObject;
 import org.eventb.emf.core.machine.Event;
 import org.eventb.emf.core.machine.Invariant;
 import org.eventb.emf.core.machine.Machine;
 import org.eventb.emf.core.machine.impl.MachineImpl;
+import org.eventb.emf.persistence.synchroniser.SyncManager;
+import org.rodinp.core.IRodinElement;
+import org.rodinp.core.RodinDBException;
 
 public class NewAction implements IObjectActionDelegate {
 	@SuppressWarnings("unused")
@@ -68,6 +75,29 @@ public class NewAction implements IObjectActionDelegate {
 			r = rs.getResource(uri, true);
 		}
 
+		
+		////////////////////////////////////////////////////////////////
+		
+		SyncManager syncManager = new SyncManager();
+		IRodinElement rodinElement = null;
+
+		
+		
+		Map<IRodinElement, EventBObject> map = new HashMap<IRodinElement, EventBObject>();
+		map.clear();
+		try {
+			EventBElement element = syncManager.saveModelElement(emfElement, rodinParent, map, null);;
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+
+		
+		//////////////////////////////////////////////////////////////////
+		
+		
+		
+		
 		List<EObject> contentOfYourFile = r.getContents();
 		for (EObject eo : contentOfYourFile) {
 			Class<? extends EObject> clazz = eo.getClass();
