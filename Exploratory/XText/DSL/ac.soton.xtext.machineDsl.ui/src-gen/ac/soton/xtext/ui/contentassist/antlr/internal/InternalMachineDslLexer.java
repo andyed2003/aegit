@@ -39,13 +39,9 @@ public class InternalMachineDslLexer extends Lexer {
     public static final int T__18=18;
     public static final int T__35=35;
     public static final int T__17=17;
-    public static final int T__36=36;
     public static final int T__12=12;
-    public static final int T__37=37;
     public static final int T__11=11;
-    public static final int T__38=38;
     public static final int T__14=14;
-    public static final int T__39=39;
     public static final int T__13=13;
     public static final int RULE_INT=6;
     public static final int RULE_WS=9;
@@ -215,10 +211,11 @@ public class InternalMachineDslLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:18:7: ( ',' )
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:18:9: ','
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:18:7: ( 'sees' )
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:18:9: 'sees'
             {
-            match(','); 
+            match("sees"); 
+
 
             }
 
@@ -235,10 +232,10 @@ public class InternalMachineDslLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:19:7: ( 'sees' )
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:19:9: 'sees'
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:19:7: ( 'variables' )
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:19:9: 'variables'
             {
-            match("sees"); 
+            match("variables"); 
 
 
             }
@@ -256,10 +253,11 @@ public class InternalMachineDslLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:20:7: ( '(' )
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:20:9: '('
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:20:7: ( 'invariants' )
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:20:9: 'invariants'
             {
-            match('('); 
+            match("invariants"); 
+
 
             }
 
@@ -276,10 +274,11 @@ public class InternalMachineDslLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:21:7: ( ')' )
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:21:9: ')'
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:21:7: ( 'variant' )
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:21:9: 'variant'
             {
-            match(')'); 
+            match("variant"); 
+
 
             }
 
@@ -296,10 +295,10 @@ public class InternalMachineDslLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:22:7: ( 'variables' )
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:22:9: 'variables'
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:22:7: ( 'events' )
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:22:9: 'events'
             {
-            match("variables"); 
+            match("events"); 
 
 
             }
@@ -317,11 +316,10 @@ public class InternalMachineDslLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:23:7: ( 'invariants' )
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:23:9: 'invariants'
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:23:7: ( '@' )
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:23:9: '@'
             {
-            match("invariants"); 
-
+            match('@'); 
 
             }
 
@@ -338,10 +336,10 @@ public class InternalMachineDslLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:24:7: ( 'variant' )
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:24:9: 'variant'
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:24:7: ( 'Variant' )
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:24:9: 'Variant'
             {
-            match("variant"); 
+            match("Variant"); 
 
 
             }
@@ -359,10 +357,10 @@ public class InternalMachineDslLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:25:7: ( 'events' )
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:25:9: 'events'
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:25:7: ( 'expression' )
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:25:9: 'expression'
             {
-            match("events"); 
+            match("expression"); 
 
 
             }
@@ -380,10 +378,11 @@ public class InternalMachineDslLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:26:7: ( '@' )
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:26:9: '@'
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:26:7: ( 'event' )
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:26:9: 'event'
             {
-            match('@'); 
+            match("event"); 
+
 
             }
 
@@ -400,11 +399,10 @@ public class InternalMachineDslLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:27:7: ( 'Variant' )
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:27:9: 'Variant'
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:27:7: ( ',' )
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:27:9: ','
             {
-            match("Variant"); 
-
+            match(','); 
 
             }
 
@@ -421,10 +419,10 @@ public class InternalMachineDslLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:28:7: ( 'expression' )
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:28:9: 'expression'
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:28:7: ( 'when' )
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:28:9: 'when'
             {
-            match("expression"); 
+            match("when"); 
 
 
             }
@@ -442,10 +440,10 @@ public class InternalMachineDslLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:29:7: ( 'event' )
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:29:9: 'event'
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:29:7: ( 'any' )
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:29:9: 'any'
             {
-            match("event"); 
+            match("any"); 
 
 
             }
@@ -463,10 +461,10 @@ public class InternalMachineDslLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:30:7: ( 'when' )
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:30:9: 'when'
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:30:7: ( 'where' )
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:30:9: 'where'
             {
-            match("when"); 
+            match("where"); 
 
 
             }
@@ -484,10 +482,10 @@ public class InternalMachineDslLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:31:7: ( 'any' )
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:31:9: 'any'
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:31:7: ( 'with' )
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:31:9: 'with'
             {
-            match("any"); 
+            match("with"); 
 
 
             }
@@ -505,10 +503,10 @@ public class InternalMachineDslLexer extends Lexer {
         try {
             int _type = T__32;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:32:7: ( 'where' )
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:32:9: 'where'
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:32:7: ( 'then' )
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:32:9: 'then'
             {
-            match("where"); 
+            match("then"); 
 
 
             }
@@ -526,10 +524,10 @@ public class InternalMachineDslLexer extends Lexer {
         try {
             int _type = T__33;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:33:7: ( 'witnesses' )
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:33:9: 'witnesses'
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:33:7: ( 'theorem' )
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:33:9: 'theorem'
             {
-            match("witnesses"); 
+            match("theorem"); 
 
 
             }
@@ -547,10 +545,10 @@ public class InternalMachineDslLexer extends Lexer {
         try {
             int _type = T__34;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:34:7: ( 'then' )
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:34:9: 'then'
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:34:7: ( 'extended' )
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:34:9: 'extended'
             {
-            match("then"); 
+            match("extended"); 
 
 
             }
@@ -568,92 +566,8 @@ public class InternalMachineDslLexer extends Lexer {
         try {
             int _type = T__35;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:35:7: ( 'witness' )
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:35:9: 'witness'
-            {
-            match("witness"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__35"
-
-    // $ANTLR start "T__36"
-    public final void mT__36() throws RecognitionException {
-        try {
-            int _type = T__36;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:36:7: ( 'predicate' )
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:36:9: 'predicate'
-            {
-            match("predicate"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__36"
-
-    // $ANTLR start "T__37"
-    public final void mT__37() throws RecognitionException {
-        try {
-            int _type = T__37;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:37:7: ( 'theorem' )
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:37:9: 'theorem'
-            {
-            match("theorem"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__37"
-
-    // $ANTLR start "T__38"
-    public final void mT__38() throws RecognitionException {
-        try {
-            int _type = T__38;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:38:7: ( 'extended' )
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:38:9: 'extended'
-            {
-            match("extended"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__38"
-
-    // $ANTLR start "T__39"
-    public final void mT__39() throws RecognitionException {
-        try {
-            int _type = T__39;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:39:7: ( 'localGenerated' )
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:39:9: 'localGenerated'
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:35:7: ( 'localGenerated' )
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:35:9: 'localGenerated'
             {
             match("localGenerated"); 
 
@@ -666,17 +580,17 @@ public class InternalMachineDslLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__39"
+    // $ANTLR end "T__35"
 
     // $ANTLR start "RULE_ID"
     public final void mRULE_ID() throws RecognitionException {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4841:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4841:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4583:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4583:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4841:11: ( '^' )?
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4583:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -685,7 +599,7 @@ public class InternalMachineDslLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4841:11: '^'
+                    // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4583:11: '^'
                     {
                     match('^'); 
 
@@ -703,7 +617,7 @@ public class InternalMachineDslLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4841:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4583:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -752,10 +666,10 @@ public class InternalMachineDslLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4843:10: ( ( '0' .. '9' )+ )
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4843:12: ( '0' .. '9' )+
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4585:10: ( ( '0' .. '9' )+ )
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4585:12: ( '0' .. '9' )+
             {
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4843:12: ( '0' .. '9' )+
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4585:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -769,7 +683,7 @@ public class InternalMachineDslLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4843:13: '0' .. '9'
+            	    // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4585:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -801,10 +715,10 @@ public class InternalMachineDslLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4845:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4845:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4587:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4587:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4845:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4587:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -822,10 +736,10 @@ public class InternalMachineDslLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4845:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4587:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4845:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4587:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -841,7 +755,7 @@ public class InternalMachineDslLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4845:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4587:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -857,7 +771,7 @@ public class InternalMachineDslLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4845:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4587:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -882,10 +796,10 @@ public class InternalMachineDslLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4845:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4587:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4845:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4587:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -901,7 +815,7 @@ public class InternalMachineDslLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4845:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4587:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -917,7 +831,7 @@ public class InternalMachineDslLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4845:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4587:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -960,12 +874,12 @@ public class InternalMachineDslLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4847:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4847:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4589:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4589:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4847:24: ( options {greedy=false; } : . )*
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4589:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -990,7 +904,7 @@ public class InternalMachineDslLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4847:52: .
+            	    // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4589:52: .
             	    {
             	    matchAny(); 
 
@@ -1020,12 +934,12 @@ public class InternalMachineDslLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4849:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4849:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4591:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4591:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4849:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4591:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -1038,7 +952,7 @@ public class InternalMachineDslLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4849:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4591:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1058,7 +972,7 @@ public class InternalMachineDslLexer extends Lexer {
                 }
             } while (true);
 
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4849:40: ( ( '\\r' )? '\\n' )?
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4591:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -1067,9 +981,9 @@ public class InternalMachineDslLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4849:41: ( '\\r' )? '\\n'
+                    // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4591:41: ( '\\r' )? '\\n'
                     {
-                    // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4849:41: ( '\\r' )?
+                    // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4591:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -1078,7 +992,7 @@ public class InternalMachineDslLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4849:41: '\\r'
+                            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4591:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1110,10 +1024,10 @@ public class InternalMachineDslLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4851:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4851:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4593:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4593:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4851:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4593:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -1167,8 +1081,8 @@ public class InternalMachineDslLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4853:16: ( . )
-            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4853:18: .
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4595:16: ( . )
+            // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:4595:18: .
             {
             matchAny(); 
 
@@ -1183,8 +1097,8 @@ public class InternalMachineDslLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt12=36;
+        // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt12=32;
         alt12 = dfa12.predict(input);
         switch (alt12) {
             case 1 :
@@ -1363,77 +1277,49 @@ public class InternalMachineDslLexer extends Lexer {
                 }
                 break;
             case 26 :
-                // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:1:160: T__36
-                {
-                mT__36(); 
-
-                }
-                break;
-            case 27 :
-                // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:1:166: T__37
-                {
-                mT__37(); 
-
-                }
-                break;
-            case 28 :
-                // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:1:172: T__38
-                {
-                mT__38(); 
-
-                }
-                break;
-            case 29 :
-                // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:1:178: T__39
-                {
-                mT__39(); 
-
-                }
-                break;
-            case 30 :
-                // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:1:184: RULE_ID
+                // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:1:160: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 31 :
-                // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:1:192: RULE_INT
+            case 27 :
+                // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:1:168: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 32 :
-                // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:1:201: RULE_STRING
+            case 28 :
+                // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:1:177: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 33 :
-                // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:1:213: RULE_ML_COMMENT
+            case 29 :
+                // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:1:189: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 34 :
-                // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:1:229: RULE_SL_COMMENT
+            case 30 :
+                // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:1:205: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 35 :
-                // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:1:245: RULE_WS
+            case 31 :
+                // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:1:221: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 36 :
-                // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:1:253: RULE_ANY_OTHER
+            case 32 :
+                // ../ac.soton.xtext.machineDsl.ui/src-gen/ac/soton/xtext/ui/contentassist/antlr/internal/InternalMachineDsl.g:1:229: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -1447,264 +1333,238 @@ public class InternalMachineDslLexer extends Lexer {
 
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
-        "\1\uffff\5\34\1\32\1\34\1\uffff\1\34\2\uffff\2\34\1\uffff\5\34\1"+
-        "\32\2\uffff\2\32\2\uffff\1\34\1\uffff\6\34\1\77\1\uffff\1\34\1\uffff"+
-        "\1\34\2\uffff\2\34\1\uffff\6\34\3\uffff\3\34\1\116\1\34\1\120\3"+
-        "\34\2\uffff\15\34\1\uffff\1\34\1\uffff\4\34\1\150\3\34\1\154\2\34"+
-        "\1\157\7\34\1\170\3\34\1\uffff\3\34\1\uffff\1\u0080\1\34\1\uffff"+
-        "\7\34\1\u0089\1\uffff\7\34\1\uffff\7\34\1\u0098\1\uffff\2\34\1\u009b"+
-        "\1\34\1\u009d\1\34\1\u009f\1\u00a1\1\u00a2\2\34\1\u00a5\2\34\1\uffff"+
-        "\1\34\1\u00a9\1\uffff\1\34\1\uffff\1\34\1\uffff\1\34\2\uffff\2\34"+
-        "\1\uffff\3\34\1\uffff\1\u00b2\1\34\1\u00b4\1\u00b5\1\34\1\u00b7"+
-        "\1\34\1\u00b9\1\uffff\1\u00ba\2\uffff\1\34\1\uffff\1\u00bc\2\uffff"+
-        "\1\34\1\uffff\2\34\1\u00c0\1\uffff";
+        "\1\uffff\5\31\1\27\4\31\1\uffff\1\31\1\uffff\3\31\1\27\2\uffff\2"+
+        "\27\2\uffff\1\31\1\uffff\6\31\1\71\1\uffff\4\31\1\uffff\1\31\1\uffff"+
+        "\4\31\3\uffff\3\31\1\107\1\31\1\111\3\31\2\uffff\14\31\1\uffff\1"+
+        "\31\1\uffff\4\31\1\140\3\31\1\144\1\31\1\146\1\147\6\31\1\157\3"+
+        "\31\1\uffff\3\31\1\uffff\1\167\2\uffff\6\31\1\176\1\uffff\7\31\1"+
+        "\uffff\5\31\1\u008b\1\uffff\2\31\1\u008e\1\31\1\u0090\1\31\1\u0092"+
+        "\1\u0093\1\31\1\u0095\2\31\1\uffff\1\31\1\u0099\1\uffff\1\31\1\uffff"+
+        "\1\31\2\uffff\1\31\1\uffff\3\31\1\uffff\1\u00a0\2\31\1\u00a3\1\31"+
+        "\1\u00a5\1\uffff\1\u00a6\1\31\1\uffff\1\u00a8\2\uffff\1\31\1\uffff"+
+        "\2\31\1\u00ac\1\uffff";
     static final String DFA12_eofS =
-        "\u00c1\uffff";
+        "\u00ad\uffff";
     static final String DFA12_minS =
-        "\1\0\1\162\1\157\1\156\1\141\1\156\1\52\1\145\1\uffff\1\145\2\uffff"+
-        "\1\141\1\156\1\uffff\1\141\2\150\1\162\1\157\1\101\2\uffff\2\0\2"+
-        "\uffff\1\144\1\uffff\1\156\1\164\1\143\1\144\1\145\1\160\1\0\1\uffff"+
-        "\1\146\1\uffff\1\145\2\uffff\1\162\1\166\1\uffff\1\162\1\145\1\164"+
-        "\2\145\1\143\3\uffff\1\151\1\166\1\151\1\60\1\150\1\60\1\156\1\162"+
-        "\1\145\2\uffff\1\151\1\163\1\151\1\141\1\151\3\156\1\144\1\141\1"+
-        "\156\1\145\1\143\1\uffff\1\151\1\uffff\1\164\1\145\2\156\1\60\1"+
-        "\141\1\162\1\141\1\60\2\145\1\60\1\162\1\151\1\154\1\141\1\162\1"+
-        "\151\1\156\1\60\1\163\1\144\1\145\1\uffff\1\142\1\151\1\156\1\uffff"+
-        "\1\60\1\163\1\uffff\1\145\1\143\1\107\1\162\1\147\1\160\1\145\1"+
-        "\60\1\uffff\1\163\1\145\1\163\1\154\1\164\1\141\1\164\1\uffff\1"+
-        "\163\1\155\1\141\1\145\1\171\1\145\1\141\1\60\1\uffff\1\151\1\144"+
-        "\1\60\1\145\1\60\1\156\3\60\1\164\1\156\1\60\1\156\1\164\1\uffff"+
-        "\1\157\1\60\1\uffff\1\163\1\uffff\1\164\1\uffff\1\163\2\uffff\2"+
-        "\145\1\uffff\1\164\1\145\1\156\1\uffff\1\60\1\163\2\60\1\162\1\60"+
-        "\1\144\1\60\1\uffff\1\60\2\uffff\1\141\1\uffff\1\60\2\uffff\1\164"+
-        "\1\uffff\1\145\1\144\1\60\1\uffff";
+        "\1\0\1\162\1\157\1\156\1\141\1\156\1\52\2\145\1\141\1\156\1\uffff"+
+        "\1\141\1\uffff\2\150\1\157\1\101\2\uffff\2\0\2\uffff\1\144\1\uffff"+
+        "\1\156\1\164\1\143\1\144\1\145\1\160\1\0\1\uffff\1\146\1\145\1\162"+
+        "\1\166\1\uffff\1\162\1\uffff\1\145\1\164\1\145\1\143\3\uffff\1\151"+
+        "\1\166\1\151\1\60\1\150\1\60\1\156\1\162\1\145\2\uffff\1\151\1\163"+
+        "\1\151\1\141\1\151\1\156\1\150\1\156\1\141\1\156\1\145\1\143\1\uffff"+
+        "\1\151\1\uffff\1\164\1\145\2\156\1\60\1\141\1\162\1\141\1\60\1\145"+
+        "\2\60\1\162\1\154\1\141\1\162\1\151\1\156\1\60\1\163\1\144\1\145"+
+        "\1\uffff\1\142\1\151\1\156\1\uffff\1\60\2\uffff\1\145\1\107\1\162"+
+        "\1\147\1\160\1\145\1\60\1\uffff\1\163\1\145\1\163\1\154\1\164\1"+
+        "\141\1\164\1\uffff\1\155\1\145\1\171\1\145\1\141\1\60\1\uffff\1"+
+        "\151\1\144\1\60\1\145\1\60\1\156\2\60\1\156\1\60\1\156\1\164\1\uffff"+
+        "\1\157\1\60\1\uffff\1\163\1\uffff\1\164\2\uffff\1\145\1\uffff\1"+
+        "\164\1\145\1\156\1\uffff\1\60\1\163\1\162\1\60\1\144\1\60\1\uffff"+
+        "\1\60\1\141\1\uffff\1\60\2\uffff\1\164\1\uffff\1\145\1\144\1\60"+
+        "\1\uffff";
     static final String DFA12_maxS =
-        "\1\uffff\1\162\1\157\1\156\1\141\1\170\1\57\1\145\1\uffff\1\145"+
-        "\2\uffff\1\141\1\156\1\uffff\1\141\1\151\1\150\1\162\1\157\1\172"+
-        "\2\uffff\2\uffff\2\uffff\1\144\1\uffff\1\156\1\171\1\143\1\144\1"+
-        "\145\1\164\1\uffff\1\uffff\1\146\1\uffff\1\145\2\uffff\1\162\1\166"+
-        "\1\uffff\1\162\1\145\1\164\2\145\1\143\3\uffff\1\151\1\166\1\151"+
-        "\1\172\1\150\1\172\1\156\1\162\1\145\2\uffff\1\151\1\163\1\151\1"+
-        "\141\1\151\1\162\1\156\1\157\1\144\1\141\1\156\1\145\1\143\1\uffff"+
-        "\1\151\1\uffff\1\164\1\145\2\156\1\172\1\141\1\162\1\141\1\172\2"+
-        "\145\1\172\1\162\1\151\1\154\1\141\1\162\1\151\1\156\1\172\1\163"+
-        "\1\144\1\145\1\uffff\1\156\1\151\1\156\1\uffff\1\172\1\163\1\uffff"+
-        "\1\145\1\143\1\107\1\162\1\147\1\160\1\145\1\172\1\uffff\1\163\1"+
-        "\145\1\163\1\154\1\164\1\141\1\164\1\uffff\1\163\1\155\1\141\1\145"+
-        "\1\171\1\145\1\141\1\172\1\uffff\1\151\1\144\1\172\1\145\1\172\1"+
-        "\156\3\172\1\164\1\156\1\172\1\156\1\164\1\uffff\1\157\1\172\1\uffff"+
-        "\1\163\1\uffff\1\164\1\uffff\1\163\2\uffff\2\145\1\uffff\1\164\1"+
-        "\145\1\156\1\uffff\1\172\1\163\2\172\1\162\1\172\1\144\1\172\1\uffff"+
-        "\1\172\2\uffff\1\141\1\uffff\1\172\2\uffff\1\164\1\uffff\1\145\1"+
-        "\144\1\172\1\uffff";
+        "\1\uffff\1\162\1\157\1\156\1\141\1\170\1\57\2\145\1\141\1\156\1"+
+        "\uffff\1\141\1\uffff\1\151\1\150\1\157\1\172\2\uffff\2\uffff\2\uffff"+
+        "\1\144\1\uffff\1\156\1\171\1\143\1\144\1\145\1\164\1\uffff\1\uffff"+
+        "\1\146\1\145\1\162\1\166\1\uffff\1\162\1\uffff\1\145\1\164\1\145"+
+        "\1\143\3\uffff\1\151\1\166\1\151\1\172\1\150\1\172\1\156\1\162\1"+
+        "\145\2\uffff\1\151\1\163\1\151\1\141\1\151\1\162\1\150\1\157\1\141"+
+        "\1\156\1\145\1\143\1\uffff\1\151\1\uffff\1\164\1\145\2\156\1\172"+
+        "\1\141\1\162\1\141\1\172\1\145\2\172\1\162\1\154\1\141\1\162\1\151"+
+        "\1\156\1\172\1\163\1\144\1\145\1\uffff\1\156\1\151\1\156\1\uffff"+
+        "\1\172\2\uffff\1\145\1\107\1\162\1\147\1\160\1\145\1\172\1\uffff"+
+        "\1\163\1\145\1\163\1\154\1\164\1\141\1\164\1\uffff\1\155\1\145\1"+
+        "\171\1\145\1\141\1\172\1\uffff\1\151\1\144\1\172\1\145\1\172\1\156"+
+        "\2\172\1\156\1\172\1\156\1\164\1\uffff\1\157\1\172\1\uffff\1\163"+
+        "\1\uffff\1\164\2\uffff\1\145\1\uffff\1\164\1\145\1\156\1\uffff\1"+
+        "\172\1\163\1\162\1\172\1\144\1\172\1\uffff\1\172\1\141\1\uffff\1"+
+        "\172\2\uffff\1\164\1\uffff\1\145\1\144\1\172\1\uffff";
     static final String DFA12_acceptS =
-        "\10\uffff\1\10\1\uffff\1\12\1\13\2\uffff\1\20\6\uffff\1\36\1\37"+
-        "\2\uffff\1\43\1\44\1\uffff\1\36\7\uffff\1\41\1\uffff\1\10\1\uffff"+
-        "\1\12\1\13\2\uffff\1\20\6\uffff\1\37\1\40\1\43\11\uffff\1\6\1\42"+
-        "\15\uffff\1\25\1\uffff\1\5\27\uffff\1\11\3\uffff\1\24\2\uffff\1"+
-        "\30\10\uffff\1\23\7\uffff\1\26\10\uffff\1\17\16\uffff\1\4\2\uffff"+
-        "\1\7\1\uffff\1\16\1\uffff\1\21\1\uffff\1\31\1\33\2\uffff\1\1\3\uffff"+
-        "\1\34\10\uffff\1\14\1\uffff\1\27\1\32\1\uffff\1\2\1\uffff\1\22\1"+
-        "\15\1\uffff\1\3\3\uffff\1\35";
+        "\13\uffff\1\15\1\uffff\1\21\4\uffff\1\32\1\33\2\uffff\1\37\1\40"+
+        "\1\uffff\1\32\7\uffff\1\35\4\uffff\1\15\1\uffff\1\21\4\uffff\1\33"+
+        "\1\34\1\37\11\uffff\1\6\1\36\14\uffff\1\23\1\uffff\1\5\26\uffff"+
+        "\1\10\3\uffff\1\22\1\uffff\1\25\1\26\7\uffff\1\20\7\uffff\1\24\6"+
+        "\uffff\1\14\14\uffff\1\4\2\uffff\1\7\1\uffff\1\13\1\uffff\1\16\1"+
+        "\27\1\uffff\1\1\3\uffff\1\30\6\uffff\1\11\2\uffff\1\2\1\uffff\1"+
+        "\17\1\12\1\uffff\1\3\3\uffff\1\31";
     static final String DFA12_specialS =
-        "\1\2\26\uffff\1\3\1\0\12\uffff\1\1\u009d\uffff}>";
+        "\1\3\23\uffff\1\1\1\0\12\uffff\1\2\u008c\uffff}>";
     static final String[] DFA12_transitionS = {
-            "\11\32\2\31\2\32\1\31\22\32\1\31\1\32\1\27\4\32\1\30\1\12\1"+
-            "\13\2\32\1\10\2\32\1\6\12\26\6\32\1\16\25\25\1\17\4\25\3\32"+
-            "\1\24\1\25\1\32\1\3\1\25\1\2\1\25\1\5\3\25\1\15\2\25\1\23\1"+
-            "\4\1\25\1\1\1\22\1\25\1\7\1\11\1\21\1\25\1\14\1\20\3\25\uff85"+
-            "\32",
+            "\11\27\2\26\2\27\1\26\22\27\1\26\1\27\1\24\4\27\1\25\4\27\1"+
+            "\15\2\27\1\6\12\23\6\27\1\13\25\22\1\14\4\22\3\27\1\21\1\22"+
+            "\1\27\1\3\1\22\1\2\1\22\1\5\3\22\1\12\2\22\1\20\1\4\1\22\1\1"+
+            "\2\22\1\7\1\10\1\17\1\22\1\11\1\16\3\22\uff85\27",
+            "\1\30",
+            "\1\32",
             "\1\33",
-            "\1\35",
-            "\1\36",
-            "\1\37",
-            "\1\40\7\uffff\1\41\1\uffff\1\42",
-            "\1\44\4\uffff\1\43",
+            "\1\34",
+            "\1\35\7\uffff\1\36\1\uffff\1\37",
+            "\1\41\4\uffff\1\40",
+            "\1\42",
+            "\1\43",
+            "\1\44",
             "\1\45",
             "",
             "\1\47",
             "",
-            "",
-            "\1\52",
+            "\1\51\1\52",
             "\1\53",
+            "\1\54",
+            "\32\31\4\uffff\1\31\1\uffff\32\31",
             "",
-            "\1\55",
-            "\1\56\1\57",
+            "",
+            "\0\56",
+            "\0\56",
+            "",
+            "",
             "\1\60",
+            "",
             "\1\61",
-            "\1\62",
-            "\32\34\4\uffff\1\34\1\uffff\32\34",
-            "",
-            "",
-            "\0\64",
-            "\0\64",
-            "",
-            "",
+            "\1\62\4\uffff\1\63",
+            "\1\64",
+            "\1\65",
             "\1\66",
+            "\1\67\3\uffff\1\70",
+            "\0\72",
             "",
-            "\1\67",
-            "\1\70\4\uffff\1\71",
-            "\1\72",
             "\1\73",
             "\1\74",
-            "\1\75\3\uffff\1\76",
-            "\0\100",
+            "\1\75",
+            "\1\76",
             "",
+            "\1\77",
+            "",
+            "\1\100",
             "\1\101",
-            "",
             "\1\102",
-            "",
-            "",
             "\1\103",
-            "\1\104",
             "",
+            "",
+            "",
+            "\1\104",
             "\1\105",
             "\1\106",
-            "\1\107",
+            "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
             "\1\110",
-            "\1\111",
+            "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
             "\1\112",
-            "",
-            "",
-            "",
             "\1\113",
             "\1\114",
+            "",
+            "",
             "\1\115",
-            "\12\34\7\uffff\32\34\4\uffff\1\34\1\uffff\32\34",
+            "\1\116",
             "\1\117",
-            "\12\34\7\uffff\32\34\4\uffff\1\34\1\uffff\32\34",
+            "\1\120",
             "\1\121",
-            "\1\122",
-            "\1\123",
-            "",
-            "",
+            "\1\122\3\uffff\1\123",
             "\1\124",
-            "\1\125",
-            "\1\126",
+            "\1\125\1\126",
             "\1\127",
             "\1\130",
-            "\1\131\3\uffff\1\132",
+            "\1\131",
+            "\1\132",
+            "",
             "\1\133",
-            "\1\134\1\135",
+            "",
+            "\1\134",
+            "\1\135",
             "\1\136",
             "\1\137",
-            "\1\140",
+            "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
             "\1\141",
             "\1\142",
-            "",
             "\1\143",
-            "",
-            "\1\144",
+            "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
             "\1\145",
-            "\1\146",
-            "\1\147",
-            "\12\34\7\uffff\32\34\4\uffff\1\34\1\uffff\32\34",
+            "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\150",
             "\1\151",
             "\1\152",
             "\1\153",
-            "\12\34\7\uffff\32\34\4\uffff\1\34\1\uffff\32\34",
+            "\1\154",
             "\1\155",
-            "\1\156",
-            "\12\34\7\uffff\32\34\4\uffff\1\34\1\uffff\32\34",
+            "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\22\31\1\156\7\31",
             "\1\160",
             "\1\161",
             "\1\162",
-            "\1\163",
-            "\1\164",
+            "",
+            "\1\163\13\uffff\1\164",
             "\1\165",
             "\1\166",
-            "\12\34\7\uffff\32\34\4\uffff\1\34\1\uffff\22\34\1\167\7\34",
+            "",
+            "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "",
+            "",
+            "\1\170",
             "\1\171",
             "\1\172",
             "\1\173",
+            "\1\174",
+            "\1\175",
+            "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
             "",
-            "\1\174\13\uffff\1\175",
-            "\1\176",
             "\1\177",
-            "",
-            "\12\34\7\uffff\32\34\4\uffff\1\34\1\uffff\32\34",
+            "\1\u0080",
             "\1\u0081",
-            "",
             "\1\u0082",
             "\1\u0083",
             "\1\u0084",
             "\1\u0085",
+            "",
             "\1\u0086",
             "\1\u0087",
             "\1\u0088",
-            "\12\34\7\uffff\32\34\4\uffff\1\34\1\uffff\32\34",
-            "",
+            "\1\u0089",
             "\1\u008a",
-            "\1\u008b",
+            "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "",
             "\1\u008c",
             "\1\u008d",
-            "\1\u008e",
+            "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
             "\1\u008f",
-            "\1\u0090",
-            "",
+            "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
             "\1\u0091",
-            "\1\u0092",
-            "\1\u0093",
+            "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
             "\1\u0094",
-            "\1\u0095",
+            "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
             "\1\u0096",
             "\1\u0097",
-            "\12\34\7\uffff\32\34\4\uffff\1\34\1\uffff\32\34",
             "",
-            "\1\u0099",
+            "\1\u0098",
+            "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "",
             "\1\u009a",
-            "\12\34\7\uffff\32\34\4\uffff\1\34\1\uffff\32\34",
+            "",
+            "\1\u009b",
+            "",
+            "",
             "\1\u009c",
-            "\12\34\7\uffff\32\34\4\uffff\1\34\1\uffff\32\34",
+            "",
+            "\1\u009d",
             "\1\u009e",
-            "\12\34\7\uffff\32\34\4\uffff\1\34\1\uffff\32\34",
-            "\12\34\7\uffff\32\34\4\uffff\1\34\1\uffff\4\34\1\u00a0\25\34",
-            "\12\34\7\uffff\32\34\4\uffff\1\34\1\uffff\32\34",
-            "\1\u00a3",
+            "\1\u009f",
+            "",
+            "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\u00a1",
+            "\1\u00a2",
+            "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
             "\1\u00a4",
-            "\12\34\7\uffff\32\34\4\uffff\1\34\1\uffff\32\34",
-            "\1\u00a6",
+            "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "",
+            "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
             "\1\u00a7",
             "",
-            "\1\u00a8",
-            "\12\34\7\uffff\32\34\4\uffff\1\34\1\uffff\32\34",
+            "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "",
+            "",
+            "\1\u00a9",
             "",
             "\1\u00aa",
-            "",
             "\1\u00ab",
-            "",
-            "\1\u00ac",
-            "",
-            "",
-            "\1\u00ad",
-            "\1\u00ae",
-            "",
-            "\1\u00af",
-            "\1\u00b0",
-            "\1\u00b1",
-            "",
-            "\12\34\7\uffff\32\34\4\uffff\1\34\1\uffff\32\34",
-            "\1\u00b3",
-            "\12\34\7\uffff\32\34\4\uffff\1\34\1\uffff\32\34",
-            "\12\34\7\uffff\32\34\4\uffff\1\34\1\uffff\32\34",
-            "\1\u00b6",
-            "\12\34\7\uffff\32\34\4\uffff\1\34\1\uffff\32\34",
-            "\1\u00b8",
-            "\12\34\7\uffff\32\34\4\uffff\1\34\1\uffff\32\34",
-            "",
-            "\12\34\7\uffff\32\34\4\uffff\1\34\1\uffff\32\34",
-            "",
-            "",
-            "\1\u00bb",
-            "",
-            "\12\34\7\uffff\32\34\4\uffff\1\34\1\uffff\32\34",
-            "",
-            "",
-            "\1\u00bd",
-            "",
-            "\1\u00be",
-            "\1\u00bf",
-            "\12\34\7\uffff\32\34\4\uffff\1\34\1\uffff\32\34",
+            "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
             ""
     };
 
@@ -1738,33 +1598,43 @@ public class InternalMachineDslLexer extends Lexer {
             this.transition = DFA12_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA12_24 = input.LA(1);
+                        int LA12_21 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA12_24>='\u0000' && LA12_24<='\uFFFF')) ) {s = 52;}
+                        if ( ((LA12_21>='\u0000' && LA12_21<='\uFFFF')) ) {s = 46;}
 
-                        else s = 26;
+                        else s = 23;
 
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
-                        int LA12_35 = input.LA(1);
+                        int LA12_20 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA12_35>='\u0000' && LA12_35<='\uFFFF')) ) {s = 64;}
+                        if ( ((LA12_20>='\u0000' && LA12_20<='\uFFFF')) ) {s = 46;}
 
-                        else s = 63;
+                        else s = 23;
 
                         if ( s>=0 ) return s;
                         break;
                     case 2 : 
+                        int LA12_32 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA12_32>='\u0000' && LA12_32<='\uFFFF')) ) {s = 58;}
+
+                        else s = 57;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 3 : 
                         int LA12_0 = input.LA(1);
 
                         s = -1;
@@ -1782,53 +1652,37 @@ public class InternalMachineDslLexer extends Lexer {
 
                         else if ( (LA12_0=='r') ) {s = 7;}
 
-                        else if ( (LA12_0==',') ) {s = 8;}
+                        else if ( (LA12_0=='s') ) {s = 8;}
 
-                        else if ( (LA12_0=='s') ) {s = 9;}
+                        else if ( (LA12_0=='v') ) {s = 9;}
 
-                        else if ( (LA12_0=='(') ) {s = 10;}
+                        else if ( (LA12_0=='i') ) {s = 10;}
 
-                        else if ( (LA12_0==')') ) {s = 11;}
+                        else if ( (LA12_0=='@') ) {s = 11;}
 
-                        else if ( (LA12_0=='v') ) {s = 12;}
+                        else if ( (LA12_0=='V') ) {s = 12;}
 
-                        else if ( (LA12_0=='i') ) {s = 13;}
+                        else if ( (LA12_0==',') ) {s = 13;}
 
-                        else if ( (LA12_0=='@') ) {s = 14;}
+                        else if ( (LA12_0=='w') ) {s = 14;}
 
-                        else if ( (LA12_0=='V') ) {s = 15;}
+                        else if ( (LA12_0=='t') ) {s = 15;}
 
-                        else if ( (LA12_0=='w') ) {s = 16;}
+                        else if ( (LA12_0=='l') ) {s = 16;}
 
-                        else if ( (LA12_0=='t') ) {s = 17;}
+                        else if ( (LA12_0=='^') ) {s = 17;}
 
-                        else if ( (LA12_0=='p') ) {s = 18;}
+                        else if ( ((LA12_0>='A' && LA12_0<='U')||(LA12_0>='W' && LA12_0<='Z')||LA12_0=='_'||LA12_0=='b'||LA12_0=='d'||(LA12_0>='f' && LA12_0<='h')||(LA12_0>='j' && LA12_0<='k')||LA12_0=='n'||(LA12_0>='p' && LA12_0<='q')||LA12_0=='u'||(LA12_0>='x' && LA12_0<='z')) ) {s = 18;}
 
-                        else if ( (LA12_0=='l') ) {s = 19;}
+                        else if ( ((LA12_0>='0' && LA12_0<='9')) ) {s = 19;}
 
-                        else if ( (LA12_0=='^') ) {s = 20;}
+                        else if ( (LA12_0=='\"') ) {s = 20;}
 
-                        else if ( ((LA12_0>='A' && LA12_0<='U')||(LA12_0>='W' && LA12_0<='Z')||LA12_0=='_'||LA12_0=='b'||LA12_0=='d'||(LA12_0>='f' && LA12_0<='h')||(LA12_0>='j' && LA12_0<='k')||LA12_0=='n'||LA12_0=='q'||LA12_0=='u'||(LA12_0>='x' && LA12_0<='z')) ) {s = 21;}
+                        else if ( (LA12_0=='\'') ) {s = 21;}
 
-                        else if ( ((LA12_0>='0' && LA12_0<='9')) ) {s = 22;}
+                        else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 22;}
 
-                        else if ( (LA12_0=='\"') ) {s = 23;}
-
-                        else if ( (LA12_0=='\'') ) {s = 24;}
-
-                        else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 25;}
-
-                        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='#' && LA12_0<='&')||(LA12_0>='*' && LA12_0<='+')||(LA12_0>='-' && LA12_0<='.')||(LA12_0>=':' && LA12_0<='?')||(LA12_0>='[' && LA12_0<=']')||LA12_0=='`'||(LA12_0>='{' && LA12_0<='\uFFFF')) ) {s = 26;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 3 : 
-                        int LA12_23 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA12_23>='\u0000' && LA12_23<='\uFFFF')) ) {s = 52;}
-
-                        else s = 26;
+                        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='#' && LA12_0<='&')||(LA12_0>='(' && LA12_0<='+')||(LA12_0>='-' && LA12_0<='.')||(LA12_0>=':' && LA12_0<='?')||(LA12_0>='[' && LA12_0<=']')||LA12_0=='`'||(LA12_0>='{' && LA12_0<='\uFFFF')) ) {s = 23;}
 
                         if ( s>=0 ) return s;
                         break;

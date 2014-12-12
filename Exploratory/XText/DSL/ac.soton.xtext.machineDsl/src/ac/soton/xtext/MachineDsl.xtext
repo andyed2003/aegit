@@ -14,8 +14,8 @@ Machine returns Machine:
 //	'{'
 //		('internalId' internalId=EString)?
 		('//' comment=EString)?
-		('refines' /*'('*/ refines+=[Machine|EString] ( "," refines+=[Machine|EString])* /*')'*/ )?
-		('sees' '(' sees+=[context::Context|EString] ( "," sees+=[context::Context|EString])* ')' )?
+		('refines' /*'('*/ refines+=[Machine|EString] ( /*","*/ refines+=[Machine|EString])* /*')'*/ )?
+		('sees' /*'('*/ sees+=[context::Context|EString] ( /*","*/ sees+=[context::Context|EString])* /*')'*/ )?
 //		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
 //		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
 //		('attributes' '{' attributes+=StringToAttributeMapEntry ( "," attributes+=StringToAttributeMapEntry)* '}' )?
@@ -137,7 +137,7 @@ event returns Event:
 		 'where' /*'{'*/ guards+=Guard ( /*","*/ guards+=Guard)* /*'}'*/ )?
 		
 		
-		('witnesses' /*'{'*/ witnesses+=Witness ( /*","*/ witnesses+=Witness)* /*'}'*/ )?
+		('with' /*'{'*/ witnesses+=Witness ( /*","*/ witnesses+=Witness)* /*'}'*/ )?
 		('then' /*'{'*/ actions+=Action ( /*","*/ actions+=Action)* /*'}'*/ )?
 //	'}'
 	'end'
@@ -259,11 +259,11 @@ Guard returns Guard:
 
 Witness returns Witness:
 	(localGenerated?='localGenerated')?
-	'witness'
+//	'witness'
 	'@'name=EString
 //	'{'
 //		('internalId' internalId=EString)?
-		'predicate' predicate=EString?
+		/*'predicate'*/ predicate=EString?
 		('//' comment=EString)?
 //		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
 //		('extensions' '{' extensions+=AbstractExtension ( "," extensions+=AbstractExtension)* '}' )?
