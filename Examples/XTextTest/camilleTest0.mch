@@ -22,7 +22,7 @@ events
  then
   @act1 "refVar ≔ r" 
  end
- event "evt1"  extended ordinary 
+ event "evt"  extended ordinary 
  end
  event "evt2"  extended ordinary 
  end
