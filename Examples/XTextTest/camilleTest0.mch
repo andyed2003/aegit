@@ -8,11 +8,12 @@ variables
 invariants 
  @inv1 "refVar ∈ ℕ"  
 events 
- event "INITIALISATION"  extended ordinary 
+ event INITIALISATION  extended ordinary 
  then
   @act1 "refVar ≔ 99" 
  end
- event "kjh"  extended ordinary // nnnnn
+ event kjh  extended anticipated // nnnnn
+ refines kjh
  any
   r 
  where 
@@ -22,8 +23,9 @@ events
  then
   @act1 "refVar ≔ r" 
  end
- event "evt"  extended ordinary 
+ event evt  extended ordinary 
  end
- event "evt2"  extended ordinary 
+ event evt2R  extended ordinary 
+ refines evt2
  end
 end

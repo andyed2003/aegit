@@ -26,14 +26,14 @@ events
   @kjhk "a ≔ 0" 
   @jjj "c ≔ 0" 
  end
- event "evt"  ordinary 
+ event evt  ordinary 
  when 
   @hhh "a ≠ 0"  
   @jjj "a = 0"  
  then
   @opui "b ≔ FALSE" 
  end
- event "evt2"  ordinary 
+ event evt2  ordinary 
  any
   x 
  where 

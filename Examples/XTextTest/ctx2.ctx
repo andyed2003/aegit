@@ -2,5 +2,7 @@ context ctx2
 extends 
  ctx
 constants 
+ cst3 
+axioms 
 @axm1 "cst3 ⊆ A"  
 @axm2 "cst1 ∩ cst3 = ∅"  
